@@ -4,20 +4,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      data: {
-        label: 'my button',
-        placeholder: 'type something',
-        search_placeholder: 'seach info here',
-        search_label: 'search !',
-      }
-    }
-  }
-
   renderComponents() {
-    // Sources are defined in index.html
+    // Sources and Data are defined in index.html
     return window.sources.map((path) => {
       const slug = path.split('/')[path.split('/').length - 1].replace('.twig', '');
       const content = twig({
@@ -28,7 +16,11 @@ class App extends Component {
       });
 
       return (
-        <div key={slug} dangerouslySetInnerHTML={{ __html: content.render(this.state.data) }} />
+        <div key={slug} className="component">
+          <h3>{slug}</h3>
+          <div dangerouslySetInnerHTML={{ __html: content.render(window.data) }} />
+          <pre><code>{content.render(window.data)}</code></pre>
+        </div>
       );
     });
   }
@@ -36,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>hello Toolbox</h1>
+        <h2>Styleguide</h2>
         {this.renderComponents()}
       </div>
     );
