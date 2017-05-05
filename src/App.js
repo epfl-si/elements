@@ -17,6 +17,7 @@ class App extends Component {
   }
 
   renderComponents() {
+    // Sources are defined in index.html
     return window.sources.map((path) => {
       const slug = path.split('/')[path.split('/').length - 1].replace('.twig', '');
       const content = twig({
