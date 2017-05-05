@@ -7,11 +7,6 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      sources: [
-        '/components/button.twig',
-        '/components/input.twig',
-        '/components/search.twig',
-      ],
       data: {
         label: 'my button',
         placeholder: 'type something',
@@ -22,7 +17,7 @@ class App extends Component {
   }
 
   renderComponents() {
-    return this.state.sources.map((path) => {
+    return window.sources.map((path) => {
       const slug = path.split('/')[path.split('/').length - 1].replace('.twig', '');
       const content = twig({
         id: slug,
