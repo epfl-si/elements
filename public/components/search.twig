@@ -1,4 +1,4 @@
 <div style="border: 1px solid green;">
-  {% extends "styleguide::input.twig" %}
-  {% extends "styleguide::button.twig" %}
+  {% include "styleguide::input.twig" with {'placeholder': search_placeholder} %}
+  {% include "styleguide::button.twig" with {'label': search_label} %}
 </div>
