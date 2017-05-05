@@ -7,19 +7,33 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      content: 'yo',
+      sources: [
+        '/components/button.twig',
+        '/components/input.twig',
+        '/components/search.twig',
+      ],
+      data: {
+        label: 'my button',
+        placeholder: 'type something',
+        search_placeholder: 'seach info here',
+        search_label: 'search !',
+      }
     }
   }
 
-  componentWillMount() {
-    this.content = twig({
-      id: 'button',
-      href: '/components/button.twig',
-      async: true,
-      load: (template) => {
-        const content = template.render({ label: 'my button' });
-        this.setState({ content });
-      }
+  renderComponents() {
+    return this.state.sources.map((path) => {
+      const slug = path.split('/')[path.split('/').length - 1].replace('.twig', '');
+      const content = twig({
+        id: slug,
+        href: path,
+        async: false,
+        namespaces: { 'styleguide': '/components/' },
+      });
+
+      return (
+        <div key={slug} dangerouslySetInnerHTML={{ __html: content.render(this.state.data) }} />
+      );
     });
   }
 
@@ -27,7 +41,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>hello Toolbox</h1>
-        <div dangerouslySetInnerHTML={{__html: this.state.content}}></div>
+        {this.renderComponents()}
       </div>
     );
   }
