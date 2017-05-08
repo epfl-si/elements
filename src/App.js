@@ -12,7 +12,7 @@ class App extends Component {
         id: slug,
         href: path,
         async: false,
-        namespaces: { 'styleguide': '/components/' },
+        namespaces: { 'styleguide': './components/' },
       });
 
       return (
