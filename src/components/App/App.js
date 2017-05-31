@@ -7,12 +7,17 @@ class App extends Component {
   renderComponents() {
     // Sources and Data are defined in index.html
     return window.sources.map((path) => {
-      const slug = path.split('/')[path.split('/').length - 1].replace('.twig', '');
+      const slug = path.split('/')[path.split('/').length - 1];
+
       const content = twig({
         id: slug,
-        href: path,
+        href: `${path}/${slug}.twig`,
         async: false,
-        namespaces: { 'styleguide': './components/' },
+        namespaces: {
+          'atoms': './components/atoms/',
+          'molecules': './components/molecules/',
+          'organisms': './components/organisms/',
+        },
       });
 
       return (
