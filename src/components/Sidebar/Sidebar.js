@@ -14,7 +14,7 @@ class Sidebar extends Component {
           {this.props.store.components.atoms.map((atom, key) => {
             return (
               <li key={key}>
-                <Link to={`/component/atoms/${atom.slug}`}>{atom.slug}</Link>
+                <Link to={`/atoms/${atom.slug}`}>{atom.slug}</Link>
               </li>
             )
           })}
@@ -25,7 +25,7 @@ class Sidebar extends Component {
           {this.props.store.components.molecules.map((molecule, key) => {
             return (
               <li key={key}>
-                <Link to={`/component/molecules/${molecule.slug}`}>{molecule.slug}</Link>
+                <Link to={`/molecules/${molecule.slug}`}>{molecule.slug}</Link>
               </li>
             )
           })}
@@ -36,7 +36,7 @@ class Sidebar extends Component {
           {this.props.store.components.organisms.map((organism, key) => {
             return (
               <li key={key}>
-                <Link to={`/component/organisms/${organism.slug}`}>{organism.slug}</Link>
+                <Link to={`/organisms/${organism.slug}`}>{organism.slug}</Link>
               </li>
             )
           })}

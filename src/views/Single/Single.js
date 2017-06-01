@@ -37,7 +37,8 @@ class Single extends Component {
   render() {
     return (
       <div>
-        <h1>{this.props.match.params.slug}</h1>
+        <h1>{this.state.component.config.title}</h1>
+        <p>{this.state.component.config.notes}</p>
         <div dangerouslySetInnerHTML={{ __html: this.state.content }} />
         <pre><code>{this.state.content}</code></pre>
       </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Twig from 'twig';
+import yaml from 'yamljs';
 import { Route } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 import './App.css';
@@ -27,7 +28,8 @@ class App extends Component {
     this.props.store.components = window.sources.reduce((acc, val) => {
       const slug = val.split('/')[val.split('/').length - 1];
       const content = this.getMarkup(val, slug);
-      const component = { slug, content };
+      const config = yaml.load(this.fixPath(`${val}/${slug}.yml`))
+      const component = { slug, content, config };
 
       if (val.includes('/atoms/')) acc.atoms.push(component);
       if (val.includes('/molecules/')) acc.molecules.push(component);
@@ -67,7 +69,7 @@ class App extends Component {
           <Sidebar />
         </div>
         <div className="content-wrapper">
-          <Route path="/component/:type/:slug" extact component={Single} />
+          <Route path="/:type/:slug" extact component={Single} />
         </div>
       </div>
     );
