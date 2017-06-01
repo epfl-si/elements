@@ -49,6 +49,9 @@ class Single extends Component {
         <div dangerouslySetInnerHTML={{ __html: this.state.content }} />
         <pre><code>{this.state.content}</code></pre>
 
+        <hr/>
+        <h3>Variants</h3>
+
         {this.state.variants.map((variant, key) => {
           return (
             <div key={key}>
