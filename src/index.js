@@ -1,9 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App/App';
+import { HashRouter as Router, Route } from 'react-router-dom';
+import { Provider } from 'mobx-react';
 import './index.css';
 
+import Store from './Store';
+import App from './components/App/App';
+
+const router = (
+  <Provider store={Store}>
+    <Router>
+      <Route path="/" component={App} />
+    </Router>
+  </Provider>
+);
+
 ReactDOM.render(
-  <App />,
+  router,
   document.getElementById('styleguide')
 );

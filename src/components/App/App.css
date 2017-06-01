@@ -4,6 +4,23 @@ body {
 
 h2 { text-align: center; }
 
+.styleguide {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.sidebar-wrapper {
+  grid-column: 1;
+  background-color: #F0F0F2;
+  padding: 5px 10px;
+}
+
+.content-wrapper {
+  grid-column: 2;
+  align-self: start;
+  margin-left: 18px;
+}
+
 .component {
   margin: 1em;
   padding: 1em;
