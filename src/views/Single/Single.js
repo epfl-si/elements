@@ -11,6 +11,7 @@ class Single extends Component {
     this.state = {
       component: {},
       content: '',
+      variants: [],
     }
   }
 
@@ -32,6 +33,12 @@ class Single extends Component {
     component.content.then(twig => {
       this.setState({ content: twig.render(this.props.store.data) });
     });
+
+    component.variants.forEach((variant) => {
+      variant.then(twig => {
+        this.setState({ variants: [...this.state.variants, twig.render(this.props.store.data)] });
+      });
+    });
   }
 
   render() {
@@ -41,6 +48,15 @@ class Single extends Component {
         <p>{this.state.component.config.notes}</p>
         <div dangerouslySetInnerHTML={{ __html: this.state.content }} />
         <pre><code>{this.state.content}</code></pre>
+
+        {this.state.variants.map((variant, key) => {
+          return (
+            <div key={key}>
+              <div dangerouslySetInnerHTML={{ __html: variant }} />
+              <pre><code>{variant}</code></pre>
+            </div>
+          );
+        })}
       </div>
     );
   }
