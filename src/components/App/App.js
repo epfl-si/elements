@@ -28,8 +28,8 @@ class App extends Component {
     this.props.store.components = window.sources.reduce((acc, val) => {
       const slug = val.split('/')[val.split('/').length - 1];
       const content = this.getMarkup(val, slug);
-      const config = yaml.load(this.fixPath(`${val}/${slug}.yml`))
-      const variants = config.variants ? config.variants.map((variant) => this.getMarkup(val, `${slug}_${variant}`)) : null;
+      const config = yaml.load(this.fixPath(`${val}/${slug}.yml`));
+      const variants = config.variants ? config.variants.map((variant) => this.getMarkup(val, `${slug}-${variant}`)) : null;
       const component = { config, content, slug, variants };
 
       if (val.includes('/atoms/')) acc.atoms.push(component);

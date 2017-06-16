@@ -19,8 +19,21 @@ class Single extends Component {
     this.getContent(this.props);
   }
 
+  componentWillUnMount() {
+    this.setState({
+      component: {},
+      content: '',
+      variants: [],
+    });
+  }
+
   componentWillReceiveProps(nextProps) {
     this.getContent(nextProps);
+
+    // reset variants for this component
+    this.setState({
+      variants: [],
+    });
   }
 
   getContent(props) {
@@ -34,32 +47,42 @@ class Single extends Component {
       this.setState({ content: twig.render(this.props.store.data) });
     });
 
-    component.variants.forEach((variant) => {
-      variant.then(twig => {
-        this.setState({ variants: [...this.state.variants, twig.render(this.props.store.data)] });
+    if (component.variants) {
+      component.variants.forEach((variant) => {
+        variant.then(twig => {
+          this.setState({ variants: [...this.state.variants, twig.render(this.props.store.data)] });
+        });
       });
-    });
+    }
   }
 
   render() {
-    return (
+    const variants = this.state.variants.length > 0 && (
       <div>
-        <h1>{this.state.component.config.title}</h1>
-        <p>{this.state.component.config.notes}</p>
-        <div dangerouslySetInnerHTML={{ __html: this.state.content }} />
-        <pre><code>{this.state.content}</code></pre>
-
         <hr/>
         <h3>Variants</h3>
 
         {this.state.variants.map((variant, key) => {
           return (
-            <div key={key}>
+            <div className="t-item-preview" key={key}>
               <div dangerouslySetInnerHTML={{ __html: variant }} />
-              <pre><code>{variant}</code></pre>
+              <pre className="t-item-code"><code>{variant}</code></pre>
             </div>
           );
         })}
+      </div>
+    );
+
+    return (
+      <div>
+        <h1>{this.state.component.config.title}</h1>
+        <p>{this.state.component.config.notes}</p>
+        <div className="t-item-preview">
+          <div className="" dangerouslySetInnerHTML={{ __html: this.state.content }} />
+          <pre className="t-item-code"><code>{this.state.content}</code></pre>
+        </div>
+        
+        {variants}
       </div>
     );
   }
