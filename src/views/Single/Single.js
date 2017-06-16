@@ -29,11 +29,6 @@ class Single extends Component {
 
   componentWillReceiveProps(nextProps) {
     this.getContent(nextProps);
-
-    // reset variants for this component
-    this.setState({
-      variants: [],
-    });
   }
 
   getContent(props) {
