@@ -59,9 +59,9 @@ class Single extends Component {
 
         {this.state.variants.map((variant, key) => {
           return (
-            <div className="t-item-preview" key={key}>
+            <div className="toolbox-item-preview" key={key}>
               <div dangerouslySetInnerHTML={{ __html: variant }} />
-              <pre className="t-item-code"><code>{variant}</code></pre>
+              <pre className="toolbox-item-code"><code>{variant}</code></pre>
             </div>
           );
         })}
@@ -72,9 +72,9 @@ class Single extends Component {
       <div>
         <h1>{this.state.component.config.title}</h1>
         <p>{this.state.component.config.notes}</p>
-        <div className="t-item-preview">
+        <div className="toolbox-item-preview">
           <div className="" dangerouslySetInnerHTML={{ __html: this.state.content }} />
-          <pre className="t-item-code"><code>{this.state.content}</code></pre>
+          <pre className="toolbox-item-code"><code>{this.state.content}</code></pre>
         </div>
         
         {variants}

@@ -1,10 +1,10 @@
-.t-item-preview {
+.toolbox-item-preview {
   border: 1px solid #ccc;
   border-radius: 3px;
   padding: 20px;
   background: #fff;
 }
 
-.t-item-code {
+.toolbox-item-code {
   margin: 20px 0 0;
 }

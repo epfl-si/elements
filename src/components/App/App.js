@@ -66,10 +66,10 @@ class App extends Component {
   render() {
     return (
       <div className="styleguide">
-        <div className="sidebar-wrapper">
+        <div className="toolbox-sidebar-wrapper">
           <Sidebar />
         </div>
-        <div className="content-wrapper">
+        <div className="toolbox-content-wrapper">
           <Route path="/:type/:slug" extact component={Single} />
         </div>
       </div>
