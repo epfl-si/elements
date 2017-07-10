@@ -31,6 +31,7 @@ class App extends Component {
       const config = yaml.load(this.fixPath(`${val}/${slug}.yml`));
       const variants = config && config.variants ? Object.keys(config.variants).map((key) => {
         return {
+          slug: key,
           title: config.variants[key],
           twig: this.getMarkup(val, `${slug}-${key}`),
         };

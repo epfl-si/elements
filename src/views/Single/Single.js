@@ -51,6 +51,7 @@ class Single extends Component {
             ...this.state.variants,
             {
               title: variant.title,
+              slug: variant.slug,
               markup: twig.render(this.props.store.data)
             }
           ]});
@@ -64,11 +65,15 @@ class Single extends Component {
       <div>
         {this.state.variants.map((variant, key) => {
           return (
-            <Item 
+            <Item
               wrapper={this.state.component.config.wrapper || ''}
               background={this.state.component.config.background}
-              key={key} 
-              title={variant.title}>{variant.markup}</Item>
+              key={key}
+              title={variant.title}
+              slug={`tlbx-${this.state.component.slug}-${variant.slug}`}
+            >
+                {variant.markup}
+            </Item>
           );
         })}
       </div>
@@ -84,6 +89,7 @@ class Single extends Component {
         <Item
           wrapper={this.state.component.config.wrapper || ''}
           background={this.state.component.config.background}
+          slug={`tlbx-${this.state.component.slug}`}
         >{this.state.content}</Item>
 
         {variants}
