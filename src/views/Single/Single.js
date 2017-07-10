@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import PropTypes from 'prop-types';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { atomOneDark } from 'react-syntax-highlighter/dist/styles';
 
 import './Single.css';
 
@@ -61,7 +63,12 @@ class Single extends Component {
           return (
             <div className="toolbox-item-preview" key={key}>
               <div dangerouslySetInnerHTML={{ __html: variant }} />
-              <pre className="toolbox-item-code"><code>{variant}</code></pre>
+              <SyntaxHighlighter 
+                language='html' 
+                style={atomOneDark}
+              >
+                {variant}
+              </SyntaxHighlighter>
             </div>
           );
         })}
@@ -74,9 +81,13 @@ class Single extends Component {
         <p>{this.state.component.config.notes}</p>
         <div className="toolbox-item-preview">
           <div className="" dangerouslySetInnerHTML={{ __html: this.state.content }} />
-          <pre className="toolbox-item-code"><code>{this.state.content}</code></pre>
+          <SyntaxHighlighter 
+            language='html' 
+            style={atomOneDark}
+          >
+            {this.state.content}
+          </SyntaxHighlighter>
         </div>
-        
         {variants}
       </div>
     );
