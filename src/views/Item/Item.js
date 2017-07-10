@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import PropTypes from 'prop-types';
 
 import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/dist/light';
 import xml from 'react-syntax-highlighter/dist/languages/xml';
