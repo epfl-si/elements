@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import PropTypes from 'prop-types';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { atomOneDark } from 'react-syntax-highlighter/dist/styles';
+import Item from '../Item/Item';
 
 import './Single.css';
 
@@ -56,38 +55,21 @@ class Single extends Component {
   render() {
     const variants = this.state.variants.length > 0 && (
       <div>
-        <hr/>
-        <h3>Variants</h3>
+        <h2 className="tlbx-h2">Variants</h2>
 
         {this.state.variants.map((variant, key) => {
-          return (
-            <div className="toolbox-item-preview" key={key}>
-              <div dangerouslySetInnerHTML={{ __html: variant }} />
-              <SyntaxHighlighter 
-                language='html' 
-                style={atomOneDark}
-              >
-                {variant}
-              </SyntaxHighlighter>
-            </div>
-          );
+          return <Item key={key}>{variant}</Item>;
         })}
       </div>
     );
 
     return (
       <div>
-        <h1>{this.state.component.config.title}</h1>
-        <p>{this.state.component.config.notes}</p>
-        <div className="toolbox-item-preview">
-          <div className="" dangerouslySetInnerHTML={{ __html: this.state.content }} />
-          <SyntaxHighlighter 
-            language='html' 
-            style={atomOneDark}
-          >
-            {this.state.content}
-          </SyntaxHighlighter>
-        </div>
+        <h1 className="tlbx-h1">{this.state.component.config.title}</h1>
+        <p className="tlbx-notes">{this.state.component.config.notes}</p>
+        
+        <Item>{this.state.content}</Item>
+
         {variants}
       </div>
     );
