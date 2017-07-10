@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
 import Item from '../Item/Item';
 
 import './Single.css';
@@ -76,7 +77,9 @@ class Single extends Component {
     return (
       <div>
         <h1 className="tlbx-h1">{this.state.component.config.title}</h1>
-        <p className="tlbx-notes">{this.state.component.config.notes}</p>
+        <div className="tlbx-notes">
+          <ReactMarkdown source={this.state.component.config.notes} />
+        </div>
 
         <Item
           wrapper={this.state.component.config.wrapper || ''}
