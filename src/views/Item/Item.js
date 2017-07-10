@@ -11,12 +11,15 @@ registerLanguage('html', xml);
 
 class Item extends Component {
   render() {
+    const title = this.props.title && <h3 className="tlbx-item-title">{this.props.title}</h3>;
+
     return (
       <div className="tlbx-item">
+        {title}
         <div className="tlbx-item-preview" dangerouslySetInnerHTML={{ __html: this.props.children }} />
         <div className="tlbx-item-code">
-          <SyntaxHighlighter 
-            language='html' 
+          <SyntaxHighlighter
+            language='html'
             style={atomOneDark}
           >
             {this.props.children}

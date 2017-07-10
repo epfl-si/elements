@@ -29,7 +29,13 @@ class App extends Component {
       const slug = val.split('/')[val.split('/').length - 1];
       const content = this.getMarkup(val, slug);
       const config = yaml.load(this.fixPath(`${val}/${slug}.yml`));
-      const variants = config && config.variants ? config.variants.map((variant) => this.getMarkup(val, `${slug}-${variant}`)) : null;
+      const variants = config && config.variants ? Object.keys(config.variants).map((key) => {
+        return {
+          title: config.variants[key],
+          twig: this.getMarkup(val, `${slug}-${key}`),
+        };
+      }) : null;
+      console.log(variants);
       const component = { config, content, slug, variants };
 
       if (val.includes('/atoms/')) acc.atoms.push(component);

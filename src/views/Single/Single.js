@@ -34,7 +34,7 @@ class Single extends Component {
 
   getContent(props) {
     const params = props.match.params;
-    const components = props.store.components[params.type]; 
+    const components = props.store.components[params.type];
     const component = components.find(item => item.slug === params.slug);
 
     this.setState({ component, variants: [] });
@@ -44,9 +44,15 @@ class Single extends Component {
     });
 
     if (component.variants) {
-      component.variants.forEach((variant) => {
-        variant.then(twig => {
-          this.setState({ variants: [...this.state.variants, twig.render(this.props.store.data)] });
+      component.variants.forEach((variant, key) => {
+        variant.twig.then(twig => {
+          this.setState({ variants: [
+            ...this.state.variants,
+            {
+              title: variant.title,
+              markup: twig.render(this.props.store.data)
+            }
+          ]});
         });
       });
     }
@@ -55,10 +61,8 @@ class Single extends Component {
   render() {
     const variants = this.state.variants.length > 0 && (
       <div>
-        <h2 className="tlbx-h2">Variants</h2>
-
         {this.state.variants.map((variant, key) => {
-          return <Item key={key}>{variant}</Item>;
+          return <Item key={key} title={variant.title}>{variant.markup}</Item>;
         })}
       </div>
     );
@@ -67,7 +71,7 @@ class Single extends Component {
       <div>
         <h1 className="tlbx-h1">{this.state.component.config.title}</h1>
         <p className="tlbx-notes">{this.state.component.config.notes}</p>
-        
+
         <Item>{this.state.content}</Item>
 
         {variants}
