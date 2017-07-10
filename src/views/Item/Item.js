@@ -16,7 +16,11 @@ class Item extends Component {
     return (
       <div className="tlbx-item">
         {title}
-        <div className="tlbx-item-preview" dangerouslySetInnerHTML={{ __html: this.props.children }} />
+        <div 
+          className={`tlbx-item-preview ${this.props.wrapper}`} 
+          style={{background: this.props.background}} 
+          dangerouslySetInnerHTML={{ __html: this.props.children }} 
+        />
         <div className="tlbx-item-code">
           <SyntaxHighlighter
             language='html'

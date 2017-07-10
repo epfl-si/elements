@@ -62,7 +62,13 @@ class Single extends Component {
     const variants = this.state.variants.length > 0 && (
       <div>
         {this.state.variants.map((variant, key) => {
-          return <Item key={key} title={variant.title}>{variant.markup}</Item>;
+          return (
+            <Item 
+              wrapper={this.state.component.config.wrapper || ''}
+              background={this.state.component.config.background}
+              key={key} 
+              title={variant.title}>{variant.markup}</Item>
+          );
         })}
       </div>
     );
@@ -72,7 +78,10 @@ class Single extends Component {
         <h1 className="tlbx-h1">{this.state.component.config.title}</h1>
         <p className="tlbx-notes">{this.state.component.config.notes}</p>
 
-        <Item>{this.state.content}</Item>
+        <Item
+          wrapper={this.state.component.config.wrapper || ''}
+          background={this.state.component.config.background}
+        >{this.state.content}</Item>
 
         {variants}
       </div>

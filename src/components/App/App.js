@@ -35,7 +35,6 @@ class App extends Component {
           twig: this.getMarkup(val, `${slug}-${key}`),
         };
       }) : null;
-      console.log(variants);
       const component = { config, content, slug, variants };
 
       if (val.includes('/atoms/')) acc.atoms.push(component);
