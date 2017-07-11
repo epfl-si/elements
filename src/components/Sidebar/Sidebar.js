@@ -8,7 +8,7 @@ import './Sidebar.css';
 class Sidebar extends Component {
   render() {
     return (
-      <div className="toolbox-sidebar">
+      <div className="tlbx-sidebar">
         <strong>Atoms</strong>
         <ul>
           {this.props.store.components.atoms.map((atom, key) => {

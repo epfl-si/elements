@@ -1,21 +1,21 @@
-.toolbox-body {
+.tlbx-body {
   background: #f0f0f0;
 }
 
-.toolbox-h2 { text-align: center; }
+.tlbx-h2 { text-align: center; }
 
 .styleguide {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: minmax(200px, 20vw) 1fr;
 }
 
-.toolbox-sidebar-wrapper {
+.tlbx-sidebar-wrapper {
   grid-column: 1;
   background-color: #F0F0F2;
   padding: 5px 10px;
 }
 
-.toolbox-content-wrapper {
+.tlbx-content-wrapper {
   grid-column: 2;
   align-self: start;
   margin-left: 18px;
