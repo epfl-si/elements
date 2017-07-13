@@ -47,7 +47,7 @@ class App extends Component {
     }, this.state.components);
 
     this.props.store.data = window.data;
-    this.props.store.contrast = window.contrast;
+    this.props.store.colors = window.colors;
   }
 
   getMarkup(path, slug) {

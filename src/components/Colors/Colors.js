@@ -1,15 +1,36 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
+import colorable from 'colorable';
 
+import ColorSwatch from './ColorSwatch';
 import './Colors.css';
 
 class Colors extends Component {
-  render() {
-
-    const contrast = this.props.store.contrast;
+  renderSwatches() {
+    const colors = this.props.store.colors;
+    const contrast = colorable(colors);
 
     return (
       <div>
+        <h2>Brand Colors</h2>
+        <div className="row">
+          {Object.keys(contrast).map(key => (
+            <ColorSwatch key={key} color={contrast[key]} />
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  render() {
+    const colors = this.props.store.colors;
+    const contrast = colorable(colors, {compact: true, threshold: 4.5});
+
+    return (
+      <div className="container-fluid">
+
+        {this.renderSwatches()}
+
         <table className="table tlbx-table">
           <thead>
             <tr>
