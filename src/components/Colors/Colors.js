@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 
-import './A11y.css';
+import './Colors.css';
 
-class A11y extends Component {
+class Colors extends Component {
   render() {
 
     const contrast = this.props.store.contrast;
@@ -55,4 +55,4 @@ class A11y extends Component {
   }
 }
 
-export default inject('store')(observer(A11y));
+export default inject('store')(observer(Colors));

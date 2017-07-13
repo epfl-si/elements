@@ -14,7 +14,7 @@ class Sidebar extends Component {
             <Link to={'/'}>Home</Link>
           </li>
           <li>
-            <Link to={'/a11y'}>Accessibility</Link>
+            <Link to={'/colors'}>Colors</Link>
           </li>
         </ul>
 

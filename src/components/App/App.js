@@ -7,7 +7,7 @@ import './App.css';
 
 import Sidebar from '../Sidebar/Sidebar';
 import Single from '../../views/Single/Single';
-import A11y from '../A11y/A11y';
+import Colors from '../Colors/Colors';
 
 class App extends Component {
   constructor() {
@@ -79,7 +79,7 @@ class App extends Component {
         </div>
         <div className="tlbx-content-wrapper">
           <Route path="/:type/:slug" exact component={Single} />
-          <Route path="/a11y" exact component={A11y} />
+          <Route path="/colors" exact component={Colors} />
         </div>
       </div>
     );
