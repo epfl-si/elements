@@ -7,6 +7,7 @@ import './App.css';
 
 import Sidebar from '../Sidebar/Sidebar';
 import Single from '../../views/Single/Single';
+import A11y from '../A11y/A11y';
 
 class App extends Component {
   constructor() {
@@ -46,6 +47,7 @@ class App extends Component {
     }, this.state.components);
 
     this.props.store.data = window.data;
+    this.props.store.contrast = window.contrast;
   }
 
   getMarkup(path, slug) {
@@ -76,7 +78,8 @@ class App extends Component {
           <Sidebar />
         </div>
         <div className="tlbx-content-wrapper">
-          <Route path="/:type/:slug" extact component={Single} />
+          <Route path="/:type/:slug" exact component={Single} />
+          <Route path="/a11y" exact component={A11y} />
         </div>
       </div>
     );

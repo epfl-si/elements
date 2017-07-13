@@ -9,6 +9,15 @@ class Sidebar extends Component {
   render() {
     return (
       <div className="tlbx-sidebar">
+        <ul>
+          <li>
+            <Link to={'/'}>Home</Link>
+          </li>
+          <li>
+            <Link to={'/a11y'}>Accessibility</Link>
+          </li>
+        </ul>
+
         <strong>Atoms</strong>
         <ul>
           {this.props.store.components.atoms.map((atom, key) => {

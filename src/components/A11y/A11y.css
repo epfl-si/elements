@@ -1,0 +1,10 @@
+.tlbx-contrast-color-thumb,
+.tlbx-contrast-none {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+.tlbx-contrast-none {
+  background-color: #eee;
+}
