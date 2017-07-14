@@ -7,6 +7,15 @@ import './Sidebar.css';
 
 class Sidebar extends Component {
   render() {
+    const noComponents = (
+      <li>
+        <small>
+          <span className="text-muted">No components yet.</span><br />
+          Run <code>$ yo toolbox:generate</code>
+        </small>
+      </li>
+    );
+
     return (
       <div className="tlbx-sidebar">
         <ul>
@@ -27,6 +36,7 @@ class Sidebar extends Component {
               </li>
             )
           })}
+          {this.props.store.components.atoms.length === 0 && noComponents}
         </ul>
 
         <strong>Molecules</strong>
@@ -38,6 +48,7 @@ class Sidebar extends Component {
               </li>
             )
           })}
+          {this.props.store.components.molecules.length === 0 && noComponents}
         </ul>
 
         <strong>Organisms</strong>
@@ -49,6 +60,7 @@ class Sidebar extends Component {
               </li>
             )
           })}
+          {this.props.store.components.organisms.length === 0 && noComponents}
         </ul>
       </div>
     );

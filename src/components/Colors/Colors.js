@@ -97,7 +97,7 @@ class Colors extends Component {
           <strong>aa</strong> - contrast greater than 4.5 (for normal sized text)<br />
           <strong>aaLarge</strong> - contrast greater than 3 (for bold text or text larger than 24px)<br />
           <strong>aaa</strong> - contrast greater than 7<br />
-          <strong>aaaLarge</strong> - contrast greater than 4.5
+          <strong>aaaLarge</strong> - contrast greater than 4.5 (for bold text or text larger than 24px)
         </p>
         <p>For more info, please visit <a href="https://www.w3.org/TR/WCAG20/#visual-audio-contrast">WCAG 2.0 Guidelines</a>
         </p>
