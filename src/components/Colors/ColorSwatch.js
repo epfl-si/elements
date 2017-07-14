@@ -24,11 +24,11 @@ class ColorSwatch extends Component {
   render() {
     return (
       <div className="col-sm-4">
-        <div className="card mb-4">
-          <div className="card-img-top py-3 px-3" style={{backgroundColor: this.props.color.hex}}>
+        <div className="card mb-4 tlbx-color-swatch">
+          <div className="card-img-top py-5 px-3 tlbx-color-swatch-color" style={{backgroundColor: this.props.color.hex}}>
             <ClipboardButton
               data-clipboard-text={this.props.color.hex}
-              className="btn btn-outline-primary btn-copy mx-auto d-block"
+              className="btn btn-primary btn-copy mx-auto d-block"
               onSuccess={this.onCopySuccess}
             >
               {this.state.copied ? 'Copied!' : 'Copy HEX'}

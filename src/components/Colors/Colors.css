@@ -52,3 +52,12 @@
   font-size: 2rem;
   text-align: center;
 }
+
+.tlbx-color-swatch-color .btn {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.tlbx-color-swatch-color:hover .btn {
+  opacity: 1;
+}
