@@ -25,7 +25,7 @@ class Colors extends Component {
 
   renderA11yTable() {
     const colors = this.props.store.colors;
-    const contrast = colorable(colors, {compact: true, threshold: 3.5});
+    const contrast = colorable(colors, {compact: true, threshold: 3});
 
     return (
       <div>
@@ -46,7 +46,7 @@ class Colors extends Component {
                   <td scope="row">
                     <div className="tlbx-contrast-color">
                       <span className="tlbx-contrast-color-thumb" style={{background: baseColor.hex}}></span>
-                      <span>{baseColor.name}</span>
+                      <span>{baseColor.name}<br /><small className="text-muted">{baseColor.hex}</small></span>
                     </div>
                   </td>
                   {Object.keys(contrast).map(key2 => {
@@ -93,6 +93,14 @@ class Colors extends Component {
             })}
           </tbody>
         </table>
+        <p>
+          <strong>aa</strong> - contrast greater than 4.5 (for normal sized text)<br />
+          <strong>aaLarge</strong> - contrast greater than 3 (for bold text or text larger than 24px)<br />
+          <strong>aaa</strong> - contrast greater than 7<br />
+          <strong>aaaLarge</strong> - contrast greater than 4.5
+        </p>
+        <p>For more info, please visit <a href="https://www.w3.org/TR/WCAG20/#visual-audio-contrast">WCAG 2.0 Guidelines</a>
+        </p>
       </div>
     )
   }
