@@ -8,6 +8,7 @@ import './App.css';
 import Sidebar from '../Sidebar/Sidebar';
 import Single from '../../views/Single/Single';
 import Colors from '../Colors/Colors';
+import Home from '../../views/Home/Home';
 
 class App extends Component {
   constructor() {
@@ -78,6 +79,7 @@ class App extends Component {
           <Sidebar />
         </div>
         <div className="tlbx-content-wrapper">
+          <Route path="/" exact component={Home} />
           <Route path="/:type/:slug" exact component={Single} />
           <Route path="/colors" exact component={Colors} />
         </div>

@@ -1,3 +1,8 @@
+#styleguide {
+  display: flex;
+  min-height: 100vh;
+}
+
 .tlbx-body {
   background: #f0f0f0;
 }
@@ -12,7 +17,6 @@
 .tlbx-sidebar-wrapper {
   grid-column: 1;
   background-color: #F0F0F2;
-  padding: 5px 10px;
 }
 
 .tlbx-content-wrapper {
