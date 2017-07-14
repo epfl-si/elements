@@ -1,10 +1,54 @@
+.tlbx-table th,
+.tlbx-table td:not([scope]) {
+  text-align: center;
+  vertical-align:middle;
+}
+
+.tlbx-contrast-color {
+  display: flex;
+  align-items: center;
+}
+
+.tlbx-contrast-color .tlbx-contrast-color-thumb {
+  margin-right: 10px;
+}
+
 .tlbx-contrast-color-thumb,
 .tlbx-contrast-none {
-  display: inline-block;
+  display: inline-flex;
   width: 40px;
   height: 40px;
 }
 
+.tlbx-contrast-color-thumb {
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
 .tlbx-contrast-none {
+  position: relative;
   background-color: #eee;
+  overflow: hidden;
+}
+
+.tlbx-contrast-none::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1px;
+  bottom: 1px;
+  border-width: 40px;
+  border-style: solid;
+  border-color: transparent white;
+}
+
+.tlbx-contrast-text {
+  display: inline-block;
+  width: 100%;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
 }
