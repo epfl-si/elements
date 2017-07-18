@@ -37,9 +37,9 @@
   content: '';
   position: absolute;
   left: 0;
-  right: 0;
   top: 1px;
   bottom: 1px;
+  width: 200%;
   border-width: 40px;
   border-style: solid;
   border-color: transparent white;
