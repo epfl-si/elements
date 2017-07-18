@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import colorable from 'colorable';
-import ReactTooltip from 'react-tooltip';
+import Tooltip from 'rc-tooltip';
+import 'rc-tooltip/assets/bootstrap.css';
 
 import ColorSwatch from './ColorSwatch';
 import './Colors.css';
@@ -13,6 +14,8 @@ class Colors extends Component {
     this.state = {
       threshold: 4.5
     }
+
+    this.onChange = this.onChange.bind(this);
   }
 
   renderSwatches() {
@@ -31,8 +34,8 @@ class Colors extends Component {
     )
   }
 
-  changeThreshold(event) {
-    this.setState({threshold: event.target.value});
+  onChange(e) {
+    this.setState({threshold: e.target.value});
   }
 
   renderA11yTable() {
@@ -58,7 +61,7 @@ class Colors extends Component {
                   <th scope="row" className="text-left">
                     <div className="tlbx-contrast-color">
                       <span className="tlbx-contrast-color-thumb" style={{background: baseColor.hex}}></span>
-                      <span>{baseColor.name}<br /><small className="text-muted">{baseColor.hex}</small></span>
+                      <span>{baseColor.name} background<br /><small className="text-muted">{baseColor.hex}</small></span>
                     </div>
                   </th>
                   {Object.keys(contrast).map(key2 => {
@@ -74,17 +77,36 @@ class Colors extends Component {
 
                     return (
                       <td key={key2}>
-                        <span
-                          className="tlbx-contrast-color-thumb"
-                          style={{background: baseColor.hex, color: otherColor.hex}}
-                          data-tip=''
-                          data-for={`tooltip${key}${key2}`}
-                          data-multiline={true}
-                          data-class="text-left"
+                        <Tooltip
+                          destroyTooltipOnHide={true}
+                          placement="top"
+                          overlay={() => {
+                            return (
+                              <div>
+                                {Object.keys(combination.accessibility).map(color => {
+                                  return (
+                                    <div className={combination.accessibility[color] ? 'text-success' : 'text-danger'} key={color}>
+                                      {`${color}: ${combination.accessibility[color] ? '✔︎' : '✘'}`}
+                                    </div>
+                                )})}
+                                Contrast: {Math.round(combination.contrast * 10) / 10}:1
+                              </div>
+                            )
+                          }}
                         >
-                          Aa
-                        </span>
-                        <ReactTooltip
+                          <span
+                            className="tlbx-contrast-color-thumb"
+                            style={{background: baseColor.hex, color: otherColor.hex}}
+                            data-tip=''
+                            data-for={`tooltip${key}${key2}`}
+                            data-multiline={true}
+                            data-border={true}
+                            data-class="text-left"
+                          >
+                            Aa
+                          </span>
+                        </Tooltip>
+                        {/* <Tooltip
                           id={`tooltip${key}${key2}`}
                           getContent={() => {
                             return (
@@ -99,7 +121,7 @@ class Colors extends Component {
                               </div>
                             );
                           }}
-                        />
+                        /> */}
                       </td>
                     )
 
@@ -109,7 +131,7 @@ class Colors extends Component {
             })}
           </tbody>
         </table>
-        <div className="custom-controls-stacked" onChange={event => this.changeThreshold(event)}>
+        <div className="custom-controls-stacked" onChange={this.onChange}>
           <label className="custom-control custom-radio">
             <input id="radioStacked1" name="threshold" type="radio" className="custom-control-input" value="0"/>
             <span className="custom-control-indicator"></span>
