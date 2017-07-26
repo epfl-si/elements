@@ -7,6 +7,8 @@ import './App.css';
 
 import Sidebar from '../Sidebar/Sidebar';
 import Single from '../../views/Single/Single';
+import Colors from '../Colors/Colors';
+import Home from '../../views/Home/Home';
 
 class App extends Component {
   constructor() {
@@ -29,7 +31,13 @@ class App extends Component {
       const slug = val.split('/')[val.split('/').length - 1];
       const content = this.getMarkup(val, slug);
       const config = yaml.load(this.fixPath(`${val}/${slug}.yml`));
-      const variants = config && config.variants ? config.variants.map((variant) => this.getMarkup(val, `${slug}-${variant}`)) : null;
+      const variants = config && config.variants ? Object.keys(config.variants).map((key) => {
+        return {
+          slug: key,
+          title: config.variants[key],
+          twig: this.getMarkup(val, `${slug}-${key}`),
+        };
+      }) : null;
       const component = { config, content, slug, variants };
 
       if (val.includes('/atoms/')) acc.atoms.push(component);
@@ -40,6 +48,7 @@ class App extends Component {
     }, this.state.components);
 
     this.props.store.data = window.data;
+    this.props.store.colors = window.colors;
   }
 
   getMarkup(path, slug) {
@@ -66,11 +75,13 @@ class App extends Component {
   render() {
     return (
       <div className="styleguide">
-        <div className="toolbox-sidebar-wrapper">
+        <div className="tlbx-sidebar-wrapper">
           <Sidebar />
         </div>
-        <div className="toolbox-content-wrapper">
-          <Route path="/:type/:slug" extact component={Single} />
+        <div className="tlbx-content-wrapper">
+          <Route path="/" exact component={Home} />
+          <Route path="/:type/:slug" exact component={Single} />
+          <Route path="/colors" exact component={Colors} />
         </div>
       </div>
     );
