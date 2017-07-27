@@ -7,7 +7,7 @@ import './App.css';
 
 import Sidebar from '../Sidebar/Sidebar';
 import Single from '../../views/Single/Single';
-import Colors from '../Colors/Colors';
+import Colors from '../../views/Colors/Colors';
 import Home from '../../views/Home/Home';
 
 class App extends Component {

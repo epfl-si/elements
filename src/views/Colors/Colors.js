@@ -19,7 +19,7 @@ class Colors extends Component {
   }
 
   renderSwatches() {
-    const colors = this.props.store.colors;
+    const colors = window.colors;
     const contrast = colorable(colors);
 
     return (
@@ -39,7 +39,7 @@ class Colors extends Component {
   }
 
   renderA11yTable() {
-    const colors = this.props.store.colors;
+    const colors = window.colors;
     const contrast = colorable(colors, {compact: true, threshold: this.state.threshold});
 
     return (
