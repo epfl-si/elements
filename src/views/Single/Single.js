@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
-import Item from '../Item/Item';
+import Item from '../../components/Item/Item';
 
 import './Single.css';
 
