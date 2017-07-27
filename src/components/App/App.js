@@ -31,10 +31,10 @@ class App extends Component {
       const slug = val.split('/')[val.split('/').length - 1];
       const content = this.getMarkup(val, slug);
       const config = yaml.load(this.fixPath(`${val}/${slug}.yml`));
-      const variants = config && config.variants ? Object.keys(config.variants).map((key) => {
+      const variants = config && config.variants ? config.variants.map((key) => {
         return {
           slug: key,
-          title: config.variants[key],
+          title: key,
           twig: this.getMarkup(val, `${slug}-${key}`),
         };
       }) : null;

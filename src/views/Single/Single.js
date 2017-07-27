@@ -44,7 +44,7 @@ class Single extends Component {
       this.setState({ content: twig.render(this.props.store.data) });
     });
 
-    if (component.variants) {
+    if (component.variants && component.variants.length > 0) {
       component.variants.forEach((variant, key) => {
         variant.twig.then(twig => {
           this.setState({ variants: [
