@@ -25,9 +25,9 @@ class App extends Component {
 
   componentWillMount() {
     const baseUrl = window.location.href.replace(`#${this.props.location.pathname}`, '');
-    this.props.store.base_path = baseUrl;
+    this.props.store.addPath(baseUrl);
 
-    this.props.store.components = window.sources.reduce((acc, val) => {
+    const components = window.sources.reduce((acc, val) => {
       const slug = val.split('/')[val.split('/').length - 1];
       const content = this.getMarkup(val, slug);
       const config = yaml.load(this.fixPath(`${val}/${slug}.yml`));
@@ -47,8 +47,7 @@ class App extends Component {
       return acc;
     }, this.state.components);
 
-    this.props.store.data = window.data;
-    this.props.store.colors = window.colors;
+    this.props.store.addComponents(components);
   }
 
   getMarkup(path, slug) {

@@ -41,7 +41,7 @@ class Single extends Component {
     this.setState({ component, variants: [] });
 
     component.content.then(twig => {
-      this.setState({ content: twig.render(this.props.store.data) });
+      this.setState({ content: twig.render(window.data) });
     });
 
     if (component.variants && component.variants.length > 0) {
@@ -52,7 +52,7 @@ class Single extends Component {
             {
               title: variant.title,
               slug: variant.slug,
-              markup: twig.render(this.props.store.data)
+              markup: twig.render(window.data)
             }
           ]});
         });
