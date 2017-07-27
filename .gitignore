@@ -7,7 +7,7 @@
 /coverage
 
 # production
-# /public
+/public
 
 /build/components
 /build/index.html
