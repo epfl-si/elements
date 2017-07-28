@@ -6,6 +6,12 @@
 # testing
 /coverage
 
+# production
+/public
+
+/build/components
+/build/index.html
+
 # misc
 .DS_Store
 .env

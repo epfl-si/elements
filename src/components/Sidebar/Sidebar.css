@@ -1,3 +1,9 @@
-.tlbx-sidebar {
-  padding: 2em;
+.toolbox-sidebar {
+  height: 100vh;
+  padding: 0 2em;
+  border-right: 1px solid #333;
 }
+
+/* .tlbx-sidebar {
+  padding: 2em;
+} */
