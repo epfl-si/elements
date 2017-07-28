@@ -7,7 +7,7 @@ import './App.css';
 
 import Sidebar from '../Sidebar/Sidebar';
 import Single from '../../views/Single/Single';
-import Colors from '../Colors/Colors';
+import Colors from '../../views/Colors/Colors';
 import Home from '../../views/Home/Home';
 
 class App extends Component {
@@ -25,16 +25,16 @@ class App extends Component {
 
   componentWillMount() {
     const baseUrl = window.location.href.replace(`#${this.props.location.pathname}`, '');
-    this.props.store.base_path = baseUrl;
+    this.props.store.addPath(baseUrl);
 
-    this.props.store.components = window.sources.reduce((acc, val) => {
+    const components = window.sources.reduce((acc, val) => {
       const slug = val.split('/')[val.split('/').length - 1];
       const content = this.getMarkup(val, slug);
       const config = yaml.load(this.fixPath(`${val}/${slug}.yml`));
-      const variants = config && config.variants ? Object.keys(config.variants).map((key) => {
+      const variants = config && config.variants ? config.variants.map((key) => {
         return {
           slug: key,
-          title: config.variants[key],
+          title: key,
           twig: this.getMarkup(val, `${slug}-${key}`),
         };
       }) : null;
@@ -47,8 +47,7 @@ class App extends Component {
       return acc;
     }, this.state.components);
 
-    this.props.store.data = window.data;
-    this.props.store.colors = window.colors;
+    this.props.store.addComponents(components);
   }
 
   getMarkup(path, slug) {

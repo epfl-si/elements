@@ -1,12 +1,19 @@
-import { extendObservable } from 'mobx';
+import { extendObservable, action } from 'mobx';
 
 class Store {
   constructor() {
     extendObservable(this, {
         base_path: '',
         components: [],
-        data: {},
-    })
+    });
+
+    this.addPath = action((path) => {
+      this.base_path = path;
+    });
+
+    this.addComponents = action((components) => {
+      this.components = components;
+    });
   }
 }
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
-import Item from '../Item/Item';
+import Item from '../../components/Item/Item';
 
 import './Single.css';
 
@@ -41,10 +41,10 @@ class Single extends Component {
     this.setState({ component, variants: [] });
 
     component.content.then(twig => {
-      this.setState({ content: twig.render(this.props.store.data) });
+      this.setState({ content: twig.render(window.data) });
     });
 
-    if (component.variants) {
+    if (component.variants && component.variants.length > 0) {
       component.variants.forEach((variant, key) => {
         variant.twig.then(twig => {
           this.setState({ variants: [
@@ -52,7 +52,7 @@ class Single extends Component {
             {
               title: variant.title,
               slug: variant.slug,
-              markup: twig.render(this.props.store.data)
+              markup: twig.render(window.data)
             }
           ]});
         });
