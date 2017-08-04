@@ -36,7 +36,7 @@ class Single extends Component {
   getContent(props) {
     const params = props.match.params;
     const components = props.store.components[params.type];
-    const component = components.find(item => item.slug === params.slug);
+    const component = components.find(item => item.name === params.slug);
 
     this.setState({ component, variants: [] });
 
@@ -46,7 +46,7 @@ class Single extends Component {
 
     if (component.variants && component.variants.length > 0) {
       component.variants.forEach((variant, key) => {
-        variant.twig.then(twig => {
+        variant.content.then(twig => {
           this.setState({ variants: [
             ...this.state.variants,
             {
@@ -66,8 +66,8 @@ class Single extends Component {
         {this.state.variants.map((variant, key) => {
           return (
             <Item
-              wrapper={this.state.component.config.wrapper || ''}
-              background={this.state.component.config.background}
+              wrapper={this.state.component.wrapper || ''}
+              background={this.state.component.background}
               key={key}
               title={variant.title}
               slug={`tlbx-${this.state.component.slug}-${variant.slug}`}
@@ -81,14 +81,16 @@ class Single extends Component {
 
     return (
       <div>
-        <h1 className="tlbx-h1">{this.state.component.config.title}</h1>
-        <div className="tlbx-notes">
-          <ReactMarkdown source={this.state.component.config.notes} />
-        </div>
+        <h1 className="tlbx-h1">{this.state.component.title}</h1>
+        {this.state.component.notes && (
+          <div className="tlbx-notes">
+            <ReactMarkdown source={this.state.component.notes} />
+          </div>
+        )}
 
         <Item
-          wrapper={this.state.component.config.wrapper || ''}
-          background={this.state.component.config.background}
+          wrapper={this.state.component.wrapper || ''}
+          background={this.state.component.background}
           slug={`tlbx-${this.state.component.slug}`}
         >{this.state.content}</Item>
 

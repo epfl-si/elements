@@ -28,41 +28,29 @@ class Sidebar extends Component {
           </li>
         </ul>
 
-        <strong>Atoms</strong>
-        <ul>
-          {this.props.store.components.atoms.map((atom, key) => {
-            return (
-              <li key={key}>
-                <Link to={`/atoms/${atom.slug}`}>{atom.slug}</Link>
-              </li>
-            )
-          })}
-          {this.props.store.components.atoms.length === 0 && noComponents}
-        </ul>
+        {Object.keys(this.props.store.components).map((group, key) => {
+          if (group === 'docs') return;
 
-        <strong>Molecules</strong>
-        <ul>
-          {this.props.store.components.molecules.map((molecule, key) => {
-            return (
-              <li key={key}>
-                <Link to={`/molecules/${molecule.slug}`}>{molecule.slug}</Link>
-              </li>
-            )
-          })}
-          {this.props.store.components.molecules.length === 0 && noComponents}
-        </ul>
+          return (
+            <div key={key}>
+              <strong>{group}</strong>
+              <ul>
+                {this.props.store.components[group].map((component, key) => {
+                  const path = `/${group}/${component.name}`;
 
-        <strong>Organisms</strong>
-        <ul>
-          {this.props.store.components.organisms.map((organism, key) => {
-            return (
-              <li key={key}>
-                <Link to={`/organisms/${organism.slug}`}>{organism.slug}</Link>
-              </li>
-            )
-          })}
-          {this.props.store.components.organisms.length === 0 && noComponents}
-        </ul>
+                  return (
+                    <li key={key}>
+                      <Link to={path}>
+                        {component.title}
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          )
+        })}
+
       </div>
     );
   }
