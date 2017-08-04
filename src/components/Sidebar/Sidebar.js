@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import Ionicon from 'react-ionicons'
 
@@ -72,4 +72,4 @@ Sidebar.propTypes = {
   components: PropTypes.object,
 };
 
-export default inject('store')(observer(Sidebar));
+export default withRouter(inject('store')(observer(Sidebar)));
