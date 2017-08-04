@@ -106,22 +106,6 @@ class Colors extends Component {
                             Aa
                           </span>
                         </Tooltip>
-                        {/* <Tooltip
-                          id={`tooltip${key}${key2}`}
-                          getContent={() => {
-                            return (
-                              <div>
-                                {Object.keys(combination.accessibility).map(color => {
-                                  return (
-                                    <div className={combination.accessibility[color] ? 'text-success' : 'text-danger'} key={color}>
-                                      {`${color}: ${combination.accessibility[color] ? '✔︎' : '✘'}`}
-                                    </div>
-                                )})}
-                                Contrast: {Math.round(combination.contrast * 10) / 10}:1
-                              </div>
-                            );
-                          }}
-                        /> */}
                       </td>
                     )
 
