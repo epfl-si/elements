@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import Ionicon from 'react-ionicons'
 
@@ -21,10 +21,10 @@ class Sidebar extends Component {
       <div className="tlbx-sidebar">
         <ul>
           <li>
-            <Link to={'/'}>Home</Link>
+            <NavLink to={'/'}>Home</NavLink>
           </li>
           <li>
-            <Link to={'/colors'}>Colors</Link>
+            <NavLink to={'/colors'}>Colors</NavLink>
           </li>
         </ul>
 
@@ -40,9 +40,9 @@ class Sidebar extends Component {
 
                   return (
                     <li key={key}>
-                      <Link to={path}>
+                      <NavLink to={path}>
                         {component.title}
-                      </Link>
+                      </NavLink>
                     </li>
                   )
                 })}
