@@ -7,6 +7,7 @@ import './App.css';
 
 import Sidebar from '../Sidebar/Sidebar';
 import Single from '../../views/Single/Single';
+import Page from '../../views/Page/Page';
 import Colors from '../../views/Colors/Colors';
 import Home from '../../views/Home/Home';
 
@@ -19,6 +20,7 @@ class App extends Component {
         atoms: [],
         molecules: [],
         organisms: [],
+        pages: [],
       },
     };
   }
@@ -43,6 +45,7 @@ class App extends Component {
       if (val.includes('/atoms/')) acc.atoms.push(component);
       if (val.includes('/molecules/')) acc.molecules.push(component);
       if (val.includes('/organisms/')) acc.organisms.push(component);
+      if (val.includes('/pages/')) acc.pages.push(component);
 
       return acc;
     }, this.state.components);
@@ -59,6 +62,7 @@ class App extends Component {
           'atoms': this.fixPath('./components/atoms/'),
           'molecules': this.fixPath('./components/molecules/'),
           'organisms': this.fixPath('./components/organisms/'),
+          'pages': this.fixPath('./components/pages/'),
         },
         load: function(template) {
           resolve(template);
@@ -72,18 +76,24 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div className="styleguide">
-        <div className="tlbx-sidebar-wrapper">
-          <Sidebar />
+    const hasStyleguideShell = !this.props.location.pathname.includes('/pages/');
+
+    if (hasStyleguideShell) {
+      return (
+        <div className="styleguide">
+          <div className="tlbx-sidebar-wrapper">
+            <Sidebar />
+          </div>
+          <div className="tlbx-content-wrapper">
+            <Route path="/" exact component={Home} />
+            <Route path="/:type/:slug" exact component={Single} />
+            <Route path="/colors" exact component={Colors} />
+          </div>
         </div>
-        <div className="tlbx-content-wrapper">
-          <Route path="/" exact component={Home} />
-          <Route path="/:type/:slug" exact component={Single} />
-          <Route path="/colors" exact component={Colors} />
-        </div>
-      </div>
-    );
+      );
+    } else {
+      return (<Route path="/pages/:slug" exact component={Page} />);
+    }
   }
 }
 
