@@ -63,6 +63,18 @@ class Sidebar extends Component {
           })}
           {this.props.store.components.organisms.length === 0 && noComponents}
         </ul>
+
+        <strong>Pages</strong>
+        <ul>
+          {this.props.store.components.pages.map((page, key) => {
+            return (
+              <li key={key}>
+                <a href={`${this.props.store.base_path}#/pages/${page.slug}`} target="_blank">{page.slug}</a>
+              </li>
+            )
+          })}
+          {this.props.store.components.pages.length === 0 && noComponents}
+        </ul>
       </div>
     );
   }
