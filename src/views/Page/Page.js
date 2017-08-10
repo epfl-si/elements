@@ -26,7 +26,9 @@ class Page extends Component {
   }
 
   render() {
-    return (<h1>hello page truc</h1>);
+    return (
+      <div dangerouslySetInnerHTML={{ __html: this.state.content }} ></div>
+    );
   }
 }
 
