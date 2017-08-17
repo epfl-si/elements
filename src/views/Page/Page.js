@@ -5,10 +5,6 @@ import PropTypes from 'prop-types';
 import './Page.css';
 
 class Page extends Component {
-  constructor() {
-    super();
-  }
-
   componentWillMount() {
     this.getContent(this.props);
   }

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { NavLink } from 'react-router-dom'
 import PropTypes from 'prop-types';
-import Ionicon from 'react-ionicons'
 
 import './Sidebar.css';
 
@@ -29,7 +28,7 @@ class Sidebar extends Component {
         </ul>
 
         {Object.keys(this.props.store.components).map((group, key) => {
-          if (group === 'docs') return;
+          if (group === 'docs') return null;
 
           return (
             <div key={key}>
