@@ -15,7 +15,6 @@ class Sidebar extends Component {
         </small>
       </li>
     );
-
     return (
       <div className="tlbx-sidebar">
         <ul>
@@ -45,6 +44,7 @@ class Sidebar extends Component {
                     </li>
                   )
                 })}
+                {this.props.store.components[group].length === 0 && noComponents}
               </ul>
             </div>
           )
