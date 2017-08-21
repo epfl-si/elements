@@ -1,8 +1,8 @@
 @import '../../variables.scss';
 
-.tlbx-item-code {
-
-  margin: 2rem 0 0;
+.tlbx-item-preview {
+  padding: 1.5rem;
+  border: 2px solid $gray-lighter;
 }
 
 .tlbx-item-code pre {
