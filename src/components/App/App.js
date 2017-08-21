@@ -36,10 +36,13 @@ class App extends Component {
         const config = yaml.load(`${path}/${slug}.yml`);
         const content = this.getMarkup(path, slug);
         const variants = config && config.variants ? config.variants.map(key => {
-          const variantSlug = `${slug}-${key}`;
+          // Make sure we put the slug to lowercase, to avoid issues on
+          // Case Sensitive systems (GH Pages)
+          const variantSlug = (`${slug}-${key}`).toLowerCase();
+
           return {
             slug: variantSlug,
-            title: config.variants[key],
+            title: key,
             content: this.getMarkup(path, variantSlug),
           };
         }) : null;
