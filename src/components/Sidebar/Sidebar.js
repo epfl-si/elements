@@ -7,11 +7,6 @@ import SidebarItem from '../SidebarItem/SidebarItem';
 import './Sidebar.css';
 
 class Sidebar extends Component {
-
-  toggleComponentsList() {
-
-  }
-
   render() {
     return (
       <div className="tlbx-sidebar">
