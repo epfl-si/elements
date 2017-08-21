@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
+import PropTypes from 'prop-types';
 
 import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/dist/light';
 import xml from 'react-syntax-highlighter/dist/languages/xml';
@@ -18,7 +19,7 @@ class Item extends Component {
         {title}
         <div
           className={`tlbx-item-preview ${this.props.wrapper} ${this.props.slug}`}
-          style={{background: this.props.background}}
+          style={this.props.background ? {backgroundColor: this.props.background} : {}}
           dangerouslySetInnerHTML={{ __html: this.props.children }}
         />
         <div className="tlbx-item-code">
@@ -27,7 +28,14 @@ class Item extends Component {
             style={atomOneDark}
             wrapLines={true}
             showLineNumbers={true}
-            lineNumberContainerStyle={{padding: '0.5em 0.5em 1em 0.5em', float: 'left', margin: '-0.5em 0 -0.5em -0.5em', textAlign: 'right', backgroundColor: 'rgba(255,255,255,0.1)', marginRight: '0.5em'}}
+            lineNumberContainerStyle={{
+              padding: '0.5em 0.5em 1em 0.5em',
+              float: 'left',
+              margin: '-0.5em 0 -0.5em -0.5em',
+              textAlign: 'right',
+              backgroundColor: 'rgba(255,255,255,0.1)',
+              marginRight: '0.5em'
+            }}
           >
             {this.props.children}
           </SyntaxHighlighter>
@@ -35,6 +43,14 @@ class Item extends Component {
       </div>
     );
   }
+}
+
+Item.PropTypes = {
+  title: PropTypes.string,
+  wrapper: PropTypes.string,
+  slug: PropTypes.string,
+  background: PropTypes.string,
+  children: PropTypes.string.isRequired,
 }
 
 export default inject('store')(observer(Item));
