@@ -35,7 +35,7 @@ class SidebarItem extends Component {
   render() {
     const noComponents = (
       <li>
-        <small>
+        <small className="tlbx-sidebar-item-list-empty">
           <span className="text-muted">No components yet.</span><br />
           Run <code>$ yo toolbox:generate</code>
         </small>
