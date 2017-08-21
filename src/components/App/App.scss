@@ -1,5 +1,7 @@
+@import '../../variables.scss';
+
 .tlbx-body {
-  background: #f0f0f0;
+  background: $body-bg;
 }
 
 .tlbx-h2 { text-align: center; }
@@ -10,9 +12,15 @@
   min-height: 100vh;
 }
 
+.tlbx-toolbar-wrapper {
+  grid-column: 1;
+  background-color: $color-primary;
+  color: white;
+}
+
 .tlbx-sidebar-wrapper {
   grid-column: 2;
-  background-color: #F0F0F2;
+  background-color: $gray-lighter;
 }
 
 .tlbx-content-wrapper {

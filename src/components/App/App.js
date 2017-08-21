@@ -88,6 +88,9 @@ class App extends Component {
     if (hasStyleguideShell) {
       return (
         <div className="styleguide">
+          <div className="tlbx-toolbar-wrapper">
+            Tools
+          </div>
           <div className="tlbx-sidebar-wrapper">
             <Sidebar />
           </div>

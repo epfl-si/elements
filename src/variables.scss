@@ -1,5 +1,14 @@
 
-// Type and link variables
-$body-color: #000;
-$link-color: #3474A8;
-$link-hover-color: #012F4D;
+// Colors
+$black: #010A15;
+$white: #f0f0f0;
+$color-primary: #003baf;
+$color-secondary-light: #3474a8;
+$color-secondary-dark: #012f4d;
+$gray-lighter: #f0f0f0;
+
+
+$body-color: $black;
+$body-bg: $white;
+$link-color: $color-secondary-light;
+$link-hover-color: $color-secondary-dark;
