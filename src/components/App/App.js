@@ -35,7 +35,7 @@ class App extends Component {
         const path = `components/${group}/${slug}/`;
         const config = yaml.load(`${path}/${slug}.yml`);
         const content = this.getMarkup(path, slug);
-        const variants = config && config.variants ? Object.keys(config.variants).map(key => {
+        const variants = config && config.variants ? config.variants.map(key => {
           const variantSlug = `${slug}-${key}`;
           return {
             slug: variantSlug,

@@ -72,7 +72,7 @@ class Single extends Component {
               title={variant.title}
               slug={`tlbx-${this.state.component.slug}-${variant.slug}`}
             >
-                {variant.markup}
+              {variant.markup}
             </Item>
           );
         })}
@@ -92,7 +92,9 @@ class Single extends Component {
           wrapper={this.state.component.wrapper || ''}
           background={this.state.component.background}
           slug={`tlbx-${this.state.component.slug}`}
-        >{this.state.content}</Item>
+        >
+          {this.state.content}
+        </Item>
 
         {variants}
       </div>
