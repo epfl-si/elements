@@ -22,6 +22,7 @@ class App extends Component {
         organisms: [],
         pages: [],
       },
+      docs: {},
     };
   }
 
@@ -29,25 +30,31 @@ class App extends Component {
     const baseUrl = window.location.href.replace(`#${this.props.location.pathname}`, '');
     this.props.store.addPath(baseUrl);
 
-    const components = window.sources.reduce((acc, val) => {
-      const slug = val.split('/')[val.split('/').length - 1];
-      const content = this.getMarkup(val, slug);
-      const config = yaml.load(this.fixPath(`${val}/${slug}.yml`));
-      const variants = config && config.variants ? config.variants.map((key) => {
+    const components = Object.keys(window.sources).reduce((acc, group) => {
+      const componentArray = window.sources[group].map(slug => {
+        const path = `components/${group}/${slug}/`;
+        const config = yaml.load(`${path}/${slug}.yml`);
+        const content = this.getMarkup(path, slug);
+        const variants = config && config.variants ? Object.keys(config.variants).map(key => {
+          const variantSlug = `${slug}-${key}`;
+          return {
+            slug: variantSlug,
+            title: config.variants[key],
+            content: this.getMarkup(path, variantSlug),
+          };
+        }) : null;
+
         return {
-          slug: key,
-          title: key,
-          twig: this.getMarkup(val, `${slug}-${key}`),
+          ...config,
+          content,
+          variants
         };
-      }) : null;
-      const component = { config, content, slug, variants };
+      });
 
-      if (val.includes('/atoms/')) acc.atoms.push(component);
-      if (val.includes('/molecules/')) acc.molecules.push(component);
-      if (val.includes('/organisms/')) acc.organisms.push(component);
-      if (val.includes('/pages/')) acc.pages.push(component);
-
-      return acc;
+      return {
+        ...acc,
+        [group]: componentArray
+      }
     }, this.state.components);
 
     this.props.store.addComponents(components);

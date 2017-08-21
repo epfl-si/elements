@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import PropTypes from 'prop-types';
-import Ionicon from 'react-ionicons'
 
 import './Sidebar.css';
 
@@ -16,65 +15,41 @@ class Sidebar extends Component {
         </small>
       </li>
     );
-
     return (
       <div className="tlbx-sidebar">
         <ul>
           <li>
-            <Link to={'/'}>Home</Link>
+            <NavLink to={'/'}>Home</NavLink>
           </li>
           <li>
-            <Link to={'/colors'}>Colors</Link>
+            <NavLink to={'/colors'}>Colors</NavLink>
           </li>
         </ul>
 
-        <strong>Atoms</strong>
-        <ul>
-          {this.props.store.components.atoms.map((atom, key) => {
-            return (
-              <li key={key}>
-                <Link to={`/atoms/${atom.slug}`}>{atom.slug}</Link>
-              </li>
-            )
-          })}
-          {this.props.store.components.atoms.length === 0 && noComponents}
-        </ul>
+        {Object.keys(this.props.store.components).map((group, key) => {
+          if (group === 'docs') return null;
 
-        <strong>Molecules</strong>
-        <ul>
-          {this.props.store.components.molecules.map((molecule, key) => {
-            return (
-              <li key={key}>
-                <Link to={`/molecules/${molecule.slug}`}>{molecule.slug}</Link>
-              </li>
-            )
-          })}
-          {this.props.store.components.molecules.length === 0 && noComponents}
-        </ul>
+          return (
+            <div key={key}>
+              <strong>{group}</strong>
+              <ul>
+                {this.props.store.components[group].map((component, key) => {
+                  const path = `/${group}/${component.name}`;
 
-        <strong>Organisms</strong>
-        <ul>
-          {this.props.store.components.organisms.map((organism, key) => {
-            return (
-              <li key={key}>
-                <Link to={`/organisms/${organism.slug}`}>{organism.slug}</Link>
-              </li>
-            )
-          })}
-          {this.props.store.components.organisms.length === 0 && noComponents}
-        </ul>
+                  return (
+                    <li key={key}>
+                      <NavLink to={path}>
+                        {component.title}
+                      </NavLink>
+                    </li>
+                  )
+                })}
+                {this.props.store.components[group].length === 0 && noComponents}
+              </ul>
+            </div>
+          )
+        })}
 
-        <strong>Pages</strong>
-        <ul>
-          {this.props.store.components.pages.map((page, key) => {
-            return (
-              <li key={key}>
-                <a href={`${this.props.store.base_path}#/pages/${page.slug}`} target="_blank">{page.slug}</a>
-              </li>
-            )
-          })}
-          {this.props.store.components.pages.length === 0 && noComponents}
-        </ul>
       </div>
     );
   }
