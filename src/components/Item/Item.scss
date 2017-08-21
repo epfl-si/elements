@@ -1,6 +1,7 @@
 @import '../../variables.scss';
 
 .tlbx-item-preview {
+  position: relative;
   padding: 1.5rem;
   border: 2px solid $gray-lighter;
 }
@@ -15,5 +16,28 @@
     > span:last-of-type {
       display: none;
     }
+  }
+}
+
+.tlbx-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -0.8rem;
+}
+
+.tlbx-actions-link {
+  position: relative;
+  z-index: 1;
+  padding: 0 0.5em;
+  border: 1px solid $link-color;
+  background-color: #fff;
+  border-radius: 3px;
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $link-hover-color;
+    border-color: $link-hover-color;
+    text-decoration: none;
   }
 }

@@ -38,7 +38,7 @@ class SingleFull extends Component {
     const params = props.match.params;
     const components = props.store.components[params.type];
     const component = components.find(item => item.name === params.slug);
-    const url = `/${params.type}/${params.slug}`
+    const url = `/${params.type}/${params.slug}`;
 
     this.setState({ component, url, variants: [] });
 
