@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 
 import SidebarItem from '../SidebarItem/SidebarItem';
 
@@ -15,9 +15,11 @@ class Sidebar extends Component {
   render() {
     return (
       <div className="tlbx-sidebar">
-        <ul>
+        <h1 className="tlbx-sidebar-title">Toolbox <span>Design System</span></h1>
+
+        <ul className="tlbx-sidebar-item-list">
           <li>
-            <NavLink to={'/'}>Home</NavLink>
+            <NavLink to={'/'} exact>Home</NavLink>
           </li>
           <li>
             <NavLink to={'/colors'}>Colors</NavLink>
@@ -34,4 +36,4 @@ class Sidebar extends Component {
   }
 }
 
-export default inject('store')(observer(Sidebar));
+export default withRouter(inject('store')(observer(Sidebar)));
