@@ -1,9 +1,6 @@
-.tlbx-sidebar {
-  padding: 1em 0.5em;
-}
+@import '../../variables.scss';
 
-.tlbx-sidebar-item {
-  border: 0;
-  background: none;
+.tlbx-sidebar {
+  padding: 1em 0;
 }
 

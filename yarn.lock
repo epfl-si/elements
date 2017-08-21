@@ -5443,6 +5443,10 @@ react-clipboard.js@^1.1.2:
     clipboard "^1.6.1"
     prop-types "^15.5.0"
 
+react-css-collapse@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/react-css-collapse/-/react-css-collapse-3.0.2.tgz#26958b0545dfdc62d49701e51ff1f931ee199950"
+
 react-dev-utils@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-3.0.2.tgz#1a42263e9b6aa11dcb45d69dfe5eb1b354bd5531"

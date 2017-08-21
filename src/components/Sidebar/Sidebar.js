@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { NavLink, withRouter } from 'react-router-dom'
-import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom'
+
+import SidebarItem from '../SidebarItem/SidebarItem';
 
 import './Sidebar.css';
 
 class Sidebar extends Component {
+
+  toggleComponentsList() {
+
+  }
+
   render() {
-    const noComponents = (
-      <li>
-        <small>
-          <span className="text-muted">No components yet.</span><br />
-          Run <code>$ yo toolbox:generate</code>
-        </small>
-      </li>
-    );
     return (
       <div className="tlbx-sidebar">
         <ul>
@@ -29,33 +27,11 @@ class Sidebar extends Component {
         {Object.keys(this.props.store.components).map((group, key) => {
           if (group === 'docs') return null;
 
-          return (
-            <div key={key}>
-              <strong>{group}</strong>
-              <ul>
-                {this.props.store.components[group].map((component, key) => {
-                  const path = `/${group}/${component.name}`;
-
-                  return (
-                    <li key={key}>
-                      <NavLink to={path}>
-                        {component.title}
-                      </NavLink>
-                    </li>
-                  )
-                })}
-                {this.props.store.components[group].length === 0 && noComponents}
-              </ul>
-            </div>
-          )
+          return <SidebarItem key={key} group={group} />
         })}
       </div>
     );
   }
 }
 
-Sidebar.propTypes = {
-  components: PropTypes.object,
-};
-
-export default withRouter(inject('store')(observer(Sidebar)));
+export default inject('store')(observer(Sidebar));
