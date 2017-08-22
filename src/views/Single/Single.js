@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { toJS } from 'mobx';
 import { inject, observer } from 'mobx-react';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
@@ -36,7 +37,7 @@ class Single extends Component {
   getContent(props) {
     const params = props.match.params;
     const components = props.store.components[params.type];
-    const component = components.find(item => item.name === params.slug);
+    const component = toJS(components).find(item => item.slug === params.slug);
 
     this.setState({ component, variants: [] });
 
