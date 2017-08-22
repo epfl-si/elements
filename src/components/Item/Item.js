@@ -22,7 +22,7 @@ class Item extends Component {
           style={this.props.background ? {backgroundColor: this.props.background} : {}}
           dangerouslySetInnerHTML={{ __html: this.props.children }}
         />
-        <div className="tlbx-item-code">
+        <div className={`tlbx-item-code${this.props.store.showAllCode ? ' tlbx-hidden' : ''}`}>
           <SyntaxHighlighter
             language='html'
             style={atomOneDark}
