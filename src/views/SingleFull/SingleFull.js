@@ -3,6 +3,7 @@ import { inject, observer } from 'mobx-react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Item from '../../components/Item/Item';
+import { toJS } from 'mobx';
 
 import './SingleFull.css';
 
@@ -37,7 +38,7 @@ class SingleFull extends Component {
   getContent(props) {
     const params = props.match.params;
     const components = props.store.components[params.type];
-    const component = components.find(item => item.name === params.slug);
+    const component = toJS(components).find(item => item.name === params.slug);
     const url = `/${params.type}/${params.slug}`;
 
     this.setState({ component, url, variants: [] });
