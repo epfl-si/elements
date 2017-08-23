@@ -50,6 +50,7 @@ class App extends Component {
 
         return {
           ...config,
+          slug,
           content,
           variants
         };

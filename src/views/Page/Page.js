@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { toJS } from 'mobx';
 import { inject, observer } from 'mobx-react';
 import PropTypes from 'prop-types';
 
@@ -12,7 +13,7 @@ class Page extends Component {
   getContent(props) {
     const params = props.match.params;
     const components = props.store.components.pages;
-    const component = components.find(item => item.slug === params.slug);
+    const component = toJS(components).find(item => item.slug === params.slug);
 
     this.setState({ component, variants: [] });
 
