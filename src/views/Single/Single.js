@@ -72,6 +72,7 @@ class Single extends Component {
               key={key}
               title={variant.title}
               slug={`tlbx-${this.state.component.slug}-${variant.slug}`}
+              fullUrl={`/${this.props.match.params.type}/${this.props.match.params.slug}/${variant.slug}/full`}
             >
               {variant.markup}
             </Item>
@@ -93,6 +94,7 @@ class Single extends Component {
           wrapper={this.state.component.wrapper || ''}
           background={this.state.component.background}
           slug={`tlbx-${this.state.component.slug}`}
+          fullUrl={`/${this.props.match.params.type}/${this.props.match.params.slug}/full`}
         >
           {this.state.content}
         </Item>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/dist/light';
 import xml from 'react-syntax-highlighter/dist/languages/xml';
@@ -17,6 +18,9 @@ class Item extends Component {
     return (
       <div className="tlbx-item">
         {title}
+        <div className="tlbx-actions">
+          <Link className="tlbx-actions-link" to={this.props.fullUrl}>View full render</Link>
+        </div>
         <div
           className={`tlbx-item-preview ${this.props.wrapper} ${this.props.slug}`}
           style={this.props.background ? {backgroundColor: this.props.background} : {}}
@@ -47,6 +51,7 @@ class Item extends Component {
 
 Item.PropTypes = {
   title: PropTypes.string,
+  fullUrl: PropTypes.string.isRequired,
   wrapper: PropTypes.string,
   slug: PropTypes.string,
   background: PropTypes.string,

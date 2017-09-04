@@ -8,6 +8,7 @@ import './App.css';
 import Sidebar from '../Sidebar/Sidebar';
 import Toolbar from '../Toolbar/Toolbar';
 import Single from '../../views/Single/Single';
+import SingleFull from '../../views/SingleFull/SingleFull';
 import Page from '../../views/Page/Page';
 import Colors from '../../views/Colors/Colors';
 import Home from '../../views/Home/Home';
@@ -88,7 +89,8 @@ class App extends Component {
   }
 
   render() {
-    const hasStyleguideShell = !this.props.location.pathname.includes('/pages/');
+    // Remove styleguide shell from pages and full render of components
+    const hasStyleguideShell = !this.props.location.pathname.includes('/pages/') && !this.props.location.pathname.match(/\/full\/?$/);
 
     if (hasStyleguideShell) {
       return (
@@ -107,7 +109,12 @@ class App extends Component {
         </div>
       );
     } else {
-      return (<Route path="/pages/:slug" exact component={Page} />);
+      return (
+        <div>
+          <Route path="/pages/:slug" exact component={Page} />
+          <Route path="/:type/:slug/:variant?/full" exact component={SingleFull} />
+        </div>
+      );
     }
   }
 }
