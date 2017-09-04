@@ -1,0 +1,32 @@
+.tlbx-toolbar-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.tlbx-toolbar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: none;
+  color: #fff;
+  font-weight: 900;
+  background: rgba(#000, 0.2);
+  opacity: 1;
+
+  &:hover {
+    background: rgba(#000, 0.4);
+  }
+
+  pre {
+    color: currentColor;
+    margin: 0;
+  }
+
+  &.tlbx-active {
+    opacity: 0.5;
+  }
+}

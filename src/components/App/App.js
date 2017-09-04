@@ -6,6 +6,7 @@ import { inject, observer } from 'mobx-react';
 import './App.css';
 
 import Sidebar from '../Sidebar/Sidebar';
+import Toolbar from '../Toolbar/Toolbar';
 import Single from '../../views/Single/Single';
 import SingleFull from '../../views/SingleFull/SingleFull';
 import Page from '../../views/Page/Page';
@@ -95,7 +96,7 @@ class App extends Component {
       return (
         <div className="styleguide">
           <div className="tlbx-toolbar-wrapper">
-            Tools
+            <Toolbar />
           </div>
           <div className="tlbx-sidebar-wrapper">
             <Sidebar />

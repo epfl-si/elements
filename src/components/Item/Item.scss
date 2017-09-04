@@ -7,7 +7,7 @@
 }
 
 .tlbx-item-code {
-  margin-bottom: 2rem;
+  margin: 2rem 0 0;
 
   pre {
     padding: 0.6rem;
@@ -45,4 +45,8 @@
     border-color: $link-hover-color;
     text-decoration: none;
   }
+}
+
+.tlbx-hidden {
+  display: none;
 }
