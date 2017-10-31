@@ -1,52 +1,87 @@
 @import '../../variables.scss';
 
-.tlbx-item-preview {
-  position: relative;
-  padding: 1.5rem;
-  border: 2px solid $gray-lighter;
-}
+.tlbx-table {
+  width: 100%;
+  border-collapse: collapse;
 
-.tlbx-item-code {
-  margin: 2rem 0 0;
+  td,
+  th {
+    border-top: 1px solid $alto;
+    padding: 0.75em;
+  }
 
-  pre {
-    padding: 0.6rem;
-    box-shadow: inset 0 0 0 2px rgba(255,255,255,0.4);
-    max-height: 30vh;
+  thead th { border-bottom: 4px solid $alto; }
 
-    // Code sample
-    code:last-child {
-      // Hide last empty line (:empty not working, because React)
-      > span:last-of-type {
-        display: none;
-      }
-    }
+  th,
+  td:not([scope]) {
+    text-align: center;
+    vertical-align:middle;
   }
 }
 
-.tlbx-actions {
+.tlbx-contrast-color {
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: -0.8rem;
+  align-items: center;
+  text-align: left;
 }
 
-.tlbx-actions-link {
+.tlbx-contrast-color .tlbx-contrast-color-thumb {
+  margin-right: 10px;
+}
+
+.tlbx-contrast-color-thumb,
+.tlbx-contrast-none {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+}
+
+.tlbx-contrast-color-thumb {
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.tlbx-contrast-none {
   position: relative;
-  z-index: 1;
-  padding: 0 0.5em;
-  border: 1px solid $link-color;
-  background-color: #fff;
-  border-radius: 3px;
-  color: $link-color;
-  text-decoration: none;
-
-  &:hover {
-    color: $link-hover-color;
-    border-color: $link-hover-color;
-    text-decoration: none;
-  }
+  background-color: #eee;
+  overflow: hidden;
 }
 
-.tlbx-hidden {
-  display: none;
+.tlbx-contrast-none::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1px;
+  bottom: 1px;
+  width: 200%;
+  border-width: 40px;
+  border-style: solid;
+  border-color: transparent white;
+}
+
+.tlbx-contrast-text {
+  display: inline-block;
+  width: 100%;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.tlbx-color-swatch-color .btn {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.tlbx-color-swatch-color:hover .btn {
+  opacity: 1;
+}
+
+.tblx-muted { opacity: 0.5; }
+
+.custom-controls-stacked {
+  padding: 1em 0;
+  line-height: 2em;
+  label { display: block; }
 }

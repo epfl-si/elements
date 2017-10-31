@@ -14,14 +14,14 @@ class ColorTable extends Component {
       colors: window.colors,
     }
 
-    this.state.colorable = colorable(this.state.colors, {threshold: this.state.threshold});
+    this.state.colorable = colorable(this.state.colors, {compact: true, threshold: this.state.threshold});
 
     this.onChange = this.onChange.bind(this);
   }
 
   onChange(e) {
     this.setState({threshold: e.target.value});
-    this.setState({colorable: colorable(this.state.colors, {threshold: e.target.value})});
+    this.setState({colorable: colorable(this.state.colors, {compact: true, threshold: e.target.value})});
   }
 
   renderA11yTable() {
@@ -46,7 +46,7 @@ class ColorTable extends Component {
                   <th scope="row" className="text-left">
                     <div className="tlbx-contrast-color">
                       <span className="tlbx-contrast-color-thumb" style={{background: baseColor.hex}}></span>
-                      <span>{baseColor.name} background<br /><small className="text-muted">{baseColor.hex}</small></span>
+                      <span>{baseColor.name} background<br /><small className="tblx-muted">{baseColor.hex}</small></span>
                     </div>
                   </th>
                   {Object.keys(contrast).map(key2 => {
@@ -105,22 +105,22 @@ class ColorTable extends Component {
             <input id="radioStacked1" name="threshold" type="radio" className="custom-control-input" value="0"/>
             <span className="custom-control-indicator"></span>
             <span className="custom-control-description"><strong>any</strong> - any contrast</span>
-          </label><br /><br />
+          </label>
           <label className="custom-control custom-radio">
             <input id="radioStacked1" name="threshold" type="radio" className="custom-control-input" value="4.5"/>
             <span className="custom-control-indicator"></span>
             <span className="custom-control-description"><strong>aa</strong> - contrast greater than 4.5 (for normal sized text)</span>
-          </label><br /><br />
+          </label>
           <label className="custom-control custom-radio">
             <input defaultChecked id="radioStacked2" name="threshold" type="radio" className="custom-control-input" value="3"/>
             <span className="custom-control-indicator"></span>
             <span className="custom-control-description"><strong>aaLarge</strong> - contrast greater than 3 (for bold text or text larger than 24px)</span>
-          </label><br /><br />
+          </label>
           <label className="custom-control custom-radio">
             <input id="radioStacked2" name="threshold" type="radio" className="custom-control-input" value="7"/>
             <span className="custom-control-indicator"></span>
             <span className="custom-control-description"><strong>aaa</strong> - contrast greater than 7</span>
-          </label><br /><br />
+          </label>
           <label className="custom-control custom-radio">
             <input id="radioStacked2" name="threshold" type="radio" className="custom-control-input" value="4.5"/>
             <span className="custom-control-indicator"></span>
