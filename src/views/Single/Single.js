@@ -42,18 +42,20 @@ class Single extends Component {
     this.setState({ component, variants: [] });
 
     component.content.then(twig => {
-      this.setState({ content: twig.render(window.data) });
+      const data = twig.render(window.data) || '';
+      this.setState({ content: data});
     });
 
     if (component.variants && component.variants.length > 0) {
       component.variants.forEach((variant, key) => {
         variant.content.then(twig => {
+          const data = twig.render(window.data) || '';
           this.setState({ variants: [
             ...this.state.variants,
             {
               title: variant.title,
               slug: variant.slug,
-              markup: twig.render(window.data)
+              markup: data
             }
           ]});
         });
