@@ -6,7 +6,6 @@ const base = {
   white: "#fff",
   primary: "#003baf",
   secondary: "#3474a8",
-  secondaryDark: "#012f4d",
   grayLighter: "#f2f2f4",
   alto: "#d8d8d8",
 };
