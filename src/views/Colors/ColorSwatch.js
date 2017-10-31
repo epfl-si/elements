@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { inject, observer } from 'mobx-react';
 import ClipboardButton from 'react-clipboard.js';
 
 class ColorSwatch extends Component {
@@ -11,6 +10,7 @@ class ColorSwatch extends Component {
     this.state = {
       copied: false
     }
+
   }
 
   onCopySuccess() {
@@ -48,4 +48,4 @@ class ColorSwatch extends Component {
   }
 }
 
-export default inject('store')(observer(ColorSwatch));
+export default ColorSwatch;

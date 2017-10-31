@@ -1,0 +1,52 @@
+@import '../../variables.scss';
+
+.tlbx-item-preview {
+  position: relative;
+  padding: 1.5rem;
+  border: 2px solid $gray-lighter;
+}
+
+.tlbx-item-code {
+  margin: 2rem 0 0;
+
+  pre {
+    padding: 0.6rem;
+    box-shadow: inset 0 0 0 2px rgba(255,255,255,0.4);
+    max-height: 30vh;
+
+    // Code sample
+    code:last-child {
+      // Hide last empty line (:empty not working, because React)
+      > span:last-of-type {
+        display: none;
+      }
+    }
+  }
+}
+
+.tlbx-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -0.8rem;
+}
+
+.tlbx-actions-link {
+  position: relative;
+  z-index: 1;
+  padding: 0 0.5em;
+  border: 1px solid $link-color;
+  background-color: #fff;
+  border-radius: 3px;
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $link-hover-color;
+    border-color: $link-hover-color;
+    text-decoration: none;
+  }
+}
+
+.tlbx-hidden {
+  display: none;
+}
