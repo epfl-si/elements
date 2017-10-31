@@ -79,7 +79,7 @@ class SingleFull extends Component {
 
         <div
           style={this.state.component.background ? { backgroundColor: this.state.component.background } : {}}
-          className={`tlbx-item-preview ${this.state.component.wrapper} ${this.state.component.slug}`}
+          className={`tlbx-item-preview tlbx-${this.state.component.slug}`}
           dangerouslySetInnerHTML={{ __html: this.state.content }}
         ></div>
       </div>
