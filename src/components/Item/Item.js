@@ -40,12 +40,16 @@ class Item extends Component {
             wrapLines={true}
             showLineNumbers={true}
             lineNumberContainerStyle={{
-              padding: '0.5em 0.5em 1em 0.5em',
               float: 'left',
-              margin: '-0.5em 0 -0.5em -0.5em',
               textAlign: 'right',
-              backgroundColor: 'rgba(255,255,255,0.1)',
-              marginRight: '0.5em'
+              marginRight: '10px',
+              opacity: '0.5'
+            }}
+            customStyle={{
+              padding: '1.3em 1em',
+              fontSize: '16px',
+              lineHeight: '1.4em',
+              fontFamily: '"Arial", "Lucida Console", Monaco, monospace',
             }}
           >
             {this.props.children}
