@@ -10,7 +10,13 @@ class Sidebar extends Component {
   render() {
     return (
       <div className="tlbx-sidebar">
-        <h1 className="tlbx-sidebar-title">Toolbox <span>Design System</span></h1>
+        {
+          window.theme.title
+          ?
+            <h1 className="tlbx-sidebar-title" dangerouslySetInnerHTML={{__html: window.theme.title }}/>
+          :
+            <h1 className="tlbx-sidebar-title">Toolbox <span>Design System</span></h1>
+        }
         <h3 className="tlbx-sidebar-version">Version {window.version}</h3>
 
         <ul className="tlbx-sidebar-item-list">
