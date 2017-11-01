@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 
+import Icon from '../Icon/Icon';
+
 import './Toolbar.css';
 
 class Toolbar extends Component {
@@ -16,9 +18,15 @@ class Toolbar extends Component {
 
   render() {
     return (
-      <button className={`tlbx-toolbar-btn${this.props.store.showAllCode ? ' tlbx-active' : ''}`} onClick={() => this.toggleAllCode()}>
-        <pre><code>&lt;/&gt;</code></pre>
-      </button>
+      <div>
+        <button className="tlbx-toolbar-btn" onClick={() => alert('Toolbox is amazing !')}>
+          <Icon name="icon-toolbox" />
+        </button>
+
+        <button className={`tlbx-toolbar-btn${this.props.store.showAllCode ? ' tlbx-active' : ''}`} onClick={() => this.toggleAllCode()}>
+          <Icon name="icon-code" />
+        </button>
+      </div>
     );
   }
 }

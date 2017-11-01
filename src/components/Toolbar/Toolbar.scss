@@ -14,19 +14,16 @@
   background: none;
   color: #fff;
   font-weight: 900;
-  background: rgba(#000, 0.2);
+  font-size: 1.4em;
   opacity: 1;
 
-  &:hover {
-    background: rgba(#000, 0.4);
+  &:hover { cursor: pointer; }
+
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: none;
   }
 
-  pre {
-    color: currentColor;
-    margin: 0;
-  }
-
-  &.tlbx-active {
-    opacity: 0.5;
-  }
+  &.tlbx-active { opacity: 0.5; }
 }

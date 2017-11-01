@@ -18,6 +18,7 @@ export const Theme = styled.div`
     color: ${config.headingForeground || base.black};
   }
 
+  .tlbx-toolbar-btn { color: ${config.toolbarIcons || base.white}; }
   .tlbx-toolbar-wrapper { background: ${config.primary || base.primary}; }
   .tlbx-sidebar-item-list a.active,
   .tlbx-sidebar-item-list a:hover {
