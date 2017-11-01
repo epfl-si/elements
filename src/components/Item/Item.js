@@ -49,7 +49,6 @@ class Item extends Component {
               padding: '1.3em 1em',
               fontSize: '16px',
               lineHeight: '1.4em',
-              fontFamily: '"Arial", "Lucida Console", Monaco, monospace',
             }}
           >
             {this.props.children}

@@ -3,9 +3,9 @@ import { extendObservable, action } from 'mobx';
 class Store {
   constructor() {
     extendObservable(this, {
-        base_path: '',
-        components: [],
-        showAllCode: true,
+      base_path: '',
+      components: [],
+      showAllCode: true,
     });
 
     this.addPath = action((path) => {
