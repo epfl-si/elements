@@ -12,6 +12,12 @@ import './Item.css';
 registerLanguage('html', xml);
 
 class Item extends Component {
+
+  handleItemClick(e) {
+    // Disable all inner links
+    e.preventDefault();
+  }
+
   render() {
     const title = this.props.title && <h3 className="tlbx-item-title">{this.props.title}</h3>;
 
@@ -25,6 +31,7 @@ class Item extends Component {
           className={`tlbx-item-preview ${this.props.wrapper} ${this.props.slug}`}
           style={this.props.background ? {backgroundColor: this.props.background} : {}}
           dangerouslySetInnerHTML={{ __html: this.props.children }}
+          onClick={this.handleItemClick.bind(this)}
         />
         <div className={`tlbx-item-code${this.props.store.showAllCode ? ' tlbx-hidden' : ''}`}>
           <SyntaxHighlighter
