@@ -11,6 +11,7 @@ class Sidebar extends Component {
     return (
       <div className="tlbx-sidebar">
         <h1 className="tlbx-sidebar-title">Toolbox <span>Design System</span></h1>
+        <h3 className="tlbx-sidebar-version">Version {window.version}</h3>
 
         <ul className="tlbx-sidebar-item-list">
           <li>
