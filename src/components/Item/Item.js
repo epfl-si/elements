@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import ClipboardButton from 'react-clipboard.js';
 
 import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/dist/light';
 import xml from 'react-syntax-highlighter/dist/languages/xml';
@@ -12,6 +13,21 @@ import './Item.css';
 registerLanguage('html', xml);
 
 class Item extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      copied: false
+    }
+  }
+
+  onCopySuccess() {
+    this.setState({ copied: true });
+
+    setTimeout(() => {
+      this.setState({ copied: false });
+    }, 1000);
+  }
 
   handleItemClick(e) {
     // Disable all inner links
@@ -26,6 +42,13 @@ class Item extends Component {
         {title}
         <div className="tlbx-actions">
           <Link className="tlbx-actions-link" to={this.props.fullUrl}>View full render</Link>
+          <ClipboardButton
+            data-clipboard-text={this.props.children}
+            className="tlbx-actions-link"
+            onSuccess={this.onCopySuccess.bind(this)}
+          >
+            {this.state.copied ? 'Copied!' : 'Copy'}
+          </ClipboardButton>
         </div>
         <div
           className={`tlbx-item-preview ${this.props.wrapper} ${this.props.slug}`}
