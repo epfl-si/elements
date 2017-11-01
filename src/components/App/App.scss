@@ -7,6 +7,7 @@
 .tlbx-h2 { text-align: center; }
 
 .styleguide {
+  display: flex;
   display: grid;
   grid-template-columns: 60px 240px 1fr;
   min-height: 100vh;
@@ -14,17 +15,20 @@
 }
 
 .tlbx-toolbar-wrapper {
+  flex: 0 0 60px;
   grid-column: 1;
   background-color: $color-primary;
   color: white;
 }
 
 .tlbx-sidebar-wrapper {
+  flex: 0 0 240px;
   grid-column: 2;
   background-color: $gray-lighter;
 }
 
 .tlbx-content-wrapper {
+  flex: 1 1 auto;
   grid-column: 3;
   align-self: start;
   padding: 0 2rem;
