@@ -11,7 +11,7 @@ class Sidebar extends Component {
     return (
       <div className="tlbx-sidebar">
         {
-          window.theme.title
+          window.theme && window.theme.title
           ?
             <h1 className="tlbx-sidebar-title" dangerouslySetInnerHTML={{__html: window.theme.title }}/>
           :
