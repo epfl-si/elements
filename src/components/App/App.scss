@@ -12,10 +12,19 @@
   grid-template-columns: 60px 240px 1fr;
   min-height: 100vh;
   max-width: 100%;
+
+  @media only screen and (max-width: 767px) {
+    display: block;
+    overflow: hidden;
+  }
 }
 
 .tlbx-toolbar-wrapper {
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  z-index: 999;
   top: 0;
   left: 0;
   bottom: 0;
@@ -24,12 +33,32 @@
   grid-column: 1;
   background-color: $color-primary;
   color: white;
+
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+    bottom: auto;
+  }
 }
 
 .tlbx-sidebar-wrapper {
   flex: 0 0 240px;
   grid-column: 2;
   background-color: $gray-lighter;
+
+  @media only screen and (max-width: 767px) {
+    position: fixed;
+    z-index: 998;
+    top: 60px;
+    bottom: 0;
+    right: 0;
+    overflow-y: auto;
+    min-height: 100vh;
+    max-width: 240px;
+    box-shadow: -3px 0 20px 0 rgba(0, 0, 0, 0.3);
+    transform: translateX(100%);
+    transition: transform 0.3s;
+    &.tlbx-sidebar-open { transform: translateX(0); }
+  }
 }
 
 .tlbx-content-wrapper {
@@ -38,4 +67,10 @@
   align-self: start;
   padding: 0 2rem;
   overflow: hidden;
+
+  @media only screen and (max-width: 767px) {
+    padding-top: 60px;
+    box-sizing: border-box;
+    width: 100%;
+  }
 }

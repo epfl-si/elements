@@ -7,6 +7,10 @@
     color: $body-color;
     text-decoration: none;
   }
+
+  @media only screen and (max-width: 767px) {
+    margin-bottom: 3rem;
+  }
 }
 
 .tlbx-sidebar-title {

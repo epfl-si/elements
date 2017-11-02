@@ -6,6 +6,7 @@ class Store {
       base_path: '',
       components: [],
       showAllCode: true,
+      showMenu: false,
     });
 
     this.addPath = action((path) => {
@@ -18,6 +19,10 @@ class Store {
 
     this.toggleAllCode = action(() => {
       this.showAllCode = !this.showAllCode;
+    });
+
+    this.toggleMenu = action(() => {
+      this.showMenu = !this.showMenu;
     });
   }
 }

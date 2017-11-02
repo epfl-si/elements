@@ -99,7 +99,7 @@ class App extends Component {
           <div className="tlbx-toolbar-wrapper">
             <Toolbar />
           </div>
-          <div className="tlbx-sidebar-wrapper">
+          <div className={`tlbx-sidebar-wrapper${this.props.store.showMenu ? ' tlbx-sidebar-open' : ''}`}>
             <Sidebar />
           </div>
           <div className="tlbx-content-wrapper">
