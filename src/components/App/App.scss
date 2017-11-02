@@ -28,7 +28,8 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 50px;
+  width: 60px;
+  box-sizing: border-box;
   flex: 0 0 60px;
   grid-column: 1;
   background-color: $color-primary;
