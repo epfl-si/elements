@@ -6,6 +6,7 @@ import './index.css';
 
 import Store from './Store';
 import App from './components/App/App';
+import printIcons from './components/Icon/Icons';
 
 const router = (
   <Provider store={Store}>
@@ -15,7 +16,10 @@ const router = (
   </Provider>
 );
 
+printIcons();
+
 ReactDOM.render(
   router,
   document.getElementById('styleguide')
 );
+

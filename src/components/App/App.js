@@ -3,6 +3,7 @@ import Twig from 'twig';
 import yaml from 'yamljs';
 import { Route } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
+import { Theme } from './Theme';
 import './App.css';
 
 import Sidebar from '../Sidebar/Sidebar';
@@ -94,11 +95,11 @@ class App extends Component {
 
     if (hasStyleguideShell) {
       return (
-        <div className="styleguide">
+        <Theme className="styleguide">
           <div className="tlbx-toolbar-wrapper">
             <Toolbar />
           </div>
-          <div className="tlbx-sidebar-wrapper">
+          <div className={`tlbx-sidebar-wrapper${this.props.store.showMenu ? ' tlbx-sidebar-open' : ''}`}>
             <Sidebar />
           </div>
           <div className="tlbx-content-wrapper">
@@ -106,7 +107,7 @@ class App extends Component {
             <Route path="/:type/:slug" exact component={Single} />
             <Route path="/colors" exact component={Colors} />
           </div>
-        </div>
+        </Theme>
       );
     } else {
       return (
