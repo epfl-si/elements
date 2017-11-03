@@ -1,6 +1,6 @@
 {
   "name": "toolbox-reader",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "colorable": "^1.0.5",
