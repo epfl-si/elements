@@ -1,0 +1,33 @@
+{
+  "src": "assets/",
+  "dest": "build/",
+  "ghpages": "build/",
+  "remote": "",
+  "images": [
+    "build/images/**/*"
+  ],
+  "svg": [
+    "build/svg/**/*"
+  ],
+  "icons": [
+    "build/icons/**/*"
+  ],
+  "iconsFontName": "icon",
+  "fonts": [
+    "build/fonts/**/*"
+  ],
+  "vendors": {
+    "css": [],
+    "js": []
+  },
+  "singles": [{
+    "src": "",
+    "dest": ""
+  }],
+  "theme": {
+    "title": "Elements <br><span>EPFL Web Styleguide</span>",
+    "primary": "#e3051a",
+    "secondary": "#92000e",
+    "brand": "<symbol id=\"icon-toolbox\" viewBox=\"0 0 90.02 84.03\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><path d=\"M206.22,262.77l24.37,12.78a3,3,0,0,0,2.82,0l24.37-12.78,9.75,5.12L232,286.49l-35.53-18.6Zm0-17,24.37,12.78a3,3,0,0,0,2.82,0l24.37-12.78,9.75,5.12L232,269.49l-35.53-18.6ZM232,215.3l35.53,18.59L232,252.49l-35.53-18.6Zm-.34-6.41a3.06,3.06,0,0,0-1.07.35l-42,22a3,3,0,0,0,0,5.31l11.16,5.84-11.16,5.85a3,3,0,0,0,0,5.31l11.16,5.84-11.16,5.85a3,3,0,0,0,0,5.31l42,22a3,3,0,0,0,2.82,0l42-22a3,3,0,0,0,0-5.31l-11.16-5.85,11.16-5.84a3,3,0,0,0,0-5.31l-11.16-5.85,11.16-5.84a3,3,0,0,0,0-5.31l-42-22A3.06,3.06,0,0,0,231.66,208.89Z\" transform=\"translate(-186.99 -208.88)\"/></symbol>"
+  }
+}

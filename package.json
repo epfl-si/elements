@@ -1,0 +1,87 @@
+{
+  "name": "epfl-elements",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:epfl-idevelop/elements.git"
+  },
+  "scripts": {
+    "start": "toolbox serve",
+    "build": "toolbox build",
+    "deploy": "toolbox build styleguide && toolbox deploy"
+  },
+  "browserslist": [
+    "> 1% in CH",
+    "last 2 versions"
+  ],
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "eslint-config-airbnb",
+    "env": {
+      "browser": true
+    },
+    "rules": {
+      "arrow-body-style": 0,
+      "camelcase": 0,
+      "global-require": 0,
+      "import/extensions": 0,
+      "import/no-unresolved": 0
+    }
+  },
+  "stylelint": {
+    "ignoreFiles": [
+      "assets/sass/main.scss",
+      "assets/sass/main-variables.scss"
+    ],
+    "plugins": [
+      "stylelint-order"
+    ],
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "at-rule-no-vendor-prefix": true,
+      "media-feature-name-no-vendor-prefix": true,
+      "property-no-vendor-prefix": true,
+      "selector-no-vendor-prefix": true,
+      "value-no-vendor-prefix": true,
+      "selector-pseudo-element-colon-notation": "single",
+      "order/order": [
+        "custom-properties",
+        "dollar-variables",
+        "declarations",
+        "at-rules",
+        "rules"
+      ],
+      "order/properties-order": [
+        "content",
+        "display",
+        "flex",
+        "position",
+        "top",
+        "right",
+        "bottom",
+        "left",
+        "float",
+        "width",
+        "height",
+        "margin",
+        "padding",
+        "background",
+        "border",
+        "font-familly",
+        "font-size",
+        "line-height",
+        "font-weight",
+        "font-style",
+        "color",
+        "transform",
+        "transition"
+      ]
+    }
+  },
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6",
+    "toolbox-utils": "^1.2.0"
+  }
+}

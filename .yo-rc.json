@@ -1,0 +1,9 @@
+{
+  "generator-toolbox": {
+    "promptValues": {
+      "repo": "git@github.com:epfl-idevelop/elements.git",
+      "src": "assets/",
+      "dest": "build/"
+    }
+  }
+}
