@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import ClipboardButton from 'react-clipboard.js';
 
 import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/dist/light';
 import xml from 'react-syntax-highlighter/dist/languages/xml';
@@ -12,6 +13,27 @@ import './Item.css';
 registerLanguage('html', xml);
 
 class Item extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      copied: false
+    }
+  }
+
+  onCopySuccess() {
+    this.setState({ copied: true });
+
+    setTimeout(() => {
+      this.setState({ copied: false });
+    }, 1000);
+  }
+
+  handleItemClick(e) {
+    // Disable all inner links
+    e.preventDefault();
+  }
+
   render() {
     const title = this.props.title && <h3 className="tlbx-item-title">{this.props.title}</h3>;
 
@@ -20,11 +42,19 @@ class Item extends Component {
         {title}
         <div className="tlbx-actions">
           <Link className="tlbx-actions-link" to={this.props.fullUrl}>View full render</Link>
+          <ClipboardButton
+            data-clipboard-text={this.props.children}
+            className="tlbx-actions-link"
+            onSuccess={this.onCopySuccess.bind(this)}
+          >
+            {this.state.copied ? 'Copied!' : 'Copy'}
+          </ClipboardButton>
         </div>
         <div
           className={`tlbx-item-preview ${this.props.wrapper} ${this.props.slug}`}
           style={this.props.background ? {backgroundColor: this.props.background} : {}}
           dangerouslySetInnerHTML={{ __html: this.props.children }}
+          onClick={this.handleItemClick.bind(this)}
         />
         <div className={`tlbx-item-code${this.props.store.showAllCode ? ' tlbx-hidden' : ''}`}>
           <SyntaxHighlighter
@@ -33,12 +63,15 @@ class Item extends Component {
             wrapLines={true}
             showLineNumbers={true}
             lineNumberContainerStyle={{
-              padding: '0.5em 0.5em 1em 0.5em',
               float: 'left',
-              margin: '-0.5em 0 -0.5em -0.5em',
               textAlign: 'right',
-              backgroundColor: 'rgba(255,255,255,0.1)',
-              marginRight: '0.5em'
+              marginRight: '10px',
+              opacity: '0.5'
+            }}
+            customStyle={{
+              padding: '1.3em 1em',
+              fontSize: '16px',
+              lineHeight: '1.4em',
             }}
           >
             {this.props.children}

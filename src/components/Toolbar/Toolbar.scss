@@ -1,7 +1,13 @@
-.tlbx-toolbar-wrapper {
+.tlbx-toolbar {
   display: flex;
   flex-direction: column;
-  padding: 5px;
+  max-width: 100%;
+  justify-content: space-between;
+
+  @media only screen and (max-width: 767px) {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 }
 
 .tlbx-toolbar-btn {
@@ -14,19 +20,30 @@
   background: none;
   color: #fff;
   font-weight: 900;
-  background: rgba(#000, 0.2);
+  font-size: 1.4em;
   opacity: 1;
 
-  &:hover {
-    background: rgba(#000, 0.4);
+  &:hover { cursor: pointer; }
+
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: none;
   }
 
-  pre {
-    color: currentColor;
-    margin: 0;
-  }
+  &.tlbx-active { opacity: 0.5; }
 
-  &.tlbx-active {
-    opacity: 0.5;
+  @media only screen and (max-width: 767px) {
+    padding: 0;
+    font-size: 20px;
+    &.tlbx-brand { margin-right: auto; }
+  }
+}
+
+.tlbx-toolbar-toggle-menu {
+  display: none;
+
+  @media only screen and (max-width: 767px) {
+    display: flex;
   }
 }

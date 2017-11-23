@@ -38,7 +38,6 @@ class Single extends Component {
     const params = props.match.params;
     const components = props.store.components[params.type];
     const component = toJS(components).find(item => item.slug === params.slug);
-
     this.setState({ component, variants: [] });
 
     component.content.then(twig => {

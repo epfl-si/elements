@@ -16,6 +16,12 @@
     color: $link-hover-color;
   }
 
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: none;
+  }
+
   &:after {
     content: '';
     line-height: 0;
