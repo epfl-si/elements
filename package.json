@@ -30,7 +30,8 @@
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
-    "build": "npm run build-css && react-scripts build",
+    "copy-build": "mv build/static/js/main.*.js build/static/js/main.js && mv build/static/js/main.*.js.map build/static/js/main.js.map && mv build/static/css/main.*.css build/static/css/main.css && mv build/static/css/main.*.css.map build/static/css/main.css.map",
+    "build": "npm run build-css && react-scripts build && npm run copy-build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
