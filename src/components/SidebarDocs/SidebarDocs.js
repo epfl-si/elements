@@ -35,7 +35,7 @@ class SidebarDocs extends Component {
     return title.charAt(0).toUpperCase() + title.slice(1);
   }
 
-  renderDocDir(dir) {
+  renderDocDir(dir, fullpath) {
     return (
       <ul className="tlbx-sidebar-item-list">
         {Object.keys(dir).map((item, i) => {
@@ -46,7 +46,7 @@ class SidebarDocs extends Component {
                   if (file !== 'index.md' && file !== 'index.html') {
                     return (
                       <li key={j}>
-                        <NavLink to={file}>{this.titlelize(file)}</NavLink>
+                        <NavLink to={`/doc/${fullpath}${file}`}>{this.titlelize(file)}</NavLink>
                       </li>
                     );
                   }
@@ -54,15 +54,21 @@ class SidebarDocs extends Component {
               </span>
             );
           } else {
+            const hasIndexMd = dir[item].f.includes('index.md');
+            const hasIndexHtml = dir[item].f.includes('index.html');
+            const index = hasIndexMd ? '--index.md' : hasIndexHtml ? '--index.html' : '';
+
             return (
               <li key={i}>
-                {dir[item].f.includes('index.md') || dir[item].f.includes('index.html')
+                {hasIndexMd || hasIndexHtml
                 ?
-                  <NavLink to={item}><b><i>{this.titlelize(item)}</i></b></NavLink>
+                  <NavLink to={`/doc/${item}${index}`}>
+                    <b><i>{this.titlelize(item)}</i></b>
+                  </NavLink>
                 :
                   <strong>{this.titlelize(item)}</strong>
                 }
-                {this.renderDocDir(dir[item])}
+                {this.renderDocDir(dir[item], `${fullpath}${item}--`)}
               </li>
             );
           }
@@ -78,7 +84,7 @@ class SidebarDocs extends Component {
           <strong>Documentation</strong>
         </button>
         <Collapse className="tlbx-sidebar-collapse" isOpen={this.state.active}>
-          {this.renderDocDir(this.props.store.docs)}
+          {this.renderDocDir(this.props.store.docs, '')}
         </Collapse>
       </div>
     );

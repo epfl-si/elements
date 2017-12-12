@@ -9,10 +9,10 @@ import './App.css';
 import Sidebar from '../Sidebar/Sidebar';
 import Toolbar from '../Toolbar/Toolbar';
 import Single from '../../views/Single/Single';
+import Doc from '../../views/Doc/Doc';
 import SingleFull from '../../views/SingleFull/SingleFull';
 import Page from '../../views/Page/Page';
 import Colors from '../../views/Colors/Colors';
-import Home from '../../views/Home/Home';
 
 class App extends Component {
   constructor() {
@@ -104,8 +104,11 @@ class App extends Component {
             <Sidebar />
           </div>
           <div className="tlbx-content-wrapper">
-            <Route path="/" exact component={Home} />
-            <Route path="/:type/:slug" exact component={Single} />
+            <Route path="/" exact component={Doc} />
+            <Route path="/atoms/:slug" exact component={Single} />
+            <Route path="/molecules/:slug" exact component={Single} />
+            <Route path="/organisms/:slug" exact component={Single} />
+            <Route path="/doc/:slug" exact component={Doc} />
             <Route path="/colors" exact component={Colors} />
           </div>
         </Theme>
