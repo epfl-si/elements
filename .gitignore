@@ -11,6 +11,10 @@
 
 /build/components
 /build/docs
+/build/css
+/build/favicons
+/build/icons
+/build/js
 /build/index.html
 
 # misc
