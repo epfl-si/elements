@@ -78,6 +78,8 @@ class SidebarDocs extends Component {
   }
 
   render() {
+    if (Object.keys(this.props.store.docs).length <= 0) return false;
+
     return (
       <div className={this.state.active ? ' tlbx-open' : ''}>
         <button className="tlbx-sidebar-item" onClick={() => this.toggleComponentsList()}>

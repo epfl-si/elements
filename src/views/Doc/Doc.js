@@ -13,6 +13,7 @@ class Doc extends Component {
     this.state = {
       homeFile: '',
       content: '',
+      default: '<h1>Default</h1><p>Upgrade <i>toolbox-utils</i> for custom homepage</p>'
     }
   }
 
@@ -29,7 +30,7 @@ class Doc extends Component {
   }
 
   getContent(props) {
-    const homeFile = props.store.docs.f.includes('index.md') ? 'index.md' : 'index.html';
+    const homeFile = props.store.docs.f && props.store.docs.f.includes('index.md') ? 'index.md' : 'index.html';
     const slug = props.match.params.slug || homeFile;
     const path = props.store.base_path + 'docs/' + slug.replace(/\-\-/g, '/');
 
@@ -51,9 +52,9 @@ class Doc extends Component {
       <div>
         {ext === 'md'
         ?
-          <ReactMarkdown source={this.state.content} />
+          <ReactMarkdown source={this.state.content || this.state.default} />
         :
-          <div dangerouslySetInnerHTML={{__html: this.state.content }} />
+          <div dangerouslySetInnerHTML={{__html: this.state.content || this.state.default}} />
         }
       </div>
     );
