@@ -3,6 +3,7 @@ import { inject, observer } from 'mobx-react';
 import { NavLink, withRouter } from 'react-router-dom'
 
 import SidebarItem from '../SidebarItem/SidebarItem';
+import SidebarDocs from '../SidebarDocs/SidebarDocs';
 
 import './Sidebar.css';
 
@@ -27,6 +28,8 @@ class Sidebar extends Component {
             <NavLink to={'/colors'}>Colors</NavLink>
           </li>
         </ul>
+
+        <SidebarDocs />
 
         {Object.keys(this.props.store.components).map((group, key) => {
           if (group === 'docs') return null;

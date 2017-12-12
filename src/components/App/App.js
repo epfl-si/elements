@@ -32,6 +32,7 @@ class App extends Component {
   componentWillMount() {
     const baseUrl = window.location.href.replace(`#${this.props.location.pathname}`, '');
     this.props.store.addPath(baseUrl);
+    this.props.store.addDocs(window.docs);
 
     const components = Object.keys(window.sources).reduce((acc, group) => {
       const componentArray = window.sources[group].map(slug => {

@@ -5,6 +5,7 @@ class Store {
     extendObservable(this, {
       base_path: '',
       components: [],
+      docs: {},
       showAllCode: true,
       showMenu: false,
     });
@@ -15,6 +16,10 @@ class Store {
 
     this.addComponents = action((components) => {
       this.components = components;
+    });
+
+    this.addDocs = action((docs) => {
+      this.docs = docs;
     });
 
     this.toggleAllCode = action(() => {

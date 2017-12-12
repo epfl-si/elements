@@ -54,10 +54,13 @@
   list-style: none;
   padding: 0;
 
+  strong { padding-left: 2rem; }
+
   a {
     display: block;
     position: relative;
-    padding: 0.25rem 0.5rem 0.25rem 2rem;
+    padding: 0.25rem 0.5rem 0.25rem;
+    padding-left: 2rem;
     color: $body-color;
     transition: color 250ms ease;
 
@@ -84,7 +87,15 @@
     &.active {
       font-weight: bold;
     }
+
   }
+
+  ul a,
+  ul strong { padding-left: 2.5rem; }
+  ul ul a,
+  ul ul strong { padding-left: 3rem; }
+  ul ul ul a,
+  ul ul ul strong { padding-left: 3.5rem; }
 }
 
 .tlbx-sidebar-item-list-empty {
