@@ -63,10 +63,10 @@ class SidebarDocs extends Component {
                 {hasIndexMd || hasIndexHtml
                 ?
                   <NavLink to={`/doc/${item}${index}`}>
-                    <b><i>{this.titlelize(item)}</i></b>
+                    {this.titlelize(item)}
                   </NavLink>
                 :
-                  <strong>{this.titlelize(item)}</strong>
+                  <em>{this.titlelize(item)}</em>
                 }
                 {this.renderDocDir(dir[item], `${fullpath}${item}--`)}
               </li>
