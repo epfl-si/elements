@@ -1,5 +1,15 @@
 # Changelog
 
+*1.1.0* (2017-12-13)
+  - 🔧 update manifest with renamed build (6e0bede) 
+  - 📦 update builds (3c9bf60) 
+  - 🔧 update gitignore (6336824) 
+  - 🔥 remove useless build files (feda1d8) 
+  - 💄 better doc sidebar typography (090ab9d) 
+  - ✨ add doc retrocompatibility (eac7b71) 
+  - ✨ add proper doc page link and content render (7a92b6f) 
+  - ✨ add base SidebarDocs (cf35785)
+
 *1.0.0* (2017-11-03)
   - 🐛 fix broken color table (2e579c7)
   - 💄 nicer default design for color page (2622a3b)
