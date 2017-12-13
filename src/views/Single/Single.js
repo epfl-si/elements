@@ -36,7 +36,7 @@ class Single extends Component {
 
   getContent(props) {
     const params = props.match.params;
-    const components = props.store.components[params.type];
+    const components = props.store.components[props.location.pathname.split('/')[1]];
     const component = toJS(components).find(item => item.slug === params.slug);
     this.setState({ component, variants: [] });
 
@@ -73,7 +73,7 @@ class Single extends Component {
               key={key}
               title={variant.title}
               slug={`tlbx-${this.state.component.slug}-${variant.slug}`}
-              fullUrl={`/${this.props.match.params.type}/${this.props.match.params.slug}/${variant.slug}/full`}
+              fullUrl={`/${this.props.location.pathname.split('/')[1]}/${this.props.match.params.slug}/${variant.slug}/full`}
             >
               {variant.markup}
             </Item>
@@ -95,7 +95,7 @@ class Single extends Component {
           wrapper={this.state.component.wrapper || ''}
           background={this.state.component.background}
           slug={`tlbx-${this.state.component.slug}`}
-          fullUrl={`/${this.props.match.params.type}/${this.props.match.params.slug}/full`}
+          fullUrl={`/${this.props.location.pathname.split('/')[1]}/${this.props.match.params.slug}/full`}
         >
           {this.state.content}
         </Item>
