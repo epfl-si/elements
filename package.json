@@ -16,8 +16,11 @@
     "react-css-collapse": "^3.0.2",
     "react-dom": "^16.0.0",
     "react-markdown": "^2.5.0",
+    "react-redux": "^5.0.6",
     "react-router-dom": "^4.1.1",
+    "react-router-redux": "^4.0.8",
     "react-syntax-highlighter": "^5.6.2",
+    "redux": "^3.7.2",
     "styled-components": "^2.2.3",
     "twig": "^1.10.5",
     "yamljs": "^0.3.0"

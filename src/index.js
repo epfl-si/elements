@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import { Provider } from 'mobx-react';
 import './index.css';
 
-import Store from './Store';
+import {configureStore} from "./configureStore";
+const store = configureStore();
+
 import App from './components/App/App';
 import printIcons from './components/Icon/Icons';
 
 const router = (
-  <Provider store={Store}>
+  <Provider store={store}>
     <Router>
       <Route path="/" component={App} />
     </Router>
