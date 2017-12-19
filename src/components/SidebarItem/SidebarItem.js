@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { inject, observer } from 'mobx-react';
-import { NavLink, withRouter } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Collapse from 'react-css-collapse';
 import PropTypes from 'prop-types';
 
@@ -76,4 +75,4 @@ SidebarItem.propTypes = {
   history: PropTypes.object.isRequired
 };
 
-export default withRouter(inject('store')(observer(SidebarItem)));
+export default SidebarItem;

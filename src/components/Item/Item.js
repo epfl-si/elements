@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { inject, observer } from 'mobx-react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ClipboardButton from 'react-clipboard.js';
@@ -91,4 +90,4 @@ Item.PropTypes = {
   children: PropTypes.string.isRequired,
 }
 
-export default inject('store')(observer(Item));
+export default Item;

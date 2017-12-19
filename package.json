@@ -5,8 +5,6 @@
   "dependencies": {
     "axios": "^0.17.1",
     "colorable": "^1.0.5",
-    "mobx": "^3.1.11",
-    "mobx-react": "^4.2.1",
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.0.2",
     "prop-types": "^15.5.10",
@@ -21,6 +19,8 @@
     "react-router-redux": "^4.0.8",
     "react-syntax-highlighter": "^5.6.2",
     "redux": "^3.7.2",
+    "redux-observable": "^0.17.0",
+    "rxjs": "^5.5.5",
     "styled-components": "^2.2.3",
     "twig": "^1.10.5",
     "yamljs": "^0.3.0"

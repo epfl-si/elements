@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Twig from 'twig';
-import yaml from 'yamljs';
+// import yaml from 'yamljs';
 import { Route } from 'react-router-dom';
-import { inject, observer } from 'mobx-react';
 import { Theme } from './Theme';
 import './App.css';
 
@@ -30,42 +29,42 @@ class App extends Component {
   }
 
   componentWillMount() {
-    const baseUrl = window.location.href.replace(`#${this.props.location.pathname}`, '');
-    this.props.store.addPath(baseUrl);
-    if (window.docs) this.props.store.addDocs(window.docs);
+    // const baseUrl = window.location.href.replace(`#${this.props.location.pathname}`, '');
+    // this.props.store.addPath(baseUrl);
+    // if (window.docs) this.props.store.addDocs(window.docs);
 
-    const components = Object.keys(window.sources).reduce((acc, group) => {
-      const componentArray = window.sources[group].map(slug => {
-        const path = `components/${group}/${slug}/`;
-        const config = yaml.load(`${path}/${slug}.yml`);
-        const content = this.getMarkup(path, slug);
-        const variants = config && config.variants ? config.variants.map(key => {
-          // Make sure we put the slug to lowercase, to avoid issues on
-          // Case Sensitive systems (GH Pages)
-          const variantSlug = (`${slug}-${key}`).toLowerCase();
+    // const components = Object.keys(window.sources).reduce((acc, group) => {
+    //   const componentArray = window.sources[group].map(slug => {
+    //     const path = `components/${group}/${slug}/`;
+    //     const config = yaml.load(`${path}/${slug}.yml`);
+    //     const content = this.getMarkup(path, slug);
+    //     const variants = config && config.variants ? config.variants.map(key => {
+    //       // Make sure we put the slug to lowercase, to avoid issues on
+    //       // Case Sensitive systems (GH Pages)
+    //       const variantSlug = (`${slug}-${key}`).toLowerCase();
 
-          return {
-            slug: variantSlug,
-            title: key,
-            content: this.getMarkup(path, variantSlug),
-          };
-        }) : null;
+    //       return {
+    //         slug: variantSlug,
+    //         title: key,
+    //         content: this.getMarkup(path, variantSlug),
+    //       };
+    //     }) : null;
 
-        return {
-          ...config,
-          slug,
-          content,
-          variants
-        };
-      });
+    //     return {
+    //       ...config,
+    //       slug,
+    //       content,
+    //       variants
+    //     };
+    //   });
 
-      return {
-        ...acc,
-        [group]: componentArray
-      }
-    }, this.state.components);
+    //   return {
+    //     ...acc,
+    //     [group]: componentArray
+    //   }
+    // }, this.state.components);
 
-    this.props.store.addComponents(components);
+    // this.props.store.addComponents(components);
   }
 
   getMarkup(path, slug) {
@@ -90,7 +89,8 @@ class App extends Component {
     return path.replace('./', this.props.store.base_path);
   }
 
-  render() {
+  render() { return <h1>Hello</h1> }
+  renderOld() {
     // Remove styleguide shell from pages and full render of components
     const hasStyleguideShell = !this.props.location.pathname.includes('/pages/') && !this.props.location.pathname.match(/\/full\/?$/);
 
@@ -124,4 +124,4 @@ class App extends Component {
   }
 }
 
-export default inject('store')(observer(App));
+export default App;

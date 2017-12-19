@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { inject, observer } from 'mobx-react';
-import { NavLink, withRouter } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import SidebarItem from '../SidebarItem/SidebarItem';
 import SidebarDocs from '../SidebarDocs/SidebarDocs';
@@ -41,4 +40,4 @@ class Sidebar extends Component {
   }
 }
 
-export default withRouter(inject('store')(observer(Sidebar)));
+export default Sidebar;

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { inject, observer } from 'mobx-react';
-import { NavLink, withRouter } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Collapse from 'react-css-collapse';
 import PropTypes from 'prop-types';
 
@@ -50,28 +49,30 @@ class SidebarDocs extends Component {
                       </li>
                     );
                   }
+
+                  return false;
                 })}
               </span>
             );
-          } else {
-            const hasIndexMd = dir[item].f.includes('index.md');
-            const hasIndexHtml = dir[item].f.includes('index.html');
-            const index = hasIndexMd ? '--index.md' : hasIndexHtml ? '--index.html' : '';
-
-            return (
-              <li key={i}>
-                {hasIndexMd || hasIndexHtml
-                ?
-                  <NavLink to={`/doc/${item}${index}`}>
-                    {this.titlelize(item)}
-                  </NavLink>
-                :
-                  <em>{this.titlelize(item)}</em>
-                }
-                {this.renderDocDir(dir[item], `${fullpath}${item}--`)}
-              </li>
-            );
           }
+
+          const hasIndexMd = dir[item].f.includes('index.md');
+          const hasIndexHtml = dir[item].f.includes('index.html');
+          const index = hasIndexMd ? '--index.md' : hasIndexHtml ? '--index.html' : '';
+
+          return (
+            <li key={i}>
+              {hasIndexMd || hasIndexHtml
+              ?
+                <NavLink to={`/doc/${item}${index}`}>
+                  {this.titlelize(item)}
+                </NavLink>
+              :
+                <em>{this.titlelize(item)}</em>
+              }
+              {this.renderDocDir(dir[item], `${fullpath}${item}--`)}
+            </li>
+          );
         })}
       </ul>
     );
@@ -100,4 +101,4 @@ SidebarDocs.propTypes = {
   history: PropTypes.object.isRequired
 };
 
-export default withRouter(inject('store')(observer(SidebarDocs)));
+export default SidebarDocs;
