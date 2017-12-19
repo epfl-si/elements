@@ -6,3 +6,5 @@ export const rootEpic = combineEpics(
   searchBeersEpic,
 );
 
+export default rootEpic;
+

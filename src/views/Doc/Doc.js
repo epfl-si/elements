@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { inject, observer } from 'mobx-react';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import axios from 'axios';
@@ -32,7 +31,7 @@ class Doc extends Component {
   getContent(props) {
     const homeFile = props.store.docs.f && props.store.docs.f.includes('index.md') ? 'index.md' : 'index.html';
     const slug = props.match.params.slug || homeFile;
-    const path = props.store.base_path + 'docs/' + slug.replace(/\-\-/g, '/');
+    const path = `${props.store.base_path}docs/${slug.replace(/--/g, '/')}`;
 
     this.setState({ homeFile });
 
@@ -65,4 +64,4 @@ Doc.propTypes = {
   docs: PropTypes.object,
 };
 
-export default inject('store')(observer(Doc));
+export default Doc;

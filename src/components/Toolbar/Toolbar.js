@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { inject, observer } from 'mobx-react';
 
 import Icon from '../Icon/Icon';
 
@@ -39,4 +38,4 @@ class Toolbar extends Component {
   }
 }
 
-export default inject('store')(observer(Toolbar));
+export default Toolbar;

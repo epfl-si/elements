@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { inject, observer } from 'mobx-react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { toJS } from 'mobx';
 
 import './SingleFull.css';
+const toJS = (item) => item;
 
 class SingleFull extends Component {
   constructor() {
@@ -90,4 +89,4 @@ SingleFull.propTypes = {
   components: PropTypes.object,
 };
 
-export default inject('store')(observer(SingleFull));
+export default SingleFull;

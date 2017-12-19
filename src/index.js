@@ -4,11 +4,14 @@ import { Provider } from 'react-redux';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import './index.css';
 
-import {configureStore} from "./configureStore";
-const store = configureStore();
+import configureStore from './configureStore';
 
 import App from './components/App/App';
 import printIcons from './components/Icon/Icons';
+
+const store = configureStore();
+
+console.log(store);
 
 const router = (
   <Provider store={store}>

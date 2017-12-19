@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { toJS } from 'mobx';
-import { inject, observer } from 'mobx-react';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import Item from '../../components/Item/Item';
 
 import './Single.css';
+const toJS = (item) => item;
 
 class Single extends Component {
   constructor() {
@@ -110,4 +109,4 @@ Single.propTypes = {
   components: PropTypes.object,
 };
 
-export default inject('store')(observer(Single));
+export default Single;

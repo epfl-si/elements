@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import rootReducer from './reducers/index';
-
 import { createEpicMiddleware } from 'redux-observable';
-import { rootEpic } from "./epics/index";
+
+import rootReducer from './reducers/';
+import rootEpic from './epics/';
 
 const defaultState = {};
 
@@ -23,3 +23,5 @@ export function configureStore(deps = {}) {
     )
   );
 }
+
+export default configureStore;

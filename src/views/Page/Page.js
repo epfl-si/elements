@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
-import { toJS } from 'mobx';
-import { inject, observer } from 'mobx-react';
 import PropTypes from 'prop-types';
 
 import './Page.css';
+const toJS = (item) => item;
 
 class Page extends Component {
   componentWillMount() {
@@ -64,4 +62,4 @@ Page.propTypes = {
   components: PropTypes.object,
 };
 
-export default inject('store')(observer(withRouter(Page)));
+export default Page;
