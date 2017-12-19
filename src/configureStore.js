@@ -4,8 +4,6 @@ import { createEpicMiddleware } from 'redux-observable';
 import rootReducer from './reducers/';
 import rootEpic from './epics/';
 
-const defaultState = {};
-
 export function configureStore(deps = {}) {
   const epicMiddleware = createEpicMiddleware(rootEpic, {
     dependencies: {
@@ -17,7 +15,6 @@ export function configureStore(deps = {}) {
 
   return createStore(
     rootReducer,
-    defaultState,
     composeEnhancers(
       applyMiddleware(epicMiddleware)
     )

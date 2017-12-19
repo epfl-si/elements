@@ -2,7 +2,9 @@ import {
   SEARCHED_BEERS_LOADING,
 } from "../actions/atomic";
 
-export default function atomicReducer(state = {}, action) {
+const defaultState = {};
+
+export default function atomicReducer(state = defaultState, action) {
   switch(action.type) {
     case SEARCHED_BEERS_LOADING:
       return {

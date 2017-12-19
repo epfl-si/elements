@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import Twig from 'twig';
 // import yaml from 'yamljs';
 import { Route } from 'react-router-dom';
 import { Theme } from './Theme';
-import './App.css';
+
+import { setBaseURL } from '../../actions/navigation';
 
 import Sidebar from '../Sidebar/Sidebar';
 import Toolbar from '../Toolbar/Toolbar';
@@ -12,6 +15,8 @@ import Doc from '../../views/Doc/Doc';
 import SingleFull from '../../views/SingleFull/SingleFull';
 import Page from '../../views/Page/Page';
 import Colors from '../../views/Colors/Colors';
+
+import './App.css';
 
 class App extends Component {
   constructor() {
@@ -29,8 +34,8 @@ class App extends Component {
   }
 
   componentWillMount() {
-    // const baseUrl = window.location.href.replace(`#${this.props.location.pathname}`, '');
-    // this.props.store.addPath(baseUrl);
+    this.props.setBaseURL(this.props.location.pathname);
+
     // if (window.docs) this.props.store.addDocs(window.docs);
 
     // const components = Object.keys(window.sources).reduce((acc, group) => {
@@ -89,7 +94,7 @@ class App extends Component {
     return path.replace('./', this.props.store.base_path);
   }
 
-  render() { return <h1>Hello</h1> }
+  render() { return <h1>Path :{this.props.navigation.base_url}</h1> }
   renderOld() {
     // Remove styleguide shell from pages and full render of components
     const hasStyleguideShell = !this.props.location.pathname.includes('/pages/') && !this.props.location.pathname.match(/\/full\/?$/);
@@ -124,4 +129,16 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapState(state) {
+  return {
+    navigation: state.navigation,
+  };
+}
+
+function mapDispatch(dispatch) {
+  return bindActionCreators({
+    setBaseURL,
+  }, dispatch);
+}
+
+export default connect(mapState, mapDispatch)(App);
