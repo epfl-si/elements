@@ -1,9 +1,13 @@
 import { combineEpics } from 'redux-observable';
 
-import { searchBeersEpic } from './atomic';
+import {
+  getComponentsEpic,
+  getComponentMarkupEpic,
+} from './atomic';
 
 export const rootEpic = combineEpics(
-  searchBeersEpic,
+  getComponentsEpic,
+  getComponentMarkupEpic,
 );
 
 export default rootEpic;

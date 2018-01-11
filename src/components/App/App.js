@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import Twig from 'twig';
-// import yaml from 'yamljs';
 import { Route } from 'react-router-dom';
 import { Theme } from './Theme';
 
+import { getComponents } from '../../actions/atomic';
+import { getDocs } from '../../actions/docs';
 import { setBaseURL } from '../../actions/navigation';
 
 import Sidebar from '../Sidebar/Sidebar';
@@ -35,66 +35,20 @@ class App extends Component {
 
   componentWillMount() {
     this.props.setBaseURL(this.props.location.pathname);
-
-    // if (window.docs) this.props.store.addDocs(window.docs);
-
-    // const components = Object.keys(window.sources).reduce((acc, group) => {
-    //   const componentArray = window.sources[group].map(slug => {
-    //     const path = `components/${group}/${slug}/`;
-    //     const config = yaml.load(`${path}/${slug}.yml`);
-    //     const content = this.getMarkup(path, slug);
-    //     const variants = config && config.variants ? config.variants.map(key => {
-    //       // Make sure we put the slug to lowercase, to avoid issues on
-    //       // Case Sensitive systems (GH Pages)
-    //       const variantSlug = (`${slug}-${key}`).toLowerCase();
-
-    //       return {
-    //         slug: variantSlug,
-    //         title: key,
-    //         content: this.getMarkup(path, variantSlug),
-    //       };
-    //     }) : null;
-
-    //     return {
-    //       ...config,
-    //       slug,
-    //       content,
-    //       variants
-    //     };
-    //   });
-
-    //   return {
-    //     ...acc,
-    //     [group]: componentArray
-    //   }
-    // }, this.state.components);
-
-    // this.props.store.addComponents(components);
+    this.props.getComponents();
+    this.props.getDocs();
   }
 
-  getMarkup(path, slug) {
-    return new Promise((resolve, reject) => {
-      Twig.twig({
-        id: slug,
-        href: this.fixPath(`${path}/${slug}.twig`),
-        namespaces: {
-          'atoms': this.fixPath('./components/atoms/'),
-          'molecules': this.fixPath('./components/molecules/'),
-          'organisms': this.fixPath('./components/organisms/'),
-          'pages': this.fixPath('./components/pages/'),
-        },
-        load: function(template) {
-          resolve(template);
-        }
-      });
-    });
+  render() {
+    return (
+      <div>
+        <h1>Path :{this.props.navigation.base_url}</h1>
+        <pre>{JSON.stringify(this.props.atomic.sources)}</pre>
+      </div>
+    );
   }
 
-  fixPath(path) {
-    return path.replace('./', this.props.store.base_path);
-  }
 
-  render() { return <h1>Path :{this.props.navigation.base_url}</h1> }
   renderOld() {
     // Remove styleguide shell from pages and full render of components
     const hasStyleguideShell = !this.props.location.pathname.includes('/pages/') && !this.props.location.pathname.match(/\/full\/?$/);
@@ -131,12 +85,16 @@ class App extends Component {
 
 function mapState(state) {
   return {
+    atomic: state.atomic,
+    docs: state.docs,
     navigation: state.navigation,
   };
 }
 
 function mapDispatch(dispatch) {
   return bindActionCreators({
+    getComponents,
+    getDocs,
     setBaseURL,
   }, dispatch);
 }

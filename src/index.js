@@ -11,8 +11,6 @@ import printIcons from './components/Icon/Icons';
 
 const store = configureStore();
 
-console.log(store);
-
 const router = (
   <Provider store={store}>
     <Router>
