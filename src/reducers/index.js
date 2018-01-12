@@ -9,7 +9,7 @@ const rootReducer = combineReducers({
   atomic,
   docs,
   navigation,
-  routing: routerReducer,
+  router: routerReducer,
 });
 
 export default rootReducer;

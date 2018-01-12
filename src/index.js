@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { ConnectedRouter } from 'react-router-redux'
+import { Route } from 'react-router-dom';
 import './index.css';
 
-import configureStore from './configureStore';
+import configureStore, { history } from './configureStore';
 
 import App from './components/App/App';
 import printIcons from './components/Icon/Icons';
@@ -13,9 +14,9 @@ const store = configureStore();
 
 const router = (
   <Provider store={store}>
-    <Router>
+    <ConnectedRouter history={history}>
       <Route path="/" component={App} />
-    </Router>
+    </ConnectedRouter>
   </Provider>
 );
 

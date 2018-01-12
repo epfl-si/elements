@@ -2,7 +2,10 @@ import {
   BASE_URL_UPDATE,
 } from "../actions/navigation";
 
-const defaultState = {};
+const defaultState = {
+  showMenu: true,
+  showAllCode: true,
+};
 
 export default function navigationReducer(state = defaultState, action) {
   switch(action.type) {

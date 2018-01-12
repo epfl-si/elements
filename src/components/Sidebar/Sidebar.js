@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 
 import SidebarItem from '../SidebarItem/SidebarItem';
@@ -28,16 +30,27 @@ class Sidebar extends Component {
           </li>
         </ul>
 
-        <SidebarDocs />
+        <SidebarDocs location={this.props.location} />
 
-        {Object.keys(this.props.store.components).map((group, key) => {
-          if (group === 'docs') return null;
-
-          return <SidebarItem key={key} group={group} />
+        {Object.keys(this.props.atomic.sources).map((group, key) => {
+          return <SidebarItem key={key} group={group} location={this.props.location} />
         })}
       </div>
     );
   }
 }
 
-export default Sidebar;
+function mapState(state) {
+  return {
+    atomic: state.atomic,
+    navigation: state.navigation,
+  };
+}
+
+function mapDispatch(dispatch) {
+  return bindActionCreators({
+
+  }, dispatch);
+}
+
+export default connect(mapState, mapDispatch)(Sidebar);

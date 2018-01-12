@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 import Icon from '../Icon/Icon';
 
@@ -26,7 +28,7 @@ class Toolbar extends Component {
           <Icon name="icon-toolbox" />
         </button>
 
-        <button className={`tlbx-toolbar-btn${this.props.store.showAllCode ? ' tlbx-active' : ''}`} onClick={() => this.toggleAllCode()}>
+        <button className={`tlbx-toolbar-btn${this.props.navigation.showAllCode ? ' tlbx-active' : ''}`} onClick={() => this.toggleAllCode()}>
           <Icon name="icon-code" />
         </button>
 
@@ -38,4 +40,16 @@ class Toolbar extends Component {
   }
 }
 
-export default Toolbar;
+function mapState(state) {
+  return {
+    navigation: state.navigation,
+  };
+}
+
+function mapDispatch(dispatch) {
+  return bindActionCreators({
+
+  }, dispatch);
+}
+
+export default connect(mapState, mapDispatch)(Toolbar);

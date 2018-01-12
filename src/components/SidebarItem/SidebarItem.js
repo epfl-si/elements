@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import Collapse from 'react-css-collapse';
 import PropTypes from 'prop-types';
@@ -23,8 +25,8 @@ class SidebarItem extends Component {
   }
 
   componentDidMount() {
-    const regex = new RegExp(`^/${this.props.group}/`);
-    const isCurrent = this.props.location.pathname.match(regex);
+    const regex = new RegExp(`/${this.props.group}/`);
+    const isCurrent = this.props.location.hash.match(regex);
 
     this.setState({
       active: !!isCurrent
@@ -49,7 +51,7 @@ class SidebarItem extends Component {
         </button>
         <Collapse className="tlbx-sidebar-collapse" isOpen={this.state.active}>
           <ul className="tlbx-sidebar-item-list">
-            {this.props.store.components[this.props.group].map((component, key) => {
+            {this.props.atomic.sources[this.props.group].map((component, key) => {
               const path = `/${this.props.group}/${component.name}`;
 
               return (
@@ -60,7 +62,7 @@ class SidebarItem extends Component {
                 </li>
               )
             })}
-            {this.props.store.components[this.props.group].length === 0 && noComponents}
+            {this.props.atomic.sources[this.props.group].length === 0 && noComponents}
           </ul>
         </Collapse>
       </div>
@@ -70,9 +72,20 @@ class SidebarItem extends Component {
 
 SidebarItem.propTypes = {
   group: PropTypes.string.isRequired,
-  match: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired
 };
 
-export default SidebarItem;
+function mapState(state) {
+  return {
+    atomic: state.atomic,
+    routing: state.routing,
+  };
+}
+
+function mapDispatch(dispatch) {
+  return bindActionCreators({
+
+  }, dispatch);
+}
+
+export default connect(mapState, mapDispatch)(SidebarItem);

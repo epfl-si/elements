@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import Collapse from 'react-css-collapse';
 import PropTypes from 'prop-types';
@@ -21,8 +23,8 @@ class SidebarDocs extends Component {
   }
 
   componentDidMount() {
-    const regex = new RegExp(`^/${this.props.group}/`);
-    const isCurrent = this.props.location.pathname.match(regex);
+    const regex = new RegExp(`/doc/`);
+    const isCurrent = this.props.location.hash.match(regex);
 
     this.setState({
       active: !!isCurrent
@@ -40,7 +42,7 @@ class SidebarDocs extends Component {
         {Object.keys(dir).map((item, i) => {
           if (item === 'f') {
             return (
-              <span>
+              <span key={i}>
                 {dir[item].map((file, j) => {
                   if (file !== 'index.md' && file !== 'index.html') {
                     return (
@@ -79,7 +81,7 @@ class SidebarDocs extends Component {
   }
 
   render() {
-    if (Object.keys(this.props.store.docs).length <= 0) return false;
+    if (Object.keys(this.props.docs.docs_list).length <= 0) return false;
 
     return (
       <div className={this.state.active ? ' tlbx-open' : ''}>
@@ -87,7 +89,7 @@ class SidebarDocs extends Component {
           <strong>Documentation</strong>
         </button>
         <Collapse className="tlbx-sidebar-collapse" isOpen={this.state.active}>
-          {this.renderDocDir(this.props.store.docs, '')}
+          {this.renderDocDir(this.props.docs.docs_list, '')}
         </Collapse>
       </div>
     );
@@ -95,10 +97,19 @@ class SidebarDocs extends Component {
 }
 
 SidebarDocs.propTypes = {
-  group: PropTypes.string.isRequired,
-  match: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired
 };
 
-export default SidebarDocs;
+function mapState(state) {
+  return {
+    docs: state.docs,
+  };
+}
+
+function mapDispatch(dispatch) {
+  return bindActionCreators({
+
+  }, dispatch);
+}
+
+export default connect(mapState, mapDispatch)(SidebarDocs);

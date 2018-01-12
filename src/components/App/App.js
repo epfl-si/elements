@@ -40,16 +40,6 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <h1>Path :{this.props.navigation.base_url}</h1>
-        <pre>{JSON.stringify(this.props.atomic.sources)}</pre>
-      </div>
-    );
-  }
-
-
-  renderOld() {
     // Remove styleguide shell from pages and full render of components
     const hasStyleguideShell = !this.props.location.pathname.includes('/pages/') && !this.props.location.pathname.match(/\/full\/?$/);
 
@@ -59,17 +49,17 @@ class App extends Component {
           <div className="tlbx-toolbar-wrapper">
             <Toolbar />
           </div>
-          <div className={`tlbx-sidebar-wrapper${this.props.store.showMenu ? ' tlbx-sidebar-open' : ''}`}>
-            <Sidebar />
+          <div className={`tlbx-sidebar-wrapper${this.props.navigation.showMenu ? ' tlbx-sidebar-open' : ''}`}>
+            <Sidebar location={this.props.location} />
           </div>
-          <div className="tlbx-content-wrapper">
+          {/* <div className="tlbx-content-wrapper">
             <Route path="/" exact component={Doc} />
             <Route path="/atoms/:slug" exact component={Single} />
             <Route path="/molecules/:slug" exact component={Single} />
             <Route path="/organisms/:slug" exact component={Single} />
             <Route path="/doc/:slug" exact component={Doc} />
             <Route path="/colors" exact component={Colors} />
-          </div>
+          </div> */}
         </Theme>
       );
     } else {
