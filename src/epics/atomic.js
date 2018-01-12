@@ -1,27 +1,27 @@
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/switchMap';
-import Twig from 'twig';
+// import Twig from 'twig';
 import yaml from 'yamljs';
 
 import {
   GET_COMPONENTS,
   GET_COMPONENT_MARKUP,
-  getComponentMarkup,
+  // getComponentMarkup,
   setComponents,
   setComponentMarkup,
 } from "../actions/atomic";
 
-function fixPath(path) {
-  const baseUrl = window.location.href.split('/#/')[0];
-  return `${baseUrl}/#/${path.replace('./', '')}`;
-}
+// function fixPath(path) {
+//   const baseUrl = window.location.href.split('/#/')[0];
+//   return `${baseUrl}/#/${path.replace('./', '')}`;
+// }
 
 export function getComponentsEpic(action$, store, deps) {
   return action$.ofType(GET_COMPONENTS)
     .filter(action => action.payload.sources !== null)
     .map(({ payload }) => {
       Object.keys(payload)
-        .map((type) => {
+        .map((type) =>
           payload[type] = payload[type].map((component) => {
             const path = `components/${type}/${component}/`;
             const config = yaml.load(`${path}/${component}.yml`);
@@ -40,8 +40,7 @@ export function getComponentsEpic(action$, store, deps) {
               markup,
               variants,
             };
-          });
-        });
+          }));
 
       return payload;
     })

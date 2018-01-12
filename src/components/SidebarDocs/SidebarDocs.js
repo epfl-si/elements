@@ -23,8 +23,8 @@ class SidebarDocs extends Component {
   }
 
   componentDidMount() {
-    const regex = new RegExp(`/doc/`);
-    const isCurrent = this.props.location.hash.match(regex);
+    const regex = new RegExp(`^/doc/`);
+    const isCurrent = this.props.location.pathname.match(regex);
 
     this.setState({
       active: !!isCurrent

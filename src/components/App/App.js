@@ -52,14 +52,14 @@ class App extends Component {
           <div className={`tlbx-sidebar-wrapper${this.props.navigation.showMenu ? ' tlbx-sidebar-open' : ''}`}>
             <Sidebar location={this.props.location} />
           </div>
-          {/* <div className="tlbx-content-wrapper">
-            <Route path="/" exact component={Doc} />
-            <Route path="/atoms/:slug" exact component={Single} />
-            <Route path="/molecules/:slug" exact component={Single} />
-            <Route path="/organisms/:slug" exact component={Single} />
-            <Route path="/doc/:slug" exact component={Doc} />
-            <Route path="/colors" exact component={Colors} />
-          </div> */}
+          <div className="tlbx-content-wrapper">
+            {/* <Route path="/" exact component={Doc} /> */}
+            <Route path="/atoms/:slug"  component={Single} />
+            <Route path="/molecules/:slug"  component={Single} />
+            <Route path="/organisms/:slug"  component={Single} />
+            <Route path="/doc/:slug"  component={Doc} />
+            <Route path="/colors"  component={Colors} />
+          </div>
         </Theme>
       );
     } else {

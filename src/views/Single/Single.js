@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import Item from '../../components/Item/Item';
 
 import './Single.css';
-const toJS = (item) => item;
 
 class Single extends Component {
   constructor() {
@@ -35,30 +36,10 @@ class Single extends Component {
 
   getContent(props) {
     const params = props.match.params;
-    const components = props.store.components[props.location.pathname.split('/')[1]];
-    const component = toJS(components).find(item => item.slug === params.slug);
-    this.setState({ component, variants: [] });
+    const components = props.atomic.sources[props.location.pathname.split('/')[1]];
+    const component = components.find(item => item.name === params.slug);
 
-    component.content.then(twig => {
-      const data = twig.render(window.data) || '';
-      this.setState({ content: data});
-    });
-
-    if (component.variants && component.variants.length > 0) {
-      component.variants.forEach((variant, key) => {
-        variant.content.then(twig => {
-          const data = twig.render(window.data) || '';
-          this.setState({ variants: [
-            ...this.state.variants,
-            {
-              title: variant.title,
-              slug: variant.slug,
-              markup: data
-            }
-          ]});
-        });
-      });
-    }
+    this.setState({ component });
   }
 
   render() {
@@ -109,4 +90,16 @@ Single.propTypes = {
   components: PropTypes.object,
 };
 
-export default Single;
+function mapState(state) {
+  return {
+    atomic: state.atomic,
+  };
+}
+
+function mapDispatch(dispatch) {
+  return bindActionCreators({
+
+  }, dispatch);
+}
+
+export default connect(mapState, mapDispatch)(Single);

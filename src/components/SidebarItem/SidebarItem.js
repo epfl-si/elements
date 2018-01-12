@@ -25,8 +25,8 @@ class SidebarItem extends Component {
   }
 
   componentDidMount() {
-    const regex = new RegExp(`/${this.props.group}/`);
-    const isCurrent = this.props.location.hash.match(regex);
+    const regex = new RegExp(`^/${this.props.group}/`);
+    const isCurrent = this.props.location.pathname.match(regex);
 
     this.setState({
       active: !!isCurrent

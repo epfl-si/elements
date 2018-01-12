@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ClipboardButton from 'react-clipboard.js';
@@ -55,7 +57,7 @@ class Item extends Component {
           dangerouslySetInnerHTML={{ __html: this.props.children }}
           onClick={this.handleItemClick.bind(this)}
         />
-        <div className={`tlbx-item-code${this.props.store.showAllCode ? ' tlbx-hidden' : ''}`}>
+        <div className={`tlbx-item-code${this.props.navigation.showAllCode ? ' tlbx-hidden' : ''}`}>
           <SyntaxHighlighter
             language='html'
             style={atomOneDark}
@@ -82,12 +84,24 @@ class Item extends Component {
 }
 
 Item.PropTypes = {
-  title: PropTypes.string,
-  fullUrl: PropTypes.string.isRequired,
-  wrapper: PropTypes.string,
-  slug: PropTypes.string,
-  background: PropTypes.string,
-  children: PropTypes.string.isRequired,
+  // title: PropTypes.string,
+  // fullUrl: PropTypes.string.isRequired,
+  // wrapper: PropTypes.string,
+  // slug: PropTypes.string,
+  // background: PropTypes.string,
+  // children: PropTypes.string.isRequired,
 }
 
-export default Item;
+function mapState(state) {
+  return {
+    navigation: state.navigation,
+  };
+}
+
+function mapDispatch(dispatch) {
+  return bindActionCreators({
+
+  }, dispatch);
+}
+
+export default connect(mapState, mapDispatch)(Item);
