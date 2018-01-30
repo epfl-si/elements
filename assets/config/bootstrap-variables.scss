@@ -69,7 +69,7 @@ $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
-$dark:          $gray-800 !default;
+$dark:          darken($purple, 30%) !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge((
@@ -147,9 +147,9 @@ $body-color:                $gray-900 !default;
 //
 // Style anchor elements.
 
-$link-color:                theme-color("primary") !default;
+$link-color:                $black !default;
 $link-decoration:           none !default;
-$link-hover-color:          darken($link-color, 15%) !default;
+$link-hover-color:          $red !default;
 $link-hover-decoration:     underline !default;
 
 // Paragraphs

@@ -7,6 +7,7 @@
 @import '../config/bootstrap';
 @import '../config/typography';
 @import '../config/layout';
+@import '../config/helpers';
 
 // Don't edit the following sections, they should always be preceded by a blank
 // line and have exactly those names for the `$ yo toolbox:generate` command
@@ -14,6 +15,7 @@
 
 //
 // atoms:
+@import 'atoms/link/link';
 
 //
 // molecules:

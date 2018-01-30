@@ -10,7 +10,10 @@ article {
     border-top: 1px solid $gray-300;
     font-size: $font-size-sm;
 
-    ol { padding-left: 0; }
+    ol {
+      padding-left: 0;
+      margin-left: 0;
+    }
 
     ol { counter-reset: item; }
     ol li { display: block; }
@@ -45,6 +48,11 @@ article {
   color: inherit; /* 2 */
   cursor: default; /* 2 */
   outline: none; /* 2 */
+  border-bottom: none;
+
+  &:focus,
+  &:active,
+  &:focus:active { box-shadow: none !important; }
 
   &:after {
     border-left-color: $red;
@@ -87,6 +95,7 @@ article {
 .back-to-content {
   font-size: 0.8em;
   color: $red;
+  border-bottom: none;
 }
 
 /**

@@ -1,0 +1,47 @@
+@charset 'utf-8';
+
+a {
+  position: relative;
+  text-decoration: none;
+  border-radius: 1px;
+  border-bottom: 2px solid $red;
+  transition:
+    color 0.3s,
+    border-color 0.15s,
+    box-shadow 0.15s;
+
+  @extend .focused;
+
+  .bg-dark & { color: $white; }
+
+  &:hover,
+  &.hover {
+    color: $link-hover-color;
+    text-decoration: none;
+    border-bottom-color: $red !important;
+  }
+
+  &:visited,
+  &.visited {
+    text-decoration: none;
+    border-bottom-color: $purple;
+  }
+
+  &:active,
+  &:focus,
+  &.active,
+  &.focus {
+    color: $link-color;
+    border-bottom-color: transparent !important;
+
+    .bg-dark & {
+      background: darken($purple, 20%);
+      color: $white;
+    }
+  }
+}
+
+.no-text-link {
+  border: none !important;
+}
+

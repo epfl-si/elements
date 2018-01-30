@@ -1,0 +1,11 @@
+@charset 'utf-8';
+
+.focused {
+  &:focus,
+  &.focus {
+    box-shadow: 0 0 0 2px $red !important;
+
+    &:active,
+    &.active { box-shadow: 0 0 0 2px $red !important; }
+  }
+}

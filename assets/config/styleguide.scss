@@ -11,3 +11,18 @@
 .tlbx-content-wrapper {
   padding-top: 1.8rem;
 }
+
+.tlbx-sidebar-item-list {
+  margin-left: 0;
+  padding: 0;
+
+  a {
+    padding: 0.25rem 0.5rem;
+    padding-left: 2rem;
+    border-bottom: none !important;
+    box-shadow: none !important;
+  }
+
+  li:before { content: none; }
+}
+
