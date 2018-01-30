@@ -1,3 +1,13 @@
 @charset 'utf-8';
 
 @import 'variables';
+@import '../../node_modules/bootstrap/scss/functions';
+@import 'bootstrap-variables';
+
+.styleguide {
+  font-family: $font-family-base;
+}
+
+.tlbx-content-wrapper {
+  padding-top: 1.8rem;
+}

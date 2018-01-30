@@ -1,7 +1,12 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
+
 // init:
 @import '../config/variables';
+@import '../config/bootstrap';
+@import '../config/typography';
+@import '../config/layout';
 
 // Don't edit the following sections, they should always be preceded by a blank
 // line and have exactly those names for the `$ yo toolbox:generate` command
@@ -12,6 +17,8 @@
 
 //
 // molecules:
+@import 'molecules/footnotes/footnotes';
+@import 'molecules/sidenotes/sidenotes';
 
 //
 // organisms:

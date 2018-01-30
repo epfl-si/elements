@@ -1,0 +1,70 @@
+@charset 'utf-8';
+
+html,
+body {
+  font-size: 18px;
+
+  @include media-breakpoint-down(sm) { font-size: 16px; }
+
+  @include media-breakpoint-down(xs) { font-size: 14px; }
+}
+
+h1 {
+  line-height: 1.1em;
+  font-weight: $font-weight-bold;
+}
+
+h3 {
+  line-height: 1.333em;
+  font-weight: $font-weight-bold;
+}
+
+h4 {
+  line-height: 1.333em;
+}
+
+h5 {
+  line-height: 1.4em;
+  font-weight: $font-weight-bold;
+}
+
+h5 {
+  line-height: 1.4em;
+  font-weight: $font-weight-bold;
+}
+
+h6 {
+  line-height: 1.4em;
+  text-transform: uppercase;
+}
+
+small {
+  color: $gray-600;
+}
+
+del,
+s { color: $gray-600; }
+
+blockquote {
+  padding-left: 1.66rem;
+  border-left: 1px solid $gray-200;
+
+  p:before {
+    content: "\201C";
+    padding-right: 0.2rem;
+  }
+
+  p:after {
+    content: "\201D";
+    padding-left: 0.2rem;
+  }
+
+  &.blockquote-fr p:before { content: "\00AB"; }
+  &.blockquote-fr p:after { content: "\00BB"; }
+
+  .blockquote-footer {
+    margin-top: 0.72rem;
+    font-size: 0.944rem;
+    cite { font-style: normal; }
+  }
+}
