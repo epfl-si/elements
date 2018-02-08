@@ -1,2 +1,5 @@
 title: Teaser
 name: teaser
+variants:
+  default: Default
+  highlighted: Highlighted
