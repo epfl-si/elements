@@ -1,0 +1,10 @@
+@charset 'utf-8';
+
+.event-teaser-list {
+  display: flex;
+  flex-flow: row nowrap;
+
+  .event-teaser {
+    flex: 0 0 1;
+  }
+}

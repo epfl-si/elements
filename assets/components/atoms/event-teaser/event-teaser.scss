@@ -24,9 +24,18 @@
     .badge-dark {
       position: relative;
       top: -0.25rem;
-      background: $black;
+      background-color: $softBlack;
       font-size: 15px;
       line-height: 15px;
+    }
+  }
+
+  .card-img-top {
+    display: block;
+
+    img {
+      width: 100%;
+      height: auto;
     }
   }
 
@@ -47,4 +56,24 @@
 
 .event-teaser-highlighted {
   flex-basis: 2;
+}
+
+.event-teaser-passed {
+  .card-text,
+  .card-title {
+    color: $softBlack;
+  }
+}
+
+.tlbx-event-teaser,
+.tlbx-event-teaser-event-teaser-passed {
+  .event-teaser {
+    max-width: 400px;
+  }
+}
+
+.tlbx-event-teaser-event-teaser-highlighted {
+  .event-teaser {
+    max-width: 800px;
+  }
 }
