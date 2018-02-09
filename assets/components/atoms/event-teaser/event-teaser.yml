@@ -1,5 +1,6 @@
 title: Event Teaser
 name: event-teaser
 variants:
-  - highlighted
+  - large
+  - small
   - passed

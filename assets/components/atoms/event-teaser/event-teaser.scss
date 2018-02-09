@@ -54,8 +54,19 @@
   }
 }
 
-.event-teaser-highlighted {
-  flex-basis: 2;
+.event-teaser-small {
+  display: flex;
+  flex-flow: row nowrap;
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-title {
+    font-size: 1.16em;
+  }
 }
 
 .event-teaser-passed {
@@ -72,7 +83,7 @@
   }
 }
 
-.tlbx-event-teaser-event-teaser-highlighted {
+.tlbx-event-teaser-event-teaser-large {
   .event-teaser {
     max-width: 800px;
   }
