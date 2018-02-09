@@ -1,2 +1,4 @@
 title: Event Teaser List
 name: event-teaser-list
+variants:
+  - highlighted

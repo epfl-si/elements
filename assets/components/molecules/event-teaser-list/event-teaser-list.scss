@@ -1,1 +1,15 @@
 @charset 'utf-8';
+
+.event-teaser-list-highlighted {
+  .event-teaser-highlighted {
+    @include media-breakpoint-down(md) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .event-teaser-small {
+    @include media-breakpoint-down(md) {
+      margin-bottom: 2rem;
+    }
+  }
+}

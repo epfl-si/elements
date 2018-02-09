@@ -13,7 +13,7 @@
     box-shadow: 0 2px 0 0 $epflred, 0 2px 28px 8px rgba(0, 0, 0, 0.32);
   }
 
-  .card-text {
+  p {
     color: $black;
     transition: none;
   }
@@ -70,7 +70,7 @@
 }
 
 .event-teaser-passed {
-  .card-text,
+  p,
   .card-title {
     color: $softBlack;
   }

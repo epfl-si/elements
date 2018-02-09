@@ -10,12 +10,12 @@
   }
 }
 
-.triangle-bottom-right {
+.triangle-inside-bottom-right {
   position: relative;
   overflow: hidden;
 }
 
-.triangle-bottom-right:after {
+.triangle-inside-bottom-right:after {
   content: '';
   display: block;
   position: absolute;
@@ -29,9 +29,14 @@
 }
 
 .btn-epfl {
+  // TODO: finish this style when we have all states visual
   background-color: $epflred;
   padding: 1rem;
   border-radius: 0;
   border: 0;
   color: $white;
+}
+
+.text-small {
+  font-size: 0.778rem;
 }
