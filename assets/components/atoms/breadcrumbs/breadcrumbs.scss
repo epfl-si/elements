@@ -1,0 +1,57 @@
+@charset 'utf-8';
+
+.breadcrumb {
+  .breadcrumb-item {
+    display: inline-block;
+    position: relative;
+    font-size: 0.92rem;
+    line-height: 1.5rem;
+
+    &:before {
+      content: '';
+      display: none;
+    }
+
+    &:after {
+      content: '>';
+      padding: 0 0.2rem;
+      color: $gray-400;
+    }
+
+    a {
+      border: none;
+      color: $gray-600;
+
+      &:hover {
+        color: $black;
+
+        &:before {
+          width: 100%;
+        }
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -0.1rem;
+        left: 0;
+        width: 0;
+        height: 2px;
+        padding: 0;
+        // @TODO: change with epflred when merged with teasers branch
+        background: red;
+        transition: width 0.3s ease;
+      }
+    }
+
+    &:last-child:after {
+      content: '';
+      display: none;
+    }
+
+    &.active {
+      color: $gray-400;
+    }
+  }
+}
