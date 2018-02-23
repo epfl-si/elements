@@ -65,8 +65,7 @@ class Item extends Component {
           dangerouslySetInnerHTML={{ __html: this.props.children }}
           onClick={this.handleItemClick.bind(this)}
         />
-        {/* <div className={`tlbx-item-code${this.props.navigation.showAllCode ? ' tlbx-hidden' : ''}`}> */}
-        <div className="tlbx-item-code">
+        <div className={`tlbx-item-code${this.props.navigation.showAllCode ? '' : ' tlbx-hidden'}`}>
           <SyntaxHighlighter
             language='html'
             style={atomOneDark}

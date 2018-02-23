@@ -25,7 +25,7 @@ class SingleStyleguide extends Single {
         {this.state.component.variants.map((variant, key) => {
           return (
             <div key={key}>
-              <h3>{variant.title}</h3>
+              <h3 className="tlbx-variant-heading">{variant.title}</h3>
               {variant.notes
                 ?
                   <div className="tlbx-notes">
