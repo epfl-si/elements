@@ -23,15 +23,20 @@ export function getComponentsEpic(action$, store, deps) {
             const markup = `${path}${component}.twig`;
 
             const variants = config && config.variants ? config.variants.map((item, i) => {
-              const variant = typeof item === 'string' ? item : Object.keys(item)[0];
+              let variant = {};
+              if (typeof item === 'string') {
+                variant.name = item;
+                variant.title = item;
+              }
+              else { variant = {...item}; }
+
               return {
+                ...variant,
                 id: i,
                 type,
                 parent_id: id,
                 parent: config.name,
-                name: variant,
-                title: item[variant] || variant,
-                markup: `${path}${(`${component}-${variant}`).toLowerCase()}.twig`,
+                markup: `${path}${(`${component}-${variant.name}`).toLowerCase()}.twig`,
               };
             }) : [];
 

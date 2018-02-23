@@ -19,18 +19,12 @@ class SingleStyleguide extends Single {
   }
 
   render() {
+
     const variants = this.state.component.variants.length > 0 && (
       <div>
         {this.state.component.variants.map((variant, key) => {
           return (
-            <Item
-              wrapper={this.state.component.wrapper || ''}
-              background={this.state.component.background}
-              key={key}
-              title={variant.title}
-              slug={`tlbx-${this.props.match.params.slug}-${variant.name}`}
-              fullUrl={`/${this.props.location.pathname.split('/')[1]}/${this.props.match.params.slug}/${variant.name}/full`}
-            >
+            <Item key={key} component={this.state.component} variant={variant}>
               {variant.content || ''}
             </Item>
           );
@@ -41,21 +35,14 @@ class SingleStyleguide extends Single {
     return (
       <div>
         <h1 className="tlbx-h1">{this.state.component.title}</h1>
-        {/* {this.state.component.notes && (
+        {this.state.component.notes && (
           <div className="tlbx-notes">
             <ReactMarkdown source={this.state.component.notes} />
           </div>
-        )} */}
-
-        <Item
-          wrapper={this.state.component.wrapper || ''}
-          background={this.state.component.background}
-          slug={`tlbx-${this.state.component.slug}`}
-          fullUrl={`/${this.props.location.pathname.split('/')[1]}/${this.props.match.params.slug}/full`}
-        >
+        )}
+        <Item component={this.state.component}>
           {this.state.component.content || ''}
         </Item>
-
         {variants}
       </div>
     );

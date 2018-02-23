@@ -21,10 +21,19 @@ class SingleFull extends Single {
   render() {
     const params = this.props.match.params;
     const isVariant = params.variant !== undefined;
-    let content = this.state.component.content;
+    const component = this.state.component;
+
+    let content = component.content;
+    let background = component.background;
+    let wrapper = component.wrapper;
+    let slugClass = `tlbx-${component.name}`;
 
     if (isVariant) {
-      content = this.state.component.variants.find(item => item.name === params.variant).content;
+      const variant = component.variants.find(item => item.name === params.variant);
+      content = variant.content;
+      background = variant.background || component.background;
+      wrapper = variant.wrapper || component.wrapper;
+      slugClass = `tlbx-${component.name}-${variant.name}`;
     }
 
     return (
@@ -32,17 +41,17 @@ class SingleFull extends Single {
         <div className="tlbx-single-full-intro">
           <h1>Full render of:&nbsp;
             <Link
-              to={`/${this.state.component.type}/${this.state.component.parent || this.state.component.name}`}
-              title={`Go back to ${this.state.component.title} component`}
+              to={`/${component.type}/${component.parent || component.name}`}
+              title={`Go back to ${component.title} component`}
             >
-              {this.state.component.title}
+              {component.title}
             </Link>
           </h1>
         </div>
 
         <div
-          style={this.state.component.background ? { backgroundColor: this.state.component.background } : {}}
-          className={`tlbx-item-preview tlbx-${this.state.component.slug}`}
+          style={background ? { backgroundColor: background } : {}}
+          className={`tlbx-item-preview ${slugClass} ${wrapper}`}
           dangerouslySetInnerHTML={{ __html: content }}
         ></div>
       </div>

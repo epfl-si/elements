@@ -36,13 +36,24 @@ class Item extends Component {
   }
 
   render() {
-    const title = this.props.title && <h3 className="tlbx-item-title">{this.props.title}</h3>;
+    const component = this.props.component;
+    const isVariant = this.props.variant !== undefined;
+    const variant = this.props.variant;
+
+    const fullPath = `/${component.type}/${component.name}${isVariant ? `/${variant.name}` : ''}/full`;
+    const slugClass = isVariant ? `tlbx-${component.name}-${variant.name}` : `tlbx-${component.name}`;
+    const wrapper = isVariant && variant.wrapper ? variant.wrapper : component.wrapper;
+    const background = isVariant && variant.background ? variant.background : component.background;
 
     return (
       <div className="tlbx-item">
-        {title}
+        <h3 className="tlbx-item-title">
+          {isVariant ? variant.title : component.title}
+        </h3>
         <div className="tlbx-actions">
-          <Link className="tlbx-actions-link" to={this.props.fullUrl}>View full render</Link>
+          <Link className="tlbx-actions-link" to={fullPath}>
+            View full render
+          </Link>
           <ClipboardButton
             data-clipboard-text={this.props.children}
             className="tlbx-actions-link"
