@@ -45,9 +45,11 @@ class SidebarItem extends Component {
 
     return (
       <div className={this.state.active ? ' tlbx-open' : ''}>
+
         <button className="tlbx-sidebar-item" onClick={() => this.toggleComponentsList()}>
           <strong>{this.props.group}</strong>
         </button>
+
         <Collapse className="tlbx-sidebar-collapse" isOpen={this.state.active}>
           <ul className="tlbx-sidebar-item-list">
             {this.props.atomic.sources[this.props.group].map((component, key) => {

@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 
 import './Single.css';
 
+/**
+ * Single higher component
+ * mainly use to share the getContent method
+ *
+ * @class Single
+ * @extends {Component}
+ */
 class Single extends Component {
   componentWillMount() {
     this.getContent(this.props);
@@ -11,6 +18,12 @@ class Single extends Component {
     this.getContent(nextProps);
   }
 
+  /**
+   * Will operate all the request to get the component/variant markups
+   *
+   * @param {any} props
+   * @memberof Single
+   */
   getContent(props) {
     const params = props.match.params;
     const type = props.location.pathname.split('/')[1];

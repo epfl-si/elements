@@ -9,6 +9,12 @@ import { getComponentMarkup, getVariantMarkup } from '../../actions/atomic';
 import Single from './Single';
 import Item from '../../components/Item/Item';
 
+/**
+ * Will display the component inside the styleguide
+ *
+ * @class SingleStyleguide
+ * @extends {Single}
+ */
 class SingleStyleguide extends Single {
   constructor() {
     super();
@@ -18,9 +24,8 @@ class SingleStyleguide extends Single {
     }
   }
 
-  render() {
-
-    const variants = this.state.component.variants.length > 0 && (
+  renderVariants() {
+    return this.state.component.variants.length > 0 && (
       <div>
         {this.state.component.variants.map((variant, key) => {
           return (
@@ -41,7 +46,9 @@ class SingleStyleguide extends Single {
         })}
       </div>
     );
+  }
 
+  render() {
     return (
       <div>
         <h1 className="tlbx-h1">{this.state.component.title}</h1>
@@ -53,7 +60,7 @@ class SingleStyleguide extends Single {
         <Item component={this.state.component}>
           {this.state.component.content || ''}
         </Item>
-        {variants}
+        {this.renderVariants()}
       </div>
     );
   }

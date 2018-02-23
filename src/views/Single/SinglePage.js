@@ -7,6 +7,12 @@ import { getComponentMarkup } from '../../actions/atomic';
 
 import Single from './Single';
 
+/**
+ * Will display the component as a raw page
+ *
+ * @class SinglePage
+ * @extends {Single}
+ */
 class SinglePage extends Single {
   constructor() {
     super();
@@ -16,8 +22,13 @@ class SinglePage extends Single {
     }
   }
 
+  /**
+   * Disable links default behavious inside the page
+   *
+   * @param {Event} e
+   * @memberof SinglePage
+   */
   handlePageClick(e) {
-    // Disable links default behavious
     e.preventDefault();
 
     const parentUrl = (child) => {
@@ -40,7 +51,6 @@ class SinglePage extends Single {
       this.getContent({ Store: this.props.store, match : { params: { slug } } });
       this.props.history.push('/pages/homepage');
     }
-
   }
 
   render() {

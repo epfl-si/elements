@@ -34,6 +34,7 @@ class App extends Component {
   }
 
   componentWillMount() {
+    // Start init actions
     this.props.setBaseURL(this.props.location.pathname);
     this.props.getComponents();
     this.props.getDocs();

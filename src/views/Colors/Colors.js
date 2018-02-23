@@ -30,10 +30,8 @@ class Colors extends Component {
   render() {
     return (
       <div className="container-fluid">
-
         {this.renderSwatches()}
         <ColorTable />
-
       </div>
     )
   }

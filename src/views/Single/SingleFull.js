@@ -9,6 +9,12 @@ import { getComponentMarkup, getVariantMarkup } from '../../actions/atomic';
 import Single from './Single';
 import Item from '../../components/Item/Item';
 
+/**
+ * Will display the component in a full window
+ *
+ * @class SingleFull
+ * @extends {Single}
+ */
 class SingleFull extends Single {
   constructor() {
     super();

@@ -47,6 +47,8 @@ class Item extends Component {
 
     return (
       <div className="tlbx-item">
+
+        {/* Item actions */}
         <div className="tlbx-actions">
           <Link className="tlbx-actions-link" to={fullPath}>
             View full render
@@ -59,12 +61,16 @@ class Item extends Component {
             {this.state.copied ? 'Copied!' : 'Copy'}
           </ClipboardButton>
         </div>
+
+        {/* Item's preview */}
         <div
           className={`tlbx-item-preview ${wrapper} ${slugClass}`}
           style={background ? {backgroundColor: background} : {}}
           dangerouslySetInnerHTML={{ __html: this.props.children }}
           onClick={this.handleItemClick.bind(this)}
         />
+
+        {/* Item's code display */}
         <div className={`tlbx-item-code${this.props.navigation.showAllCode ? '' : ' tlbx-hidden'}`}>
           <SyntaxHighlighter
             language='html'

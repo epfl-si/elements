@@ -5,12 +5,9 @@ class ColorSwatch extends Component {
   constructor() {
     super();
 
-    this.onCopySuccess = this.onCopySuccess.bind(this);
-
     this.state = {
       copied: false
     }
-
   }
 
   onCopySuccess() {
@@ -24,15 +21,17 @@ class ColorSwatch extends Component {
   render() {
     return (
       <div className="tlbx-color-swatch">
+
         <div className="tlbx-color-swatch-color" style={{backgroundColor: this.props.color.hex}}>
           <ClipboardButton
             data-clipboard-text={this.props.color.hex}
             className="tlbx-color-swatch-btn"
-            onSuccess={this.onCopySuccess}
+            onSuccess={this.onCopySuccess.bind(this)}
           >
             {this.state.copied ? 'Copied!' : 'Copy HEX'}
           </ClipboardButton>
         </div>
+
         <div className="tlbx-color-swatch-infos">
           <h5>{this.props.color.name}</h5>
           <h6>Hex</h6>
