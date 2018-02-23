@@ -42,11 +42,11 @@ class App extends Component {
 
   render() {
     // Remove styleguide shell from pages and full render of components
-    let hasStyleguideShell = !this.props.location.pathname.includes('/pages/') && !this.props.location.pathname.match(/\/full\/?$/);
+    const hasStyleguideShell = !this.props.location.pathname.includes('/pages/') && !this.props.location.pathname.match(/\/full\/?$/);
     const fullHome = window.fullhome || false;
-    hasStyleguideShell = fullHome && this.props.location.pathname === '/' ? false : true;
+    const hasHomeStyleguideShell = fullHome && this.props.location.pathname === '/' ? false : true;
 
-    if (hasStyleguideShell) {
+    if (hasStyleguideShell && hasHomeStyleguideShell) {
       return (
         <Theme className="styleguide">
           <div className="tlbx-toolbar-wrapper">
