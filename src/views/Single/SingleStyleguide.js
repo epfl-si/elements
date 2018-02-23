@@ -24,9 +24,19 @@ class SingleStyleguide extends Single {
       <div>
         {this.state.component.variants.map((variant, key) => {
           return (
-            <Item key={key} component={this.state.component} variant={variant}>
-              {variant.content || ''}
-            </Item>
+            <div>
+              <h3>{variant.title}</h3>
+              {variant.notes
+                ?
+                  <div className="tlbx-notes">
+                    <ReactMarkdown source={variant.notes} />
+                  </div>
+                : ''
+              }
+              <Item key={key} component={this.state.component} variant={variant}>
+                {variant.content || ''}
+              </Item>
+            </div>
           );
         })}
       </div>

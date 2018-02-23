@@ -47,9 +47,6 @@ class Item extends Component {
 
     return (
       <div className="tlbx-item">
-        <h3 className="tlbx-item-title">
-          {isVariant ? variant.title : component.title}
-        </h3>
         <div className="tlbx-actions">
           <Link className="tlbx-actions-link" to={fullPath}>
             View full render
