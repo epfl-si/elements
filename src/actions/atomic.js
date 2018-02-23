@@ -41,7 +41,6 @@ export function getVariantMarkup(variant, basePath) {
 }
 
 export function setVariantMarkup(variant) {
-  console.log('set variant');
   return {
     type: SET_VARIANT_MARKUP,
     payload: variant,

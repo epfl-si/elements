@@ -84,12 +84,12 @@ class Item extends Component {
 }
 
 Item.propTypes = {
-  // title: PropTypes.string,
-  // fullUrl: PropTypes.string.isRequired,
-  // wrapper: PropTypes.string,
-  // slug: PropTypes.string,
-  // background: PropTypes.string,
-  // children: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  fullUrl: PropTypes.string.isRequired,
+  wrapper: PropTypes.string,
+  slug: PropTypes.string,
+  background: PropTypes.string,
+  children: PropTypes.string.isRequired,
 }
 
 function mapState(state) {

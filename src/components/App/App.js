@@ -10,9 +10,9 @@ import { setBaseURL } from '../../actions/navigation';
 
 import Sidebar from '../Sidebar/Sidebar';
 import Toolbar from '../Toolbar/Toolbar';
-import Single from '../../views/Single/Single';
+import SingleStyleguide from '../../views/Single/SingleStyleguide';
+import SingleFull from '../../views/Single/SingleFull';
 import Doc from '../../views/Doc/Doc';
-import SingleFull from '../../views/SingleFull/SingleFull';
 import Page from '../../views/Page/Page';
 import Colors from '../../views/Colors/Colors';
 
@@ -54,9 +54,9 @@ class App extends Component {
           </div>
           <div className="tlbx-content-wrapper">
             {/* <Route path="/" exact component={Doc} /> */}
-            <Route path="/atoms/:slug"  component={Single} />
-            <Route path="/molecules/:slug"  component={Single} />
-            <Route path="/organisms/:slug"  component={Single} />
+            <Route path="/atoms/:slug"  component={SingleStyleguide} />
+            <Route path="/molecules/:slug"  component={SingleStyleguide} />
+            <Route path="/organisms/:slug"  component={SingleStyleguide} />
             <Route path="/doc/:slug"  component={Doc} />
             <Route path="/colors"  component={Colors} />
           </div>
