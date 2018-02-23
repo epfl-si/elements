@@ -5,7 +5,9 @@ import {
 } from "../actions/docs";
 
 const defaultState = {
-  current_doc: {},
+  current_doc: {
+    content: ' ',
+  },
 };
 
 export default function docsReducer(state = defaultState, action) {
@@ -23,10 +25,7 @@ export default function docsReducer(state = defaultState, action) {
     case CLEAN_DOC_CONTENT:
       return {
         ...state,
-        current_doc: {
-          format: '',
-          content: ' ',
-        },
+        current_doc: defaultState.current_doc,
       };
     default: return state;
   }

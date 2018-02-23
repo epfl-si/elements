@@ -14,7 +14,6 @@ class Doc extends Component {
 
     this.state = {
       homeFile: '',
-      default: '<h1>Default</h1><p>Upgrade <i>toolbox-utils</i> for custom homepage</p>'
     }
   }
 
@@ -47,7 +46,7 @@ class Doc extends Component {
         ?
           <ReactMarkdown source={currentDoc.content || this.state.default} />
         :
-          <div dangerouslySetInnerHTML={{__html: currentDoc.content || this.state.default}} />
+          <div dangerouslySetInnerHTML={{__html: currentDoc.content}} />
         }
       </div>
     );
