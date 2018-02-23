@@ -109,22 +109,22 @@ class ColorTable extends Component {
             <span className="custom-control-description"><strong>any</strong> - any contrast</span>
           </label>
           <label className="custom-control custom-radio">
-            <input id="radioStacked1" name="threshold" type="radio" className="custom-control-input" value="4.5"/>
+            <input defaultChecked id="radioStacked2" name="threshold" type="radio" className="custom-control-input" value="4.5"/>
             <span className="custom-control-indicator"></span>
             <span className="custom-control-description"><strong>aa</strong> - contrast greater than 4.5 (for normal sized text)</span>
           </label>
           <label className="custom-control custom-radio">
-            <input defaultChecked id="radioStacked2" name="threshold" type="radio" className="custom-control-input" value="3"/>
+            <input id="radioStacked3" name="threshold" type="radio" className="custom-control-input" value="3"/>
             <span className="custom-control-indicator"></span>
             <span className="custom-control-description"><strong>aaLarge</strong> - contrast greater than 3 (for bold text or text larger than 24px)</span>
           </label>
           <label className="custom-control custom-radio">
-            <input id="radioStacked2" name="threshold" type="radio" className="custom-control-input" value="7"/>
+            <input id="radioStacked4" name="threshold" type="radio" className="custom-control-input" value="7"/>
             <span className="custom-control-indicator"></span>
             <span className="custom-control-description"><strong>aaa</strong> - contrast greater than 7</span>
           </label>
           <label className="custom-control custom-radio">
-            <input id="radioStacked2" name="threshold" type="radio" className="custom-control-input" value="4.5"/>
+            <input id="radioStacked5" name="threshold" type="radio" className="custom-control-input" value="4.5"/>
             <span className="custom-control-indicator"></span>
             <span className="custom-control-description"><strong>aaaLarge</strong> - contrast greater than 4.5 (for bold text or text larger than 24px)</span>
           </label>

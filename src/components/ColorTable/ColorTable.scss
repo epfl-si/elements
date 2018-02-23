@@ -90,3 +90,14 @@
   line-height: 2em;
   label { display: block; }
 }
+
+.custom-control-input + span + span {
+  cursor: pointer;
+  color: $color-primary;
+  &:before { content: "\2022  "; }
+}
+
+.custom-control-input:checked + span + span {
+  color: #000;
+  &:before { content: "\25ba  "; }
+}
