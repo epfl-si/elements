@@ -43,7 +43,6 @@ class SidebarItem extends Component {
       </li>
     );
 
-
     return (
       <div className={this.state.active ? ' tlbx-open' : ''}>
         <button className="tlbx-sidebar-item" onClick={() => this.toggleComponentsList()}>

@@ -17,13 +17,13 @@ export function setComponents(components) {
   }
 }
 
-export function getComponentMarkup(type, component, path) {
+// If too many in parallel, use some kind of `pending_markup` status
+export function getComponentMarkup(component, basePath) {
   return {
     type: GET_COMPONENT_MARKUP,
-    payload: {type, component, path},
+    payload: {component, basePath},
   }
 }
-
 
 export function setComponentMarkup(component) {
   return {

@@ -83,7 +83,7 @@ class Item extends Component {
   }
 }
 
-Item.PropTypes = {
+Item.propTypes = {
   // title: PropTypes.string,
   // fullUrl: PropTypes.string.isRequired,
   // wrapper: PropTypes.string,

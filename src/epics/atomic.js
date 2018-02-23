@@ -1,20 +1,14 @@
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/switchMap';
-// import Twig from 'twig';
 import yaml from 'yamljs';
+import Twig from 'twig';
 
 import {
   GET_COMPONENTS,
   GET_COMPONENT_MARKUP,
-  // getComponentMarkup,
   setComponents,
   setComponentMarkup,
 } from "../actions/atomic";
-
-// function fixPath(path) {
-//   const baseUrl = window.location.href.split('/#/')[0];
-//   return `${baseUrl}/#/${path.replace('./', '')}`;
-// }
 
 export function getComponentsEpic(action$, store, deps) {
   return action$.ofType(GET_COMPONENTS)
@@ -22,7 +16,7 @@ export function getComponentsEpic(action$, store, deps) {
     .map(({ payload }) => {
       Object.keys(payload)
         .map((type) =>
-          payload[type] = payload[type].map((component) => {
+          payload[type] = payload[type].map((component, id) => {
             const path = `components/${type}/${component}/`;
             const config = yaml.load(`${path}/${component}.yml`);
             const markup = `${path}${component}.twig`;
@@ -36,6 +30,8 @@ export function getComponentsEpic(action$, store, deps) {
             }) : null;
 
             return {
+              id,
+              type,
               ...config,
               markup,
               variants,
@@ -51,8 +47,26 @@ export function getComponentsEpic(action$, store, deps) {
 
 export function getComponentMarkupEpic(action$, store, deps) {
   return action$.ofType(GET_COMPONENT_MARKUP)
-    .map(({ payload }) => payload)
-    .switchMap((result) => {
-      return Observable.of(setComponentMarkup(result));
+    .switchMap(({ payload }) => {
+      const fixPath = path => path.replace('./', payload.basePath);
+
+      console.log(payload.component.markup);
+
+      return new Promise((resolve, reject) => {
+        Twig.twig({
+          id: payload.component.name,
+          href: fixPath(payload.component.markup),
+          namespaces: {
+            'atoms': './components/atoms/',
+            'molecules': './components/molecules/',
+            'organisms': './components/organisms/',
+            'pages': './components/pages/',
+          },
+          load: function(template) {
+            payload.component.content = template.render(window.data);
+            resolve(payload.component);
+          }
+        });
+      }).then(component => setComponentMarkup(component));
     });
 }
