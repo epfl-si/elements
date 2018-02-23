@@ -7,6 +7,11 @@ import {
   setDocContent,
 } from '../actions/docs';
 
+/**
+ * Will get the doc file and return the content + format to the store
+ *
+ * @returns setDocContent()
+ */
 export function getDocContentEpic(action$, store, deps) {
   return action$
     .ofType(GET_DOC_CONTENT)

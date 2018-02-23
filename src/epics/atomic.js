@@ -11,17 +11,26 @@ import {
   setVariantMarkup,
 } from '../actions/atomic';
 
+/**
+ * Will loop over window.sources and format the components/variant store structure
+ *
+ * @returns setComponents()
+ */
 export function getComponentsEpic(action$, store, deps) {
   return action$.ofType(GET_COMPONENTS)
     .filter(action => action.payload.sources !== null)
     .map(({ payload }) => {
+      // Loop over each components types
       Object.keys(payload)
         .map((type) =>
+
+          // Loop over each components
           payload[type] = payload[type].map((component, id) => {
             const path = `components/${type}/${component}/`;
             const config = yaml.load(`${path}/${component}.yml`);
             const markup = `${path}${component}.twig`;
 
+            // format related variants collection
             const variants = config && config.variants ? config.variants.map((item, i) => {
               let variant = {};
               if (typeof item === 'string') {
@@ -40,6 +49,7 @@ export function getComponentsEpic(action$, store, deps) {
               };
             }) : [];
 
+            // Return the full components + variants object
             return {
               id,
               type,
@@ -56,6 +66,11 @@ export function getComponentsEpic(action$, store, deps) {
     });
 }
 
+/**
+ * Will render the component/variant template file
+ *
+ * @returns setComponentMarkup()
+ */
 export function getMarkupEpic(action$, store, deps) {
   return action$
     .ofType(GET_MARKUP)
@@ -65,6 +80,7 @@ export function getMarkupEpic(action$, store, deps) {
       const component = payload.component || payload.variant;
       const isVariant = payload.variant !== undefined;
 
+      // Create the Twig object, then render it and return the result
       return new Promise((resolve, reject) => {
         Twig.twig({
           href: fixPath(component.markup),

@@ -8,11 +8,15 @@ const defaultState = {};
 
 export default function atomicReducer(state = defaultState, action) {
   switch(action.type) {
+
+    // Add the base components collection
     case SET_COMPONENTS:
       return {
         ...state,
         sources: action.payload,
       };
+
+    // Update a specific component
     case SET_COMPONENT_MARKUP:
       return {
         ...state,
@@ -25,6 +29,8 @@ export default function atomicReducer(state = defaultState, action) {
           ],
         },
       };
+
+    // Update a specific variant inside it parent component
     case SET_VARIANT_MARKUP:
       return {
         ...state,
