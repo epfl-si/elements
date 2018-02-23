@@ -1,27 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import './Page.css';
-const toJS = (item) => item;
+import { getComponentMarkup } from '../../actions/atomic';
 
-class Page extends Component {
-  componentWillMount() {
-    this.getContent(this.props);
-    console.log(this.props);
-  }
+import Single from './Single';
 
-  getContent(props) {
-    const params = props.match.params;
-    const components = this.props.store.components.pages;
-    const component = toJS(components).find(item => item.slug === params.slug);
+class SinglePage extends Single {
+  constructor() {
+    super();
 
-    this.setState({ component, variants: [] });
-
-    console.log(params);
-
-    component.content.then(twig => {
-      this.setState({ content: twig.render(window.data) });
-    });
+    this.state = {
+      component: {},
+    }
   }
 
   handlePageClick(e) {
@@ -53,13 +45,26 @@ class Page extends Component {
 
   render() {
     return (
-      <div onClick={this.handlePageClick.bind(this)} dangerouslySetInnerHTML={{ __html: this.state.content }} ></div>
+      <div onClick={this.handlePageClick.bind(this)} dangerouslySetInnerHTML={{ __html: this.state.component.content }} ></div>
     );
   }
 }
 
-Page.propTypes = {
+SinglePage.propTypes = {
   components: PropTypes.object,
 };
 
-export default Page;
+function mapState(state) {
+  return {
+    atomic: state.atomic,
+    navigation: state.navigation,
+  };
+}
+
+function mapDispatch(dispatch) {
+  return bindActionCreators({
+    getComponentMarkup,
+  }, dispatch);
+}
+
+export default connect(mapState, mapDispatch)(SinglePage);

@@ -12,8 +12,8 @@ import Sidebar from '../Sidebar/Sidebar';
 import Toolbar from '../Toolbar/Toolbar';
 import SingleStyleguide from '../../views/Single/SingleStyleguide';
 import SingleFull from '../../views/Single/SingleFull';
+import SinglePage from '../../views/Single/SinglePage';
 import Doc from '../../views/Doc/Doc';
-import Page from '../../views/Page/Page';
 import Colors from '../../views/Colors/Colors';
 
 import './App.css';
@@ -65,7 +65,7 @@ class App extends Component {
     } else {
       return (
         <div>
-          <Route path="/pages/:slug" exact component={Page} />
+          <Route path="/pages/:slug" exact component={SinglePage} />
           <Route path="/:type/:slug/:variant?/full" exact component={SingleFull} />
         </div>
       );
