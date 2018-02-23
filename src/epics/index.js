@@ -2,12 +2,12 @@ import { combineEpics } from 'redux-observable';
 
 import {
   getComponentsEpic,
-  getComponentMarkupEpic,
+  getMarkupEpic,
 } from './atomic';
 
 export const rootEpic = combineEpics(
   getComponentsEpic,
-  getComponentMarkupEpic,
+  getMarkupEpic,
 );
 
 export default rootEpic;

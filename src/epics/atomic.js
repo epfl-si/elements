@@ -51,7 +51,7 @@ export function getComponentsEpic(action$, store, deps) {
     });
 }
 
-export function getComponentMarkupEpic(action$, store, deps) {
+export function getMarkupEpic(action$, store, deps) {
   return action$
     .ofType(GET_MARKUP)
     .switchMap(({ payload }) => {
