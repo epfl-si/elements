@@ -5,9 +5,10 @@ import Twig from 'twig';
 
 import {
   GET_COMPONENTS,
-  GET_COMPONENT_MARKUP,
+  GET_MARKUP,
   setComponents,
   setComponentMarkup,
+  setVariantMarkup,
 } from "../actions/atomic";
 
 export function getComponentsEpic(action$, store, deps) {
@@ -21,13 +22,18 @@ export function getComponentsEpic(action$, store, deps) {
             const config = yaml.load(`${path}/${component}.yml`);
             const markup = `${path}${component}.twig`;
 
-            const variants = config && config.variants ? config.variants.map(key => {
-              const variant = Object.keys(key)[0];
+            const variants = config && config.variants ? config.variants.map((item, i) => {
+              const variant = typeof item === 'string' ? item : Object.keys(item)[0];
               return {
-                title: key[variant],
+                id: i,
+                type,
+                parent_id: id,
+                parent: config.name,
+                name: variant,
+                title: item[variant] || variant,
                 markup: `${path}${(`${component}-${variant}`).toLowerCase()}.twig`,
               };
-            }) : null;
+            }) : [];
 
             return {
               id,
@@ -46,16 +52,17 @@ export function getComponentsEpic(action$, store, deps) {
 }
 
 export function getComponentMarkupEpic(action$, store, deps) {
-  return action$.ofType(GET_COMPONENT_MARKUP)
+  return action$
+    .ofType(GET_MARKUP)
     .switchMap(({ payload }) => {
       const fixPath = path => path.replace('./', payload.basePath);
 
-      console.log(payload.component.markup);
+      const component = payload.component || payload.variant;
+      const isVariant = payload.variant !== undefined;
 
       return new Promise((resolve, reject) => {
         Twig.twig({
-          id: payload.component.name,
-          href: fixPath(payload.component.markup),
+          href: fixPath(component.markup),
           namespaces: {
             'atoms': './components/atoms/',
             'molecules': './components/molecules/',
@@ -63,10 +70,13 @@ export function getComponentMarkupEpic(action$, store, deps) {
             'pages': './components/pages/',
           },
           load: function(template) {
-            payload.component.content = template.render(window.data);
-            resolve(payload.component);
+            component.content = template.render(window.data);
+            resolve(component);
           }
         });
-      }).then(component => setComponentMarkup(component));
+      }).then((component) => {
+        const isVariant = component.parent_id !== undefined;
+        return isVariant ? setVariantMarkup(component) : setComponentMarkup(component);
+      });
     });
 }

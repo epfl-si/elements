@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import Item from '../../components/Item/Item';
 
-import { getComponentMarkup } from '../../actions/atomic';
+import { getComponentMarkup, getVariantMarkup } from '../../actions/atomic';
 
 import './Single.css';
 
@@ -32,9 +32,12 @@ class Single extends Component {
     const components = props.atomic.sources[type];
     const component = components.find(item => item.name === params.slug);
 
-    if (undefined === component.content) {
-      props.getComponentMarkup(component, props.navigation.base_url);
-    }
+    if (undefined === component.content) props.getComponentMarkup(component, props.navigation.base_url);
+
+    component.variants.forEach((variant) => {
+      if (undefined === variant.content) props.getVariantMarkup(variant, props.navigation.base_url);
+    });
+
     this.setState({ component });
   }
 
@@ -51,7 +54,7 @@ class Single extends Component {
               slug={`tlbx-${this.state.component.slug}-${variant.slug}`}
               fullUrl={`/${this.props.location.pathname.split('/')[1]}/${this.props.match.params.slug}/${variant.slug}/full`}
             >
-              {variant.markup}
+              {variant.content || ''}
             </Item>
           );
         })}
@@ -95,7 +98,8 @@ function mapState(state) {
 
 function mapDispatch(dispatch) {
   return bindActionCreators({
-    getComponentMarkup
+    getComponentMarkup,
+    getVariantMarkup,
   }, dispatch);
 }
 
