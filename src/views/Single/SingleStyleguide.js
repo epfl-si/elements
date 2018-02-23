@@ -24,7 +24,7 @@ class SingleStyleguide extends Single {
       <div>
         {this.state.component.variants.map((variant, key) => {
           return (
-            <div>
+            <div key={key}>
               <h3>{variant.title}</h3>
               {variant.notes
                 ?
@@ -33,7 +33,7 @@ class SingleStyleguide extends Single {
                   </div>
                 : ''
               }
-              <Item key={key} component={this.state.component} variant={variant}>
+              <Item component={this.state.component} variant={variant}>
                 {variant.content || ''}
               </Item>
             </div>
