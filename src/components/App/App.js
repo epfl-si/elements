@@ -53,12 +53,12 @@ class App extends Component {
             <Sidebar location={this.props.location} />
           </div>
           <div className="tlbx-content-wrapper">
-            {/* <Route path="/" exact component={Doc} /> */}
-            <Route path="/atoms/:slug"  component={SingleStyleguide} />
-            <Route path="/molecules/:slug"  component={SingleStyleguide} />
-            <Route path="/organisms/:slug"  component={SingleStyleguide} />
-            <Route path="/doc/:slug"  component={Doc} />
-            <Route path="/colors"  component={Colors} />
+            <Route path="/" exact component={Doc} />
+            <Route path="/atoms/:slug" component={SingleStyleguide} />
+            <Route path="/molecules/:slug" component={SingleStyleguide} />
+            <Route path="/organisms/:slug" component={SingleStyleguide} />
+            <Route path="/doc/:slug" component={Doc} />
+            <Route path="/colors" component={Colors} />
           </div>
         </Theme>
       );

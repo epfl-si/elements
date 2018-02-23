@@ -9,7 +9,7 @@ import {
   setComponents,
   setComponentMarkup,
   setVariantMarkup,
-} from "../actions/atomic";
+} from '../actions/atomic';
 
 export function getComponentsEpic(action$, store, deps) {
   return action$.ofType(GET_COMPONENTS)
