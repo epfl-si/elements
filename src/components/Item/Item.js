@@ -63,12 +63,13 @@ class Item extends Component {
           </ClipboardButton>
         </div>
         <div
-          className={`tlbx-item-preview ${this.props.wrapper} ${this.props.slug}`}
-          style={this.props.background ? {backgroundColor: this.props.background} : {}}
+          className={`tlbx-item-preview ${wrapper} ${slugClass}`}
+          style={background ? {backgroundColor: background} : {}}
           dangerouslySetInnerHTML={{ __html: this.props.children }}
           onClick={this.handleItemClick.bind(this)}
         />
-        <div className={`tlbx-item-code${this.props.navigation.showAllCode ? ' tlbx-hidden' : ''}`}>
+        {/* <div className={`tlbx-item-code${this.props.navigation.showAllCode ? ' tlbx-hidden' : ''}`}> */}
+        <div className="tlbx-item-code">
           <SyntaxHighlighter
             language='html'
             style={atomOneDark}
@@ -95,11 +96,8 @@ class Item extends Component {
 }
 
 Item.propTypes = {
-  title: PropTypes.string,
-  fullUrl: PropTypes.string.isRequired,
-  wrapper: PropTypes.string,
-  slug: PropTypes.string,
-  background: PropTypes.string,
+  component: PropTypes.object.isRequired,
+  variant: PropTypes.object,
   children: PropTypes.string.isRequired,
 }
 
