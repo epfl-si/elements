@@ -1,6 +1,7 @@
 import {
   GET_DOCS,
   SET_DOC_CONTENT,
+  CLEAN_DOC_CONTENT,
 } from "../actions/docs";
 
 const defaultState = {
@@ -18,6 +19,14 @@ export default function docsReducer(state = defaultState, action) {
       return {
         ...state,
         current_doc: action.payload,
+      };
+    case CLEAN_DOC_CONTENT:
+      return {
+        ...state,
+        current_doc: {
+          format: '',
+          content: ' ',
+        },
       };
     default: return state;
   }

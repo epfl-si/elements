@@ -41,7 +41,9 @@ class App extends Component {
 
   render() {
     // Remove styleguide shell from pages and full render of components
-    const hasStyleguideShell = !this.props.location.pathname.includes('/pages/') && !this.props.location.pathname.match(/\/full\/?$/);
+    let hasStyleguideShell = !this.props.location.pathname.includes('/pages/') && !this.props.location.pathname.match(/\/full\/?$/);
+    const fullHome = window.fullhome || false;
+    hasStyleguideShell = fullHome && this.props.location.pathname === '/' ? false : true;
 
     if (hasStyleguideShell) {
       return (
@@ -53,18 +55,26 @@ class App extends Component {
             <Sidebar location={this.props.location} />
           </div>
           <div className="tlbx-content-wrapper">
-            <Route path="/" exact component={Doc} />
-            <Route path="/atoms/:slug" component={SingleStyleguide} />
-            <Route path="/molecules/:slug" component={SingleStyleguide} />
-            <Route path="/organisms/:slug" component={SingleStyleguide} />
-            <Route path="/doc/:slug" component={Doc} />
-            <Route path="/colors" component={Colors} />
+            <div className="tlbx-content">
+              {fullHome ? '' :
+                <Route path="/" exact component={Doc} />
+              }
+              <Route path="/atoms/:slug" component={SingleStyleguide} />
+              <Route path="/molecules/:slug" component={SingleStyleguide} />
+              <Route path="/organisms/:slug" component={SingleStyleguide} />
+              <Route path="/doc/:slug" component={Doc} />
+              <Route path="/colors" component={Colors} />
+            </div>
           </div>
         </Theme>
       );
     } else {
       return (
         <div>
+          {fullHome ?
+            <Route path="/" exact component={Doc} />
+            : ''
+          }
           <Route path="/pages/:slug" exact component={SinglePage} />
           <Route path="/:type/:slug/:variant?/full" exact component={SingleFull} />
         </div>

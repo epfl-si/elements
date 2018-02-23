@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 
-import { getDocContent } from '../../actions/docs';
+import { getDocContent, cleanDocContent } from '../../actions/docs';
 
 import './Doc.css';
 
@@ -20,6 +20,10 @@ class Doc extends Component {
 
   componentWillMount() {
     this.getContent(this.props);
+  }
+
+  componentWillUnmount() {
+    this.props.cleanDocContent();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -64,6 +68,7 @@ function mapState(state) {
 function mapDispatch(dispatch) {
   return bindActionCreators({
     getDocContent,
+    cleanDocContent,
   }, dispatch);
 }
 

@@ -72,7 +72,6 @@ body {
   flex: 1 1 auto;
   grid-column: 3;
   align-self: start;
-  padding: 1.2rem 2rem;
   overflow: hidden;
 
   @media only screen and (max-width: 767px) {
@@ -80,4 +79,8 @@ body {
     box-sizing: border-box;
     width: 100%;
   }
+}
+
+.tlbx-content {
+  padding: 1.2rem 2rem;
 }
