@@ -19,7 +19,7 @@ class SinglePage extends Single {
 
     this.state = {
       component: {},
-    }
+    };
   }
 
   /**
@@ -36,26 +36,24 @@ class SinglePage extends Single {
       if (child.parentNode) {
         if (child.parentNode.tagName === 'A') {
           return child.parentNode;
-        } else {
-          return parentUrl(child.parentNode);
         }
-      } else {
-        return false;
+        return parentUrl(child.parentNode);
       }
-    }
+      return false;
+    };
 
     // If it's a link related event, redirect to page
     const linkParent = parentUrl(e.target);
     if (linkParent) {
       const slug = linkParent.href.split('/pages/').slice(-1)[0];
-      this.getContent({ Store: this.props.store, match : { params: { slug } } });
+      this.getContent({ Store: this.props.store, match: { params: { slug } } });
       this.props.history.push('/pages/homepage');
     }
   }
 
   render() {
     return (
-      <div onClick={this.handlePageClick.bind(this)} dangerouslySetInnerHTML={{ __html: this.state.component.content }} ></div>
+      <div role="presentation" onClick={this.handlePageClick.bind(this)} dangerouslySetInnerHTML={{ __html: this.state.component.content }} />
     );
   }
 }

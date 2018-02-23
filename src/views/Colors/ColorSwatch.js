@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ClipboardButton from 'react-clipboard.js';
 
 class ColorSwatch extends Component {
@@ -6,15 +7,15 @@ class ColorSwatch extends Component {
     super();
 
     this.state = {
-      copied: false
-    }
+      copied: false,
+    };
   }
 
   onCopySuccess() {
-    this.setState({copied: true});
+    this.setState({ copied: true });
 
     setTimeout(() => {
-      this.setState({copied: false});
+      this.setState({ copied: false });
     }, 1000);
   }
 
@@ -22,7 +23,7 @@ class ColorSwatch extends Component {
     return (
       <div className="tlbx-color-swatch">
 
-        <div className="tlbx-color-swatch-color" style={{backgroundColor: this.props.color.hex}}>
+        <div className="tlbx-color-swatch-color" style={{ backgroundColor: this.props.color.hex }}>
           <ClipboardButton
             data-clipboard-text={this.props.color.hex}
             className="tlbx-color-swatch-btn"
@@ -43,5 +44,9 @@ class ColorSwatch extends Component {
     );
   }
 }
+
+ColorSwatch.propTypes = {
+  color: PropTypes.object.isRequired,
+};
 
 export default ColorSwatch;

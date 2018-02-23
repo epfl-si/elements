@@ -18,8 +18,8 @@ class Item extends Component {
     super();
 
     this.state = {
-      copied: false
-    }
+      copied: false,
+    };
   }
 
   onCopySuccess() {
@@ -64,8 +64,9 @@ class Item extends Component {
 
         {/* Item's preview */}
         <div
+          role="presentation"
           className={`tlbx-item-preview ${wrapper} ${slugClass}`}
-          style={background ? {backgroundColor: background} : {}}
+          style={background ? { backgroundColor: background } : {}}
           dangerouslySetInnerHTML={{ __html: this.props.children }}
           onClick={this.handleItemClick.bind(this)}
         />
@@ -73,15 +74,15 @@ class Item extends Component {
         {/* Item's code display */}
         <div className={`tlbx-item-code${this.props.navigation.showAllCode ? '' : ' tlbx-hidden'}`}>
           <SyntaxHighlighter
-            language='html'
+            language="html"
             style={atomOneDark}
-            wrapLines={true}
-            showLineNumbers={true}
+            wrapLines
+            showLineNumbers
             lineNumberContainerStyle={{
               float: 'left',
               textAlign: 'right',
               marginRight: '10px',
-              opacity: '0.5'
+              opacity: '0.5',
             }}
             customStyle={{
               padding: '1.3em 1em',
@@ -101,7 +102,8 @@ Item.propTypes = {
   component: PropTypes.object.isRequired,
   variant: PropTypes.object,
   children: PropTypes.string.isRequired,
-}
+  navigation: PropTypes.object.isRequired,
+};
 
 function mapState(state) {
   return {

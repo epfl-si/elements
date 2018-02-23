@@ -21,7 +21,7 @@ class SingleStyleguide extends Single {
 
     this.state = {
       component: {},
-    }
+    };
   }
 
   renderVariants() {

@@ -33,7 +33,7 @@ class Colors extends Component {
         {this.renderSwatches()}
         <ColorTable />
       </div>
-    )
+    );
   }
 }
 

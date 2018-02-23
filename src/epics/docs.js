@@ -1,4 +1,3 @@
-import { Observable } from 'rxjs';
 import 'rxjs/add/operator/switchMap';
 import axios from 'axios';
 
@@ -12,7 +11,7 @@ import {
  *
  * @returns setDocContent()
  */
-export function getDocContentEpic(action$, store, deps) {
+export function getDocContentEpic(action$) {
   return action$
     .ofType(GET_DOC_CONTENT)
     .switchMap(({ payload }) => {
@@ -27,3 +26,5 @@ export function getDocContentEpic(action$, store, deps) {
         }));
     });
 }
+
+export default getDocContentEpic;

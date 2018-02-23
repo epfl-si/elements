@@ -22,6 +22,6 @@ printIcons();
 
 ReactDOM.render(
   router,
-  document.getElementById('styleguide')
+  document.getElementById('styleguide'),
 );
 

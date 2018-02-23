@@ -2,12 +2,12 @@ import {
   SET_COMPONENTS,
   SET_COMPONENT_MARKUP,
   SET_VARIANT_MARKUP,
-} from "../actions/atomic";
+} from '../actions/atomic';
 
 const defaultState = {};
 
 export default function atomicReducer(state = defaultState, action) {
-  switch(action.type) {
+  switch (action.type) {
 
     // Add the base components collection
     case SET_COMPONENTS:

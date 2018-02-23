@@ -8,41 +8,41 @@ export function getComponents() {
   return {
     type: GET_COMPONENTS,
     payload: window.sources || null,
-  }
+  };
 }
 
 export function setComponents(components) {
   return {
     type: SET_COMPONENTS,
     payload: components,
-  }
+  };
 }
 
 // If too many in parallel, use some kind of `pending_markup` status
 export function getComponentMarkup(component, basePath) {
   return {
     type: GET_MARKUP,
-    payload: {component, basePath},
-  }
+    payload: { component, basePath },
+  };
 }
 
 export function setComponentMarkup(component) {
   return {
     type: SET_COMPONENT_MARKUP,
     payload: component,
-  }
+  };
 }
 
 export function getVariantMarkup(variant, basePath) {
   return {
     type: GET_MARKUP,
-    payload: {variant, basePath},
-  }
+    payload: { variant, basePath },
+  };
 }
 
 export function setVariantMarkup(variant) {
   return {
     type: SET_VARIANT_MARKUP,
     payload: variant,
-  }
+  };
 }

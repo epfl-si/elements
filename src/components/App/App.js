@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
 import { Theme } from './Theme';
 
@@ -44,7 +45,7 @@ class App extends Component {
     // Remove styleguide shell from pages and full render of components
     const hasStyleguideShell = !this.props.location.pathname.includes('/pages/') && !this.props.location.pathname.match(/\/full\/?$/);
     const fullHome = window.fullhome || false;
-    const hasHomeStyleguideShell = fullHome && this.props.location.pathname === '/' ? false : true;
+    const hasHomeStyleguideShell = !(fullHome && this.props.location.pathname === '/');
 
     if (hasStyleguideShell && hasHomeStyleguideShell) {
       return (
@@ -57,7 +58,8 @@ class App extends Component {
           </div>
           <div className="tlbx-content-wrapper">
             <div className="tlbx-content">
-              {fullHome ? '' :
+              {fullHome
+                ? '' :
                 <Route path="/" exact component={Doc} />
               }
               <Route path="/atoms/:slug" component={SingleStyleguide} />
@@ -69,20 +71,28 @@ class App extends Component {
           </div>
         </Theme>
       );
-    } else {
-      return (
-        <div>
-          {fullHome ?
-            <Route path="/" exact component={Doc} />
-            : ''
-          }
-          <Route path="/pages/:slug" exact component={SinglePage} />
-          <Route path="/:type/:slug/:variant?/full" exact component={SingleFull} />
-        </div>
-      );
     }
+
+    return (
+      <div>
+        {fullHome ?
+          <Route path="/" exact component={Doc} />
+          : ''
+        }
+        <Route path="/pages/:slug" exact component={SinglePage} />
+        <Route path="/:type/:slug/:variant?/full" exact component={SingleFull} />
+      </div>
+    );
   }
 }
+
+App.propTypes = {
+  getComponents: PropTypes.func.isRequired,
+  getDocs: PropTypes.func.isRequired,
+  location: PropTypes.object.isRequired,
+  navigation: PropTypes.object.isRequired,
+  setBaseURL: PropTypes.func.isRequired,
+};
 
 function mapState(state) {
   return {

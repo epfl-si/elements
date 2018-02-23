@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import './Icon.css';
 
-class Icon extends Component {
-  render() {
-    const useTag = `<use xlink:href="#${this.props.name}" />`;
+const Icon = (props) => {
+  const useTag = `<use xlink:href="#${props.name}" />`;
 
-    return (
-      <svg dangerouslySetInnerHTML={{__html: useTag }} className="tblx-icon" />
-    );
-  }
-}
+  return (
+    <svg dangerouslySetInnerHTML={{ __html: useTag }} className="tblx-icon" />
+  );
+};
+
+Icon.propTypes = {
+  name: PropTypes.string.isRequired,
+};
 
 export default Icon;

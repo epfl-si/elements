@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import { getComponentMarkup, getVariantMarkup } from '../../actions/atomic';
 
 import Single from './Single';
-import Item from '../../components/Item/Item';
 
 /**
  * Will display the component in a full window
@@ -21,7 +20,7 @@ class SingleFull extends Single {
 
     this.state = {
       component: {},
-    }
+    };
   }
 
   render() {
@@ -59,7 +58,7 @@ class SingleFull extends Single {
           style={background ? { backgroundColor: background } : {}}
           className={`tlbx-item-preview ${slugClass} ${wrapper}`}
           dangerouslySetInnerHTML={{ __html: content }}
-        ></div>
+        />
       </div>
     );
   }

@@ -14,19 +14,19 @@ class Doc extends Component {
 
     this.state = {
       homeFile: '',
-    }
+    };
   }
 
   componentWillMount() {
     this.getContent(this.props);
   }
 
-  componentWillUnmount() {
-    this.props.cleanDocContent();
-  }
-
   componentWillReceiveProps(nextProps) {
     this.getContent(nextProps);
+  }
+
+  componentWillUnmount() {
+    this.props.cleanDocContent();
   }
 
   getContent(props) {
@@ -46,7 +46,7 @@ class Doc extends Component {
         ?
           <ReactMarkdown source={currentDoc.content || this.state.default} />
         :
-          <div dangerouslySetInnerHTML={{__html: currentDoc.content}} />
+          <div dangerouslySetInnerHTML={{ __html: currentDoc.content }} />
         }
       </div>
     );
@@ -54,7 +54,8 @@ class Doc extends Component {
 }
 
 Doc.propTypes = {
-  docs: PropTypes.object,
+  docs: PropTypes.object.isRequired,
+  cleanDocContent: PropTypes.func.isRequired,
 };
 
 function mapState(state) {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 import Collapse from 'react-css-collapse';
 import PropTypes from 'prop-types';
 
@@ -11,24 +11,24 @@ class SidebarDocs extends Component {
 
     this.state = {
       active: false,
-    }
+    };
 
     this.toggleComponentsList = this.toggleComponentsList.bind(this);
+  }
+
+  componentDidMount() {
+    const regex = new RegExp('^/doc/');
+    const isCurrent = this.props.location.pathname.match(regex);
+
+    this.setState({
+      active: !!isCurrent,
+    });
   }
 
   toggleComponentsList() {
     this.setState({
       active: !this.state.active,
     });
-  }
-
-  componentDidMount() {
-    const regex = new RegExp(`^/doc/`);
-    const isCurrent = this.props.location.pathname.match(regex);
-
-    this.setState({
-      active: !!isCurrent
-    })
   }
 
   titlelize(string) {
@@ -97,7 +97,8 @@ class SidebarDocs extends Component {
 }
 
 SidebarDocs.propTypes = {
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
+  docs: PropTypes.object.isRequired,
 };
 
 function mapState(state) {

@@ -2,7 +2,7 @@ import {
   GET_DOCS,
   SET_DOC_CONTENT,
   CLEAN_DOC_CONTENT,
-} from "../actions/docs";
+} from '../actions/docs';
 
 const defaultState = {
   current_doc: {
@@ -11,7 +11,7 @@ const defaultState = {
 };
 
 export default function docsReducer(state = defaultState, action) {
-  switch(action.type) {
+  switch (action.type) {
 
     // Add the base doc collection
     case GET_DOCS:

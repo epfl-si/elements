@@ -16,15 +16,16 @@ import {
  *
  * @returns setComponents()
  */
-export function getComponentsEpic(action$, store, deps) {
+export function getComponentsEpic(action$) {
   return action$.ofType(GET_COMPONENTS)
     .filter(action => action.payload.sources !== null)
     .map(({ payload }) => {
       // Loop over each components types
       Object.keys(payload)
-        .map((type) =>
+        .map(type =>
 
           // Loop over each components
+          // eslint-disable-next-line no-param-reassign
           payload[type] = payload[type].map((component, id) => {
             const path = `components/${type}/${component}/`;
             const config = yaml.load(`${path}/${component}.yml`);
@@ -36,8 +37,7 @@ export function getComponentsEpic(action$, store, deps) {
               if (typeof item === 'string') {
                 variant.name = item;
                 variant.title = item;
-              }
-              else { variant = {...item}; }
+              } else { variant = { ...item }; }
 
               return {
                 ...variant,
@@ -71,33 +71,32 @@ export function getComponentsEpic(action$, store, deps) {
  *
  * @returns setComponentMarkup()
  */
-export function getMarkupEpic(action$, store, deps) {
+export function getMarkupEpic(action$) {
   return action$
     .ofType(GET_MARKUP)
     .switchMap(({ payload }) => {
       const fixPath = path => path.replace('./', payload.basePath);
 
       const component = payload.component || payload.variant;
-      const isVariant = payload.variant !== undefined;
 
       // Create the Twig object, then render it and return the result
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve) => {
         Twig.twig({
           href: fixPath(component.markup),
           namespaces: {
-            'atoms': './components/atoms/',
-            'molecules': './components/molecules/',
-            'organisms': './components/organisms/',
-            'pages': './components/pages/',
+            atoms: './components/atoms/',
+            molecules: './components/molecules/',
+            organisms: './components/organisms/',
+            pages: './components/pages/',
           },
-          load: function(template) {
+          load: (template) => {
             component.content = template.render(window.data);
             resolve(component);
-          }
+          },
         });
-      }).then((component) => {
-        const isVariant = component.parent_id !== undefined;
-        return isVariant ? setVariantMarkup(component) : setComponentMarkup(component);
+      }).then((result) => {
+        const isVariant = result.parent_id !== undefined;
+        return isVariant ? setVariantMarkup(result) : setComponentMarkup(result);
       });
     });
 }

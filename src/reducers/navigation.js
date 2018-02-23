@@ -2,7 +2,7 @@ import {
   BASE_URL_UPDATE,
   TOGGLE_CODE,
   TOGGLE_MENU,
-} from "../actions/navigation";
+} from '../actions/navigation';
 
 const defaultState = {
   showMenu: false,
@@ -10,7 +10,7 @@ const defaultState = {
 };
 
 export default function navigationReducer(state = defaultState, action) {
-  switch(action.type) {
+  switch (action.type) {
     // Set the current app url
     case BASE_URL_UPDATE:
       return {

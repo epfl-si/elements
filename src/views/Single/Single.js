@@ -30,7 +30,9 @@ class Single extends Component {
     const components = props.atomic.sources[type];
     const component = components.find(item => item.name === params.slug);
 
-    if (undefined === component.content) props.getComponentMarkup(component, props.navigation.base_url);
+    if (undefined === component.content) {
+      props.getComponentMarkup(component, props.navigation.base_url);
+    }
 
     component.variants.forEach((variant) => {
       if (undefined === variant.content) props.getVariantMarkup(variant, props.navigation.base_url);

@@ -7,25 +7,25 @@ export function getDocs() {
   return {
     type: GET_DOCS,
     payload: window.docs || null,
-  }
+  };
 }
 
 export function getDocContent(slug, basePath) {
   return {
     type: GET_DOC_CONTENT,
-    payload: {slug, basePath},
-  }
+    payload: { slug, basePath },
+  };
 }
 
 export function setDocContent(doc) {
   return {
     type: SET_DOC_CONTENT,
     payload: doc,
-  }
+  };
 }
 
 export function cleanDocContent() {
   return {
     type: CLEAN_DOC_CONTENT,
-  }
+  };
 }
