@@ -17,7 +17,7 @@ class Colors extends Component {
   renderSwatches() {
     return (
       <div>
-        <h2>Brand Colors</h2>
+        <h1>Brand Colors</h1>
         <div className="tlbx-color-swatch-wrapper">
           {Object.keys(this.state.contrast).map(key => (
             <ColorSwatch key={key} color={this.state.contrast[key]} />

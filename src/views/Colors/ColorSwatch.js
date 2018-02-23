@@ -34,11 +34,10 @@ class ColorSwatch extends Component {
           </ClipboardButton>
         </div>
         <div className="tlbx-color-swatch-infos">
-          <h4>Name</h4>
-          {this.props.color.name}
-          <h4>Hex</h4>
+          <h5>{this.props.color.name}</h5>
+          <h6>Hex</h6>
           {this.props.color.hex}
-          <h4>Rgb</h4>
+          <h6>Rgb</h6>
           rgb({this.props.color.values.rgb.join(',')})
         </div>
       </div>
