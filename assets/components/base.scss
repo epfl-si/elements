@@ -22,6 +22,9 @@
 // molecules:
 @import 'molecules/footnotes/footnotes';
 @import 'molecules/sidenotes/sidenotes';
+@import 'molecules/event-teaser/event-teaser';
+@import 'molecules/basic-page-teaser/basic-page-teaser';
 
 //
 // organisms:
+@import 'organisms/event-teaser-list/event-teaser-list';

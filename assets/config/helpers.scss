@@ -9,3 +9,34 @@
     &.active { box-shadow: 0 0 0 2px $red !important; }
   }
 }
+
+.triangle-inside-bottom-right {
+  position: relative;
+  overflow: hidden;
+}
+
+.triangle-inside-bottom-right:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 2.1rem;
+  bottom: 0;
+  width: 3rem;
+  height: 3rem;
+  background-color: $epflred;
+  transform: rotate(135deg);
+  transform-origin: bottom right;
+}
+
+.btn-epfl {
+  // TODO: finish this style when we have all states visual
+  background-color: $epflred;
+  padding: 1rem;
+  border-radius: 0;
+  border: 0;
+  color: $white;
+}
+
+.text-small {
+  font-size: 0.778rem;
+}

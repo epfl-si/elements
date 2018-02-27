@@ -1,0 +1,5 @@
+title: Event Teaser List
+name: event-teaser-list
+variants:
+  - name: highlighted
+    title: Event teaser list highlighted

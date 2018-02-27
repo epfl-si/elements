@@ -1,0 +1,11 @@
+title: Event Teaser
+name: event-teaser
+variants:
+  - name: large
+    title: Teaser Event Large
+  - name: small
+    title: Teaser Event Small
+  - name: passed
+    title: Teaser Event Passed
+  - name: highlighted
+    title: Teaser Event Highlighted
