@@ -16,14 +16,14 @@
 //
 // atoms:
 @import 'atoms/link/link';
-@import 'atoms/event-teaser/event-teaser';
 
 //
 // molecules:
 @import 'molecules/footnotes/footnotes';
 @import 'molecules/sidenotes/sidenotes';
-@import 'molecules/event-teaser-list/event-teaser-list';
+@import 'molecules/event-teaser/event-teaser';
 @import 'molecules/basic-page-teaser/basic-page-teaser';
 
 //
 // organisms:
+@import 'organisms/event-teaser-list/event-teaser-list';
