@@ -1,0 +1,12 @@
+@charset 'utf-8';
+
+.links-block {
+  padding: 1.66rem;
+  background: $white;
+  border: 1px solid $gray-200;
+
+  .nav-link {
+    padding: 0;
+    margin-bottom: 0.8rem;
+  }
+}
