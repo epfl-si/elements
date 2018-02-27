@@ -7,7 +7,7 @@ services:
       working_dir: /app
       command: bash -c "yarn && yarn start"
       volumes:
-        - ./src:/app
+        - .:/app
       ports:
         - "3000:3000"
 
@@ -17,4 +17,4 @@ services:
       working_dir: /app
       command: bash -c "yarn && yarn build"
       volumes:
-        - ./src:/app
+        - .:/app

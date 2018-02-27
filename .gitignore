@@ -4,5 +4,5 @@ node_modules
 .publish
 .env
 
-/src/dist
-/src/build/
+/dist
+/build/

@@ -7,8 +7,14 @@
 
 To contribute and run the styleguide, you will need few things :
 - [🔀 Git](https://git-scm.com/) - Version control system 
-- [📗 NodeJS 8+](https://nodejs.org/en/) - JavaScript runtime used to build the project
-- [🐈 Yarn](https://yarnpkg.com/lang/en/) - Dependency manager built on top of the NPM registry
+- either:
+
+  - [📗 NodeJS 8+](https://nodejs.org/en/) - JavaScript runtime used to build the project
+  - [🐈 Yarn](https://yarnpkg.com/lang/en/) - Dependency manager built on top of the NPM registry
+
+- or:
+  - [🐳 Docker](https://www.docker.com/) - Container platform provider
+  - [🐳 docker-compose](https://www.docker.com/) - Tool for defining and running multi-container Docker applications
 
 Then, to install the project on your environment :
 
@@ -18,6 +24,14 @@ $ cd ./elements
 $ yarn
 ```
 
+Docker variant:
+
+```bash
+$ git clone git@github.com:epfl-idevelop/elements.git
+$ cd ./elements
+$ docker-compose up elements-build --build
+```
+
 ## Run locally
 
 As listed in the `package.json` you have **3 commands** available :
@@ -25,6 +39,10 @@ As listed in the `package.json` you have **3 commands** available :
 - `$ yarn start` : Will launch a live reloaded server to help you **during development**
 - `$ yarn build` : Will build your assets for **production usage**
 - `$ yarn deploy` : Will **deploy the styleguide** in the dedicated [`gh-pages`](https://epfl-idevelop.github.io/elements)
+
+With Docker, you can run:
+- `$ docker-compose up up elements-build` same as `$ yarn build` but in containers
+- `$ docker-compose up up elements-serve` same as `$ yarn start` but in containers
 
 ## Contribute
 
