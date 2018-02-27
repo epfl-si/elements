@@ -2,11 +2,35 @@
   "name": "toolbox-reader",
   "version": "1.1.0",
   "private": true,
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "eslint-config-airbnb",
+    "env": {
+      "browser": true
+    },
+    "rules": {
+      "arrow-body-style": 0,
+      "camelcase": 0,
+      "global-require": 0,
+      "import/extensions": 0,
+      "import/no-unresolved": 0,
+      "react/jsx-filename-extension": 0,
+      "react/forbid-prop-types": 0,
+      "react/no-danger": 0,
+      "react/jsx-no-bind": 0,
+      "react/no-did-mount-set-state": 0,
+      "react/no-array-index-key": 0,
+      "class-methods-use-this": 0,
+      "no-nested-ternary": 0,
+      "no-alert": 0,
+      "no-return-assign": 0,
+      "no-param-reassign": 0
+    }
+  },
   "dependencies": {
     "axios": "^0.17.1",
     "colorable": "^1.0.5",
-    "mobx": "^3.1.11",
-    "mobx-react": "^4.2.1",
+    "history": "^4.7.2",
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.0.2",
     "prop-types": "^15.5.10",
@@ -16,13 +40,23 @@
     "react-css-collapse": "^3.0.2",
     "react-dom": "^16.0.0",
     "react-markdown": "^2.5.0",
+    "react-redux": "^5.0.6",
     "react-router-dom": "^4.1.1",
+    "react-router-redux": "^5.0.0-alpha.9",
     "react-syntax-highlighter": "^5.6.2",
+    "redux": "^3.7.2",
+    "redux-observable": "^0.17.0",
+    "rxjs": "^5.5.5",
     "styled-components": "^2.2.3",
     "twig": "^1.10.5",
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.1.0",
     "react-scripts": "^1.0.7"
   },
   "scripts": {

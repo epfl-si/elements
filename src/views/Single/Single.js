@@ -1,113 +1,45 @@
 import React, { Component } from 'react';
-import { toJS } from 'mobx';
-import { inject, observer } from 'mobx-react';
-import PropTypes from 'prop-types';
-import ReactMarkdown from 'react-markdown';
-import Item from '../../components/Item/Item';
 
 import './Single.css';
 
+/**
+ * Single higher component
+ * mainly use to share the getContent method
+ *
+ * @class Single
+ * @extends {Component}
+ */
 class Single extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      component: {},
-      content: '',
-      variants: [],
-    }
-  }
-
   componentWillMount() {
     this.getContent(this.props);
-  }
-
-  componentWillUnMount() {
-    this.setState({
-      component: {},
-      content: '',
-      variants: [],
-    });
   }
 
   componentWillReceiveProps(nextProps) {
     this.getContent(nextProps);
   }
 
+  /**
+   * Will operate all the request to get the component/variant markups
+   *
+   * @param {any} props
+   * @memberof Single
+   */
   getContent(props) {
     const params = props.match.params;
-    const components = props.store.components[props.location.pathname.split('/')[1]];
-    const component = toJS(components).find(item => item.slug === params.slug);
-    this.setState({ component, variants: [] });
+    const type = props.location.pathname.split('/')[1];
+    const components = props.atomic.sources[type];
+    const component = components.find(item => item.name === params.slug);
 
-    component.content.then(twig => {
-      const data = twig.render(window.data) || '';
-      this.setState({ content: data});
+    if (undefined === component.content) {
+      props.getComponentMarkup(component, props.navigation.base_url);
+    }
+
+    component.variants.forEach((variant) => {
+      if (undefined === variant.content) props.getVariantMarkup(variant, props.navigation.base_url);
     });
 
-    if (component.variants && component.variants.length > 0) {
-      component.variants.forEach((variant, key) => {
-        variant.content.then(twig => {
-          const data = twig.render(window.data) || '';
-          this.setState({ variants: [
-            ...this.state.variants,
-            {
-              title: variant.title,
-              slug: variant.slug,
-              markup: data
-            }
-          ]});
-        });
-      });
-    }
-  }
-
-  render() {
-    const variants = this.state.variants.length > 0 && (
-      <div>
-        {this.state.variants.map((variant, key) => {
-          return (
-            <Item
-              wrapper={this.state.component.wrapper || ''}
-              background={this.state.component.background}
-              key={key}
-              title={variant.title}
-              slug={`tlbx-${this.state.component.slug}-${variant.slug}`}
-              fullUrl={`/${this.props.location.pathname.split('/')[1]}/${this.props.match.params.slug}/${variant.slug}/full`}
-            >
-              {variant.markup}
-            </Item>
-          );
-        })}
-      </div>
-    );
-
-    return (
-      <div>
-        <h1 className="tlbx-h1">{this.state.component.title}</h1>
-        {this.state.component.notes && (
-          <div className="tlbx-notes">
-            <ReactMarkdown source={this.state.component.notes} />
-          </div>
-        )}
-
-        <Item
-          wrapper={this.state.component.wrapper || ''}
-          background={this.state.component.background}
-          slug={`tlbx-${this.state.component.slug}`}
-          fullUrl={`/${this.props.location.pathname.split('/')[1]}/${this.props.match.params.slug}/full`}
-        >
-          {this.state.content}
-        </Item>
-
-        {variants}
-      </div>
-    );
+    this.setState({ component });
   }
 }
 
-Single.propTypes = {
-  components: PropTypes.object,
-};
-
-export default inject('store')(observer(Single));
+export default Single;

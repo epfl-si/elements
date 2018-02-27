@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { inject, observer } from 'mobx-react';
-import { NavLink, withRouter } from 'react-router-dom'
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import Collapse from 'react-css-collapse';
 import PropTypes from 'prop-types';
 
@@ -12,15 +13,9 @@ class SidebarItem extends Component {
 
     this.state = {
       active: false,
-    }
+    };
 
     this.toggleComponentsList = this.toggleComponentsList.bind(this);
-  }
-
-  toggleComponentsList() {
-    this.setState({
-      active: !this.state.active,
-    });
   }
 
   componentDidMount() {
@@ -28,8 +23,14 @@ class SidebarItem extends Component {
     const isCurrent = this.props.location.pathname.match(regex);
 
     this.setState({
-      active: !!isCurrent
-    })
+      active: !!isCurrent,
+    });
+  }
+
+  toggleComponentsList() {
+    this.setState({
+      active: !this.state.active,
+    });
   }
 
   render() {
@@ -42,15 +43,16 @@ class SidebarItem extends Component {
       </li>
     );
 
-
     return (
       <div className={this.state.active ? ' tlbx-open' : ''}>
+
         <button className="tlbx-sidebar-item" onClick={() => this.toggleComponentsList()}>
           <strong>{this.props.group}</strong>
         </button>
+
         <Collapse className="tlbx-sidebar-collapse" isOpen={this.state.active}>
           <ul className="tlbx-sidebar-item-list">
-            {this.props.store.components[this.props.group].map((component, key) => {
+            {this.props.atomic.sources[this.props.group].map((component, key) => {
               const path = `/${this.props.group}/${component.name}`;
 
               return (
@@ -59,9 +61,9 @@ class SidebarItem extends Component {
                     {component.title}
                   </NavLink>
                 </li>
-              )
+              );
             })}
-            {this.props.store.components[this.props.group].length === 0 && noComponents}
+            {this.props.atomic.sources[this.props.group].length === 0 && noComponents}
           </ul>
         </Collapse>
       </div>
@@ -71,9 +73,21 @@ class SidebarItem extends Component {
 
 SidebarItem.propTypes = {
   group: PropTypes.string.isRequired,
-  match: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired
+  atomic: PropTypes.object.isRequired,
 };
 
-export default withRouter(inject('store')(observer(SidebarItem)));
+function mapState(state) {
+  return {
+    atomic: state.atomic,
+    routing: state.routing,
+  };
+}
+
+function mapDispatch(dispatch) {
+  return bindActionCreators({
+
+  }, dispatch);
+}
+
+export default connect(mapState, mapDispatch)(SidebarItem);

@@ -6,17 +6,18 @@
 }
 
 .tlbx-color-swatch {
-  flex: 0 0 30%;
-  padding-right: 3%;
+  flex: 0 0 14%;
+  padding-right: 1.6%;
   margin: 1em 0;
+  margin-bottom: 2em;
 }
 
 .tlbx-color-swatch-color {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 200px;
-  height: 15vh;
+  height: 150px;
+  height: 12vh;
 
   &:hover .tlbx-color-swatch-btn { opacity: 1; }
 }
@@ -34,7 +35,8 @@
 }
 
 .tlbx-color-swatch-infos {
-  h4 {
+  h5 { margin: 0.5em 0; }
+  h6 {
     text-transform: uppercase;
     margin: 0.5em 0;
   }

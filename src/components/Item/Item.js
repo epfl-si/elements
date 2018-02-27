@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { inject, observer } from 'mobx-react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ClipboardButton from 'react-clipboard.js';
@@ -17,8 +18,8 @@ class Item extends Component {
     super();
 
     this.state = {
-      copied: false
-    }
+      copied: false,
+    };
   }
 
   onCopySuccess() {
@@ -35,13 +36,23 @@ class Item extends Component {
   }
 
   render() {
-    const title = this.props.title && <h3 className="tlbx-item-title">{this.props.title}</h3>;
+    const component = this.props.component;
+    const isVariant = this.props.variant !== undefined;
+    const variant = this.props.variant;
+
+    const fullPath = `/${component.type}/${component.name}${isVariant ? `/${variant.name}` : ''}/full`;
+    const slugClass = isVariant ? `tlbx-${component.name}-${variant.name}` : `tlbx-${component.name}`;
+    const wrapper = isVariant && variant.wrapper ? variant.wrapper : component.wrapper;
+    const background = isVariant && variant.background ? variant.background : component.background;
 
     return (
       <div className="tlbx-item">
-        {title}
+
+        {/* Item actions */}
         <div className="tlbx-actions">
-          <Link className="tlbx-actions-link" to={this.props.fullUrl}>View full render</Link>
+          <Link className="tlbx-actions-link" to={fullPath}>
+            View full render
+          </Link>
           <ClipboardButton
             data-clipboard-text={this.props.children}
             className="tlbx-actions-link"
@@ -50,23 +61,28 @@ class Item extends Component {
             {this.state.copied ? 'Copied!' : 'Copy'}
           </ClipboardButton>
         </div>
+
+        {/* Item's preview */}
         <div
-          className={`tlbx-item-preview ${this.props.wrapper} ${this.props.slug}`}
-          style={this.props.background ? {backgroundColor: this.props.background} : {}}
+          role="presentation"
+          className={`tlbx-item-preview ${wrapper} ${slugClass}`}
+          style={background ? { backgroundColor: background } : {}}
           dangerouslySetInnerHTML={{ __html: this.props.children }}
           onClick={this.handleItemClick.bind(this)}
         />
-        <div className={`tlbx-item-code${this.props.store.showAllCode ? ' tlbx-hidden' : ''}`}>
+
+        {/* Item's code display */}
+        <div className={`tlbx-item-code${this.props.navigation.showAllCode ? '' : ' tlbx-hidden'}`}>
           <SyntaxHighlighter
-            language='html'
+            language="html"
             style={atomOneDark}
-            wrapLines={true}
-            showLineNumbers={true}
+            wrapLines
+            showLineNumbers
             lineNumberContainerStyle={{
               float: 'left',
               textAlign: 'right',
               marginRight: '10px',
-              opacity: '0.5'
+              opacity: '0.5',
             }}
             customStyle={{
               padding: '1.3em 1em',
@@ -82,13 +98,23 @@ class Item extends Component {
   }
 }
 
-Item.PropTypes = {
-  title: PropTypes.string,
-  fullUrl: PropTypes.string.isRequired,
-  wrapper: PropTypes.string,
-  slug: PropTypes.string,
-  background: PropTypes.string,
+Item.propTypes = {
+  component: PropTypes.object.isRequired,
+  variant: PropTypes.object,
   children: PropTypes.string.isRequired,
+  navigation: PropTypes.object.isRequired,
+};
+
+function mapState(state) {
+  return {
+    navigation: state.navigation,
+  };
 }
 
-export default inject('store')(observer(Item));
+function mapDispatch(dispatch) {
+  return bindActionCreators({
+
+  }, dispatch);
+}
+
+export default connect(mapState, mapDispatch)(Item);

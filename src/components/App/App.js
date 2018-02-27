@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
-import Twig from 'twig';
-import yaml from 'yamljs';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
-import { inject, observer } from 'mobx-react';
 import { Theme } from './Theme';
-import './App.css';
+
+import { getComponents } from '../../actions/atomic';
+import { getDocs } from '../../actions/docs';
+import { setBaseURL } from '../../actions/navigation';
 
 import Sidebar from '../Sidebar/Sidebar';
 import Toolbar from '../Toolbar/Toolbar';
-import Single from '../../views/Single/Single';
+import SingleStyleguide from '../../views/Single/SingleStyleguide';
+import SingleFull from '../../views/Single/SingleFull';
+import SinglePage from '../../views/Single/SinglePage';
 import Doc from '../../views/Doc/Doc';
-import SingleFull from '../../views/SingleFull/SingleFull';
-import Page from '../../views/Page/Page';
 import Colors from '../../views/Colors/Colors';
+
+import './App.css';
 
 class App extends Component {
   constructor() {
@@ -30,98 +35,79 @@ class App extends Component {
   }
 
   componentWillMount() {
-    const baseUrl = window.location.href.replace(`#${this.props.location.pathname}`, '');
-    this.props.store.addPath(baseUrl);
-    if (window.docs) this.props.store.addDocs(window.docs);
-
-    const components = Object.keys(window.sources).reduce((acc, group) => {
-      const componentArray = window.sources[group].map(slug => {
-        const path = `components/${group}/${slug}/`;
-        const config = yaml.load(`${path}/${slug}.yml`);
-        const content = this.getMarkup(path, slug);
-        const variants = config && config.variants ? config.variants.map(key => {
-          // Make sure we put the slug to lowercase, to avoid issues on
-          // Case Sensitive systems (GH Pages)
-          const variantSlug = (`${slug}-${key}`).toLowerCase();
-
-          return {
-            slug: variantSlug,
-            title: key,
-            content: this.getMarkup(path, variantSlug),
-          };
-        }) : null;
-
-        return {
-          ...config,
-          slug,
-          content,
-          variants
-        };
-      });
-
-      return {
-        ...acc,
-        [group]: componentArray
-      }
-    }, this.state.components);
-
-    this.props.store.addComponents(components);
-  }
-
-  getMarkup(path, slug) {
-    return new Promise((resolve, reject) => {
-      Twig.twig({
-        id: slug,
-        href: this.fixPath(`${path}/${slug}.twig`),
-        namespaces: {
-          'atoms': this.fixPath('./components/atoms/'),
-          'molecules': this.fixPath('./components/molecules/'),
-          'organisms': this.fixPath('./components/organisms/'),
-          'pages': this.fixPath('./components/pages/'),
-        },
-        load: function(template) {
-          resolve(template);
-        }
-      });
-    });
-  }
-
-  fixPath(path) {
-    return path.replace('./', this.props.store.base_path);
+    // Start init actions
+    this.props.setBaseURL(this.props.location.pathname);
+    this.props.getComponents();
+    this.props.getDocs();
   }
 
   render() {
     // Remove styleguide shell from pages and full render of components
     const hasStyleguideShell = !this.props.location.pathname.includes('/pages/') && !this.props.location.pathname.match(/\/full\/?$/);
+    const fullHome = window.fullhome || false;
+    const hasHomeStyleguideShell = !(fullHome && this.props.location.pathname === '/');
 
-    if (hasStyleguideShell) {
+    if (hasStyleguideShell && hasHomeStyleguideShell) {
       return (
         <Theme className="styleguide">
           <div className="tlbx-toolbar-wrapper">
             <Toolbar />
           </div>
-          <div className={`tlbx-sidebar-wrapper${this.props.store.showMenu ? ' tlbx-sidebar-open' : ''}`}>
-            <Sidebar />
+          <div className={`tlbx-sidebar-wrapper${this.props.navigation.showMenu ? ' tlbx-sidebar-open' : ''}`}>
+            <Sidebar location={this.props.location} />
           </div>
           <div className="tlbx-content-wrapper">
-            <Route path="/" exact component={Doc} />
-            <Route path="/atoms/:slug" exact component={Single} />
-            <Route path="/molecules/:slug" exact component={Single} />
-            <Route path="/organisms/:slug" exact component={Single} />
-            <Route path="/doc/:slug" exact component={Doc} />
-            <Route path="/colors" exact component={Colors} />
+            <div className="tlbx-content">
+              {fullHome
+                ? '' :
+                <Route path="/" exact component={Doc} />
+              }
+              <Route path="/atoms/:slug" component={SingleStyleguide} />
+              <Route path="/molecules/:slug" component={SingleStyleguide} />
+              <Route path="/organisms/:slug" component={SingleStyleguide} />
+              <Route path="/doc/:slug" component={Doc} />
+              <Route path="/colors" component={Colors} />
+            </div>
           </div>
         </Theme>
       );
-    } else {
-      return (
-        <div>
-          <Route path="/pages/:slug" exact component={Page} />
-          <Route path="/:type/:slug/:variant?/full" exact component={SingleFull} />
-        </div>
-      );
     }
+
+    return (
+      <div>
+        {fullHome ?
+          <Route path="/" exact component={Doc} />
+          : ''
+        }
+        <Route path="/pages/:slug" exact component={SinglePage} />
+        <Route path="/:type/:slug/:variant?/full" exact component={SingleFull} />
+      </div>
+    );
   }
 }
 
-export default inject('store')(observer(App));
+App.propTypes = {
+  getComponents: PropTypes.func.isRequired,
+  getDocs: PropTypes.func.isRequired,
+  location: PropTypes.object.isRequired,
+  navigation: PropTypes.object.isRequired,
+  setBaseURL: PropTypes.func.isRequired,
+};
+
+function mapState(state) {
+  return {
+    atomic: state.atomic,
+    docs: state.docs,
+    navigation: state.navigation,
+  };
+}
+
+function mapDispatch(dispatch) {
+  return bindActionCreators({
+    getComponents,
+    getDocs,
+    setBaseURL,
+  }, dispatch);
+}
+
+export default connect(mapState, mapDispatch)(App);
