@@ -31,7 +31,7 @@
       }
 
       &:before {
-        content: '';
+        content: ' ';
         display: block;
         position: absolute;
         bottom: -0.1rem;
@@ -39,15 +39,13 @@
         width: 0;
         height: 2px;
         padding: 0;
-        // @TODO: change with epflred when merged with teasers branch
-        background: red;
+        background: $red;
         transition: width 0.3s ease;
       }
     }
 
     &:last-child:after {
-      content: '';
-      display: none;
+      content: none;
     }
 
     &.active {
