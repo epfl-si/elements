@@ -1,0 +1,20 @@
+version: "3.3"
+services:
+
+    elements-serve:
+      image: kkarczmarczyk/node-yarn:8.0
+      container_name: elements-serve
+      working_dir: /app
+      command: bash -c "yarn && yarn start"
+      volumes:
+        - ./src:/app
+      ports:
+        - "3000:3000"
+
+    elements-build:
+      image: kkarczmarczyk/node-yarn:8.0
+      container_name: elements-build
+      working_dir: /app
+      command: bash -c "yarn && yarn build"
+      volumes:
+        - ./src:/app
