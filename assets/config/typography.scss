@@ -14,26 +14,25 @@ h1 {
   font-weight: $font-weight-bold;
 }
 
-h3 {
+h3,
+.h3 {
   line-height: 1.333em;
   font-weight: $font-weight-bold;
 }
 
-h4 {
+h4,
+.h4 {
   line-height: 1.333em;
 }
 
-h5 {
+h5,
+.h5 {
   line-height: 1.4em;
   font-weight: $font-weight-bold;
 }
 
-h5 {
-  line-height: 1.4em;
-  font-weight: $font-weight-bold;
-}
-
-h6 {
+h6,
+.h6 {
   line-height: 1.4em;
   text-transform: uppercase;
 }
