@@ -1,35 +1,32 @@
-import { extendObservable, action } from 'mobx';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { createEpicMiddleware } from 'redux-observable';
+import { routerMiddleware } from 'react-router-redux';
+import createHistory from 'history/createBrowserHistory';
 
-class Store {
-  constructor() {
-    extendObservable(this, {
-      base_path: '',
-      components: [],
-      docs: {},
-      showAllCode: true,
-      showMenu: false,
-    });
+import rootReducer from './reducers/';
+import rootEpic from './epics/'; // eslint-disable-line import/no-named-as-default
 
-    this.addPath = action((path) => {
-      this.base_path = path;
-    });
+export const history = createHistory();
 
-    this.addComponents = action((components) => {
-      this.components = components;
-    });
+export function configureStore(deps = {}) {
+  const epicMiddleware = createEpicMiddleware(rootEpic, {
+    dependencies: {
+      ...deps,
+    },
+  });
 
-    this.addDocs = action((docs) => {
-      this.docs = docs;
-    });
+  const routingMiddleware = routerMiddleware(history);
 
-    this.toggleAllCode = action(() => {
-      this.showAllCode = !this.showAllCode;
-    });
+  // eslint-disable-next-line no-underscore-dangle
+  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-    this.toggleMenu = action(() => {
-      this.showMenu = !this.showMenu;
-    });
-  }
+  return createStore(
+    rootReducer,
+    composeEnhancers(
+      applyMiddleware(epicMiddleware),
+      applyMiddleware(routingMiddleware),
+    ),
+  );
 }
 
-export default new Store();
+export default configureStore;

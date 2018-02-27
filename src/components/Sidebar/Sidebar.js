@@ -1,44 +1,60 @@
-import React, { Component } from 'react';
-import { inject, observer } from 'mobx-react';
-import { NavLink, withRouter } from 'react-router-dom'
+import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 import SidebarItem from '../SidebarItem/SidebarItem';
 import SidebarDocs from '../SidebarDocs/SidebarDocs';
 
 import './Sidebar.css';
 
-class Sidebar extends Component {
-  render() {
-    return (
-      <div className="tlbx-sidebar">
-        {
-          window.theme && window.theme.title
-          ?
-            <h1 className="tlbx-sidebar-title" dangerouslySetInnerHTML={{__html: window.theme.title }}/>
-          :
-            <h1 className="tlbx-sidebar-title">Toolbox <span>Design System</span></h1>
-        }
-        <h3 className="tlbx-sidebar-version">Version {window.version}</h3>
+const Sidebar = (props) => {
+  return (
+    <div className="tlbx-sidebar">
+      {
+        window.theme && window.theme.title
+        ?
+          <h1 className="tlbx-sidebar-title" dangerouslySetInnerHTML={{ __html: window.theme.title }} />
+        :
+          <h1 className="tlbx-sidebar-title">Toolbox <span>Design System</span></h1>
+      }
+      <h3 className="tlbx-sidebar-version">Version {window.version}</h3>
 
-        <ul className="tlbx-sidebar-item-list">
-          <li>
-            <NavLink to={'/'} exact>Home</NavLink>
-          </li>
-          <li>
-            <NavLink to={'/colors'}>Colors</NavLink>
-          </li>
-        </ul>
+      <ul className="tlbx-sidebar-item-list">
+        <li>
+          <NavLink to={'/'} exact>Home</NavLink>
+        </li>
+        <li>
+          <NavLink to={'/colors'}>Colors</NavLink>
+        </li>
+      </ul>
 
-        <SidebarDocs />
+      <SidebarDocs location={props.location} />
 
-        {Object.keys(this.props.store.components).map((group, key) => {
-          if (group === 'docs') return null;
+      {Object.keys(props.atomic.sources).map((group) => {
+        return <SidebarItem key={group} group={group} location={props.location} />;
+      })}
+    </div>
+  );
+};
 
-          return <SidebarItem key={key} group={group} />
-        })}
-      </div>
-    );
-  }
+Sidebar.propTypes = {
+  atomic: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+};
+
+function mapState(state) {
+  return {
+    atomic: state.atomic,
+    navigation: state.navigation,
+  };
 }
 
-export default withRouter(inject('store')(observer(Sidebar)));
+function mapDispatch(dispatch) {
+  return bindActionCreators({
+
+  }, dispatch);
+}
+
+export default connect(mapState, mapDispatch)(Sidebar);
