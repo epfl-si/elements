@@ -1,0 +1,4 @@
+title: Video
+name: video
+notes : |
+  This is an example of **YouTube** integration but basically, **you can use any king of `<iframe>` URLs** until you keep the wrapper and the classes applied.
