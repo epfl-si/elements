@@ -48,7 +48,7 @@
     position: relative;
 
     &:after {
-      content: '';
+      content: ' ';
       position: absolute;
       top: 0;
       right: 0;
@@ -62,6 +62,11 @@
 .event-teaser-small {
   display: flex;
   flex-flow: row nowrap;
+
+  img {
+    max-width: 155px;
+    height: auto;
+  }
 
   .card-body {
     display: flex;
@@ -78,18 +83,5 @@
   p,
   .card-title {
     color: $softBlack;
-  }
-}
-
-.tlbx-event-teaser,
-.tlbx-event-teaser-event-teaser-passed {
-  .event-teaser {
-    max-width: 400px;
-  }
-}
-
-.tlbx-event-teaser-event-teaser-large {
-  .event-teaser {
-    max-width: 800px;
   }
 }
