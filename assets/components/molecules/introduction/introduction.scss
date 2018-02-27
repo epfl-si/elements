@@ -1,0 +1,26 @@
+@charset 'utf-8';
+
+.introduction-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0 2.5rem;
+  background: $gray-200;
+
+  @include media-breakpoint-down(sm) {
+    min-height: 100vh;
+
+    .col-md-12 {
+      height: 100%;
+    }
+  }
+
+  .introduction {
+    @extend .container;
+
+    @include media-breakpoint-down(sm) { 
+      background: red;
+    }
+  }
+}
