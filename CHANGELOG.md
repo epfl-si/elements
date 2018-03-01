@@ -1,5 +1,8 @@
 # Changelog
 
+*2.0.1* (2018-03-01)
+  - ✨ add color table column heading color name (42b393e)
+
 *2.0.0* (2018-02-27) - Global code refactoring
   - 🚨 Lint everything (fd251e1) 
   - 📝 clean and comment component and views (53c2e4f) 

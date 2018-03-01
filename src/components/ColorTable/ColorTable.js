@@ -41,7 +41,15 @@ class ColorTable extends Component {
             <thead>
               <tr>
                 <th />
-                {Object.keys(contrast).map(key => <th scope="col" key={key}><span className="tlbx-contrast-text" style={{ color: contrast[key].hex }}>Aa</span></th>)}
+                {Object.keys(contrast).map((key) => {
+                  return (
+                    <th scope="col" key={key}>
+                      <small className="tblx-muted">{contrast[key].name}</small>
+                      <small className="tblx-muted">{contrast[key].hex}</small>
+                      <span className="tlbx-contrast-text" style={{ color: contrast[key].hex }}>Aa</span>
+                    </th>
+                  );
+                })}
               </tr>
             </thead>
             <tbody>
