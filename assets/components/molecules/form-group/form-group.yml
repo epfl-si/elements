@@ -1,6 +1,8 @@
 title: Form group
 name: form-group
 variants:
+  - name: upload
+    title: File upload
   - name: error
     title: Error form group
   - name: select

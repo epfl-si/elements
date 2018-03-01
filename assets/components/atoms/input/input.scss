@@ -23,7 +23,7 @@
     font-weight: 700;
   }
 
-  &[disabled],
+  &:disabled,
   &.disabled {
     color: $gray-600;
     border-color: $gray-200 !important;
