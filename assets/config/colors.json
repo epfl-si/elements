@@ -1,4 +1,15 @@
 {
-  "Black": "#000",
-  "White": "#fff"
+  "EPFL red": "#e30713",
+  "Wild watermelon": "#fe6971",
+  "White": "#fff",
+  "Gray 100": "#e6e6e6",
+  "Gray 200": "#cccccc",
+  "Gray 300": "#b3b3b3",
+  "Gray 400": "#999999",
+  "Gray 500": "#808080",
+  "Gray 600": "#666666",
+  "Gray 700": "#4d4d4d",
+  "Gray 800": "#333333",
+  "Gray 900": "#212121",
+  "Black": "#000"
 }
