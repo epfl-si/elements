@@ -28,17 +28,23 @@ a {
     border-bottom-color: $red;
   }
 
-  &:active,
   &:focus,
-  &.active,
   &.focus {
-    color: $red;
+    color: $black;
     border-bottom-color: transparent !important;
 
     .bg-dark & {
       // background: darken($purple, 20%);
       color: $white;
     }
+  }
+
+  &:active,
+  &.active {
+    color: $wild-watermelon;
+    border-bottom-color: $red !important;
+    box-shadow: none !important;
+    .bg-dark & { color: $wild-watermelon; }
   }
 }
 
