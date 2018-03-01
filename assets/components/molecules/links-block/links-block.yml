@@ -1,0 +1,6 @@
+title: Links block
+name: links-block
+background: '#EEEEEE'
+variants:
+  - name: teaser
+    title: Links teaser

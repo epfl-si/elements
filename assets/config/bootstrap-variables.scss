@@ -70,7 +70,7 @@ $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
-$dark:          darken($purple, 30%) !default;
+$dark:          $gray-800 !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge((
