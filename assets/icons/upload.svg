@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>upload</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Components-lot3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Form-standard-calendar-and-filters" transform="translate(-295.000000, -2020.000000)" stroke="#212121" stroke-width="1.2">
+            <g id="upload" transform="translate(296.000000, 2021.000000)">
+                <path d="M13,8.66666667 L13,11.5555556 C13,12.3533002 12.3533002,13 11.5555556,13 L1.44444444,13 C0.646699806,13 0,12.3533002 0,11.5555556 L0,8.66666667" id="Shape"></path>
+                <polyline id="Shape" points="10.1111111 3.61111111 6.5 0 2.88888889 3.61111111"></polyline>
+                <path d="M6.5,0 L6.5,8.66666667" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
