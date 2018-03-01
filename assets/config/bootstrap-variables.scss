@@ -241,13 +241,13 @@ $font-weight-normal:          400 !default;
 $font-weight-bold:            700 !default;
 
 $font-weight-base:            $font-weight-normal !default;
-$line-height-base:            1.47 !default;
+$line-height-base:            1.5 !default;
 
-$h1-font-size:                $font-size-base * 3.17 !default;
-$h2-font-size:                $font-size-base * 2.47 !default;
-$h3-font-size:                $font-size-base * 1.882 !default;
-$h4-font-size:                $font-size-base * 1.53 !default;
-$h5-font-size:                $font-size-base * 1.236 !default;
+$h1-font-size:                $font-size-base * 3 !default;
+$h2-font-size:                $font-size-base * 2.33 !default;
+$h3-font-size:                $font-size-base * 1.78 !default;
+$h4-font-size:                $font-size-base * 1.44 !default;
+$h5-font-size:                $font-size-base * 1.17 !default;
 $h6-font-size:                $font-size-base !default;
 
 $headings-margin-bottom:      ($spacer / 2) !default;
@@ -267,7 +267,7 @@ $display3-weight:             300 !default;
 $display4-weight:             300 !default;
 $display-line-height:         $headings-line-height !default;
 
-$lead-font-size:              ($font-size-base * 1.33) !default;
+$lead-font-size:              ($font-size-base * 1.28) !default;
 $lead-font-weight:            400 !default;
 
 $small-font-size:             $font-size-sm !default;
@@ -275,7 +275,7 @@ $small-font-size:             $font-size-sm !default;
 $text-muted:                  $gray-600 !default;
 
 $blockquote-small-color:      $gray-600 !default;
-$blockquote-font-size:        ($font-size-base * 1.33) !default;
+$blockquote-font-size:        ($font-size-base * 1.28) !default;
 
 $hr-border-color:             rgba($black, .1) !default;
 $hr-border-width:             $border-width !default;
