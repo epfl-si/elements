@@ -11,7 +11,7 @@
     float: right;
     width: 20rem;
     margin-left: 6rem;
-    padding: 1.2rem 3rem 1.2rem 1.6rem;
+    padding: 1.2rem 1.6rem;
     background: rgba(255, 255, 255, 0.9);
   }
 }
@@ -23,8 +23,31 @@
   position: absolute;
   top: 0;
   right: 8rem;
-  max-width: 40%;
-  height: 100%;
+  padding: 2rem 0;
+  min-height: 100%;
+  overflow: hidden;
+
+  @include media-breakpoint-down(md) {
+    position: relative;
+    right: 0;
+    left: 0;
+    margin-top: -7rem;
+    width: 100%;
+    padding: 0 3%;
+
+    .basic-page-teaser-text-header {
+      h3,
+      a {
+        flex-grow: 1;
+        text-align: center;
+      }
+    }
+
+    p {
+      width: 90%;
+      margin-left: 5%;
+    }
+  }
 
   h3 {
     display: inline-block;
