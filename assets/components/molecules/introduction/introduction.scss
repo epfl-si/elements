@@ -6,17 +6,14 @@
   align-items: center;
   justify-content: center;
   padding: 3rem 0 2.5rem;
-  background: $gray-100;
+  background: $white;
 
   @include media-breakpoint-down(sm) {
     min-height: 100vh;
   }
 
-  .introduction__content {
-    @extend .container;
+  h2,
+  .h2 {
+    @extend .mb-3;
   }
-}
-
-.introduction--white {
-  background: $white;
 }
