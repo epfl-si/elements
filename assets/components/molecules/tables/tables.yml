@@ -1,0 +1,9 @@
+title: Table
+name: tables
+variants:
+  - name: boxed
+    title: Boxed Table
+  - name: sortable
+    title: Sortable table
+  - name: boxed-sortable
+    title: Boxed and sortable table

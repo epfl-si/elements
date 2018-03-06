@@ -8,5 +8,6 @@ svgIcons(); // Must run as soon as possible
   $(document).ready(function () {
     // Run your imported scripts
     // Ex: gallery();
+    Tablesaw.init();
   });
 })(jQuery);
