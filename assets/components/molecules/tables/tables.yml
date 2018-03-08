@@ -6,7 +6,7 @@ variants:
   - name: sortable
     title: Sortable table
     notes: |
-      To handle table sorting and responsive, we use the [Tablesaw JS plugins](https://github.com/filamentgroup/tablesaw). 
+      To handle table sorting and responsive, we use the [Tablesaw JS plugins](https://github.com/filamentgroup/tablesaw). On the current page, if the sortable table doesn't have *arrows in the header*, please *refresh your browser* to allow Tablesaw to initialise correctly.
       To enable these features, you will need to:
         - insert the correct data-attributes (as in the following code) in your html tables
         - Include the styleguide `vendors.css` and `vendors.js` files on your page
