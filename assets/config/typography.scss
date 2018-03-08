@@ -10,19 +10,19 @@ body {
 }
 
 h1 {
-  line-height: 1.1em;
+  line-height: 1.111em;
   font-weight: $font-weight-bold;
 }
 
 h3,
 .h3 {
-  line-height: 1.333em;
+  line-height: 1.35em;
   font-weight: $font-weight-bold;
 }
 
 h4,
 .h4 {
-  line-height: 1.333em;
+  line-height: 1.35em;
 }
 
 h5,
@@ -33,7 +33,7 @@ h5,
 
 h6,
 .h6 {
-  line-height: 1.4em;
+  line-height: 1.5em;
   text-transform: uppercase;
 }
 
@@ -47,6 +47,11 @@ s { color: $gray-600; }
 blockquote {
   padding-left: 1.66rem;
   border-left: 1px solid $gray-200;
+
+  p {
+    line-height: 1.3em;
+    font-style: italic;
+  }
 
   p:before {
     content: "\201C";
@@ -63,7 +68,7 @@ blockquote {
 
   .blockquote-footer {
     margin-top: 0.72rem;
-    font-size: 0.944rem;
+    font-size: $font-size-sm;
     cite { font-style: normal; }
   }
 }
