@@ -1,0 +1,46 @@
+@charset 'utf-8';
+
+.social-icon {
+  display: inline-block;
+  padding: 0.6rem;
+  background: $gray-100;
+  border-radius: 0.17rem;
+  line-height: 0;
+
+  .icon {
+    top: 0;
+    font-size: 1.2rem;
+    fill: $white;
+  }
+}
+
+.social-icon-facebook {
+  background: $facebook;
+}
+
+.social-icon-twitter {
+  background: $twitter;
+}
+
+.social-icon-instagram {
+  background-image: linear-gradient(-135deg, $instagramblue 5%, $instagrampurple, $instagramred 95%);
+}
+
+.social-icon-round {
+  border-radius: 100%;
+  padding: 0.66rem;
+
+  &.social-icon-instagram {
+    background-image: linear-gradient(-135deg, $instagramblue 5%, $instagrampurple, $instagramred 90%);
+  }
+}
+
+.social-icon-discrete {
+  &:not(:hover) {
+    background: $gray-100;
+
+    svg {
+      fill: $gray-400;
+    }
+  }
+}

@@ -19,6 +19,8 @@
 @import 'atoms/breadcrumbs/breadcrumbs';
 @import 'atoms/picture/picture';
 @import 'atoms/video/video';
+@import 'atoms/social-icon/social-icon';
+@import 'atoms/icon/icon';
 
 //
 // molecules:
@@ -27,6 +29,7 @@
 @import 'molecules/event-teaser/event-teaser';
 @import 'molecules/basic-page-teaser/basic-page-teaser';
 @import 'molecules/links-block/links-block';
+@import 'molecules/social-feed/social-feed';
 
 //
 // organisms:

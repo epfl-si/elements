@@ -1,0 +1,6 @@
+title: Social icon
+name: social-icon
+variants:
+  - round
+  - discrete
+  - link
