@@ -2,7 +2,7 @@
 
 .social-icon {
   display: inline-block;
-  padding: 0.6rem;
+  padding: 0.7rem;
   background: $gray-100;
   border-radius: 0.17rem;
   line-height: 0;
@@ -34,13 +34,25 @@ a.social-icon {
   background-color: $twitter;
 }
 
+.social-icon-whatsapp {
+  background-color: $whatsappgreen;
+}
+
+.social-icon-mail {
+  background-color: $blue;
+}
+
+.social-icon-googleplus {
+  background-color: $googleplus;
+}
+
 .social-icon-instagram {
   background-image: linear-gradient(-135deg, $instagramblue 5%, $instagrampurple, $instagramred 95%);
 }
 
 .social-icon-round {
   border-radius: 100%;
-  padding: 0.66rem;
+  padding: 0.8rem;
 
   &.social-icon-instagram {
     background-image: linear-gradient(-135deg, $instagramblue 5%, $instagrampurple, $instagramred 90%);

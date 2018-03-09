@@ -1,1 +1,30 @@
 @charset 'utf-8';
+
+.social-share-container {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: $white;
+  color: $gray-400;
+
+  &.social-share-light {
+    display: inline-block;
+  }
+}
+
+.social-share {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  .social-icon {
+    margin-right: 0.25rem;
+  }
+
+  .social-share-text {
+    margin-right: 0.5rem;
+  }
+}
+
