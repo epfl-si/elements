@@ -30,5 +30,17 @@
 
   .social-feed-item {
     margin-bottom: 3rem;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+      height: 100%;
+    }
   }
+}
+
+.social-feed-item-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
 }
