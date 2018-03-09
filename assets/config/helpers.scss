@@ -37,3 +37,9 @@
 .text-small {
   font-size: 0.778rem;
 }
+
+@each $key, $value in $grays {
+  .bg-gray-#{$key} {
+    background: $value !important;
+  }
+}

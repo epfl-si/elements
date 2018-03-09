@@ -7,8 +7,14 @@
 
 To contribute and run the styleguide, you will need few things :
 - [🔀 Git](https://git-scm.com/) - Version control system 
-- [📗 NodeJS 8+](https://nodejs.org/en/) - JavaScript runtime used to build the project
-- [🐈 Yarn](https://yarnpkg.com/lang/en/) - Dependency manager built on top of the NPM registry
+- either:
+
+  - [📗 NodeJS 8+](https://nodejs.org/en/) - JavaScript runtime used to build the project
+  - [🐈 Yarn](https://yarnpkg.com/lang/en/) - Dependency manager built on top of the NPM registry
+
+- or:
+  - [🐳 Docker](https://www.docker.com/) - Container platform provider
+  - [🐳 docker-compose](https://www.docker.com/) - Tool for defining and running multi-container Docker applications
 
 Then, to install the project on your environment :
 
@@ -16,6 +22,14 @@ Then, to install the project on your environment :
 $ git clone git@github.com:epfl-idevelop/elements.git
 $ cd ./elements
 $ yarn
+```
+
+Docker variant:
+
+```bash
+$ git clone git@github.com:epfl-idevelop/elements.git
+$ cd ./elements
+$ docker-compose up elements-build --build
 ```
 
 ## Run locally
