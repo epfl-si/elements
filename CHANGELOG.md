@@ -1,5 +1,8 @@
 # Changelog
 
+*2.0.2* (2018-03-09)
+  - ✨ add document event when styleguide is ready (31bfd99)
+
 *2.0.1* (2018-03-01)
   - ✨ add color table column heading color name (42b393e)
 
