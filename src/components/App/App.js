@@ -41,6 +41,12 @@ class App extends Component {
     this.props.getDocs();
   }
 
+  componentDidMount() {
+    setTimeout(() => {
+      document.dispatchEvent(new Event('ToolboxReady'));
+    }, 500);
+  }
+
   render() {
     // Remove styleguide shell from pages and full render of components
     const hasStyleguideShell = !this.props.location.pathname.includes('/pages/') && !this.props.location.pathname.match(/\/full\/?$/);
