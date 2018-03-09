@@ -10,7 +10,9 @@ a {
     border-color 0.15s,
     box-shadow 0.15s;
 
-  @extend .focused;
+  &:not([class*="teaser"]):not([class*="card"]) {
+    @extend .focused;
+  }
 
   .bg-dark & { color: $white; }
 
