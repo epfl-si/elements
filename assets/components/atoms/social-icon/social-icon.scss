@@ -14,12 +14,24 @@
   }
 }
 
+a.social-icon {
+  border: none;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    background-image 0.2s ease;
+
+  &:hover {
+    transform: translateY(-0.2rem);
+  }
+}
+
 .social-icon-facebook {
-  background: $facebook;
+  background-color: $facebook;
 }
 
 .social-icon-twitter {
-  background: $twitter;
+  background-color: $twitter;
 }
 
 .social-icon-instagram {
@@ -36,11 +48,15 @@
 }
 
 .social-icon-discrete {
+  .icon {
+    transition: fill 0.2s ease;
+  }
+
   &:not(:hover) {
     background: $gray-100;
 
-    svg {
-      fill: $gray-400;
+    .icon {
+      fill: $gray-500;
     }
   }
 }

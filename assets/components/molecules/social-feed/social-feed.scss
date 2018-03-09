@@ -1,1 +1,35 @@
 @charset 'utf-8';
+
+.social-feed {
+  padding: 4rem 0;
+  background: $gray-100;
+
+  @include media-breakpoint-up(lg) {
+    padding: 2rem 0;
+
+    .social-feed-item-container {
+      padding: 0 0.4rem;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.social-feed-container {
+  display: flex;
+  flex-flow: column nowrap;
+
+  @include media-breakpoint-up(lg) {
+    flex-flow: row nowrap;
+  }
+
+  .social-feed-item {
+    margin-bottom: 3rem;
+  }
+}
