@@ -1,5 +1,8 @@
 # Changelog
 
+*2.0.3* (2018-03-09)
+  - ✨ relaunch ready hook when route change (0f37a5e)
+
 *2.0.2* (2018-03-09)
   - ✨ add document event when styleguide is ready (31bfd99)
 
