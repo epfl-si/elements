@@ -5,7 +5,7 @@ export default () => {
     const $input = $(this);
     const $preview = $input.next().next('.upload-preview');
 
-    $input.change(() => {
+    $input.on('change', () => {
       const files = $input[0].files;
       let previewContent = files[0].name;
 
