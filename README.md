@@ -26,6 +26,10 @@ As listed in the `package.json` you have **3 commands** available :
 - `$ yarn build` : Will build your assets for **production usage**
 - `$ yarn deploy` : Will **deploy the styleguide** in the dedicated [`gh-pages`](https://epfl-idevelop.github.io/elements)
 
+With Docker, you can run:
+- `$ docker-compose up elements-build` same as `$ yarn build` but in containers
+- `$ docker-compose up elements-serve` same as `$ yarn start` but in containers
+
 ## Contribute
 
 The project is using the **Gitflow workflow**. It defines a strict branching model designed around the project release.
