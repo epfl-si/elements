@@ -1,11 +1,15 @@
 title: Form group
 name: form-group
 variants:
-  - name: upload
-    title: File upload
   - name: error
     title: Error form group
   - name: select
     title: Select form group
   - name: textarea
     title: Textarea
+  - name: upload
+    title: File upload
+notes: |
+  <br>
+
+  ### Standard form group
