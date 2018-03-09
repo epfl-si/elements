@@ -24,6 +24,8 @@
 @import 'atoms/button/button';
 @import 'atoms/checkbox/checkbox';
 @import 'atoms/radio/radio';
+@import 'atoms/picture/picture';
+@import 'atoms/video/video';
 
 //
 // molecules:
@@ -31,9 +33,11 @@
 @import 'molecules/sidenotes/sidenotes';
 @import 'molecules/event-teaser/event-teaser';
 @import 'molecules/basic-page-teaser/basic-page-teaser';
+@import 'molecules/introduction/introduction';
 @import 'molecules/links-block/links-block';
 @import 'molecules/form-group/form-group';
 @import 'molecules/datepicker/datepicker';
+@import 'molecules/tables/tables';
 
 //
 // organisms:
