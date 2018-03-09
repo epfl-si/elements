@@ -42,6 +42,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    // Send a ToolboxReady event when App is mounted and on each page change
     this.updateHook();
     this.props.history.listen(() => this.updateHook());
   }
