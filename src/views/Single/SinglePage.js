@@ -30,11 +30,10 @@ class SinglePage extends Single {
    * @memberof SinglePage
    */
   handlePageClick(e) {
-    e.preventDefault();
-
     // If it's a link related event, redirect to page
     const linkParent = parentUrl(e.target);
     if (linkParent) {
+      e.preventDefault();
       const slug = linkParent.href.split('/pages/').slice(-1)[0];
       this.props.history.push(`/pages/${slug}`);
     }
