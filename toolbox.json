@@ -17,8 +17,12 @@
     "build/fonts/**/*"
   ],
   "vendors": {
-    "css": [],
-    "js": []
+    "css": [
+      "./node_modules/tablesaw/dist/tablesaw.css"
+    ],
+    "js": [
+      "./node_modules/tablesaw/dist/tablesaw.js"
+      ]
   },
   "singles": [{
     "src": "",
