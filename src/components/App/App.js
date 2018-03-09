@@ -42,6 +42,11 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.updateHook();
+    this.props.history.listen(() => this.updateHook());
+  }
+
+  updateHook() {
     setTimeout(() => {
       document.dispatchEvent(new Event('ToolboxReady'));
     }, 500);
@@ -97,6 +102,7 @@ App.propTypes = {
   getDocs: PropTypes.func.isRequired,
   location: PropTypes.object.isRequired,
   navigation: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
   setBaseURL: PropTypes.func.isRequired,
 };
 
