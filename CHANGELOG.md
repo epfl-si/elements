@@ -1,5 +1,8 @@
 # Changelog
 
+*2.0.4* (2018-03-09)
+  - ✨ better inner link handling (ea7dcc8)
+
 *2.0.3* (2018-03-09)
   - ✨ relaunch ready hook when route change (0f37a5e)
 

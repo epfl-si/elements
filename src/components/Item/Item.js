@@ -9,6 +9,7 @@ import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/di
 import xml from 'react-syntax-highlighter/dist/languages/xml';
 import { atomOneDark } from 'react-syntax-highlighter/dist/styles';
 
+import parentUrl from '../../helpers/parentUrl';
 import './Item.css';
 
 registerLanguage('html', xml);
@@ -31,8 +32,8 @@ class Item extends Component {
   }
 
   handleItemClick(e) {
-    // Disable all inner links
-    e.preventDefault();
+    // If it's a link related event, prevent default
+    if (parentUrl(e.target)) e.preventDefault();
   }
 
   render() {
