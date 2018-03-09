@@ -21,7 +21,6 @@
 @import 'atoms/video/video';
 @import 'atoms/social-icon/social-icon';
 @import 'atoms/icon/icon';
-@import 'atoms/social-feed-item/social-feed-item';
 
 //
 // molecules:
@@ -31,10 +30,11 @@
 @import 'molecules/basic-page-teaser/basic-page-teaser';
 @import 'molecules/introduction/introduction';
 @import 'molecules/links-block/links-block';
-@import 'molecules/social-feed/social-feed';
-@import 'molecules/social-share/social-share';
 @import 'molecules/tables/tables';
+@import 'molecules/social-feed-item/social-feed-item';
 
 //
 // organisms:
 @import 'organisms/event-teaser-list/event-teaser-list';
+@import 'organisms/social-feed/social-feed';
+@import 'organisms/social-share/social-share';
