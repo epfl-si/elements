@@ -33,7 +33,6 @@ a {
   &:focus,
   &.focus {
     color: $black;
-    border-bottom-color: transparent !important;
 
     .bg-dark & {
       // background: darken($purple, 20%);
@@ -45,7 +44,7 @@ a {
   &.active {
     color: $wild-watermelon;
     border-bottom-color: $red !important;
-    box-shadow: none !important;
+    &:before { content: none; }
     .bg-dark & { color: $wild-watermelon; }
   }
 }
