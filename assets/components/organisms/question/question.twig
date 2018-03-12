@@ -1,0 +1,21 @@
+<div class="question">
+
+  <div class="question-img">
+    {% include 'atoms::picture/picture-question.twig' %}
+  </div>
+
+  <div class="question-content">
+    <p class="h3">À quoi l'éternel brouillard de San Francisco est-il dû ?</p>
+
+    <div class="question-answers">
+      {% for i in [1,2,3] %}
+        <div class="question-answer">
+          {% include "atoms::radio/radio.twig" with {
+            id: i,
+            label: 'Answer number ' ~ i
+          } %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
