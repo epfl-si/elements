@@ -10,8 +10,13 @@ $icon-size-base: 1em;
   width: $icon-size-base;
   height: $icon-size-base;
   color: inherit;
-  fill: currentColor;
   transition: transform 0.2s;
+
+  svg {
+    width: $icon-size-base;
+    height: $icon-size-base;
+    fill: currentColor;
+  }
 
   .icon-right & { margin-left: 0.4em; }
   .icon-left & { margin-right: 0.4em; }
