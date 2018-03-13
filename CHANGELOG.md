@@ -1,5 +1,8 @@
 # Changelog
 
+*2.0.6* (2018-03-13)
+  - ⚡️ improve SinglePage link handling (8e4ed63)
+
 *2.0.4* (2018-03-09)
   - ✨ better inner link handling (ea7dcc8)
 
