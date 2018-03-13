@@ -1,6 +1,6 @@
 {
   "name": "toolbox-reader",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "private": true,
   "eslintConfig": {
     "parser": "babel-eslint",
