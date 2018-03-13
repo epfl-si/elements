@@ -1,5 +1,8 @@
 # Changelog
 
+*2.0.7* (2018-03-13)
+  - ⚡️ improve SinglePage link prevent (8edbd5b)
+
 *2.0.6* (2018-03-13)
   - ⚡️ improve SinglePage link handling (8e4ed63)
 
