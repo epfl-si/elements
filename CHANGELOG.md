@@ -1,5 +1,8 @@
 # Changelog
 
+*2.0.8* (2018-03-13)
+  - ✨ add loader for long rendering feedback (4c60217)
+
 *2.0.7* (2018-03-13)
   - ⚡️ improve SinglePage link prevent (8edbd5b)
 
