@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { getComponentMarkup, getVariantMarkup } from '../../actions/atomic';
 
 import Single from './Single';
+import Loader from './../../components/Loader/Loader';
 
 /**
  * Will display the component in a full window
@@ -54,11 +55,19 @@ class SingleFull extends Single {
           </h1>
         </div>
 
-        <div
-          style={background ? { backgroundColor: background } : {}}
-          className={`tlbx-item-preview ${slugClass} ${wrapper}`}
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
+        { undefined === content
+          ?
+            <div
+              style={background ? { backgroundColor: background } : {}}
+              className={`tlbx-item-preview ${slugClass} ${wrapper}`}
+            ><Loader /></div>
+          :
+            <div
+              style={background ? { backgroundColor: background } : {}}
+              className={`tlbx-item-preview ${slugClass} ${wrapper}`}
+              dangerouslySetInnerHTML={{ __html: content }}
+            />
+        }
       </div>
     );
   }
