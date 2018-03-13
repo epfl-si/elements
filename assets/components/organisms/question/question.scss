@@ -1,15 +1,24 @@
 @charset 'utf-8';
 
-.question {
-  $checked-tag: 1.7rem;
+$checked-tag: 1.7rem;
+$half-checked-tag: $checked-tag/2;
+$icon-checked-tag: $checked-tag/2.7;
+$animation: 0.2s;
 
+.question {
   display: flex;
   flex-flow: column wrap;
 
+  // icon appearance animation
   @keyframes popin {
     100% {
       transform: scale(1);
     }
+  }
+
+  h3,
+  .h3 {
+    margin-top: 1rem;
   }
 
   h3,
@@ -19,25 +28,21 @@
   }
 
   .custom-control-label {
-    $half-checked-tag: $checked-tag/2;
-    $icon-checked-tag: $checked-tag/2.7;
-
     position: relative;
-    transition: 0.2s;
+    transition: $animation;
     flex-grow: 1;
 
+    // red icon styles
     &:before {
       content: ' ';
       position: absolute;
-      top: -$half-checked-tag;
-      left: calc(50% - #{$half-checked-tag});
       width: $checked-tag;
       height: $checked-tag;
       border: none;
       border-radius: 50%;
       margin-top: 0;
       transform: scale(0);
-      transition: margin 0.2s;
+      transition: margin $animation;
       box-shadow: none !important;
       z-index: 15;
     }
@@ -45,23 +50,21 @@
     &:after {
       content: ' ';
       position: absolute;
-      top: -$icon-checked-tag/2;
-      left: calc(50% - #{$icon-checked-tag/2});
       width: $icon-checked-tag;
       height: $icon-checked-tag;
       background: $custom-checkbox-indicator-icon-checked;
       transform: scale(0);
-      transition: margin 0.2s;
+      transition: margin $animation;
       z-index: 25;
     }
 
+    // base hover behaviour
     &:hover {
       cursor: pointer;
 
       .custom-control-label-content {
         border-color: $black;
         z-index: 10;
-        transition: border 0.2;
       }
     }
   }
@@ -69,15 +72,14 @@
   .custom-control-label-content {
     display: block;
     position: relative;
-    height: 100%;
     padding: 1rem 1.3rem;
     background: $white;
-    margin-bottom: -1px;
     border: 1px solid $gray-200;
     z-index: 5;
-    transition: 0.2s;
+    transition: $animation;
   }
 
+  // checked animation and styles
   .custom-control-input:checked + .custom-control-label {
     .custom-control-label-content {
       border-color: $black;
@@ -86,14 +88,8 @@
 
     &:before,
     &:after {
-      display: block;
-      animation: popin 0.2s forwards;
+      animation: popin $animation forwards;
     }
-  }
-
-  h3,
-  .h3 {
-    margin-top: 1rem;
   }
 }
 
@@ -104,6 +100,45 @@
 .question-answers {
   display: flex;
   flex-flow: column nowrap;
+  padding-right: $checked-tag;
+}
+
+// mobile styles
+@include media-breakpoint-down(md) {
+  .question {
+    .custom-control-label {
+      // icon positionning
+      &:before {
+        top: calc(50% - #{$half-checked-tag});
+        right: -$half-checked-tag;
+        left: auto;
+      }
+
+      &:after {
+        top: calc(50% - #{$icon-checked-tag/2});
+        right: -$icon-checked-tag/2;
+        left: auto;
+      }
+    }
+
+    // border overlap
+    .custom-control-label-content {
+      margin-bottom: -1px;
+    }
+  }
+
+  // checked styles
+  .custom-control-input:checked + .custom-control-label {
+    .custom-control-label-content {
+      margin-right: -$trapeze-height;
+      margin-left: $trapeze-height;
+    }
+
+    &:before,
+    &:after {
+      margin-right: -$trapeze-height;
+    }
+  }
 }
 
 @include media-breakpoint-up(lg) {
@@ -112,6 +147,38 @@
     align-items: stretch;
     background-image: linear-gradient(to right, $white 30%, $gray-100 30%);
     padding: 10rem 0;
+
+    // icon positioning
+    .custom-control-label {
+      &:before {
+        top: -$half-checked-tag;
+        left: calc(50% - #{$half-checked-tag});
+      }
+
+      &:after {
+        top: -$icon-checked-tag/2;
+        left: calc(50% - #{$icon-checked-tag/2});
+      }
+    }
+
+    // border overlap and stretch
+    .custom-control-label-content {
+      height: 100%;
+      margin-left: -1px;
+    }
+
+    // hover styles
+    .custom-control-label:hover {
+      .custom-control-label-content {
+        margin-top: -$trapeze-height;
+        padding-bottom: 1rem + $trapeze-height;
+      }
+
+      &:before,
+      &:after {
+        margin-top: -$trapeze-height;
+      }
+    }
   }
 
   .question-img {
@@ -127,26 +194,10 @@
   .question-answers {
     display: flex;
     flex-flow: row nowrap;
+    padding: 0;
   }
 
   .question-content {
     padding: 0 4rem;
-  }
-
-  .custom-control-label-content {
-    margin-left: -1px;
-    margin-bottom: 0;
-  }
-
-  .custom-control-label:hover {
-    .custom-control-label-content {
-      margin-top: -$trapeze-height;
-      padding-bottom: 1rem + $trapeze-height;
-    }
-
-    &:before,
-    &:after {
-      margin-top: -$trapeze-height;
-    }
   }
 }

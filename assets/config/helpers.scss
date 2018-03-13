@@ -72,6 +72,20 @@ $trapeze-height: 0.5rem;
   bottom: -$trapeze-height;
 }
 
+.trapeze-vertical {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  margin-right: -$trapeze-height;
+  border-right: $trapeze-height solid $gray-200;
+  border-top: $trapeze-height solid transparent;
+  border-bottom: $trapeze-height solid transparent;
+  transition: 0.2s;
+  z-index: 0;
+}
+
 @each $key, $value in $grays {
   .bg-gray-#{$key} {
     background: $value !important;
