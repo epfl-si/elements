@@ -7,6 +7,7 @@ import { getComponentMarkup } from '../../actions/atomic';
 import parentUrl from '../../helpers/parentUrl';
 
 import Single from './Single';
+import Loader from './../../components/Loader/Loader';
 
 /**
  * Will display the component as a raw page
@@ -43,7 +44,10 @@ class SinglePage extends Single {
 
   render() {
     return (
-      <div role="presentation" onClick={this.handlePageClick.bind(this)} dangerouslySetInnerHTML={{ __html: this.state.component.content }} />
+      <div>
+        { undefined === this.state.component.content ? <Loader /> : '' }
+        <div role="presentation" onClick={this.handlePageClick.bind(this)} dangerouslySetInnerHTML={{ __html: this.state.component.content }} />
+      </div>
     );
   }
 }

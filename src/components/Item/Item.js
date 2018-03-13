@@ -9,6 +9,8 @@ import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/di
 import xml from 'react-syntax-highlighter/dist/languages/xml';
 import { atomOneDark } from 'react-syntax-highlighter/dist/styles';
 
+import Loader from './../Loader/Loader';
+
 import parentUrl from '../../helpers/parentUrl';
 import './Item.css';
 
@@ -64,13 +66,23 @@ class Item extends Component {
         </div>
 
         {/* Item's preview */}
-        <div
-          role="presentation"
-          className={`tlbx-item-preview ${wrapper} ${slugClass}`}
-          style={background ? { backgroundColor: background } : {}}
-          dangerouslySetInnerHTML={{ __html: this.props.children }}
-          onClick={this.handleItemClick.bind(this)}
-        />
+        { this.props.children.length > 0
+          ?
+            <div
+              role="presentation"
+              className={`tlbx-item-preview ${wrapper} ${slugClass}`}
+              style={background ? { backgroundColor: background } : {}}
+              dangerouslySetInnerHTML={{ __html: this.props.children }}
+              onClick={this.handleItemClick.bind(this)}
+            />
+          :
+            <div
+              role="presentation"
+              className={`tlbx-item-preview ${wrapper} ${slugClass}`}
+              style={background ? { backgroundColor: background } : {}}
+              onClick={this.handleItemClick.bind(this)}
+            ><Loader /></div>
+        }
 
         {/* Item's code display */}
         <div className={`tlbx-item-code${this.props.navigation.showAllCode ? '' : ' tlbx-hidden'}`}>
