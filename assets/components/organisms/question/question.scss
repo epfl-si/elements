@@ -59,15 +59,9 @@
       cursor: pointer;
 
       .custom-control-label-content {
-        margin-top: -$trapeze-height;
         border-color: $black;
         z-index: 10;
-        margin-bottom: $trapeze-height;
-      }
-
-      &:before,
-      &:after {
-        margin-top: -$trapeze-height;
+        transition: border 0.2;
       }
     }
   }
@@ -78,10 +72,10 @@
     height: 100%;
     padding: 1rem 1.3rem;
     background: $white;
-    margin-left: -1px;
+    margin-bottom: -1px;
     border: 1px solid $gray-200;
     z-index: 5;
-    transition: margin 0.2s;
+    transition: 0.2s;
   }
 
   .custom-control-input:checked + .custom-control-label {
@@ -137,5 +131,22 @@
 
   .question-content {
     padding: 0 4rem;
+  }
+
+  .custom-control-label-content {
+    margin-left: -1px;
+    margin-bottom: 0;
+  }
+
+  .custom-control-label:hover {
+    .custom-control-label-content {
+      margin-top: -$trapeze-height;
+      padding-bottom: 1rem + $trapeze-height;
+    }
+
+    &:before,
+    &:after {
+      margin-top: -$trapeze-height;
+    }
   }
 }

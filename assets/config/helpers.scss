@@ -68,6 +68,10 @@ $trapeze-height: 0.5rem;
   z-index: 0;
 }
 
+*:hover > .trapeze-horizontal {
+  bottom: -$trapeze-height;
+}
+
 @each $key, $value in $grays {
   .bg-gray-#{$key} {
     background: $value !important;
