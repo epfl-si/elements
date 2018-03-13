@@ -1,6 +1,102 @@
 @charset 'utf-8';
 
 .question {
+  $checked-tag: 1.7rem;
+
+  display: flex;
+  flex-flow: column wrap;
+
+  @keyframes popin {
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  h3,
+  .h3 {
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
+
+  .custom-control-label {
+    $half-checked-tag: $checked-tag/2;
+    $icon-checked-tag: $checked-tag/2.7;
+
+    position: relative;
+    transition: 0.2s;
+    flex-grow: 1;
+
+    &:before {
+      content: ' ';
+      position: absolute;
+      top: -$half-checked-tag;
+      left: calc(50% - #{$half-checked-tag});
+      width: $checked-tag;
+      height: $checked-tag;
+      border: none;
+      border-radius: 50%;
+      margin-top: 0;
+      transform: scale(0);
+      transition: margin 0.2s;
+      box-shadow: none !important;
+      z-index: 15;
+    }
+
+    &:after {
+      content: ' ';
+      position: absolute;
+      top: -$icon-checked-tag/2;
+      left: calc(50% - #{$icon-checked-tag/2});
+      width: $icon-checked-tag;
+      height: $icon-checked-tag;
+      background: $custom-checkbox-indicator-icon-checked;
+      transform: scale(0);
+      transition: margin 0.2s;
+      z-index: 25;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      .custom-control-label-content {
+        margin-top: -$trapeze-height;
+        border-color: $black;
+        z-index: 10;
+        margin-bottom: $trapeze-height;
+      }
+
+      &:before,
+      &:after {
+        margin-top: -$trapeze-height;
+      }
+    }
+  }
+
+  .custom-control-label-content {
+    display: block;
+    position: relative;
+    height: 100%;
+    padding: 1rem 1.3rem;
+    background: $white;
+    margin-left: -1px;
+    border: 1px solid $gray-200;
+    z-index: 5;
+    transition: margin 0.2s;
+  }
+
+  .custom-control-input:checked + .custom-control-label {
+    .custom-control-label-content {
+      border-color: $black;
+      z-index: 10;
+    }
+
+    &:before,
+    &:after {
+      display: block;
+      animation: popin 0.2s forwards;
+    }
+  }
+
   h3,
   .h3 {
     margin-top: 1rem;
@@ -16,38 +112,12 @@
   flex-flow: column nowrap;
 }
 
-.question-answer {
-  border-top: 1px solid $gray-200;
-
-  .custom-radio {
-    padding: 0;
-  }
-
-  .custom-control-label {
-    padding: 1rem 0;
-
-    &:before {
-      top: calc(50% - 0.5rem);
-    }
-  }
-}
-
 @include media-breakpoint-up(lg) {
-  $hover-up: 0.5rem;
-  $checked-tag: 1.7rem;
-
   .question {
-    display: flex;
     flex-flow: row nowrap;
     align-items: stretch;
     background-image: linear-gradient(to right, $white 30%, $gray-100 30%);
     padding: 10rem 0;
-
-    h3,
-    .h3 {
-      margin-top: 0;
-      margin-bottom: 3rem;
-    }
   }
 
   .question-img {
@@ -63,93 +133,6 @@
   .question-answers {
     display: flex;
     flex-flow: row nowrap;
-  }
-
-  .question-answer {
-    position: relative;
-    border: none;
-    z-index: 1;
-    flex-grow: 1;
-    //margin-left: -1px;
-
-    // gray trapeze
-    &:after {
-      content: ' ';
-      display: block;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-      border-top: $hover-up solid $gray-200;
-      border-left: $hover-up solid transparent;
-      border-right: $hover-up solid transparent;
-      height: 0;
-      margin-top: -$hover-up;
-      z-index: -1;
-    }
-
-    .custom-control-label {
-      width: 100%;
-      height: 100%;
-      padding: 1rem 1.3rem;
-      background: $white;
-      outline: 1px solid $gray-200;
-      transition:
-        padding 0.2s,
-        margin 0.2s,
-        border 0.2s;
-
-      @keyframes popin {
-        100% {
-          transform: scale(1);
-        }
-      }
-
-      &:before {
-        $half-checked-tag: $checked-tag/2;
-
-        content: ' ';
-        position: absolute;
-        top: -$half-checked-tag;
-        left: calc(50% - #{$half-checked-tag});
-        width: $checked-tag;
-        height: $checked-tag;
-        border: none;
-        margin-top: 0;
-        transform: scale(0);
-        transition: margin 0.2s ease;
-        box-shadow: none !important;
-      }
-
-      &:after {
-        display: none;
-      }
-
-      &:hover {
-        cursor: pointer;
-        margin-top: -$hover-up;
-        outline-color: $black;
-        z-index: 99;
-
-        &:before {
-          margin-top: -$hover-up;
-        }
-      }
-    }
-  }
-
-  .custom-radio {
-    display: block;
-    height: 100%;
-
-    .custom-control-input:checked ~ .custom-control-label {
-      outline-color: $black;
-      z-index: 99;
-
-      &:before {
-        display: block;
-        animation: popin 0.2s forwards;
-      }
-    }
   }
 
   .question-content {

@@ -30,6 +30,10 @@
   }
 }
 
+.text-small {
+  font-size: 0.778rem;
+}
+
 .triangle-inside-bottom-right {
   position: relative;
   overflow: hidden;
@@ -48,17 +52,20 @@
   transform-origin: bottom right;
 }
 
-.btn-epfl {
-  // TODO: finish this style when we have all states visual
-  background-color: $epflred;
-  padding: 1rem;
-  border-radius: 0;
-  border: 0;
-  color: $white;
-}
+$trapeze-height: 0.5rem;
 
-.text-small {
-  font-size: 0.778rem;
+.trapeze-horizontal {
+  display: block;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: -$trapeze-height;
+  border-top: $trapeze-height solid $gray-200;
+  border-left: $trapeze-height solid transparent;
+  border-right: $trapeze-height solid transparent;
+  height: 0;
+  transition: 0.2s;
+  z-index: 0;
 }
 
 @each $key, $value in $grays {

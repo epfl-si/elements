@@ -9,12 +9,13 @@
 
     <div class="question-answers">
       {% for i in [1,2,3] %}
-        <div class="question-answer">
-          {% include "atoms::radio/radio.twig" with {
-            id: i,
-            label: 'Answer number ' ~ i
-          } %}
-        </div>
+          <input type="radio" id="custom-radio{{i}}" name="customRadio" class="custom-control-input">
+          <label class="custom-control-label" for="custom-radio{{i}}">
+            <span class="custom-control-label-content">
+            {{ label ?: 'Option one' }}</span>
+            <span class="trapeze-horizontal d-none d-lg-block"></span>
+            <span class="trapeze-vertical d-none"></span>
+          </label>
       {% endfor %}
     </div>
   </div>
