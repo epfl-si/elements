@@ -1,9 +1,9 @@
 version: "3.3"
 services:
 
-    elements-serve:
+    server:
       image: kkarczmarczyk/node-yarn:8.0
-      container_name: elements-serve
+      container_name: server
       working_dir: /app
       command: bash -c "yarn && yarn start"
       volumes:
@@ -11,9 +11,9 @@ services:
       ports:
         - "3000:3000"
 
-    elements-build:
+    builder:
       image: kkarczmarczyk/node-yarn:8.0
-      container_name: elements-build
+      container_name: builder
       working_dir: /app
       command: bash -c "yarn && yarn build"
       volumes:

@@ -29,7 +29,7 @@ Docker variant:
 ```bash
 $ git clone git@github.com:epfl-idevelop/elements.git
 $ cd ./elements
-$ docker-compose up elements-build --build
+$ docker-compose up builder
 ```
 
 ## Run locally
@@ -41,8 +41,8 @@ As listed in the `package.json` you have **3 commands** available :
 - `$ yarn deploy` : Will **deploy the styleguide** in the dedicated [`gh-pages`](https://epfl-idevelop.github.io/elements)
 
 With Docker, you can run:
-- `$ docker-compose up elements-build` same as `$ yarn build` but in containers
-- `$ docker-compose up elements-serve` same as `$ yarn start` but in containers
+- `$ docker-compose up builder` same as `$ yarn build` but in containers
+- `$ docker-compose up server` same as `$ yarn start` but in containers
 
 ## Contribute
 
