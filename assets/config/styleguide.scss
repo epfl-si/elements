@@ -58,7 +58,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      background: $gray-200;
+      background: #e0e0e0;
       border: none;
       transform: scaleX(0);
       transform-origin: 0 50%;
@@ -69,6 +69,8 @@
   a:focus,
   a.active,
   a:active {
+    font-weight: normal !important;
+
     &:after {
       transform: scaleX(1);
       transition: 0.4s ease-out;
