@@ -47,6 +47,10 @@ a {
     &:before { content: none; }
     .bg-dark & { color: $wild-watermelon; }
   }
+
+  &.text-muted:hover {
+    color: $red !important;
+  }
 }
 
 .no-text-link {
