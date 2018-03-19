@@ -53,11 +53,35 @@ a.social-icon {
 }
 
 .social-icon-round {
-  border-radius: 100%;
+  border-radius: 100% !important;
   padding: 0.8rem;
 
   &.social-icon-instagram {
     background-image: linear-gradient(-135deg, $instagramblue 5%, $instagrampurple, $instagramred 90%);
+  }
+}
+
+.social-icon-negative {
+  padding: 0.5rem;
+  background: transparent;
+  transition: background 0.2s;
+
+  .icon {
+    fill: $black;
+    font-size: 1.5rem;
+    transition: fill 0.2s;
+  }
+
+  &:hover {
+    background: $red !important;
+
+    .icon {
+      fill: $white !important;
+    }
+  }
+
+  & + .social-icon-negative {
+    margin-left: 0.3rem;
   }
 }
 
