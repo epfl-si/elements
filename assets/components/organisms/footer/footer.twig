@@ -1,0 +1,37 @@
+<footer class="footer">
+
+  <div class="footer-group footer-sitemap">
+    {% for i in [1, 2, 3, 4, 5] %}
+      {% include "organisms::footer/footer-col.twig" %}
+    {% endfor %}
+  </div>
+
+  <div class="footer-group">
+    {% include "organisms::footer/footer-faculties.twig" %}
+  </div>
+
+  <div class="footer-group footer-buttons">
+    <p class="footer-title footer-button-title">Portail interne de l’EPFL</p>
+    <a href="#" class="btn btn-secondary">Enseignants et chercheurs</a>
+    <a href="#" class="btn btn-secondary">Étudiants</a>
+    <a href="#" class="btn btn-secondary">Collaborateurs</a>
+  </div>
+
+  <div class="footer-group footer-socials">
+    <p class="footer-title">Suivre les pulsations de l’EPFL sur les réseaux sociaux</p>
+    <div class="footer-social">
+      
+    </div>
+  </div>
+
+  <div class="footer-legal">
+    <div class="footer-legal-links">
+      <a href="">Accessibilité</a>
+      <a href="">Mentions légales</a>
+    </div>
+    <div>
+      <p>&copy; 2018 EPFL, tous droits réservés</p>
+    </div>
+  </div>
+
+</footer>
