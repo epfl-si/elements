@@ -104,6 +104,12 @@
     }
   }
 
+  .footer-social {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
   .btn {
     margin: 0 0.4em 0.6rem 0;
   }
@@ -148,7 +154,7 @@
     border-bottom: 1px solid $gray-100;
   }
 
-  .footer-button-title {
+  .footer-title-no-underline {
     border: none;
     padding-bottom: 0.3rem;
   }
@@ -180,5 +186,18 @@
 
   .footer-faculties {
     flex: 0 0 100%;
+
+    .footer-sitemap-links {
+      display: flex;
+      flex-flow: row wrap;
+
+      li {
+        flex: 0 0 20%;
+
+        strong {
+          display: block;
+        }
+      }
+    }
   }
 }
