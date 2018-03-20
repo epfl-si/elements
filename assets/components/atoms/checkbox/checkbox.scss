@@ -1,0 +1,7 @@
+@charset 'utf-8';
+
+.custom-checkbox .custom-control-label:before { border: 1px solid $gray-700; }
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label:before {
+  border-color: $red;
+}
