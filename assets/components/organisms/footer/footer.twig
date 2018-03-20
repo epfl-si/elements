@@ -11,27 +11,13 @@
   </div>
 
   <div class="footer-group footer-buttons">
-    <p class="footer-title footer-title-no-underline">Portail interne de l’EPFL</p>
-    <a href="#" class="btn btn-secondary">Enseignants et chercheurs</a>
-    <a href="#" class="btn btn-secondary">Étudiants</a>
-    <a href="#" class="btn btn-secondary">Collaborateurs</a>
+    {% include "organisms::footer/footer-buttons.twig" %}
   </div>
 
   <div class="footer-group footer-socials">
-    <p class="footer-title footer-title-no-underline">Suivre les pulsations de l’EPFL sur les réseaux sociaux</p>
-    <div class="footer-social">
-      {% include 'atoms::social-icon/social-icon-negative-link.twig' %}
-    </div>
+    {% include "organisms::footer/footer-socials.twig" %}
   </div>
 
-  <div class="footer-legal">
-    <div class="footer-legal-links">
-      <a href="">Accessibilité</a>
-      <a href="">Mentions légales</a>
-    </div>
-    <div>
-      <p>&copy; 2018 EPFL, tous droits réservés</p>
-    </div>
-  </div>
+{% include "organisms::footer/footer-legal.twig" %}
 
 </footer>
