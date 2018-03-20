@@ -32,11 +32,11 @@
     border: none;
   }
 
-  &.active .footer-sitemap-links {
+  &.active .footer-links {
     padding-top: 0.5rem;
   }
 
-  .footer-sitemap-links {
+  .footer-links {
     display: flex;
     flex-flow: row wrap;
 
@@ -98,7 +98,7 @@
   }
 }
 
-.footer-sitemap-links {
+.footer-links {
   margin: 0;
 
   a {
@@ -174,7 +174,7 @@
     margin: 0 0.4em 0.6rem 0;
   }
 
-  .footer-sitemap-links {
+  .footer-links {
     max-height: 0;
     overflow: hidden;
     transition: 0.2s;
@@ -196,7 +196,7 @@
         }
       }
 
-      .footer-sitemap-links {
+      .footer-links {
         max-height: 30rem;
         overflow: visible;
       }

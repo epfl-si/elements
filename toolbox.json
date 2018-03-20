@@ -23,9 +23,7 @@
     ],
     "js": [
       "node_modules/pickadate/lib/picker.js",
-      "node_modules/pickadate/lib/picker.date.js",
-      "node_modules/tablesaw/dist/tablesaw.js",
-      "node_modules/tablesaw/dist/tablesaw-init.js"
+      "node_modules/pickadate/lib/picker.date.js"
     ]
   },
   "singles": [{
