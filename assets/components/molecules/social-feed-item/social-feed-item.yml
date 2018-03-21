@@ -1,0 +1,4 @@
+title: Social feed item
+name: social-feed-item
+notes: |
+  To display different type of social feed item, use variants of the `social-icon`

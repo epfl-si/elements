@@ -1,0 +1,13 @@
+title: Social icon
+name: social-icon
+variants:
+  - name: round
+    title: Round
+  - name: link
+    title: Link
+  - name: discrete-link
+    title: Discrete Link
+  - name: round-link
+    title: Round Link
+  - name: round-discrete-link
+    title: Round Discrete Link

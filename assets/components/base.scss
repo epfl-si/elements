@@ -26,6 +26,8 @@
 @import 'atoms/radio/radio';
 @import 'atoms/picture/picture';
 @import 'atoms/video/video';
+@import 'atoms/social-icon/social-icon';
+@import 'atoms/icon/icon';
 
 //
 // molecules:
@@ -38,8 +40,14 @@
 @import 'molecules/form-group/form-group';
 @import 'molecules/datepicker/datepicker';
 @import 'molecules/tables/tables';
+<<<<<<< HEAD
 @import 'molecules/publication/publication';
+=======
+@import 'molecules/social-feed-item/social-feed-item';
+>>>>>>> dev
 
 //
 // organisms:
 @import 'organisms/event-teaser-list/event-teaser-list';
+@import 'organisms/social-feed/social-feed';
+@import 'organisms/social-share/social-share';

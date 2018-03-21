@@ -5,6 +5,8 @@ variants:
     title: Cover picture
   - name: avatar
     title: Avatar
+  - name: one-third
+    title: One third picture
 notes: |
   <br>
 
