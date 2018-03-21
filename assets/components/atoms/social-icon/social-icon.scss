@@ -55,6 +55,7 @@ a.social-icon {
 .social-icon-round {
   border-radius: 100%;
   padding: 0.8rem;
+  &:before { border-radius: 100% !important; }
 
   &.social-icon-instagram {
     background-image: linear-gradient(-135deg, $instagramblue 5%, $instagrampurple, $instagramred 90%);
