@@ -2,31 +2,19 @@
 
 .focused {
   position: relative;
-
-  &:before {
-    content: ' ';
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    bottom: -5px;
-    left: -5px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    transform: scale(1.1);
-    transition:
-      transform 0.1s ease,
-      border-color 0.3s;
-  }
+  outline: 1px solid transparent;
+  outline-offset: 4px;
+  transition:
+    color 0.3s,
+    background 0.3s,
+    outline 0.1s,
+    box-shadow 0.15s;
 
   &:focus,
   &.focus {
     box-shadow: none !important;
-    outline: none !important;
-
-    &:before {
-      transform: scale(1);
-      border-color: $red;
-    }
+    outline-color: $red;
+    outline-offset: 2px;
   }
 }
 
