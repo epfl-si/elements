@@ -8,8 +8,6 @@
   background-repeat: repeat-x;
   background-size: $size $size;
   background-position: 0 100%;
-  // Clear descendors from underline
-  transition: color 0.15s ease-in-out;
 
   @include pretty-link-text-shadow($bg);
 

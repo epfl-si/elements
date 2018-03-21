@@ -1,18 +1,18 @@
 @charset 'utf-8';
 
-a:not([class*="btn"]) {
+a,
+a:hover,
+a:active { text-decoration: none; }
+
+a:not([class*="btn"]):not([class*="teaser"]):not([class*="card"]):not(.social-icon) {
   position: relative;
-  text-decoration: none;
   border-radius: 1px;
   transition:
-    color 0.3s,
+    color 0.15s ease-in-out,
     box-shadow 0.15s;
 
   @include pretty-link($epflred, transparent, false, 1px);
-
-  &:not([class*="teaser"]):not([class*="card"]) {
-    @extend .focused;
-  }
+  @extend .focused;
 
   .bg-dark & { color: $white; }
 
