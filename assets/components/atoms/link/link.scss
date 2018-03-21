@@ -1,6 +1,6 @@
 @charset 'utf-8';
 
-a {
+a:not([class*="btn"]) {
   position: relative;
   text-decoration: none;
   border-radius: 1px;
