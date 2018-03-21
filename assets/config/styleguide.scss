@@ -41,3 +41,39 @@
   }
 }
 
+#styleguide .tlbx-sidebar-item-list li {
+  a {
+    position: relative;
+    z-index: 1;
+
+    &:before {
+      content: none;
+    }
+
+    &:after {
+      content: ' ';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: #e0e0e0;
+      border: none;
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      transition: none;
+    }
+  }
+
+  a:focus,
+  a.active,
+  a:active {
+    font-weight: normal !important;
+
+    &:after {
+      transform: scaleX(1);
+      transition: 0.4s ease-out;
+    }
+  }
+}
