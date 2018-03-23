@@ -6,7 +6,7 @@
   & + .picker .picker__holder {
     @include media-breakpoint-down (sm) {
       overflow: hidden;
-      padding: 1.3rem 0 0.3rem;
+      padding: 1.1rem 0 0.9rem;
       border-left: 0;
       border-right: 0;
 
@@ -47,12 +47,12 @@
           display: flex;
           flex-flow: row nowrap;
           width: 100%;
-          transition: left 0.4s;
+          // transition: left 0.4s;
 
           tr {
             display: flex;
             flex: 0 0 100%;
-            transition: opacity 0.2s;
+            // transition: opacity 0.2s;
 
             td,
             th {
