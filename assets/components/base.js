@@ -9,7 +9,6 @@ svgIcons(); // Must run as soon as possible
 const init = () => {
   upload();
   datebpicker();
-  Tablesaw.init();
 };
 
 (function ($) {
