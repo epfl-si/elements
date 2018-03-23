@@ -1,0 +1,69 @@
+@charset 'utf-8';
+
+.datepicker-event {
+  display: none;
+
+  & + .picker .picker__holder {
+    @include media-breakpoint-down (sm) {
+      overflow: hidden;
+      padding: 1.3rem 0 0.3rem;
+      border-left: 0;
+      border-right: 0;
+
+      .datepicker-wrapper .picker__nav--prev {
+        right: 3.1rem;
+        left: auto;
+      }
+
+      table {
+        display: block;
+        position: relative;
+        min-height: 3rem;
+
+        @each $i in (1, 2, 3, 4, 5, 6) {
+          tbody[data-week="#{$i}"] {
+            $left: $i - 1;
+
+            left: calc(-100% * #{$left});
+
+            tr:nth-child(#{$i}) {
+              opacity: 1;
+            }
+          }
+        }
+
+        tbody {
+          position: absolute;
+          top: 1.3;
+          left: 0;
+
+          tr {
+            opacity: 0;
+          }
+        }
+
+        tbody,
+        thead {
+          display: flex;
+          flex-flow: row nowrap;
+          width: 100%;
+          transition: left 0.4s;
+
+          tr {
+            display: flex;
+            flex: 0 0 100%;
+            transition: opacity 0.2s;
+
+            td,
+            th {
+              display: block;
+              flex: 1 1 auto;
+              padding-bottom: 0.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
