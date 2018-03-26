@@ -27,7 +27,7 @@
             left: calc(-100% * #{$left});
 
             tr:nth-child(#{$i}) {
-              opacity: 1;
+              // opacity: 1;
             }
           }
         }
@@ -38,7 +38,7 @@
           left: 0;
 
           tr {
-            opacity: 0;
+            // opacity: 1;
           }
         }
 
@@ -63,6 +63,20 @@
           }
         }
       }
+    }
+
+    .picker__day--highlighted {
+      font-weight: bold;
+      color: $red;
+      border-color: transparent;
+
+      &.picker__day--selected {
+        color: $white;
+      }
+    }
+
+    .picker__day--today {
+      border-color: $red;
     }
   }
 }
