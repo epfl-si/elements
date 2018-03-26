@@ -93,12 +93,16 @@ export default () => {
     picker.set('select', [now.getFullYear(), now.getMonth(), now.getDate()]);
   }
 
+  function displayHeroMonths(container) {
+    $('.picker__wrap', container).append($('h2').html('fèv'));
+  }
+
   /*
   * handle custom highlights
   */
-  function setHighlights(picker) {
+  function setHighlights(container) {
     // we check all displayed dates, and highlight the ones we want to
-    $('.picker__day--infocus').each(function () {
+    $('.picker__day--infocus', container).each(function () {
       const currentTimestamp = $(this).data('pick');
       const date = new Date(currentTimestamp);
       const dateString = date.getFullYear() + '-' + ("0" + (date.getMonth() + 1)).slice(-2) + '-' + ("0" + date.getDate()).slice(-2);
@@ -113,7 +117,7 @@ export default () => {
   /*
   * INIT datepicket-event
   */
-  $('.datepicker-event').each(function() {
+  $('.datepicker-event').each(function () {
     const container = $(this).parent();
     $(this).pickadate({
       monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
@@ -151,11 +155,14 @@ export default () => {
         if (selected.length > 0) {
           initialWeek = $('tr', container).index(selected);
         }
-        console.log(initialWeek);
 
         // enable mobile behaviour when needed
         isMobile = $('.datepicker-event+.picker table').css('display') === 'block';
-      }
+
+        if (!isMobile) {
+          displayHeroMonths(container);
+        }
+      },
     });
   });
 };
