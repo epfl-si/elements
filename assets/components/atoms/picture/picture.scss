@@ -1,3 +1,7 @@
 @charset 'utf-8';
 
 picture .img-fluid { width: 100%; }
+
+picture.round img {
+  border-radius: 50%;
+}
