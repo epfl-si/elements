@@ -19,7 +19,7 @@ a:not([class*="btn"]):not([class*="teaser"]):not([class*="card"]):not(.social-ic
   &:hover,
   &.hover {
     text-decoration: none;
-    color: $link-color;
+    color: $red;
     @include pretty-link($gray-700, transparent, false, 1px);
 
     .bg-dark & {
