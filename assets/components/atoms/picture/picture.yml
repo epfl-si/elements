@@ -3,6 +3,10 @@ name: picture
 variants:
   - name: cover
     title: Cover picture
+  - name: avatar
+    title: Avatar
+  - name: one-third
+    title: One third picture
 notes: |
   <br>
 
