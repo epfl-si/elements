@@ -19,11 +19,6 @@ $animation: 0.2s;
   h3,
   .h3 {
     margin-top: 1rem;
-  }
-
-  h3,
-  .h3 {
-    margin-top: 0;
     margin-bottom: 3rem;
   }
 
@@ -147,6 +142,11 @@ $animation: 0.2s;
     align-items: stretch;
     background-image: linear-gradient(to right, $white 30%, $gray-100 30%);
     padding: 10rem 0;
+
+    h3,
+    .h3 {
+      margin-top: 0;
+    }
 
     // icon positioning
     .custom-control-label {
