@@ -1,0 +1,23 @@
+<footer class="footer">
+
+  <div class="footer-group footer-sitemap">
+    {% for i in [1, 2, 3, 4, 5] %}
+      {% include "organisms::footer/footer-col.twig" %}
+    {% endfor %}
+  </div>
+
+  <div class="footer-group">
+    {% include "organisms::footer/footer-faculties.twig" %}
+  </div>
+
+  <div class="footer-group footer-buttons">
+    {% include "organisms::footer/footer-buttons.twig" %}
+  </div>
+
+  <div class="footer-group footer-socials">
+    {% include "organisms::footer/footer-socials.twig" %}
+  </div>
+
+  {% include "organisms::footer/footer-legal.twig" %}
+
+</footer>

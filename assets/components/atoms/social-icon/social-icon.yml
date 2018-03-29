@@ -1,6 +1,8 @@
 title: Social icon
 name: social-icon
 variants:
+  - name: negative
+    title: Negative
   - name: round
     title: Round
   - name: link
@@ -11,3 +13,5 @@ variants:
     title: Round Link
   - name: round-discrete-link
     title: Round Discrete Link
+  - name: negative-link
+    title: Negative Link
