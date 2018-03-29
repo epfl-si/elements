@@ -8,8 +8,20 @@
     line-height: 1.5rem;
 
     &:before {
-      content: '';
-      display: none;
+      content: ' ';
+      display: block;
+      position: absolute;
+      bottom: -0.1rem;
+      left: 0;
+      width: 0;
+      height: 1px;
+      padding: 0;
+      background: $red;
+      transition: width 0.3s ease;
+    }
+
+    &:not(.active):hover:before {
+      width: calc(100% - 0.6rem);
     }
 
     &:after {
@@ -24,24 +36,8 @@
 
       &:hover {
         color: $black;
-
-        &:before {
-          width: 100%;
-        }
       }
 
-      &:before {
-        content: ' ';
-        display: block;
-        position: absolute;
-        bottom: -0.1rem;
-        left: 0;
-        width: 0;
-        height: 1px;
-        padding: 0;
-        background: $red;
-        transition: width 0.3s ease;
-      }
     }
 
     &:last-child:after {
