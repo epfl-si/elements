@@ -2,6 +2,7 @@
 
 import upload from './atoms/upload/upload';
 import datebpicker from './molecules/datepicker/datepicker';
+import socialShare from './organisms/social-share/social-share';
 import footer from './organisms/footer/footer';
 import tables from './molecules/tables/tables.js';
 import svgIcons from '../icons/svg-icons';
@@ -13,6 +14,8 @@ const init = () => {
   footer();
   tables();
   datebpicker();
+  socialShare();
+  Tablesaw.init();
 };
 
 // Will init the scripts outside of Toolbox
