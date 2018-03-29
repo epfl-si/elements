@@ -1,6 +1,6 @@
 @charset 'utf-8';
 
-a:not(.btn) {
+a:not([class*="btn"]) {
   position: relative;
   text-decoration: none;
   border-radius: 1px;
@@ -46,6 +46,10 @@ a:not(.btn) {
     border-bottom-color: $red !important;
     &:before { content: none; }
     .bg-dark & { color: $wild-watermelon; }
+  }
+
+  &.text-muted:hover {
+    color: $red !important;
   }
 }
 
