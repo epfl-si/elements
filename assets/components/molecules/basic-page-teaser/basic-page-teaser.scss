@@ -2,8 +2,8 @@
 
 .basic-page-teaser {
   position: relative;
-
-  @extend .col-12;
+  width: 100%;
+  padding: 0 gutter-width / 2;
 
   @include media-breakpoint-up(md) {
     display: flex;
@@ -27,6 +27,13 @@
   }
 
   picture {
+    @include media-breakpoint-down(sm) {
+      img {
+        width: 100% !important;
+        height: auto;
+      }
+    }
+
     @include media-breakpoint-up(md) {
       position: relative;
       overflow: hidden;
@@ -34,7 +41,7 @@
       img {
         position: absolute;
         top: 0;
-        left: -15vw;
+        left: -10%;
         width: auto;
         height: 100%;
       }
@@ -44,7 +51,7 @@
       img {
         position: relative;
         left: 0;
-        width: 100%;
+        width: 100% !important;
       }
     }
   }

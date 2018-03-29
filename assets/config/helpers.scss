@@ -42,11 +42,11 @@
   border-radius: 0;
   border: 0;
   color: $white;
-  transition: 0.2s ease;
+  transition: 0.15s !important;
 
   &:before,
   &:after {
-    transition: 0.2s ease;
+    transition: 0.15s;
   }
 
   &:hover {
@@ -91,3 +91,4 @@
   .bg-gray-#{$key} {
     background: $value !important;
   }
+}
