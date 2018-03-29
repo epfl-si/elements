@@ -66,10 +66,3 @@
     background: $value !important;
   }
 }
-
-.offscreen {
-  display: inline !important;
-  position: fixed !important;
-  left: -9999999rem !important;
-  max-height: max-content !important;
-}

@@ -59,7 +59,7 @@
         content: ' ';
         display: block;
         position: absolute;
-        top: 0.4rem;
+        top: 0.45rem;
         left: -0.95rem;
         width: 0.5rem;
         height: 0.23rem;
@@ -184,22 +184,18 @@
     }
   }
 
-  .footer {
-    .active {
-      .footer-title {
-        &:before {
-          transform: scaleY(0);
-        }
+  .footer .active {
+    .footer-title:before {
+      transform: scaleY(0);
+    }
 
-        &:after {
-          background: $red;
-        }
-      }
+    .footer-title:after {
+      background: $red;
+    }
 
-      .footer-links {
-        max-height: 30rem;
-        overflow: visible;
-      }
+    .footer-links {
+      max-height: 30rem;
+      overflow: visible;
     }
   }
 }
