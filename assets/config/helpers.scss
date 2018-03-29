@@ -78,7 +78,7 @@ $trapeze-height: 0.5rem;
   left: 0;
   width: 0;
   height: 100%;
-  margin-right: -$trapeze-height;
+  margin-right: $trapeze-height * -1;
   border-right: $trapeze-height solid $gray-200;
   border-top: $trapeze-height solid transparent;
   border-bottom: $trapeze-height solid transparent;
