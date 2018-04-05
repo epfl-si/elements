@@ -1,5 +1,8 @@
 # Changelog
 
+*2.0.9* (2018-04-05)
+  - 📦 fix component wrapping class pattern (cdbef50)
+
 *2.0.8* (2018-03-13)
   - ✨ add loader for long rendering feedback (4c60217)
 
