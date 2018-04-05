@@ -44,7 +44,7 @@ class Item extends Component {
     const variant = this.props.variant;
 
     const fullPath = `/${component.type}/${component.name}${isVariant ? `/${variant.name}` : ''}/full`;
-    const slugClass = isVariant ? `tlbx-${component.name}-${variant.name}` : `tlbx-${component.name}`;
+    const slugClass = isVariant ? `tlbx-component-${component.name}-${variant.name}` : `tlbx-component-${component.name}`;
     const wrapper = isVariant && variant.wrapper ? variant.wrapper : component.wrapper;
     const background = isVariant && variant.background ? variant.background : component.background;
 
