@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="15px" viewBox="0 0 10 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-lock</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Components-lot3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Teaser-press_release" transform="translate(-444.000000, -600.000000)" fill="#212121" fill-rule="nonzero">
+            <path d="M451,607 L451,604 C451,602.895431 450.104569,602 449,602 C447.895431,602 447,602.895431 447,604 L447,607 L451,607 Z M445,607 L445,604 C445,601.790861 446.790861,600 449,600 C451.209139,600 453,601.790861 453,604 L453,607 C453.552285,607 454,607.447715 454,608 L454,615 L444,615 L444,608 C444,607.447715 444.447715,607 445,607 Z" id="icon-lock"></path>
+        </g>
+    </g>
+</svg>
