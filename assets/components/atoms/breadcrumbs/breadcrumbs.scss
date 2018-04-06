@@ -31,13 +31,12 @@
     }
 
     a {
-      background: none;
+      background-image: none !important;
       color: $gray-600;
 
       &:hover {
         color: $black;
       }
-
     }
 
     &:last-child:after {

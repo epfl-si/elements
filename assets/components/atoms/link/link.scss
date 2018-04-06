@@ -4,7 +4,7 @@ a,
 a:hover,
 a:active { text-decoration: none; }
 
-a:not([class*="btn"]):not([class*="teaser"]):not([class*="card"]):not(.social-icon) {
+a:not([class*="btn"]):not([class*="teaser"]):not([class*="card"]):not(.social-icon):not([aria-describedby*="footnote"]):not([aria-describedby*="sidenote"]) {
   position: relative;
   border-radius: 1px;
   transition:
@@ -12,6 +12,7 @@ a:not([class*="btn"]):not([class*="teaser"]):not([class*="card"]):not(.social-ic
     box-shadow 0.15s;
 
   @include pretty-link($epflred, transparent, false, 1px);
+
   @extend .focused;
 
   .bg-dark & { color: $white; }
@@ -20,10 +21,12 @@ a:not([class*="btn"]):not([class*="teaser"]):not([class*="card"]):not(.social-ic
   &.hover {
     text-decoration: none;
     color: $red;
+
     @include pretty-link($gray-700, transparent, false, 1px);
 
     .bg-dark & {
       color: $white;
+
       @include pretty-link($gray-300, transparent, false, 1px);
     }
   }

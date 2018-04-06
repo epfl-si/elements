@@ -22,6 +22,7 @@
     background: none !important;
     border-bottom: none !important;
     box-shadow: none !important;
+    &.active { color: $red !important; }
   }
 
   li:before { content: none; }

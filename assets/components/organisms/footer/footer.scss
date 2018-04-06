@@ -59,7 +59,7 @@
         content: ' ';
         display: block;
         position: absolute;
-        top: 0.75rem;
+        top: 0.55rem;
         left: -0.95rem;
         width: 0.5rem;
         height: 0.23rem;
@@ -102,6 +102,8 @@
   margin: 0;
 
   a {
+    display: inline-block;
+    background-image: none !important;
     font-size: 0.85rem;
     line-height: 1.2rem;
     color: $gray-600;
@@ -113,6 +115,7 @@
   li {
     display: inline-block;
     margin: 0.5rem 0;
+
     &:before {
       content: none;
     }
