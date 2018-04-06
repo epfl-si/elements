@@ -16,24 +16,12 @@
   flex-flow: column nowrap;
 }
 
-.footer-title {
-  padding-top: 0.9rem;
-  padding-bottom: 0.9rem;
-  margin-bottom: 0;
-  font-size: 1.1rem;
-  font-weight: 800;
-}
-
 .footer-faculties {
   border-bottom: 1px solid $gray-400;
 
   @include media-breakpoint-up(md) {
     flex: 0 0 100%;
     border: none;
-  }
-
-  &.active .footer-links {
-    padding-top: 0.5rem;
   }
 
   .footer-links {
@@ -131,42 +119,6 @@
     margin-bottom: 0;
   }
 
-  .footer-collapse {
-    .footer-title {
-      $icon-size: 1rem;
-      $icon-size-half: $icon-size/2;
-      $icon-thickness: 2px;
-      $icon-thickness-half: $icon-thickness/2;
-
-      border-top: 1px solid $gray-300;
-      position: relative;
-
-      &:after {
-        content: ' ';
-        display: block;
-        position: absolute;
-        top: calc(50% - #{$icon-thickness-half});
-        right: 0;
-        width: $icon-size;
-        height: $icon-thickness;
-        background: $gray-400;
-        transition: background 0.2s;
-      }
-
-      &:before {
-        content: ' ';
-        display: block;
-        position: absolute;
-        top: calc(50% - #{$icon-size-half});
-        right: calc(#{$icon-size-half} - #{$icon-thickness-half});
-        width: $icon-thickness;
-        height: $icon-size;
-        background: $gray-400;
-        transition: transform 0.3s;
-      }
-    }
-  }
-
   .footer-social {
     display: flex;
     flex-flow: row wrap;
@@ -177,29 +129,9 @@
     margin: 0 0.4em 0.6rem 0;
   }
 
-  .footer-links {
-    max-height: 0;
-    overflow: hidden;
-    transition: 0.2s;
-
-    li:last-child {
-      margin-bottom: 1rem;
-    }
-  }
-
-  .footer .active {
-    .footer-title:before {
-      transform: scaleY(0);
-    }
-
-    .footer-title:after {
-      background: $red;
-    }
-
-    .footer-links {
-      max-height: 30rem;
-      overflow: visible;
-    }
+  .footer-links li {
+    display: block;
+    &:last-child { margin-bottom: 1rem; }
   }
 }
 

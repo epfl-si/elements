@@ -2,7 +2,7 @@
 
   <div class="footer-group footer-sitemap">
     {% for i in [1, 2, 3, 4, 5] %}
-      {% include "organisms::footer/footer-col.twig" %}
+      {% include "organisms::footer/footer-col.twig" with { id: loop.index } %}
     {% endfor %}
   </div>
 
