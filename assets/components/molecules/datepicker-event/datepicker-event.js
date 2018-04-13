@@ -93,6 +93,25 @@ export default () => {
     picker.set('select', [now.getFullYear(), now.getMonth(), now.getDate()]);
   }
 
+  /*
+  * Display correct month labels on the side of the desktop version
+  */
+  function handleMonthLabels(picker, months) {
+    const alreadyHandled = $('.nextMonthLabel', picker.$holder).length > 0;
+    if (alreadyHandled) {
+      return true;
+    }
+
+    const wrapper = picker.component.$node.parent();
+    const next = $('.nextMonthLabel', wrapper);
+    const prev = $('.prevMonthLabel', wrapper);
+    next.html(months[picker.component.item.now.month + 1]);
+    prev.html(months[picker.component.item.now.month - 1]);
+    next.clone().appendTo('.picker__box', picker.$root);
+    prev.clone().appendTo('.picker__box', picker.$root);
+
+  }
+
   function displayHeroMonths(container) {
     $('.picker__wrap', container).append($('h2').html('fèv'));
   }
@@ -118,10 +137,11 @@ export default () => {
   * INIT datepicket-event
   */
   $('.datepicker-event').each(function () {
+    const monthsShort = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Jui', 'Jui', 'Aoû', 'Sep', 'Oct', 'Nov', 'Déc'];
     const container = $(this).parent();
     $(this).pickadate({
       monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
-      monthsShort: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Jui', 'Jui', 'Aoû', 'Sep', 'Oct', 'Nov', 'Déc'],
+      monthsShort,
       weekdaysFull: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
       weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
       labelMonthNext: 'Prochain mois',
@@ -140,6 +160,8 @@ export default () => {
             $(this).removeClass('picker__day--highlighted');
           }
         });
+
+        handleMonthLabels(this, monthsShort);
 
         if (isMobile) {
           // refresh listeners after render

@@ -4,16 +4,13 @@
   display: none;
 
   & + .picker .picker__holder {
+    background: none;
+
     @include media-breakpoint-down (sm) {
       overflow: hidden;
       padding: 1.1rem 0 0.9rem;
       border-left: 0;
       border-right: 0;
-
-      .datepicker-wrapper .picker__nav--prev {
-        right: 3.1rem;
-        left: auto;
-      }
 
       table {
         display: block;
@@ -73,6 +70,7 @@
         top: 50%;
         width: 3.8rem;
         height: 3.8rem;
+        background: $white;
         transition: box-shadow 0.2s;
 
         &:before {
@@ -132,6 +130,32 @@
 
     .picker__day--today {
       border-color: $red;
+    }
+
+    .nextMonthLabel,
+    .prevMonthLabel {
+      position: absolute;
+      top: 6.8rem;
+      font-size: 8rem;
+      font-weight: bold;
+      color: $gray-200;
+      text-transform: uppercase;
+      z-index: -1;
+    }
+
+    .nextMonthLabel {
+      left: calc(50% + 19rem);
+    }
+
+    .prevMonthLabel {
+      right: calc(50% + 19rem);
+    }
+  }
+
+  & + .picker {
+    & + .nextMonthLabel,
+    & ~ .prevMonthLabel {
+      display: none;
     }
   }
 }
