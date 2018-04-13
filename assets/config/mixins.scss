@@ -1,0 +1,46 @@
+ @charset "utf-8";
+
+// Add a beautiful underline to links
+@mixin pretty-link($line: $red, $bg: $body-bg, $hover: true, $size: 1px) {
+  text-decoration: none;
+  // Underline via gradient background
+  background-image: linear-gradient($line 0%, $line 100%);
+  background-repeat: repeat-x;
+  background-size: $size $size;
+  background-position: 0 100%;
+
+  @include pretty-link-text-shadow($bg);
+
+  // Tweak position + thickness for high res (1.75x and up) displays
+  @media (min-resolution: 168dpi) {
+    background-image: linear-gradient($line 0%, $line 100%);
+    background-position: 0 100%;
+  }
+
+  @if ($hover) {
+    @include hover-focus {
+      color: $link-hover-color;
+      text-decoration: none;
+      background-image: none;
+    }
+  }
+
+  // Style selected links (or else text-shadow makes it look crazy ugly)
+  // Pseudo selectors must go separately, or they break each other
+  &::selection {
+    background-color: rgba(theme-color("secondary"), 0.6);
+    color: $body-color;
+    text-shadow: none;
+  }
+}
+
+// Adds the text-shadow to make descendants prettier
+@mixin pretty-link-text-shadow($color) {
+  text-shadow:
+    3px 0 $color,
+    2px 0 $color,
+    1px 0 $color,
+    -1px 0 $color,
+    -2px 0 $color,
+    -3px 0 $color;
+}

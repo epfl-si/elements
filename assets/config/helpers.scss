@@ -30,9 +30,43 @@
   }
 }
 
+.text-small {
+  font-size: 0.778rem;
+}
+
 .triangle-inside-bottom-right {
   position: relative;
   overflow: hidden;
+}
+
+.btn-epfl {
+  // TODO: finish this style when we have all states visual
+  background-color: $epflred;
+  padding: 1rem;
+  border-radius: 0;
+  border: 0;
+  color: $white;
+  transition: 0.15s !important;
+
+  &:before,
+  &:after {
+    transition: 0.15s;
+  }
+
+  &:hover {
+    background: darken($epflred, 15%);
+    color: $white;
+
+    @include media-breakpoint-up(xl) {
+      padding-left: 2rem;
+    }
+
+    &:before,
+    &:after {
+      background: none;
+      border-top-color: darken($epflred, 15%);
+    }
+  }
 }
 
 .triangle-inside-bottom-right:after {
@@ -48,17 +82,56 @@
   transform-origin: bottom right;
 }
 
-.btn-epfl {
-  // TODO: finish this style when we have all states visual
-  background-color: $epflred;
-  padding: 1rem;
-  border-radius: 0;
-  border: 0;
-  color: $white;
+$trapeze-height: 0.5rem;
+
+.trapeze-horizontal {
+  display: block;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: $trapeze-height * -1;
+  border-top: $trapeze-height solid $gray-200;
+  border-left: $trapeze-height solid transparent;
+  border-right: $trapeze-height solid transparent;
+  height: 0;
+  transition: 0.2s;
+  z-index: 0;
 }
 
-.text-small {
-  font-size: 0.778rem;
+*:hover > .trapeze-horizontal {
+  bottom: -$trapeze-height;
+}
+
+.trapeze-vertical {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  margin-right: $trapeze-height * -1;
+  border-right: $trapeze-height solid $gray-200;
+  border-top: $trapeze-height solid transparent;
+  border-bottom: $trapeze-height solid transparent;
+  transition: 0.2s;
+  z-index: 0;
+}
+
+.triangle-outer-bottom-right {
+  position: relative;
+}
+
+.triangle-outer-bottom-right:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -0.24rem;
+  left: -1.3rem;
+  border-left: 1rem solid transparent;
+  border-top: 1rem solid $epflred;
+  border-right: 1rem solid transparent;
+  width: 0;
+  height: 0;
+  transform: rotate(-45deg);
 }
 
 @each $key, $value in $grays {

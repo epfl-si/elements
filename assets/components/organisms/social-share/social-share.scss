@@ -51,10 +51,28 @@
 }
 
 .social-share-copylink {
-  margin-top: 2rem;
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
 
   @include media-breakpoint-up(lg) {
     margin-top: 0;
+  }
+
+  @include media-breakpoint-down(md) {
+    white-space: normal;
+  }
+
+  .input-group {
+    margin-left: 0.5rem;
+    padding: 0.2rem;
+    border: 1px solid $gray-200;
+
+    .form-control {
+      border: none !important;
+      box-shadow: none !important;
+      &:before { content: none; }
+    }
   }
 }
 

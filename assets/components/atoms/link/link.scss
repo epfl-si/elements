@@ -1,27 +1,34 @@
 @charset 'utf-8';
 
-a:not([class*="btn"]) {
+a,
+a:hover,
+a:active { text-decoration: none; }
+
+a:not([class*="btn"]):not([class*="teaser"]):not([class*="card"]):not(.social-icon):not([aria-describedby*="footnote"]):not([aria-describedby*="sidenote"]) {
   position: relative;
-  text-decoration: none;
   border-radius: 1px;
-  border-bottom: 1px solid $red;
   transition:
-    color 0.3s,
-    border-color 0.15s,
+    color 0.15s ease-in-out,
     box-shadow 0.15s;
 
-  &:not([class*="teaser"]):not([class*="card"]) {
-    @extend .focused;
-  }
+  @include pretty-link($epflred, transparent, false, 1px);
+
+  @extend .focused;
 
   .bg-dark & { color: $white; }
 
   &:hover,
   &.hover {
-    color: $link-hover-color;
     text-decoration: none;
-    border-bottom-color: $black !important;
-    .bg-dark & { border-bottom-color: $white !important; }
+    color: $red;
+
+    @include pretty-link($gray-700, transparent, false, 1px);
+
+    .bg-dark & {
+      color: $white;
+
+      @include pretty-link($gray-300, transparent, false, 1px);
+    }
   }
 
   &:visited,
@@ -34,10 +41,7 @@ a:not([class*="btn"]) {
   &.focus {
     color: $black;
 
-    .bg-dark & {
-      // background: darken($purple, 20%);
-      color: $white;
-    }
+    .bg-dark & { color: $white; }
   }
 
   &:active,
