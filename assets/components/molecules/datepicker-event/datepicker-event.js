@@ -105,11 +105,18 @@ export default () => {
     const wrapper = picker.component.$node.parent();
     const next = $('.nextMonthLabel', wrapper);
     const prev = $('.prevMonthLabel', wrapper);
-    next.html(months[picker.component.item.now.month + 1]);
-    prev.html(months[picker.component.item.now.month - 1]);
+
+    let nextMonthIndex = picker.component.item.view.month + 1;
+    if (nextMonthIndex === months.length) nextMonthIndex = 0;
+
+    let prevMonthIndex = picker.component.item.view.month - 1;
+    if (prevMonthIndex < 0) prevMonthIndex = 11;
+
+    next.html(months[nextMonthIndex]);
+    prev.html(months[prevMonthIndex]);
+
     next.clone().appendTo('.picker__box', picker.$root);
     prev.clone().appendTo('.picker__box', picker.$root);
-
   }
 
   function displayHeroMonths(container) {
