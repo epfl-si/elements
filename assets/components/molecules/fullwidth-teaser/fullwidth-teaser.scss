@@ -1,6 +1,6 @@
 @charset 'utf-8';
 
-.basic-page-teaser {
+.fullwidth-teaser {
   position: relative;
   width: 100%;
   padding: 0 gutter-width / 2;
@@ -20,7 +20,7 @@
   }
 
   picture,
-  .basic-page-teaser-text {
+  .fullwidth-teaser-text {
     @include media-breakpoint-up(md) {
       flex: 0 0 50%;
     }
@@ -67,7 +67,7 @@
   }
 }
 
-.basic-page-teaser-text {
+.fullwidth-teaser-text {
   padding-top: 1rem;
   background: $white;
 
@@ -86,7 +86,8 @@
     overflow: hidden;
     background: none;
 
-    h3 {
+    h3,
+    .h3 {
       display: inline-block;
       padding: 1.5rem 2rem;
       margin-bottom: 0;
@@ -100,7 +101,7 @@
   }
 }
 
-.basic-page-teaser-text-header {
+.fullwidth-teaser-text-header {
   display: flex;
   flex-flow: row nowrap;
   align-items: flex-start;
@@ -126,9 +127,33 @@
       flex: 0 0 auto;
     }
   }
+
+  .btn {
+    transition: padding 0.15s;
+
+    &:before {
+      border: none;
+    }
+
+    &:hover,
+    &:focus {
+      background: darken($epflred, 15%);
+      color: $white;
+
+      @include media-breakpoint-up(xl) {
+        padding-left: 2rem;
+      }
+
+      &:before,
+      &:after {
+        background: none;
+        border-top-color: darken($epflred, 15%);
+      }
+    }
+  }
 }
 
-.basic-page-teaser-text-content {
+.fullwidth-teaser-text-content {
   @include media-breakpoint-up(md) {
     padding: 1rem 0 1rem 2rem;
   }
@@ -138,7 +163,7 @@
   }
 }
 
-.basic-page-teaser-text-footer {
+.fullwidth-teaser-text-footer {
   @include media-breakpoint-up(xs) {
     @extend .row;
   }
@@ -146,5 +171,53 @@
   @include media-breakpoint-up(md) {
     padding-left: 2rem;
     margin: 0;
+  }
+}
+
+.fullwidth-teaser-horizontal {
+  @include media-breakpoint-up(xl) {
+    .fullwidth-teaser-text {
+      left: 10%;
+      width: 85%;
+      justify-content: flex-end;
+      padding-bottom: 8rem;
+    }
+
+    .fullwidth-teaser-text-header {
+      justify-content: flex-end;
+      overflow: visible;
+    }
+
+    .btn {
+      margin-bottom: -1.62rem;
+      padding-right: 2.5rem;
+
+      &:before {
+        content: '>';
+        position: absolute;
+        top: 0.7rem;
+        right: 1rem;
+        bottom: auto;
+        left: auto;
+      }
+    }
+
+    h3,
+    .h3 {
+      overflow: visible;
+      width: auto;
+      max-width: 60%;
+      margin: 0;
+      white-space: normal;
+      text-overflow: initial;
+    }
+
+    .fullwidth-teaser-text-content {
+      p {
+        width: 85%;
+        margin: 0 10% 0 0;
+        padding-right: 5%;
+      }
+    }
   }
 }
