@@ -168,7 +168,13 @@ $animation: 0.2s;
     }
 
     // hover styles
+    .custom-control-input:focus + .custom-control-label,
     .custom-control-label:hover {
+      .custom-control-label-content {
+        border-color: $black;
+        z-index: 10;
+      }
+
       .custom-control-label-content {
         margin-top: -$trapeze-height;
         padding-bottom: 1rem + $trapeze-height;
