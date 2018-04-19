@@ -1,0 +1,7 @@
+title: Card
+name: card
+variants:
+  - name: link
+    title: Full Link
+  - name: inside-links
+    title: Inside Links
