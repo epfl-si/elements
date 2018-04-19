@@ -1,0 +1,20 @@
+@charset 'utf-8';
+
+.footer-light {
+  a {
+    background-image: none !important;
+  }
+}
+
+.footer-light-socials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 0.5rem 0;
+  border-top: 1px solid $gray-100;
+
+  .social-icon-negative .icon {
+    font-size: 1rem;
+  }
+}
