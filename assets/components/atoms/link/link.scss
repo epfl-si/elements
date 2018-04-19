@@ -4,7 +4,7 @@ a,
 a:hover,
 a:active { text-decoration: none; }
 
-a:not([class*="btn"]):not([class*="teaser"]):not([class*="card"]):not(.social-icon):not([aria-describedby*="footnote"]):not([aria-describedby*="sidenote"]) {
+a:not([class*="btn"]):not([class*="teaser"]):not([class*="card"]):not(.social-icon):not([aria-describedby*="footnote"]):not([aria-describedby*="sidenote"]):not(.no-text-link):not(.news) {
   position: relative;
   border-radius: 1px;
   transition:

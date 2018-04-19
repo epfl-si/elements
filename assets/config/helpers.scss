@@ -74,6 +74,18 @@ input:focus + label > .trapeze-horizontal {
   bottom: -$trapeze-height;
 }
 
+.trapeze-vertical-container {
+  position: relative;
+  transition:
+    margin 0.2s,
+    padding 0.2s;
+
+  &:hover {
+    padding-left: $trapeze-height;
+    margin-right: $trapeze-height * -1;
+  }
+}
+
 .trapeze-vertical {
   position: absolute;
   top: 0;
@@ -88,7 +100,7 @@ input:focus + label > .trapeze-horizontal {
   z-index: 0;
 }
 
-.trapeze-vertical-container {
+.trapeze-horizontal-container {
   position: relative;
 
   &:hover {
