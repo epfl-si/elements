@@ -1,5 +1,8 @@
 title: News
 name: news
+variants:
+  - name: highlighted
+    title: Highlighted
 notes: |
   <br>
 
