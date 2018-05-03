@@ -34,7 +34,7 @@
 // molecules:
 @import 'molecules/footnotes/footnotes';
 @import 'molecules/sidenotes/sidenotes';
-@import 'molecules/event-teaser/event-teaser';
+@import 'molecules/event-teaser-item/event-teaser-item';
 @import 'molecules/fullwidth-teaser/fullwidth-teaser';
 @import 'molecules/introduction/introduction';
 @import 'molecules/links-block/links-block';
@@ -46,7 +46,7 @@
 
 //
 // organisms:
-@import 'organisms/event-teaser-list/event-teaser-list';
+@import 'organisms/event-teaser/event-teaser';
 @import 'organisms/footer/footer';
 @import 'organisms/question/question';
 @import 'organisms/social-feed/social-feed';

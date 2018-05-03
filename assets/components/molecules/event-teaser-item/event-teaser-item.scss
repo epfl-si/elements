@@ -1,6 +1,6 @@
 @charset 'utf-8';
 
-.event-teaser {
+.event-teaser-item {
   display: block;
   transition:
     background-color 0.15s ease,
@@ -56,9 +56,13 @@
       background-image: linear-gradient(270deg, rgba(238, 238, 238, 0) 0, $gray-300 100%);
     }
   }
+
+  .card-body {
+    padding: 0;
+  }
 }
 
-.event-teaser-small {
+.event-teaser-item-small {
   display: flex;
   flex-flow: row nowrap;
 
@@ -78,7 +82,7 @@
   }
 }
 
-.event-teaser-passed {
+.event-teaser-item-passed {
   p,
   .card-title {
     color: $softBlack;
