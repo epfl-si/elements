@@ -52,6 +52,12 @@
   padding: 0;
   background: none;
   border: none;
+  transition: box-shadow 0.25s;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $epflred;
+  }
 
   &.collapse-title-desktop {
     @include collapse-btn();
