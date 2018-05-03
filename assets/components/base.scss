@@ -40,7 +40,6 @@
 @import 'molecules/links-block/links-block';
 @import 'molecules/form-group/form-group';
 @import 'molecules/datepicker/datepicker';
-@import 'molecules/publication/publication';
 @import 'molecules/social-feed-item/social-feed-item';
 
 //
@@ -51,5 +50,6 @@
 @import 'organisms/social-feed/social-feed';
 @import 'organisms/social-share/social-share';
 @import 'organisms/footer-light/footer-light';
-@import 'organisms/news-listing/news-listing';
+@import 'organisms/news/news';
 @import 'organisms/tables/tables';
+@import 'organisms/publication/publication';
