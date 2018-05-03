@@ -39,36 +39,6 @@
   overflow: hidden;
 }
 
-.btn-epfl {
-  // TODO: finish this style when we have all states visual
-  background-color: $epflred;
-  padding: 1rem;
-  border-radius: 0;
-  border: 0;
-  color: $white;
-  transition: 0.15s !important;
-
-  &:before,
-  &:after {
-    transition: 0.15s;
-  }
-
-  &:hover {
-    background: darken($epflred, 15%);
-    color: $white;
-
-    @include media-breakpoint-up(xl) {
-      padding-left: 2rem;
-    }
-
-    &:before,
-    &:after {
-      background: none;
-      border-top-color: darken($epflred, 15%);
-    }
-  }
-}
-
 .triangle-inside-bottom-right:after {
   content: '';
   display: block;
@@ -80,6 +50,7 @@
   background-color: $epflred;
   transform: rotate(135deg);
   transform-origin: bottom right;
+  transition: background 0.15s;
 }
 
 $trapeze-height: 0.5rem;
@@ -98,11 +69,12 @@ $trapeze-height: 0.5rem;
   z-index: 0;
 }
 
-*:hover > .trapeze-horizontal {
+*:hover > .trapeze-horizontal,
+input:focus + label > .trapeze-horizontal {
   bottom: -$trapeze-height;
 }
 
-.trapeze-vertical {
+.trapeze-horizonal {
   position: absolute;
   top: 0;
   left: 0;
@@ -114,6 +86,18 @@ $trapeze-height: 0.5rem;
   border-bottom: $trapeze-height solid transparent;
   transition: 0.2s;
   z-index: 0;
+}
+
+.trapeze-horizontal-container {
+  position: relative;
+  transition:
+    margin 0.2s,
+    padding 0.2s;
+
+  &:hover {
+    margin-top: -$trapeze-height !important;
+    padding-bottom: $trapeze-height;
+  }
 }
 
 .triangle-outer-bottom-right {
@@ -132,6 +116,22 @@ $trapeze-height: 0.5rem;
   width: 0;
   height: 0;
   transform: rotate(-45deg);
+  transition: background 0.15s;
+}
+
+.triangle-outer-top-right:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0.479rem;
+  left: -1.3rem;
+  border-left: 1rem solid transparent;
+  border-top: 1rem solid $epflred;
+  border-right: 1rem solid transparent;
+  width: 0;
+  height: 0;
+  transform: rotate(-45deg);
+  transition: background 0.15s;
 }
 
 @each $key, $value in $grays {
