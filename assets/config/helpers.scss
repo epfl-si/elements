@@ -34,40 +34,13 @@
   font-size: 0.778rem;
 }
 
-.triangle-inside-bottom-right {
-  position: relative;
-  overflow: hidden;
-}
-
-.triangle-inside-bottom-right:after {
-  content: '';
-  display: block;
-  position: absolute;
-  right: 2.1rem;
-  bottom: 0;
-  width: 3rem;
-  height: 3rem;
-  background-color: $epflred;
-  transform: rotate(135deg);
-  transform-origin: bottom right;
-  transition: background 0.15s;
-}
+/*
+  trapezes
+*/
 
 $trapeze-height: 0.5rem;
 
-.trapeze-horizontal {
-  display: block;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  margin-top: $trapeze-height * -1;
-  border-top: $trapeze-height solid $gray-200;
-  border-left: $trapeze-height solid transparent;
-  border-right: $trapeze-height solid transparent;
-  height: 0;
-  transition: 0.2s;
-  z-index: 0;
-}
+// horizontal
 
 *:hover > .trapeze-horizontal,
 input:focus + label > .trapeze-horizontal {
@@ -85,6 +58,8 @@ input:focus + label > .trapeze-horizontal {
     margin-right: $trapeze-height * -1;
   }
 }
+
+// vertical 
 
 .trapeze-vertical {
   position: absolute;
@@ -109,6 +84,23 @@ input:focus + label > .trapeze-horizontal {
   }
 }
 
+.trapeze-horizontal {
+  display: block;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: $trapeze-height * -1;
+  border-top: $trapeze-height solid $gray-200;
+  border-left: $trapeze-height solid transparent;
+  border-right: $trapeze-height solid transparent;
+  height: 0;
+  transition: 0.2s;
+  z-index: 0;
+}
+
+/*
+  Triangles
+*/
 .triangle-outer-bottom-right {
   position: relative;
 }
@@ -143,6 +135,7 @@ input:focus + label > .trapeze-horizontal {
   transition: background 0.15s;
 }
 
+// generate all bg-gray helpers
 @each $key, $value in $grays {
   .bg-gray-#{$key} {
     background: $value !important;
