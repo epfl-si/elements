@@ -34,73 +34,32 @@
   font-size: 0.778rem;
 }
 
-.triangle-inside-bottom-right {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-epfl {
-  // TODO: finish this style when we have all states visual
-  background-color: $epflred;
-  padding: 1rem;
-  border-radius: 0;
-  border: 0;
-  color: $white;
-  transition: 0.15s !important;
-
-  &:before,
-  &:after {
-    transition: 0.15s;
-  }
-
-  &:hover {
-    background: darken($epflred, 15%);
-    color: $white;
-
-    @include media-breakpoint-up(xl) {
-      padding-left: 2rem;
-    }
-
-    &:before,
-    &:after {
-      background: none;
-      border-top-color: darken($epflred, 15%);
-    }
-  }
-}
-
-.triangle-inside-bottom-right:after {
-  content: '';
-  display: block;
-  position: absolute;
-  right: 2.1rem;
-  bottom: 0;
-  width: 3rem;
-  height: 3rem;
-  background-color: $epflred;
-  transform: rotate(135deg);
-  transform-origin: bottom right;
-}
+/*
+  trapezes
+*/
 
 $trapeze-height: 0.5rem;
 
-.trapeze-horizontal {
-  display: block;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  margin-top: $trapeze-height * -1;
-  border-top: $trapeze-height solid $gray-200;
-  border-left: $trapeze-height solid transparent;
-  border-right: $trapeze-height solid transparent;
-  height: 0;
-  transition: 0.2s;
-  z-index: 0;
-}
+// horizontal
 
-*:hover > .trapeze-horizontal {
+*:hover > .trapeze-horizontal,
+input:focus + label > .trapeze-horizontal {
   bottom: -$trapeze-height;
 }
+
+.trapeze-vertical-container {
+  position: relative;
+  transition:
+    margin 0.2s,
+    padding 0.2s;
+
+  &:hover {
+    padding-left: $trapeze-height;
+    margin-right: $trapeze-height * -1;
+  }
+}
+
+// vertical 
 
 .trapeze-vertical {
   position: absolute;
@@ -116,6 +75,35 @@ $trapeze-height: 0.5rem;
   z-index: 0;
 }
 
+.trapeze-horizontal-container {
+  position: relative;
+  transition:
+    margin 0.2s,
+    padding 0.2s;
+
+  &:hover {
+    margin-top: -$trapeze-height !important;
+    padding-bottom: $trapeze-height;
+  }
+}
+
+.trapeze-horizontal {
+  display: block;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: $trapeze-height * -1;
+  border-top: $trapeze-height solid $gray-200;
+  border-left: $trapeze-height solid transparent;
+  border-right: $trapeze-height solid transparent;
+  height: 0;
+  transition: 0.2s;
+  z-index: 0;
+}
+
+/*
+  Triangles
+*/
 .triangle-outer-bottom-right {
   position: relative;
 }
@@ -132,8 +120,25 @@ $trapeze-height: 0.5rem;
   width: 0;
   height: 0;
   transform: rotate(-45deg);
+  transition: background 0.15s;
 }
 
+.triangle-outer-top-right:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0.479rem;
+  left: -1.3rem;
+  border-left: 1rem solid transparent;
+  border-top: 1rem solid $epflred;
+  border-right: 1rem solid transparent;
+  width: 0;
+  height: 0;
+  transform: rotate(-45deg);
+  transition: background 0.15s;
+}
+
+// generate all bg-gray helpers
 @each $key, $value in $grays {
   .bg-gray-#{$key} {
     background: $value !important;

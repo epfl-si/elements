@@ -1,0 +1,17 @@
+title: News 🚧
+name: news
+variants:
+  - name: highlighted
+    title: Highlighted
+  - name: basic-teaser
+    title: Basic teaser
+  - name: press-release
+    title: Press release
+  - name: distinction
+    title: Distinction
+notes: |
+  <br>
+
+  <br>
+
+  ### Listing
