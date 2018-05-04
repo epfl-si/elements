@@ -1,29 +1,33 @@
-<div class="footer-sitemap-col footer-collapse">
-  <p class="footer-title">A propos de l’EPFL</p>
-  <ul class="footer-links">
-    <li>
-      <a href="#">Vue d’ensemble</a>
-    </li>
-    <li>
-      <a href="#">Histoire de l’EPFL</a>
-    </li>
-    <li>
-      <a href="#">Actualités</a>
-    </li>
-    <li>
-      <a href="#">Organisation administrative</a>
-    </li>
-    <li>
-      <a href="#">Actions pour le public extérieur</a>
-    </li>
-    <li>
-      <a href="#">Emplois</a>
-    </li>
-    <li>
-      <a href="#">Mécénats et dons</a>
-    </li>
-    <li>
-      <a href="#">Presse et média</a>
-    </li>
-  </ul>
+<div class="footer-sitemap-col">
+  <button class="footer-title collapse-title" type="button" data-toggle="collapse" data-target="#collapse-{{id ?: 1}}" aria-expanded="false" aria-controls="collapse-{{id ?: 1}}">
+    A propos de l’EPFL
+  </button>
+  <div class="collapse collapse-item" id="collapse-{{id ?: 1}}">
+    <ul class="footer-links">
+      <li>
+        <a href="#">Vue d’ensemble</a>
+      </li>
+      <li>
+        <a href="#">Histoire de l’EPFL</a>
+      </li>
+      <li>
+        <a href="#">Actualités</a>
+      </li>
+      <li>
+        <a href="#">Organisation administrative</a>
+      </li>
+      <li>
+        <a href="#">Actions pour le public extérieur</a>
+      </li>
+      <li>
+        <a href="#">Emplois</a>
+      </li>
+      <li>
+        <a href="#">Mécénats et dons</a>
+      </li>
+      <li>
+        <a href="#">Presse et média</a>
+      </li>
+    </ul>
+  </div>
 </div>

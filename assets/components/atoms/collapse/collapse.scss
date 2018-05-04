@@ -1,0 +1,81 @@
+@charset 'utf-8';
+
+@mixin collapse-btn() {
+  $icon-size: 1rem;
+  $icon-size-half: $icon-size/2;
+  $icon-thickness: 2px;
+  $icon-thickness-half: $icon-thickness/2;
+
+  display: block;
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.9rem 0;
+  border-top: 1px solid $gray-300;
+  font-size: 1.1rem;
+  text-align: left;
+  font-weight: 800;
+
+  &:hover { cursor: pointer; }
+
+  &[aria-expanded="true"] {
+    &:before { transform: scaleY(0); }
+    &:after { background: $red; }
+  }
+
+  &:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: calc(50% - #{$icon-thickness-half});
+    right: 0;
+    width: $icon-size;
+    height: $icon-thickness;
+    background: $gray-400;
+    transition: background 0.2s;
+  }
+
+  &:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: calc(50% - #{$icon-size-half});
+    right: calc(#{$icon-size-half} - #{$icon-thickness-half});
+    width: $icon-thickness;
+    height: $icon-size;
+    background: $gray-400;
+    transition: transform 0.3s;
+  }
+}
+
+.collapse-title {
+  padding: 0;
+  background: none;
+  border: none;
+  transition: box-shadow 0.25s;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $epflred;
+  }
+
+  &.collapse-title-desktop {
+    @include collapse-btn();
+  }
+
+  @media only screen and (max-width: map-get($grid-breakpoints, md)) {
+    @include collapse-btn();
+  }
+}
+
+.collapse-item {
+  &:not(.collapse-item-desktop) {
+    @include media-breakpoint-up(md) {
+      display: block !important;
+      height: auto !important;
+      min-height: 1px !important;
+      overflow: visible !important;
+      transition: none !important;
+    }
+  }
+}
