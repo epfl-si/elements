@@ -1,4 +1,5 @@
-title: Full width Teaser
+title: Fullwidth teaser
 name: fullwidth-teaser
 variants:
-  - horizontal
+  - name: horizontal
+    title: Horizontal

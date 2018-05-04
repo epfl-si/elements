@@ -1,0 +1,19 @@
+@charset 'utf-8';
+
+.event-teaser-highlighted {
+  .event-teaser-item-highlighted {
+    @include media-breakpoint-down(md) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .event-teaser-item-small {
+    @include media-breakpoint-down(md) {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.event-teaser-basic {
+  flex-wrap: nowrap;
+}
