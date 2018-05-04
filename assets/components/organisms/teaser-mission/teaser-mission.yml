@@ -1,0 +1,29 @@
+title: Teaser mission 🚧
+name: teaser-mission
+variants:
+  - name: faculty
+    title: Faculty
+  - name: institute
+    title: Institute
+  - name: laboratory
+    title: Laboratory
+  - name: research-field
+    title: Research field
+  - name: research-project
+    title: Research project
+  - name: training
+    title: Training
+  - name: cursus
+    title: Cursus
+  - name: association
+    title: Association
+  - name: program
+    title: Program
+  - name: teaser-bachelor-project
+    title: Teaser bachelor project
+notes: |
+  <div class="progress"><div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 1%"></div></div><br />
+
+  <br />
+
+  ### Section

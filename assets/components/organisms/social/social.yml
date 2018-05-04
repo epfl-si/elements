@@ -1,0 +1,18 @@
+title: Social 🚧
+name: social
+wrapper: col-4
+variants:
+  - name: instagram
+    title: Instagram
+  - name: facebook
+    title: Facebook
+  - name: share
+    title: Share
+    wrapper: col-12
+  - name: share-light
+    title: Share Light
+    wrapper: col-12
+notes: |
+  <br />
+
+  ### Twitter feed
