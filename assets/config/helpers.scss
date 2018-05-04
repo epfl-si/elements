@@ -77,10 +77,13 @@ input:focus + label > .trapeze-horizontal {
 
 .trapeze-horizontal-container {
   position: relative;
+  transition:
+    margin 0.2s,
+    padding 0.2s;
 
   &:hover {
-    margin-top: -$trapeze-height;
-    padding-bottom: 1rem + $trapeze-height;
+    margin-top: -$trapeze-height !important;
+    padding-bottom: $trapeze-height;
   }
 }
 
