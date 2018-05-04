@@ -1,3 +1,11 @@
 title: Footer
 name: footer
 wrapper: container
+variants:
+  - name: light
+    title: Footer light
+notes: |
+
+  <br>
+
+  ### Standard

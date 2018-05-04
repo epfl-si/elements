@@ -2,7 +2,7 @@
 
 import upload from './atoms/upload/upload';
 import datebpicker from './molecules/datepicker/datepicker';
-import socialShare from './organisms/social-share/social-share';
+import socialShare from './organisms/social/social-share';
 import footer from './organisms/footer/footer';
 import svgIcons from '../icons/svg-icons';
 
