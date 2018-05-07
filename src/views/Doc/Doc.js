@@ -30,11 +30,13 @@ class Doc extends Component {
   }
 
   getContent(props) {
-    const homeFile = props.docs.docs_list.f && props.docs.docs_list.f.includes('index.md') ? 'index.md' : 'index.html';
-    const slug = props.match.params.slug || homeFile;
+    if (props.docs.current_doc.content.length <= 1) {
+      const homeFile = props.docs.docs_list.f && props.docs.docs_list.f.includes('index.md') ? 'index.md' : 'index.html';
+      const slug = props.match.params.slug || homeFile;
 
-    this.setState({ homeFile });
-    props.getDocContent(slug, props.navigation.base_url);
+      this.setState({ homeFile });
+      props.getDocContent(slug, props.navigation.base_url);
+    }
   }
 
   render() {

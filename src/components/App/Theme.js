@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 const config = window.theme || {};
 const base = {
-  black: "#010a15",
-  white: "#fff",
-  primary: "#003baf",
-  secondary: "#3474a8",
-  grayLighter: "#f2f2f4",
-  alto: "#d8d8d8",
+  black: '#010a15',
+  white: '#fff',
+  primary: '#003baf',
+  secondary: '#3474a8',
+  grayLighter: '#f2f2f4',
+  alto: '#d8d8d8',
 };
 
 export const Theme = styled.div`
