@@ -1,5 +1,8 @@
 # Changelog
 
+*2.0.10* (2018-05-07)
+  - 🐛 lint and fix infinite doc loop (6a6620c)
+
 *2.0.9* (2018-04-05)
   - 📦 fix component wrapping class pattern (cdbef50)
 
