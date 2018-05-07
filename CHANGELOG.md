@@ -1,5 +1,8 @@
 # Changelog
 
+*2.0.11* (2018-05-07)
+  - 🐛 fix empty yml import (453ac27)
+
 *2.0.10* (2018-05-07)
   - 🐛 lint and fix infinite doc loop (6a6620c)
 
