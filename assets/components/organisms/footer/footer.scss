@@ -91,13 +91,16 @@
 
   a {
     display: inline-block;
-    background-image: none !important;
     font-size: 0.85rem;
     line-height: 1.2rem;
     color: $gray-600;
-    border-bottom: 1px solid transparent;
+    text-decoration: none;
 
     @extend .text-small;
+
+    &:hover {
+      color: $link-hover-color;
+    }
   }
 
   li {

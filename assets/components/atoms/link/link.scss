@@ -1,60 +1,38 @@
 @charset 'utf-8';
 
-a,
-a:hover,
-a:active { text-decoration: none; }
-
-a:not([class*="btn"]):not([class*="teaser"]):not([class*="card"]):not(.social-icon):not([aria-describedby*="footnote"]):not([aria-describedby*="sidenote"]):not(.no-text-link):not(.news) {
-  position: relative;
-  border-radius: 1px;
+// All links are underlined by default. Supported browsers will have the right color. https://caniuse.com/#feat=text-decoration
+a {
+  text-decoration-color: $link-hover-color;
   transition:
-    color 0.15s ease-in-out,
-    box-shadow 0.15s;
+    text-decoration-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
 
-  @include pretty-link($epflred, transparent, false, 1px);
-
-  @extend .focused;
-
-  .bg-dark & { color: $white; }
-
-  &:hover,
-  &.hover {
-    text-decoration: none;
-    color: $red;
-
-    @include pretty-link($gray-700, transparent, false, 1px);
-
-    .bg-dark & {
-      color: $white;
-
-      @include pretty-link($gray-300, transparent, false, 1px);
-    }
+  @include hover-focus-active {
+    text-decoration-color: $link-color;
   }
 
-  &:visited,
-  &.visited {
-    text-decoration: none;
-    border-bottom-color: $red;
-  }
-
-  &:focus,
-  &.focus {
-    color: $black;
-
-    .bg-dark & { color: $white; }
-  }
-
-  &:active,
-  &.active {
+  &:active {
     color: $wild-watermelon;
-    border-bottom-color: $red !important;
-    &:before { content: none; }
-    .bg-dark & { color: $wild-watermelon; }
   }
 
   &.text-muted:hover {
-    color: $red !important;
+    color: $link-hover-color !important;
   }
+}
+
+// Manage all the underline colors based on `text-` helper class.
+@each $color, $value in $theme-colors {
+  @include text-emphasis-variant-decoration(".text-#{$color}", $value);
+}
+
+// Special case for white links.
+@include text-emphasis-variant-decoration(".text-white", $white);
+
+// The link pretty allows you to have more cross-browser friendly link styles and the fancy focus box.
+.link-pretty {
+  @include link-pretty($epflred, $body-bg);
+
+  @extend .focused;
 }
 
 .no-text-link {
