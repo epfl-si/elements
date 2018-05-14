@@ -1,9 +1,6 @@
-title: Teaser basic page 🚧
+title: Teaser basic page
 name: teaser-basic-page
 notes: |
-  <div class="progress"><div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 50%"></div></div><br />
-  <br>
-
   ### Basic teaser
 
 variants:
