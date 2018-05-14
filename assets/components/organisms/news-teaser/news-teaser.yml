@@ -1,0 +1,11 @@
+title: News teaser
+name: news-teaser
+variants:
+  - name: press-release
+    title: Press release
+  - name: distinction
+    title: Distinction
+notes: |
+  <br>
+
+  ### Basic

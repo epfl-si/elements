@@ -3,8 +3,10 @@
 a.card {
   border: none;
   text-decoration: none;
+  display: block;
 
   .card-body {
+    position: relative;
     background: $white;
     border: 1px solid $gray-200;
     z-index: 1;
@@ -35,9 +37,28 @@ a.card {
     border-top: none !important;
   }
 
+  .card-infos {
+    font-size: 0.83em;
+    margin-bottom: 1em;
+    color: $gray-600;
+
+    a {
+      display: inline-block;
+      border: none;
+      color: $primary;
+      text-decoration: none;
+    }
+
+    .caret {
+      position: relative;
+      top: -0.2em;
+      font-size: 0.45em;
+    }
+  }
+
   .card-footer {
-    border: 0;
     background: none;
+    border: 0;
   }
 
   .card-body + .card-footer {
@@ -46,25 +67,6 @@ a.card {
 
   .card-body p:last-of-type {
     margin-bottom: 0;
-  }
-
-  .card-categories {
-    border-top: 1px solid $gray-200;
-    border-bottom: 1px solid $gray-200;
-    font-size: 0.83em;
-    padding: 0.75em 0;
-    margin: 1em 0;
-
-    a {
-      display: inline-block;
-      color: $primary;
-      border: none;
-      text-decoration: none;
-    }
-
-    .separator {
-      color: $gray-400;
-    }
   }
 }
 
@@ -90,8 +92,9 @@ a.card-img-top {
 
 a.card-title {
   transition: color 0.3s;
-  @include link-pretty($epflred, $white);
   background-position: 0 90% !important;
+
+  @include link-pretty($epflred, $white);
 
   &:hover {
     @include link-pretty($black, $white);
