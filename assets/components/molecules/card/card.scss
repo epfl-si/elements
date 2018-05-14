@@ -29,14 +29,28 @@ a.card {
 }
 
 .card {
+  margin-bottom: $grid-gutter-width;
+
   .card-img-top + .card-body {
     border-top: none !important;
+  }
+
+  .card-footer {
+    border: 0;
+    background: none;
+  }
+
+  .card-body + .card-footer {
+    padding-top: 0;
+  }
+
+  .card-body p:last-of-type {
+    margin-bottom: 0;
   }
 }
 
 a.card-img-top {
   position: relative;
-  height: 100%;
 
   &:before {
     content: ' ';
