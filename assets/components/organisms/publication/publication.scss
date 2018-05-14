@@ -6,13 +6,11 @@
     margin-right: $card-spacer-x;
     padding: 1.3rem 0 $card-spacer-x 0;
     background: $white;
-
-    @extend .text-small;
+    font-size: $font-size-sm;
 
     a:not(.btn) {
       margin-left: 0.8rem;
-
-      @extend .text-muted;
+      color: $text-muted;
     }
   }
 
@@ -24,9 +22,8 @@
 
 .card-subtitle {
   margin-bottom: 0.8rem;
-
-  @extend .text-muted;
-  @extend .text-small;
+  font-size: $font-size-sm;
+  color: $text-muted;
 }
 
 .card-links {
@@ -52,8 +49,8 @@
   }
 
   a {
-    @extend .text-small;
-    @extend .text-muted;
+    font-size: $font-size-sm;
+    color: $text-muted;
   }
 }
 

@@ -72,13 +72,11 @@
   flex-flow: column wrap;
   text-align: center;
   flex-basis: 100%;
-
-  @extend .text-muted;
+  color: $text-muted;
 
   a:not(:hover) {
     border: none;
-
-    @extend .text-muted;
+    color: $text-muted;
   }
 
   a + a {
@@ -95,8 +93,7 @@
     line-height: 1.2rem;
     color: $gray-600;
     text-decoration: none;
-
-    @extend .text-small;
+    font-size: $font-size-sm;
 
     &:hover {
       color: $link-hover-color;
