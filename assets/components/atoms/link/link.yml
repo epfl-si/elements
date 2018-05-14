@@ -8,10 +8,3 @@ notes: >
 
   A `link-pretty` class can be used to create a better and more cross-browser
   style.
-variants:
-  - name: trapeze
-    title: Trapeze
-    notes: |
-      The Trapeze variant.
-    background: ''
-    wrapper: ''
