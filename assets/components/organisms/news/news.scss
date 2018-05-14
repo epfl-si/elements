@@ -38,6 +38,15 @@
     transition: border-color 0.2s;
     z-index: 1;
 
+    @include media-breakpoint-down(md) {
+      border-top: none;
+      padding-right: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+      border-left: none;
+    }
+
     span {
       color: $black;
     }
@@ -48,15 +57,6 @@
       &.h5 {
         margin-bottom: 0.4rem;
       }
-    }
-
-    @include media-breakpoint-down(md) {
-      border-top: none;
-      padding-right: 0;
-    }
-
-    @include media-breakpoint-up(lg) {
-      border-left: none;
     }
   }
 

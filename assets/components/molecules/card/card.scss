@@ -60,11 +60,10 @@ a.card {
       color: $primary;
       border: none;
       text-decoration: none;
-      margin-right: 0.5em;
     }
 
-    a:last-child {
-      margin-right: 0;
+    .separator {
+      color: $gray-400;
     }
   }
 }
