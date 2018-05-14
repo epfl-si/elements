@@ -144,9 +144,7 @@ input:focus + label > .trapeze-horizontal {
   transition: background 0.15s;
 }
 
-// generate all bg-gray helpers
+// Gray background helpers.
 @each $key, $value in $grays {
-  .bg-gray-#{$key} {
-    background: $value !important;
-  }
+  @include bg-variant(".bg-gray-#{$key}", $value);
 }
