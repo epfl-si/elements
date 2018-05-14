@@ -1,1 +1,16 @@
 @charset 'utf-8';
+
+dl {
+  margin: $paragraph-margin-bottom 0;
+  padding: $paragraph-margin-bottom 0;
+  border-top: 2px solid $gray-100;
+  border-bottom: 2px solid $gray-100;
+}
+
+dd {
+  margin-bottom: 0;
+
+  & + dt {
+    margin-top: $paragraph-margin-bottom;
+  }
+}
