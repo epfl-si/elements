@@ -7,6 +7,8 @@ variants:
     title: Avatar
   - name: one-third
     title: One third picture
+  - name: one-third-square
+    title: One third Square picture
   - name: news-thumb
     title: News Listing Thumbnail
 notes: |
