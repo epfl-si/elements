@@ -57,10 +57,8 @@
     }
   }
 
-
-
   @include hover {
-    z-index: 1;
+    z-index: 2;
     border: $pagination-border-width solid $pagination-hover-border-color;
     margin-top: calc(-0.3rem + 1px);
   }

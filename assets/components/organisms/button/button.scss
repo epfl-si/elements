@@ -96,3 +96,10 @@
     color: $gray-600 !important;
   }
 }
+
+.btn-light {
+  &,
+  &:hover {
+    border-color: gray('600');
+  }
+}
