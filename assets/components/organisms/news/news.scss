@@ -1,5 +1,16 @@
 @charset 'utf-8';
 
+.distinction-flag-container {
+  width: 100%;
+  border-top: 1px solid $primary;
+  margin-top: -1px;
+  z-index: 1;
+
+  .distinction-flag {
+    margin-left: $card-spacer-x;
+  }
+}
+
 .news-listing {
   .news {
     display: block;
