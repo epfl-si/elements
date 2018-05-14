@@ -39,3 +39,13 @@ a {
   border: none !important;
 }
 
+// Trapeze links
+$trapeze-size: 0.5rem;
+
+.link-trapeze {
+  @include hover-focus {
+    margin-top: -$trapeze-size;
+    margin-left: $trapeze-size * -0.5;
+    margin-right: $trapeze-size * -0.5;
+  }
+}

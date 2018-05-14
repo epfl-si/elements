@@ -1,6 +1,17 @@
 title: Link
 name: link
-notes: |
-  A link is styled by default with a red underline (on [supported browsers](https://caniuse.com/#feat=text-decoration), otherwise, the underline uses the text color).
+notes: >
+  A link is styled by default with a red underline (on [supported
+  browsers](https://caniuse.com/#feat=text-decoration), otherwise, the underline
+  uses the text color).
 
-  A `link-pretty` class can be used to create a better and more cross-browser style.
+
+  A `link-pretty` class can be used to create a better and more cross-browser
+  style.
+variants:
+  - name: trapeze
+    title: Trapeze
+    notes: |
+      The Trapeze variant.
+    background: ''
+    wrapper: ''
