@@ -46,6 +46,26 @@ a.card {
   .card-body p:last-of-type {
     margin-bottom: 0;
   }
+
+  .card-categories {
+    border-top: 1px solid $gray-200;
+    border-bottom: 1px solid $gray-200;
+    font-size: 0.83em;
+    padding: 0.75em 0;
+    margin: 1em 0;
+
+    a {
+      display: inline-block;
+      color: $primary;
+      border: none;
+      text-decoration: none;
+      margin-right: 0.5em;
+    }
+
+    a:last-child {
+      margin-right: 0;
+    }
+  }
 }
 
 a.card-img-top {
