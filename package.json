@@ -51,7 +51,6 @@
         "custom-properties",
         "dollar-variables",
         "declarations",
-        "at-rules",
         "rules"
       ],
       "order/properties-order": [
