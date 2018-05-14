@@ -4,10 +4,17 @@
   padding: 4rem 0;
 
   @include media-breakpoint-up(lg) {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
     padding: 2rem 0;
 
     .social-feed-item-container {
-      padding: 0 0.4rem;
+      padding: 0 0.7rem;
+
+      .social-feed-item {
+        height: 100%;
+      }
 
       &:first-child {
         padding-left: 0;

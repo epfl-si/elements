@@ -28,6 +28,12 @@
       border-color: $red;
     }
   }
+
+  &:active {
+    &:before {
+      content: none;
+    }
+  }
 }
 
 .text-small {
@@ -59,7 +65,7 @@ input:focus + label > .trapeze-horizontal {
   }
 }
 
-// vertical 
+// vertical
 
 .trapeze-vertical {
   position: absolute;

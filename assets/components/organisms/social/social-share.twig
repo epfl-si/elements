@@ -6,25 +6,7 @@
         <div class="social-share-text">
           Partager sur
         </div>
-
-        <a href="#" class="social-icon social-icon-facebook social-icon-discrete">
-          {% include 'atoms::icon/icon.twig' with { icon: 'icon-facebook' } %}
-        </a>
-        <a href="#" class="social-icon social-icon-twitter social-icon-discrete">
-          {% include 'atoms::icon/icon.twig' with { icon: 'icon-twitter' } %}
-        </a>
-        <a href="#" class="social-icon social-icon-instagram social-icon-discrete">
-          {% include 'atoms::icon/icon.twig' with { icon: 'icon-instagram' } %}
-        </a>
-        <a href="#" class="social-icon social-icon-mail social-icon-discrete">
-          {% include 'atoms::icon/icon.twig' with { icon: 'icon-mail-plane' } %}
-        </a>
-        <a href="#" class="social-icon social-icon-whatsapp social-icon-discrete">
-          {% include 'atoms::icon/icon.twig' with { icon: 'icon-whatsapp' } %}
-        </a>
-        <a href="#" class="social-icon social-icon-googleplus social-icon-discrete">
-          {% include 'atoms::icon/icon.twig' with { icon: 'icon-googleplus' } %}
-        </a>
+          {% include 'atoms::social-icon/social-icon-link-group.twig' with { discrete: true } %}
       </div>
 
       <div class="social-share-copylink">

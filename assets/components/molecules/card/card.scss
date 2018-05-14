@@ -2,6 +2,7 @@
 
 a.card {
   border: none;
+  text-decoration: none;
 
   .card-body {
     background: $white;
@@ -90,10 +91,10 @@ a.card-img-top {
 
 a.card-title {
   transition: color 0.3s;
-  @include pretty-link($epflred, $white, false, 1px);
+  @include link-pretty($epflred, $white);
   background-position: 0 90% !important;
 
   &:hover {
-    @include pretty-link($black, $white, false, 1px);
+    @include link-pretty($black, $white);
   }
 }
