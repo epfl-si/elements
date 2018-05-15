@@ -94,7 +94,8 @@
       white-space: nowrap;
 
       ul {
-        margin-bottom: -0.8 * $spacer;
+        font-size: 0.85 * $font-size-base;
+        margin-bottom: -0.3 * $spacer;
       }
     }
 
@@ -196,16 +197,6 @@
 
     .btn {
       margin-bottom: -1.62rem;
-      padding-right: 2.5rem;
-
-      &:before {
-        content: '>';
-        position: absolute;
-        top: 0.7rem;
-        right: 1rem;
-        bottom: auto;
-        left: auto;
-      }
     }
 
     .fullwidth-teaser-title {
