@@ -3,6 +3,12 @@ name: news
 variants:
   - name: highlighted
     title: Highlighted
+  - name: press-release
+    title: Press release
+  - name: distinction
+    title: Distinction
+  - name: basic-teaser
+    title: Basic teaser
 notes: |
   <br>
 

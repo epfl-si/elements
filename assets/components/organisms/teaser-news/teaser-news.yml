@@ -1,10 +1,5 @@
 title: Teaser news
 name: teaser-news
-variants:
-  - name: press-release
-    title: Press release
-  - name: distinction
-    title: Distinction
 notes: |
   <br>
 

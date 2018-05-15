@@ -7,6 +7,17 @@
 }
 
 .card-body {
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $spacer;
+    padding-top: 0;
+    padding-right: 0;
+    padding-left: 0;
+    font-size: $font-size-sm;
+    color: $text-muted;
+  }
+
   + .card-footer {
     padding-top: 0;
   }
@@ -25,21 +36,30 @@
 }
 
 .card-info {
+  display: inline-flex;
+  justify-content: center;
   font-size: $font-size-sm;
   margin-bottom: $spacer;
-  color: gray('600');
+  color: $text-muted;
+
+  // Put some dots between the elements
+  > :not(:last-child) {
+    &:after {
+      content: ' › ';
+      margin: 0 0.25em 0 0.15em;
+    }
+  }
 
   a {
     display: inline-block;
     color: $epflred;
     text-decoration: none;
   }
+}
 
-  .caret {
-    position: relative;
-    top: -0.2em;
-    font-size: 0.45em;
-  }
+.card-info-bordered {
+  border-top: 1px solid gray('200');
+  border-bottom: 1px solid gray('200');
 }
 
 a.card-img-top {
@@ -62,7 +82,8 @@ a.card-img-top {
   }
 }
 
-a.card-title {
+a.card-title,
+.card-title a {
   transition: color 0.3s;
 
   @include link-pretty($epflred, $white, $body-color);
