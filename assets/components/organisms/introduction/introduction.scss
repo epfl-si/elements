@@ -8,12 +8,8 @@
   padding: 3rem 0 2.5rem;
   background: $white;
 
-  @include media-breakpoint-down(sm) {
-    min-height: 100vh;
-  }
-
   h2,
   .h2 {
-    @extend .mb-3;
+    margin-bottom: $spacer;
   }
 }

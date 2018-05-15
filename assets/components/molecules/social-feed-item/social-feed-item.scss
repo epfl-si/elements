@@ -21,7 +21,7 @@
 
   picture {
     img {
-      @extend p;
+      margin-bottom: $paragraph-margin-bottom;
     }
   }
 }

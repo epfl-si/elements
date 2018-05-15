@@ -36,8 +36,8 @@ a.card {
   }
 
   .card-footer {
-    border: 0;
     background: none;
+    border: 0;
   }
 
   .card-body + .card-footer {
@@ -71,7 +71,9 @@ a.card-img-top {
 
 a.card-title {
   transition: color 0.3s;
+
   @include link-pretty($epflred, $white);
+
   background-position: 0 90% !important;
 
   &:hover {

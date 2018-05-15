@@ -80,15 +80,14 @@
 
 .footer-links {
   margin: 0;
+  padding-left: 0;
 
   a {
     display: inline-block;
-    font-size: 0.85rem;
+    font-size: $font-size-sm;
     line-height: 1.2rem;
     color: $gray-600;
     text-decoration: none;
-
-    @extend .text-small;
 
     &:hover {
       color: $link-hover-color;
@@ -97,6 +96,7 @@
 
   li {
     margin: 0.5rem 0;
+    list-style-type: none;
 
     &:before {
       content: none;
@@ -123,10 +123,7 @@
     margin: 0 0.4em 0.6rem 0;
   }
 
-  .footer-links li {
-    display: block;
-    &:last-child { margin-bottom: 1rem; }
-  }
+  .footer-links li:last-child { margin-bottom: 1rem; }
 }
 
 @include media-breakpoint-up(md) {
@@ -134,7 +131,7 @@
     padding-top: 0.9rem;
     padding-bottom: 0.9rem;
     margin-bottom: 0.4rem;
-    font-size: 0.85rem;
+    font-size: $font-size-sm;
     color: $gray-600;
     border-bottom: 1px solid $gray-100;
   }
@@ -166,13 +163,8 @@
 
     a,
     p {
-      font-size: 0.85rem;
+      font-size: $font-size-sm;
       color: $gray-400;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
     }
   }
 
