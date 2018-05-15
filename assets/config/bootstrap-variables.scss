@@ -639,11 +639,11 @@ $pagination-hover-color:            $link-hover-color !default;
 $pagination-hover-bg:               $pagination-bg !default;
 $pagination-hover-border-color:     $gray-700 !default;
 
-$pagination-active-color:           gray('600') !default;
-$pagination-active-bg:              gray('100') !default;
+$pagination-active-color:           $gray-600 !default;
+$pagination-active-bg:              $gray-100 !default;
 $pagination-active-border-color:    $pagination-active-bg !default;
 
-$pagination-disabled-color:         $gray-600 !default;
+$pagination-disabled-color:         $gray-200 !default;
 $pagination-disabled-bg:            $white !default;
 $pagination-disabled-border-color:  $gray-300 !default;
 

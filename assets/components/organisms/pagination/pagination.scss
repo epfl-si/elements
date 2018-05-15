@@ -16,7 +16,7 @@
     border-left: $pagination-border-width solid $pagination-border-color;
 
     .page-link {
-      margin-left: -1px;
+      margin-left: -$pagination-border-width;
     }
   }
 
@@ -24,7 +24,21 @@
     border-right: $pagination-border-width solid $pagination-border-color;
 
     .page-link {
-      margin-right: -1px;
+      margin-right: -$pagination-border-width;
+    }
+  }
+
+  &.disabled {
+    .page-link {
+      border-color: transparent;
+    }
+
+    &:last-child .page-link {
+      margin-right: 0;
+    }
+
+    &:firt-child .page-link {
+      margin-left: 0;
     }
   }
 }
@@ -44,9 +58,9 @@
   @include link-trapeze(bottom, $pagination-border-color, 0.3rem);
 
   &:before {
+    left: -$pagination-border-width;
     margin-top: $pagination-border-width;
     width: calc(100% + #{$pagination-border-width * 2});
-    left: -$pagination-border-width;
 
     .page-item:first-child & {
       border-left-color: $pagination-bg;
@@ -60,7 +74,7 @@
   @include hover {
     z-index: 2;
     border: $pagination-border-width solid $pagination-hover-border-color;
-    margin-top: calc(-0.3rem + 1px);
+    margin-top: calc(-0.3rem + #{$pagination-border-width});
   }
 
   @include hover-focus-active {
