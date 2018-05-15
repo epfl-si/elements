@@ -8,6 +8,9 @@
     "mail-plane",
     "twitter",
     "whatsapp",
-    "caret-right"
+    "chevron-right",
+    "chevron-left",
+    "chevron-last-right",
+    "chevron-last-left"
   ]
 }

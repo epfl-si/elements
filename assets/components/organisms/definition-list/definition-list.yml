@@ -1,4 +1,6 @@
-title: Definition list 🚧
+title: Definition list
 name: definition-list
 notes: |
-  <div class="progress"><div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 10%"></div></div><br />
+  <div class="progress"><div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 50%"></div></div><br />
+
+  The definition title can contain links.

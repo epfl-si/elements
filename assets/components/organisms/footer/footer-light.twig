@@ -17,7 +17,7 @@
             <p class="footer-light-socials">
               <small><strong>Suivre les pulsations de l’EPFL sur les réseaux sociaux</strong></small>
               <span>
-                {% include 'atoms::social-icon/social-icon-negative-link.twig' %}
+                {% include 'atoms::social-icon/social-icon-link-group.twig'  with { negative: true }  %}
               </span>
             </p>
             {% include "@organisms/footer/footer-legal.twig" %}
