@@ -1,0 +1,23 @@
+name: trapeze
+title: Trapeze
+notes: >
+  The trapeze can be used to make a fancy hover effect. Two variants exist,
+  depending on your needs.
+
+
+  1. Use a `<span>` element to generate the wrapper.
+
+  2. Use a single class with pseudo-elements
+variants:
+  - name: horizontal
+    title: Horizontal
+    notes: |
+      The Horizontal variant.
+    background: ''
+    wrapper: ''
+  - name: pseudo
+    title: Pseudo
+    notes: |
+      The Pseudo variant.
+    background: ''
+    wrapper: ''

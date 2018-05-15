@@ -73,31 +73,51 @@
   }
 }
 
-
 // Trapeze links
-@mixin trapeze-left($color) {
-  top: 0;
-  right: 100%;
-  height: 100%;
-  width: 0;
-  border-right-width: 0;
-  border-right-color: $color;
-  border-left-width: 0;
+@mixin trapeze-vertical($color, $size) {
+  &:before {
+    top: 0;
+    right: 100%;
+    width: 0;
+    height: 100%;
+    border-right-width: 0;
+    border-right-color: $color;
+    border-left-width: 0;
+  }
+
+  &:hover {
+    transform: translateX($size);
+
+    &:before {
+      border-right-width: $size;
+    }
+  }
 }
 
-@mixin trapeze-bottom($color) {
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 0;
-  border-bottom-width: 0;
-  border-top-width: 0;
-  border-top-color: $color;
+@mixin trapeze-horizontal($color, $size) {
+  &:before {
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    border-bottom-width: 0;
+    border-top-width: 0;
+    border-top-color: $color;
+  }
+
+  &:hover {
+    transform: translateY(-$size);
+
+    &:before {
+      border-top-width: $size;
+    }
+  }
 }
 
-@mixin link-trapeze($position: left, $color: gray('200'), $size: 0.5rem) {
+@mixin link-trapeze($position: vertical, $color: gray('200'), $size: $trapeze-height) {
   position: relative;
   z-index: 0;
+  transition: transform $trapeze-animation-duration;
 
   &:before {
     content: '';
@@ -105,22 +125,12 @@
     position: absolute;
     z-index: -1;
     border: $size solid transparent;
-    transition: border 0.05s ease-in-out;
-
-    @if $position == left {
-      @include trapeze-left($color);
-    } @else if $position == bottom {
-      @include trapeze-bottom($color);
-    }
+    transition: border $trapeze-animation-duration;
   }
 
-  &:hover {
-    &:before {
-      @if $position == left {
-        border-right-width: $size;
-      } @else if $position == bottom {
-        border-top-width: $size;
-      }
-    }
+  @if $position == vertical {
+    @include trapeze-vertical($color, $size);
+  } @else if $position == horizontal {
+    @include trapeze-horizontal($color, $size);
   }
 }
