@@ -11,13 +11,7 @@ notes: >
 variants:
   - name: horizontal
     title: Horizontal
-    notes: |
-      The Horizontal variant.
-    background: ''
-    wrapper: ''
   - name: pseudo
     title: Pseudo
     notes: |
-      The Pseudo variant.
-    background: ''
-    wrapper: ''
+      Simply add the class `.link-trapeze-horizontal` or `.link-trapeze-vertical` to your link to add a pseudo element trapeze on hover.
