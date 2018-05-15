@@ -148,3 +148,7 @@ input:focus + label > .trapeze-horizontal {
 @each $key, $value in $grays {
   @include bg-variant(".bg-gray-#{$key}", $value);
 }
+
+.text-small {
+  font-size: $text-size-sm;
+}

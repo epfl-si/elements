@@ -6,7 +6,7 @@
     margin-right: $card-spacer-x;
     padding: 1.3rem 0 $card-spacer-x 0;
     background: $white;
-    font-size: $font-size-sm;
+    font-size: $text-size-sm;
 
     a:not(.btn) {
       margin-left: 0.8rem;
@@ -22,7 +22,7 @@
 
 .card-subtitle {
   margin-bottom: 0.8rem;
-  font-size: $font-size-sm;
+  font-size: $text-size-sm;
   color: $text-muted;
 }
 
@@ -49,7 +49,7 @@
   }
 
   a {
-    font-size: $font-size-sm;
+    font-size: $text-size-sm;
     color: $text-muted;
   }
 }
