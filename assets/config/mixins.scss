@@ -72,3 +72,55 @@
     }
   }
 }
+
+
+// Trapeze links
+@mixin trapeze-left($color) {
+  top: 0;
+  right: 100%;
+  height: 100%;
+  width: 0;
+  border-right-width: 0;
+  border-right-color: $color;
+  border-left-width: 0;
+}
+
+@mixin trapeze-bottom($color) {
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-bottom-width: 0;
+  border-top-width: 0;
+  border-top-color: $color;
+}
+
+@mixin link-trapeze($position: left, $color: gray('200'), $size: 0.5rem) {
+  position: relative;
+  z-index: 0;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    border: $size solid transparent;
+    transition: border 0.05s ease-in-out;
+
+    @if $position == left {
+      @include trapeze-left($color);
+    } @else if $position == bottom {
+      @include trapeze-bottom($color);
+    }
+  }
+
+  &:hover {
+    &:before {
+      @if $position == left {
+        border-right-width: $size;
+      } @else if $position == bottom {
+        border-top-width: $size;
+      }
+    }
+  }
+}

@@ -7,6 +7,10 @@
     "lock",
     "mail-plane",
     "twitter",
-    "whatsapp"
+    "whatsapp",
+    "chevron-right",
+    "chevron-left",
+    "chevron-last-right",
+    "chevron-last-left"
   ]
 }

@@ -1,4 +1,9 @@
-title: Pagination 🚧
+title: Pagination
 name: pagination
-notes: |
-  <div class="progress"><div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 10%"></div></div><br />
+variants:
+  - name: load-more
+    title: Load more
+    notes: |
+      The Load more variant.
+    background: ''
+    wrapper: ''
