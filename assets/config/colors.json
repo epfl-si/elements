@@ -1,16 +1,10 @@
 {
-  "Tamarillo": "#a80e17",
   "EPFL red": "#e30713",
-  "Wild watermelon": "#fe6971",
-  "White": "#fff",
-  "Gray 100": "#e6e6e6",
-  "Gray 200": "#cccccc",
-  "Gray 300": "#b3b3b3",
-  "Gray 400": "#999999",
-  "Gray 500": "#808080",
-  "Gray 600": "#666666",
-  "Gray 700": "#4d4d4d",
-  "Gray 800": "#333333",
-  "Gray 900": "#212121",
-  "Black": "#000"
+  "Dark red": "#a80e17",
+  "Black": "#212121",
+  "Dark Gray": "#707070",
+  "Middle Gray": "#C1C1C1",
+  "Light Gray 1": "#D5D5D5",
+  "Light Gray 2": "#EEEEEE",
+  "White": "#fff"
 }
