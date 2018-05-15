@@ -3,11 +3,11 @@
 .fullwidth-teaser {
   position: relative;
   width: 100%;
-  padding: 0 gutter-width / 2;
+  padding: 0 ($grid-gutter-width / 2);
 
   @include media-breakpoint-up(md) {
     display: flex;
-    flex-flow: row nobreak;
+    flex-flow: row nowrap;
   }
 
   @include media-breakpoint-up(xl) {
@@ -62,7 +62,7 @@
       width: 20rem;
       margin-left: 6rem;
       padding: 1.2rem 1.6rem;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba($white, 0.9);
     }
   }
 }
@@ -71,7 +71,7 @@
   padding-top: 1rem;
   background: $white;
 
-  @extend .col-12;
+  @include make-col(12, 12);
 
   @include media-breakpoint-up(xl) {
     display: flex;
@@ -92,7 +92,7 @@
       padding: 1.5rem 2rem;
       margin-bottom: 0;
       font-size: 1.75rem;
-      background-color: white;
+      background-color: $white;
       max-width: 24rem;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -165,7 +165,7 @@
 
 .fullwidth-teaser-text-footer {
   @include media-breakpoint-up(xs) {
-    @extend .row;
+    @include make-row;
   }
 
   @include media-breakpoint-up(md) {
