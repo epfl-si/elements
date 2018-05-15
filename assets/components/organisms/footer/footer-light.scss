@@ -4,6 +4,16 @@
   a {
     background-image: none !important;
   }
+
+  ul {
+    li {
+      color: $gray-300;
+
+      &:first-child {
+        color: $body-color;
+      }
+    }
+  }
 }
 
 .footer-light-socials {
@@ -33,10 +43,24 @@
   }
 
   .footer-legal-links a {
-    color: $gray-200;
+    color: $gray-300;
 
     &:hover {
       color: $white;
+    }
+  }
+
+  .footer-light {
+    ul {
+      li {
+        small {
+          color: $gray-300;
+        }
+
+        &:first-child {
+          color: $white;
+        }
+      }
     }
   }
 }

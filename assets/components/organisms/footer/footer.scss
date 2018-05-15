@@ -47,7 +47,7 @@
         content: ' ';
         display: block;
         position: absolute;
-        top: 0.55rem;
+        top: 0.5rem;
         left: -0.95rem;
         width: 0.5rem;
         height: 0.23rem;
@@ -96,7 +96,6 @@
   }
 
   li {
-    display: inline-block;
     margin: 0.5rem 0;
 
     &:before {
@@ -168,7 +167,7 @@
     a,
     p {
       font-size: 0.85rem;
-      color: $gray-500;
+      color: $gray-400;
       text-decoration: none;
     }
 
@@ -179,5 +178,25 @@
 
   .footer-sitemap {
     flex-flow: row nowrap;
+  }
+}
+
+// ----------------
+// Dark footer
+// ----------------
+.bg-dark {
+  .footer {
+    a {
+      color: $white;
+
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+
+  .footer-title {
+    color: $white;
+    border-color: $gray-700;
   }
 }
