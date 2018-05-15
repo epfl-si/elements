@@ -18,3 +18,25 @@
     font-size: 1rem;
   }
 }
+
+// ----------------
+// Dark footer
+// ----------------
+.bg-dark {
+  .footer-light-socials,
+  .footer-legal {
+    border-color: $gray-700;
+  }
+
+  .social-icon .icon {
+    fill: $white;
+  }
+
+  .footer-legal-links a {
+    color: $gray-200;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}

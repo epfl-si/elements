@@ -150,3 +150,10 @@ input:focus + label > .trapeze-horizontal {
     background: $value !important;
   }
 }
+
+// generate all bg-gray helpers
+@each $key, $value in $grays {
+  .text-gray-#{$key} {
+    color: $value !important;
+  }
+}
