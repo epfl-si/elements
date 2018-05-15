@@ -3,6 +3,7 @@
 .news-listing {
   .news {
     display: block;
+    text-decoration: none;
 
     &:hover {
       z-index: 10;
