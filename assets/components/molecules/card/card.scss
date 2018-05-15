@@ -1,72 +1,44 @@
 @charset 'utf-8';
 
-a.card {
-  border: none;
-  text-decoration: none;
-  display: block;
-
-  .card-body {
-    position: relative;
-    background: $white;
-    border: 1px solid $gray-200;
-    z-index: 1;
-    transition: border 0.3s;
-  }
-
-  .card-title {
-    transition: 0.4s ease;
-  }
-
-  &:hover {
-    color: $black;
-
-    .card-body {
-      border-color: $black;
-    }
-
-    .card-title {
-      color: $epflred;
-    }
-  }
-}
+// Normal card
 
 .card {
   margin-bottom: $grid-gutter-width;
+}
 
-  .card-img-top + .card-body {
-    border-top: none !important;
-  }
-
-  .card-info {
-    font-size: 0.83em;
-    margin-bottom: 1em;
-    color: $gray-600;
-
-    a {
-      display: inline-block;
-      border: none;
-      color: $primary;
-      text-decoration: none;
-    }
-
-    .caret {
-      position: relative;
-      top: -0.2em;
-      font-size: 0.45em;
-    }
-  }
-
-  .card-footer {
-    background: none;
-    border: 0;
-  }
-
-  .card-body + .card-footer {
+.card-body {
+  + .card-footer {
     padding-top: 0;
   }
 
-  .card-body p:last-of-type {
+  p:last-of-type {
     margin-bottom: 0;
+  }
+
+  .card-img-top + & {
+    border-top: none !important;
+  }
+}
+
+.card-footer {
+  border: 0;
+}
+
+.card-info {
+  font-size: $font-size-sm;
+  margin-bottom: $spacer;
+  color: gray('600');
+
+  a {
+    display: inline-block;
+    color: $epflred;
+    text-decoration: none;
+  }
+
+  .caret {
+    position: relative;
+    top: -0.2em;
+    font-size: 0.45em;
   }
 }
 
@@ -92,11 +64,36 @@ a.card-img-top {
 
 a.card-title {
   transition: color 0.3s;
-  background-position: 0 90% !important;
 
-  @include link-pretty($epflred, $white);
+  @include link-pretty($epflred, $white, $body-color);
+
+  background-position: 0 90%;
+}
+
+// Card as a link
+
+a.card {
+  border: none;
+  text-decoration: none;
+
+  .card-body {
+    border: $card-border-width solid $card-border-color;
+    transition: border 0.3s;
+  }
+
+  .card-title {
+    transition: 0.4s ease;
+  }
 
   &:hover {
-    @include link-pretty($black, $white);
+    color: $body-color;
+
+    .card-body {
+      border-color: $body-color;
+    }
+
+    .card-title {
+      color: $epflred;
+    }
   }
 }
