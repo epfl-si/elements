@@ -20,19 +20,19 @@
 
   &:hover,
   &.hover {
-    background: $tamarillo;
-    border-color: $tamarillo;
+    background: $dark-red;
+    border-color: $dark-red;
   }
 
   &:focus:before,
-  &.focus:before { border-color: $tamarillo; }
+  &.focus:before { border-color: $dark-red; }
 
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled).active {
     // ugly ↓
-    // background: linear-gradient(to bottom, $tamarillo 0%, $red 100%);
-    background: darken($tamarillo, 10%);
-    border-color: darken($tamarillo, 10%);
+    // background: linear-gradient(to bottom, $dark-red 0%, $red 100%);
+    background: darken($dark-red, 10%);
+    border-color: darken($dark-red, 10%);
   }
 
   &:disabled,
