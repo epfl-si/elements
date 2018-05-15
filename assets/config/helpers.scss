@@ -37,7 +37,7 @@
 }
 
 .text-small {
-  font-size: $font-size-sm;
+  font-size: $font-size-xs;
 }
 
 /*
@@ -147,8 +147,4 @@ input:focus + label > .trapeze-horizontal {
 // Gray background helpers.
 @each $key, $value in $grays {
   @include bg-variant(".bg-gray-#{$key}", $value);
-}
-
-.text-small {
-  font-size: $font-size-xs;
 }
