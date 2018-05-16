@@ -2,7 +2,7 @@
   <div class="news-listing">
 
       {% for i in 1..4 %}
-        <a href="#" class="news trapeze-vertical-container">
+        <a href="#" class="news link-trapeze-vertical">
           <div class="news-container">
             <div class="news-thumbnail">
               {% include '@atoms/picture/picture.twig' with {'variant':'news-thumb'} %}
@@ -16,7 +16,6 @@
               </p>
             </div>
           </div>
-          <span class="trapeze-vertical"></span>
         </a>
       {% endfor %}
 
