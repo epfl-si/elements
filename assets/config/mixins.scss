@@ -73,7 +73,7 @@
   }
 }
 
-// Trapeze links
+// Trapeze link
 @mixin trapeze-vertical($color, $size) {
   &:before {
     top: 0;
@@ -85,7 +85,8 @@
     border-left-width: 0;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     transform: translateX($size);
 
     &:before {
@@ -105,7 +106,8 @@
     border-top-color: $color;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     transform: translateY(-$size);
 
     &:before {
@@ -133,4 +135,73 @@
   } @else if $position == horizontal {
     @include trapeze-horizontal($color, $size);
   }
+}
+
+// trapeze with span
+@mixin trapeze-span-horizontal-container($size: $trapeze-height) {
+  display: block;
+  position: relative;
+  z-index: 1;
+  transition:
+    margin $trapeze-animation-duration,
+    padding $trapeze-animation-duration;
+
+  &:hover,
+  &.focus, {
+    margin-top: -$size !important;
+    padding-bottom: $size;
+
+    .trapeze-horizontal {
+      border-top-width: $size;
+    }
+  }
+}
+
+@mixin trapeze-span-vertical-container($size: $trapeze-height) {
+  display: block;
+  position: relative;
+  z-index: 1;
+  transition:
+    margin $trapeze-animation-duration,
+    padding $trapeze-animation-duration;
+
+  &:hover,
+  &:focus {
+    padding-left: $trapeze-height;
+    margin-right: $trapeze-height * -1;
+
+    .trapeze-vertical {
+      border-right-width: $trapeze-height;
+    }
+  }
+}
+
+@mixin trapeze-span-vertical($color: gray('200'), $size: $trapeze-height) {
+  display: block;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  margin-right: $size * -1;
+  border-right: 0 solid $color;
+  border-top: $size solid transparent;
+  border-bottom: $size solid transparent;
+  transition: border $trapeze-animation-duration;
+}
+
+@mixin trapeze-span-horizontal($color: gray('200'), $size: $trapeze-height) {
+  display: block;
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  margin-top: $trapeze-height * -1;
+  border-top: 0 solid $gray-200;
+  border-left: $trapeze-height solid transparent;
+  border-right: $trapeze-height solid transparent;
+  transition: border $trapeze-animation-duration;
 }
