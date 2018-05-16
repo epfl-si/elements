@@ -3,6 +3,7 @@
 .news-listing {
   .news {
     display: block;
+    text-decoration: none;
 
     &:hover {
       z-index: 10;
@@ -64,7 +65,7 @@
     display: flex;
     flex-flow: row nowrap;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       flex-direction: column;
     }
 
