@@ -1,7 +1,7 @@
 @charset 'utf-8';
 
+//
 // Normal card
-
 .card {
   margin-bottom: $grid-gutter-width;
 }
@@ -29,39 +29,38 @@
   .card-img-top + & {
     border-top: none !important;
   }
-
-  // Distinction is when you have a little red fancy flag in the card body.
-  .card-distinction & {
-    position: relative;
-    border-top: 1px solid $epflred;
-    padding-top: ($card-spacer-y * 2);
-
-    &:before {
-      content: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$epflred}' viewBox='0 0 20 30'%3E%3Cpath d='M0 0h20v30L10 19 0 30z'/%3E%3C/svg%3E"), "#", "%23");
-      display: inline-block;
-      position: absolute;
-      top: 0;
-      left: $card-spacer-x;
-      width: 20px;
-      height: 30px;
-    }
-
-    &.card-body {
-      border-top: 1px solid $epflred !important;
-    }
-  }
 }
 
 .card-footer {
   border: 0;
 }
 
+//
+// Distinction is when you have a little red fancy flag in the card body.
+.card-distinction .card-body {
+  position: relative;
+  border-top: 1px solid $epflred !important; // Must override even on hover
+  padding-top: ($card-spacer-y * 2);
+
+  &:before {
+    content: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$epflred}' viewBox='0 0 20 30'%3E%3Cpath d='M0 0h20v30L10 19 0 30z'/%3E%3C/svg%3E"), "#", "%23");
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: $card-spacer-x;
+    width: 20px;
+    height: 30px;
+  }
+}
+
+//
+// Card info
 .card-info {
   font-size: $font-size-sm;
   margin-bottom: $spacer;
   color: $text-muted;
 
-  // Put some dots between the elements
+  // Add the separator between the elements
   > :not(:last-child) {
     &:after {
       content: ' › ';
@@ -81,6 +80,8 @@
   border-bottom: 1px solid gray('200');
 }
 
+//
+// Card items as links
 a.card-img-top {
   position: relative;
 
@@ -110,8 +111,8 @@ a.card-title,
   background-position: 0 90%;
 }
 
-// Card as a link
-
+//
+// Whole card as a link
 a.card {
   border: none;
   text-decoration: none;
