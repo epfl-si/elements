@@ -21,6 +21,7 @@ variants:
     title: Program
   - name: teaser-bachelor-project
     title: Teaser bachelor project
+    wrapper: bg-gray-100
 notes: |
   <div class="progress"><div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 1%"></div></div><br />
 

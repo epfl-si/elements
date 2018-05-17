@@ -32,6 +32,7 @@
 }
 
 .card-footer {
+  padding-bottom: $card-spacer-x;
   border: 0;
 }
 
@@ -57,7 +58,7 @@
 // Card info
 .card-info {
   font-size: $font-size-sm;
-  margin-bottom: $spacer;
+  margin-bottom: $paragraph-margin-bottom;
   color: $text-muted;
 
   // Add the separator between the elements

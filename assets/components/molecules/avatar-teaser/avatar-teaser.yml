@@ -1,0 +1,13 @@
+name: avatar-teaser
+title: Avatar teaser
+notes: |
+  Describe the avatar-teaser component here.
+wrapper: ''
+background: ''
+variants:
+  - name: multiple
+    title: Multiple
+    notes: |
+      The Multiple variant.
+    background: ''
+    wrapper: ''
