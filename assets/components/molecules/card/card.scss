@@ -76,15 +76,23 @@
 
   a {
     display: inline-block;
-    color: $link-color;
+    color: $epflred;
     text-decoration: none;
+
+    @include hover {
+      @include link-pretty($epflred, $body-bg, $body-color);
+    }
   }
 }
 
 .card-info-bordered {
-  padding: ($spacer * 0.25) 0;
+  padding: ($spacer * 0.75) 0;
   border-top: 1px solid $hr-border-color;
   border-bottom: 1px solid $hr-border-color;
+}
+
+.card-info-border-sm {
+  padding: ($spacer * 0.25) 0;
 }
 
 //
@@ -113,12 +121,12 @@ a.card-title,
 .card-title a {
   transition: color 0.3s;
 
-  @include link-pretty($link-color, $body-bg, $body-color);
+  @include link-pretty($epflred, $body-bg, $body-color);
 
   background-position: 0 90%;
 
   .card.bg-gray-100 & {
-    @include link-pretty($link-color, gray('100'), $body-color);
+    @include link-pretty($epflred, gray('100'), $body-color);
   }
 }
 
