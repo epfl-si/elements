@@ -36,8 +36,27 @@
   }
 }
 
+//
+// Text helpers
 .text-small {
   font-size: $font-size-xs;
+}
+
+.text-arrow {
+  display: flex;
+  justify-content: space-between;
+
+  &:after {
+    content: '→';
+    color: gray('300');
+    transition: color 0.2s;
+  }
+
+  a:hover & {
+    &:after {
+      color: gray('600');
+    }
+  }
 }
 
 /*
