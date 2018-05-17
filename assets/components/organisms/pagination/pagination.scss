@@ -55,7 +55,7 @@
   font-weight: $font-weight-bold;
   transition: margin 0.1s ease-in-out;
 
-  @include link-trapeze(bottom, $pagination-border-color, 0.3rem);
+  @include link-trapeze(horizontal, $pagination-border-color, 5px);
 
   &:before {
     left: -$pagination-border-width;
@@ -74,7 +74,7 @@
   @include hover {
     z-index: 2;
     border: $pagination-border-width solid $pagination-hover-border-color;
-    margin-top: calc(-0.3rem + #{$pagination-border-width});
+    transform: translateY(-4px);
   }
 
   @include hover-focus-active {

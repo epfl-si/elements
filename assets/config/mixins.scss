@@ -73,31 +73,53 @@
   }
 }
 
+// Trapeze link
+@mixin trapeze-vertical($color, $size) {
+  &:before {
+    top: 0;
+    right: 100%;
+    width: 0;
+    height: 100%;
+    border-right-width: 0;
+    border-right-color: $color;
+    border-left-width: 0;
+  }
 
-// Trapeze links
-@mixin trapeze-left($color) {
-  top: 0;
-  right: 100%;
-  height: 100%;
-  width: 0;
-  border-right-width: 0;
-  border-right-color: $color;
-  border-left-width: 0;
+  &:hover,
+  &:focus {
+    transform: translateX($size);
+
+    &:before {
+      border-right-width: $size;
+    }
+  }
 }
 
-@mixin trapeze-bottom($color) {
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 0;
-  border-bottom-width: 0;
-  border-top-width: 0;
-  border-top-color: $color;
+@mixin trapeze-horizontal($color, $size) {
+  &:before {
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    border-bottom-width: 0;
+    border-top-width: 0;
+    border-top-color: $color;
+  }
+
+  &:hover,
+  &:focus {
+    transform: translateY(-$size);
+
+    &:before {
+      border-top-width: $size;
+    }
+  }
 }
 
-@mixin link-trapeze($position: left, $color: gray('200'), $size: 0.5rem) {
+@mixin link-trapeze($position: vertical, $color: gray('200'), $size: $trapeze-height) {
   position: relative;
   z-index: 0;
+  transition: transform $trapeze-animation-duration;
 
   &:before {
     content: '';
@@ -105,22 +127,81 @@
     position: absolute;
     z-index: -1;
     border: $size solid transparent;
-    transition: border 0.05s ease-in-out;
-
-    @if $position == left {
-      @include trapeze-left($color);
-    } @else if $position == bottom {
-      @include trapeze-bottom($color);
-    }
+    transition: border $trapeze-animation-duration;
   }
 
-  &:hover {
-    &:before {
-      @if $position == left {
-        border-right-width: $size;
-      } @else if $position == bottom {
-        border-top-width: $size;
-      }
+  @if $position == vertical {
+    @include trapeze-vertical($color, $size);
+  } @else if $position == horizontal {
+    @include trapeze-horizontal($color, $size);
+  }
+}
+
+// trapeze with span
+@mixin trapeze-span-horizontal-container($size: $trapeze-height) {
+  display: block;
+  position: relative;
+  z-index: 1;
+  transition:
+    margin $trapeze-animation-duration,
+    padding $trapeze-animation-duration;
+
+  &:hover,
+  &.focus, {
+    margin-top: -$size !important;
+    padding-bottom: $size;
+
+    .trapeze-horizontal {
+      border-top-width: $size;
     }
   }
+}
+
+@mixin trapeze-span-vertical-container($size: $trapeze-height) {
+  display: block;
+  position: relative;
+  z-index: 1;
+  transition:
+    margin $trapeze-animation-duration,
+    padding $trapeze-animation-duration;
+
+  &:hover,
+  &:focus {
+    padding-left: $trapeze-height;
+    margin-right: $trapeze-height * -1;
+
+    .trapeze-vertical {
+      border-right-width: $trapeze-height;
+    }
+  }
+}
+
+@mixin trapeze-span-vertical($color: gray('200'), $size: $trapeze-height) {
+  display: block;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  margin-right: $size * -1;
+  border-right: 0 solid $color;
+  border-top: $size solid transparent;
+  border-bottom: $size solid transparent;
+  transition: border $trapeze-animation-duration;
+}
+
+@mixin trapeze-span-horizontal($color: gray('200'), $size: $trapeze-height) {
+  display: block;
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  margin-top: $trapeze-height * -1;
+  border-top: 0 solid $gray-200;
+  border-left: $trapeze-height solid transparent;
+  border-right: $trapeze-height solid transparent;
+  transition: border $trapeze-animation-duration;
 }
