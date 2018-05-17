@@ -175,3 +175,10 @@ input:focus + label > .trapeze-horizontal {
 hr {
   width: 100%;
 }
+
+// generate all bg-gray helpers
+@each $key, $value in $grays {
+  .text-gray-#{$key} {
+    color: $value !important;
+  }
+}
