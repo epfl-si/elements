@@ -1,13 +1,13 @@
 name: avatar-teaser
 title: Avatar teaser
 notes: |
-  Describe the avatar-teaser component here.
+  An avatar teaser can link to a person profile.
 wrapper: ''
 background: ''
 variants:
   - name: multiple
     title: Multiple
     notes: |
-      The Multiple variant.
+      When you have several people to display, use a "+X" thumbnail.
     background: ''
     wrapper: ''
