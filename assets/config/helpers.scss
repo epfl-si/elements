@@ -81,3 +81,10 @@
 @each $key, $value in $grays {
   @include bg-variant(".bg-gray-#{$key}", $value);
 }
+
+// generate all bg-gray helpers
+@each $key, $value in $grays {
+  .text-gray-#{$key} {
+    color: $value !important;
+  }
+}

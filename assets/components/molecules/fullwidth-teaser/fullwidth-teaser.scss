@@ -56,10 +56,9 @@
     }
   }
 
-  p {
+  .fullwidth-teaser-content p {
     @include media-breakpoint-up(xl) {
       float: right;
-      width: 20rem;
       margin-left: 6rem;
       padding: 1.2rem 1.6rem;
       background: rgba($white, 0.9);
@@ -86,22 +85,33 @@
     overflow: hidden;
     background: none;
 
-    h3,
-    .h3 {
-      display: inline-block;
+    .fullwidth-teaser-title {
       padding: 1.5rem 2rem;
-      margin-bottom: 0;
-      font-size: 1.75rem;
       background-color: $white;
       max-width: 24rem;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+
+      .list-inline {
+        font-size: 0.85 * $font-size-base;
+        margin-bottom: -0.3 * $spacer;
+        color: $text-muted;
+        li { margin-right: 0; }
+        li:not(:last-child):after { content: ' \203A'; }
+      }
+    }
+
+    h3,
+    .h3 {
+      display: inline-block;
+      margin-bottom: 0;
+      font-size: 1.75rem;
     }
   }
 }
 
-.fullwidth-teaser-text-header {
+.fullwidth-teaser-header {
   display: flex;
   flex-flow: row nowrap;
   align-items: flex-start;
@@ -153,7 +163,7 @@
   }
 }
 
-.fullwidth-teaser-text-content {
+.fullwidth-teaser-content {
   @include media-breakpoint-up(md) {
     padding: 1rem 0 1rem 2rem;
   }
@@ -163,7 +173,7 @@
   }
 }
 
-.fullwidth-teaser-text-footer {
+.fullwidth-teaser-footer {
   @include media-breakpoint-up(xs) {
     @include make-row;
   }
@@ -183,36 +193,29 @@
       padding-bottom: 8rem;
     }
 
-    .fullwidth-teaser-text-header {
+    .fullwidth-teaser-header {
       justify-content: flex-end;
       overflow: visible;
     }
 
     .btn {
       margin-bottom: -1.62rem;
-      padding-right: 2.5rem;
-
-      &:before {
-        content: '>';
-        position: absolute;
-        top: 0.7rem;
-        right: 1rem;
-        bottom: auto;
-        left: auto;
-      }
     }
 
-    h3,
-    .h3 {
-      overflow: visible;
+    .fullwidth-teaser-title {
       width: auto;
       max-width: 60%;
-      margin: 0;
+      overflow: visible;
       white-space: normal;
       text-overflow: initial;
     }
 
-    .fullwidth-teaser-text-content {
+    h3,
+    .h3 {
+      margin: 0;
+    }
+
+    .fullwidth-teaser-content {
       p {
         width: 85%;
         margin: 0 6% 0 0;
