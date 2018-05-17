@@ -177,13 +177,11 @@
 // Dark footer
 // ----------------
 .bg-dark {
-  .footer {
-    a {
-      color: $white;
+  .footer a {
+    color: $white;
 
-      &:hover {
-        color: $red;
-      }
+    &:hover {
+      color: $red;
     }
   }
 

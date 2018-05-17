@@ -5,13 +5,11 @@
     background-image: none !important;
   }
 
-  ul {
-    li {
-      color: $gray-300;
+  ul li {
+    color: $gray-300;
 
-      &:first-child {
-        color: $body-color;
-      }
+    &:first-child {
+      color: $body-color;
     }
   }
 }
@@ -50,17 +48,13 @@
     }
   }
 
-  .footer-light {
-    ul {
-      li {
-        small {
-          color: $gray-300;
-        }
+  .footer-light ul li {
+    small {
+      color: $gray-300;
+    }
 
-        &:first-child {
-          color: $white;
-        }
-      }
+    &:first-child {
+      color: $white;
     }
   }
 }
