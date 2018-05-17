@@ -1,2 +1,17 @@
-<img src="./images/wip-screenshot/header-2.png" class="img-fluid" />
-<img src="./images/wip-screenshot/header-1.png" class="img-fluid" />
+<header role="banner" class="header">
+  <a class="logo" href="#">
+    <img src="svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
+  </a>
+  <ul aria-hidden="true" class="nav-primary">
+    <li data-index="0">
+      <a class="nav-item" href="/propos-0/">À propos</a>
+    </li>
+    <li data-index="1">
+      <a class="nav-item" href="/campus-1/">Campus</a>
+    </li>
+    <li data-index="2">
+      <a class="nav-item" href="/ducation-2/">Éducation</a>
+    </li>
+  </ul>
+  {% include '@atoms/language-switcher/language-switcher.twig' %}
+</header>

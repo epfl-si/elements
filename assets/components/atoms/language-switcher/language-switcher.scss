@@ -1,0 +1,53 @@
+@charset 'utf-8';
+
+.language-switcher {
+  display: block;
+  font-size: 0.8 * $font-size-base;
+
+  ul {
+    display: flex;
+    flex-flow: row nowrap;
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      position: relative;
+      font-weight: bold;
+
+      & + li {
+        a {
+          padding-left: 0.5 * $spacer;
+        }
+
+        &:before {
+          content: ' ';
+          display: block;
+          position: absolute;
+          top: 0.3 * $spacer;
+          left: 0 * $spacer;
+          width: 1px;
+          height: 0.7 * $spacer;
+          background: gray('200');
+        }
+      }
+    }
+
+    .active {
+      color: $epflred;
+    }
+
+    a {
+      color: gray('200');
+
+      &:hover {
+        color: $body-color;
+      }
+    }
+  }
+
+  a,
+  span {
+    padding: 0.4 * $spacer;
+    text-decoration: none;
+  }
+}
