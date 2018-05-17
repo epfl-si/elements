@@ -15,5 +15,7 @@ notes: |
   Add `.card-distinction` to the `.card` wrapper to display a red ribbon in the card body.
 
   Use `.card-info` to display meta information separated by `›`. **It must only contain `<span>` elements.**
-  With the `.card-info-bordered` modifier, add a border to top and bottom of this area.
+  With the `.card-info-bordered` modifier, add a border to top and bottom of this area. Add the `.card-info-border-sm` modifier to reduce the inner padding.
+
+  Use `.card-overlay` and `.card-img-overlay` to have a full image card.
 
