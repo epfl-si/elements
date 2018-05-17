@@ -3,6 +3,7 @@
 //
 // Normal card
 .card {
+  flex: 1 1 auto;
   margin-bottom: $grid-gutter-width;
 }
 
@@ -29,6 +30,10 @@
   .card-img-top + & {
     border-top: none !important;
   }
+}
+
+.card-header {
+  border-color: $hr-border-color;
 }
 
 .card-footer {
@@ -77,8 +82,9 @@
 }
 
 .card-info-bordered {
-  border-top: 1px solid gray('200');
-  border-bottom: 1px solid gray('200');
+  padding: ($spacer * 0.25) 0;
+  border-top: 1px solid $hr-border-color;
+  border-bottom: 1px solid $hr-border-color;
 }
 
 //
