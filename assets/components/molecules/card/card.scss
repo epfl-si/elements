@@ -29,6 +29,27 @@
   .card-img-top + & {
     border-top: none !important;
   }
+
+  // Distinction is when you have a little red fancy flag in the card body.
+  .card-distinction & {
+    position: relative;
+    border-top: 1px solid $epflred;
+    padding-top: ($card-spacer-y * 2);
+
+    &:before {
+      content: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$epflred}' viewBox='0 0 20 30'%3E%3Cpath d='M0 0h20v30L10 19 0 30z'/%3E%3C/svg%3E"), "#", "%23");
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: $card-spacer-x;
+      width: 20px;
+      height: 30px;
+    }
+
+    &.card-body {
+      border-top: 1px solid $epflred !important;
+    }
+  }
 }
 
 .card-footer {
