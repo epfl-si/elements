@@ -1,26 +1,12 @@
-<div class="row">
-  <div class="col-md-6 d-flex">
-    <a href="#" class="card link-trapeze-horizontal">
-      <div class="card-body">
-        <p class="text-muted small">ACC</p>
-        <h3 class="h5 card-title">Association des Cadres de la Confédération</h3>
-        <div class="card-info card-info-bordered">
-          <span>Aide à la vie professionnelle</span>
-        </div>
-        <p class="card-text">First experiences of celestial bodies begins when we saw our first stars.</p>
+<a href="#" class="card link-trapeze-horizontal">
+  {% block card %}
+    <div class="card-body">
+      <p class="text-muted small">ACC</p>
+      <h3 class="h5 card-title">Association des Cadres de la Confédération</h3>
+      <div class="card-info card-info-bordered">
+        <span>Aide à la vie professionnelle</span>
       </div>
-    </a>
-  </div>
-  <div class="col-md-6 d-flex">
-    <a href="#" class="card link-trapeze-horizontal">
-      <div class="card-body">
-        <div class="card-header">
-          <span>Master</span>
-        </div>
-        <h3 class="h5 card-title">Architecture</h3>
-        <hr>
-        <p class="card-text">First experiences of celestial bodies begins when we saw our first stars.</p>
-      </div>
-    </a>
-  </div>
-</div>
+      <p class="card-text">First experiences of celestial bodies begins when we saw our first stars.</p>
+    </div>
+  {% endblock %}
+</a>
