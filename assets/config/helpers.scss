@@ -146,3 +146,8 @@ input:focus + label > .trapeze-horizontal {
 @each $key, $value in $grays {
   @include bg-variant(".bg-gray-#{$key}", $value);
 }
+
+// Separator
+hr {
+  width: 100%;
+}
