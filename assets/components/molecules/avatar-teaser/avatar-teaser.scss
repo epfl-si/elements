@@ -22,8 +22,9 @@
 $avatar-size: 50px;
 
 .avatar-teaser-img {
+  flex: 0 0 $avatar-size;
+  width: $avatar-size;
   margin-right: ($spacer * 0.6);
-  max-width: $avatar-size;
   border-radius: 50%;
 
   // Handle image if avatar-teaser-img is a link
