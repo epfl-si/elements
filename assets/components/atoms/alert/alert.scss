@@ -10,11 +10,20 @@ $alert-icons: (
 
 .alert {
   position: relative;
-  background: $white;
-  color: $body-color;
-  padding-left: $alert-padding-x * 2 + $alert-icon-size;
   min-height: $alert-padding-y * 2.4 + $alert-icon-size;
   padding-top: $alert-padding-y * 1.6;
+  padding-left: $alert-padding-x * 2 + $alert-icon-size;
+  background: $white;
+  color: $body-color;
+
+  &:before {
+    display: inline-block;
+    position: absolute;
+    top: $alert-padding-y;
+    left: $alert-padding-x;
+    width: $alert-icon-size;
+    height: $alert-icon-size;
+  }
 }
 
 @each $color, $value in $theme-colors {
@@ -28,12 +37,6 @@ $alert-icons: (
 @each $color, $svg in $alert-icons {
   .alert-#{$color}:before {
     content: str-replace(url("data:image/svg+xml;charset=utf8," + $svg), "#", "%23");
-    display: inline-block;
-    position: absolute;
-    top: $alert-padding-y;
-    left: $alert-padding-x;
-    width: $alert-icon-size;
-    height: $alert-icon-size;
   }
 }
 
