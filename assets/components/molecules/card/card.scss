@@ -113,9 +113,13 @@ a.card-title,
 .card-title a {
   transition: color 0.3s;
 
-  @include link-pretty($epflred, $white, $body-color);
+  @include link-pretty($epflred, $body-bg, $body-color);
 
   background-position: 0 90%;
+
+  .card.bg-gray-100 & {
+    @include link-pretty($epflred, gray('100'), $body-color);
+  }
 }
 
 //
