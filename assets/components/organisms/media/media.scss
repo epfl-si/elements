@@ -1,1 +1,58 @@
 @charset 'utf-8';
+
+.cover {
+  position: relative;
+
+  picture {
+    display: block;
+    margin-bottom: ($spacer * 0.5);
+  }
+
+  figcaption {
+    font-size: $font-size-sm;
+    color: $text-muted;
+    transition: opacity 0.2s;
+
+    @include media-breakpoint-down(sm) {
+      .collapse { display: block; }
+    }
+
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      z-index: 1;
+      max-width: 600px; // Arbitrary
+      right: $grid-gutter-width;
+      bottom: 0;
+      margin-left: ($grid-gutter-width / 2);
+    }
+  }
+
+  .cover-caption-collapse {
+    position: absolute;
+    z-index: 1;
+    right: -$grid-gutter-width;
+    bottom: 0;
+    margin: 0;
+    padding: ($grid-gutter-width / 2);
+    cursor: pointer;
+    background: none;
+    border: none;
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+
+    &:before {
+      content: '📷';
+    }
+  }
+}
+
+.cover-collapse {
+  p {
+    @include media-breakpoint-up(md) {
+      padding: ($grid-gutter-width / 2);
+      background-color: $white;
+    }
+  }
+}

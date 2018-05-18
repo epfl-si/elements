@@ -1,1 +1,11 @@
-<img src="./images/wip-screenshot/cover.png" class="img-fluid" />
+<figure class="cover">
+  {% include '@atoms/picture/picture-cover.twig' %}
+  <figcaption>
+    <button class="cover-caption-collapse collapsed" type="button" aria-hidden="true" data-toggle="collapse" data-target="#coverCollapse" aria-expanded="false" aria-controls="coverCollapse">
+      <span class="sr-only"></span>
+    </button>
+    <div class="collapse cover-collapse" id="coverCollapse">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aut deserunt dolorem eligendi, nemo nulla quae reprehenderit saepe sapiente similique!</p>
+    </div>
+  </figcaption>
+</figure>
