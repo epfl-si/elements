@@ -34,14 +34,14 @@ $grays: map-merge((
   "900": $gray-900
 ), $grays);
 
-$blue:    #007bff !default;
+$blue:    #4A90E2!default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
 $pink:    #e83e8c !default;
 $red:     $epflred !default;
 $orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
+$yellow:  #F5A623 !default;
+$green:   #7ED321 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 $softBlack: #404040 !default;
@@ -66,7 +66,7 @@ $colors: map-merge((
 $primary:       $red !default;
 $secondary:     $white !default;
 $success:       $green !default;
-$info:          $cyan !default;
+$info:          $blue !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
@@ -768,10 +768,10 @@ $modal-transition:                  transform .3s ease-out !default;
 //
 // Define alert colors, border radius, and padding.
 
-$alert-padding-y:                   .75rem !default;
-$alert-padding-x:                   1.25rem !default;
+$alert-padding-y:                   0.4rem !default;
+$alert-padding-x:                   0.6rem !default;
 $alert-margin-bottom:               1rem !default;
-$alert-border-radius:               $border-radius !default;
+$alert-border-radius:               0 !default;
 $alert-link-font-weight:            $font-weight-bold !default;
 $alert-border-width:                $border-width !default;
 
@@ -871,9 +871,9 @@ $carousel-transition:               transform .6s ease !default;
 
 // Close
 
-$close-font-size:                   $font-size-base * 1.5 !default;
-$close-font-weight:                 $font-weight-bold !default;
-$close-color:                       $black !default;
+$close-font-size:                   $font-size-base * 2 !default;
+$close-font-weight:                 $font-weight-light !default;
+$close-color:                       $gray-600 !default;
 $close-text-shadow:                 0 1px 0 $white !default;
 
 // Code
