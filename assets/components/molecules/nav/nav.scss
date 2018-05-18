@@ -1,39 +1,6 @@
 @charset 'utf-8';
 
 //
-// Solid nav
-//
-.nav-solid {
-  display: flex;
-  flex-flow: row nowrap;
-
-  .nav {
-    flex: 0 0 25rem;
-  }
-
-  .content {
-    flex: 1 1 auto;
-  }
-}
-
-//
-// Toggle nav
-//
-.nav-toggle {
-  .content {
-    position: relative;
-
-    &.open {
-      overflow: hidden;
-
-      .overlay {
-        display: block;
-      }
-    }
-  }
-}
-
-//
 // Inner nav styles
 //
 .nav {
@@ -63,7 +30,7 @@
   }
 
   ul {
-    $nav-spacer: 3px;
+    $nav-spacer: 4px;
 
     display: none;
     position: absolute;
@@ -88,7 +55,6 @@
       display: flex;
       flex-flow: row nowrap;
       border-bottom: 1px solid lightgray;
-      font-size: 0.9 * $font-size-base;
 
       &.active {
         & > a,
@@ -102,7 +68,7 @@
       a {
         display: block;
         flex: 1 1 auto;
-        margin: 0.2rem 0;
+        margin: $nav-spacer 0;
         padding: 0.4rem;
         transition: all 0.2s;
         text-decoration: none;
@@ -115,8 +81,15 @@
 
         &:hover,
         &:focus {
-          background: gray('100');
           color: $body-color;
+
+          &:not(.nav-arrow) {
+            background: gray('100');
+          }
+
+          .icon-container {
+            background: gray('100');
+          }
         }
 
         & + .nav-arrow {
@@ -125,19 +98,23 @@
       }
 
       .nav-arrow {
-        display: flex;
         flex: 0 0 3rem;
         position: relative;
         margin-top: $nav-spacer;
         margin-bottom: $nav-spacer;
-        padding: 0;
+        padding: 0 $nav-spacer 0 $nav-spacer+1;
         font-size: 1.3rem !important;
         line-height: 1rem !important;
         font-weight: normal !important;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        transition: background-color 0.3s;
+
+        .icon-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          transition: background-color 0.3s;
+        }
 
         &:before,
         &:after {
@@ -160,7 +137,9 @@
         }
 
         &:hover {
-          background: gray('100');
+          .icon-container {
+            background: gray('100');
+          }
         }
       }
     }
@@ -191,7 +170,10 @@
     border-bottom: none;
     margin-left: -2rem;
     padding-left: 2rem;
-    color: gray('500');
+
+    a {
+      color: gray('500');
+    }
 
     .icon {
       fill: gray('300');
@@ -268,9 +250,102 @@
     transform: rotate(-45deg);
   }
 }
+//
+// Desktop
+//
+@include media-breakpoint-up (xl) {
+  // Solid nav
+  .nav-solid {
+    display: flex;
+    flex-flow: row nowrap;
+
+    .nav {
+      flex: 0 0 25rem;
+      max-width: 25rem;
+    }
+
+    .content {
+      flex: 1 1 auto;
+    }
+  }
+
+  // Toggle nav
+  .nav-toggle {
+    .content {
+      position: relative;
+
+      &.open {
+        overflow: hidden;
+
+        .overlay {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .nav {
+    li {
+      font-size: 0.9 * $font-size-base;
+    }
+  }
+}
 
 //
-// Overlay for toggle menu
+// Mobile
+// 
+@include media-breakpoint-down (lg) {
+  .main-container {
+    position: relative;
+    height: calc(100% - 6.5rem);
+  }
+
+  .nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 1rem;
+    border-top: 1px solid gray('100');
+    transform: translateX(-100%);
+    transition: transform 0.2s;
+
+    ul {
+      padding: 0 1.2 * $spacer;
+
+      li {
+        a {
+          font-size: 1.2 * $font-size-base;
+          padding-top: 0.8 * $spacer;
+          padding-bottom: 0.8 * $spacer;
+        }
+
+        .nav-arrow {
+          flex: 0 0 4rem;
+        }
+      }
+    }
+
+    .nav-home {
+      display: none;
+    }
+  }
+
+  // toggle menu
+  .mobile-menu-open {
+    .nav {
+      transform: translateX(0);
+    }
+
+    main.content {
+      max-height: 0;
+    }
+  }
+}
+
+//
+// Overlay
 //
 .overlay {
   content: ' ';

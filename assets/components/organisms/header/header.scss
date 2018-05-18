@@ -13,6 +13,7 @@
   }
 
   .logo {
+    margin: 0;
     border: none;
     background-image: none;
     margin-left: 3 * $spacer;
@@ -82,6 +83,15 @@
       &:before {
         content: none;
       }
+    }
+  }
+
+  @include media-breakpoint-down (lg) {
+    height: 6.5rem;
+    padding: 1.3 * $spacer 0.9 * $spacer;
+
+    .logo {
+      margin-left: 0;
     }
   }
 }

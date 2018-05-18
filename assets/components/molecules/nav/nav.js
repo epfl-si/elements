@@ -2,6 +2,10 @@
 const nav = () => {
   // closeMobileMenu();
 
+  const toggleMobileMenu = () => {
+    $('.main-container').toggleClass('mobile-menu-open');
+  };
+
   $('.nav .nav-back').on('click', function (e){
     e.preventDefault();
     $(this).parent().removeClass('active');
@@ -14,9 +18,8 @@ const nav = () => {
     $(this).parent().children('ul').attr('class', 'active');
   });
 
-  $('#hamburger').on('click', function (e) {
-    e.preventDefault();
-    //openMenuHere(e);
+  $('.menu-toggle-mobile').on('click', function () {
+    toggleMobileMenu();
   });
 
   $('#mobile-nav .toggle').on('click', function (e) {
