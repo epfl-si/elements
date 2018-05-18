@@ -58,6 +58,10 @@
     color: $white !important;
   }
 
+  .bg-gray-100 & {
+    background-color: $body-bg;
+  }
+
   &:hover,
   &.hover {
     background: $gray-100;

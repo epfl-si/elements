@@ -1,15 +1,18 @@
-<div class="col-md-4">
+{% block card %}
   <a href="#" class="card link-trapeze-horizontal">
+    {% block image -%}
     <picture class="card-img-top">
       <img src="./images/event_teaser.png" class="img-fluid" title="professor Xile Hu" alt="a portrait of professor Xile Hu" />
     </picture>
-
+    {% endblock -%}
+    {% block card_body %}
     <div class="card-body">
-      <h3 class="card-title">Startup Acceleration Workshops</h3>
-      <p>Avec <strong>John Doe</strong></p>
-      <p>10.01.2018 <span>&rsaquo;</span> 13:00 - 17:30</p>
-      <p>Lieu: ArtLab EPFL</p>
-      <p>Catégorie: <strong>IPG Seminar</strong></p>
+      {% block content %}
+        <h3 class="card-title">{% block title %}Startup Acceleration Workshops{% endblock %}</h3>
+      {% endblock %}
     </div>
+    {% endblock -%}
+    {%- block card_footer %}
+    {% endblock %}
   </a>
-</div>
+{% endblock %}
