@@ -17,7 +17,7 @@
 
 .tlbx-toolbar-wrapper {
   position: static;
-  min-height: 100%;
+  height: 100%;
 }
 
 .tlbx-sidebar-wrapper {
@@ -31,8 +31,12 @@
   padding-top: 1.8rem;
 }
 
-.tlbx-sidebar {
-  @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+  .tlbx-toolbar {
+    position: fixed;
+  }
+
+  .tlbx-sidebar {
     position: fixed;
     max-height: 100vh;
     overflow-y: scroll;
