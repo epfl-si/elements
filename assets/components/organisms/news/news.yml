@@ -5,10 +5,13 @@ variants:
     title: Highlighted
   - name: basic-teaser
     title: Basic teaser
+    wrapper: col-md-6
   - name: press-release
     title: Press release
+    wrapper: col-md-6
   - name: distinction
     title: Distinction
+    wrapper: col-md-6
 notes: |
   <br>
 
