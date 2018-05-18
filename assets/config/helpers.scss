@@ -62,6 +62,7 @@
 .text-padded {
   background-color: $white;
   box-shadow: 0.444rem 0 0 $white, -0.444rem 0 0 $white; // Around 8px
+  box-decoration-break: clone;
 }
 
 /*
