@@ -6,10 +6,18 @@
 
 .styleguide {
   font-family: $font-family-base;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-template-columns: 60px 240px 1fr;
-  grid-template-columns: 60px 240px 1fr;
+
+  @media (min-width: 768px) {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 60px 240px 1fr;
+    grid-template-columns: 60px 240px 1fr;
+  }
+}
+
+.tlbx-toolbar-wrapper {
+  position: static;
+  min-height: 100%;
 }
 
 .tlbx-sidebar-wrapper {
@@ -20,6 +28,7 @@
 .tlbx-content-wrapper {
   -ms-grid-column: 3;
   grid-column: 3;
+  padding-top: 1.8rem;
 }
 
 .tlbx-sidebar {
@@ -29,10 +38,6 @@
     overflow-y: scroll;
     width: 240px;
   }
-}
-
-.tlbx-content-wrapper {
-  padding-top: 1.8rem;
 }
 
 .tlbx-sidebar-item-list {

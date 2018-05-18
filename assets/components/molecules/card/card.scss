@@ -3,7 +3,8 @@
 //
 // Normal card
 .card {
-  flex: 1 1 auto;
+  flex: 1 1 0%;
+  max-width: 100%;
   margin-bottom: $grid-gutter-width;
 }
 
@@ -168,4 +169,11 @@ a.card {
   .card-title {
     margin-bottom: 0;
   }
+}
+
+// Fix for IE not handling image height correctly
+// https://github.com/philipwalton/flexbugs/issues/75
+.card-img-top,
+.card-overlay .card-img {
+  min-height: 1px;
 }
