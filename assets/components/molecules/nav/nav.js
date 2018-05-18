@@ -2,27 +2,32 @@
 const nav = () => {
   // closeMobileMenu();
 
+  const activeClass = 'current_page_parent';
+  const parentClass = 'current_page_ancestor';
+
   const toggleMobileMenu = () => {
     $('.main-container').toggleClass('mobile-menu-open');
   };
 
-  $('.nav .nav-back').on('click', function (e){
+  $('.nav .nav-back a').on('click', function (e) {
     e.preventDefault();
-    $(this).parent().removeClass('active');
-    $(this).parent().parent().parent().attr('class', 'active');
+    $(this).parent().parent().parent().removeClass(activeClass);
+    $(this).parent().parent().parent().parent().parent().removeClass(parentClass);
+    $(this).parent().parent().parent().parent().parent().addClass(activeClass);
   });
 
   $('.nav .nav-arrow').on('click', function (e) {
     e.preventDefault();
-    $(this).parent().parent().attr('class', 'parent');
-    $(this).parent().children('ul').attr('class', 'active');
+    $(this).parent().parent().parent().addClass(parentClass);
+    $(this).parent().parent().parent().removeClass(activeClass);
+    $(this).parent().addClass(activeClass);
   });
 
   $('.menu-toggle-mobile').on('click', function () {
     toggleMobileMenu();
   });
 
-  $('#mobile-nav .toggle').on('click', function (e) {
+ /*  $('#mobile-nav .toggle').on('click', function (e) {
     e.preventDefault();
 
     const link = $('#mobile-nav li.active');
@@ -47,7 +52,7 @@ const nav = () => {
     } else {
       $(this).parent().parent().parent().parent().css('left', '100%');
     }
-  });
+  }); */
 };
 
 export default nav;
