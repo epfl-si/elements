@@ -1,1 +1,47 @@
-<!-- 🛠 Nav component -->
+<div class="overlay"></div>
+<nav class="nav">
+  <!-- <span class="nav-close" role="button" aria-description="Close secondary menu"></span> -->
+  <div class="nav-wrapper">
+    <div class="nav-container">
+      <ul class="active">
+        <li class="nav-home">
+          {% include '@atoms/icon/icon.twig' with {icon: 'icon-home'} %}
+          <span class="text-muted">&rsaquo;</span>
+          Éducation
+        </li>
+        {% for i in 1..6 %}
+          <li>
+            <a href="#">À propos</a>
+            <div role="button" class="nav-arrow">
+              <span>›</span>
+            </div>
+            <ul>
+              <li class="nav-back">
+                <a href="#">Retour: À propos</a>
+              </li>
+              {% for i in 1..3 %}
+                <li>
+                <a href="#">Stratégie de l’enseignement</a>
+                <div role="button" class="nav-arrow">
+                  <span>›</span>
+                </div>
+                <ul>
+                  <li class="nav-back">
+                    <a href="#">Retour: Stratégie de l’enseignement</a>
+                  </li>
+                  <li>
+                    <a href="#">Stratégie de l’enseignement</a>
+                  </li>
+                  <li class="{{ i == 2 ? 'active' : ''}}">
+                    <a href="#">Innovation dans l'enseignement</a>
+                  </li>
+                </ul>
+              </li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
