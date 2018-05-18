@@ -6,6 +6,20 @@
 
 .styleguide {
   font-family: $font-family-base;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-template-columns: 60px 240px 1fr;
+  grid-template-columns: 60px 240px 1fr;
+}
+
+.tlbx-sidebar-wrapper {
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+.tlbx-content-wrapper {
+  -ms-grid-column: 3;
+  grid-column: 3;
 }
 
 .tlbx-sidebar {
