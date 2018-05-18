@@ -1,0 +1,25 @@
+@charset 'utf-8';
+
+.gallery,
+.gallery-nav {
+  opacity: 0;
+  transition: opacity 0.3s;
+  // [class*="-item"]:not(:first-child) { display: none; }
+
+  &.ready {
+    opacity: 1;
+    // [class*="-item"]:not(:first-child) { display: block; }
+  }
+
+  .img-fluid { width: 100%; }
+}
+
+.gallery-item {
+  display: block;
+  width: 100%;
+}
+
+.gallery-nav-item {
+  display: block;
+  width: 23.5%;
+}

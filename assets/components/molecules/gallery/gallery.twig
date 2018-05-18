@@ -1,0 +1,17 @@
+<div id="my-gallery-{{ id ?: 1 }}" class="gallery gallery-main">
+  {% for item in gallery %}
+    <figure class="gallery-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <img src="{{item}}/1920x1080" alt="Picture of amazing science subject" class="img-fluid">
+      <figcaption>Picture of amazing science subject</figcaption>
+    </figure>
+  {% endfor %}
+</div>
+
+<div class="gallery-nav" data-gallery="my-gallery-{{ id ?: 1 }}" aria-hidden="true">
+  {% for item in gallery %}
+    <figure class="gallery-nav-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <img src="{{item}}/350x200" alt="Thumbnail of amazing science subject" class="img-fluid">
+      <figcaption>Picture of amazing science subject</figcaption>
+    </figure>
+  {% endfor %}
+</div>
