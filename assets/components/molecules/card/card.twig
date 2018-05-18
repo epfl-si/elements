@@ -1,11 +1,19 @@
-<div class="col-md-4">
-  <div href="#" class="card">
-    <picture class="card-img-top">
-      <img src="./images/event_teaser.png" class="img-fluid" title="professor Xile Hu" alt="a portrait of professor Xile Hu" />
-    </picture>
+{% block card %}
+<div class="card">
+  {% block image -%}
+  <picture class="card-img-top">
+    <img src="./images/event_teaser.png" class="img-fluid" title="professor Xile Hu" alt="a portrait of professor Xile Hu" />
+  </picture>
+  {% endblock %}
 
-    <div class="card-body">
-      <p>a classic card</p>
-    </div>
+  {% block card_body %}
+  <div class="card-body">
+    {% block content %}
+    <p>a classic card</p>
+    {% endblock %}
   </div>
+  {% endblock -%}
+  {%- block card_footer %}
+  {% endblock %}
 </div>
+{% endblock %}
