@@ -5,35 +5,40 @@
     <div class="nav-container">
       <ul class="active">
         <li class="nav-home">
+          <a href="/test">
           {% include '@atoms/icon/icon.twig' with {icon: 'icon-home'} %}
           <span class="text-muted">&rsaquo;</span>
           Éducation
+          </a>
         </li>
         {% for i in 1..6 %}
           <li>
-            <a href="#">À propos</a>
-            <div role="button" class="nav-arrow">
-              <span>›</span>
-            </div>
+            <a href="">À propos</a>
+            <a href="#" role="button" tabindex="0" class="nav-arrow">
+              {% include '@atoms/icon/icon.twig' with {icon: 'icon-chevron-right'} %}
+            </a>
             <ul>
               <li class="nav-back">
-                <a href="#">Retour: À propos</a>
+                <a href="/test">
+                {% include '@atoms/icon/icon.twig' with {icon: 'icon-arrow-left'} %}
+                Retour: À propos</a>
               </li>
               {% for i in 1..3 %}
                 <li>
-                <a href="#">Stratégie de l’enseignement</a>
-                <div role="button" class="nav-arrow">
-                  <span>›</span>
-                </div>
+                <a href="/test">Stratégie de l’enseignement</a>
+                <a href="#" role="button"  tabindex="0" class="nav-arrow">
+                  {% include '@atoms/icon/icon.twig' with {icon: 'icon-chevron-right'} %}
+                </a>
                 <ul>
                   <li class="nav-back">
-                    <a href="#">Retour: Stratégie de l’enseignement</a>
+                    <a href="/test">
+                    {% include '@atoms/icon/icon.twig' with {icon: 'icon-arrow-left'} %}Retour: Stratégie de l’enseignement</a>
                   </li>
                   <li>
-                    <a href="#">Stratégie de l’enseignement</a>
+                    <a href="/test">Stratégie de l’enseignement</a>
                   </li>
                   <li class="{{ i == 2 ? 'active' : ''}}">
-                    <a href="#">Innovation dans l'enseignement</a>
+                    <a href="/test">Innovation dans l'enseignement</a>
                   </li>
                 </ul>
               </li>

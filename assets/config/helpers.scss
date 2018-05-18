@@ -36,8 +36,98 @@
   }
 }
 
+//
+// Text helpers
 .text-small {
   font-size: $font-size-xs;
+}
+
+.text-arrow {
+  display: flex;
+  justify-content: space-between;
+
+  &:after {
+    content: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='#{$text-muted}' d='M11.586 7L6.293 1.707 7.707.293 15.414 8l-7.707 7.707-1.414-1.414L11.586 9H0V7h11.586z'/%3E%3C/svg%3E"), "#", "%23");
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+
+  a:hover & {
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+.text-padded {
+  background-color: $white;
+  box-shadow: 0.444rem 0 0 $white, -0.444rem 0 0 $white; // Around 8px
+  box-decoration-break: clone;
+}
+
+/*
+  trapezes
+*/
+
+// horizontal
+
+*:hover > .trapeze-horizontal,
+input:focus + label > .trapeze-horizontal {
+  bottom: -$trapeze-height;
+}
+
+.trapeze-vertical-container {
+  position: relative;
+  transition:
+    margin 0.2s,
+    padding 0.2s;
+
+  &:hover {
+    padding-left: $trapeze-height;
+    margin-right: $trapeze-height * -1;
+  }
+}
+
+// vertical
+
+.trapeze-vertical {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  margin-right: $trapeze-height * -1;
+  border-right: $trapeze-height solid $gray-200;
+  border-top: $trapeze-height solid transparent;
+  border-bottom: $trapeze-height solid transparent;
+  transition: 0.2s;
+  z-index: 0;
+}
+
+.trapeze-horizontal-container {
+  position: relative;
+  transition:
+    margin 0.2s,
+    padding 0.2s;
+
+  &:hover {
+    margin-top: -$trapeze-height !important;
+    padding-bottom: $trapeze-height;
+  }
+}
+
+.trapeze-horizontal {
+  display: block;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: $trapeze-height * -1;
+  border-top: $trapeze-height solid $gray-200;
+  border-left: $trapeze-height solid transparent;
+  border-right: $trapeze-height solid transparent;
+  height: 0;
+  transition: 0.2s;
+  z-index: 0;
 }
 
 /*
@@ -80,4 +170,16 @@
 // Gray background helpers.
 @each $key, $value in $grays {
   @include bg-variant(".bg-gray-#{$key}", $value);
+}
+
+// Separator
+hr {
+  width: 100%;
+}
+
+// generate all bg-gray helpers
+@each $key, $value in $grays {
+  .text-gray-#{$key} {
+    color: $value !important;
+  }
 }

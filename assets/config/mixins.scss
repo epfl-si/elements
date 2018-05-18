@@ -147,7 +147,7 @@
     padding $trapeze-animation-duration;
 
   &:hover,
-  &.focus, {
+  &:focus {
     margin-top: -$size !important;
     padding-bottom: $size;
 

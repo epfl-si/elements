@@ -5,16 +5,25 @@
 
   <div class="fullwidth-teaser-text">
 
-    <div class="fullwidth-teaser-text-header">
-      <p class="h3">Des océans plus froids que ce que nous le pensions</p>
-      <a href="#" aria-label="Link to read more of that page" class="btn btn-primary triangle-outer-top-right d-none d-xl-block">Lire l'article</a>
+    <div class="fullwidth-teaser-header">
+      <div class="fullwidth-teaser-title">
+        <p class="h3">Des océans plus froids que ce que nous le pensions</p>
+        <ul class="list-inline mt-2">
+          <li class="list-inline-item">Actualités</li>
+          <li class="list-inline-item">Biologie</li>
+        </ul>
+      </div>
+      <a href="#" aria-label="Link to read more of that page" class="btn btn-primary triangle-outer-top-right d-none d-xl-block">
+        Lire l'article
+        {% include '@atoms/icon/icon.twig' with {icon: 'icon-chevron-right'} %}
+      </a>
     </div>
 
-    <div class="fullwidth-teaser-text-content">
+    <div class="fullwidth-teaser-content">
       <p>Une équipe de chercheurs de l’EPFL et européenne a découvert une erreur dans la façon dont ont été estimées jusqu’ici les températures des océans, faisant potentiellement du réchauffement climatique actuel un évènement sans précédent ces cent derniers millions d’années.</p>
     </div>
 
-    <div class="fullwidth-teaser-text-footer">
+    <div class="fullwidth-teaser-footer">
       <a href="#" aria-label="Link to read more of that page" class="btn btn-primary btn-block d-xl-none">En savoir plus</a>
     </div>
   </div>

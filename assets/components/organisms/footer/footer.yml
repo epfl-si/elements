@@ -4,6 +4,12 @@ wrapper: container
 variants:
   - name: light
     title: Footer light
+  - name: dark
+    title: Footer Dark
+    wrapper: bg-dark container
+  - name: light-dark
+    title: Footer Light Dark
+    wrapper: bg-dark container
 notes: |
 
   <br>
