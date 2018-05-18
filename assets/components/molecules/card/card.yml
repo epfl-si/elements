@@ -1,5 +1,6 @@
 title: Card
 name: card
+wrapper: col-md-6
 variants:
   - name: link
     title: Full Link
