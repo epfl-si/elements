@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { Theme } from './Theme';
 
 import { getComponents } from '../../actions/atomic';
@@ -59,13 +59,15 @@ class App extends Component {
             </div>
             <div className="tlbx-content-wrapper">
               <div className="tlbx-content">
-                {fullHome
-                  ? '' :
-                  <Route path="/" exact component={Doc} />
-                }
-                <Route path="/doc/:slug" component={Doc} />
-                <Route path="/colors" component={Colors} />
-                <Route path="/:type/:slug" component={SingleStyleguide} />
+                <Switch>
+                  {fullHome
+                    ? '' :
+                    <Route path="/" exact component={Doc} />
+                  }
+                  <Route path="/doc/:slug" component={Doc} />
+                  <Route path="/colors" component={Colors} />
+                  <Route path="/:type/:slug" component={SingleStyleguide} />
+                </Switch>
               </div>
             </div>
           </Theme>
