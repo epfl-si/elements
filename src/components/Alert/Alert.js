@@ -25,7 +25,7 @@ class Alert extends Component {
 
   render() {
     const alert = this.props.alert;
-    const isVisible = alert.remote_version !== alert.local_version && !this.state.closed;
+    const isVisible = alert.remote_version && alert.remote_version !== alert.local_version && !this.state.closed;
 
     return (
       <div className={`tlbx-alert${isVisible ? ' open' : ''}`}>
