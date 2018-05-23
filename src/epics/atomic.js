@@ -90,8 +90,10 @@ export function getMarkupEpic(action$) {
             pages: './components/pages/',
           },
           load: (template) => {
-            component.content = template.render(window.data);
-            resolve(component);
+            resolve({
+              ...component,
+              content: template.render(window.data),
+            });
           },
         });
       }).then((result) => {
