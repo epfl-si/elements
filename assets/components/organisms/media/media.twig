@@ -1,11 +1,16 @@
 <figure class="cover">
   {% include '@atoms/picture/picture-cover.twig' %}
   <figcaption>
-    <button class="cover-caption-collapse collapsed" type="button" aria-hidden="true" data-toggle="collapse" data-target="#coverCollapse" aria-expanded="false" aria-controls="coverCollapse">
-      <span class="sr-only"></span>
+    <button
+      aria-hidden="true"
+      type="button"
+      class="btn-circle"
+      data-toggle="popover"
+      data-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aut deserunt dolorem eligendi, nemo nulla quae reprehenderit saepe sapiente similique!"
+    >
+      {% include "@atoms/icon/icon.twig" with { icon: 'icon-info' } %}
+      {% include "@atoms/icon/icon.twig" with { icon: 'icon-chevron-right', 'icon_classes': 'icon-rotate-90' } %}
     </button>
-    <div class="collapse cover-collapse" id="coverCollapse">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aut deserunt dolorem eligendi, nemo nulla quae reprehenderit saepe sapiente similique!</p>
-    </div>
+    <p class="sr-only">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aut deserunt dolorem eligendi, nemo nulla quae reprehenderit saepe sapiente similique!</p>
   </figcaption>
 </figure>
