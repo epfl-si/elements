@@ -21,20 +21,6 @@ import Colors from '../../views/Colors/Colors';
 import './App.css';
 
 class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      components: {
-        atoms: [],
-        molecules: [],
-        organisms: [],
-        pages: [],
-      },
-      docs: {},
-    };
-  }
-
   componentWillMount() {
     // Start init actions
     this.props.setBaseURL(this.props.location.pathname);
@@ -77,11 +63,9 @@ class App extends Component {
                   ? '' :
                   <Route path="/" exact component={Doc} />
                 }
-                <Route path="/atoms/:slug" component={SingleStyleguide} />
-                <Route path="/molecules/:slug" component={SingleStyleguide} />
-                <Route path="/organisms/:slug" component={SingleStyleguide} />
                 <Route path="/doc/:slug" component={Doc} />
                 <Route path="/colors" component={Colors} />
+                <Route path="/:type/:slug" component={SingleStyleguide} />
               </div>
             </div>
           </Theme>
