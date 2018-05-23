@@ -14,6 +14,7 @@ const atomicReducer = p((state = defaultState, action) => {
     // Add the base components collection
     case SET_COMPONENTS:
       state.sources = action.payload;
+      state.types = Object.keys(action.payload);
       break;
 
     // Update a specific component

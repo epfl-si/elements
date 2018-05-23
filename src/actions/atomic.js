@@ -19,10 +19,10 @@ export function setComponents(components) {
 }
 
 // If too many in parallel, use some kind of `pending_markup` status
-export function getComponentMarkup(component, basePath) {
+export function getComponentMarkup(component, basePath, types) {
   return {
     type: GET_MARKUP,
-    payload: { component, basePath },
+    payload: { component, basePath, types },
   };
 }
 
@@ -33,10 +33,10 @@ export function setComponentMarkup(component) {
   };
 }
 
-export function getVariantMarkup(variant, basePath) {
+export function getVariantMarkup(variant, basePath, types) {
   return {
     type: GET_MARKUP,
-    payload: { variant, basePath },
+    payload: { variant, basePath, types },
   };
 }
 

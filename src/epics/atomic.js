@@ -83,12 +83,10 @@ export function getMarkupEpic(action$) {
       return new Promise((resolve) => {
         Twig.twig({
           href: fixPath(component.markup),
-          namespaces: {
-            atoms: './components/atoms/',
-            molecules: './components/molecules/',
-            organisms: './components/organisms/',
-            pages: './components/pages/',
-          },
+          namespaces: payload.types.reduce((acc, value) => {
+            acc[value] = `./components/${value}/`;
+            return acc;
+          }, {}),
           load: (template) => {
             resolve({
               ...component,
