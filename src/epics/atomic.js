@@ -27,9 +27,9 @@ export function getComponentsEpic(action$) {
           // Loop over each components
           // eslint-disable-next-line no-param-reassign
           payload[type] = payload[type].map((component, id) => {
-            const path = `components/${type}/${component}/`;
-            const config = yaml.load(`${path}${component}.yml`);
-            const markup = `${path}${component}.twig`;
+            const path = `components/${type}/${component.name}/`;
+            const config = yaml.load(`${path}${component.name}.yml`);
+            const markup = `${path}${component.name}.twig`;
 
             // format related variants collection
             const variants = config && config.variants ? config.variants.map((item, i) => {
@@ -45,7 +45,7 @@ export function getComponentsEpic(action$) {
                 type,
                 parent_id: id,
                 parent: config.name,
-                markup: `${path}${(`${component}-${variant.name}`).toLowerCase()}.twig`,
+                markup: `${path}${(`${component.name}-${variant.name}`).toLowerCase()}.twig`,
               };
             }) : [];
 
