@@ -199,7 +199,7 @@ a.nav-arrow {
 
 //
 // Close button for toggle menu
-// 
+//
 .nav-close {
   z-index: 999;
   position: absolute;
@@ -310,7 +310,7 @@ a.nav-arrow {
 
 //
 // Mobile
-// 
+//
 @include media-breakpoint-down (lg) {
   .main-container {
     position: relative;
