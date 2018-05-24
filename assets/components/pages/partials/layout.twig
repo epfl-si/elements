@@ -1,9 +1,13 @@
-{% block header %}{% include '@organisms/header/header.twig' %}{% endblock %}
+{% set classes = 'nav-toggle' %}
+
+{% block header %}
+  {% include '@organisms/header/header-toggle.twig' %}
+{% endblock %}
 
 <div class="main-container {{ classes }}">
 
   {% block nav %}
-    {# Slidable nav will come here #}
+    {% include '@molecules/nav/nav.twig' %}
   {% endblock %}
 
   <main role="main" class="content">
