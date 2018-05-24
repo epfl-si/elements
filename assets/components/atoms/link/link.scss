@@ -12,7 +12,7 @@ a {
   }
 
   &:active {
-    color: $epflred;
+    color: $red;
   }
 
   &.text-muted:hover {
@@ -30,7 +30,7 @@ a {
 
 // The link pretty allows you to have more cross-browser friendly link styles and the fancy focus box.
 .link-pretty {
-  @include link-pretty($epflred, $body-bg);
+  @include link-pretty($red, $body-bg);
 
   @extend .focused;
 }

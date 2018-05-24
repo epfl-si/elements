@@ -20,19 +20,19 @@
 
   &:hover,
   &.hover {
-    background: $dark-red;
-    border-color: $dark-red;
+    background: $red-dark;
+    border-color: $red-dark;
   }
 
   &:focus:before,
-  &.focus:before { border-color: $dark-red; }
+  &.focus:before { border-color: $red-dark; }
 
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled).active {
     // ugly ↓
-    // background: linear-gradient(to bottom, $dark-red 0%, $red 100%);
-    background: darken($dark-red, 10%);
-    border-color: darken($dark-red, 10%);
+    // background: linear-gradient(to bottom, $red-dark 0%, $red 100%);
+    background: darken($red-dark, 10%);
+    border-color: darken($red-dark, 10%);
   }
 
   &:disabled,
@@ -42,8 +42,8 @@
     color: $gray-300;
 
     .bg-dark & {
-      background: $gray-800;
-      border-color: $gray-700;
+      background: $black;
+      border-color: $gray-600;
       color: $gray-600;
     }
   }
@@ -85,7 +85,7 @@
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled).active {
     background: linear-gradient(to bottom, $gray-100 0%, $white 100%);
-    border-color: $gray-400;
+    border-color: $gray-300;
 
     .bg-dark & {
       background: $gray-600;
@@ -96,7 +96,7 @@
   &:disabled,
   &.disabled {
     background: transparent;
-    border-color: $gray-700;
+    border-color: $gray-600;
     color: $gray-600 !important;
   }
 }
