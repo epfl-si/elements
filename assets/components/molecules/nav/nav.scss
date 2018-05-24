@@ -6,7 +6,8 @@ $nav-spacer: 4px;
 // Inner nav styles
 //
 .nav-main {
-  background: white;
+  position: relative;
+  background: color('white');
   z-index: 100;
   transition: left 0.3s;
   border-right: 1px solid gray('100');
@@ -243,6 +244,10 @@ a.nav-arrow {
   }
 }
 
+.nav-close {
+  display: none;
+}
+
 //
 // Desktop
 //
@@ -253,8 +258,8 @@ a.nav-arrow {
     flex-flow: row nowrap;
 
     .nav-main {
-      flex: 0 0 (25 * $spacer);
-      max-width: 25 * $spacer;
+      flex: 0 0 $main-nav-width;
+      max-width: $main-nav-width;
     }
 
     .content {
@@ -264,16 +269,35 @@ a.nav-arrow {
 
   // Toggle nav
   .nav-toggle {
+    &.desktop-menu-open {
+      overflow: hidden;
+
+      .overlay {
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: calc(100% - #{ $header-height });
+        opacity: 0.8;
+      }
+
+      .nav-main {
+        left: 0;
+      }
+    }
+
+    .nav-main {
+      position: fixed;
+      left: -1.3 * $main-nav-width;
+      width: $main-nav-width;
+      height: 100%;
+    }
+
     .content {
       position: relative;
+    }
 
-      &.open {
-        overflow: hidden;
-
-        .overlay {
-          display: block;
-        }
-      }
+    .nav-close {
+      display: block;
     }
   }
 
@@ -341,12 +365,12 @@ a.nav-arrow {
 //
 .overlay {
   content: ' ';
-  display: none;
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  top: $header-height;
   left: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
   cursor: pointer;
   z-index: 50;
   opacity: 0;

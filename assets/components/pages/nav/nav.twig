@@ -1,11 +1,12 @@
+{% set navType = navType is defined ? navType : 'nav-solid' %}
+{% set headerType = headerType is defined ? headerType : 'header' %}
+{% set headerLink = '@organisms/header/' ~ headerType ~ '.twig' %}
 
-{% include '@organisms/header/header.twig' %}
+{% include headerLink %}
 
-<div class="main-container nav-solid">
-
+<div class="main-container {{ navType }}">
 
   {% include '@molecules/nav/nav.twig' %}
-
 
   <main  role="main" class="content pt-5">
     <div class="container">
