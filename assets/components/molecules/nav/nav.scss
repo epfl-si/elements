@@ -206,7 +206,7 @@
 
 //
 // Close button for toggle menu
-// 
+//
 .nav-close {
   z-index: 999;
   position: absolute;
@@ -300,7 +300,7 @@
 
 //
 // Mobile
-// 
+//
 @include media-breakpoint-down (lg) {
   .main-container {
     position: relative;

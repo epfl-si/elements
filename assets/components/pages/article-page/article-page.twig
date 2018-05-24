@@ -37,60 +37,72 @@
 
         </div>
         <div class="col-md-4 offset-md-2">
-          <h2 class="h6">Liens</h2>
-          <ul class="list-bullet">
-            <li><a class="link-pretty" href="#">2012 Results</a></li>
-            <li><a class="link-pretty" href="#">Press kit</a></li>
-            <li><a class="link-pretty" href="#">Youtube</a></li>
-          </ul>
-
-          <h2 class="h6">En relation</h2>
-          <ul class="list-bullet">
-            <li><a class="link-pretty" href="#">Toutes les actualités Mediacom</a></li>
-            <li><a class="link-pretty" href="#">Toutes les actualités EPFL</a></li>
-          </ul>
-
-          <h2 class="h6">IMAGES À TÉLÉCHARGER</h2>
-          {% for i in 0..1 %}
-            <div class="row mb-3">
-              <div class="col-4">
-                <a href="#">{% include '@atoms/picture/picture-news-thumb.twig' %}</a>
-              </div>
-              <div class="col-8">
-                5760 x 3840 px
-                © 2018 EPFL / Alban Kakulya
-              </div>
-            </div>
-          {% endfor %}
-
-          <h2 class="h6">Abonnez-vous aux publications de Mediacom</h2>
-          <div class="form-group">
-            <input type="email" placeholder="Votre email" class="form-control">
+          <div class="mb-5">
+            <h2 class="h6">Liens</h2>
+            <ul class="list-bullet">
+              <li><a class="link-pretty" href="#">2012 Results</a></li>
+              <li><a class="link-pretty" href="#">Press kit</a></li>
+              <li><a class="link-pretty" href="#">Youtube</a></li>
+            </ul>
           </div>
 
-          <h2 class="h6">Mots-clés</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, natus.</p>
+          <div class="mb-5">
+            <h2 class="h6">En relation</h2>
+            <ul class="list-bullet mb-5">
+              <li><a class="link-pretty" href="#">Toutes les actualités Mediacom</a></li>
+              <li><a class="link-pretty" href="#">Toutes les actualités EPFL</a></li>
+            </ul>
+          </div>
 
-          <p class="text-muted">Partager sur</p>
-          <div>
-            <a href="#" class="social-icon social-icon-discrete social-icon-facebook">
-              <svg class="icon"><use xlink:href="#icon-facebook"></use></svg>
-            </a>
-            <a href="#" class="social-icon social-icon-discrete social-icon-twitter">
-              <svg class="icon"><use xlink:href="#icon-twitter"></use></svg>
-            </a>
-            <a href="#" class="social-icon social-icon-discrete social-icon-instagram">
-              <svg class="icon"><use xlink:href="#icon-instagram"></use></svg>
-            </a>
-            <a href="#" class="social-icon social-icon-discrete social-icon-mail-plane">
-              <svg class="icon"><use xlink:href="#icon-mail-plane"></use></svg>
-            </a>
-            <a href="#" class="social-icon social-icon-discrete social-icon-whatsapp">
-              <svg class="icon"><use xlink:href="#icon-whatsapp"></use></svg>
-            </a>
-            <a href="#" class="social-icon social-icon-discrete social-icon-googleplus">
-              <svg class="icon"><use xlink:href="#icon-googleplus"></use></svg>
-            </a>
+          <div class="mb-5">
+            <h2 class="h6">IMAGES À TÉLÉCHARGER</h2>
+            {% for i in 0..1 %}
+              <div class="row mb-3">
+                <div class="col-4">
+                  <a href="#">{% include '@atoms/picture/picture-news-thumb.twig' %}</a>
+                </div>
+                <div class="col-8">
+                  5760 x 3840 px
+                  © 2018 EPFL / Alban Kakulya
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="mb-5">
+            <h2 class="h6">Abonnez-vous aux publications de Mediacom</h2>
+            <div class="form-group">
+              <input type="email" placeholder="Votre email" class="form-control">
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <h2 class="h6">Mots-clés</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, natus.</p>
+          </div>
+
+          <div class="mb-5">
+            <p class="text-muted">Partager sur</p>
+            <div>
+              <a href="#" class="social-icon social-icon-discrete social-icon-facebook">
+                <svg class="icon"><use xlink:href="#icon-facebook"></use></svg>
+              </a>
+              <a href="#" class="social-icon social-icon-discrete social-icon-twitter">
+                <svg class="icon"><use xlink:href="#icon-twitter"></use></svg>
+              </a>
+              <a href="#" class="social-icon social-icon-discrete social-icon-instagram">
+                <svg class="icon"><use xlink:href="#icon-instagram"></use></svg>
+              </a>
+              <a href="#" class="social-icon social-icon-discrete social-icon-mail-plane">
+                <svg class="icon"><use xlink:href="#icon-mail-plane"></use></svg>
+              </a>
+              <a href="#" class="social-icon social-icon-discrete social-icon-whatsapp">
+                <svg class="icon"><use xlink:href="#icon-whatsapp"></use></svg>
+              </a>
+              <a href="#" class="social-icon social-icon-discrete social-icon-googleplus">
+                <svg class="icon"><use xlink:href="#icon-googleplus"></use></svg>
+              </a>
+            </div>
           </div>
 
         </div>
