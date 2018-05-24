@@ -3,6 +3,7 @@
 import upload from './atoms/upload/upload';
 import datebpicker from './molecules/datepicker/datepicker';
 import datepickerEvent from './molecules/datepicker-event/datepicker-event';
+import gallery from './molecules/gallery/gallery';
 import socialShare from './organisms/social/social-share';
 import svgIcons from '../icons/svg-icons';
 
@@ -12,6 +13,7 @@ const init = () => {
   upload();
   datebpicker();
   datepickerEvent();
+  gallery();
   socialShare();
   Tablesaw.init();
 
