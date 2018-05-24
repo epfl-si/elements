@@ -1,27 +1,25 @@
 @charset 'utf-8';
 
-.header {
-  .menu-toggle-mobile {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: baseline;
-    margin-left: 1rem;
-    padding: 0.7rem 1.2rem;
-    font-size: 1.25 * $font-size-base;
-    font-weight: bold !important;
+.menu-toggle-mobile {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+  margin-left: 1rem;
+  padding: 0.7rem 1.2rem;
+  font-size: 1.25 * $font-size-base;
+  font-weight: bold !important;
 
-    .hamburger {
-      margin-left: 0.4rem;
+  .hamburger {
+    margin-left: 0.4rem;
 
-      span {
-        display: block;
-        width: 0.85rem;
-        height: 2px;
-        background: $body-color;
+    span {
+      display: block;
+      width: 0.85rem;
+      height: 2px;
+      background: $body-color;
 
-        & + span {
-          margin-top: 3px;
-        }
+      & + span {
+        margin-top: 3px;
       }
     }
   }

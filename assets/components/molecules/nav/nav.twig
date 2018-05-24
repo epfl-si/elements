@@ -1,9 +1,9 @@
 <div class="overlay"></div>
-<nav class="nav">
+<nav class="nav-main">
   <!-- <span class="nav-close" role="button" aria-description="Close secondary menu"></span> -->
   <div class="nav-wrapper">
     <div class="nav-container">
-      <ul>
+      <ul class="nav-menu">
         <li class="nav-home">
           <a href="/test">
           {% include '@atoms/icon/icon.twig' with {icon: 'icon-home'} %}
@@ -20,10 +20,18 @@
               </div>
             </a>
             <ul>
-              <li class="nav-back">
+              <li class="nav-back d-lg-none">
                 <a href="/test">
-                {% include '@atoms/icon/icon.twig' with {icon: 'icon-arrow-left'} %}
-                Retour: À propos</a>
+                  {% include '@atoms/icon/icon.twig' with {icon: 'icon-arrow-left'} %}
+                  Retour: À propos
+                </a>
+              </li>
+              <li class="nav-home d-none d-lg-block">
+                <a href="/test">
+                  {% include '@atoms/icon/icon.twig' with {icon: 'icon-home'} %}
+                  <span class="text-muted">&rsaquo;</span>
+                  À propos
+                </a>
               </li>
               {% for y in 1..3 %}
                 <li class="{{ y == 2 and i == 2 ? 'current_page_parent' : ''}}">
