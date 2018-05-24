@@ -31,6 +31,21 @@ $popover-border-bottom-color: $black;
   }
 }
 
+.bs-popover-bottom {
+  &:after,
+  &:before {
+    top: auto;
+    bottom: 100%;
+    border-width: $popover-arrow-height $popover-arrow-width 0 0;
+    border-color: transparent $popover-arrow-color transparent transparent;
+  }
+
+  &:before {
+    border-width: ($popover-arrow-height + $popover-border-width) ($popover-arrow-width + $popover-border-width) 0 0;
+    border-right-color: $popover-arrow-outer-color;
+  }
+}
+
 .btn-circle[data-toggle="popover"] {
   .icon:last-child {
     display: none;
