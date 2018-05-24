@@ -13,7 +13,10 @@ body {
 
 .styleguide {
   display: flex;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-template-columns: 60px 240px 1fr;
+  grid-template-columns: 60px 240px 1fr;
   grid-template-columns: $toolbar-width 240px 1fr;
   min-height: 100vh;
   max-width: 100%;
@@ -48,6 +51,7 @@ body {
 
 .tlbx-sidebar-wrapper {
   flex: 0 0 240px;
+  -ms-grid-column: 2;
   grid-column: 2;
   background-color: $gray-lighter;
 
@@ -69,6 +73,7 @@ body {
 
 .tlbx-content-wrapper {
   flex: 1 1 auto;
+  -ms-grid-column: 3;
   grid-column: 3;
   align-self: start;
   overflow: hidden;
