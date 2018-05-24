@@ -1,6 +1,8 @@
 @charset 'utf-8';
 
 .news-listing {
+  margin-bottom: ($spacer * 2);
+
   .news {
     display: block;
     text-decoration: none;
