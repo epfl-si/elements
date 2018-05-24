@@ -27,7 +27,7 @@ $nav-spacer: 4px;
     left: 100%;
     width: 100%;
     margin: 0;
-    padding: 0 2 * $spacer 0 3 * $spacer;
+    padding: (0 2 * $spacer) (0 3 * $spacer);
     transition: left 0.2s;
   }
 
@@ -117,11 +117,11 @@ li.nav-home {
 }
 
 a.nav-arrow {
-  flex: 0 0 3 * $spacer;
+  flex: 0 0 (3 * $spacer);
   position: relative;
   margin-top: $nav-spacer;
   margin-bottom: $nav-spacer;
-  padding: 0 $nav-spacer 0 $nav-spacer+1 !important;
+  padding: (0 $nav-spacer) (0 $nav-spacer+1) !important;
   font-size: 1.3 * $font-size-base !important;
   line-height: 1  * $font-size-base !important;
   font-weight: normal !important;
@@ -253,7 +253,7 @@ a.nav-arrow {
     flex-flow: row nowrap;
 
     .nav-main {
-      flex: 0 0 25 * $spacer;
+      flex: 0 0 (25 * $spacer);
       max-width: 25 * $spacer;
     }
 
@@ -304,8 +304,8 @@ a.nav-arrow {
     transition: transform 0.2s;
   }
 
-  .nav-menu {
-    padding: 0 1.2 * $spacer;
+  ul.nav-menu {
+    padding-top: 2 * $spacer;
 
     a {
       font-size: 1.2 * $font-size-base;
@@ -315,7 +315,7 @@ a.nav-arrow {
   }
 
   .nav-arrow {
-    flex: 0 0 4 * $spacer;
+    flex: 0 0 (4 * $spacer);
   }
 
   .nav-home {

@@ -4,13 +4,6 @@
   <div class="nav-wrapper">
     <div class="nav-container">
       <ul class="nav-menu">
-        <li class="nav-home">
-          <a href="/test">
-          {% include '@atoms/icon/icon.twig' with {icon: 'icon-home'} %}
-          <span class="text-muted">&rsaquo;</span>
-          Éducation
-          </a>
-        </li>
         {% for i in 1..6 %}
           <li class="{{ i == 2 ? 'current_page_ancestor' : ''}}">
             <a href="">À propos</a>
@@ -20,13 +13,13 @@
               </div>
             </a>
             <ul>
-              <li class="nav-back d-lg-none">
+              <li class="nav-back d-xl-none">
                 <a href="/test">
                   {% include '@atoms/icon/icon.twig' with {icon: 'icon-arrow-left'} %}
                   Retour: À propos
                 </a>
               </li>
-              <li class="nav-home d-none d-lg-block">
+              <li class="nav-home d-none d-xl-block">
                 <a href="/test">
                   {% include '@atoms/icon/icon.twig' with {icon: 'icon-home'} %}
                   <span class="text-muted">&rsaquo;</span>

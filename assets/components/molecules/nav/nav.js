@@ -7,6 +7,7 @@ const nav = () => {
 
   const toggleMobileMenu = () => {
     $('.main-container').toggleClass('mobile-menu-open');
+    $('.menu-toggle-mobile').toggleClass('menu-toggle-mobile-opened');
   };
 
   $('.nav-main .nav-back a').on('click', function (e) {

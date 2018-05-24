@@ -26,7 +26,7 @@
   .nav-header {
     display: flex;
     flex-flow: row nowrap;
-    margin: 0 0 0 3.7 * $spacer;
+    margin: 0 0 0 (3.7 * $spacer);
     padding: 0;
 
     li {
@@ -90,7 +90,7 @@
     height: $header-height;
     max-height: $header-height;
     overflow: hidden;
-    padding: 0 0.9 * $spacer;
+    padding: 0 (0.9 * $spacer);
 
     .logo {
       margin-left: 0;
