@@ -46,11 +46,11 @@
 // Distinction is when you have a little red fancy flag in the card body.
 .card-distinction .card-body {
   position: relative;
-  border-top: 1px solid $epflred !important; // Must override even on hover
+  border-top: 1px solid $red !important; // Must override even on hover
   padding-top: ($card-spacer-y * 2);
 
   &:before {
-    content: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$epflred}' viewBox='0 0 20 30'%3E%3Cpath d='M0 0h20v30L10 19 0 30z'/%3E%3C/svg%3E"), "#", "%23");
+    content: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$red}' viewBox='0 0 20 30'%3E%3Cpath d='M0 0h20v30L10 19 0 30z'/%3E%3C/svg%3E"), "#", "%23");
     display: inline-block;
     position: absolute;
     top: 0;
@@ -78,11 +78,11 @@
 
   a {
     display: inline-block;
-    color: $epflred;
+    color: $red;
     text-decoration: none;
 
     @include hover {
-      @include link-pretty($epflred, $body-bg, $body-color);
+      @include link-pretty($red, $body-bg, $body-color);
     }
   }
 }
@@ -123,12 +123,12 @@ a.card-title,
 .card-title a {
   transition: color 0.3s;
 
-  @include link-pretty($epflred, $body-bg, $body-color);
+  @include link-pretty($red, $body-bg, $body-color);
 
   background-position: 0 90%;
 
   .card.bg-gray-100 & {
-    @include link-pretty($epflred, gray('100'), $body-color);
+    @include link-pretty($red, gray('100'), $body-color);
   }
 }
 

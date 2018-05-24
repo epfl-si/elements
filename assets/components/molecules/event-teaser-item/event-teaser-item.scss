@@ -9,7 +9,7 @@
 
   &:hover {
     background-color: white;
-    box-shadow: 0 2px 0 0 $epflred, 0 2px 28px 8px rgba(0, 0, 0, 0.32);
+    box-shadow: 0 2px 0 0 $red, 0 2px 28px 8px rgba(0, 0, 0, 0.32);
   }
 
   .card-body {
@@ -32,7 +32,7 @@
     .badge-dark {
       position: relative;
       top: -0.25rem;
-      background-color: $softBlack;
+      background-color: $black;
       font-size: 15px;
       line-height: 15px;
     }
@@ -89,6 +89,6 @@
 .event-teaser-item-passed {
   p,
   .card-title {
-    color: $softBlack;
+    color: $black;
   }
 }

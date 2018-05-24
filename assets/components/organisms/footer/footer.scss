@@ -17,7 +17,7 @@
 }
 
 .footer-faculties {
-  border-bottom: 1px solid $gray-400;
+  border-bottom: 1px solid $gray-300;
 
   @include media-breakpoint-up(md) {
     flex: 0 0 100%;
@@ -164,7 +164,7 @@
     a,
     p {
       font-size: $font-size-sm;
-      color: $gray-400;
+      color: $gray-600;
     }
   }
 
@@ -187,6 +187,6 @@
 
   .footer-title {
     color: $white;
-    border-color: $gray-700;
+    border-color: $gray-600;
   }
 }
