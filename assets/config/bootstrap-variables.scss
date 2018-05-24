@@ -34,14 +34,14 @@ $grays: map-merge((
   "900": $gray-900
 ), $grays);
 
-$blue:    #007bff !default;
+$blue:    #4A90E2!default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
 $pink:    #e83e8c !default;
 $red:     $epflred !default;
 $orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
+$yellow:  #F5A623 !default;
+$green:   #7ED321 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 $softBlack: #404040 !default;
@@ -66,7 +66,7 @@ $colors: map-merge((
 $primary:       $red !default;
 $secondary:     $white !default;
 $success:       $green !default;
-$info:          $cyan !default;
+$info:          $blue !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
@@ -235,6 +235,7 @@ $font-family-base:            $font-family-sans-serif !default;
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
 $font-size-lg:                ($font-size-base * 1.25) !default;
 $font-size-sm:                ($font-size-base * .83) !default;
+$font-size-xs:                0.778rem;
 
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
@@ -574,13 +575,13 @@ $nav-link-padding-y:                .5rem !default;
 $nav-link-padding-x:                1rem !default;
 $nav-link-disabled-color:           $gray-600 !default;
 
-$nav-tabs-border-color:             $gray-300 !default;
+$nav-tabs-border-color:             $gray-200 !default;
 $nav-tabs-border-width:             $border-width !default;
 $nav-tabs-border-radius:            $border-radius !default;
-$nav-tabs-link-hover-border-color:  $gray-200 $gray-200 $nav-tabs-border-color !default;
+$nav-tabs-link-hover-border-color:  $nav-tabs-border-color !default;
 $nav-tabs-link-active-color:        $gray-700 !default;
 $nav-tabs-link-active-bg:           $body-bg !default;
-$nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg !default;
+$nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-color $nav-tabs-link-active-bg !default;
 
 $nav-pills-border-radius:           $border-radius !default;
 $nav-pills-link-active-color:       $component-active-color !default;
@@ -662,10 +663,10 @@ $card-border-width:                 $border-width !default;
 $card-border-radius:                $border-radius !default;
 $card-border-color:                 rgba($black, .125) !default;
 $card-inner-border-radius:          calc(#{$card-border-radius} - #{$card-border-width}) !default;
-$card-cap-bg:                       rgba($black, .03) !default;
+$card-cap-bg:                       transparent !default;
 $card-bg:                           $white !default;
 
-$card-img-overlay-padding:          1.25rem !default;
+$card-img-overlay-padding:          $card-spacer-x !default;
 
 $card-group-margin:                 ($grid-gutter-width / 2) !default;
 $card-deck-margin:                  $card-group-margin !default;
@@ -767,10 +768,10 @@ $modal-transition:                  transform .3s ease-out !default;
 //
 // Define alert colors, border radius, and padding.
 
-$alert-padding-y:                   .75rem !default;
-$alert-padding-x:                   1.25rem !default;
+$alert-padding-y:                   0.4rem !default;
+$alert-padding-x:                   0.6rem !default;
 $alert-margin-bottom:               1rem !default;
-$alert-border-radius:               $border-radius !default;
+$alert-border-radius:               0 !default;
 $alert-link-font-weight:            $font-weight-bold !default;
 $alert-border-width:                $border-width !default;
 
@@ -870,9 +871,9 @@ $carousel-transition:               transform .6s ease !default;
 
 // Close
 
-$close-font-size:                   $font-size-base * 1.5 !default;
-$close-font-weight:                 $font-weight-bold !default;
-$close-color:                       $black !default;
+$close-font-size:                   $font-size-base * 2 !default;
+$close-font-weight:                 $font-weight-light !default;
+$close-color:                       $gray-600 !default;
 $close-text-shadow:                 0 1px 0 $white !default;
 
 // Code

@@ -2,7 +2,7 @@
   <h3 class="h4 mb-4">19.01.2018</h3>
   {% for i in [1,2,3] %}
     <button
-      class="collapse-title collapse-title-desktop"
+      class="collapse-title collapse-title-desktop {{ i != 1 ? 'collapsed' : ''}}"
       type="button"
       data-toggle="collapse"
       data-target="#collapse-{{i}}"

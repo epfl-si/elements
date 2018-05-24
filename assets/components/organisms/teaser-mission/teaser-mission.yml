@@ -1,5 +1,6 @@
-title: Teaser mission 🚧
+title: Teaser mission
 name: teaser-mission
+wrapper: col-md-6
 variants:
   - name: faculty
     title: Faculty
@@ -19,11 +20,10 @@ variants:
     title: Association
   - name: program
     title: Program
-  - name: teaser-bachelor-project
-    title: Teaser bachelor project
+  - name: bachelor-project
+    title: Bachelor project
+    wrapper: "col-md-6 bg-gray-100"
 notes: |
-  <div class="progress"><div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 1%"></div></div><br />
-
-  <br />
+  Here is a comprehensive list of all the teasers components.
 
   ### Section

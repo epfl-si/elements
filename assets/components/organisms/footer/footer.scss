@@ -47,7 +47,7 @@
         content: ' ';
         display: block;
         position: absolute;
-        top: 0.55rem;
+        top: 0.5rem;
         left: -0.95rem;
         width: 0.5rem;
         height: 0.23rem;
@@ -67,19 +67,11 @@
 
 .footer-legal {
   display: flex;
-  border-top: 1px solid $gray-200;
+  border-top: 1px solid $gray-100;
   padding-top: 2rem;
   flex-flow: column wrap;
   text-align: center;
   flex-basis: 100%;
-
-  @extend .text-muted;
-
-  a:not(:hover) {
-    border: none;
-
-    @extend .text-muted;
-  }
 
   a + a {
     margin-left: 1rem;
@@ -88,15 +80,14 @@
 
 .footer-links {
   margin: 0;
+  padding-left: 0;
 
   a {
     display: inline-block;
-    font-size: 0.85rem;
+    font-size: $font-size-sm;
     line-height: 1.2rem;
     color: $gray-600;
     text-decoration: none;
-
-    @extend .text-small;
 
     &:hover {
       color: $link-hover-color;
@@ -104,8 +95,8 @@
   }
 
   li {
-    display: inline-block;
     margin: 0.5rem 0;
+    list-style-type: none;
 
     &:before {
       content: none;
@@ -128,14 +119,11 @@
     justify-content: space-between;
   }
 
-  .btn {
+  .footer .btn {
     margin: 0 0.4em 0.6rem 0;
   }
 
-  .footer-links li {
-    display: block;
-    &:last-child { margin-bottom: 1rem; }
-  }
+  .footer-links li:last-child { margin-bottom: 1rem; }
 }
 
 @include media-breakpoint-up(md) {
@@ -143,7 +131,7 @@
     padding-top: 0.9rem;
     padding-bottom: 0.9rem;
     margin-bottom: 0.4rem;
-    font-size: 0.85rem;
+    font-size: $font-size-sm;
     color: $gray-600;
     border-bottom: 1px solid $gray-100;
   }
@@ -173,14 +161,32 @@
       flex: 0 0 auto;
     }
 
-    &,
+    a,
     p {
-      font-size: 0.85rem;
-      opacity: 0.6;
+      font-size: $font-size-sm;
+      color: $gray-400;
     }
   }
 
   .footer-sitemap {
     flex-flow: row nowrap;
+  }
+}
+
+// ----------------
+// Dark footer
+// ----------------
+.bg-dark {
+  .footer a {
+    color: $white;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+  .footer-title {
+    color: $white;
+    border-color: $gray-700;
   }
 }

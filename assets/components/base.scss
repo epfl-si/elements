@@ -9,6 +9,7 @@
 @import '../config/typography';
 @import '../config/layout';
 @import '../config/helpers';
+@import '../config/trapeze-helper';
 
 // Don't edit the following sections, they should always be preceded by a blank
 // line and have exactly those names for the `$ yo toolbox:generate` command
@@ -29,6 +30,7 @@
 @import 'atoms/icon/icon';
 @import 'atoms/collapse/collapse';
 @import 'atoms/list/list';
+@import 'atoms/alert/alert';
 
 //
 // molecules:
@@ -41,6 +43,7 @@
 @import 'molecules/datepicker-event/datepicker-event';
 @import 'molecules/form-group/form-group';
 @import 'molecules/card/card';
+@import 'molecules/avatar-teaser/avatar-teaser';
 
 //
 // organisms:

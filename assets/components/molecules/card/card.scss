@@ -1,54 +1,104 @@
 @charset 'utf-8';
 
-a.card {
-  border: none;
-  text-decoration: none;
-
-  .card-body {
-    background: $white;
-    border: 1px solid $gray-200;
-    z-index: 1;
-    transition: border 0.3s;
-  }
-
-  .card-title {
-    transition: 0.4s ease;
-  }
-
-  &:hover {
-    color: $black;
-
-    .card-body {
-      border-color: $black;
-    }
-
-    .card-title {
-      color: $epflred;
-    }
-  }
+//
+// Normal card
+.card {
+  flex: 1 1 0%;
+  max-width: 100%;
+  margin-bottom: $grid-gutter-width;
 }
 
-.card {
-  margin-bottom: $grid-gutter-width;
-
-  .card-img-top + .card-body {
-    border-top: none !important;
+.card-body {
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $spacer;
+    padding-top: 0;
+    padding-right: 0;
+    padding-left: 0;
+    font-size: $font-size-sm;
+    color: $text-muted;
   }
 
-  .card-footer {
-    border: 0;
-    background: none;
-  }
-
-  .card-body + .card-footer {
+  + .card-footer {
     padding-top: 0;
   }
 
-  .card-body p:last-of-type {
+  p:last-of-type {
     margin-bottom: 0;
+  }
+
+  .card-img-top + & {
+    border-top: none !important;
   }
 }
 
+.card-header {
+  border-color: $hr-border-color;
+}
+
+.card-footer {
+  padding-bottom: $card-spacer-x;
+  border: 0;
+}
+
+//
+// Distinction is when you have a little red fancy flag in the card body.
+.card-distinction .card-body {
+  position: relative;
+  border-top: 1px solid $epflred !important; // Must override even on hover
+  padding-top: ($card-spacer-y * 2);
+
+  &:before {
+    content: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$epflred}' viewBox='0 0 20 30'%3E%3Cpath d='M0 0h20v30L10 19 0 30z'/%3E%3C/svg%3E"), "#", "%23");
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: $card-spacer-x;
+    width: 20px;
+    height: 30px;
+  }
+}
+
+//
+// Card info
+.card-info {
+  font-size: $font-size-sm;
+  margin-bottom: $paragraph-margin-bottom;
+  color: $text-muted;
+
+  // Add the separator between the elements
+  > :not(:last-child) {
+    &:after {
+      content: ' \203A ';
+      margin: 0 0.25em 0 0.15em;
+    }
+  }
+  .card-info-date:not(:last-child):after { content: ' \2013 '; }
+
+  a {
+    display: inline-block;
+    color: $epflred;
+    text-decoration: none;
+
+    @include hover {
+      @include link-pretty($epflred, $body-bg, $body-color);
+    }
+  }
+}
+
+.card-info-bordered {
+  padding: ($spacer * 0.75) 0;
+  border-top: 1px solid $hr-border-color;
+  border-bottom: 1px solid $hr-border-color;
+}
+
+.card-info-border-sm {
+  padding: ($spacer * 0.25) 0;
+}
+
+//
+// Card items as links
 a.card-img-top {
   position: relative;
 
@@ -59,7 +109,7 @@ a.card-img-top {
     left: 0;
     width: 100%;
     height: 100%;
-    box-shadow: inset 0 0 0 6px $epflred;
+    box-shadow: inset 0 0 0 6px $link-hover-color;
     opacity: 0;
     transition: opacity 0.2s;
   }
@@ -69,12 +119,61 @@ a.card-img-top {
   }
 }
 
-a.card-title {
+a.card-title,
+.card-title a {
   transition: color 0.3s;
-  @include link-pretty($epflred, $white);
-  background-position: 0 90% !important;
+
+  @include link-pretty($epflred, $body-bg, $body-color);
+
+  background-position: 0 90%;
+
+  .card.bg-gray-100 & {
+    @include link-pretty($epflred, gray('100'), $body-color);
+  }
+}
+
+//
+// Whole card as a link
+a.card {
+  border: none;
+  text-decoration: none;
+
+  .card-body {
+    border: $card-border-width solid $card-border-color;
+    transition: border 0.3s;
+  }
+
+  .card-title {
+    transition: 0.4s ease;
+  }
 
   &:hover {
-    @include link-pretty($black, $white);
+    color: $body-color;
+
+    .card-body {
+      border-color: $body-color;
+    }
+
+    .card-title {
+      color: $link-hover-color;
+    }
   }
+}
+
+//
+// Card overlay image
+.card-img-overlay {
+  right: auto;
+  max-width: 400px;
+
+  .card-title {
+    margin-bottom: 0;
+  }
+}
+
+// Fix for IE not handling image height correctly
+// https://github.com/philipwalton/flexbugs/issues/75
+.card-img-top,
+.card-overlay .card-img {
+  min-height: 1px;
 }
