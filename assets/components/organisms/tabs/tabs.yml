@@ -1,7 +1,5 @@
 title: Tabs
 name: tabs
 variants:
-  - name: wrapped
-    title: Wrapped
   - name: vertical
     title: Vertical
