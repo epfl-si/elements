@@ -77,11 +77,10 @@ $nav-spacer: 4px;
 }
 
 // navigation back or home button
-li.nav-home,
-li.nav-back {
+.nav-home,
+.nav-back {
   display: block;
   padding-bottom: 1.2 * $spacer;
-  border-bottom: none;
   margin-left: -2 * $spacer;
   padding-left: 2 * $spacer;
 
@@ -269,22 +268,6 @@ a.nav-arrow {
 
   // Toggle nav
   .nav-toggle {
-    &.desktop-menu-open {
-      overflow: hidden;
-
-      .overlay {
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        height: calc(100% - #{ $header-height });
-        opacity: 0.8;
-      }
-
-      .nav-main {
-        left: 0;
-      }
-    }
-
     .nav-main {
       position: fixed;
       left: -1.3 * $main-nav-width;
@@ -301,10 +284,43 @@ a.nav-arrow {
     }
   }
 
+  .desktop-menu-open {
+    .nav-toggle {
+      overflow: hidden;
+
+      .overlay {
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: calc(100% - #{ $header-height });
+        opacity: 0.8;
+      }
+
+      .nav-main {
+        left: 0;
+      }
+
+      .content {
+        max-height: calc(100vh - #{ $header-height });
+        overflow: hidden;
+      }
+    }
+  }
+
   .nav-main {
     li {
       font-size: 0.9 * $font-size-base;
     }
+
+    .nav-back,
+    .nav-home {
+      border-bottom: none;
+    }
+  }
+
+  // hide breadcrumb home icon on desktop
+  .content .breadcrumb li:first-child {
+    display: none;
   }
 }
 
@@ -318,17 +334,16 @@ a.nav-arrow {
 
   .nav-main {
     position: absolute;
-    top: 0;
+    top: $mm-breadcrumbs-height;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding-top: 1 * $spacer;
-    border-top: 1px solid gray('100');
+    border-top: 1px solid gray('300');
     transform: translateX(-100%);
     transition: transform 0.2s;
 
     ul {
-      padding: 0 ($spacer * 2);
+      padding: 0 ($spacer * 2) (4 * $spacer);
     }
   }
 
@@ -350,16 +365,45 @@ a.nav-arrow {
     display: none;
   }
 
+  // handle breadcrumb
+  .content .breadcrumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $mm-breadcrumbs-height;
+    margin: 0;
+    padding: (0.64 * $spacer) (0.8 * $spacer) 0;
+    background: gray('100');
+    z-index: 110;
+
+    .icon {
+      fill: gray('300');
+    }
+  }
+
+  .breadcrumb-container {
+    height: $mm-breadcrumbs-height;
+    margin-bottom: $spacer * 1.5;
+  }
+
+  .nav-back,
+  .nav-home {
+    margin: 0;
+    padding: 0;
+  }
+
   // mobile opened menu
   .mobile-menu-open {
-    height: calc(100% - #{$header-height + $breadcrumbs-height});
+    height: calc(100% - #{$header-height + $mm-breadcrumbs-height});
 
     .nav-main {
       transform: translateX(0);
     }
 
     main.content {
-      max-height: 0;
+      max-height: 100%;
+      overflow: hidden;
     }
   }
 }

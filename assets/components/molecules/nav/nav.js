@@ -11,18 +11,17 @@ const nav = () => {
   };
 
   const toggleMobileMenu = () => {
-    $('.main-container').toggleClass('mobile-menu-open');
-    $('.menu-toggle-mobile').toggleClass('menu-toggle-mobile-open');
+    $('body').toggleClass('mobile-menu-open');
   };
 
   const openDesktopMenu = (id) => {
     resetMenu();
     $('.nav-main a[data-page-id="' + id + '"]').parent().addClass(activeClass);
-    $('.main-container').addClass('desktop-menu-open');
+    $('body').addClass('desktop-menu-open');
   };
 
   const toggleDesktopMenu = () => {
-    $('.main-container').toggleClass('desktop-menu-open');
+    $('body').toggleClass('desktop-menu-open');
   };
 
   $('.nav-main .nav-back a').on('click', function (e) {
