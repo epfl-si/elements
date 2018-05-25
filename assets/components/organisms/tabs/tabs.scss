@@ -73,10 +73,10 @@
 
   .nav-item {
     .nav-link {
-      margin-top: -1px;
+      margin-top: -$nav-tabs-border-width;
 
       &:first-child {
-        margin-left: -1px;
+        margin-left: -$nav-tabs-border-width;
       }
     }
   }
@@ -86,7 +86,7 @@
   display: flex;
 
   .nav-tabs {
-    margin-left: -1px;
+    margin-left: -$nav-tabs-border-width;
   }
 
   .nav-item {
@@ -108,10 +108,10 @@
   border-left: $nav-tabs-border-width solid $nav-tabs-border-color;
 
   .nav-item {
-    margin: 0 -1px;
+    margin: 0 -$nav-tabs-border-width;
 
     + .nav-item {
-      margin-top: -1px;
+      margin-top: -$nav-tabs-border-width;
 
       .nav-link {
         margin: 0;
