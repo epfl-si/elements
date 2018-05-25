@@ -317,11 +317,6 @@ a.nav-arrow {
       border-bottom: none;
     }
   }
-
-  // hide breadcrumb home icon on desktop
-  .content .breadcrumb li:first-child {
-    display: none;
-  }
 }
 
 //
@@ -371,15 +366,6 @@ a.nav-arrow {
     top: 0;
     left: 0;
     width: 100%;
-    height: $mm-breadcrumbs-height;
-    margin: 0;
-    padding: (0.64 * $spacer) (0.8 * $spacer) 0;
-    background: gray('100');
-    z-index: 110;
-
-    .icon {
-      color: gray('300');
-    }
   }
 
   .breadcrumb-container {
