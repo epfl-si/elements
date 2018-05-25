@@ -71,9 +71,16 @@
     flex: 1 0 30%;
     max-width: 30%;
     margin-right: -$nav-tabs-border-width;
+    border-top: $nav-tabs-border-width solid $nav-tabs-border-color;
   }
 
   .nav-item {
+    &:first-child {
+      .nav-link {
+        border-top: 0;
+      }
+    }
+
     .nav-link {
       margin-top: 0;
       margin-left: 0;
