@@ -49,7 +49,7 @@
           left: 1rem;
           width: calc(100% - 2rem);
           height: 5px;
-          background: $epflred;
+          background: theme;
           opacity: 0;
           transition: opacity 0.3s;
         }
@@ -58,7 +58,7 @@
         &.open,
         &.active,
         &:focus {
-          color: $epflred;
+          color: theme-color('primary');
 
           &:before {
             content: none;

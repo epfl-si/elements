@@ -15,7 +15,7 @@ $nav-spacer: 4px;
   li.current_page_item {
     & > a,
     & > a:hover {
-      background: $epflred;
+      background: theme-color('primary');
       font-weight: bold;
       color: $white;
     }
