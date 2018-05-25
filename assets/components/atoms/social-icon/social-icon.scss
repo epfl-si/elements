@@ -10,7 +10,7 @@
   .icon {
     top: 0;
     font-size: 1.2rem;
-    fill: $white;
+    color: $white;
   }
 }
 
@@ -67,7 +67,7 @@ a.social-icon {
   transition: background 0.2s;
 
   .icon {
-    fill: $body-color;
+    color: $body-color;
     font-size: 1.5rem;
     transition: fill 0.2s;
   }
@@ -76,7 +76,7 @@ a.social-icon {
     background: $red !important;
 
     .icon {
-      fill: $white !important;
+      color: $white !important;
     }
   }
 }
@@ -90,7 +90,7 @@ a.social-icon {
     background: $gray-100;
 
     .icon {
-      fill: $gray-500;
+      color: $gray-500;
     }
   }
 }
