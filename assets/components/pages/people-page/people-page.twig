@@ -92,82 +92,84 @@
       </div>
     </div>
 
-    {# Intermediate navigation #}
-    <div class="bg-gray-100 py-4 mb-5">
+    <div class="position-relative">
+      {# Intermediate navigation #}
+      <nav class="nav-tabs-light-wrapper sticky-top" id="intermediate-nav">
+        <div class="container">
+          <ul class="nav nav-tabs-light">
+            <li class="nav-item">
+              <a class="nav-link active" href="#biography">Biography</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#publications">Publications</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#teaching-and-phd">Teaching & PhD</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
       <div class="container">
-        <ul class="nav nav-pills" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+        {# Biography area #}
+        <div class="row mb-5">
+          <div class="col-md-7">
+            <h2 id="biography">Biography</h2>
+            <div class="collapse-half" id="biography-text">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad aperiam culpa dolor dolore eaque esse excepturi incidunt libero maxime molestias mollitia neque odit possimus praesentium quaerat quam quas reprehenderit, saepe similique sit totam veritatis vero voluptas voluptatem voluptates voluptatibus! Ab ad adipisci autem blanditiis cum deleniti deserunt dolor, dolores earum eius enim esse est eveniet exercitationem, fuga fugiat fugit illum ipsum maiores molestias mollitia nesciunt officia perferendis praesentium quisquam quos recusandae rem repellat repudiandae sit temporibus vero vitae voluptatem! Blanditiis excepturi neque officia possimus suscipit? A culpa est ipsa nemo officiis. Corporis distinctio, est iure nihil possimus quis veritatis.</p>
+            </div>
+            <div class="text-center">
+              <a class="collapsed text-muted" data-toggle="collapse" aria-hidden="true" href="#biography-text">
+                Show full biography
+                {% include '@atoms/icon/icon.twig' with {icon: 'icon-triangle'} %}
+              </a>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <h2>Fields of expertises</h2>
+            tags
+          </div>
+        </div>
 
-    <div class="container">
-      {# Biography area #}
-      <div class="row mb-5">
-        <div class="col-md-7">
-          <h2>Biography</h2>
-          <div class="collapse-half" id="biography">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad aperiam culpa dolor dolore eaque esse excepturi incidunt libero maxime molestias mollitia neque odit possimus praesentium quaerat quam quas reprehenderit, saepe similique sit totam veritatis vero voluptas voluptatem voluptates voluptatibus! Ab ad adipisci autem blanditiis cum deleniti deserunt dolor, dolores earum eius enim esse est eveniet exercitationem, fuga fugiat fugit illum ipsum maiores molestias mollitia nesciunt officia perferendis praesentium quisquam quos recusandae rem repellat repudiandae sit temporibus vero vitae voluptatem! Blanditiis excepturi neque officia possimus suscipit? A culpa est ipsa nemo officiis. Corporis distinctio, est iure nihil possimus quis veritatis.</p>
-          </div>
-          <div class="text-center">
-            <a class="collapsed text-muted" data-toggle="collapse" aria-hidden="true" href="#biography">
-              Show full biography
-              {% include '@atoms/icon/icon.twig' with {icon: 'icon-triangle'} %}
-            </a>
-          </div>
+        {# Publications #}
+        <div class="d-flex flex-wrap justify-content-between align-items-baseline">
+          <h2 id="publications" class="mr-3">Publications</h2>
+          <select name="year" id="year">
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
+          </select>
         </div>
-        <div class="col-md-5">
-          <h2>Fields of expertises</h2>
-          tags
-        </div>
-      </div>
+        {% include '@organisms/news/news.twig' %}
 
-      {# Publications #}
-      <div class="d-flex flex-wrap justify-content-between align-items-baseline">
-        <h2 class="mr-3">Publications</h2>
-        <select name="year" id="year">
-          <option value="2018">2018</option>
-          <option value="2017">2017</option>
-          <option value="2016">2016</option>
-        </select>
-      </div>
-      {% include '@organisms/news/news.twig' %}
-
-      {# Teaching and PHD area #}
-      <h2>Teaching and PHD</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Computer science</li>
-              <li class="list-group-item">Communication systems</li>
-            </ul>
+        {# Teaching and PHD area #}
+        <h2 id="teaching-and-phd">Teaching & PHD</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Computer science</li>
+                <li class="list-group-item">Communication systems</li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, reiciendis!</li>
-              <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur.</li>
-              <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-            </ul>
+          <div class="col-md-4">
+            <div class="card">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, reiciendis!</li>
+                <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur.</li>
+                <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, reiciendis!</li>
-              <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur.</li>
-              <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-            </ul>
+          <div class="col-md-4">
+            <div class="card">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, reiciendis!</li>
+                <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur.</li>
+                <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
