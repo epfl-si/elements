@@ -6,10 +6,18 @@
 
 .styleguide {
   font-family: $font-family-base;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-template-columns: 60px 240px 1fr;
-  grid-template-columns: 60px 240px 1fr;
+
+  @media (min-width: 768px) {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 60px 240px 1fr;
+    grid-template-columns: 60px 240px 1fr;
+  }
+}
+
+.tlbx-toolbar-wrapper {
+  position: static;
+  height: 100%;
 }
 
 .tlbx-sidebar-wrapper {
@@ -20,19 +28,20 @@
 .tlbx-content-wrapper {
   -ms-grid-column: 3;
   grid-column: 3;
+  padding-top: 1.8rem;
 }
 
-.tlbx-sidebar {
-  @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+  .tlbx-toolbar {
+    position: fixed;
+  }
+
+  .tlbx-sidebar {
     position: fixed;
     max-height: 100vh;
     overflow-y: scroll;
     width: 240px;
   }
-}
-
-.tlbx-content-wrapper {
-  padding-top: 1.8rem;
 }
 
 .tlbx-sidebar-item-list {
@@ -100,8 +109,8 @@
   code {
     padding: 0.05em 0.1em;
     border-radius: 2px;
-    background-color: rgba($epflred, 0.3);
-    border: 1px solid rgba($epflred, 0.3);
+    background-color: rgba($red, 0.3);
+    border: 1px solid rgba($red, 0.3);
   }
 }
 

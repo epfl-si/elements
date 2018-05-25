@@ -7,7 +7,7 @@
   align-items: center;
   padding: 1rem 1.5rem;
   background: $white;
-  color: $gray-400;
+  color: $gray-600;
 
   @include media-breakpoint-up(lg) {
     flex-flow: row nowrap;

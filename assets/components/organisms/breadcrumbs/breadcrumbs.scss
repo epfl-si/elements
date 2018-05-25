@@ -67,7 +67,7 @@
   &:after {
     content: '\203A';
     padding-left: 0.3rem;
-    color: $gray-400;
+    color: $gray-600;
   }
 
   a {
@@ -85,6 +85,6 @@
   }
 
   &.active {
-    color: $gray-400;
+    color: $gray-600;
   }
 }

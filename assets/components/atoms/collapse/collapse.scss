@@ -18,7 +18,7 @@
   &:hover { cursor: pointer; }
 
   &:after {
-    content: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$gray-400}' viewBox='0 0 6 3'%3E%3Cpath d='M3 0 6 3 0 3z'/%3E%3C/svg%3E"), "#", "%23");
+    content: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$gray-600}' viewBox='0 0 6 3'%3E%3Cpath d='M3 0 6 3 0 3z'/%3E%3C/svg%3E"), "#", "%23");
     float: right;
     width: 12px;
     height: 6px;
@@ -27,7 +27,7 @@
   }
 
   &.collapsed:after {
-    content: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$epflred}' viewBox='0 0 6 3'%3E%3Cpath d='M3 3 6 0 0 0z'/%3E%3C/svg%3E"), "#", "%23");
+    content: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$red}' viewBox='0 0 6 3'%3E%3Cpath d='M3 3 6 0 0 0z'/%3E%3C/svg%3E"), "#", "%23");
   }
 }
 
@@ -39,7 +39,7 @@
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px $epflred;
+    box-shadow: 0 0 0 2px $red;
   }
 
   &.collapse-title-desktop {

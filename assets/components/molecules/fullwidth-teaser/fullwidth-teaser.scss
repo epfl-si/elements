@@ -149,7 +149,7 @@
 
     &:hover,
     &:focus {
-      background: darken($epflred, 15%);
+      background: darken($red, 15%);
       color: $white;
 
       @include media-breakpoint-up(xl) {
@@ -159,7 +159,7 @@
       &:before,
       &:after {
         background: none;
-        border-top-color: darken($epflred, 15%);
+        border-top-color: darken($red, 15%);
       }
     }
   }
