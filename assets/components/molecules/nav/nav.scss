@@ -326,6 +326,10 @@ a.nav-arrow {
     border-top: 1px solid gray('100');
     transform: translateX(-100%);
     transition: transform 0.2s;
+
+    ul {
+      padding: 0 ($spacer * 2);
+    }
   }
 
   ul.nav-menu {
