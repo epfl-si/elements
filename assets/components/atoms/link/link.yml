@@ -8,3 +8,5 @@ notes: >
 
   A `link-pretty` class can be used to create a better and more cross-browser
   style.
+
+  A `link-collapse` class sets the link to have a red triangle and special styles.
