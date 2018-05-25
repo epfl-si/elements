@@ -1,0 +1,31 @@
+{% embed '@pages/partials/layout.twig' %}
+  {% block content %}
+
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-baseline">
+        <h1 class="mr-3">Actualités</h1>
+        <p>FILTRES</p>
+      </div>
+
+      <div class="mb-4">
+        {% include '@organisms/teaser-basic-page/teaser-basic-page-highlighted.twig' %}
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          {% include '@organisms/news/news-basic-teaser.twig' %}
+        </div>
+        <div class="col-md-6">
+          {% include '@organisms/news/news-basic-teaser.twig' %}
+        </div>
+      </div>
+
+      {% include '@organisms/news/news.twig' %}
+
+      {% include '@organisms/pagination/pagination.twig' %}
+
+    </div>
+  {% endblock %}
+{% endembed %}

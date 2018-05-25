@@ -72,6 +72,8 @@
 
   @include make-col(12, 12);
 
+  max-width: map-get($grid-breakpoints, 'xl');
+
   @include media-breakpoint-up(xl) {
     display: flex;
     flex-direction: column;
