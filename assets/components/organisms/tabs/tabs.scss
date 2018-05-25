@@ -123,3 +123,32 @@
     }
   }
 }
+
+.nav-tabs-light-wrapper {
+  border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
+}
+
+.nav-tabs-light {
+  .nav-link {
+    position: relative;
+    text-decoration: none;
+    font-weight: $font-weight-bold;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: $nav-link-padding-x;
+      width: calc(100% - #{$nav-link-padding-x * 2});
+      border-bottom: 0 solid theme-color('primary');
+      transition: border-bottom 0.2s;
+    }
+
+    &.active {
+      &:after {
+        border-bottom-width: ($nav-tabs-border-width * 4);
+      }
+    }
+  }
+}
