@@ -7,10 +7,11 @@
     display: flex;
     flex-flow: row nowrap;
     position: fixed;
-    bottom: 0;
+    bottom: -$mm-lang-height;
     left: 0;
     width: calc(100% - #{ $mm-lang-width });
     height: $mm-lang-height;
+    transition: bottom 0.3s;
     z-index: 120;
 
     .form-control {

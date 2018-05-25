@@ -405,6 +405,14 @@ a.nav-arrow {
       max-height: calc(100vh - #{$header-height + $mm-breadcrumbs-height + $mm-lang-height});
       overflow: hidden;
     }
+
+    .header .search {
+      bottom: 0;
+    }
+
+    .language-switcher {
+      bottom: 0;
+    }
   }
 }
 
