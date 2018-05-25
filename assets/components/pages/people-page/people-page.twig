@@ -130,15 +130,8 @@
         </div>
 
         {# Publications #}
-        <div class="d-flex flex-wrap justify-content-between align-items-baseline">
-          <h2 id="publications" class="mr-3">Publications</h2>
-          <select name="year" id="year">
-            <option value="2018">2018</option>
-            <option value="2017">2017</option>
-            <option value="2016">2016</option>
-          </select>
-        </div>
-        {% include '@organisms/news/news.twig' %}
+        <h2 id="publications" class="mr-3 mb-4">Publications</h2>
+        {% include '@organisms/publication/publication.twig' %}
 
         {# Teaching and PHD area #}
         <h2 id="teaching-and-phd">Teaching & PHD</h2>

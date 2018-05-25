@@ -15,8 +15,13 @@ a {
     color: $red;
   }
 
-  &.text-muted:hover {
-    color: $link-hover-color !important;
+  &.text-muted {
+    text-decoration-color: $text-muted;
+
+    &:hover {
+      color: $body-color !important;
+      text-decoration-color: $body-color;
+    }
   }
 }
 
