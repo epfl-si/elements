@@ -3,9 +3,9 @@
 a.tag {
   &:hover {
     background: $gray-100;
-    border-top-color: $gray-500;
-    border-right-color: $gray-500;
-    border-left-color: $gray-500;
+    border-top-color: darken($gray-300, 10%);
+    border-right-color: darken($gray-300, 10%);
+    border-left-color: darken($gray-300, 10%);
     color: $black;
     text-decoration: none;
   }
@@ -17,7 +17,9 @@ a.tag {
   padding: 0.4em 0.6em;
   text-decoration: none;
   background: $white;
-  border: 1px solid $gray-400;
+  border: 1px solid $gray-300;
+  font-size: 0.75em;
+  line-height: 1;
   font-weight: 400;
   color: $gray-800;
   border-radius: $border-radius;
@@ -41,7 +43,7 @@ a.tag {
       }
 
       @else if $color == "light" {
-        border-bottom: 1px solid $gray-400;
+        border-bottom: 1px solid $gray-300;
       }
 
       @else {
@@ -66,9 +68,9 @@ a.tag {
     .tag.active,
     .tag:hover {
       background: $gray-100;
-      border-top-color: $gray-500;
-      border-right-color: $gray-500;
-      border-left-color: $gray-500;
+      border-top-color: darken($gray-300, 10%);
+      border-right-color: darken($gray-300, 10%);
+      border-left-color: darken($gray-300, 10%);
       color: $black;
       text-decoration: none;
     }
@@ -93,7 +95,7 @@ a.tag {
     z-index: 10;
     margin: -1px 0 0 0;
     background: $white;
-    border: 1px solid $gray-500;
+    border: 1px solid $gray-600;
     border-top: 0 none;
     border-radius: 0 0 3px 3px;
     box-shadow: 0 1px 3px transparentize($black, 0.9);
