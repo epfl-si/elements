@@ -1,7 +1,7 @@
 /* globals $ */
 
 export default () => {
-  $('.selectize').selectize({
+  $('.tag-input').selectize({
     plugins: ['remove_button'],
     render: {
       item: (data, escape) => `<div class="tag tag-primary">${escape(data.text)}</div>`,
