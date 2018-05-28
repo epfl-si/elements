@@ -15,6 +15,7 @@
     color: $black;
 
     td {
+      vertical-align: top;
       padding: 0.3rem 0;
       border-bottom: 1px solid $gray-200;
 
@@ -119,6 +120,15 @@
           border-bottom-color: $red;
         }
       }
+    }
+  }
+}
+
+.tablesaw {
+  tbody,
+  tfoot {
+    td {
+      border-bottom: 0;
     }
   }
 }

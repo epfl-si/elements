@@ -1,1 +1,69 @@
-🤷‍♀️
+<ul class="nav nav-tabs" role="tablist">
+  {% for day in restauration %}
+    <li class="nav-item">
+      <a class="nav-link {% if loop.first %}active{% endif %}" id="{{ day|lower }}-tab" data-toggle="tab" href="#{{ day|lower }}" role="tab" aria-controls="{{ day|lower }}" {% if loop.first %}aria-selected="true"{% endif %}>{{ day }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+<div class="tab-content py-3">
+  {% for day in restauration %}
+  <div class="tab-pane fade show {% if loop.first %}active{% endif %}" id="{{ day|lower }}" role="tabpanel" aria-labelledby="{{ day|lower }}-tab">
+    <div class="row my-3">
+      <div class="col-md-4">
+        <select class="select-multiple" multiple="multiple" data-placeholder="Restaurant">
+          <option value="1">Chuck Testa</option>
+          <option value="4">Sage Cattabriga-Alosa</option>
+          <option value="3">Nikola Tesla</option>
+          <option value="2">I Love</option>
+          <option value="5">Pizza</option>
+          <option value="6">🍕</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <select class="select-multiple" multiple="multiple" data-placeholder="Menu">
+          <option value="1">Chuck Testa</option>
+          <option value="4">Sage Cattabriga-Alosa</option>
+          <option value="3">Nikola Tesla</option>
+          <option value="2">I Love</option>
+          <option value="5">Pizza</option>
+          <option value="6">🍕</option>
+        </select>
+      </div>
+    </div>
+    <table class="table tablesaw tablesaw-stack" data-tablesaw-mode="stack">
+      <tbody>
+        {% for i in 1..3 %}
+          <tr>
+            <td>
+              <img class="d-none d-sm-inline-block float-left mr-3" src="./images/restauration_illustration.png">
+              <b>Filets de perche (Estonie) sauce tartare</b><br>
+              Frites<br>
+              Salade mêlée
+            </td>
+            <td><a href="#">Cafétéria BC</a></td>
+            <td>
+              <div class="row">
+                <div class="col-6 text-primary">E</div>
+                <div class="col-6 text-right">11.90</div>
+              </div>
+              <div class="row">
+                <div class="col-6 text-primary">V</div>
+                <div class="col-6 text-right">14.00</div>
+              </div>
+              <div class="row">
+                <div class="col-6 text-primary">D</div>
+                <div class="col-6 text-right">11.90</div>
+              </div>
+              <div class="row">
+                <div class="col-6 text-primary">C</div>
+                <div class="col-6 text-right">14.00</div>
+              </div>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+  {% endfor %}
+</div>

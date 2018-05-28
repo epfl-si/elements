@@ -5596,6 +5596,12 @@ multipipe@^0.1.0, multipipe@^0.1.2:
   dependencies:
     duplexer2 "0.0.2"
 
+multiple-select@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/multiple-select/-/multiple-select-1.2.1.tgz#bab50bcbae6bddb2a0c381dc22949f05509b82fb"
+  dependencies:
+    jquery ">=1.7"
+
 mute-stdout@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/mute-stdout/-/mute-stdout-1.0.0.tgz#5b32ea07eb43c9ded6130434cf926f46b2a7fd4d"
