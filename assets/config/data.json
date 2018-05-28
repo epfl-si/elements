@@ -1,17 +1,20 @@
 {
   "icons":[
+    "arrow-right",
+    "chevron-last-left",
+    "chevron-last-right",
+    "chevron-left",
+    "chevron-right",
     "elements",
     "facebook",
     "googleplus",
     "instagram",
     "lock",
     "mail-plane",
+    "triangle",
     "twitter",
-    "whatsapp",
-    "chevron-right",
-    "chevron-left",
-    "chevron-last-right",
-    "chevron-last-left"
+    "upload",
+    "whatsapp"
   ],
   "gallery": [
     "https://source.unsplash.com/Po7XKYVp1Mc",
