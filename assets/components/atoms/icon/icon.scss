@@ -21,3 +21,7 @@ $icon-size-base: 1em;
   .icon-right & { margin-left: 0.4em; }
   .icon-left & { margin-right: 0.4em; }
 }
+
+.icon-rotate-90 {
+  transform: rotate(90deg);
+}
