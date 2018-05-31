@@ -5,11 +5,13 @@ import Imagesloaded from 'imagesloaded';
 
 export default () => {
   if ($('.card-slider').length > 0) {
+    const isMobile = $(window).width() < 767;
+
     Imagesloaded('.card-slider', () => {
       const flkty = new Flickity('.card-slider', {
         cellAlign: 'left',
         setGallerySize: true,
-        pageDots: false,
+        pageDots: isMobile,
         prevNextButtons: false,
         contain: true,
         groupCells: false,

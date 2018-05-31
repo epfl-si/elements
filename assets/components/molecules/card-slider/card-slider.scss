@@ -11,6 +11,12 @@
   align-items: center;
 
   > div { margin-right: $spacer * 2; }
+
+  @include media-breakpoint-down(md) {
+    justify-content: center;
+    margin-top: $spacer * 2.6;
+    > div { margin-right: 0; }
+  }
 }
 
 .card-slider-btn {
@@ -41,6 +47,10 @@
     background: transparent;
     color: $gray-600;
   }
+
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
 }
 
 .card-slider {
@@ -55,8 +65,33 @@
   padding-right: $grid-gutter-width;
   &.card-slider-cell-lg { width: 48%; }
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     width: 100%;
+    padding-right: 0;
+    &.card-slider-cell-lg { width: 100%; }
   }
 }
+
+.card-slider-wrapper {
+  .flickity-page-dots {
+    bottom: $spacer * -0.8;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+  }
+
+  .flickity-page-dots .dot {
+    flex: 1 1 1px;
+    height: 1px;
+    margin: 0;
+    background: $gray-600;
+    border-radius: 0;
+
+    &.is-selected {
+      height: 5px;
+      background: theme-color('primary');
+    }
+  }
+}
+
 
