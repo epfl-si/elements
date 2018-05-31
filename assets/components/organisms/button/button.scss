@@ -107,3 +107,23 @@
     border-color: gray('600');
   }
 }
+
+.btn-circle {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background-color: $white;
+  border: none;
+  box-shadow: 0 0 0 2px rgba($black, 0.4);
+  line-height: 1;
+  color: rgba($black, 0.4);
+  transition: box-shadow 0.2s;
+  cursor: pointer;
+
+  @include hover {
+    box-shadow: 0 0 0 5px rgba($black, 0.6);
+    outline: none;
+    color: rgba($black, 0.6);
+  }
+}
