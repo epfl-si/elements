@@ -100,12 +100,12 @@ $hamburger-btn-size: 2rem;
 }
 
 // hide hamburger when in nav solid context
-.nav-solid #hamburger {
+.nav-solid .breadcrumb-burger {
   display: none;
 }
 
 // hamburger button
-#hamburger {
+.breadcrumb-burger {
   display: block;
   position: absolute;
   top: -0.3rem;
