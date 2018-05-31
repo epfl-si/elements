@@ -67,7 +67,7 @@
 
 .footer-legal {
   display: flex;
-  border-top: 1px solid $gray-100;
+  border-top: 1px solid $gray-300;
   padding-top: 2rem;
   flex-flow: column wrap;
   text-align: center;
@@ -133,7 +133,7 @@
     margin-bottom: 0.4rem;
     font-size: $font-size-sm;
     color: $gray-600;
-    border-bottom: 1px solid $gray-100;
+    border-bottom: 1px solid $gray-300;
   }
 
   .footer-buttons,
