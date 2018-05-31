@@ -6,12 +6,14 @@ import datepickerEvent from './molecules/datepicker-event/datepicker-event';
 import popover from './molecules/popover/popover';
 import gallery from './molecules/gallery/gallery';
 import socialShare from './organisms/social/social-share';
+import tagInput from './atoms/tag/tag-input';
 import svgIcons from '../icons/svg-icons';
 
 svgIcons(); // Must run as soon as possible
 
 const init = () => {
   upload();
+  tagInput();
   datepicker();
   datepickerEvent();
   popover();
