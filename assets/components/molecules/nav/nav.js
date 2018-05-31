@@ -68,6 +68,10 @@ const nav = () => {
     e.preventDefault();
     toggleDesktopMenu();
   });
+
+  $('#hamburger').on('click', () => {
+    toggleDesktopMenu();
+  });
 };
 
 export default nav;

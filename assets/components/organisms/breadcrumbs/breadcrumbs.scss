@@ -1,7 +1,9 @@
 @charset 'utf-8';
 
+$hamburger-btn-size: 2rem;
+
 .breadcrumb {
-  padding-left: 0;
+  padding: 0;
 
   @include media-breakpoint-down(lg) {
     height: $mm-breadcrumbs-height;
@@ -86,5 +88,49 @@
 
   &.active {
     color: $gray-600;
+  }
+}
+
+// create space out of container on the left for hamburger button
+.breadcrumb-container nav {
+  position: relative;
+  margin-left: -1 * ($hamburger-btn-size + (0.5 * $spacer));
+  padding-left: $hamburger-btn-size + (0.6 * $spacer);
+  margin-top: 0.5 * $spacer;
+}
+
+// hide hamburger when in nav solid context
+.nav-solid #hamburger {
+  display: none;
+}
+
+// hamburger button
+#hamburger {
+  display: block;
+  position: absolute;
+  top: -0.3rem;
+  left: 0;
+  width: $hamburger-btn-size;
+  height: $hamburger-btn-size;
+  background: none;
+  border-radius: 50%;
+  border: 1px solid gray('100');
+  padding-top: $hamburger-btn-size / 6;
+  padding-left: $hamburger-btn-size / 3.58;
+  transition: background 0.2s;
+  outline: none;
+
+  &:hover {
+    cursor: pointer;
+    background: gray('100');
+  }
+
+  .line {
+    display: block;
+    width: $hamburger-btn-size / 2.5;
+    height: 2px;
+    background: gray('600');
+    border-radius: 4px;
+    margin-bottom: 3px;
   }
 }
