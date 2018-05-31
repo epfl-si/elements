@@ -1,1 +1,23 @@
-<img src="./images/wip-screenshot/event-just-finished.png" class="img-fluid" />
+{% set img = img|default(true) %}
+<a href="#" class="card card-grayscale link-trapeze-horizontal bg-gray-100">
+  <div class="card-body">
+    {% block img %}
+      <picture class="card-img-top">
+        <img src="./images/event_teaser.png" class="img-fluid" title="professor Xile Hu" alt="a portrait of professor Xile Hu" />
+      </picture>
+    {% endblock %}
+    <h3 class="card-title">
+      <span class="badge badge-dark badge-sm">Just finished</span>
+      Startup Acceleration Workshops
+    </h3>
+    <div class="card-info">
+      <span class="card-info-date">10.01.2018</span>
+      <span>13:00</span>
+      <span>17:30</span>
+      <p>
+        Lieu : <b>ArtLab EPFL</b><br />
+        Catégorie : <b>Événements culturel</b><br />
+      </p>
+    </div>
+  </div>
+</a>
