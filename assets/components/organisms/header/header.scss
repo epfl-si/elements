@@ -49,7 +49,7 @@
           left: 1rem;
           width: calc(100% - 2rem);
           height: 5px;
-          background: theme;
+          background: $red;
           opacity: 0;
           transition: opacity 0.3s;
         }

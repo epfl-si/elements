@@ -60,11 +60,12 @@
     display: flex;
     position: fixed;
     right: 0;
-    bottom: 0;
+    bottom: -$mm-lang-height;
     width: $mm-lang-width;
     height: $mm-lang-height;
     z-index: 999120;
     background: gray('600');
+    transition: bottom 0.3s;
 
     ul {
       width: 100%;

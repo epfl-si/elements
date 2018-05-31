@@ -89,7 +89,7 @@ $nav-spacer: 4px;
   }
 
   .icon {
-    fill: gray('300');
+    color: gray('300');
   }
 }
 
@@ -98,13 +98,13 @@ li.nav-back {
     width: 0.8 * $spacer;
     margin-right: 0.2 * $spacer;
     transition: transform 0.2s, fill 0.2s;
-    fill: gray('300');
+    color: gray('300');
   }
 
   &:hover {
     .icon {
       transform: translateX(-0.2 * $spacer);
-      fill: $body-color;
+      color: $body-color;
     }
   }
 }
@@ -317,11 +317,6 @@ a.nav-arrow {
       border-bottom: none;
     }
   }
-
-  // hide breadcrumb home icon on desktop
-  .content .breadcrumb li:first-child {
-    display: none;
-  }
 }
 
 //
@@ -371,15 +366,6 @@ a.nav-arrow {
     top: 0;
     left: 0;
     width: 100%;
-    height: $mm-breadcrumbs-height;
-    margin: 0;
-    padding: (0.64 * $spacer) (0.8 * $spacer) 0;
-    background: gray('100');
-    z-index: 110;
-
-    .icon {
-      fill: gray('300');
-    }
   }
 
   .breadcrumb-container {
@@ -402,8 +388,16 @@ a.nav-arrow {
     }
 
     main.content {
-      max-height: 100%;
+      max-height: calc(100vh - #{$header-height + $mm-breadcrumbs-height + $mm-lang-height});
       overflow: hidden;
+    }
+
+    .header .search {
+      bottom: 0;
+    }
+
+    .language-switcher {
+      bottom: 0;
     }
   }
 }

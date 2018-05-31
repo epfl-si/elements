@@ -32,7 +32,9 @@
 @import 'atoms/list/list';
 @import 'atoms/language-switcher/language-switcher';
 @import 'atoms/menu-toggle-mobile/menu-toggle-mobile';
+@import 'atoms/tag/tag';
 @import 'atoms/alert/alert';
+@import 'atoms/search/search';
 
 //
 // molecules:
@@ -47,6 +49,7 @@
 @import 'molecules/card/card';
 @import 'molecules/nav/nav';
 @import 'molecules/avatar-teaser/avatar-teaser';
+@import 'molecules/popover/popover';
 @import 'molecules/gallery/gallery';
 @import 'molecules/list-group/list-group';
 
