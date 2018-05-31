@@ -1,8 +1,9 @@
 /* globals jQuery, Tablesaw */
 
 import upload from './atoms/upload/upload';
-import datebpicker from './molecules/datepicker/datepicker';
+import datepicker from './molecules/datepicker/datepicker';
 import datepickerEvent from './molecules/datepicker-event/datepicker-event';
+import popover from './molecules/popover/popover';
 import gallery from './molecules/gallery/gallery';
 import socialShare from './organisms/social/social-share';
 import svgIcons from '../icons/svg-icons';
@@ -11,8 +12,9 @@ svgIcons(); // Must run as soon as possible
 
 const init = () => {
   upload();
-  datebpicker();
+  datepicker();
   datepickerEvent();
+  popover();
   gallery();
   socialShare();
   Tablesaw.init();
