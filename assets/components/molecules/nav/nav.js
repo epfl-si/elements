@@ -1,4 +1,5 @@
 /* global $ */
+
 const nav = () => {
   // closeMobileMenu();
 
@@ -16,7 +17,7 @@ const nav = () => {
 
   const openDesktopMenu = (id) => {
     resetMenu();
-    $('.nav-main a[data-page-id="' + id + '"]').parent().addClass(activeClass);
+    $(`.nav-main a[data-page-id="${id}"]`).parent().addClass(activeClass);
     $('body').addClass('desktop-menu-open');
   };
 
@@ -26,19 +27,24 @@ const nav = () => {
 
   $('.nav-main .nav-back a').on('click', function (e) {
     e.preventDefault();
-    $(this).parent().parent().parent().removeClass(activeClass);
-    $(this).parent().parent().parent().parent().parent().removeClass(parentClass);
-    $(this).parent().parent().parent().parent().parent().addClass(activeClass);
+
+    const $parent = $(this).closest(`.${activeClass}`);
+    $parent.removeClass(activeClass);
+
+    const $ancestor = $(this).closest(`.${parentClass}`);
+    $ancestor.removeClass(parentClass).addClass(activeClass);
   });
 
   $('.nav-main .nav-arrow').on('click', function (e) {
     e.preventDefault();
-    $(this).parent().parent().parent().addClass(parentClass);
-    $(this).parent().parent().parent().removeClass(activeClass);
+
+    const $parent = $(this).closest(`.${activeClass}`);
+    $parent.addClass(parentClass).removeClass(activeClass);
+
     $(this).parent().addClass(activeClass);
   });
 
-  $('.menu-toggle-mobile').on('click', function () {
+  $('.menu-toggle-mobile').on('click', () => {
     toggleMobileMenu();
   });
 
@@ -47,20 +53,18 @@ const nav = () => {
     const id = $(this).data('page-id');
     if ($('.desktop-menu-open').length > 0) {
       toggleDesktopMenu();
-      setTimeout(function() {
-        openDesktopMenu(id);
-      }, 300);
+      setTimeout(() => openDesktopMenu(id), 300);
     } else {
       openDesktopMenu(id);
     }
   });
 
-  $('.nav-close').on('click', function (e) {
+  $('.nav-close').on('click', (e) => {
     e.preventDefault();
     toggleDesktopMenu();
   });
 
-  $('.overlay').on('click', function (e) {
+  $('.overlay').on('click', (e) => {
     e.preventDefault();
     toggleDesktopMenu();
   });
