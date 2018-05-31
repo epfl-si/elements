@@ -3,8 +3,8 @@
 const nav = () => {
   // closeMobileMenu();
 
-  const activeClass = 'current_page_parent';
-  const parentClass = 'current_page_ancestor';
+  const activeClass = 'current-menu-parent';
+  const parentClass = 'current-menu-ancestor';
 
   const resetMenu = () => {
     $('.nav-main li').removeClass(activeClass);
@@ -17,7 +17,7 @@ const nav = () => {
 
   const openDesktopMenu = (id) => {
     resetMenu();
-    $(`.nav-main a[data-page-id="${id}"]`).parent().addClass(activeClass);
+    $(`.nav-main .${id}`).addClass(activeClass);
     $('body').addClass('desktop-menu-open');
   };
 
@@ -48,9 +48,9 @@ const nav = () => {
     toggleMobileMenu();
   });
 
-  $('.header-nav-toggle a').on('click', function (e) {
+  $('.nav-toggle .nav-header a').on('click', function (e) {
     e.preventDefault();
-    const id = $(this).data('page-id');
+    const id = $(this).parent().attr('id');
     if ($('.desktop-menu-open').length > 0) {
       toggleDesktopMenu();
       setTimeout(() => openDesktopMenu(id), 300);

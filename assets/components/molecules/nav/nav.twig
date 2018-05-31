@@ -5,13 +5,8 @@
     <div class="nav-container">
       <ul class="nav-menu">
         {% for i in 1..6 %}
-          <li class="{{ i == 2 ? 'current_page_ancestor' : ''}}">
-            <a data-page-id="{{ i == 2 ? 42 : 88 }}" href="">À propos</a>
-            <a href="#" role="button" aria-hidden="true" class="nav-arrow">
-              <div class="icon-container">
-                {% include '@atoms/icon/icon.twig' with {icon: 'icon-chevron-right'} %}
-              </div>
-            </a>
+          <li class="{{ i == 2 ? 'current-menu-ancestor menu-item-888' : ''}} menu-item-has-children">
+            <a href="">À propos</a>
             <ul>
               <li class="nav-back d-xl-none">
                 <a href="/test">
@@ -27,7 +22,7 @@
                 </a>
               </li>
               {% for y in 1..3 %}
-                <li class="{{ y == 2 and i == 2 ? 'current_page_parent' : ''}}">
+                <li class="{{ y == 2 and i == 2 ? 'current-menu-parent' : ''}} menu-item-has-children">
                   <a data-page-id="77" href="/test">Stratégie de l’enseignement</a>
                   <a href="#" role="button" aria-hidden="true" class="nav-arrow">
                     <div class="icon-container">
@@ -42,13 +37,18 @@
                     <li>
                       <a  data-page-id="66" href="/test">Stratégie de l’enseignement</a>
                     </li>
-                    <li class="{{ y == 2 and i == 2 ? 'current_page_item' : ''}}">
+                    <li class="{{ y == 2 and i == 2 ? 'current-menu-item' : ''}}">
                       <a href="/test">Innovation dans l'enseignement</a>
                     </li>
                   </ul>
                 </li>
               {% endfor %}
             </ul>
+            <a href="#" role="button" aria-hidden="true" class="nav-arrow">
+              <div class="icon-container">
+                {% include '@atoms/icon/icon.twig' with {icon: 'icon-chevron-right'} %}
+              </div>
+            </a>
           </li>
         {% endfor %}
       </ul>
