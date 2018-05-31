@@ -3,5 +3,7 @@ name: header
 variants:
   - name: light
     title: Header light
+  - name: toggle
+    title: Header toggle nav
 notes: |
   <div class="progress"><div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 10%"></div></div><br />

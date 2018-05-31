@@ -3,14 +3,14 @@
 .social-icon {
   display: inline-block;
   padding: 0.7rem;
-  background: $gray-100;
+  background: gray('100');
   border-radius: 0.17rem;
   line-height: 0;
 
   .icon {
     top: 0;
     font-size: 1.2rem;
-    fill: $white;
+    color: $white;
   }
 }
 
@@ -64,7 +64,6 @@ a.social-icon {
     /////// create a base coat to smooth
     /////// corner gradients
     linear-gradient($instagramblue-2, $instagrampurple-2 30%, $instagrammagenta-2 50%, $instagramorange-2 70%, $instagramyellow-2 100%);
-;
 }
 
 .social-icon-instagram {
@@ -87,8 +86,8 @@ a.social-icon {
   transition: background 0.2s;
 
   .icon {
-    fill: $body-color;
     font-size: 1.5rem;
+    color: $body-color;
     transition: fill 0.2s;
   }
 
@@ -96,7 +95,7 @@ a.social-icon {
     background: $red !important;
 
     .icon {
-      fill: $white !important;
+      color: $white !important;
     }
   }
 }
@@ -107,10 +106,10 @@ a.social-icon {
   }
 
   &:not(:hover) {
-    background: $gray-100;
+    background: gray('100');
 
     .icon {
-      fill: $gray-600;
+      color: gray('600');
     }
   }
 }
