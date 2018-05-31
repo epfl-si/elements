@@ -48,6 +48,8 @@
 
   &:after {
     content: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='#{$text-muted}' d='M11.586 7L6.293 1.707 7.707.293 15.414 8l-7.707 7.707-1.414-1.414L11.586 9H0V7h11.586z'/%3E%3C/svg%3E"), "#", "%23");
+    display: block;
+    margin-left: auto;
     opacity: 0.6;
     transition: opacity 0.2s;
   }
@@ -144,7 +146,7 @@ input:focus + label > .trapeze-horizontal {
   bottom: -0.24rem;
   left: -1.3rem;
   border-left: 1rem solid transparent;
-  border-top: 1rem solid $epflred;
+  border-top: 1rem solid $red;
   border-right: 1rem solid transparent;
   width: 0;
   height: 0;
@@ -159,7 +161,7 @@ input:focus + label > .trapeze-horizontal {
   top: 0.479rem;
   left: -1.3rem;
   border-left: 1rem solid transparent;
-  border-top: 1rem solid $epflred;
+  border-top: 1rem solid $red;
   border-right: 1rem solid transparent;
   width: 0;
   height: 0;

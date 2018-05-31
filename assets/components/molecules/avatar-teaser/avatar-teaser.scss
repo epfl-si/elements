@@ -35,7 +35,11 @@ $avatar-size: 50px;
 
   + .avatar-teaser-img,
   + .avatar-teaser-img-placeholder {
-    margin-left: ($spacer * -1.2);
+    margin-left: ($spacer * -2.25);
+
+    @include media-breakpoint-up(sm) {
+      margin-left: ($spacer * -1.2);
+    }
   }
 }
 
@@ -43,6 +47,7 @@ $avatar-size: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 0 0 auto;
   width: $avatar-size;
   height: $avatar-size;
   margin-right: ($spacer * 0.6);

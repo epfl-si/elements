@@ -19,7 +19,9 @@
   "vendors": {
     "css": [
       "node_modules/pickadate/lib/themes/classic.date.css",
-      "node_modules/tablesaw/dist/tablesaw.css"
+      "node_modules/tablesaw/dist/tablesaw.css",
+      "node_modules/flickity/dist/flickity.css",
+      "node_modules/flickity-fullscreen/fullscreen.css"
     ],
     "js": [
       "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
