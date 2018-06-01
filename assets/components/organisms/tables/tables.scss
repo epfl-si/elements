@@ -16,12 +16,17 @@
 
     td {
       vertical-align: top;
-      padding: 0.3rem 0;
-      border-bottom: 1px solid $gray-200;
+      padding: 1rem 0;
+      border-bottom: 1px solid $gray-100;
 
       @include media-breakpoint-down(sm) {
+        &:first-child() {
+          margin-top: 1.2rem;
+        }
+
         &:last-child() {
           margin-bottom: 1.2rem;
+          border-bottom: 2px solid $gray-200;
         }
       }
 
@@ -124,11 +129,6 @@
   }
 }
 
-.tablesaw {
-  tbody,
-  tfoot {
-    td {
-      border-bottom: 0;
-    }
-  }
+.tablesaw-container {
+  @include tablesaw-stack( map-get($grid-breakpoints, "md") );
 }
