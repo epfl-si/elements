@@ -151,9 +151,9 @@
 
   .tablesaw-sortable-btn {
     min-width: 100%;
-    color: inherit;
     background: transparent;
     border: 0;
+    color: inherit;
     text-align: inherit;
     text-transform: inherit;
   }
@@ -166,7 +166,7 @@
     border-bottom: none;
   }
 
-  td:first-child {
+  tr:first-child {
     border-top: 1px solid $gray-100;
   }
 }
