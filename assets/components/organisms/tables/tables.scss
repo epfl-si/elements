@@ -16,17 +16,16 @@
 
     td {
       vertical-align: top;
-      padding: 1rem 0;
+      padding: 0.6rem 0;
       border-bottom: 1px solid $gray-100;
 
       @include media-breakpoint-down(sm) {
         &:first-child() {
-          margin-top: 0.2rem;
+          margin-top: 0.6rem;
         }
 
         &:last-child() {
-          margin-bottom: 0.4rem;
-          border-bottom: 2px solid $gray-200;
+          margin-bottom: 0.6rem;
         }
       }
 
@@ -64,68 +63,84 @@
 
     @include media-breakpoint-down(sm) {
       border-left: 1px solid $gray-200;
+      border-top: 1px solid $gray-200;
+    }
+  }
+
+  tbody td,
+  tfoot td {
+    @include media-breakpoint-down(sm) {
+      border-bottom: 0;
+
+      &:last-child() {
+        border-bottom: 1px solid $gray-200;
+      }
+    }
+  }
+
+  tbody tr:last-child {
+    @include media-breakpoint-down(sm) {
+      border-bottom: 1px solid $gray-200;
     }
   }
 }
 
 .table-sortable {
-  thead {
-    th {
-      padding: 0;
+  thead th {
+    padding: 0;
 
-      button {
-        padding: 0.3rem;
-        cursor: pointer;
+    button {
+      padding: 0.3rem;
+      cursor: pointer;
 
-        .tablesaw-sortable-arrow {
-          $triangle_width: 0.29rem;
-          $triangle_height: 0.35rem;
+      .tablesaw-sortable-arrow {
+        $triangle_width: 0.29rem;
+        $triangle_height: 0.35rem;
 
-          display: block;
-          position: relative;
-          margin-top: 0.1rem;
-          float: left;
-          width: 1rem;
-          height: 1rem;
+        display: block;
+        position: relative;
+        margin-top: 0.1rem;
+        float: left;
+        width: 1rem;
+        height: 1rem;
 
-          &:after {
-            content: ' ';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 0;
-            border-left: $triangle_width solid transparent;
-            border-right: $triangle_width solid transparent;
-            border-bottom: $triangle_height solid $gray-200;
-            margin: 0;
-          }
+        &:after {
+          content: ' ';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 0;
+          border-left: $triangle_width solid transparent;
+          border-right: $triangle_width solid transparent;
+          border-bottom: $triangle_height solid $gray-200;
+          margin: 0;
+        }
 
-          &:before {
-            content: ' ';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 0;
-            border-left: $triangle_width solid transparent;
-            border-right: $triangle_width solid transparent;
-            border-top: $triangle_height solid $gray-200;
-            margin: 0;
-          }
+        &:before {
+          content: ' ';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 0;
+          border-left: $triangle_width solid transparent;
+          border-right: $triangle_width solid transparent;
+          border-top: $triangle_height solid $gray-200;
+          margin: 0;
         }
       }
+    }
 
-      &.tablesaw-sortable-descending {
-        button .tablesaw-sortable-arrow:before {
-          border-top-color: $red;
-        }
+    &.tablesaw-sortable-descending {
+      button .tablesaw-sortable-arrow:before {
+        border-top-color: $red;
       }
+    }
 
-      &.tablesaw-sortable-ascending {
-        button .tablesaw-sortable-arrow:after {
-          border-bottom-color: $red;
-        }
+    &.tablesaw-sortable-ascending {
+      button .tablesaw-sortable-arrow:after {
+        border-bottom-color: $red;
       }
     }
   }
@@ -140,11 +155,18 @@
     background: transparent;
     border: 0;
     text-align: inherit;
-    font: inherit;
     text-transform: inherit;
   }
 
   .tablesaw-cell-content {
     width: 100%;
+  }
+
+  .tablesaw-stack tbody tr {
+    border-bottom: none;
+  }
+
+  td:first-child {
+    border-top: 1px solid $gray-100;
   }
 }
