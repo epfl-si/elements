@@ -31,6 +31,8 @@
       }
 
       .tablesaw-cell-label {
+        display: inline-block;
+        min-width: 33%;
         color: $black;
       }
     }
@@ -131,4 +133,8 @@
 
 .tablesaw-container {
   @include tablesaw-stack( map-get($grid-breakpoints, "md") );
+
+  .tablesaw-cell-content {
+    width: 100%;
+  }
 }
