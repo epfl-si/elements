@@ -21,11 +21,11 @@
 
       @include media-breakpoint-down(sm) {
         &:first-child() {
-          margin-top: 1.2rem;
+          margin-top: 0.2rem;
         }
 
         &:last-child() {
-          margin-bottom: 1.2rem;
+          margin-bottom: 0.4rem;
           border-bottom: 2px solid $gray-200;
         }
       }
