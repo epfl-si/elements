@@ -98,3 +98,35 @@
     }
   }
 }
+
+.header-light {
+  .drawer-link {
+    display: block;
+    height: 100%;
+    color: $white;
+    background: $red;
+    display: flex;
+    max-width: 18px;
+    position: relative;
+    transition: max-width ease 0.3s;
+
+    &:hover {
+      max-width: calc(180px + 2em);
+    }
+
+    .link {
+      display: inline-block;
+      margin: auto;
+      padding: 0.5em 1em;
+      text-decoration: underline;
+      min-width: 180px;
+    }
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+}
