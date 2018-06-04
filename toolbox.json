@@ -30,6 +30,7 @@
       "node_modules/tablesaw/dist/tablesaw-init.js",
       "node_modules/clipboard/dist/clipboard.min.js",
       "node_modules/multiple-select/multiple-select.js"
+      "node_modules/selectize.js/dist/js/standalone/selectize.min.js"
     ]
   },
   "singles": [{

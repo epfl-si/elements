@@ -1,6 +1,8 @@
 @charset 'utf-8';
 
 .news-listing {
+  margin-bottom: ($spacer * 2);
+
   .news {
     display: block;
     text-decoration: none;
@@ -33,6 +35,7 @@
   }
 
   .news-content {
+    flex: 0 1 100%;
     padding: 1rem;
     background: $white;
     border: 1px solid $gray-100;
@@ -64,6 +67,7 @@
   .news-container {
     display: flex;
     flex-flow: row nowrap;
+    width: 100%;
 
     @include media-breakpoint-down(md) {
       flex-direction: column;

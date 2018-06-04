@@ -1,0 +1,176 @@
+{% embed '@pages/partials/layout.twig' %}
+  {% block content %}
+    <div class="container">
+      {# Title and actions #}
+      <div class="d-flex flex-wrap justify-content-between align-items-baseline mb-5">
+        <h1 class="mr-3">Xavier Alexandre</h1>
+        <a href="#" class="btn btn-sm btn-secondary">
+          {% include '@atoms/icon/icon.twig' %}
+          Edit profile
+        </a>
+      </div>
+
+      {# Header area #}
+      <div class="row mb-5">
+        <div class="col-md-10 mx-auto">
+          <div class="row">
+
+            <div class="col-md-6">
+              {# Person avatar and buttons #}
+              <div class="row">
+                <div class="col-md-6">
+                  {% include '@atoms/picture/picture-avatar.twig' %}
+                </div>
+                <div class="col-md-6">
+                  <p>Habilitation Dr. Ing</p>
+                  <p><a href="#" class="btn btn-sm btn-primary">Button</a></p>
+                  <p><a href="#" class="btn btn-sm btn-secondary">Button</a></p>
+                  <p><a href="#" class="btn btn-sm btn-secondary">Button</a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              {# Collapsible info #}
+              {% include '@organisms/text/text.twig' %}
+
+              <div>
+                <p class="text-right">
+                  <button data-target="#collapse1" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse1" class="collapsed text-muted btn btn-link btn-sm">
+                    Liste complète des adresses et fonctions
+                    {% include '@atoms/icon/icon.twig' with {icon: 'icon-triangle'} %}
+                  </button>
+                </p>
+                <div class="collapse" id="collapse1">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consectetur deserunt earum ex illum incidunt nobis, numquam odit placeat quasi! Consequatur dolores id, impedit laborum maiores nihil nobis officiis perspiciatis placeat, quam quas quia quo sed sint temporibus unde voluptatum. Accusamus animi ex expedita illo ipsa iure libero magnam minus, perspiciatis possimus quos repellendus reprehenderit sed tenetur, velit! Accusamus, accusantium adipisci aliquam animi, aperiam assumenda blanditiis consectetur consequuntur deleniti dignissimos dolorem enim error et expedita fugiat illum in ipsam itaque iure maxime mollitia nemo nostrum officia, optio pariatur quaerat qui quibusdam quisquam quo reiciendis rerum ut vel velit vitae voluptas.</p>
+                </div>
+              </div>
+              <div>
+                <p class="text-right">
+                  <button data-target="#collapse2" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse2" class="collapsed text-muted btn btn-link btn-sm">
+                    Liste complète des adresses et fonctions
+                    {% include '@atoms/icon/icon.twig' with {icon: 'icon-triangle'} %}
+                  </button>
+                </p>
+                <div class="collapse" id="collapse2">
+                  <table class="table table-striped">
+                    <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">First</th>
+                      <th scope="col">Last</th>
+                      <th scope="col">Handle</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {# Intermediate navigation #}
+    <div class="bg-gray-100 py-4 mb-5">
+      <div class="container">
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container">
+      {# Biography area #}
+      <div class="row mb-5">
+        <div class="col-md-7">
+          <h2>Biography</h2>
+          <div class="collapse-half" id="biography">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad aperiam culpa dolor dolore eaque esse excepturi incidunt libero maxime molestias mollitia neque odit possimus praesentium quaerat quam quas reprehenderit, saepe similique sit totam veritatis vero voluptas voluptatem voluptates voluptatibus! Ab ad adipisci autem blanditiis cum deleniti deserunt dolor, dolores earum eius enim esse est eveniet exercitationem, fuga fugiat fugit illum ipsum maiores molestias mollitia nesciunt officia perferendis praesentium quisquam quos recusandae rem repellat repudiandae sit temporibus vero vitae voluptatem! Blanditiis excepturi neque officia possimus suscipit? A culpa est ipsa nemo officiis. Corporis distinctio, est iure nihil possimus quis veritatis.</p>
+          </div>
+          <div class="text-center">
+            <a class="collapsed text-muted" data-toggle="collapse" aria-hidden="true" href="#biography">
+              Show full biography
+              {% include '@atoms/icon/icon.twig' with {icon: 'icon-triangle'} %}
+            </a>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <h2>Fields of expertises</h2>
+          tags
+        </div>
+      </div>
+
+      {# Publications #}
+      <div class="d-flex flex-wrap justify-content-between align-items-baseline">
+        <h2 class="mr-3">Publications</h2>
+        <select name="year" id="year">
+          <option value="2018">2018</option>
+          <option value="2017">2017</option>
+          <option value="2016">2016</option>
+        </select>
+      </div>
+      {% include '@organisms/news/news.twig' %}
+
+      {# Teaching and PHD area #}
+      <h2>Teaching and PHD</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Computer science</li>
+              <li class="list-group-item">Communication systems</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, reiciendis!</li>
+              <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur.</li>
+              <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, reiciendis!</li>
+              <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur.</li>
+              <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+{% endembed %}
