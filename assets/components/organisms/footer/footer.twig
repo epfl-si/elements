@@ -1,10 +1,10 @@
-<footer class="footer">
+<footer class="footer" role="contentinfo">
 
-  <div class="footer-group footer-sitemap">
+  <nav class="footer-group footer-sitemap" role="navigation">
     {% for i in [1, 2, 3, 4, 5] %}
       {% include "organisms::footer/footer-col.twig" with { id: loop.index } %}
     {% endfor %}
-  </div>
+  </nav>
 
   <div class="footer-group">
     {% include "organisms::footer/footer-faculties.twig" %}

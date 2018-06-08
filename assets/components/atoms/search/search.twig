@@ -1,11 +1,11 @@
-<div class="input-group search">
-  <div class="input-group-prepend">
-    <span class="input-group-text">
-      {% include '@atoms/icon/icon.twig' with { icon: 'icon-search' } %}
-    </span>
+<form action="#">
+  <div class="input-group search" role="search">
+    <div class="input-group-prepend">
+      <span class="input-group-text">
+        {% include '@atoms/icon/icon.twig' with { icon: 'icon-search' } %}
+      </span>
+    </div>
+      <label for="search" class="sr-only">Rechercher sur le site</label>
+      <input type="text" class="form-control" id="search" placeholder="Rechercher">
   </div>
-  <form action="#">
-    <label for="search" class="sr-only">Rechercher sur le site</label>
-    <input type="text" class="form-control" id="search" placeholder="Rechercher">
-  </form>
-</div>
+</form>
