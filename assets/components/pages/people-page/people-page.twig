@@ -133,11 +133,14 @@
       {# Publications #}
       <div class="d-flex flex-wrap justify-content-between align-items-baseline">
         <h2 class="mr-3">Publications</h2>
-        <select name="year" id="year">
-          <option value="2018">2018</option>
-          <option value="2017">2017</option>
-          <option value="2016">2016</option>
-        </select>
+        <form action="#">
+          <label for="year" class="sr-only">Filter by year</label>
+          <select name="year" id="year">
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
+          </select>
+        </form>
       </div>
       {% include '@organisms/news/news.twig' %}
 

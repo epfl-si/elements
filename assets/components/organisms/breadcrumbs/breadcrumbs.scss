@@ -69,12 +69,12 @@ $hamburger-btn-size: 2rem;
   &:after {
     content: '\203A';
     padding-left: 0.3rem;
-    color: $gray-600;
+    color: $gray-700;
   }
 
   a {
     background-image: none !important;
-    color: $gray-600;
+    color: $gray-700;
     text-decoration: none;
 
     &:hover {
@@ -87,7 +87,7 @@ $hamburger-btn-size: 2rem;
   }
 
   &.active {
-    color: $gray-600;
+    color: $gray-700;
   }
 }
 

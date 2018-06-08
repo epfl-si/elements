@@ -4,5 +4,8 @@
       {% include '@atoms/icon/icon.twig' with { icon: 'icon-search' } %}
     </span>
   </div>
-  <input type="text" class="form-control" placeholder="Rechercher">
+  <form action="#">
+    <label for="search" class="sr-only">Rechercher sur le site</label>
+    <input type="text" class="form-control" id="search" placeholder="Rechercher">
+  </form>
 </div>
