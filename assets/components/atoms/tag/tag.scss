@@ -53,66 +53,71 @@ a.tag {
   }
 }
 
+.tag-input {
+  &:not(.selectize-control) {
+    width: 100%;
+  }
+}
+
 .selectize-control {
+  cursor: text;
+
   .selectize-input {
-    padding: 0.1em 0.2em;
-    background: darken($white, 5%);
-    border-radius: $border-radius;
-    border: 1px solid $gray-300;
+    @extend .form-control;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: $input-height;
 
     .tag {
       margin-right: 0.4em;
       cursor: pointer;
-    }
 
-    .tag.active,
-    .tag:hover {
-      background: $gray-100;
-      border-top-color: darken($gray-300, 10%);
-      border-right-color: darken($gray-300, 10%);
-      border-left-color: darken($gray-300, 10%);
-      color: $black;
-      text-decoration: none;
+      &.active,
+      &:hover {
+        background: $gray-100;
+        border-top-color: darken($gray-300, 10%);
+        border-right-color: darken($gray-300, 10%);
+        border-left-color: darken($gray-300, 10%);
+        color: $black;
+        text-decoration: none;
+      }
     }
 
     input {
-      display: inline-block;
       margin: 0 0.1em 0.2em 0;
-      padding: 0.2em 0.4em;
-      background: none;
-      border: 0;
-      font-size: 0.75em;
+      padding: 0.1em 0;
+      min-width: 15px !important; // Displays blinking cursor on first focus in some browsers
+      border: none;
       line-height: 1;
-      font-weight: 400;
-      text-align: center;
-      white-space: nowrap;
-      vertical-align: baseline;
+      outline: none;
     }
   }
 
   .selectize-dropdown {
-    position: absolute;
-    z-index: 10;
-    margin: -1px 0 0 0;
     background: $white;
-    border: 1px solid $gray-600;
-    border-top: 0 none;
-    border-radius: 0 0 3px 3px;
-    box-shadow: 0 1px 3px transparentize($black, 0.9);
-    box-sizing: border-box;
+    border: 1px solid $gray-300;
+    border-top: none;
   }
 
   .selectize-dropdown-content {
     max-height: 200px;
     overflow-x: hidden;
     overflow-y: auto;
-    font-size: 0.75em;
 
     .option,
     .create {
+      border-top: 1px solid $gray-200;
       padding: 0.4em 0.6em;
-      color: $gray-600;
+      color: $gray-700;
       cursor: pointer;
+
+      &:hover,
+      &.active {
+        background-color: lighten($gray-100, 5%);
+        color: $body-color;
+      }
     }
   }
 }
