@@ -69,7 +69,7 @@ const nav = () => {
     toggleDesktopMenu();
   });
 
-  $('#breadcrumb-burger').on('click', () => {
+  $('#nav-burger').on('click', () => {
     toggleDesktopMenu();
   });
 };

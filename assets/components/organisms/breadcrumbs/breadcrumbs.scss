@@ -1,7 +1,5 @@
 @charset 'utf-8';
 
-$hamburger-btn-size: 2rem;
-
 .breadcrumb {
   padding: 0;
 
@@ -19,26 +17,6 @@ $hamburger-btn-size: 2rem;
 
     li:last-child {
       padding-right: 5rem;
-    }
-  }
-}
-
-.breadcrumb-container {
-  position: relative;
-
-  @include media-breakpoint-down(lg) {
-    padding: 0;
-    background: gray('100');
-
-    &:before {
-      content: ' ';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 3 * $spacer;
-      height: 100%;
-      background: linear-gradient(to right, transparent 0%, gray('100') 80%, gray('100') 100%);
-      z-index: 120;
     }
   }
 }
@@ -88,50 +66,5 @@ $hamburger-btn-size: 2rem;
 
   &.active {
     color: $gray-700;
-  }
-}
-
-// hamburger button
-.breadcrumb-burger {
-  display: none;
-  position: absolute;
-  top: -0.3rem;
-  left: 0;
-  width: $hamburger-btn-size;
-  height: $hamburger-btn-size;
-  background: none;
-  border-radius: 50%;
-  border: 1px solid gray('100');
-  padding-top: $hamburger-btn-size / 6;
-  padding-left: $hamburger-btn-size / 3.58;
-  transition: background 0.2s;
-  outline: none;
-
-  &:hover {
-    cursor: pointer;
-    background: gray('100');
-  }
-
-  .line {
-    display: block;
-    width: $hamburger-btn-size / 2.5;
-    height: 2px;
-    background: gray('600');
-    border-radius: 4px;
-    margin-bottom: 3px;
-  }
-}
-
-@include media-breakpoint-up(xl) {
-  // create space out of container on the left for hamburger button
-  .nav-toggle .breadcrumb-container nav {
-    position: relative;
-    margin-left: -1 * ($hamburger-btn-size + (0.5 * $spacer));
-    padding-left: $hamburger-btn-size + (0.6 * $spacer);
-    margin-top: 0.5 * $spacer;
-  }
-
-  .nav-toggle .breadcrumb-burger {
-    display: block;
   }
 }

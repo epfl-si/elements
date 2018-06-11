@@ -3,3 +3,10 @@ name: nav
 wrapper: desktop-menu-open
 notes: |
   [TODO] document navigation component. :)
+variants:
+  - name: toggle
+    title: Toggle
+    notes: |
+      The Toggle variant.
+    background: ''
+    wrapper: ''

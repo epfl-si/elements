@@ -14,7 +14,8 @@
     {% endblock %}
 
     {% block breadcrumb %}
-      <div class="container breadcrumb-container">
+      <div class="container nav-toggle-container">
+        {% include '@molecules/nav/nav-toggle.twig' %}
         {% include '@organisms/breadcrumbs/breadcrumbs.twig' %}
       </div>
     {% endblock %}
