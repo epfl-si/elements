@@ -152,3 +152,18 @@
     margin-left: 0;
   }
 }
+
+.tlbx-component-nav {
+  min-height: 250px;
+  padding: 0;
+
+  .nav-toggle .nav-main {
+    position: absolute;
+  }
+
+  @media (min-width: 1200px) {
+    .desktop-menu-open .nav-toggle .nav-main {
+      left: 20px;
+    }
+  }
+}

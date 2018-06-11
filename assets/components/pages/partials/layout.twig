@@ -10,7 +10,7 @@
   <div class="main-container {{ classes }}">
 
     {% block nav %}
-      {% include '@molecules/nav/nav.twig' %}
+      {% include '@molecules/nav/nav.twig' with {'no_toggle_wrapper' : true} %}
     {% endblock %}
 
     {% block breadcrumb %}

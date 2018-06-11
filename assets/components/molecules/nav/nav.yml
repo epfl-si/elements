@@ -1,2 +1,5 @@
 title: Nav
 name: nav
+wrapper: desktop-menu-open
+notes: |
+  [TODO] document navigation component. :)

@@ -1,6 +1,6 @@
 name: popover
 title: Popover
 notes: |
-  Describe the popover component here.
-wrapper: ''
-background: ''
+  If you use the `.btn-circle` class on the popover toggle, the popover text should be also added in a `.sr-only` paragraph.
+
+  See the [Media cover](/#/organisms/media) component for an implementation inside a `<figcaption>`.
