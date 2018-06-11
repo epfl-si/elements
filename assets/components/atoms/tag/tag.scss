@@ -96,6 +96,7 @@ a.tag {
   }
 
   .selectize-dropdown {
+    position: absolute;
     background: $white;
     border: 1px solid $gray-300;
     border-top: none;
