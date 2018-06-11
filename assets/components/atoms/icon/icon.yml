@@ -1,5 +1,7 @@
 title: Icon
 name: icon
+notes: |
+  The icon component requires the icons sprite to be injected in the page to work. See `svg-icons.js` file.
 variants:
   - name: list
     title: Complete list
