@@ -483,6 +483,9 @@ $hamburger-btn-size: 2rem;
   }
 
   .nav-toggle .nav-burger {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
