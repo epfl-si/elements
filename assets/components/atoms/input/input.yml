@@ -1,4 +1,4 @@
-title: Input
+title: Input text
 name: input
 variants:
   - name: value
@@ -14,7 +14,7 @@ variants:
 notes: |
   <br/>
 
-  *`.hover` and `.focus` classes are used to simulated those states, don't use it in production.
+  *`.hover` and `.focus` classes are used to simulate those states in the styleguide, don't use them in production.
 
   <br/>
 
