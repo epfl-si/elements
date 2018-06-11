@@ -4,6 +4,12 @@
   position: absolute;
   top: -1000px;
 
+  ul {
+    margin-bottom: 0;
+
+    @include list-unstyled;
+  }
+
   li {
     a {
       display: block;

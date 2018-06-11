@@ -114,3 +114,21 @@
     border: 1px solid rgba($red, 0.3);
   }
 }
+
+.tlbx-component-access-nav {
+  position: relative;
+  padding-bottom: 45px;
+
+  &:after {
+    content: 'Focus here and press <Tab>.';
+    color: $text-muted;
+  }
+
+  .access-nav {
+    position: static;
+
+      li a {
+        position: absolute;
+      }
+  }
+}
