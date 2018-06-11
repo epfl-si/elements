@@ -115,6 +115,19 @@
   }
 }
 
+.tlbx-item-code {
+  pre code {
+    display: flex;
+    flex-direction: column;
+
+    > span {
+      &:hover {
+        background-color: rgba($white, 0.05);
+      }
+    }
+  }
+}
+
 .tlbx-component-access-nav {
   position: relative;
   padding-bottom: 45px;
@@ -127,8 +140,8 @@
   .access-nav {
     position: static;
 
-      li a {
-        position: absolute;
-      }
+    li a {
+      position: absolute;
+    }
   }
 }
