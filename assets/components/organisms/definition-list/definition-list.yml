@@ -2,3 +2,10 @@ title: Definition list
 name: definition-list
 notes: |
   The definition title can contain links.
+variants:
+  - name: grid
+    title: Definition list as a Grid (table-like)
+    notes: |
+      We sometimes need to display data in table-like layout. Definition list is great in these cases.
+
+      ♿️ Don't forget to add a title to the table, for a11y purposes.
