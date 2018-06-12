@@ -58,7 +58,7 @@
         &.open,
         &.active,
         &:focus {
-          color: $red;
+          color: theme-color('primary');
 
           &:before {
             content: none;
