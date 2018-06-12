@@ -1,6 +1,5 @@
 @charset 'utf-8';
 
-/* stylelint-disable */
 .ms-parent {
   display: block;
   position: relative;
@@ -13,156 +12,149 @@
   padding: $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding) $custom-select-padding-y $custom-select-padding-x;
   overflow: hidden;
   cursor: pointer;
-  border: $custom-select-border-width solid $custom-select-border-color;
-  text-align: left;
   white-space: nowrap;
-  line-height: 26px;
-  color: #444;
-  text-decoration: none;
-  border-radius: $custom-select-border-radius;
   background: $custom-select-bg $custom-select-indicator no-repeat right $custom-select-padding-x center;
   background-size: $custom-select-bg-size;
+  border: $custom-select-border-width solid $custom-select-border-color;
+  border-radius: $custom-select-border-radius;
+  text-align: left;
+  text-decoration: none;
+  line-height: 26px;
+  color: #444;
 
-}
+  &.disabled {
+    background-color: #f4f4f4;
+    background-image: none;
+    border: 1px solid #ddd;
+    cursor: default;
+  }
 
-.ms-choice.disabled {
-  background-color: #f4f4f4;
-  background-image: none;
-  border: 1px solid #ddd;
-  cursor: default;
-}
+  > span {
+    display: block;
+    top: 0;
+    right: 20px;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
-.ms-choice > span {
-  top: 0;
-  left: 0;
-  right: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: block;
-}
+    &.placeholder {
+      color: #999;
+    }
+  }
 
-.ms-choice > span.placeholder {
-  color: #999;
-}
+  > div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 25px;
+    background: url('multiple-select.png') left top no-repeat;
 
-.ms-choice > div {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 20px;
-  height: 25px;
-  background: url('multiple-select.png') left top no-repeat;
-}
-
-.ms-choice > div.open {
-  background: url('multiple-select.png') right top no-repeat;
+    &.open {
+      background: url('multiple-select.png') right top no-repeat;
+    }
+  }
 }
 
 .ms-drop {
+  display: none;
+  position: absolute;
   width: 100%;
   overflow: hidden;
-  display: none;
   margin-top: -1px;
   padding: 0;
-  position: absolute;
   z-index: 1000;
   background: #fff;
-  color: #000;
   border: 1px solid #aaa;
-}
+  color: #000;
 
-.ms-drop.bottom {
-  top: 100%;
-  box-shadow: 0 4px 5px rgba(0, 0, 0, .15);
-}
+  &.bottom {
+    top: 100%;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+  }
 
-.ms-drop.top {
-  bottom: 100%;
-  box-shadow: 0 -4px 5px rgba(0, 0, 0, .15);
+  &.top {
+    bottom: 100%;
+    box-shadow: 0 -4px 5px rgba(0, 0, 0, 0.15);
+  }
+
+  ul {
+    overflow: auto;
+    margin: 0;
+    padding: 5px 8px;
+
+    > li {
+      display: list-item;
+      position: static;
+      list-style: none;
+      background-image: none;
+
+      .disabled {
+        opacity: 0.35;
+      }
+
+      &.multiple {
+        display: block;
+        float: left;
+
+        label {
+          display: block;
+          width: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      &.group {
+        clear: both;
+      }
+
+      label {
+        display: block;
+        font-weight: normal;
+        white-space: nowrap;
+
+        &.optgroup {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  input[type="checkbox"] {
+    vertical-align: middle;
+    margin-right: 0.5em;
+    margin-bottom: 0.25em;
+  }
+
+  .ms-no-results {
+    display: none;
+  }
 }
 
 .ms-search {
   display: inline-block;
-  margin: 0;
-  min-height: 26px;
-  padding: 4px;
   position: relative;
-  white-space: nowrap;
-  width: 100%;
   z-index: 10000;
-}
-
-.ms-search input {
   width: 100%;
-  height: auto !important;
-  min-height: 24px;
-  padding: 0 20px 0 5px;
+  min-height: 26px;
   margin: 0;
-  outline: 0;
-  font-family: sans-serif;
-  font-size: 1em;
-  border: 1px solid #aaa;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-.ms-search, .ms-search input {
-  box-sizing: border-box;
-}
-
-.ms-drop ul {
-  overflow: auto;
-  margin: 0;
-  padding: 5px 8px;
-}
-
-.ms-drop ul > li {
-  list-style: none;
-  display: list-item;
-  background-image: none;
-  position: static;
-}
-
-.ms-drop ul > li .disabled {
-  opacity: .35;
-  filter: Alpha(Opacity=35);
-}
-
-.ms-drop ul > li.multiple {
-  display: block;
-  float: left;
-}
-
-.ms-drop ul > li.group {
-  clear: both;
-}
-
-.ms-drop ul > li.multiple label {
-  width: 100%;
-  display: block;
+  padding: 4px;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 
-.ms-drop ul > li label {
-  font-weight: normal;
-  display: block;
-  white-space: nowrap;
+  input {
+    width: 100%;
+    height: auto !important;
+    min-height: 24px;
+    margin: 0;
+    padding: 0 20px 0 5px;
+    outline: 0;
+    border: 1px solid #aaa;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: sans-serif;
+    font-size: 1em;
+  }
 }
-
-.ms-drop ul > li label.optgroup {
-  font-weight: bold;
-}
-
-.ms-drop input[type="checkbox"] {
-  vertical-align: middle;
-  margin-right: 0.5em;
-  margin-bottom: 0.25em;
-}
-
-.ms-drop .ms-no-results {
-  display: none;
-}
-/* stylelint-enable */
