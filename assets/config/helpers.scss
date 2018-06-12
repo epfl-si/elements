@@ -37,6 +37,12 @@
 }
 
 //
+// Display helpers
+.flex-grow {
+  flex: 1 1 auto;
+}
+
+//
 // Text helpers
 .text-small {
   font-size: $font-size-xs;

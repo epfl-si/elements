@@ -8,6 +8,10 @@
   margin-bottom: $grid-gutter-width;
 }
 
+.card-sm {
+  margin-bottom: $grid-gutter-width / 2;
+}
+
 .card-body {
   .card-header {
     display: flex;
@@ -30,6 +34,11 @@
 
   .card-img-top + & {
     border-top: none !important;
+  }
+
+  .card-sm &,
+  &.card-sm {
+    padding: $card-spacer-x * 0.5;
   }
 }
 

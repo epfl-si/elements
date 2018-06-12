@@ -20,3 +20,5 @@ notes: |
 
   Use `.card-overlay` and `.card-img-overlay` to have a full image card.
 
+  You can reduce the padding in the card body by adding the `.card-sm` class to the card.
+
