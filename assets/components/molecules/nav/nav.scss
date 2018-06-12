@@ -13,8 +13,8 @@ $nav-spacer: 4px;
   border-right: 1px solid gray('100');
 
   li.current_page_item {
-    & > a,
-    & > a:hover {
+    & > a:first-child,
+    & > a:first-child:hover {
       background: theme-color('primary');
       font-weight: bold;
       color: $white;
@@ -64,10 +64,10 @@ $nav-spacer: 4px;
         background: gray('100');
       }
     }
+  }
 
-    & + .nav-arrow {
-      margin-left: $nav-spacer;
-    }
+  .menu-item-has-children > .nav-arrow {
+    margin-left: $nav-spacer;
   }
 
   .nav-menu {
@@ -177,12 +177,12 @@ a.nav-arrow {
     display: none;
   }
 
-  .current_page_ancestor > ul {
+  .current-menu-ancestor > ul {
     display: block;
     left: 0;
   }
 
-  .current_page_parent > ul {
+  .current-menu-parent > ul {
     display: block;
     left: 100%;
   }
@@ -207,18 +207,18 @@ a.nav-arrow {
   width: 2 * $spacer;
   height: 2 * $spacer;
   border-radius: 50%;
-  background: white;
+  background: $white;
   padding-left: 9px;
-  border: 1px solid lightgrey;
+  border: 1px solid gray('200');
   cursor: pointer;
   transition: all 0.2s;
 
   &:hover {
-    background: lightgrey;
+    background: gray('200');
 
     &:before,
     &:after {
-      background: black;
+      background: $black;
     }
   }
 
@@ -230,7 +230,7 @@ a.nav-arrow {
     top: 0.95 * $spacer;
     width: 16px;
     height: 2px;
-    background: gray;
+    background: gray('600');
     border-radius: 2px;
   }
 

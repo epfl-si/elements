@@ -59,6 +59,7 @@
   .fullwidth-teaser-content p {
     @include media-breakpoint-up(xl) {
       float: right;
+      max-width: 28rem;
       margin-left: 6rem;
       padding: 1.2rem 1.6rem;
       background: rgba($white, 0.9);
