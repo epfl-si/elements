@@ -20,15 +20,15 @@
 }
 
 .card-slider-btn {
-  position: relative;
   display: inline-block;
+  position: relative;
   width: 3rem;
   height: 3rem;
   background: $white;
   border: 1px solid $gray-300;
   font-size: 1.4rem;
-  color: theme-color('primary');
   line-height: 2.3rem;
+  color: theme-color('primary');
   transition:
     opacity 0.3s,
     background 0.3s,
@@ -74,8 +74,8 @@
 
 .card-slider-wrapper {
   .flickity-page-dots {
-    bottom: $spacer * -0.8;
     display: flex;
+    bottom: $spacer * -0.8;
     justify-content: stretch;
     align-items: center;
   }
@@ -93,5 +93,3 @@
     }
   }
 }
-
-
