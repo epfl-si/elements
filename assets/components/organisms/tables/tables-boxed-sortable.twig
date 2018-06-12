@@ -1,24 +1,3 @@
-<div class="tablesaw-container">
-  <table class="table table-boxed table-sortable" data-tablesaw-sortable>
-    <thead>
-      <tr>
-        <th data-tablesaw-sortable-col>Header one</th>
-        <th data-tablesaw-sortable-col>Header two</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Curabitur blandit</td>
-        <td>Morbi leo porta</td>
-      </tr>
-      <tr>
-        <td>Tempus porttitor</td>
-        <td>Duis mollis</td>
-      </tr>
-      <tr>
-        <td>Commodo luctus nisi</td>
-        <td>Blandit tempus porttitor</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+{% extends "@organisms/tables/tables-sortable.twig" %}
+
+{% block classes %}table table-boxed table-sortable{% endblock %}
