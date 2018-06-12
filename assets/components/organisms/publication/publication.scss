@@ -1,62 +1,15 @@
 @charset 'utf-8';
 
-.card-publication {
-  .card-footer {
-    margin-left: $card-spacer-x;
-    margin-right: $card-spacer-x;
-    padding: 1.3rem 0 $card-spacer-x 0;
-    background: $white;
-    font-size: $font-size-xs;
+// Really needed?
 
-    a:not(.btn) {
-      margin-left: 0.8rem;
-      color: $text-muted;
-    }
-  }
-
-  & + .card-publication,
-  & + .card-publication-heading {
-    margin-top: 1.7rem;
-  }
-}
-
-.card-subtitle {
-  margin-bottom: 0.8rem;
-  font-size: $font-size-xs;
-  color: $text-muted;
-}
-
-.card-links {
-  a {
-    margin-right: 0.8rem;
-  }
-}
-
-.publication-author {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: baseline;
-  justify-content: space-between;
-  padding-bottom: 1.3rem;
-
-  picture + * {
-    margin-left: 1rem;
-    margin-bottom: 0;
-  }
-
-  picture img {
-    max-width: 3rem;
-  }
-
-  a {
-    font-size: $font-size-xs;
-    color: $text-muted;
-  }
-}
-
-.publication-author-title {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: baseline;
-  justify-content: flex-start;
-}
+//.card-subtitle {
+//  margin-bottom: 0.8rem;
+//  font-size: $font-size-xs;
+//  color: $text-muted;
+//}
+//
+//.card-links {
+//  a {
+//    margin-right: 0.8rem;
+//  }
+//}
