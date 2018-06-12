@@ -5,7 +5,8 @@ import Imagesloaded from 'imagesloaded';
 
 export default () => {
   if ($('.card-slider').length > 0) {
-    const isMobile = $(window).width() < 767;
+    // Mobile width corresponds to SM breakpoint from Bootstrap.
+    const isMobile = $(window).width() < 768;
 
     Imagesloaded('.card-slider', () => {
       const flkty = new Flickity('.card-slider', {

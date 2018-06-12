@@ -12,7 +12,7 @@
 
   > div { margin-right: $spacer * 2; }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(sm) {
     justify-content: center;
     margin-top: $spacer * 2.6;
     > div { margin-right: 0; }
@@ -48,7 +48,7 @@
     color: $gray-600;
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(sm) {
     display: none;
   }
 }
