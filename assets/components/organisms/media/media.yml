@@ -7,5 +7,11 @@ variants:
     title: Video
   - name: gallery
     title: Gallery
+  - name: sponsor
+    title: Sponsor
+    notes: |
+      The Sponsor variant.
+    background: ''
+    wrapper: ''
 notes: |
   ### Cover
