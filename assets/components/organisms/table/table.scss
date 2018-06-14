@@ -4,7 +4,7 @@
   thead {
     th {
       border-bottom: (3 * $table-border-width) solid $table-border-color;
-      padding: $table-cell-padding-sm 0;
+      padding: $table-cell-padding-sm $table-cell-padding-sm;
     }
   }
 
@@ -37,6 +37,7 @@
 
   tfoot {
     td {
+      padding: $table-cell-padding-sm $table-cell-padding-sm;
       border-top: (3 * $table-border-width) solid $table-border-color;
       font-weight: $font-weight-bold;
     }
