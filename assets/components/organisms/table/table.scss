@@ -147,6 +147,10 @@
 .tablesaw-container {
   @include tablesaw-stack( map-get($grid-breakpoints, "md") );
 
+  .tablesaw {
+    width: 100%;
+  }
+
   .tablesaw-sortable-btn {
     min-width: 100%;
     background: transparent;
