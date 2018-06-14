@@ -33,7 +33,7 @@
     }
 
     .active {
-      color: $red;
+      color: theme-color('primary');
     }
 
     a {
