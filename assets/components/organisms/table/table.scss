@@ -14,7 +14,7 @@
 
     td {
       vertical-align: top;
-      padding: $table-cell-padding 0;
+      padding: $table-cell-padding $table-cell-padding-sm;
       border-bottom: $table-border-width solid $table-border-color-light;
 
       @include media-breakpoint-down(sm) {
