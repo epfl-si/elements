@@ -1,12 +1,10 @@
 @charset 'utf-8';
 
 .table {
-  width: 100%;
-
   thead {
     th {
-      border-bottom: 3px solid $gray-200;
-      padding: 0.3rem 0;
+      border-bottom: (3 * $table-border-width) solid $table-border-color;
+      padding: $table-cell-padding-sm 0;
     }
   }
 
@@ -16,54 +14,54 @@
 
     td {
       vertical-align: top;
-      padding: 0.6rem 0;
-      border-bottom: 1px solid $gray-100;
+      padding: $table-cell-padding 0;
+      border-bottom: $table-border-width solid $table-border-color-light;
 
       @include media-breakpoint-down(sm) {
         &:first-child {
-          margin-top: 0.6rem;
+          margin-top: $table-cell-padding;
         }
 
         &:last-child {
-          margin-bottom: 0.6rem;
+          margin-bottom: $table-cell-padding;
         }
       }
 
       .tablesaw-cell-label {
         display: inline-block;
         min-width: 33%;
-        color: $black;
+        color: $body-color;
       }
     }
   }
 
   tfoot {
     td {
-      border-top: 3px solid $gray-200;
-      font-weight: bold;
+      border-top: (3 * $table-border-width) solid $table-border-color;
+      font-weight: $font-weight-bold;
     }
   }
 }
 
 .table-boxed {
   @include media-breakpoint-up(md) {
-    border: 1px solid $gray-200;
+    border: $table-border-width solid $table-border-color;
   }
 
   thead th {
-    border-top: 1px solid $gray-200;
+    border-top: $table-border-width solid $table-border-color;
   }
 
   thead th,
   tbody td,
   tfoot td {
-    padding-left: 0.45rem;
-    padding-right: 0.45rem;
-    border-right: 1px solid $gray-200;
+    padding-left: ($table-cell-padding * 0.75);
+    padding-right: ($table-cell-padding * 0.75);
+    border-right: $table-border-width solid $table-border-color;
 
     @include media-breakpoint-down(sm) {
-      border-left: 1px solid $gray-200;
-      border-top: 1px solid $gray-200;
+      border-left: $table-border-width solid $table-border-color;
+      border-top: $table-border-width solid $table-border-color;
     }
   }
 
@@ -73,14 +71,14 @@
       border-bottom: 0;
 
       &:last-child {
-        border-bottom: 1px solid $gray-200;
+        border-bottom: $table-border-width solid $table-border-color;
       }
     }
   }
 
   tbody tr:last-child {
     @include media-breakpoint-down(sm) {
-      border-bottom: 1px solid $gray-200;
+      border-bottom: $table-border-width solid $table-border-color;
     }
   }
 }
@@ -90,12 +88,12 @@
     padding: 0;
 
     button {
-      padding: 0.3rem;
+      padding: $table-cell-padding-sm;
       cursor: pointer;
 
       .tablesaw-sortable-arrow {
-        $triangle_width: 0.29rem;
-        $triangle_height: 0.35rem;
+        $triangle-width: 0.29rem;
+        $triangle-height: 0.35rem;
 
         display: block;
         position: relative;
@@ -111,9 +109,9 @@
           left: 0;
           width: 0;
           height: 0;
-          border-left: $triangle_width solid transparent;
-          border-right: $triangle_width solid transparent;
-          border-bottom: $triangle_height solid $gray-200;
+          border-left: $triangle-width solid transparent;
+          border-right: $triangle-width solid transparent;
+          border-bottom: $triangle-height solid $table-border-color;
           margin: 0;
         }
 
@@ -124,9 +122,9 @@
           left: 0;
           width: 0;
           height: 0;
-          border-left: $triangle_width solid transparent;
-          border-right: $triangle_width solid transparent;
-          border-top: $triangle_height solid $gray-200;
+          border-left: $triangle-width solid transparent;
+          border-right: $triangle-width solid transparent;
+          border-top: $triangle-height solid $table-border-color;
           margin: 0;
         }
       }
@@ -181,6 +179,6 @@
   }
 
   tr:first-child {
-    border-top: 1px solid $gray-100;
+    border-top: $table-border-width solid $table-border-color-light;
   }
 }
