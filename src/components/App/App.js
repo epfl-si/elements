@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { Theme } from './Theme';
 
 import { getComponents } from '../../actions/atomic';
@@ -11,6 +11,7 @@ import { setBaseURL } from '../../actions/navigation';
 
 import Sidebar from '../Sidebar/Sidebar';
 import Toolbar from '../Toolbar/Toolbar';
+import Alert from '../Alert/Alert';
 import SingleStyleguide from '../../views/Single/SingleStyleguide';
 import SingleFull from '../../views/Single/SingleFull';
 import SinglePage from '../../views/Single/SinglePage';
@@ -20,20 +21,6 @@ import Colors from '../../views/Colors/Colors';
 import './App.css';
 
 class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      components: {
-        atoms: [],
-        molecules: [],
-        organisms: [],
-        pages: [],
-      },
-      docs: {},
-    };
-  }
-
   componentWillMount() {
     // Start init actions
     this.props.setBaseURL(this.props.location.pathname);
@@ -61,27 +48,30 @@ class App extends Component {
 
     if (hasStyleguideShell && hasHomeStyleguideShell) {
       return (
-        <Theme className="styleguide">
-          <div className="tlbx-toolbar-wrapper">
-            <Toolbar />
-          </div>
-          <div className={`tlbx-sidebar-wrapper${this.props.navigation.showMenu ? ' tlbx-sidebar-open' : ''}`}>
-            <Sidebar location={this.props.location} />
-          </div>
-          <div className="tlbx-content-wrapper">
-            <div className="tlbx-content">
-              {fullHome
-                ? '' :
-                <Route path="/" exact component={Doc} />
-              }
-              <Route path="/atoms/:slug" component={SingleStyleguide} />
-              <Route path="/molecules/:slug" component={SingleStyleguide} />
-              <Route path="/organisms/:slug" component={SingleStyleguide} />
-              <Route path="/doc/:slug" component={Doc} />
-              <Route path="/colors" component={Colors} />
+        <div>
+          <Alert />
+          <Theme className="styleguide">
+            <div className="tlbx-toolbar-wrapper">
+              <Toolbar />
             </div>
-          </div>
-        </Theme>
+            <div className={`tlbx-sidebar-wrapper${this.props.navigation.showMenu ? ' tlbx-sidebar-open' : ''}`}>
+              <Sidebar location={this.props.location} />
+            </div>
+            <div className="tlbx-content-wrapper">
+              <div className="tlbx-content">
+                <Switch>
+                  {fullHome
+                    ? '' :
+                    <Route path="/" exact component={Doc} />
+                  }
+                  <Route path="/doc/:slug" component={Doc} />
+                  <Route path="/colors" component={Colors} />
+                  <Route path="/:type/:slug" component={SingleStyleguide} />
+                </Switch>
+              </div>
+            </div>
+          </Theme>
+        </div>
       );
     }
 

@@ -27,9 +27,10 @@ export function getComponentsEpic(action$) {
           // Loop over each components
           // eslint-disable-next-line no-param-reassign
           payload[type] = payload[type].map((component, id) => {
-            const path = `components/${type}/${component}/`;
-            const config = yaml.load(`${path}${component}.yml`);
-            const markup = `${path}${component}.twig`;
+            const isReady = typeof component === 'object';
+            const path = `components/${type}/${component.name || component}/`;
+            const config = isReady ? component : yaml.load(`${path}${component.name}.yml`);
+            const markup = `${path}${config.name}.twig`;
 
             // format related variants collection
             const variants = config && config.variants ? config.variants.map((item, i) => {
@@ -45,7 +46,7 @@ export function getComponentsEpic(action$) {
                 type,
                 parent_id: id,
                 parent: config.name,
-                markup: `${path}${(`${component}-${variant.name}`).toLowerCase()}.twig`,
+                markup: `${path}${(`${config.name}-${variant.name}`).toLowerCase()}.twig`,
               };
             }) : [];
 
@@ -83,15 +84,15 @@ export function getMarkupEpic(action$) {
       return new Promise((resolve) => {
         Twig.twig({
           href: fixPath(component.markup),
-          namespaces: {
-            atoms: './components/atoms/',
-            molecules: './components/molecules/',
-            organisms: './components/organisms/',
-            pages: './components/pages/',
-          },
+          namespaces: payload.types.reduce((acc, value) => {
+            acc[value] = `./components/${value}/`;
+            return acc;
+          }, {}),
           load: (template) => {
-            component.content = template.render(window.data);
-            resolve(component);
+            resolve({
+              ...component,
+              content: template.render(window.data),
+            });
           },
         });
       }).then((result) => {

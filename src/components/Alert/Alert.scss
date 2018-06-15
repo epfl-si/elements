@@ -1,0 +1,43 @@
+@import '../../variables.scss';
+
+.tlbx-alert {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: $toolbar-width;
+  padding: 8px 20px;
+  background: #FFD62B;
+  font-size: 16px;
+  &.open { display: flex; }
+  * { color: $black; }
+
+  p {
+    flex: 1 1 100%;
+    margin: 0;
+  }
+
+  span {
+    position: relative;
+    top: 0.1em;
+    font-size: 2.2em;
+    padding-right: 15px;
+  }
+
+  button {
+    background: transparent;
+    border: 0;
+    font-size: 2em;
+    margin-left: 15px;
+    transition: color 0.25s;
+
+    &:hover {
+      cursor: pointer;
+      color: #FA351F;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    margin-top: $toolbar-width;
+    margin-left: 0;
+  }
+}

@@ -1,5 +1,16 @@
 # Changelog
 
+*2.1.0* (2018-06-15)
+
+  - 💄 fix IE grid (26a3650) 
+  - 💄 safer CSS (4c688bf) 
+  - ⚡️ get pre-built components meta if exists (cf6272c) 
+  - ✨ dynamic twig namespaces (71cf0e2) 
+  - 🐛 fix dynamic routes (c305ae5) 
+  - ✨ move to Immer reducers (926bbd7) 
+  - ✨ dynamic component types routes (5bbb105) 
+  - ✨ add update alert (7af5661)
+
 *2.0.11* (2018-05-07)
   - 🐛 fix empty yml import (453ac27)
 
