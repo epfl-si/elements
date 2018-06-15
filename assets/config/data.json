@@ -24,5 +24,73 @@
     "https://source.unsplash.com/f7YQo-eYHdM",
     "https://source.unsplash.com/rG1LNUFgJhI",
     "https://source.unsplash.com/99neAF8kqhg"
-  ]
+  ],
+  "homepage": {
+    "navbar_items": [
+      "A propos",
+      "Education",
+      "Recherche",
+      "Innovation",
+      "Facultés",
+      "Campus"
+    ],
+
+    "section_one": {
+      "cards": [
+        {
+          "title": "La valse quantique des électrons dessine les puces de demain",
+          "info": ["Actualité", "Nanotechnologies"],
+          "content": "Des chercheurs de l’EPFL ont réussi à mesurer certaines propriétés quantiques d’électrons de semi-conducteurs à deux dimensions. Leurs travaux dans le domaine de la spintronique pourraient notamment aboutir à la fabrication de puces plus petites et dégageant moins de chaleur."
+        },
+        {
+          "title": "Un système intelligent et miniature qui analyse les biomarqueurs de la sueur",
+          "date": "15.09.17",
+          "info": ["Recherche", "Prix et récompenses"],
+          "content": "Des chercheurs de l’EPFL et de la start-up Xsensio ont intégré sur une puce de moins d’un centimètre carré un système portable entier à faible énergie permettant l’encapsulation et l’analyse des biomarqueurs contenus dans la sueur."
+        }
+      ],
+      "readmore": "Toutes les actualités"
+    },
+
+    "section_two": {
+      "title": "EPFL en bref",
+      "subtitle_1": "Les missions de l'école",
+      "subtitle_2": "Les lieux totems",
+      "cards": [
+        {
+          "title": "Éducation",
+          "content": "La qualité de formation des élèves et des enseignants à l’EPFL en fait l’une des institutions de science et de technologie les plus reconnues au monde.",
+          "button": "Portail Éducation"
+        },
+        {
+          "title": "Recherche",
+          "content": "Une organisation unique nous permet de figurer systématiquement dans le haut du classement mondial des universités pour les programmes de recherche.",
+          "button": "Portail Recherche"
+        },
+        {
+          "title": "Innovation",
+          "content": "Le transfert de technologies ou l’expertise de l’EPFL pour transformer l'excellence scientifique en valeur la société et le développement économique.",
+          "button": "Portail Innovation"
+        },
+        {
+          "title": "Artlab",
+          "content": "Le Artlab organise une grand diversité d’événements et en s’associant à des institutions culturelles de la région.",
+          "button": "Explorez le Artlab",
+          "image": "./images/homepage/2-teaser-basic-page-column1.jpg"
+        },
+        {
+          "title": "Rolex Center",
+          "content": "Le Rolex Learning Center est à la fois un laboratoire d’apprentissage, une bibliothèque abritant 500’000 ouvrages et un centre culturel international.",
+          "button": "Découvrez le Rolex Center",
+          "image": "./images/homepage/2-teaser-basic-page-column2.jpg"
+        },
+        {
+          "title": "SwissTech CC",
+          "content": "Le SwissTech Convention Center est un des plus grand centre de congrès de la région lémanique accueillant des évènements de renommée internationale.",
+          "button": "Embarquez pour le SwissTech",
+          "image": "./images/homepage/2-teaser-basic-page-column3.jpg"
+        }
+      ]
+    }
+  }
 }

@@ -1,0 +1,94 @@
+{% extends "@pages/partials/layout.twig" %}
+
+{% macro card(card) %}
+  <div class="card">
+    {% if card.image %}
+      <a href="#" class="card-img-top">
+        <picture>
+          <img src="{{ card.image }}" class="img-fluid" title="{{ card.title }}" alt="ALT OF IMAGE HERE"/>
+        </picture>
+      </a>
+    {% endif %}
+    <div class="card-body">
+      <h3 class="card-title">
+        <a href="#">{{ card.title }}</a>
+      </h3>
+      <p>{{ card.content }}</p>
+    </div>
+    <div class="card-footer mt-auto">
+      <a href="#" class="btn btn-secondary btn-sm">{{ card.button }}</a>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro card_link(card) %}
+  <a href="#" class="card link-trapeze-horizontal">
+    <div class="card-body">
+      <h3 class="card-title">{{ card.title }}</h3>
+      <div class="card-info">
+        {% if card.date %}
+          <span class="card-info-date">
+            <time datetime="DATETIME HERE">{{ card.date }}</time>
+          </span>
+        {% endif %}
+        {% for item in card.info %}
+          <span>{{ item }}</span>
+        {% endfor %}
+      </div>
+      <p>{{ card.content }}</p>
+    </div>
+  </a>
+{% endmacro %}
+
+{% import _self as macros %}
+
+{% block breadcrumb %}{% endblock %}
+
+{% block content %}
+  {# The intro fullwidth teaser #}
+  {% include '@molecules/fullwidth-teaser/fullwidth-teaser-horizontal.twig' with {'img_src': './images/homepage/1-teaser-news-highlight.jpg'} %}
+
+  {# First teasers #}
+  <div class="container pb-5">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <div class="row">
+          {% for card in homepage.section_one.cards %}
+            <div class="col-md-6 d-flex">
+              {{ macros.card_link(card) }}
+            </div>
+          {% endfor %}
+        </div>
+        <p class="text-center">
+          <a class="link-pretty" href="#">{{ homepage.section_one.readmore }}</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {# Second teasers, on gray background #}
+  <div class="bg-gray-100 py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">{{ homepage.section_two.title }}</h2>
+
+      <h3 class="h6 mb-3">{{ homepage.section_two.subtitle_1 }}</h3>
+      <div class="row mb-4">
+        {% for card in homepage.section_two.cards[0:3] %}
+          <div class="col-md-4 d-flex">
+            {{ macros.card(card) }}
+          </div>
+        {% endfor %}
+      </div>
+
+      <h3 class="h6 mb-3">{{ homepage.section_two.subtitle_2 }}</h3>
+      <div class="row">
+        {% for card in homepage.section_two.cards[3:] %}
+          <div class="col-md-4 d-flex">
+            {{ macros.card(card) }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
