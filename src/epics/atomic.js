@@ -29,7 +29,7 @@ export function getComponentsEpic(action$) {
           payload[type] = payload[type].map((component, id) => {
             const isReady = typeof component === 'object';
             const path = `components/${type}/${component.name || component}/`;
-            const config = isReady ? component : yaml.load(`${path}${component.name}.yml`);
+            const config = isReady ? component : yaml.load(`${path}${component}.yml`);
             const markup = `${path}${config.name}.twig`;
 
             // format related variants collection
