@@ -31,11 +31,11 @@ class Single extends Component {
     const component = components.find(item => item.name === params.slug);
 
     if (undefined === component.content) {
-      props.getComponentMarkup(component, props.navigation.base_url);
+      props.getComponentMarkup(component, props.navigation.base_url, props.atomic.types);
     }
 
     component.variants.forEach((variant) => {
-      if (undefined === variant.content) props.getVariantMarkup(variant, props.navigation.base_url);
+      if (undefined === variant.content) props.getVariantMarkup(variant, props.navigation.base_url, props.atomic.types);
     });
 
     this.setState({ component });
