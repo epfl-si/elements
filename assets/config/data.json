@@ -35,6 +35,12 @@
       "Campus"
     ],
 
+    "highlight_1": {
+      "title": "Des océans plus froids que ce que nous le pensions",
+      "content": "Une équipe de chercheurs de l’EPFL et européenne a découvert une erreur dans la façon dont ont été estimées jusqu’ici les températures des océans, faisant potentiellement du réchauffement climatique actuel un évènement sans précédent ces cent derniers millions d’années.",
+      "image": "./images/homepage/1-teaser-news-highlight.jpg"
+    },
+
     "section_one": {
       "cards": [
         {
@@ -91,6 +97,12 @@
           "image": "./images/homepage/2-teaser-basic-page-column3.jpg"
         }
       ]
+    },
+
+    "highlight_2": {
+      "title": "Étudier à l’EPFL, 13 filières de formation",
+      "content": "Treize filières de formation dans les sciences de l’ingénieur, des programmes doctoraux de choix, des laboratoires de pointe dirigés par des professeurs de réputation internationale, un campus moderne en plein développement qui s’étend sur plus de 10’000 mètres carrés.",
+      "image": "./images/homepage/3-teaser-basic-page-highlight.jpg"
     }
   }
 }

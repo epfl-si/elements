@@ -1,13 +1,17 @@
 <div class="fullwidth-teaser fullwidth-teaser-horizontal">
   <picture>
-    <img src="{{ img_src ?: './images/basic_page_teaser.jpg' }}" aria-labelledby="background-label" alt="An image description"/>
+    <img src="{% block img %}./images/basic_page_teaser.jpg{% endblock %}" aria-labelledby="background-label" alt="An image description"/>
   </picture>
 
   <div class="fullwidth-teaser-text">
 
     <div class="fullwidth-teaser-header">
       <div class="fullwidth-teaser-title">
-        <p class="h3">Des océans plus froids que ce que nous le pensions</p>
+        <p class="h3">
+          {% block title %}
+            Des océans plus froids que ce que nous le pensions
+          {% endblock %}
+        </p>
         <ul class="list-inline mt-2">
           <li class="list-inline-item">Actualités</li>
           <li class="list-inline-item">Biologie</li>
@@ -20,7 +24,9 @@
     </div>
 
     <div class="fullwidth-teaser-content">
-      <p>Une équipe de chercheurs de l’EPFL et européenne a découvert une erreur dans la façon dont ont été estimées jusqu’ici les températures des océans, faisant potentiellement du réchauffement climatique actuel un évènement sans précédent ces cent derniers millions d’années.</p>
+      <p>
+        {% block content %}Une équipe de chercheurs de l’EPFL et européenne a découvert une erreur dans la façon dont ont été estimées jusqu’ici les températures des océans, faisant potentiellement du réchauffement climatique actuel un évènement sans précédent ces cent derniers millions d’années.{% endblock %}
+      </p>
     </div>
 
     <div class="fullwidth-teaser-footer">

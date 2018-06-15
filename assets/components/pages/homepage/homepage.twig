@@ -46,7 +46,13 @@
 
 {% block content %}
   {# The intro fullwidth teaser #}
-  {% include '@molecules/fullwidth-teaser/fullwidth-teaser-horizontal.twig' with {'img_src': './images/homepage/1-teaser-news-highlight.jpg'} %}
+  {% embed '@molecules/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
+    {% block title %}{{ homepage.highlight_1.title }}{% endblock %}
+    {% block content %}{{ homepage.highlight_1.content }}{% endblock %}
+    {% block img %}{{ homepage.highlight_1.image }}{% endblock %}
+  {% endembed %}
+
+
 
   {# First teasers #}
   <div class="container pb-5">
@@ -90,5 +96,12 @@
       </div>
     </div>
   </div>
+
+  {# The middle fullwidth teaser #}
+  {% embed '@molecules/fullwidth-teaser/fullwidth-teaser.twig' %}
+    {% block title %}{{ homepage.highlight_2.title }}{% endblock %}
+    {% block content %}{{ homepage.highlight_2.content }}{% endblock %}
+    {% block img %}{{ homepage.highlight_2.image }}{% endblock %}
+  {% endembed %}
 
 {% endblock %}
