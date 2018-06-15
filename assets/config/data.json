@@ -136,6 +136,22 @@
           "image": "./images/homepage/5-teaser-mission-research-middle-east.jpg"
         }
       ]
+    },
+
+    "highlight_4": {
+      "title": "Explorer le portail étudiants de l'EPFL",
+      "content": "Découvrez l'ensemble des services dédiés aux étudiants : vie académique, cours, cartes d'accès et plans, transports et restauration. Mais aussi les bons plans, les réductions et les événements organisés par les nombreuses associations d'étudiants.",
+      "image": "./images/homepage/6-teaser-basic-page-highlight.jpg"
+    },
+
+    "questions": {
+      "image": "./images/homepage/7-science-question-SF.jpg"
+    },
+
+    "highlight_5": {
+      "title": "L’EPFL vue du ciel",
+      "content": "L'association Aéropoly a pris des images du campus à l'aide d'un dirigeable avant l'ouverture de Balélec. Le dirigeable avait déjà pris son envol une première fois pendant Polynice, événement organisé pour fêter les 60 ans de l'AGEPoly, soit l'association des étudiants de l'EPFL.",
+      "image": "./images/homepage/8-teaser-news-highlight.jpg"
     }
   }
 }

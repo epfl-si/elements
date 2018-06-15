@@ -55,8 +55,6 @@
 
 {% import _self as macros %}
 
-{% block breadcrumb %}{% endblock %}
-
 {% block content %}
   {# The intro fullwidth teaser #}
   {% embed '@molecules/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
@@ -188,4 +186,37 @@
     </div>
   </div>
 
+  {# The third middle fullwidth teaser #}
+  {% embed '@molecules/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
+    {% block title %}{{ homepage.highlight_4.title }}{% endblock %}
+    {% block content %}{{ homepage.highlight_4.content }}{% endblock %}
+    {% block img %}{{ homepage.highlight_4.image }}{% endblock %}
+  {% endembed %}
+
+  {% include '@organisms/question/question.twig' %}
+
+  {# The last fullwidth teaser #}
+  {% embed '@molecules/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
+    {% block title %}{{ homepage.highlight_5.title }}{% endblock %}
+    {% block content %}{{ homepage.highlight_5.content }}{% endblock %}
+    {% block img %}{{ homepage.highlight_5.image }}{% endblock %}
+  {% endembed %}
+
+  <div class="bg-gray-100 py-5">
+    <div class="container">
+      <h2 class="h3">Vivez au rythme de l’école, via les réseaux sociaux</h2>
+      {% include '@organisms/social/social.twig' %}
+      <p class="text-center">
+        <a href="#">Liste des comptes officiels</a>
+      </p>
+    </div>
+  </div>
+
 {% endblock %}
+
+{% block footer_container %}
+  <div class="container py-5">
+    {% include '@organisms/footer/footer.twig' %}
+  </div>
+{% endblock %}
+
