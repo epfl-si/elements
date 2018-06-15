@@ -103,6 +103,39 @@
       "title": "Étudier à l’EPFL, 13 filières de formation",
       "content": "Treize filières de formation dans les sciences de l’ingénieur, des programmes doctoraux de choix, des laboratoires de pointe dirigés par des professeurs de réputation internationale, un campus moderne en plein développement qui s’étend sur plus de 10’000 mètres carrés.",
       "image": "./images/homepage/3-teaser-basic-page-highlight.jpg"
+    },
+
+    "highlight_3": {
+      "title": "Pour une transformation plus efficace des molécules",
+      "content": "Le chimiste Xile Hu est le lauréat du Prix Latsis 2017. Ce professeur à l’Ecole polytechnique fédérale de Lausanne est récompensé pour son impressionnante carrière scientifique et ses excellents travaux de recherche sur la compréhension fondamentale de la catalyse.",
+      "image": "./images/homepage/4-teaser-news-highlight.jpg"
+    },
+
+    "section_3": {
+      "title": "Une école multi-sites, de Lausanne vers le monde",
+      "subtitle": "Une école, plusieurs campus",
+      "cards": [
+        {
+          "title": "Lausanne",
+          "image": "./images/homepage/5-teaser-mission-research-lausanne.jpg"
+        },
+        {
+          "title": "Genève",
+          "image": "./images/homepage/5-teaser-mission-research-geneva.jpg"
+        },
+        {
+          "title": "Neuchâtel",
+          "image": "./images/homepage/5-teaser-mission-research-neuchatel.jpg"
+        },
+        {
+          "title": "Fribourg",
+          "image": "./images/homepage/5-teaser-mission-research-fribourg.jpg"
+        },
+        {
+          "title": "Middle-East",
+          "image": "./images/homepage/5-teaser-mission-research-middle-east.jpg"
+        }
+      ]
     }
   }
 }

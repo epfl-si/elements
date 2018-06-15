@@ -40,6 +40,19 @@
   </a>
 {% endmacro %}
 
+{% macro card_arrow(card) %}
+  <a href="#" class="card card-sm link-trapeze-horizontal">
+    {% if card.image %}
+      <picture class="card-img-top">
+        <img src="{{ card.image }}" class="img-fluid" title="{{ card.title }}" alt="ALT OF IMAGE HERE"/>
+      </picture>
+    {% endif %}
+    <div class="card-body">
+      <h3 class="card-title link-arrow mb-0 h5">{{ card.title }}</h3>
+    </div>
+  </a>
+{% endmacro %}
+
 {% import _self as macros %}
 
 {% block breadcrumb %}{% endblock %}
@@ -103,5 +116,76 @@
     {% block content %}{{ homepage.highlight_2.content }}{% endblock %}
     {% block img %}{{ homepage.highlight_2.image }}{% endblock %}
   {% endembed %}
+
+  {# The Calendar section #}
+  {# TODO add card-slider from Yann PR #}
+  <div class="bg-gray-100 py-5">
+    {% include '@molecules/datepicker-event/datepicker-event.twig' %}
+
+    <div class="container">
+      <div class="card-slider-wrapper">
+        <div class="card-slider">
+          <div class="card-slider-cell">
+            {% include "@organisms/event/event.twig" %}
+          </div>
+          <div class="card-slider-cell">
+            {% include "@organisms/event/event.twig" %}
+          </div>
+          <div class="card-slider-cell">
+            {% include "@organisms/event/event.twig" %}
+          </div>
+          <div class="card-slider-cell">
+            {% include "@organisms/event/event.twig" %}
+          </div>
+          <div class="card-slider-cell">
+            {% include "@organisms/event/event.twig" %}
+          </div>
+          <div class="card-slider-cell">
+            {% include "@organisms/event/event.twig" %}
+          </div>
+        </div>
+
+        <div class="card-slider-footer">
+          <div>
+            <button role="button" id="card-slider-prev" class="card-slider-btn link-trapeze-horizontal disabled">
+              {% include "@atoms/icon/icon.twig" with { icon: 'icon-chevron-left' } %}
+            </button>
+            <button role="button" id="card-slider-next" class="card-slider-btn link-trapeze-horizontal">
+              {% include "@atoms/icon/icon.twig" with { icon: 'icon-chevron-right' } %}
+            </button>
+          </div>
+          <div>
+            <a href="#">Voir l’agenda complet des événements</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {# The second middle fullwidth teaser #}
+  {% embed '@molecules/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
+    {% block title %}{{ homepage.highlight_3.title }}{% endblock %}
+    {% block content %}{{ homepage.highlight_3.content }}{% endblock %}
+    {% block img %}{{ homepage.highlight_3.image }}{% endblock %}
+  {% endembed %}
+
+  {# City teasers #}
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <h2>{{ homepage.section_3.title }}</h2>
+        <p class="h6">{{ homepage.section_3.subtitle }}</p>
+      </div>
+      <div class="col-lg-9 col-md-6">
+        <div class="row">
+            {% for card in homepage.section_3.cards %}
+              <div class="col-6 col-md-4">
+                {{ macros.card_arrow(card) }}
+              </div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
 
 {% endblock %}
