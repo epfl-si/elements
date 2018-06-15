@@ -1,17 +1,16 @@
-{% set headerClasses = headerClasses is defined ? headerClasses : '' %}
-<header role="banner" class="header {{headerClasses}}">
+<header role="banner" class="header">
   <a class="logo" href="#">
     <img src="svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
   </a>
   <ul aria-hidden="true" class="nav-header d-none d-xl-flex">
-    <li>
-      <a class="nav-item" data-page-id="42" href="/propos-0/">À propos</a>
+    <li id="menu-item-888">
+      <a class="nav-item" href="/propos-0/">À propos</a>
     </li>
-    <li>
-      <a class="nav-item" data-page-id="88888" href="/campus-1/">Campus</a>
+    <li id="menu-item-999">
+      <a class="nav-item" href="/campus-1/">Campus</a>
     </li>
-    <li>
-      <a class="nav-item" data-page-id="999" href="/ducation-2/">Éducation</a>
+    <li id="menu-item-666" class="current-menu-item">
+      <a class="nav-item" href="/ducation-2/">Éducation</a>
     </li>
   </ul>
   {% include '@atoms/search/search.twig' %}

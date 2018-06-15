@@ -39,15 +39,15 @@
       &:nth-child(1) {
         transform:
           rotate(45deg)
-          translateY(0.27 * $spacer)
-          translateX(0.27 * $spacer);
+          translateY(0.17 * $spacer)
+          translateX(0.28 * $spacer);
       }
 
       &:nth-child(2) {
         transform:
           rotate(-45deg)
-          translateY(0.04 * $spacer)
-          translateX(0.01 * $spacer);
+          translateY(0.06 * $spacer)
+          translateX(0.05 * $spacer);
       }
 
       &:nth-child(3) {
