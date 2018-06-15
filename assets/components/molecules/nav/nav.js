@@ -12,6 +12,13 @@ const nav = () => {
 
   // toggle mobile navigation
   const toggleMobileMenu = () => {
+    // handle correct menu display when on level 0 page on mobile
+    const firstLeveItem = $('.nav-main .nav-menu>.current-menu-item');
+    if (firstLeveItem.length > 0) {
+      const parent = firstLeveItem.parents()[1];
+      $(parent).addClass(activeClass);
+    }
+
     $('body').toggleClass('mobile-menu-open');
   };
 
@@ -33,11 +40,13 @@ const nav = () => {
   $('.nav-main .nav-back a').on('click', function (e) {
     e.preventDefault();
 
-    const $parent = $(this).closest(`.${activeClass}`);
-    $parent.removeClass(activeClass);
+    const parents = $(this).parents();
 
-    const $ancestor = $(this).closest(`.${parentClass}`);
-    $ancestor.removeClass(parentClass).addClass(activeClass);
+    const parent = parents[2];
+    $(parent).removeClass(parentClass).removeClass(activeClass);
+
+    const ancestor = parents[4];
+    $(ancestor).removeClass(parentClass).addClass(activeClass);
   });
 
   /*
@@ -47,10 +56,13 @@ const nav = () => {
   $('.nav-main .nav-arrow').on('click', function (e) {
     e.preventDefault();
 
-    const $parent = $(this).closest(`.${activeClass}`);
-    $parent.addClass(parentClass).removeClass(activeClass);
+    const parents = $(this).parents();
 
-    $(this).parent().addClass(activeClass);
+    const parent = parents[0];
+    $(parent).addClass(activeClass);
+
+    const ancestor = parents[2];
+    $(ancestor).addClass(parentClass).removeClass(activeClass);
   });
 
   // bind action to mobile menu toggle
