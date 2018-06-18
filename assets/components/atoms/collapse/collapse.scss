@@ -95,3 +95,55 @@ $collapse-chevron-size: 12px;
     }
   }
 }
+
+// Collapse helpers
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .collapse#{$infix}-show { display: block; }
+  }
+}
+
+// Collapse dropdown (shadow and top arrow)
+$collapse-drop-margin: ($grid-gutter-width * 0.3);
+
+.collapse-drop-toggle {
+  position: relative;
+  margin-bottom: $collapse-drop-margin;
+
+  &:not(.collapsed) {
+    &,
+    &:hover {
+      background: $body-color;
+      color: $body-bg;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: calc(100% + #{$collapse-drop-margin});
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-left: ($collapse-drop-margin * 0.75) solid transparent;
+      border-bottom: ($collapse-drop-margin * 0.75) solid $border-color;
+      border-right: ($collapse-drop-margin * 0.75) solid transparent;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.collapse-drop {
+  &.show,
+  &.collapsing {
+    position: relative;
+    margin-top: $collapse-drop-margin / 2;
+    border-top: ($border-width * 2) solid $border-color;
+
+    > form {
+      box-shadow: $dropdown-box-shadow;
+      border-bottom: $border-width solid $border-color;
+    }
+  }
+}
