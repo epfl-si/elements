@@ -55,6 +55,9 @@
 
 {% import _self as macros %}
 
+{% block breadcrumb %}{% endblock %}
+
+
 {% block content %}
   {# The intro fullwidth teaser #}
   {% embed '@molecules/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
@@ -63,10 +66,8 @@
     {% block img %}{{ homepage.highlight_1.image }}{% endblock %}
   {% endembed %}
 
-
-
   {# First teasers #}
-  <div class="container pb-5">
+  <div class="container pb-5 offset-xl-top">
     <div class="row">
       <div class="col-lg-10 offset-lg-1">
         <div class="row">
@@ -117,7 +118,7 @@
 
   {# The Calendar section #}
   {# TODO add card-slider from Yann PR #}
-  <div class="bg-gray-100 py-5">
+  <div class="bg-gray-100 py-5 mb-3">
     {% include '@molecules/datepicker-event/datepicker-event.twig' %}
 
     <div class="container">
@@ -193,7 +194,9 @@
     {% block img %}{{ homepage.highlight_4.image }}{% endblock %}
   {% endembed %}
 
-  {% include '@organisms/question/question.twig' %}
+  <div class="container-fluid mb-4">
+    {% include '@organisms/question/question.twig' %}
+  </div>
 
   {# The last fullwidth teaser #}
   {% embed '@molecules/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
