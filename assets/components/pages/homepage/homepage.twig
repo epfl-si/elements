@@ -48,7 +48,10 @@
       </picture>
     {% endif %}
     <div class="card-body">
-      <h3 class="card-title link-arrow mb-0 h5">{{ card.title }}</h3>
+      <h3 class="card-title link-icon mb-0 h5">
+        {{ card.title }}
+        {% include '@atoms/icon/icon.twig' with {'icon': 'icon-arrow-right'} %}
+      </h3>
     </div>
   </a>
 {% endmacro %}

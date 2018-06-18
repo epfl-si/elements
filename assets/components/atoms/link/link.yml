@@ -12,9 +12,8 @@ notes: >
   A `link-collapse` class sets the link to have a red triangle and special
   styles.
 variants:
-  - name: arrow
-    title: Arrow
+  - name: icon
+    title: Icon
     notes: |
-      The Arrow variant.
-    background: ''
-    wrapper: ''
+      You can set up a link with a custom icon. The icon will automatically be at the other end of the element (with flex).
+    wrapper: col-md-6
