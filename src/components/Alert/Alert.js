@@ -29,7 +29,7 @@ class Alert extends Component {
 
     return (
       <div className={`tlbx-alert${isVisible ? ' open' : ''}`}>
-        <span>🚨</span>
+        <span role="img" aria-label="Alert">🚨</span>
         <p>Looks like you've built your styleguide using an <b>old version of toolbox-utils</b> (local <b>{alert.local_version || 'undefined'}</b>, current <b>{alert.remote_version}</b>).<br />See <a href="http://frontend.github.io/toolbox/updates.html">update doc</a>.</p>
         <button onClick={this.handleClose.bind(this)}>&times;</button>
       </div>

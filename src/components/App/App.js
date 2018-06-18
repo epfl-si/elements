@@ -49,7 +49,6 @@ class App extends Component {
     if (hasStyleguideShell && hasHomeStyleguideShell) {
       return (
         <div>
-          <Alert />
           <Theme className="styleguide">
             <div className="tlbx-toolbar-wrapper">
               <Toolbar />
@@ -58,6 +57,7 @@ class App extends Component {
               <Sidebar location={this.props.location} />
             </div>
             <div className="tlbx-content-wrapper">
+              <Alert />
               <div className="tlbx-content">
                 <Switch>
                   {fullHome

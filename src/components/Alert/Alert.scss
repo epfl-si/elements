@@ -4,7 +4,7 @@
   display: none;
   align-items: center;
   justify-content: space-between;
-  margin-left: $toolbar-width;
+  margin-left: 0;
   padding: 8px 20px;
   background: #FFD62B;
   font-size: 16px;
@@ -38,6 +38,5 @@
 
   @media only screen and (max-width: 767px) {
     margin-top: $toolbar-width;
-    margin-left: 0;
   }
 }
