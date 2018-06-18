@@ -53,31 +53,21 @@
           opacity: 0;
           transition: opacity 0.3s;
         }
-
-        &:hover,
-        &.open,
-        &.active,
-        &:focus {
-          color: $red;
-
-          &:before {
-            content: none;
-          }
-
-          &:after {
-            opacity: 1;
-          }
-        }
       }
 
-      &.active a,
-      &.open a {
-        &:after {
-          opacity: 1;
-        }
+      a:hover,
+      a.open,
+      a.active,
+      a:focus,
+      &.current-menu-item a {
+        color: $red;
 
         &:before {
           content: none;
+        }
+
+        &:after {
+          opacity: 1;
         }
       }
 

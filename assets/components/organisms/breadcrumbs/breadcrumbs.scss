@@ -91,22 +91,9 @@ $hamburger-btn-size: 2rem;
   }
 }
 
-// create space out of container on the left for hamburger button
-.breadcrumb-container nav {
-  position: relative;
-  margin-left: -1 * ($hamburger-btn-size + (0.5 * $spacer));
-  padding-left: $hamburger-btn-size + (0.6 * $spacer);
-  margin-top: 0.5 * $spacer;
-}
-
-// hide hamburger when in nav solid context
-.nav-solid .breadcrumb-burger {
-  display: none;
-}
-
 // hamburger button
 .breadcrumb-burger {
-  display: block;
+  display: none;
   position: absolute;
   top: -0.3rem;
   left: 0;
@@ -132,5 +119,19 @@ $hamburger-btn-size: 2rem;
     background: gray('600');
     border-radius: 4px;
     margin-bottom: 3px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  // create space out of container on the left for hamburger button
+  .nav-toggle .breadcrumb-container nav {
+    position: relative;
+    margin-left: -1 * ($hamburger-btn-size + (0.5 * $spacer));
+    padding-left: $hamburger-btn-size + (0.6 * $spacer);
+    margin-top: 0.5 * $spacer;
+  }
+
+  .nav-toggle .breadcrumb-burger {
+    display: block;
   }
 }
