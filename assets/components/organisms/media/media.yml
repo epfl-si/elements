@@ -9,8 +9,8 @@ variants:
     title: Gallery
   - name: map
     title: Map
-    notes: |
-      The Map variant.
+  - name: sponsor
+    title: Sponsor
     background: ''
     wrapper: ''
 notes: |

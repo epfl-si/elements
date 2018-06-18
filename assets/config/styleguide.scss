@@ -7,7 +7,7 @@
 .styleguide {
   font-family: $font-family-base;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 60px 240px 1fr;
@@ -17,7 +17,10 @@
 
 .tlbx-toolbar-wrapper {
   position: static;
-  height: 100%;
+
+  @media screen and (min-width: 768px) {
+    position: fixed;
+  }
 }
 
 .tlbx-sidebar-wrapper {
