@@ -1,0 +1,13 @@
+name: list-group
+title: List group
+notes: |
+  Describe the list-group component here.
+wrapper: ''
+background: ''
+variants:
+  - name: borderless
+    title: Borderless
+    notes: |
+      The Borderless variant.
+    background: ''
+    wrapper: ''
