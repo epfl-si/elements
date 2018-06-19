@@ -189,6 +189,10 @@
           "image": "./images/homepage/5-teaser-mission-research-fribourg.jpg"
         },
         {
+          "title": "Valais",
+          "image": "./images/homepage/5-teaser-mission-research-valais.jpg"
+        },
+        {
           "title": "Middle-East",
           "image": "./images/homepage/5-teaser-mission-research-middle-east.jpg"
         }
