@@ -1,12 +1,14 @@
+{% include '@utilities/access-nav/access-nav.twig' %}
+
 <div class="nav-toggle">
   {% block header %}
-    {% include '@organisms/header/header.twig' %}
+    {% include '@components/header/header.twig' %}
   {% endblock %}
 
   <div class="main-container nav-toggle">
 
     {% block nav %}
-      {% include '@molecules/nav/nav.twig' %}
+      {% include '@utilities/nav/nav.twig' with {'no_toggle_wrapper' : true} %}
     {% endblock %}
 
     {% block breadcrumb %}
@@ -16,17 +18,16 @@
     {% endblock %}
 
     {% block main %}
-      <main role="main" class="content">
+      <main id="main" role="main" class="content">
         {% block content %}{% endblock %}
       </main>
     {% endblock %}
-
 
     {% block footer_container %}
       <div class="bg-gray-100 pt-5 mt-5">
         <div class="container">
           {% block footer %}
-            {% include '@organisms/footer/footer-dark.twig' %}
+            {% include '@components/footer/footer-dark.twig' %}
           {% endblock %}
         </div>
       </div>

@@ -122,3 +122,56 @@
     border: 1px solid rgba($red, 0.3);
   }
 }
+
+.tlbx-item-code {
+  pre code {
+    display: flex;
+    flex-direction: column;
+
+    > span {
+      &:hover {
+        background-color: rgba($white, 0.05);
+      }
+    }
+  }
+}
+
+.tlbx-component-access-nav {
+  position: relative;
+  padding-bottom: 45px;
+
+  &:after {
+    content: 'Focus here and press <Tab>.';
+    color: $text-muted;
+  }
+
+  .access-nav {
+    position: static;
+
+    li a {
+      position: absolute;
+    }
+  }
+}
+
+.tlbx-component-menu-toggle-mobile {
+  .menu-toggle-mobile {
+    display: flex !important;
+    margin-left: 0;
+  }
+}
+
+.tlbx-component-nav {
+  min-height: 250px;
+  padding: 0;
+
+  .nav-toggle .nav-main {
+    position: absolute;
+  }
+
+  @media (min-width: 1200px) {
+    .desktop-menu-open .nav-toggle .nav-main {
+      left: 20px;
+    }
+  }
+}
