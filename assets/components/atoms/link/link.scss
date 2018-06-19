@@ -15,8 +15,13 @@ a {
     color: $red;
   }
 
-  &.text-muted:hover {
-    color: $link-hover-color !important;
+  &.text-muted {
+    text-decoration-color: $text-muted;
+
+    &:hover {
+      color: $body-color !important;
+      text-decoration-color: $body-color;
+    }
   }
 }
 
@@ -33,4 +38,25 @@ a {
   @include link-pretty($red, $body-bg);
 
   @extend .focused;
+}
+
+// Link collapse, see collapse component
+
+// Link icon
+.link-icon {
+  display: flex;
+  justify-content: space-between;
+
+  .icon {
+    content: '';
+    width: 16px;
+    height: 16px;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+  }
+
+  &:hover .icon,
+  a:hover .link-icon .icon {
+    opacity: 1;
+  }
 }

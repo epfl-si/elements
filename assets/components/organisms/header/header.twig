@@ -3,15 +3,11 @@
     <img src="svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
   </a>
   <ul aria-hidden="true" class="nav-header d-none d-xl-flex">
-    <li id="menu-item-888">
-      <a class="nav-item" href="/propos-0/">À propos</a>
-    </li>
-    <li id="menu-item-999">
-      <a class="nav-item" href="/campus-1/">Campus</a>
-    </li>
-    <li id="menu-item-666">
-      <a class="nav-item" href="/ducation-2/">Éducation</a>
-    </li>
+    {% for item in homepage.navbar_items %}
+      <li id="menu-item-{{ loop.index }}">
+        <a class="nav-item" href="#">{{ item }}</a>
+      </li>
+    {% endfor %}
   </ul>
   {% include '@atoms/search/search.twig' %}
   {% include '@atoms/language-switcher/language-switcher.twig' %}

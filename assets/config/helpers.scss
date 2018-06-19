@@ -37,6 +37,16 @@
 }
 
 //
+// Layout helpers
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .offset#{$infix}-top { margin-top: $spacer * -4; }
+  }
+}
+
+//
 // Text helpers
 .text-small {
   font-size: $font-size-xs;
