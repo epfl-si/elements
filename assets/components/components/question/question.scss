@@ -94,6 +94,10 @@ $animation: 0.2s;
   flex: 0 0 100%;
 }
 
+.question-content {
+  padding: ($spacer * 4);
+}
+
 .question-answers {
   display: flex;
   flex-flow: column nowrap;
