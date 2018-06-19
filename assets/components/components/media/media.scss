@@ -27,3 +27,31 @@ figcaption {
     }
   }
 }
+
+.media-map {
+  display: flex;
+  flex: 1 1 100%;
+  position: relative;
+
+  figure {
+    flex: 1 1 100%;
+  }
+
+  picture {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    font-family: "object-fit: cover;";
+  }
+}
+
+.media-map-over {
+  position: absolute;
+  right: ($grid-gutter-width / 2);
+  bottom: ($grid-gutter-width / 2);
+  left: ($grid-gutter-width / 2);
+}

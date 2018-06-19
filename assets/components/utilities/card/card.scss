@@ -8,6 +8,10 @@
   margin-bottom: $grid-gutter-width;
 }
 
+.card-sm {
+  margin-bottom: $grid-gutter-width / 2;
+}
+
 .card-gray .card-body {
   background: $gray-100;
   transition:
@@ -40,6 +44,11 @@ a.card-gray:hover .card-body { background: $white; }
   .card-img-top + .card-title { margin-top: $card-spacer-y; }
   .card-img-top + & {
     border-top: none !important;
+  }
+
+  .card-sm &,
+  &.card-sm {
+    padding: $card-spacer-x * 0.5;
   }
 }
 

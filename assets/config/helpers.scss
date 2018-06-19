@@ -37,6 +37,11 @@
 }
 
 //
+// Display helpers
+.flex-grow {
+  flex: 1 1 auto;
+}
+
 // Layout helpers
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {

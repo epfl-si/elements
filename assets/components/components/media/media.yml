@@ -7,10 +7,12 @@ variants:
     title: Video
   - name: gallery
     title: Gallery
+  - name: map
+    title: Map
+    notes: |
+      The image is using the `object-fit` property. To make it work on IE11, we use the [object-fit-images polyfill](https://github.com/bfred-it/object-fit-images), tp make it work, we add `font-family: 'object-fit: cover;';` to the `img` tag.
   - name: sponsor
     title: Sponsor
-    notes: |
-      The Sponsor variant.
     background: ''
     wrapper: ''
 notes: |
