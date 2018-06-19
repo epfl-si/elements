@@ -4,7 +4,7 @@
   <div class="container">
     <h1 class="mb-5">H1 - Basic page</h1>
 
-    {% include "@organisms/media/media.twig" %}
+    {% include "@components/media/media.twig" %}
 
     <div class="row">
       <div class="col-sm-6 mx-auto">
@@ -15,13 +15,13 @@
         </p>
 
         <h3>H3 - Sub level title</h3>
-        {% include "@atoms/list/list-bullet.twig" %}
+        {% include "@content/list/list-bullet.twig" %}
 
         <h4>H4 - Let's display a table</h4>
-        {% include "@organisms/tables/tables-sortable.twig" %}
+        {% include "@components/tables/tables-sortable.twig" %}
 
         <h4 class="mt-4">H4 - Let's display a gallery</h4>
-        {% include "@organisms/media/media-gallery.twig" %}
+        {% include "@components/media/media-gallery.twig" %}
 
       </div>
     </div>
@@ -33,7 +33,7 @@
       <div class="row">
         {% for i in [1,2] %}
           <div class="col-sm-6">
-            {% include "@organisms/teaser-basic-page/teaser-basic-page.twig" %}
+            {% include "@components/teaser-basic-page/teaser-basic-page.twig" %}
           </div>
         {% endfor %}
       </div>
@@ -44,14 +44,14 @@
     <div class="row">
       <div class="col-sm-6 mx-auto">
         <h3>H3 - Teaser press review</h3>
-        {% include "@organisms/teaser-press-review/teaser-press-review.twig" %}
+        {% include "@components/teaser-press-review/teaser-press-review.twig" %}
       </div>
     </div>
 
     <div class="row mb-5">
       <div class="col-sm-10 mx-auto">
         <h5 class="mt-4">H5 - Video !</h5>
-        {% include "@organisms/media/media-video.twig" %}
+        {% include "@components/media/media-video.twig" %}
       </div>
     </div>
 
@@ -67,14 +67,14 @@
     </div>
   </div>
 
-  {% include "@organisms/newsletter-sign-up/newsletter-sign-up.twig" %}
+  {% include "@components/newsletter-sign-up/newsletter-sign-up.twig" %}
 
   <div class="container mt-5">
     <h2>Facultés</h2>
     <div class="row">
       {% for i in [1,2,3] %}
         <div class="col-sm-4">
-          {% include "@organisms/teaser-mission/teaser-mission-faculty.twig" %}
+          {% include "@components/teaser-mission/teaser-mission-faculty.twig" %}
         </div>
       {% endfor %}
     </div>

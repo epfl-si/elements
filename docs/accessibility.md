@@ -21,7 +21,7 @@ Use Aria tags whenever it's needed, but remember **it's better to not use an ari
 
 ### Skip links (Access nav)
 
-Don't forget to add the [skip links](/#/molecules/access-nav) to your integration. They should allow the user to more easily get to the main areas of the website. 
+Don't forget to add the [skip links](/#/utilities/access-nav) to your integration. They should allow the user to more easily get to the main areas of the website. 
 
 For that:
 
