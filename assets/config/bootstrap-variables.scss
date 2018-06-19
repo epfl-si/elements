@@ -101,7 +101,8 @@ $spacers: map-merge((
   3: $spacer,
   4: ($spacer * 1.5),
   5: ($spacer * 3),
-  gutter: 30px, // == $grid-gutter-width
+  gutter: 16px, // == $grid-gutter-width
+  6: ($spacer * 6),
 ), $spacers);
 
 // This variable affects the `.h-*` and `.w-*` classes.

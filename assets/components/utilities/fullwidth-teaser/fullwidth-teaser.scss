@@ -3,12 +3,16 @@
 .fullwidth-teaser {
   position: relative;
   width: 100%;
-  margin-bottom: $grid-gutter-width;
+  margin-bottom: $spacer * 2;
   padding: 0 ($grid-gutter-width / 2);
 
   @include media-breakpoint-up(md) {
     display: flex;
     flex-flow: row nowrap;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 0;
   }
 
   @include media-breakpoint-up(xl) {
