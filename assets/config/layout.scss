@@ -57,3 +57,29 @@
     grid-column: full;
   }
 }
+
+@include ie11('.container-grid') {
+  display: block;
+}
+
+@include ie11('.container-grid > *') {
+  max-width: col-width(lg, 10);
+  margin: 0 auto;
+}
+
+@include media-breakpoint-up(lg) {
+  @include ie11('.container-grid > *') {
+    max-width: col-width(lg, 8);
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  @include ie11('.container-grid > *') {
+    max-width: col-width(xl, 6);
+  }
+}
+
+@include ie11('.container-grid .container-full') {
+  max-width: 100%;
+  width: 100%;
+}
