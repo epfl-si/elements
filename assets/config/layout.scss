@@ -1,1 +1,20 @@
 @charset 'utf-8';
+
+//
+// GRID MANAGEMENT
+//
+// Wrap everything in this class (must be taking the full viewport width) to enable
+// CSS Grid for immediate children.
+//
+// All items that must not take the "content" area into account have the class
+// "container-full". Inside those items, use a regular Bootstrap layout as you
+// would in a normal setup.
+//
+
+.container-grid {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns:
+    [full-start sidebar1-start content-wide-start content-wider-start content-start content-shift-start sidebar2-start] repeat(12, 1fr)
+    [sidebar1-end content-end content-wide-end content-wider-end content-shift-end sidebar2-end full-end];
+}
