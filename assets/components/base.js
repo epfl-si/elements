@@ -36,8 +36,6 @@ const init = () => {
   const isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
   if (isIE11) {
     objectFitImages();
-    console.log(objectFitImages());
-    console.log(isIE11);
   }
 };
 
