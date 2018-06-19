@@ -34,7 +34,7 @@ $content-widths: (
     [content-end] 1fr
     [full-end];
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     grid-template-columns:
       [full-start] 1fr
       [content-start] minmax(min-content, #{map-get($content-widths, md)})
@@ -42,7 +42,7 @@ $content-widths: (
       [full-end];
   }
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     grid-template-columns:
       [full-start] 1fr
       [content-start] minmax(min-content, #{map-get($content-widths, lg)})
@@ -50,7 +50,7 @@ $content-widths: (
       [full-end];
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     grid-template-columns:
       [full-start] 1fr
       [content-start] minmax(min-content, #{map-get($content-widths, xl)})

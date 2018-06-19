@@ -5,8 +5,12 @@
 {% block main %}
   <main class="container-grid content" role="main">
     {% block content %}
-      <div class="py-4 mb-2" style="background-color: hotpink;"></div>
-      <div class="py-4 mb-2 container-full" style="background-color: hotpink;"></div>
+      <div class="p-4 mb-2 text-center bg-dark">
+        <p class="text-white m-0">This is a normal item inside the grid wrapper.</p>
+      </div>
+      <div class="p-4 mb-2 container-full text-center bg-dark">
+        <p class="text-white m-0">This is a full-width item inside the grid wrapper.</p>
+      </div>
     {% endblock content %}
   </main>
 {% endblock %}
