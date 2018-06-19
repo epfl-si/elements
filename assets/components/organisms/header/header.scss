@@ -88,3 +88,12 @@
     }
   }
 }
+
+.header-light .header-light-content {
+  flex-grow: 1;
+  flex-flow: nowrap row;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
