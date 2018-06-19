@@ -9,6 +9,7 @@ import socialShare from './organisms/social/social-share';
 import tagInput from './atoms/tag/tag-input';
 import svgIcons from '../icons/svg-icons';
 import nav from './molecules/nav/nav.js';
+import objectFitImages from 'object-fit-images';
 
 svgIcons(); // Must run as soon as possible
 
@@ -26,6 +27,14 @@ const init = () => {
   $('.tlbx-sidebar div:nth-child(5) .tlbx-sidebar-item strong').text('Content');
   $('.tlbx-sidebar div:nth-child(6) .tlbx-sidebar-item strong').text('Utilities');
   $('.tlbx-sidebar div:nth-child(7) .tlbx-sidebar-item strong').text('Components');
+
+  // Init polyfill for Object Fit on IE11
+  const isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+  if (isIE11) {
+    objectFitImages();
+    console.log(objectFitImages());
+    console.log(isIE11);
+  }
 };
 
 // Will init the scripts outside of Toolbox
