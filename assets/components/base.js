@@ -10,6 +10,7 @@ import socialShare from './organisms/social/social-share';
 import tagInput from './atoms/tag/tag-input';
 import svgIcons from '../icons/svg-icons';
 import nav from './molecules/nav/nav.js';
+import drawer from './atoms/drawer/drawer.js';
 
 svgIcons(); // Must run as soon as possible
 
@@ -24,6 +25,7 @@ const init = () => {
   Tablesaw.init();
   nav();
   cardSlider();
+  drawer();
 
   $('.tlbx-sidebar div:nth-child(5) .tlbx-sidebar-item strong').text('Content');
   $('.tlbx-sidebar div:nth-child(6) .tlbx-sidebar-item strong').text('Utilities');
