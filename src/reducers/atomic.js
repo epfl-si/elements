@@ -15,6 +15,7 @@ const atomicReducer = p((state = defaultState, action) => {
     case SET_COMPONENTS:
       state.sources = action.payload;
       state.types = Object.keys(action.payload);
+      state.sourcesOrder = window.sourcesOrder || null;
       break;
 
     // Update a specific component
