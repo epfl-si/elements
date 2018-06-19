@@ -1,5 +1,10 @@
 @charset 'utf-8';
 
+// Retrieve content coloumn width
+@function content-width($breakpoint, $columns) {
+  @return map-get($container-max-widths, $breakpoint)  * $columns / $grid-columns;
+}
+
 //
 // GRID MANAGEMENT
 //
@@ -11,10 +16,53 @@
 // would in a normal setup.
 //
 
+$content-widths: (
+  sm: content-width(sm, 12),
+  md: content-width(md, 12),
+  lg: content-width(lg, 12),
+  xl: content-width(xl, 12),
+);
+@include _assert-ascending($content-widths, "$content-widths");
+@debug $content-widths;
+
 .container-grid {
   display: grid;
   grid-template-rows: auto;
   grid-template-columns:
-    [full-start sidebar1-start content-wide-start content-wider-start content-start content-shift-start sidebar2-start] repeat(12, 1fr)
-    [sidebar1-end content-end content-wide-end content-wider-end content-shift-end sidebar2-end full-end];
+    [full-start] 1fr
+    [content-start] minmax(min-content, #{map-get($content-widths, sm)})
+    [content-end] 1fr
+    [full-end];
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns:
+      [full-start] 1fr
+      [content-start] minmax(min-content, #{map-get($content-widths, md)})
+      [content-end] 1fr
+      [full-end];
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns:
+      [full-start] 1fr
+      [content-start] minmax(min-content, #{map-get($content-widths, lg)})
+      [content-end] 1fr
+      [full-end];
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns:
+      [full-start] 1fr
+      [content-start] minmax(min-content, #{map-get($content-widths, xl)})
+      [content-end] 1fr
+      [full-end];
+  }
+
+  > * {
+    grid-column: content;
+  }
+
+  .container-full {
+    grid-column: full;
+  }
 }
