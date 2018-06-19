@@ -48,30 +48,28 @@ class App extends Component {
 
     if (hasStyleguideShell && hasHomeStyleguideShell) {
       return (
-        <div>
-          <Theme className="styleguide">
-            <div className="tlbx-toolbar-wrapper">
-              <Toolbar />
+        <Theme className="styleguide">
+          <div className="tlbx-toolbar-wrapper">
+            <Toolbar />
+          </div>
+          <div className={`tlbx-sidebar-wrapper${this.props.navigation.showMenu ? ' tlbx-sidebar-open' : ''}`}>
+            <Sidebar location={this.props.location} />
+          </div>
+          <div className="tlbx-content-wrapper">
+            <Alert />
+            <div className="tlbx-content">
+              <Switch>
+                {fullHome
+                  ? '' :
+                  <Route path="/" exact component={Doc} />
+                }
+                <Route path="/doc/:slug" component={Doc} />
+                <Route path="/colors" component={Colors} />
+                <Route path="/:type/:slug" component={SingleStyleguide} />
+              </Switch>
             </div>
-            <div className={`tlbx-sidebar-wrapper${this.props.navigation.showMenu ? ' tlbx-sidebar-open' : ''}`}>
-              <Sidebar location={this.props.location} />
-            </div>
-            <div className="tlbx-content-wrapper">
-              <Alert />
-              <div className="tlbx-content">
-                <Switch>
-                  {fullHome
-                    ? '' :
-                    <Route path="/" exact component={Doc} />
-                  }
-                  <Route path="/doc/:slug" component={Doc} />
-                  <Route path="/colors" component={Colors} />
-                  <Route path="/:type/:slug" component={SingleStyleguide} />
-                </Switch>
-              </div>
-            </div>
-          </Theme>
-        </div>
+          </div>
+        </Theme>
       );
     }
 
