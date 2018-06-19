@@ -6,9 +6,9 @@
 
   <div class="main-container">
 
-    {% include '@molecules/nav/nav.twig' %}
+    {% include '@molecules/nav/nav.twig' with {'no_toggle_wrapper' : true} %}
 
-    <main  role="main" class="content pt-5">
+    <main role="main" class="content pt-5">
       <div class="container">
         {% include '@organisms/breadcrumbs/breadcrumbs.twig' %}
       </div>
