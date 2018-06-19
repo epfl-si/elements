@@ -6,17 +6,26 @@
   flex: 1 1 0%;
   max-width: 100%;
   margin-bottom: $grid-gutter-width;
+
+  .bg-gray-100 & {
+    // Watch out for this, if a card is inside a white area that is
+    // itself inside a gray area, the border will be too dark.
+    border-color: gray('300');
+  }
 }
 
 .card-sm {
   margin-bottom: $grid-gutter-width / 2;
 }
 
-.card-gray .card-body {
-  background: $gray-100;
-  transition:
-    transform 0.2s,
-    background 0.2s;
+.card-gray {
+  .card-footer,
+  .card-body {
+    background: $gray-100;
+    transition:
+      transform 0.2s,
+      background 0.2s;
+  }
 }
 
 a.card-gray:hover .card-body { background: $white; }
