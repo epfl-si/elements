@@ -92,7 +92,7 @@
     <div class="container">
       <h2 class="text-center mb-5">{{ homepage.section_two.title }}</h2>
 
-      <h3 class="h6 mb-3">{{ homepage.section_two.subtitle_1 }}</h3>
+      <h3 class="h6 mb-3 text-spread">{{ homepage.section_two.subtitle_1 }}</h3>
       <div class="row mb-4">
         {% for card in homepage.section_two.cards[0:3] %}
           <div class="col-md-4 d-flex">
@@ -101,7 +101,7 @@
         {% endfor %}
       </div>
 
-      <h3 class="h6 mb-3">{{ homepage.section_two.subtitle_2 }}</h3>
+      <h3 class="h6 mb-3 text-spread">{{ homepage.section_two.subtitle_2 }}</h3>
       <div class="row">
         {% for card in homepage.section_two.cards[3:] %}
           <div class="col-md-4 d-flex">
