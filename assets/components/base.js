@@ -26,10 +26,6 @@ const init = () => {
   nav();
   cardSlider();
   drawer();
-
-  $('.tlbx-sidebar div:nth-child(5) .tlbx-sidebar-item strong').text('Content');
-  $('.tlbx-sidebar div:nth-child(6) .tlbx-sidebar-item strong').text('Utilities');
-  $('.tlbx-sidebar div:nth-child(7) .tlbx-sidebar-item strong').text('Components');
 };
 
 // Will init the scripts outside of Toolbox
