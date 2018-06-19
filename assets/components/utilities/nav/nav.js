@@ -101,7 +101,7 @@ const nav = () => {
   });
 
   // Bind action to the desktop hamburger (next to breadcrumbs)
-  $('#breadcrumb-burger').on('click', () => {
+  $('#nav-burger').on('click', () => {
     toggleDesktopMenu();
   });
 };
