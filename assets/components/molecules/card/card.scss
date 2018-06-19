@@ -8,14 +8,14 @@
   margin-bottom: $grid-gutter-width;
 }
 
-.card-gray {
+.card-gray .card-body {
   background: $gray-100;
   transition:
     transform 0.2s,
     background 0.2s;
 }
 
-a.card-gray:hover { background: $white; }
+a.card-gray:hover .card-body { background: $white; }
 
 .card-body {
   .card-header {
