@@ -1,5 +1,8 @@
 # Changelog
 
+*2.1.2* (2018-06-19)
+  - ✨ get sourcesOrder and use it (957856c)
+
 *2.1.1* (2018-06-15)
   - Fix component meta call
 
