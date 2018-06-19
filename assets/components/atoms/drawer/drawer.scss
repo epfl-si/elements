@@ -11,11 +11,10 @@
   transition: width 0.3s ease;
   background: $red;
 
-  @include media-breakpoint-up(xl) {
-    width: auto;
-  }
-
   &.open {
+    @include media-breakpoint-up(xl) {
+      width: auto;
+    }
     @include media-breakpoint-down(lg) {
       width: 50%;
     }
@@ -53,6 +52,7 @@
     width: 20px;
     height: 100%;
     background: $red;
+    border: none;
     z-index: 10;
     color: $white;
 
