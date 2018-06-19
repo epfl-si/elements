@@ -41,3 +41,22 @@ a {
 }
 
 // Link collapse, see collapse component
+
+// Link icon
+.link-icon {
+  display: flex;
+  justify-content: space-between;
+
+  .icon {
+    content: '';
+    width: 16px;
+    height: 16px;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+  }
+
+  &:hover .icon,
+  a:hover .link-icon .icon {
+    opacity: 1;
+  }
+}
