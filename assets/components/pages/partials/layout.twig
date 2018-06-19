@@ -1,38 +1,36 @@
-{% set classes = 'nav-toggle' %}
-
 {% include '@utilities/access-nav/access-nav.twig' %}
 
-<div class="{{ classes }}">
+<div class="nav-toggle">
   {% block header %}
     {% include '@components/header/header.twig' %}
   {% endblock %}
 
-  <div class="main-container {{ classes }}">
+  <div class="main-container nav-toggle">
 
     {% block nav %}
       {% include '@utilities/nav/nav.twig' with {'no_toggle_wrapper' : true} %}
     {% endblock %}
 
     {% block breadcrumb %}
-      <div class="container nav-toggle-container">
-        {% include '@utilities/nav/nav-toggle.twig' %}
-        {% include '@components/breadcrumbs/breadcrumbs.twig' %}
+      <div class="container breadcrumb-container">
+        {% include '@organisms/breadcrumbs/breadcrumbs.twig' %}
       </div>
     {% endblock %}
 
-    <main id="main" role="main" class="content">
+    {% block main %}
+      <main id="main" role="main" class="content">
+        {% block content %}{% endblock %}
+      </main>
+    {% endblock %}
 
-      {% block content %}{% endblock %}
-
-      {% block footer_container %}
-        <div class="bg-gray-100 pt-5 mt-5">
-          <div class="container">
-            {% block footer %}
-              {% include '@components/footer/footer-dark.twig' %}
-            {% endblock %}
-          </div>
+    {% block footer_container %}
+      <div class="bg-gray-100 pt-5 mt-5">
+        <div class="container">
+          {% block footer %}
+            {% include '@components/footer/footer-dark.twig' %}
+          {% endblock %}
         </div>
-      {% endblock %}
-    </main>
+      </div>
+    {% endblock %}
   </div>
 </div>

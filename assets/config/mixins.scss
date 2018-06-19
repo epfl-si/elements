@@ -206,6 +206,7 @@
   transition: border $trapeze-animation-duration;
 }
 
+
 // IE 11 mixin
 @mixin ie11($selector) {
  _:-ms-fullscreen, :root #{$selector} {
