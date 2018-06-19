@@ -3,6 +3,7 @@
 .fullwidth-teaser {
   position: relative;
   width: 100%;
+  margin-bottom: $grid-gutter-width;
   padding: 0 ($grid-gutter-width / 2);
 
   @include media-breakpoint-up(md) {
@@ -92,9 +93,6 @@
       padding: 1.5rem 2rem;
       background-color: $white;
       max-width: 24rem;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
 
       .list-inline {
         font-size: 0.85 * $font-size-base;
@@ -177,9 +175,9 @@
 }
 
 .fullwidth-teaser-footer {
-  @include media-breakpoint-up(xs) {
-    @include make-row;
-  }
+  margin-bottom: $grid-gutter-width / 2;
+
+  @include make-col(12);
 
   @include media-breakpoint-up(md) {
     padding-left: 2rem;

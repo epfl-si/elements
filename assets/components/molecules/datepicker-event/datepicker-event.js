@@ -120,7 +120,7 @@ export default () => {
   }
 
   function displayHeroMonths(container) {
-    $('.picker__wrap', container).append($('h2').html('fèv'));
+    $('.picker__wrap', container).append('<h2>fèv</h2>');
   }
 
   /*
