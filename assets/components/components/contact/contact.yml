@@ -1,0 +1,8 @@
+title: Contact 🚧
+name: contact
+variants:
+  - name: banner
+    title: Banner
+    wrapper: bg-gray-100
+notes: |
+  ### Contact bloc

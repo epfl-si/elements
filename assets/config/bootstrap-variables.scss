@@ -11,66 +11,42 @@
 // stylelint-disable
 $white:    #fff !default;
 $gray-100: #e6e6e6 !default;
-$gray-200: $gray-light !default;
-$gray-300: #b3b3b3 !default;
-$gray-400: #999999 !default;
-$gray-500: #808080 !default;
-$gray-600: #666666 !default;
-$gray-700: #4d4d4d !default;
-$gray-800: #333333 !default;
-$gray-900: $mine-shaft !default;
-$black:    #000 !default;
+$gray-200: #d5d5d5 !default;
+$gray-300: #c1c1c1 !default;
+$gray-600: #707070 !default;
+$black:    #212121 !default;
 
 $grays: () !default;
 $grays: map-merge((
   "100": $gray-100,
   "200": $gray-200,
   "300": $gray-300,
-  "400": $gray-400,
-  "500": $gray-500,
   "600": $gray-600,
-  "700": $gray-700,
-  "800": $gray-800,
-  "900": $gray-900
 ), $grays);
 
-$blue:    #007bff !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     $epflred !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
-$teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
-$softBlack: #404040 !default;
+$blue:    #4a90e2!default;
+$red:     #e30713 !default;
+$red-dark:#a80e17 !default;
+$orange:  #f5a623 !default;
+$green:   #7ed321 !default;
 
 $colors: () !default;
 $colors: map-merge((
   "blue":       $blue,
-  "indigo":     $indigo,
-  "purple":     $purple,
-  "pink":       $pink,
   "red":        $red,
   "orange":     $orange,
-  "yellow":     $yellow,
   "green":      $green,
-  "teal":       $teal,
-  "cyan":       $cyan,
-  "white":      $white,
-  "gray":       $gray-500,
-  "gray-dark":  $gray-900
+  "white":      $white
 ), $colors);
 
 $primary:       $red !default;
 $secondary:     $white !default;
 $success:       $green !default;
-$info:          $cyan !default;
-$warning:       $yellow !default;
+$info:          $blue !default;
+$warning:       $orange !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
-$dark:          $gray-900 !default;
+$dark:          $black !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge((
@@ -92,7 +68,7 @@ $theme-color-interval:      8% !default;
 $yiq-contrasted-threshold: 150 !default;
 
 // Customize the light and dark text colors for use in our YIQ color contrast function.
-$yiq-text-dark: $gray-900 !default;
+$yiq-text-dark: $black !default;
 $yiq-text-light: $white !default;
 
 // Options
@@ -124,7 +100,9 @@ $spacers: map-merge((
   2: ($spacer * .5),
   3: $spacer,
   4: ($spacer * 1.5),
-  5: ($spacer * 3)
+  5: ($spacer * 3),
+  gutter: 16px, // == $grid-gutter-width
+  6: ($spacer * 6),
 ), $spacers);
 
 // This variable affects the `.h-*` and `.w-*` classes.
@@ -142,7 +120,7 @@ $sizes: map-merge((
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$body-color:                $gray-900 !default;
+$body-color:                $black !default;
 
 // Links
 //
@@ -196,7 +174,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:                12 !default;
-$grid-gutter-width:           30px !default;
+$grid-gutter-width:           16px !default;
 
 // Components
 //
@@ -311,12 +289,12 @@ $table-border-width:          $border-width !default;
 $table-border-color:          $gray-300 !default;
 
 $table-head-bg:               $gray-200 !default;
-$table-head-color:            $gray-700 !default;
+$table-head-color:            $gray-600 !default;
 
-$table-dark-bg:               $gray-900 !default;
+$table-dark-bg:               $black !default;
 $table-dark-accent-bg:        rgba($white, .05) !default;
 $table-dark-hover-bg:         rgba($white, .075) !default;
-$table-dark-border-color:     lighten($gray-900, 7.5%) !default;
+$table-dark-border-color:     lighten($black, 7.5%) !default;
 $table-dark-color:            $body-bg !default;
 
 
@@ -397,7 +375,7 @@ $input-line-height-lg:                  $input-btn-line-height-lg !default;
 $input-bg:                              $white !default;
 $input-disabled-bg:                     $gray-100 !default;
 
-$input-color:                           $gray-900 !default;
+$input-color:                           $black !default;
 $input-border-color:                    $gray-200 !default;
 $input-border-width:                    $input-btn-border-width !default;
 $input-box-shadow:                      inset 0 1px 1px rgba($black, .075) !default;
@@ -407,7 +385,7 @@ $input-border-radius-lg:                $border-radius-lg !default;
 $input-border-radius-sm:                $border-radius-sm !default;
 
 $input-focus-bg:                        $input-bg !default;
-$input-focus-border-color:              $gray-900 !default;
+$input-focus-border-color:              $black !default;
 $input-focus-color:                     $input-color !default;
 $input-focus-width:                     $input-btn-focus-width !default;
 $input-focus-box-shadow:                0 0 0 1px $gray-200 !default;
@@ -485,7 +463,7 @@ $custom-select-disabled-color:      $gray-600 !default;
 $custom-select-bg:                  $white !default;
 $custom-select-disabled-bg:         $gray-200 !default;
 $custom-select-bg-size:             8px 10px !default; // In pixels because image dimensions
-$custom-select-indicator-color:     $gray-800 !default;
+$custom-select-indicator-color:     $black !default;
 $custom-select-indicator:           str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"), "#", "%23") !default;
 $custom-select-border-width:        $input-btn-border-width !default;
 $custom-select-border-color:        $input-border-color !default;
@@ -541,8 +519,8 @@ $dropdown-border-width:             $border-width !default;
 $dropdown-divider-bg:               $gray-200 !default;
 $dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175) !default;
 
-$dropdown-link-color:               $gray-900 !default;
-$dropdown-link-hover-color:         darken($gray-900, 5%) !default;
+$dropdown-link-color:               $black !default;
+$dropdown-link-hover-color:         darken($black, 5%) !default;
 $dropdown-link-hover-bg:            $gray-100 !default;
 
 $dropdown-link-active-color:        $component-active-color !default;
@@ -579,7 +557,7 @@ $nav-tabs-border-color:             $gray-200 !default;
 $nav-tabs-border-width:             $border-width !default;
 $nav-tabs-border-radius:            $border-radius !default;
 $nav-tabs-link-hover-border-color:  $nav-tabs-border-color !default;
-$nav-tabs-link-active-color:        $gray-700 !default;
+$nav-tabs-link-active-color:        $gray-600 !default;
 $nav-tabs-link-active-bg:           $body-bg !default;
 $nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-color $nav-tabs-link-active-bg !default;
 
@@ -638,7 +616,7 @@ $pagination-focus-box-shadow:       $input-btn-focus-box-shadow !default;
 
 $pagination-hover-color:            $link-hover-color !default;
 $pagination-hover-bg:               $pagination-bg !default;
-$pagination-hover-border-color:     $gray-700 !default;
+$pagination-hover-border-color:     $gray-600 !default;
 
 $pagination-active-color:           $gray-600 !default;
 $pagination-active-bg:              $gray-100 !default;
@@ -661,7 +639,7 @@ $card-spacer-y:                     0.9rem !default;
 $card-spacer-x:                     1.35rem !default;
 $card-border-width:                 $border-width !default;
 $card-border-radius:                $border-radius !default;
-$card-border-color:                 rgba($black, .125) !default;
+$card-border-color:                 $gray-200 !default;
 $card-inner-border-radius:          calc(#{$card-border-radius} - #{$card-border-width}) !default;
 $card-cap-bg:                       transparent !default;
 $card-bg:                           $white !default;
@@ -697,26 +675,26 @@ $tooltip-arrow-color:         $tooltip-bg !default;
 
 $popover-font-size:                 $font-size-sm !default;
 $popover-bg:                        $white !default;
-$popover-max-width:                 276px !default;
+$popover-max-width:                 296px !default;
 $popover-border-width:              $border-width !default;
-$popover-border-color:              rgba($black, .2) !default;
-$popover-border-radius:             $border-radius-lg !default;
-$popover-box-shadow:                0 .25rem .5rem rgba($black, .2) !default;
+$popover-border-color:              $gray-200 !default;
+$popover-border-radius:             0 !default;
+$popover-box-shadow:                none !default;
 
 $popover-header-bg:                 darken($popover-bg, 3%) !default;
-$popover-header-color:              $headings-color !default;
-$popover-header-padding-y:          .5rem !default;
-$popover-header-padding-x:          .75rem !default;
+$popover-header-color:              $gray-600 !default;
+$popover-header-padding-y:          ($grid-gutter-width / 2) !default;
+$popover-header-padding-x:          ($grid-gutter-width / 2) !default;
 
 $popover-body-color:                $body-color !default;
 $popover-body-padding-y:            $popover-header-padding-y !default;
 $popover-body-padding-x:            $popover-header-padding-x !default;
 
-$popover-arrow-width:               1rem !default;
-$popover-arrow-height:              .5rem !default;
+$popover-arrow-width:               10px !default;
+$popover-arrow-height:              10px !default;
 $popover-arrow-color:               $popover-bg !default;
 
-$popover-arrow-outer-color:         fade-in($popover-border-color, .05) !default;
+$popover-arrow-outer-color:         $popover-border-color !default;
 
 
 // Badges
@@ -768,10 +746,10 @@ $modal-transition:                  transform .3s ease-out !default;
 //
 // Define alert colors, border radius, and padding.
 
-$alert-padding-y:                   .75rem !default;
-$alert-padding-x:                   1.25rem !default;
+$alert-padding-y:                   0.4rem !default;
+$alert-padding-x:                   0.6rem !default;
 $alert-margin-bottom:               1rem !default;
-$alert-border-radius:               $border-radius !default;
+$alert-border-radius:               0 !default;
 $alert-link-font-weight:            $font-weight-bold !default;
 $alert-border-width:                $border-width !default;
 
@@ -797,7 +775,7 @@ $progress-bar-transition:           width .6s ease !default;
 $list-group-bg:                     $white !default;
 $list-group-border-color:           rgba($black, .125) !default;
 $list-group-border-width:           $border-width !default;
-$list-group-border-radius:          $border-radius !default;
+$list-group-border-radius:          0 !default;
 
 $list-group-item-padding-y:         .75rem !default;
 $list-group-item-padding-x:         1.25rem !default;
@@ -810,7 +788,7 @@ $list-group-active-border-color:    $list-group-active-bg !default;
 $list-group-disabled-color:         $gray-600 !default;
 $list-group-disabled-bg:            $list-group-bg !default;
 
-$list-group-action-color:           $gray-700 !default;
+$list-group-action-color:           $gray-600 !default;
 $list-group-action-hover-color:     $list-group-action-color !default;
 
 $list-group-action-active-color:    $body-color !default;
@@ -830,7 +808,7 @@ $thumbnail-box-shadow:              0 1px 2px rgba($black, .075) !default;
 // Figures
 
 $figure-caption-font-size:          $font-size-sm !default;
-$figure-caption-color:              $gray-700 !default;
+$figure-caption-color:              $gray-600 !default;
 
 
 // Breadcrumbs
@@ -871,23 +849,23 @@ $carousel-transition:               transform .6s ease !default;
 
 // Close
 
-$close-font-size:                   $font-size-base * 1.5 !default;
-$close-font-weight:                 $font-weight-bold !default;
-$close-color:                       $black !default;
+$close-font-size:                   $font-size-base * 2 !default;
+$close-font-weight:                 $font-weight-light !default;
+$close-color:                       $gray-600 !default;
 $close-text-shadow:                 0 1px 0 $white !default;
 
 // Code
 
 $code-font-size:                    87.5% !default;
-$code-color:                        $pink !default;
+$code-color:                        $red !default;
 
 $kbd-padding-y:                     .2rem !default;
 $kbd-padding-x:                     .4rem !default;
 $kbd-font-size:                     $code-font-size !default;
 $kbd-color:                         $white !default;
-$kbd-bg:                            $gray-900 !default;
+$kbd-bg:                            $black !default;
 
-$pre-color:                         $gray-900 !default;
+$pre-color:                         $black !default;
 $pre-scrollable-max-height:         340px !default;
 
 

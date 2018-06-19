@@ -1,23 +1,38 @@
 /* globals jQuery, Tablesaw */
 
-import upload from './atoms/upload/upload';
-import datebpicker from './molecules/datepicker/datepicker';
-import datepickerEvent from './molecules/datepicker-event/datepicker-event';
-import socialShare from './organisms/social/social-share';
+import upload from './content/upload/upload';
+import datepicker from './utilities/datepicker/datepicker';
+import datepickerEvent from './utilities/datepicker-event/datepicker-event';
+import popover from './utilities/popover/popover';
+import gallery from './utilities/gallery/gallery';
+import cardSlider from './utilities/card-slider/card-slider';
+import socialShare from './components/social/social-share';
+import tagInput from './content/tag/tag-input';
 import svgIcons from '../icons/svg-icons';
+import nav from './utilities/nav/nav.js';
+import drawer from './content/drawer/drawer.js';
+import objectFitImages from 'object-fit-images';
 
 svgIcons(); // Must run as soon as possible
 
 const init = () => {
   upload();
-  datebpicker();
+  tagInput();
+  datepicker();
   datepickerEvent();
+  popover();
+  gallery();
   socialShare();
   Tablesaw.init();
+  nav();
+  cardSlider();
+  drawer();
 
-  $('.tlbx-sidebar div:nth-child(5) .tlbx-sidebar-item strong').text('Content');
-  $('.tlbx-sidebar div:nth-child(6) .tlbx-sidebar-item strong').text('Utilities');
-  $('.tlbx-sidebar div:nth-child(7) .tlbx-sidebar-item strong').text('Components');
+  // Init polyfill for Object Fit on IE11
+  const isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+  if (isIE11) {
+    objectFitImages();
+  }
 };
 
 // Will init the scripts outside of Toolbox

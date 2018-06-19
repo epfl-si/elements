@@ -6,33 +6,49 @@
 
 .styleguide {
   font-family: $font-family-base;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-template-columns: 60px 240px 1fr;
-  grid-template-columns: 60px 240px 1fr;
+
+  @media screen and (min-width: 768px) {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 60px 240px 1fr;
+    grid-template-columns: 60px 240px 1fr;
+  }
+}
+
+.tlbx-toolbar-wrapper {
+  position: static;
+
+  @media screen and (min-width: 768px) {
+    position: fixed;
+  }
 }
 
 .tlbx-sidebar-wrapper {
   -ms-grid-column: 2;
   grid-column: 2;
+
+  &:not(.tlbx-sidebar-open) {
+    box-shadow: none;
+  }
 }
 
 .tlbx-content-wrapper {
   -ms-grid-column: 3;
   grid-column: 3;
+  padding-top: 1.8rem;
 }
 
-.tlbx-sidebar {
-  @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+  .tlbx-toolbar {
+    position: fixed;
+  }
+
+  .tlbx-sidebar {
     position: fixed;
     max-height: 100vh;
     overflow-y: scroll;
     width: 240px;
   }
-}
-
-.tlbx-content-wrapper {
-  padding-top: 1.8rem;
 }
 
 .tlbx-sidebar-item-list {
@@ -52,6 +68,7 @@
 }
 
 .tlbx-item-preview.tlbx-picture img { width: auto; }
+.tlbx-item-preview.tlbx-component-popover .popover { position: static; }
 
 .tlbx-event-teaser-event-teaser-large {
   .event-teaser {
@@ -100,7 +117,60 @@
   code {
     padding: 0.05em 0.1em;
     border-radius: 2px;
-    background-color: rgba($epflred, 0.3);
-    border: 1px solid rgba($epflred, 0.3);
+    background-color: rgba($red, 0.3);
+    border: 1px solid rgba($red, 0.3);
+  }
+}
+
+.tlbx-item-code {
+  pre code {
+    display: flex;
+    flex-direction: column;
+
+    > span {
+      &:hover {
+        background-color: rgba($white, 0.05);
+      }
+    }
+  }
+}
+
+.tlbx-component-access-nav {
+  position: relative;
+  padding-bottom: 45px;
+
+  &:after {
+    content: 'Focus here and press <Tab>.';
+    color: $text-muted;
+  }
+
+  .access-nav {
+    position: static;
+
+    li a {
+      position: absolute;
+    }
+  }
+}
+
+.tlbx-component-menu-toggle-mobile {
+  .menu-toggle-mobile {
+    display: flex !important;
+    margin-left: 0;
+  }
+}
+
+.tlbx-component-nav {
+  min-height: 250px;
+  padding: 0;
+
+  .nav-toggle .nav-main {
+    position: absolute;
+  }
+
+  @media (min-width: 1200px) {
+    .desktop-menu-open .nav-toggle .nav-main {
+      left: 20px;
+    }
   }
 }

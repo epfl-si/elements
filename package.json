@@ -43,7 +43,7 @@
     "plugins": [
       "stylelint-order"
     ],
-    "extends": "stylelint-config-standard",
+    "extends": "stylelint-config-recommended-scss",
     "rules": {
       "at-rule-no-vendor-prefix": true,
       "media-feature-name-no-vendor-prefix": true,
@@ -87,11 +87,17 @@
   "dependencies": {
     "bootstrap": "^4.0.0",
     "clipboard": "^2.0.0",
+    "flickity": "^2.1.1",
+    "flickity-as-nav-for": "^2.0.1",
+    "flickity-fullscreen": "^1.0.1",
+    "imagesloaded": "^4.1.4",
+    "object-fit-images": "^3.2.3",
     "pickadate": "^3.5.6",
+    "selectize.js": "^0.12.12",
     "tablesaw": "^3.0.9",
     "toolbox-utils": "^1.2.0"
   },
   "devDependencies": {
-    "backstopjs": "^3.2.16"
+    "stylelint-config-recommended-scss": "^3.2.0"
   }
 }

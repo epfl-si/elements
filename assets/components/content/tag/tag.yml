@@ -1,0 +1,9 @@
+title: Tag
+name: tag
+variants:
+  - name: input
+    title: Tag input
+    notes: |
+      [Selectize.js](http://selectize.github.io/selectize.js/) is used for the **Tag input** component. Look at the [documentation](https://github.com/selectize/selectize.js/blob/master/docs/usage.md) for more information about all the instanciation possibilities.
+
+      Just use the markup below to initiate the input with selectize.
