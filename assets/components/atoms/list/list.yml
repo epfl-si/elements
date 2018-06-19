@@ -1,7 +1,0 @@
-name: list
-title: Lists
-variants:
-  - name: numbered
-    title: Numbered list
-  - name: bullet
-    title: Bulleted list

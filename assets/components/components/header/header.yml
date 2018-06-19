@@ -1,0 +1,5 @@
+title: Header
+name: header
+variants:
+  - name: light
+    title: Header light

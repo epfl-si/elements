@@ -42,6 +42,15 @@
   flex: 1 1 auto;
 }
 
+// Layout helpers
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .offset#{$infix}-top { margin-top: $spacer * -4; }
+  }
+}
+
 //
 // Text helpers
 .text-small {
@@ -71,71 +80,6 @@
   background-color: $white;
   box-shadow: 0.444rem 0 0 $white, -0.444rem 0 0 $white; // Around 8px
   box-decoration-break: clone;
-}
-
-/*
-  trapezes
-*/
-
-// horizontal
-
-*:hover > .trapeze-horizontal,
-input:focus + label > .trapeze-horizontal {
-  bottom: -$trapeze-height;
-}
-
-.trapeze-vertical-container {
-  position: relative;
-  transition:
-    margin 0.2s,
-    padding 0.2s;
-
-  &:hover {
-    padding-left: $trapeze-height;
-    margin-right: $trapeze-height * -1;
-  }
-}
-
-// vertical
-
-.trapeze-vertical {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  margin-right: $trapeze-height * -1;
-  border-right: $trapeze-height solid $gray-200;
-  border-top: $trapeze-height solid transparent;
-  border-bottom: $trapeze-height solid transparent;
-  transition: 0.2s;
-  z-index: 0;
-}
-
-.trapeze-horizontal-container {
-  position: relative;
-  transition:
-    margin 0.2s,
-    padding 0.2s;
-
-  &:hover {
-    margin-top: -$trapeze-height !important;
-    padding-bottom: $trapeze-height;
-  }
-}
-
-.trapeze-horizontal {
-  display: block;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  margin-top: $trapeze-height * -1;
-  border-top: $trapeze-height solid $gray-200;
-  border-left: $trapeze-height solid transparent;
-  border-right: $trapeze-height solid transparent;
-  height: 0;
-  transition: 0.2s;
-  z-index: 0;
 }
 
 /*
