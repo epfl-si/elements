@@ -25,6 +25,63 @@
     "https://source.unsplash.com/rG1LNUFgJhI",
     "https://source.unsplash.com/99neAF8kqhg"
   ],
+  "footer": [
+    {
+      "heading": "A propos de l’EPFL",
+      "items": [
+        "Vue d’ensemble",
+        "Histoire de l’EPFL",
+        "Actualités",
+        "Organisation administrative",
+        "Actions pour le public extérieur",
+        "Emplois",
+        "Mécénats et dons",
+        "Presse et média"
+      ]
+    },
+    {
+      "heading": "Education",
+      "items": [
+        "Bachelors",
+        "Masters",
+        "Doctorats",
+        "MBA",
+        "Calendrier académique",
+        "MOOCS et autoformation"
+      ]
+    },
+    {
+      "heading": "Recherche",
+      "items": [
+        "Domaines de recherche par facultés",
+        "Événements scientifiques",
+        "Publications scientifiques",
+        "Organisation administrative",
+        "Annuaire des facultés"
+      ]
+    },
+    {
+      "heading": "Innovation",
+      "items": [
+        "Partenariat avec l’industrie",
+        "Accompagnement de start-ups",
+        "Soutien aux innovateurs",
+        "Innovation park"
+      ]
+    },
+    {
+      "heading": "Campus",
+      "items": [
+        "Accéder au campus",
+        "Bâtiments et services",
+        "Recevoir de l’aide",
+        "Bons plans",
+        "Associations sur le campus",
+        "S’installer à Lausanne",
+        "Anciens étudiants"
+      ]
+    }
+  ],
   "homepage": {
     "navbar_items": [
       "A propos",
