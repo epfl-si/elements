@@ -1,15 +1,8 @@
 title: Contact 🚧
 name: contact
 variants:
-  - name: listing
-    title: Listing
-  - name: bloc-with-text
-    title: Contact bloc with text
   - name: banner
     title: Banner
+    wrapper: bg-gray-100
 notes: |
-  <div class="progress"><div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 10%"></div></div><br />
-
-  <br />
-
   ### Contact bloc

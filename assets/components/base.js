@@ -11,6 +11,7 @@ import tagInput from './content/tag/tag-input';
 import svgIcons from '../icons/svg-icons';
 import nav from './utilities/nav/nav.js';
 import drawer from './content/drawer/drawer.js';
+import objectFitImages from 'object-fit-images';
 
 svgIcons(); // Must run as soon as possible
 
@@ -26,6 +27,12 @@ const init = () => {
   nav();
   cardSlider();
   drawer();
+
+  // Init polyfill for Object Fit on IE11
+  const isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+  if (isIE11) {
+    objectFitImages();
+  }
 };
 
 // Will init the scripts outside of Toolbox
