@@ -5,6 +5,7 @@ import datepicker from './molecules/datepicker/datepicker';
 import datepickerEvent from './molecules/datepicker-event/datepicker-event';
 import popover from './molecules/popover/popover';
 import gallery from './molecules/gallery/gallery';
+import cardSlider from './molecules/card-slider/card-slider';
 import socialShare from './organisms/social/social-share';
 import tagInput from './atoms/tag/tag-input';
 import svgIcons from '../icons/svg-icons';
@@ -23,6 +24,7 @@ const init = () => {
   socialShare();
   Tablesaw.init();
   nav();
+  cardSlider();
   drawer();
 
   $('.tlbx-sidebar div:nth-child(5) .tlbx-sidebar-item strong').text('Content');

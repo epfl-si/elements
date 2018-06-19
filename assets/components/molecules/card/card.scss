@@ -8,6 +8,15 @@
   margin-bottom: $grid-gutter-width;
 }
 
+.card-gray .card-body {
+  background: $gray-100;
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+
+a.card-gray:hover .card-body { background: $white; }
+
 .card-body {
   .card-header {
     display: flex;
@@ -28,6 +37,7 @@
     margin-bottom: 0;
   }
 
+  .card-img-top + .card-title { margin-top: $card-spacer-y; }
   .card-img-top + & {
     border-top: none !important;
   }
@@ -66,9 +76,10 @@
   font-size: $font-size-sm;
   margin-bottom: $paragraph-margin-bottom;
   color: $text-muted;
+  &:last-of-type { margin-bottom: 0; }
 
   // Add the separator between the elements
-  > :not(:last-child) {
+  > :not(:last-of-type) {
     &:after {
       content: ' \203A ';
       margin: 0 0.25em 0 0.15em;
@@ -85,6 +96,9 @@
       @include link-pretty($red, $body-bg, $body-color);
     }
   }
+
+  p { color: $body-color; }
+  p + & { margin-top: $paragraph-margin-bottom; }
 }
 
 .card-info-bordered {
@@ -101,6 +115,7 @@
 // Card items as links
 a.card-img-top {
   position: relative;
+  .card-body & { display: block; }
 
   &:before {
     content: ' ';
@@ -127,7 +142,7 @@ a.card-title,
 
   background-position: 0 90%;
 
-  .card.bg-gray-100 & {
+  .card-gray & {
     @include link-pretty($red, gray('100'), $body-color);
   }
 }
@@ -176,4 +191,26 @@ a.card {
 .card-img-top,
 .card-overlay .card-img {
   min-height: 1px;
+}
+
+//
+// Grayscale look, see event finished
+.card-grayscale {
+  &:hover {
+    .card-img-top img { filter: grayscale(0%); }
+    .card-body { opacity: 1; }
+  }
+
+  .card-img-top img {
+    transition: filter 0.2s;
+    filter: grayscale(100%);
+  }
+
+  .card-body {
+    opacity: 0.75;
+    transition:
+      opacity 0.3s,
+      background 0.3s,
+      border 0.3s !important;
+  }
 }
