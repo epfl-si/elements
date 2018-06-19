@@ -33,6 +33,15 @@ const Sidebar = (props) => {
       <SidebarDocs location={props.location} />
 
       {Object.keys(props.atomic.sourcesOrder || props.atomic.sources).map((group) => {
+        if (props.atomic.sourcesOrder) {
+          return (
+            <SidebarItem
+              key={props.atomic.sources[group]}
+              group={props.atomic.sources[group]}
+              location={props.location}
+            />
+          );
+        }
         return <SidebarItem key={group} group={group} location={props.location} />;
       })}
     </div>
