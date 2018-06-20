@@ -1,0 +1,19 @@
+title: Link
+name: link
+notes: >
+  A link is styled by default with a red underline (on [supported
+  browsers](https://caniuse.com/#feat=text-decoration), otherwise, the underline
+  uses the text color).
+
+
+  A `link-pretty` class can be used to create a better and more cross-browser
+  style.
+
+  A `link-collapse` class sets the link to have a red triangle and special
+  styles.
+variants:
+  - name: icon
+    title: Icon
+    notes: |
+      You can set up a link with a custom icon. The icon will automatically be at the other end of the element (with flex).
+    wrapper: col-md-6

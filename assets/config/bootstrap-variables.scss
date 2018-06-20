@@ -101,7 +101,8 @@ $spacers: map-merge((
   3: $spacer,
   4: ($spacer * 1.5),
   5: ($spacer * 3),
-  gutter: 30px, // == $grid-gutter-width
+  gutter: 16px, // == $grid-gutter-width
+  6: ($spacer * 6),
 ), $spacers);
 
 // This variable affects the `.h-*` and `.w-*` classes.
@@ -173,7 +174,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:                12 !default;
-$grid-gutter-width:           30px !default;
+$grid-gutter-width:           16px !default;
 
 // Components
 //
@@ -639,7 +640,7 @@ $card-spacer-y:                     0.9rem !default;
 $card-spacer-x:                     1.35rem !default;
 $card-border-width:                 $border-width !default;
 $card-border-radius:                $border-radius !default;
-$card-border-color:                 rgba($black, .125) !default;
+$card-border-color:                 $gray-200 !default;
 $card-inner-border-radius:          calc(#{$card-border-radius} - #{$card-border-width}) !default;
 $card-cap-bg:                       transparent !default;
 $card-bg:                           $white !default;

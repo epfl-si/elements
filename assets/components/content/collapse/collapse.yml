@@ -1,0 +1,7 @@
+title: Collapse
+name: collapse
+variants:
+  - name: title
+    title: Collapse Title
+    notes: |
+      This component is **mobile only by default** as in the footer. To offer also the same behaviour on desktop, use the `collapse-title-desktop` and `collapse-item-desktop` classes like below.

@@ -1,0 +1,33 @@
+title: Picture
+name: picture
+wrapper: col-md-6
+variants:
+  - name: cover
+    title: Cover picture
+    wrapper: 'col-md-12'
+  - name: avatar
+    title: Avatar
+    wrapper: col-sm-4 col-md-2 col-lg-1
+  - name: one-third
+    title: One third picture
+    wrapper: col-md-4
+  - name: one-third-square
+    title: One third Square picture
+  - name: news-thumb
+    title: News Listing Thumbnail
+    wrapper: col-3 col-md-2
+notes: |
+  <br>
+
+  > The HTML **`<picture>` element** serves as a container for zero or more `<source>` elements and one `<img>` element to provide versions of an image for different display device scenarios. The browser will consider each of the child `<source>` elements and select one corresponding to the best match found; if no matches are found among the `<source>` elements, the file specified by the `<img>` element's src attribute is selected. The selected image is then presented in the space occupied by the `<img>` element.<br>
+  > — *[Read more on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)*
+
+  <br>
+
+  We are using `<picture>` in Elements instead of a simple `<img>` to **ensure that every user and device will receive the right image format, size and weight**.
+
+  This page presents all image formats defined in Element and all their related sizes. **This implies implemening a lot of image sizes**, but CMS like Wordpress can easily manage [that logic](https://developer.wordpress.org/reference/functions/add_image_size/).
+
+  <br>
+
+  ### Half desktop picture

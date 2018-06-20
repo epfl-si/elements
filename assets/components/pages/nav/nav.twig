@@ -2,15 +2,15 @@
 
 <div class="{{ navType }}">
 
-  {% include '@organisms/header/header.twig' %}
+  {% include '@components/header/header.twig' %}
 
   <div class="main-container">
 
-    {% include '@molecules/nav/nav.twig' %}
+    {% include '@utilities/nav/nav.twig' with {'no_toggle_wrapper' : true} %}
 
-    <main  role="main" class="content pt-5">
+    <main role="main" class="content pt-5">
       <div class="container">
-        {% include '@organisms/breadcrumbs/breadcrumbs.twig' %}
+        {% include '@components/breadcrumbs/breadcrumbs.twig' %}
       </div>
       <div class="hero-container">
         <img src="https://picsum.photos/1920/400?random&amp;raa=46" class="img-fluid hero" width="1920px" height="700px">
