@@ -16,7 +16,6 @@ svgIcons(); // Must run as soon as possible
 const init = () => {
   upload();
   selectMultiple();
-  datepicker();
   tagInput();
   datepicker();
   datepickerEvent();
