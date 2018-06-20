@@ -19,7 +19,6 @@
   "vendors": {
     "css": [
       "node_modules/pickadate/lib/themes/classic.date.css",
-      "node_modules/tablesaw/dist/tablesaw.css",
       "node_modules/flickity/dist/flickity.css",
       "node_modules/flickity-fullscreen/fullscreen.css"
     ],
@@ -30,6 +29,7 @@
       "node_modules/tablesaw/dist/tablesaw.jquery.js",
       "node_modules/tablesaw/dist/tablesaw-init.js",
       "node_modules/clipboard/dist/clipboard.min.js",
+      "node_modules/multiple-select/multiple-select.js",
       "node_modules/selectize.js/dist/js/standalone/selectize.min.js"
     ]
   },

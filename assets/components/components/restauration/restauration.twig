@@ -1,1 +1,90 @@
-🤷‍♀️
+<ul class="nav nav-tabs" role="tablist">
+  {% for day in restauration %}
+    <li class="nav-item">
+      <a class="nav-link {% if loop.first %}active{% endif %}" id="{{ day|lower }}-tab" data-toggle="tab" href="#{{ day|lower }}" role="tab" aria-controls="{{ day|lower }}" {% if loop.first %}aria-selected="true"{% endif %}>{{ day }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+<div class="tab-content py-3">
+  {% for day in restauration %}
+  <div class="tab-pane fade show {% if loop.first %}active{% endif %}" id="{{ day|lower }}" role="tabpanel" aria-labelledby="{{ day|lower }}-tab">
+    <div class="row my-3">
+      <div class="col-md-4 mb-3">
+        {% include '@content/select/select-multiple.twig' %}
+      </div>
+      <div class="col-md-4 mb-3">
+        {% include '@content/select/select-multiple.twig' %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="tag-group mb-3">
+          <label for="">Filtres de recherches</label>
+          <div>
+            <a href="javascript:void(0)" class="tag tag-plain">Tout effacer<span class="remove" tabindex="-1" title="Remove">×</span></a>
+            <a href="javascript:void(0)" class="tag tag-primary">Campus Biotech Genève<span class="remove" tabindex="-1" title="Remove">×</span></a>
+            <a href="javascript:void(0)" class="tag tag-primary">Fleur de Pains<span class="remove" tabindex="-1" title="Remove">×</span></a>
+            <a href="javascript:void(0)" class="tag tag-primary">Food Truck<span class="remove" tabindex="-1" title="Remove">×</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tablesaw-container">
+      <table class="table tablesaw tablesaw-stack" data-tablesaw-mode="stack">
+        <thead class="sr-only">
+          <tr>
+            <th>Menu</th>
+            <th>Restaurant</th>
+            <th>Prix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <img class="float-right float-md-left mx-3" src="./images/restauration_illustration.png">
+              <b>Filets de perche (Estonie) sauce tartare</b><br>
+              Frites<br>
+              Salade mêlée
+            </td>
+            <td>
+              <a href="#">Cafétéria BC</a>
+            </td>
+            <td>
+              <div class="row">
+                <div class="col-6 text-primary"><abbr title="Prix étudiant">E</abbr></div>
+                <div class="col-6 text-right">11.90</div>
+              </div>
+              <div class="row">
+                <div class="col-6 text-primary"><abbr title="Prix visiteurs">V</abbr></div>
+                <div class="col-6 text-right">14.00</div>
+              </div>
+              <div class="row">
+                <div class="col-6 text-primary"><abbr title="Prix doctorants">D</abbr></div>
+                <div class="col-6 text-right">11.90</div>
+              </div>
+              <div class="row">
+                <div class="col-6 text-primary"><abbr title="Prix campus">C</abbr></div>
+                <div class="col-6 text-right">14.00</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img class="float-right float-md-left mx-3" src="./images/restauration_illustration.png">
+              <b>Galette</b><br>
+              Thon, oignons, Fromage, Roquette<br>
+            </td>
+            <td>
+              <a href="#">L'Esplanade</a>
+            </td>
+            <td>
+              <div class="text-md-right">9.90</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endfor %}
+</div>

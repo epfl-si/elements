@@ -1,2 +1,5 @@
 title: Select
 name: select
+variants:
+  - name: multiple
+    title: Select multiple

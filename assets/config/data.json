@@ -25,6 +25,15 @@
     "https://source.unsplash.com/rG1LNUFgJhI",
     "https://source.unsplash.com/99neAF8kqhg"
   ],
+  "restauration": [
+    "Lu",
+    "Ma",
+    "Me",
+    "Je",
+    "Ve",
+    "Sa",
+    "Di"
+  ],
   "footer": [
     {
       "heading": "A propos de l’EPFL",
@@ -142,13 +151,13 @@
           "image": "./images/homepage/2-teaser-basic-page-column1.jpg"
         },
         {
-          "title": "Rolex Learning Center",
+          "title": "Rolex Center",
           "content": "Le Rolex Learning Center est à la fois un laboratoire d’apprentissage, une bibliothèque abritant 500’000 ouvrages et un centre culturel international.",
           "button": "Découvrez le Rolex Center",
           "image": "./images/homepage/2-teaser-basic-page-column2.jpg"
         },
         {
-          "title": "SwissTech Convention Center",
+          "title": "SwissTech CC",
           "content": "Le SwissTech Convention Center est un des plus grand centre de congrès de la région lémanique accueillant des évènements de renommée internationale.",
           "button": "Embarquez pour le SwissTech",
           "image": "./images/homepage/2-teaser-basic-page-column3.jpg"
