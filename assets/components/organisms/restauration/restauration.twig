@@ -10,25 +10,11 @@
   {% for day in restauration %}
   <div class="tab-pane fade show {% if loop.first %}active{% endif %}" id="{{ day|lower }}" role="tabpanel" aria-labelledby="{{ day|lower }}-tab">
     <div class="row my-3">
-      <div class="col-md-4">
-        <select class="select-multiple mb-3" multiple="multiple" data-placeholder="Restaurant">
-          <option value="1">Chuck Testa</option>
-          <option value="4">Sage Cattabriga-Alosa</option>
-          <option value="3">Nikola Tesla</option>
-          <option value="2">I Love</option>
-          <option value="5">Pizza</option>
-          <option value="6">🍕</option>
-        </select>
+      <div class="col-md-4 mb-3">
+        {% include '@atoms/select/select-multiple.twig' %}
       </div>
-      <div class="col-md-4">
-        <select class="select-multiple mb-3" multiple="multiple" data-placeholder="Menu">
-          <option value="1">Chuck Testa</option>
-          <option value="4">Sage Cattabriga-Alosa</option>
-          <option value="3">Nikola Tesla</option>
-          <option value="2">I Love</option>
-          <option value="5">Pizza</option>
-          <option value="6">🍕</option>
-        </select>
+      <div class="col-md-4 mb-3">
+        {% include '@atoms/select/select-multiple.twig' %}
       </div>
     </div>
     <div class="row">

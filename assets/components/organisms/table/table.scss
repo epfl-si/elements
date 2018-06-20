@@ -1,11 +1,9 @@
 @charset 'utf-8';
 
 .table {
-  thead {
-    th {
-      border-bottom: (3 * $table-border-width) solid $table-border-color;
-      padding: $table-cell-padding-sm $table-cell-padding-sm;
-    }
+  thead th {
+    border-bottom: (3 * $table-border-width) solid $table-border-color;
+    padding: $table-cell-padding-sm $table-cell-padding-sm;
   }
 
   tbody,
@@ -35,12 +33,10 @@
     }
   }
 
-  tfoot {
-    td {
-      padding: $table-cell-padding-sm $table-cell-padding-sm;
-      border-top: (3 * $table-border-width) solid $table-border-color;
-      font-weight: $font-weight-bold;
-    }
+  tfoot td {
+    padding: $table-cell-padding-sm $table-cell-padding-sm;
+    border-top: (3 * $table-border-width) solid $table-border-color;
+    font-weight: $font-weight-bold;
   }
 }
 
