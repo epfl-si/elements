@@ -4,23 +4,23 @@
     <h2 class="h4 mb-3">News teasers</h2>
     <div class="row">
       <div class="col-md-4 d-flex">
-        {% include '@organisms/news/news-basic-teaser.twig' %}
+        {% include '@components/news/news-basic-teaser.twig' %}
       </div>
       <div class="col-md-4 d-flex">
-        {% embed '@organisms/news/news-press-release.twig' %}
+        {% embed '@components/news/news-press-release.twig' %}
           {% block img %}{% endblock %}
         {% endembed %}
       </div>
       <div class="col-md-4 d-flex">
-        {% include '@organisms/news/news-press-release.twig' %}
+        {% include '@components/news/news-press-release.twig' %}
       </div>
       <div class="col-md-4 d-flex">
-        {% embed '@organisms/news/news-distinction.twig' %}
+        {% embed '@components/news/news-distinction.twig' %}
           {% block img %}{% endblock %}
         {% endembed %}
       </div>
       <div class="col-md-4 d-flex">
-        {% include '@organisms/news/news-distinction.twig' %}
+        {% include '@components/news/news-distinction.twig' %}
       </div>
     </div>
 
@@ -29,46 +29,46 @@
     <p><strong>Section</strong></p>
     <div class="row">
       <div class="col-md-4 d-flex">
-        {% embed '@organisms/teaser-mission/teaser-mission.twig' %}
+        {% embed '@components/teaser-mission/teaser-mission.twig' %}
           {% block img %}{% endblock %}
         {% endembed %}
       </div>
       <div class="col-md-4 d-flex">
-        {% include '@organisms/teaser-mission/teaser-mission.twig' %}
+        {% include '@components/teaser-mission/teaser-mission.twig' %}
       </div>
     </div>
 
     <p><strong>Faculty</strong></p>
     <div class="row">
       <div class="col-md-4 d-flex">
-        {% include '@organisms/teaser-mission/teaser-mission-faculty.twig' %}
+        {% include '@components/teaser-mission/teaser-mission-faculty.twig' %}
       </div>
     </div>
 
     <p><strong>Institutes</strong></p>
     <div class="row">
       <div class="col-md-4 d-flex">
-        {% include '@organisms/teaser-mission/teaser-mission-institute.twig' %}
+        {% include '@components/teaser-mission/teaser-mission-institute.twig' %}
       </div>
     </div>
 
     <p><strong>Laboratories</strong></p>
     <div class="row">
       <div class="col-md-4 d-flex">
-        {% include '@organisms/teaser-mission/teaser-mission-laboratory.twig' %}
+        {% include '@components/teaser-mission/teaser-mission-laboratory.twig' %}
       </div>
     </div>
 
     <p><strong>Research field</strong></p>
     <div class="row">
       <div class="col-md-4 d-flex">
-        {% include '@organisms/teaser-mission/teaser-mission-research-field.twig' %}
+        {% include '@components/teaser-mission/teaser-mission-research-field.twig' %}
       </div>
       <div class="col-md-4">
-        {% embed '@organisms/teaser-mission/teaser-mission-research-field.twig' %}
+        {% embed '@components/teaser-mission/teaser-mission-research-field.twig' %}
           {% block img %}{% endblock %}
         {% endembed %}
-        {% embed '@organisms/teaser-mission/teaser-mission-research-field.twig' %}
+        {% embed '@components/teaser-mission/teaser-mission-research-field.twig' %}
           {% block img %}{% endblock %}
         {% endembed %}
       </div>
@@ -77,38 +77,38 @@
     <p><strong>Research project</strong></p>
     <div class="row">
       <div class="col-md-4 d-flex">
-        {% include '@organisms/teaser-mission/teaser-mission-research-project.twig' %}
+        {% include '@components/teaser-mission/teaser-mission-research-project.twig' %}
       </div>
     </div>
 
     <p><strong>Cursus</strong></p>
     <div class="row">
       <div class="col-md-4 d-flex">
-        {% include '@organisms/teaser-mission/teaser-mission-cursus.twig' %}
+        {% include '@components/teaser-mission/teaser-mission-cursus.twig' %}
       </div>
     </div>
 
     <p><strong>Associations</strong></p>
     <div class="row">
       <div class="col-md-4 d-flex">
-        {% include '@organisms/teaser-mission/teaser-mission-association.twig' %}
+        {% include '@components/teaser-mission/teaser-mission-association.twig' %}
       </div>
     </div>
 
     <p><strong>Program</strong></p>
     <div class="row">
       <div class="col-md-4 d-flex">
-        {% include '@organisms/teaser-mission/teaser-mission-program.twig' %}
+        {% include '@components/teaser-mission/teaser-mission-program.twig' %}
       </div>
     </div>
 
     <p><strong>Bachelor project</strong></p>
     <div class="row">
       <div class="col-md-4 d-flex">
-        {% include '@organisms/teaser-mission/teaser-mission-bachelor-project.twig' %}
+        {% include '@components/teaser-mission/teaser-mission-bachelor-project.twig' %}
       </div>
       <div class="col-md-4 d-flex">
-        {% include '@organisms/teaser-mission/teaser-mission-bachelor-project.twig' with {'count': 2} %}
+        {% include '@components/teaser-mission/teaser-mission-bachelor-project.twig' with {'count': 2} %}
       </div>
     </div>
   {% endblock %}

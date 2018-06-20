@@ -1,0 +1,29 @@
+<footer class="footer-light" role="contentinfo">
+  <div class="row">
+    <div class="col-xl-11 mx-xl-auto">
+      <div class="row">
+        <div class="col-6 mx-auto mx-md-0 mb-4 col-md-3 col-lg-2">
+          <a href="#">
+            <img src="svg/epfl-logo-negative.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
+          </a>
+        </div>
+        <div class="col-md-9 col-lg-10">
+          <div class="ml-md-2 ml-lg-5">
+            <ul class="list-inline list-unstyled">
+              <li class="list-inline-item text-white">Contact</li>
+              <li class="list-inline-item text-gray-300 pl-3"><small>EPFL  CH-1015 Lausanne</small></li>
+              <li class="list-inline-item text-gray-300 pl-3"><small>+41 21 693 11 11</small></li>
+            </ul>
+            <p class="footer-light-socials">
+              <small class="text-white">Suivre les pulsations de l’EPFL sur les réseaux sociaux</small>
+              <span>
+                {% include 'content::social-icon/social-icon-link-group.twig'  with { negative: true }  %}
+              </span>
+            </p>
+            {% include "@components/footer/footer-legal.twig" %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

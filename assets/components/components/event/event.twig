@@ -1,0 +1,23 @@
+<a href="#" class="{% block classes %}card card-gray link-trapeze-horizontal{% endblock %}">
+  <div class="card-body">
+    {% block img -%}
+    <picture class="card-img-top">
+      <img src="{% block img_src %}./images/event_teaser.png{% endblock %}" class="img-fluid" title="Image title" alt="Image alt description" />
+    </picture>
+    {% endblock %}
+
+    <h3 class="card-title">{% block title %}Startup Acceleration Workshops{% endblock %}</h3>
+    {% block summary %}{% endblock -%}
+    <div class="card-info">
+      {% block date %}
+      <span class="card-info-date">10.01.2018</span>
+      <span>13:00</span>
+      <span>17:30</span>
+      {% endblock %}
+      <p>
+        {% block info %}Lieu : <b>ArtLab EPFL</b><br> Catégorie : <b>Événements culturel</b><br>{% endblock %}
+      </p>
+    </div>
+  </div>
+  {% block footer %}{% endblock %}
+</a>

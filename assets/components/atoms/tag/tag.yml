@@ -1,7 +1,0 @@
-title: Tag
-name: tag
-variants:
-  - name: input
-    title: Tag input
-notes: |
-  Selectize.js is used to implement de tag input. Look at the [documentation](https://github.com/selectize/selectize.js/blob/master/docs/usage.md) for more information about all the instanciation possibilities.

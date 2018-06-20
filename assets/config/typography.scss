@@ -1,15 +1,14 @@
 @charset 'utf-8';
 
-html,
 body {
-  font-size: 18px;
+  font-size: $font-size-base * 1.125;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 
-  @include media-breakpoint-down(sm) { font-size: 16px; }
+  @include media-breakpoint-down(sm) { font-size: $font-size-base; }
 
-  @include media-breakpoint-down(xs) { font-size: 14px; }
+  @include media-breakpoint-down(xs) { font-size: $font-size-base * 0.875; }
 }
 
 h1 {
