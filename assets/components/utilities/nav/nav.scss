@@ -251,15 +251,21 @@ a.nav-arrow {
   // Solid nav
   .nav-solid {
     display: flex;
-    flex-flow: row nowrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
 
     .nav-main {
       flex: 0 0 $main-nav-width;
       max-width: $main-nav-width;
+      min-height: calc(100vh - #{$header-height});
     }
 
     .content {
       flex: 1 1 auto;
+    }
+
+    .overlay {
+      display: none;
     }
   }
 
@@ -269,7 +275,7 @@ a.nav-arrow {
       position: fixed;
       left: -1.3 * $main-nav-width;
       width: $main-nav-width;
-      height: 100%;
+      height: calc(100% - #{ $header-height });
     }
 
     .content {
@@ -282,8 +288,10 @@ a.nav-arrow {
   }
 
   .desktop-menu-open {
+    height: 100vh;
+    overflow: hidden;
+
     .nav-toggle {
-      overflow: hidden;
 
       .overlay {
         right: 0;
@@ -295,11 +303,6 @@ a.nav-arrow {
 
       .nav-main {
         left: 0;
-      }
-
-      .content {
-        max-height: calc(100vh - #{ $header-height });
-        overflow: hidden;
       }
     }
   }
@@ -335,7 +338,7 @@ a.nav-arrow {
     transition: transform 0.2s;
 
     ul {
-      padding: 0 ($spacer * 2) (4 * $spacer);
+      padding: 0 ($spacer * 2) (7 * $spacer);
     }
   }
 
@@ -384,8 +387,8 @@ a.nav-arrow {
       transform: translateX(0);
     }
 
-    main.content {
-      max-height: calc(100vh - #{$header-height + $mm-breadcrumbs-height + $mm-lang-height});
+    .main-container {
+      max-height: calc(100vh - #{$header-height + $mm-breadcrumbs-height });
       overflow: hidden;
     }
 
