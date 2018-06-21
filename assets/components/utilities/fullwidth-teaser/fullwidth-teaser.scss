@@ -3,8 +3,10 @@
 .fullwidth-teaser {
   position: relative;
   width: 100%;
-  margin-bottom: $spacer * 2;
+  min-height: 30rem;
   padding: 0 ($grid-gutter-width / 2);
+  background: gray('100');
+  margin-bottom: $spacer * 2;
 
   @include media-breakpoint-up(md) {
     display: flex;
