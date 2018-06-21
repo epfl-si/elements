@@ -85,6 +85,12 @@
   padding-right: $grid-gutter-width;
   &.card-slider-cell-lg { width: 48%; }
 
+  .ie & {
+    display: block;
+    height: auto !important;
+    .card-body { flex: 0 0 auto; }
+  }
+
   @include media-breakpoint-down(md) {
     width: 100%;
     padding-right: 0;

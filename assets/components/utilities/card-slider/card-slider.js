@@ -36,8 +36,8 @@ export default () => {
         }
 
         if (
-          flkty.selectedIndex + 1 === flkty.slides.length
-          || flkty.selectedIndex + 2 === flkty.slides.length
+          flkty.selectedIndex + 1 === flkty.slides.length ||
+          flkty.selectedIndex + 2 === flkty.slides.length
         ) {
           $('#card-slider-next').addClass('disabled');
         }

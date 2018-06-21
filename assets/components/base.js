@@ -34,12 +34,15 @@ const init = () => {
   const isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
   if (isIE11) {
     objectFitImages();
+    jQuery('body').addClass('ie');
   }
 };
 
 // Will init the scripts outside of Toolbox
 if (undefined === window.sources) {
-  (($) => { $(document).ready(() => init()); })(jQuery);
+  (($) => {
+    $(document).ready(() => init());
+  })(jQuery);
 }
 
 // Will init the scripts inside of Toolbox
