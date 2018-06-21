@@ -73,7 +73,7 @@ const nav = () => {
   /*
     when clicking a link on the header with the navigation already open,
     let time for the menu to close and re-open at the right spot
-  */
+  
   $('.nav-toggle .nav-header a').on('click', function (e) {
     const id = $(this).parent().attr('id');
     if ($(`.nav-main .${id} ul`).length > 0) {
@@ -87,6 +87,7 @@ const nav = () => {
       }
     }
   });
+  */
 
   // close toggle navigation
   $('.nav-close').on('click', (e) => {
