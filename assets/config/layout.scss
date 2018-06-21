@@ -25,6 +25,10 @@
     [content-end] 1fr
     [full-end];
 
+  @include media-breakpoint-down(sm) {
+    grid-gap: $grid-gutter-width;
+  }
+
   @include media-breakpoint-up(md) {
     grid-template-columns:
       [full-start] 1fr
