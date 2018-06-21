@@ -31,6 +31,11 @@ $gallery-btn-margin: 14px;
   .flickity-slider {
     display: flex;
     align-items: center;
+
+    .ie & {
+      padding-top: 20vmin;
+      align-items: start;
+    }
   }
 
   .gallery-item {
