@@ -5,8 +5,11 @@
   width: 100%;
   min-height: 30rem;
   padding: 0 ($grid-gutter-width / 2);
-  background: gray('100');
   margin-bottom: $spacer * 2;
+
+  .vimeo-wrapper {
+    background: gray('100');
+  }
 
   @include media-breakpoint-up(md) {
     display: flex;
