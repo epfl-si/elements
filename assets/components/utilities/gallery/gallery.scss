@@ -3,12 +3,15 @@
 $gallery-btn-size: 41px;
 $gallery-btn-margin: 14px;
 
+.gallery {
+    z-index: 9999999;
+}
+
 .gallery,
 .gallery-nav {
   position: relative;
   opacity: 0;
   transition: opacity 0.3s;
-  z-index: 10;
   &.ready { opacity: 1; }
 
   .img-fluid {
