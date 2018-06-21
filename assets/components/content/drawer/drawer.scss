@@ -3,13 +3,12 @@
 .drawer {
   display: inline-block;
   position: relative;
-  height: 100%;
   width: 20px;
-  transition: width ease 0.5s;
+  height: 100%;
   overflow: hidden;
   flex-shrink: 0;
-  transition: width 0.3s ease;
   background: $red;
+  transition: width 0.3s ease;
 
   &.open {
     @include media-breakpoint-up(xl) {

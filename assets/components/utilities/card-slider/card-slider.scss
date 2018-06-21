@@ -2,6 +2,26 @@
 
 .card-slider-wrapper {
   padding: $spacer 0;
+
+  .flickity-page-dots {
+    display: flex;
+    bottom: $spacer * -0.8;
+    justify-content: stretch;
+    align-items: center;
+  }
+
+  .flickity-page-dots .dot {
+    flex: 1 1 1px;
+    height: 1px;
+    margin: 0;
+    background: $gray-600;
+    border-radius: 0;
+
+    &.is-selected {
+      height: 5px;
+      background: theme-color('primary');
+    }
+  }
 }
 
 .card-slider-footer {
@@ -69,27 +89,5 @@
     width: 100%;
     padding-right: 0;
     &.card-slider-cell-lg { width: 100%; }
-  }
-}
-
-.card-slider-wrapper {
-  .flickity-page-dots {
-    display: flex;
-    bottom: $spacer * -0.8;
-    justify-content: stretch;
-    align-items: center;
-  }
-
-  .flickity-page-dots .dot {
-    flex: 1 1 1px;
-    height: 1px;
-    margin: 0;
-    background: $gray-600;
-    border-radius: 0;
-
-    &.is-selected {
-      height: 5px;
-      background: theme-color('primary');
-    }
   }
 }

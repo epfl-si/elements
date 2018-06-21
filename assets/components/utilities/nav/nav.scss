@@ -97,14 +97,14 @@ li.nav-back {
   .icon {
     width: 0.8 * $spacer;
     margin-right: 0.2 * $spacer;
-    transition: transform 0.2s, fill 0.2s;
     color: gray('300');
+    transition: transform 0.2s, fill 0.2s;
   }
 
   &:hover {
     .icon {
-      transform: translateX(-0.2 * $spacer);
       color: $body-color;
+      transform: translateX(-0.2 * $spacer);
     }
   }
 }
@@ -200,6 +200,7 @@ a.nav-arrow {
 // Close button for toggle menu
 //
 .nav-close {
+  display: none;
   z-index: 999;
   position: absolute;
   top: 1 * $spacer;
@@ -241,10 +242,6 @@ a.nav-arrow {
   &:after {
     transform: rotate(-45deg);
   }
-}
-
-.nav-close {
-  display: none;
 }
 
 //

@@ -46,6 +46,7 @@
       "property-no-vendor-prefix": true,
       "selector-no-vendor-prefix": true,
       "value-no-vendor-prefix": true,
+      "no-descending-specificity": null,
       "selector-pseudo-element-colon-notation": "single",
       "order/order": [
         "custom-properties",

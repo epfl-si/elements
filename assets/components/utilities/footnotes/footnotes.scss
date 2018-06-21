@@ -11,11 +11,11 @@ article {
     font-size: $font-size-sm;
 
     ol {
+      counter-reset: item;
       padding-left: 0;
       margin-left: 0;
     }
 
-    ol { counter-reset: item; }
     ol li { display: block; }
 
     ol li:before {
