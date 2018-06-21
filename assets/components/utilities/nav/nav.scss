@@ -460,7 +460,6 @@ $hamburger-btn-size: 2rem;
 
   @include media-breakpoint-down(lg) {
     padding: 0;
-    background: gray('100');
 
     &:before {
       content: ' ';
@@ -469,7 +468,7 @@ $hamburger-btn-size: 2rem;
       right: 0;
       width: 3 * $spacer;
       height: 100%;
-      background: linear-gradient(to right, transparent 0%, gray('100') 80%, gray('100') 100%);
+      background: linear-gradient(to right, transparent 0%, $white 80%, $white 100%);
       z-index: 120;
     }
   }
