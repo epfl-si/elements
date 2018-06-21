@@ -8,11 +8,11 @@
 <div class="main-container">
   <div class="{% block navclass %}nav-toggle{% endblock %}">
 
-  {% block nav %}
-    {% include '@utilities/nav/nav.twig' %}
-  {% endblock %}
+    {% block nav %}
+      {% include '@utilities/nav/nav.twig' %}
+    {% endblock %}
 
-    <div>
+    <div class="w-100">
       {% block breadcrumb %}
         <div class="container breadcrumb-container">
           {% include '@components/breadcrumbs/breadcrumbs.twig' %}
@@ -28,14 +28,14 @@
     </div>
   </div>
 
-    {% block footer_container %}
-    <div class="bg-gray-100 pt-5 mt-5">
-      <div class="container">
-        {% block footer %}
-          {% include '@components/footer/footer-dark.twig' %}
-        {% endblock %}
-      </div>
+  {% block footer_container %}
+  <div class="bg-gray-100 pt-5 mt-5">
+    <div class="container">
+      {% block footer %}
+        {% include '@components/footer/footer-dark.twig' %}
+      {% endblock %}
     </div>
-    {% endblock %}
+  </div>
+  {% endblock %}
   </div>
 </div>
