@@ -20,7 +20,7 @@
       {% endblock %}
 
       {% block main %}
-        <main id="main" role="main" class="content">
+        <main id="main" role="main" class="content {% block grid %}container-grid{% endblock %}">
           {% block content %}{% endblock %}
         </main>
       {% endblock %}
