@@ -11,13 +11,13 @@
   @include media-breakpoint-up(md) {
     position: relative;
     margin-top: ($grid-gutter-width * 4);
-    margin-right: -25vw;
-    max-width: 50vw;
+    margin-right: -25%;
+    max-width: 50%;
   }
 
   @include media-breakpoint-up(lg) {
-    margin-right: -15vw;
-    max-width: 30vw;
+    margin-right: -15%;
+    max-width: 30%;
   }
 }
 
@@ -39,7 +39,7 @@
 }
 
 .hero-img {
-  flex: 1 0 75vw;
+  flex: 1 0 75%;
 
   img {
     max-width: 100%;
