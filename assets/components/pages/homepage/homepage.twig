@@ -60,166 +60,168 @@
 
 {% block breadcrumb %}{% endblock %}
 
+{% block grid %}{% endblock %}
 
-{% block content %}
-  {# The intro fullwidth teaser #}
-  {% embed '@utilities/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
-    {% block title %}{{ homepage.highlight_1.title }}{% endblock %}
-    {% block content %}{{ homepage.highlight_1.content }}{% endblock %}
-    {% block img %}{{ homepage.highlight_1.image }}{% endblock %}
-  {% endembed %}
+{% block main %}
+  <main id="main" role="main" class="content">
+    {# The intro fullwidth teaser #}
+    {% embed '@utilities/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
+      {% block title %}{{ homepage.highlight_1.title }}{% endblock %}
+      {% block content %}{{ homepage.highlight_1.content }}{% endblock %}
+      {% block img %}{{ homepage.highlight_1.image }}{% endblock %}
+    {% endembed %}
 
-  {# First teasers #}
-  <div class="container pb-5 offset-xl-top">
-    <div class="row">
-      <div class="col-lg-10 offset-lg-1">
+    {# First teasers #}
+    <div class="container pb-5 offset-xl-top">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <div class="row mb-4">
+            {% for card in homepage.section_one.cards %}
+              <div class="col-md-6 d-flex">
+                {{ macros.card_link(card) }}
+              </div>
+            {% endfor %}
+          </div>
+          <p class="text-center">
+            <a class="link-pretty" href="#">{{ homepage.section_one.readmore }}</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {# Second teasers, on gray background #}
+    <div class="bg-gray-100 py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">{{ homepage.section_two.title }}</h2>
+
+        <h3 class="h6 mb-3 text-spread">{{ homepage.section_two.subtitle_1 }}</h3>
         <div class="row mb-4">
-          {% for card in homepage.section_one.cards %}
-            <div class="col-md-6 d-flex">
-              {{ macros.card_link(card) }}
+          {% for card in homepage.section_two.cards[0:3] %}
+            <div class="col-md-4 d-flex">
+              {{ macros.card(card) }}
             </div>
           {% endfor %}
         </div>
+
+        <h3 class="h6 mb-3 text-spread">{{ homepage.section_two.subtitle_2 }}</h3>
+        <div class="row">
+          {% for card in homepage.section_two.cards[3:] %}
+            <div class="col-md-4 d-flex">
+              {{ macros.card(card) }}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    {# The middle fullwidth teaser #}
+    {% embed '@utilities/fullwidth-teaser/fullwidth-teaser.twig' %}
+      {% block title %}{{ homepage.highlight_2.title }}{% endblock %}
+      {% block content %}{{ homepage.highlight_2.content }}{% endblock %}
+      {% block img %}{{ homepage.highlight_2.image }}{% endblock %}
+    {% endembed %}
+
+    {# The Calendar section #}
+    {# TODO add card-slider from Yann PR #}
+    <div class="bg-gray-100 py-5 mb-3">
+      {% include '@utilities/datepicker-event/datepicker-event.twig' %}
+
+      <div class="overflow-hidden">
+        <div class="container">
+          <div class="card-slider-wrapper">
+            <div class="card-slider">
+              <div class="card-slider-cell">
+                {% include "@components/event/event.twig" %}
+              </div>
+              <div class="card-slider-cell">
+                {% include "@components/event/event.twig" %}
+              </div>
+              <div class="card-slider-cell">
+                {% include "@components/event/event.twig" %}
+              </div>
+              <div class="card-slider-cell">
+                {% include "@components/event/event.twig" %}
+              </div>
+              <div class="card-slider-cell">
+                {% include "@components/event/event.twig" %}
+              </div>
+              <div class="card-slider-cell">
+                {% include "@components/event/event.twig" %}
+              </div>
+            </div>
+
+            <div class="card-slider-footer">
+              <div>
+                <button role="button" id="card-slider-prev" class="card-slider-btn link-trapeze-horizontal disabled">
+                  {% include "@content/icon/icon.twig" with { icon: 'icon-chevron-left' } %}
+                </button>
+                <button role="button" id="card-slider-next" class="card-slider-btn link-trapeze-horizontal">
+                  {% include "@content/icon/icon.twig" with { icon: 'icon-chevron-right' } %}
+                </button>
+              </div>
+              <div>
+                <a href="#">Voir l’agenda complet des événements</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {# The second middle fullwidth teaser #}
+    {% embed '@utilities/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
+      {% block title %}{{ homepage.highlight_3.title }}{% endblock %}
+      {% block content %}{{ homepage.highlight_3.content }}{% endblock %}
+      {% block img %}{{ homepage.highlight_3.image }}{% endblock %}
+    {% endembed %}
+
+    {# City teasers #}
+    <div class="container py-6">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <h2>{{ homepage.section_3.title }}</h2>
+          <p class="h6">{{ homepage.section_3.subtitle }}</p>
+        </div>
+        <div class="col-lg-9 col-md-6">
+          <div class="row">
+              {% for card in homepage.section_3.cards %}
+                <div class="col-6 col-lg-4">
+                  {{ macros.card_arrow(card) }}
+                </div>
+              {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {# The third middle fullwidth teaser #}
+    {% embed '@utilities/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
+      {% block title %}{{ homepage.highlight_4.title }}{% endblock %}
+      {% block content %}{{ homepage.highlight_4.content }}{% endblock %}
+      {% block img %}{{ homepage.highlight_4.image }}{% endblock %}
+    {% endembed %}
+
+    <div class="container-fluid p-0">
+      {% include '@components/question/question.twig' %}
+    </div>
+
+    {# The last fullwidth teaser #}
+    {% embed '@utilities/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
+      {% block title %}{{ homepage.highlight_5.title }}{% endblock %}
+      {% block content %}{{ homepage.highlight_5.content }}{% endblock %}
+      {% block img %}{{ homepage.highlight_5.image }}{% endblock %}
+    {% endembed %}
+
+    <div class="bg-gray-100 py-5">
+      <div class="container">
+        <h2 class="h3">Vivez au rythme de l’école, via les réseaux sociaux</h2>
+        {% include '@components/social/social.twig' %}
         <p class="text-center">
-          <a class="link-pretty" href="#">{{ homepage.section_one.readmore }}</a>
+          <a href="#">Liste des comptes officiels</a>
         </p>
       </div>
     </div>
   </div>
-
-  {# Second teasers, on gray background #}
-  <div class="bg-gray-100 py-5">
-    <div class="container">
-      <h2 class="text-center mb-5">{{ homepage.section_two.title }}</h2>
-
-      <h3 class="h6 mb-3 text-spread">{{ homepage.section_two.subtitle_1 }}</h3>
-      <div class="row mb-4">
-        {% for card in homepage.section_two.cards[0:3] %}
-          <div class="col-md-4 d-flex">
-            {{ macros.card(card) }}
-          </div>
-        {% endfor %}
-      </div>
-
-      <h3 class="h6 mb-3 text-spread">{{ homepage.section_two.subtitle_2 }}</h3>
-      <div class="row">
-        {% for card in homepage.section_two.cards[3:] %}
-          <div class="col-md-4 d-flex">
-            {{ macros.card(card) }}
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-
-  {# The middle fullwidth teaser #}
-  {% embed '@utilities/fullwidth-teaser/fullwidth-teaser.twig' %}
-    {% block title %}{{ homepage.highlight_2.title }}{% endblock %}
-    {% block content %}{{ homepage.highlight_2.content }}{% endblock %}
-    {% block img %}{{ homepage.highlight_2.image }}{% endblock %}
-  {% endembed %}
-
-  {# The Calendar section #}
-  {# TODO add card-slider from Yann PR #}
-  <div class="bg-gray-100 py-5 mb-3">
-    {% include '@utilities/datepicker-event/datepicker-event.twig' %}
-
-    <div class="overflow-hidden">
-      <div class="container">
-        <div class="card-slider-wrapper">
-          <div class="card-slider">
-            <div class="card-slider-cell">
-              {% include "@components/event/event.twig" %}
-            </div>
-            <div class="card-slider-cell">
-              {% include "@components/event/event.twig" %}
-            </div>
-            <div class="card-slider-cell">
-              {% include "@components/event/event.twig" %}
-            </div>
-            <div class="card-slider-cell">
-              {% include "@components/event/event.twig" %}
-            </div>
-            <div class="card-slider-cell">
-              {% include "@components/event/event.twig" %}
-            </div>
-            <div class="card-slider-cell">
-              {% include "@components/event/event.twig" %}
-            </div>
-          </div>
-
-          <div class="card-slider-footer">
-            <div>
-              <button role="button" id="card-slider-prev" class="card-slider-btn link-trapeze-horizontal disabled">
-                {% include "@content/icon/icon.twig" with { icon: 'icon-chevron-left' } %}
-              </button>
-              <button role="button" id="card-slider-next" class="card-slider-btn link-trapeze-horizontal">
-                {% include "@content/icon/icon.twig" with { icon: 'icon-chevron-right' } %}
-              </button>
-            </div>
-            <div>
-              <a href="#">Voir l’agenda complet des événements</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  {# The second middle fullwidth teaser #}
-  {% embed '@utilities/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
-    {% block title %}{{ homepage.highlight_3.title }}{% endblock %}
-    {% block content %}{{ homepage.highlight_3.content }}{% endblock %}
-    {% block img %}{{ homepage.highlight_3.image }}{% endblock %}
-  {% endembed %}
-
-  {# City teasers #}
-  <div class="container py-6">
-    <div class="row">
-      <div class="col-lg-3 col-md-6">
-        <h2>{{ homepage.section_3.title }}</h2>
-        <p class="h6">{{ homepage.section_3.subtitle }}</p>
-      </div>
-      <div class="col-lg-9 col-md-6">
-        <div class="row">
-            {% for card in homepage.section_3.cards %}
-              <div class="col-6 col-lg-4">
-                {{ macros.card_arrow(card) }}
-              </div>
-            {% endfor %}
-        </div>
-      </div>
-    </div>
-  </div>
-
-  {# The third middle fullwidth teaser #}
-  {% embed '@utilities/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
-    {% block title %}{{ homepage.highlight_4.title }}{% endblock %}
-    {% block content %}{{ homepage.highlight_4.content }}{% endblock %}
-    {% block img %}{{ homepage.highlight_4.image }}{% endblock %}
-  {% endembed %}
-
-  <div class="container-fluid p-0">
-    {% include '@components/question/question.twig' %}
-  </div>
-
-  {# The last fullwidth teaser #}
-  {% embed '@utilities/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
-    {% block title %}{{ homepage.highlight_5.title }}{% endblock %}
-    {% block content %}{{ homepage.highlight_5.content }}{% endblock %}
-    {% block img %}{{ homepage.highlight_5.image }}{% endblock %}
-  {% endembed %}
-
-  <div class="bg-gray-100 py-5">
-    <div class="container">
-      <h2 class="h3">Vivez au rythme de l’école, via les réseaux sociaux</h2>
-      {% include '@components/social/social.twig' %}
-      <p class="text-center">
-        <a href="#">Liste des comptes officiels</a>
-      </p>
-    </div>
-  </div>
-
 {% endblock %}
 
 {% block footer_container %}
