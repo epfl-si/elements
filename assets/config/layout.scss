@@ -54,24 +54,6 @@
       [full-end];
   }
 
-  .nav-solid & {
-    @include media-breakpoint-up(md) {
-      grid-template-columns:
-        [full-start] 1fr
-        [content-start] minmax(min-content, #{col-width(md, 12)})
-        [content-end] 1fr
-        [full-end];
-    }
-
-    @include media-breakpoint-up(xl) {
-      grid-template-columns:
-        [full-start] 1fr
-        [content-start] minmax(min-content, #{col-width(xl, 10)})
-        [content-end] 1fr
-        [full-end];
-    }
-  }
-
   > * {
     grid-column: content;
   }
