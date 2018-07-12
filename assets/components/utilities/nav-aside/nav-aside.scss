@@ -12,9 +12,8 @@
       order: -1;
       max-width: 22%;
       min-width: 320px;
+      border-right: 1px solid gray('200');
     }
-
-    .nav-toggle-container { width: 90%; }
 
     .content {
       flex: 1 1 auto;
@@ -28,9 +27,6 @@
     flex: 0 0 16.1%;
     max-width: 16.1%;
   }
-}
-.nav-aside-wrapper {
-  border-right: 1px solid gray('100');
 }
 
 .nav-aside {
@@ -58,7 +54,12 @@
       font-weight: $font-weight-bold;
       &:before { content: none; }
     }
+
+    @include media-breakpoint-down(lg) {
+      &.active > a { margin-right: $spacer * 2; }
+    }
   }
+  & > ul > li:first-child a:before { content: none; }
 
   a {
     display: block;

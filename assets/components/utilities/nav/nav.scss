@@ -203,7 +203,7 @@ a.nav-arrow {
   display: none;
   z-index: 999;
   position: absolute;
-  top: 0;
+  top: $spacer / 2;
   right: -1 * $spacer;
   width: 35px;
   height: 35px;
@@ -329,7 +329,7 @@ a.nav-arrow {
 
   .nav-main {
     position: absolute;
-    top: $mm-breadcrumbs-height;
+    top: 0;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -366,11 +366,6 @@ a.nav-arrow {
     top: 0;
     left: 0;
     width: 100%;
-  }
-
-  .nav-toggle-container {
-    height: $mm-breadcrumbs-height;
-    margin-bottom: $spacer * 1.5;
   }
 
   .nav-back,
@@ -418,56 +413,4 @@ a.nav-arrow {
   opacity: 0;
   background: $white;
   transition: opacity 0.3s;
-}
-
-//
-// Nav toggle button
-//
-
-.nav-toggle {
-  display: none;
-  // position: absolute;
-  // top: 0;
-  // right: 100%;
-  margin-right: $grid-gutter-width / 4;
-  padding: $spacer / 4 $spacer / 2;
-  &:hover { cursor: pointer; }
-
-  .icon {
-    margin-right: 0.2rem;
-    font-size: 0.7rem;
-  }
-}
-
-.nav-toggle-container {
-  position: relative;
-
-  @include media-breakpoint-down(lg) {
-    padding: 0;
-
-    &:before {
-      content: ' ';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 3 * $spacer;
-      height: 100%;
-      background: linear-gradient(to right, transparent 0%, $white 80%, $white 100%);
-      z-index: 120;
-    }
-  }
-}
-
-@include media-breakpoint-up(xl) {
-  // create space out of container on the left for hamburger button
-  .nav-toggle-container {
-    display: flex;
-    position: relative;
-  }
-
-  .nav-toggle-layout .nav-toggle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 }

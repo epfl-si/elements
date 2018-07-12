@@ -5,6 +5,13 @@
   {% include '@components/header/header.twig' %}
 {% endblock %}
 
+{% block breadcrumb %}
+  <div class="breadcrumb-container">
+    <div>{% include '@utilities/nav-toggle/nav-toggle.twig' %}</div>
+    {% include '@components/breadcrumbs/breadcrumbs.twig' %}
+  </div>
+{% endblock %}
+
 <div class="main-container">
   <div class="nav-toggle-layout nav-aside-layout">
 
@@ -13,12 +20,6 @@
     {% endblock %}
 
     <div class="w-100 pb-5">
-      {% block breadcrumb %}
-        <div class="container nav-toggle-container">
-          <div>{% include '@utilities/nav/nav-toggle.twig' %}</div>
-          {% include '@components/breadcrumbs/breadcrumbs.twig' %}
-        </div>
-      {% endblock %}
 
       {% block main %}
         <main id="main" role="main" class="content {% block grid %}container-grid{% endblock %}">
