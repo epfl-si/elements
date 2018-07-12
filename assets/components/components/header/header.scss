@@ -25,6 +25,7 @@
   }
 
   .nav-header {
+    flex: 1 0 auto;
     display: flex;
     flex-flow: row nowrap;
     margin: 0 0 0 (3.7 * $spacer);
@@ -75,6 +76,8 @@
         content: none;
       }
     }
+
+    .icon { font-size: 0.9em; }
   }
 
   @include media-breakpoint-down (lg) {

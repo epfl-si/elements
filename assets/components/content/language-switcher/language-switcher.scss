@@ -3,11 +3,13 @@
 .language-switcher {
   display: none;
   font-size: 0.8 * $font-size-base;
+  padding-right: $spacer * 3;
 
   ul {
     display: flex;
     flex-flow: row nowrap;
     list-style-type: none;
+    margin-bottom: 0;
     padding: 0;
   }
 
