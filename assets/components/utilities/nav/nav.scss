@@ -421,37 +421,21 @@ a.nav-arrow {
 }
 
 //
-// Burger button
+// Nav toggle button
 //
 
-$hamburger-btn-size: 2rem;
-
-.nav-burger {
+.nav-toggle-btn {
   display: none;
-  margin-left: -$hamburger-btn-size;
-  margin-right: $grid-gutter-width / 3;
-  width: $hamburger-btn-size;
-  height: $hamburger-btn-size;
-  background: none;
-  border-radius: 50%;
-  border: 1px solid gray('100');
-  padding-top: $hamburger-btn-size / 6;
-  padding-left: $hamburger-btn-size / 3.58;
-  transition: background 0.2s;
-  outline: none;
+  position: absolute;
+  top: 0;
+  right: 100%;
+  margin-right: $grid-gutter-width / 2;
+  padding: $spacer / 4 $spacer / 2;
+  &:hover { cursor: pointer; }
 
-  &:hover {
-    cursor: pointer;
-    background: gray('100');
-  }
-
-  .line {
-    display: block;
-    width: $hamburger-btn-size / 2.5;
-    height: 2px;
-    background: gray('600');
-    border-radius: 4px;
-    margin-bottom: 3px;
+  .icon {
+    margin-right: 0.2rem;
+    font-size: 0.7rem;
   }
 }
 
@@ -481,9 +465,8 @@ $hamburger-btn-size: 2rem;
     position: relative;
   }
 
-  .nav-toggle .nav-burger {
+  .nav-toggle .nav-toggle-btn {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
   }

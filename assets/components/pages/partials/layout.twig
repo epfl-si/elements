@@ -14,7 +14,8 @@
 
     <div class="w-100">
       {% block breadcrumb %}
-        <div class="container breadcrumb-container">
+        <div class="container nav-toggle-container">
+          <div>{% include '@utilities/nav/nav-toggle.twig' %}</div>
           {% include '@components/breadcrumbs/breadcrumbs.twig' %}
         </div>
       {% endblock %}

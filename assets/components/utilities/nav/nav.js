@@ -73,7 +73,7 @@ const nav = () => {
   /*
     when clicking a link on the header with the navigation already open,
     let time for the menu to close and re-open at the right spot
-  
+
   $('.nav-toggle .nav-header a').on('click', function (e) {
     const id = $(this).parent().attr('id');
     if ($(`.nav-main .${id} ul`).length > 0) {
@@ -102,7 +102,7 @@ const nav = () => {
   });
 
   // Bind action to the desktop hamburger (next to breadcrumbs)
-  $('#nav-burger').on('click', () => {
+  $('#nav-toggle-btn').on('click', () => {
     toggleDesktopMenu();
   });
 };
