@@ -4,7 +4,7 @@
   </a>
   <ul aria-hidden="true" class="nav-header d-none d-xl-flex">
     {% for item in homepage.navbar_items %}
-      <li id="menu-item-{{ loop.index }}" class="active">
+      <li id="menu-item-{{ loop.index }}"{# {% if loop.index == 2 %} class="active"{% endif %}#}>
         <a class="nav-item" href="#">{{ item }}</a>
       </li>
     {% endfor %}

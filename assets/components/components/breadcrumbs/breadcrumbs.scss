@@ -32,7 +32,7 @@
 .breadcrumb-wrapper {
   @include media-breakpoint-up(xl) {
     flex: 1 0 auto;
-    border-bottom: 1px solid gray('200');
+    border-bottom: 1px solid gray('300');
   }
 }
 
