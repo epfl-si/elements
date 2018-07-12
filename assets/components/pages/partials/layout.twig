@@ -6,13 +6,13 @@
 {% endblock %}
 
 <div class="main-container">
-  <div class="{% block navclass %}nav-toggle{% endblock %}">
+  <div class="nav-toggle-layout nav-aside-layout">
 
     {% block nav %}
       {% include '@utilities/nav/nav.twig' %}
     {% endblock %}
 
-    <div class="w-100">
+    <div class="w-100 pb-5">
       {% block breadcrumb %}
         <div class="container nav-toggle-container">
           <div>{% include '@utilities/nav/nav-toggle.twig' %}</div>
@@ -27,10 +27,14 @@
       {% endblock %}
 
     </div>
+
+    <aside class="nav-aside-wrapper">
+      {% include '@utilities/nav-aside/nav-aside.twig' %}
+    </aside>
   </div>
 
   {% block footer_container %}
-  <div class="bg-gray-100 pt-5 mt-5">
+  <div class="bg-gray-100 pt-5">
     <div class="container">
       {% block footer %}
         {% include '@components/footer/footer-dark.twig' %}

@@ -35,7 +35,7 @@ $nav-spacer: 4px;
   li {
     display: flex;
     flex-flow: row nowrap;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid gray('200');
   }
 
   a {
@@ -203,7 +203,7 @@ a.nav-arrow {
   display: none;
   z-index: 999;
   position: absolute;
-  top: 1 * $spacer;
+  top: 0;
   right: -1 * $spacer;
   width: 35px;
   height: 35px;
@@ -249,7 +249,7 @@ a.nav-arrow {
 //
 @include media-breakpoint-up (xl) {
   // Solid nav
-  .nav-solid {
+  .nav-solid-layout {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -270,7 +270,7 @@ a.nav-arrow {
   }
 
   // Toggle nav
-  .nav-toggle {
+  .nav-toggle-layout {
     .nav-main {
       position: fixed;
       left: -1.3 * $main-nav-width;
@@ -291,7 +291,7 @@ a.nav-arrow {
     height: 100vh;
     overflow: hidden;
 
-    .nav-toggle {
+    .nav-toggle-layout {
 
       .overlay {
         right: 0;
@@ -424,12 +424,12 @@ a.nav-arrow {
 // Nav toggle button
 //
 
-.nav-toggle-btn {
+.nav-toggle {
   display: none;
-  position: absolute;
-  top: 0;
-  right: 100%;
-  margin-right: $grid-gutter-width / 2;
+  // position: absolute;
+  // top: 0;
+  // right: 100%;
+  margin-right: $grid-gutter-width / 4;
   padding: $spacer / 4 $spacer / 2;
   &:hover { cursor: pointer; }
 
@@ -465,7 +465,7 @@ a.nav-arrow {
     position: relative;
   }
 
-  .nav-toggle .nav-toggle-btn {
+  .nav-toggle-layout .nav-toggle {
     display: flex;
     justify-content: center;
     align-items: center;

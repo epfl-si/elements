@@ -2,13 +2,13 @@ title: Nav
 name: nav
 wrapper: desktop-menu-open
 notes: |
-  The navigation has two different modes: **solid** and **toggle**. To differentiate the CSS and js behavior, we use the classes `.nav-toggle` and `.nav-solid` on the `.main-container`.
+  The navigation has two different modes: **solid** and **toggled**. To differentiate the CSS and js behavior, we use the classes `.nav-toggle-layout` and `.nav-solid-layout` on the `.main-container`.
 
   Both navigations will behave the same way on mobile.
 variants:
   - name: toggle
     title: Toggle
     notes: |
-      The Toggle variant.
+      The Toggle button.
     background: ''
     wrapper: ''

@@ -1,7 +1,11 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item d-xl-none">{% include '@content/icon/icon.twig' with {icon: 'icon-home'} %}</li>
-    <li class="breadcrumb-item"><a href="#">EPFL</a></li>
+    <li class="breadcrumb-item">
+      <a href="#">
+        {% include '@content/icon/icon.twig' with { icon: 'icon-home' } %}
+      </a>
+    </li>
     <li class="breadcrumb-item"><a href="#">Schools</a></li>
     <li class="breadcrumb-item active" aria-current="page">ENAC</li>
   </ol>
