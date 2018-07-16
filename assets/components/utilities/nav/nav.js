@@ -87,7 +87,7 @@ const nav = () => {
   $('#nav-toggle').on('click', function() {
     $(this).toggleClass('open');
     const offsetX = $(this).offset().left + $(this).outerWidth(true);
-    const offsetY = $(this).offset().top;
+    const offsetY = $(this).offset().top - $(window).scrollTop();
     $('.nav-main').css('top', offsetY);
     toggleDesktopMenu(offsetX);
   });
