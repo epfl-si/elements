@@ -35,12 +35,13 @@ $nav-spacer: 4px;
   li {
     display: flex;
     flex-flow: row nowrap;
-    height: 0;
+    max-height: 0;
     border-bottom: 1px solid gray('200');
+    transition: max-height 0s 0.2s;
   }
 
   .current-menu-parent,
-  .current-menu-parent li { height: auto; }
+  .current-menu-parent li { max-height: 100%; }
 
   a {
     display: block;
