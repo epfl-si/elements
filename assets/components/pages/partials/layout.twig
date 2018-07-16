@@ -5,17 +5,16 @@
   {% include '@components/header/header.twig' %}
 {% endblock %}
 
-{% if not isHomepage %}
-{% block breadcrumb %}
-  <div class="breadcrumb-container">
-    <div>{% include '@utilities/nav-toggle/nav-toggle.twig' %}</div>
-    {% include '@components/breadcrumbs/breadcrumbs.twig' %}
-  </div>
-{% endblock %}
-{% endif %}
-
-
 <div class="main-container">
+  {% if not isHomepage %}
+  {% block breadcrumb %}
+    <div class="breadcrumb-container">
+      <div>{% include '@utilities/nav-toggle/nav-toggle.twig' %}</div>
+      {% include '@components/breadcrumbs/breadcrumbs.twig' %}
+    </div>
+  {% endblock %}
+  {% endif %}
+
   <div{% if not isHomepage %} class="nav-toggle-layout nav-aside-layout"{% endif %}>
 
     {% block nav %}
