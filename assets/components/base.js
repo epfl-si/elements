@@ -14,6 +14,8 @@ import svgIcons from '../icons/svg-icons';
 import nav from './utilities/nav/nav.js';
 import drawer from './content/drawer/drawer.js';
 
+import guide from './guide.js';
+
 svgIcons(); // Must run as soon as possible
 
 const init = () => {
@@ -29,6 +31,8 @@ const init = () => {
   nav();
   cardSlider();
   drawer();
+
+  guide();
 
   // Init polyfill for Object Fit on IE11
   const isIE11 = !!window.MSInputMethodContext && !!document.documentMode;

@@ -9,6 +9,13 @@
   }
 }
 
+// Intro.js
+.introjs-tooltip {
+  min-width: 500px !important;
+  max-width: 60% !important;
+}
+.introjs-helperNumberLayer { background: theme-color('primary') !important; }
+
 .focused {
   position: relative;
 
