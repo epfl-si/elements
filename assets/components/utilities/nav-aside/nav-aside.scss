@@ -62,7 +62,7 @@
       &.active > a { margin-right: $spacer * 2; }
     }
   }
-  & > ul > li:first-child a:before { content: none; }
+  & > ul > li:first-child > a:before { content: none; }
 
   a {
     display: block;

@@ -6,6 +6,25 @@
 >
   <h2 class="h5 sr-only-xl">Dans la même section</h2>
   <ul>
+  {% if nav_aside_items %}
+    {% for item in nav_aside_items %}
+    <li{% if loop.index0 == nav_aside_active %} class="active"{% endif %}>
+      <a href="#">
+        {{item.label}}
+        {% if loop.index0 == nav_aside_active %}
+        <span class="sr-only">(page courante)</span>
+        {% endif %}
+      </a>
+      {% if item.children and loop.index0 == nav_aside_active %}
+      <ul>
+        {% for child in item.children %}
+        <li><a href="#">{{child}}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </li>
+    {% endfor %}
+  {% else %}
     <li><a href="#">S'inscrire au Master</a></li>
     <li><a href="#">Plan d'études</a></li>
     <li><a href="#">En cours d'études</a></li>
@@ -21,5 +40,6 @@
     <li><a href="#">Contacts</a></li>
     <li><a href="#">Stages</a></li>
     <li><a href="#">Bourse de recherche du programme MSc</a></li>
+  {% endif %}
   </ul>
 </nav>

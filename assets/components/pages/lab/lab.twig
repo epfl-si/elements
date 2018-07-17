@@ -1,6 +1,11 @@
 {% extends "@pages/partials/layout.twig" %}
 
 {% block grid %}{% endblock %}
+{% set nav_aside_items = [{
+  label: "Laboratory Full Name",
+  children: ["Projects", "Publications", "News", "Team", "Teaching"]
+}] %}
+{% set nav_aside_active = 0 %}
 
 {% block fullintro %}
 <div class="tlbx-single-full-intro d-flex justify-content-between">
