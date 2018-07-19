@@ -36,10 +36,26 @@
   -ms-grid-column: 3;
   grid-column: 3;
   padding-top: 1.8rem;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.2em;
+    margin-bottom: 0.4em;
+  }
+
+
+  pre {
+    padding: 0.8rem 1.2rem;
+    background: #eee;
+    border-radius: 5px;
+  }
 }
 
 .tlbx-doc-markdown-wrapper {
-  max-width: map-get($container-max-widths, 'sm');
+  max-width: map-get($container-max-widths, 'md');
   margin: 0 auto;
 }
 
