@@ -30,11 +30,11 @@
     }
   ],
   "paths": {
-    "bitmaps_reference": "backstop_data/references",
-    "bitmaps_test": "backstop_data/test",
-    "engine_scripts": "backstop_data/engine_scripts",
-    "html_report": "backstop_data/html_report",
-    "ci_report": "backstop_data/ci_report"
+    "bitmaps_reference": "tests/backstop/references",
+    "bitmaps_test": "tests/backstop/test",
+    "engine_scripts": "tests/backstop/engine_scripts",
+    "html_report": "tests/backstop/html_report",
+    "ci_report": "tests/backstop/ci_report"
   },
   "report": ["browser", "CI"],
   "engine": "puppeteer",
