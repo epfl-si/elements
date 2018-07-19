@@ -51,7 +51,9 @@ class Doc extends Component {
     return (
       <div>
         {currentDoc.format === 'md' ? (
-          <ReactMarkdown source={currentDoc.content || this.state.default} />
+          <div className="tlbx-doc-markdown-wrapper">
+            <ReactMarkdown source={currentDoc.content || this.state.default} />
+          </div>
         ) : (
           <div dangerouslySetInnerHTML={{ __html: currentDoc.content }} />
         )}
