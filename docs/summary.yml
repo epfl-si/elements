@@ -6,12 +6,11 @@
 - icons.md
 - create a page.md
 - logotype.md
-- summary.yml
 - typography.html
-- contribution
+- contribution:
   - documentation.md
   - index.md
-- Support & request
+- Support & request:
   - FAQ.md
   - Live chat.md
   - Request.md
