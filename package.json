@@ -50,6 +50,7 @@
       "property-no-vendor-prefix": true,
       "selector-no-vendor-prefix": true,
       "value-no-vendor-prefix": true,
+      "no-descending-specificity": null,
       "selector-pseudo-element-colon-notation": "single",
       "order/order": [
         "custom-properties",
@@ -91,6 +92,8 @@
     "flickity-as-nav-for": "^2.0.1",
     "flickity-fullscreen": "^1.0.1",
     "imagesloaded": "^4.1.4",
+    "intro.js": "^2.9.3",
+    "multiple-select": "^1.2.1",
     "object-fit-images": "^3.2.3",
     "pickadate": "^3.5.6",
     "selectize.js": "^0.12.12",

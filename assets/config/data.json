@@ -25,6 +25,15 @@
     "https://source.unsplash.com/rG1LNUFgJhI",
     "https://source.unsplash.com/99neAF8kqhg"
   ],
+  "restauration": [
+    "Lu",
+    "Ma",
+    "Me",
+    "Je",
+    "Ve",
+    "Sa",
+    "Di"
+  ],
   "footer": [
     {
       "heading": "A propos de l’EPFL",

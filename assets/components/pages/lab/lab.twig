@@ -1,0 +1,113 @@
+{% extends "@pages/partials/layout.twig" %}
+
+{% block grid %}{% endblock %}
+{% set nav_aside_items = [{
+  label: "Laboratory Full Name",
+  children: ["Projects", "Publications", "News", "Team", "Teaching"]
+}] %}
+{% set nav_aside_active = 0 %}
+
+{% block fullintro %}
+<div class="tlbx-single-full-intro d-flex justify-content-between">
+  <h1 class="h3 my-0">Laboratory page (<a href="#/doc/create%20a%20page.md" target="_blank" onclick="window.open('#/doc/create%20a%20page.md')">doc</a>)</h1>
+  <button class="btn btn-sm btn-primary" id="tour-start">Start the tour !</button>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div class="hero" id="tour-hero">
+  <div class="hero-content-container">
+    <h1 class="hero-title">Laboratory Full Name LFN</h1>
+  </div>
+  <div class="hero-img">
+    <img src="images/gallery/gallery_01.jpg" alt="IMAGE DESCRIPTION HERE" class="img-fluid">
+  </div>
+</div>
+
+<div class="container" id="tour-lab">
+  <div class="container-grid mt-5 mb-6" id="tour-intro">
+    <p>
+      This is a laboratory introduction text about all the good stuff that are made here, the current project and the passionate people who work here. It's always interesting to know in few lines what is all about.
+    </p>
+  </div>
+</div>
+
+<div class="bg-gray-100 py-5 mb-5" id="tour-projects">
+  <div class="container">
+    <h2 class="mb-4">Our current projects</h2>
+    <div class="row">
+      {% for i in 1..3 %}
+        <div class="col-md-4">
+          {% include '@components/teaser-mission/teaser-mission-research-project.twig' %}
+        </div>
+      {% endfor %}
+    </div>
+    <p class="text-center">
+      <a class="link-pretty" href="#">See all projects</a>
+    </p>
+  </div>
+</div>
+
+<div class="container">
+  <div id="tour-publications">
+    <h2 class="mb-4 mt-6">Our publications</h2>
+    {% include '@components/publication/publication.twig' %}
+    <p class="text-center">
+      <a class="link-pretty" href="#">See all publications</a>
+    </p>
+  </div>
+
+  <div id="tour-news">
+    <h2 class="mb-4 mt-6">The last news</h2>
+    <div class="row">
+      {% for i in 1..2 %}
+        <div class="col-md-6">
+          {% include '@components/news/news-basic-teaser.twig' %}
+        </div>
+      {% endfor %}
+    </div>
+    <p class="text-center">
+      <a class="link-pretty" href="#">See all news</a>
+    </p>
+  </div>
+</div>
+
+<div class="bg-gray-100 py-5 my-5">
+  <div class="container">
+    <div id="tour-partof">
+      <h2 class="mb-4">DCSL is part of</h2>
+      <div class="row mb-5">
+        <div class="col-md-6">
+          {% include '@components/teaser-mission/teaser-mission-faculty.twig' %}
+        </div>
+        <div class="col-md-6">
+          {% include '@components/teaser-mission/teaser-mission-institute.twig' %}
+        </div>
+        <div class="col-12">
+          <h3>Themes</h3>
+          {% for i in 1..5 %}
+            <a href="#" class="tag tag-primary">Theme {{i}}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div id="tour-contact">
+      {% include '@components/contact/contact-banner.twig' %}
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6" id="tour-team">
+      {% include '@components/teaser-basic-page/teaser-basic-page.twig' %}
+    </div>
+    <div class="col-md-6" id="tour-sponsors">
+      <h3 class="mb-4">Our sponsors</h3>
+      {% include '@components/media/media-sponsor.twig' %}
+      {% include '@components/media/media-sponsor.twig' %}
+    </div>
+  </div>
+</div>
+{% endblock %}

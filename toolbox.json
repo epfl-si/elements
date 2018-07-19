@@ -19,18 +19,20 @@
   "vendors": {
     "css": [
       "node_modules/pickadate/lib/themes/classic.date.css",
-      "node_modules/tablesaw/dist/tablesaw.css",
       "node_modules/flickity/dist/flickity.css",
-      "node_modules/flickity-fullscreen/fullscreen.css"
+      "node_modules/flickity-fullscreen/fullscreen.css",
+      "node_modules/intro.js/introjs.css"
     ],
     "js": [
-      "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
       "node_modules/pickadate/lib/picker.js",
       "node_modules/pickadate/lib/picker.date.js",
       "node_modules/tablesaw/dist/tablesaw.jquery.js",
       "node_modules/tablesaw/dist/tablesaw-init.js",
-      "node_modules/clipboard/dist/clipboard.min.js",
-      "node_modules/selectize.js/dist/js/standalone/selectize.min.js"
+      "node_modules/clipboard/dist/clipboard.js",
+      "node_modules/multiple-select/multiple-select.js",
+      "node_modules/selectize.js/dist/js/standalone/selectize.js",
+      "node_modules/intro.js/intro.js"
     ]
   },
   "singles": [{

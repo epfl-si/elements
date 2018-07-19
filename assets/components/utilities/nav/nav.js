@@ -5,11 +5,6 @@ const nav = () => {
   const activeClass = 'current-menu-parent';
   const parentClass = 'current-menu-ancestor';
 
-  // cleans the whole menu of active/parent classes
-  const resetMenu = () => {
-    $('.nav-main li').removeClass(activeClass).removeClass(parentClass);
-  };
-
   // toggle mobile navigation
   const toggleMobileMenu = () => {
     // handle correct menu display when on level 0 page on mobile
@@ -22,38 +17,41 @@ const nav = () => {
     $('body').toggleClass('mobile-menu-open');
   };
 
-  // Open desktop navigation, displaying childs of the menu item clicked.
-  // Is trigerred by clicking a link in the header.
-  const openDesktopMenu = (id) => {
-    resetMenu();
-    $(`.nav-main .${id}`).addClass(activeClass);
-    $('body').addClass('desktop-menu-open');
-  };
-
   // Open or close desktop toggle navigation, keeping it's atual position.
   // Used for the hamburger desktop menu to display current position
-  const toggleDesktopMenu = () => {
+  const toggleDesktopMenu = (offset = 0) => {
     $('body').toggleClass('desktop-menu-open');
+    if (offset > 0 && $('body').hasClass('desktop-menu-open')) {
+      $('.nav-main').css('left', offset);
+    } else {
+      $('.nav-main').css('left', '');
+    }
   };
 
   // moves the navigation one level up when clicking a "back" link
-  $('.nav-main .nav-back a').on('click', function (e) {
+  // eslint-disable-next-line
+  $('.nav-main .nav-back a').on('click', function(e) {
     e.preventDefault();
 
     const parents = $(this).parents();
 
     const parent = parents[2];
-    $(parent).removeClass(parentClass).removeClass(activeClass);
+    $(parent)
+      .removeClass(parentClass)
+      .removeClass(activeClass);
 
     const ancestor = parents[4];
-    $(ancestor).removeClass(parentClass).addClass(activeClass);
+    $(ancestor)
+      .removeClass(parentClass)
+      .addClass(activeClass);
   });
 
   /*
     move the navigation one level down,
     when clicking the "show children" arrow on the right of a menu item
   */
-  $('.nav-main .nav-arrow').on('click', function (e) {
+  // eslint-disable-next-line
+  $('.nav-main .nav-arrow').on('click', function(e) {
     e.preventDefault();
 
     const parents = $(this).parents();
@@ -62,30 +60,14 @@ const nav = () => {
     $(parent).addClass(activeClass);
 
     const ancestor = parents[2];
-    $(ancestor).addClass(parentClass).removeClass(activeClass);
+    $(ancestor)
+      .addClass(parentClass)
+      .removeClass(activeClass);
   });
 
   // bind action to mobile menu toggle
   $('.menu-toggle-mobile').on('click', () => {
     toggleMobileMenu();
-  });
-
-  /*
-    when clicking a link on the header with the navigation already open,
-    let time for the menu to close and re-open at the right spot
-  */
-  $('.nav-toggle .nav-header a').on('click', function (e) {
-    const id = $(this).parent().attr('id');
-    if ($(`.nav-main .${id} ul`).length > 0) {
-      // only block link when the menu item clicked has children in the sidebar
-      e.preventDefault();
-      if ($('.desktop-menu-open').length > 0) {
-        toggleDesktopMenu();
-        setTimeout(() => openDesktopMenu(id), 300);
-      } else {
-        openDesktopMenu(id);
-      }
-    }
   });
 
   // close toggle navigation
@@ -101,8 +83,13 @@ const nav = () => {
   });
 
   // Bind action to the desktop hamburger (next to breadcrumbs)
-  $('#nav-burger').on('click', () => {
-    toggleDesktopMenu();
+  // eslint-disable-next-line
+  $('#nav-toggle').on('click', function() {
+    $(this).toggleClass('open');
+    const offsetX = $(this).offset().left + $(this).outerWidth(true);
+    const offsetY = $(this).offset().top - $(window).scrollTop();
+    $('.nav-main').css('top', offsetY);
+    toggleDesktopMenu(offsetX);
   });
 };
 

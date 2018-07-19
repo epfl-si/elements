@@ -3,8 +3,13 @@
 .fullwidth-teaser {
   position: relative;
   width: 100%;
-  margin-bottom: $spacer * 2;
+  min-height: 30rem;
   padding: 0 ($grid-gutter-width / 2);
+  margin-bottom: $spacer * 2;
+
+  .vimeo-wrapper {
+    background: gray('100');
+  }
 
   @include media-breakpoint-up(md) {
     display: flex;
@@ -22,6 +27,7 @@
 
   img {
     width: 100%;
+    height: auto;
   }
 
   picture,
@@ -222,9 +228,10 @@
 
     .fullwidth-teaser-content {
       p {
-        width: 85%;
-        margin: 0 6% 0 0;
-        padding-right: 6.5rem;
+        width: 82%;
+        margin: 0 11% 0 0;
+        padding-right: 5.3rem;
+        max-width: none;
       }
     }
   }

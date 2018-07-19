@@ -1,7 +1,43 @@
 @charset 'utf-8';
 
+.breadcrumb-container {
+  position: relative;
+  margin-bottom: $spacer * 1.6;
+
+  @include media-breakpoint-down(lg) {
+    height: $mm-breadcrumbs-height;
+    padding: 0;
+
+    &:before {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 3 * $spacer;
+      height: 100%;
+      z-index: 120;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    // create space out of container on the left for hamburger button
+    display: flex;
+    position: relative;
+    margin: 0 $spacer * 3;
+    margin-bottom: $spacer * 2;
+  }
+}
+
+.breadcrumb-wrapper {
+  @include media-breakpoint-up(xl) {
+    flex: 1 0 auto;
+    border-bottom: 1px solid gray('300');
+  }
+}
+
 .breadcrumb {
   padding: 0;
+  margin-bottom: 0;
 
   @include media-breakpoint-down(lg) {
     height: $mm-breadcrumbs-height;
@@ -24,7 +60,7 @@
 .breadcrumb-item {
   display: inline-block;
   position: relative;
-  font-size: 0.82rem;
+  font-size: $font-size-sm;
   line-height: 1.5rem;
 
   &:before {
@@ -59,6 +95,8 @@
       color: $black;
     }
   }
+
+  .icon { font-size: 0.86em; }
 
   &:last-child:after {
     content: none;

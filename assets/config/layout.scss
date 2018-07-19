@@ -19,11 +19,16 @@
 .container-grid {
   display: grid;
   grid-template-rows: auto;
+  grid-column-gap: $grid-gutter-width;
   grid-template-columns:
     [full-start] 1fr
     [content-start] minmax(min-content, #{col-width(sm, 12)})
     [content-end] 1fr
     [full-end];
+
+  @include media-breakpoint-down(sm) {
+    grid-gap: $grid-gutter-width;
+  }
 
   @include media-breakpoint-up(md) {
     grid-template-columns:

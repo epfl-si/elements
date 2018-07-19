@@ -12,6 +12,11 @@
     .social-feed-item-container {
       padding: 0 0.7rem;
 
+      .ie & {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+      }
+
       .social-feed-item {
         height: 100%;
       }

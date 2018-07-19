@@ -4,7 +4,7 @@
       "repo": "git@github.com:epfl-idevelop/elements.git",
       "src": "assets/",
       "dest": "build/",
-      "atomic": "content>utilities>components"
+      "atomic": "content<utilities<components"
     }
   }
 }

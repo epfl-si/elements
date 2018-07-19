@@ -3,6 +3,10 @@
 $gallery-btn-size: 41px;
 $gallery-btn-margin: 14px;
 
+.gallery.is-fullscreen {
+    z-index: 9999999;
+}
+
 .gallery,
 .gallery-nav {
   position: relative;
@@ -31,6 +35,11 @@ $gallery-btn-margin: 14px;
   .flickity-slider {
     display: flex;
     align-items: center;
+
+    .ie & {
+      padding-top: 20vmin;
+      align-items: start;
+    }
   }
 
   .gallery-item {

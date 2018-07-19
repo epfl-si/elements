@@ -10,6 +10,7 @@
 @import '../config/layout';
 @import '../config/helpers';
 @import '../config/trapeze-helper';
+@import '../../node_modules/tablesaw/src/tables.stack-mixin.scss';
 
 // Don't edit the following sections, they should always be preceded by a blank
 // line and have exactly those names for the `$ yo toolbox:generate` command
@@ -56,6 +57,8 @@
 @import 'utilities/access-nav/access-nav';
 @import 'utilities/card-slider/card-slider';
 @import 'utilities/list-group/list-group';
+@import 'utilities/nav-aside/nav-aside';
+@import 'utilities/nav-toggle/nav-toggle';
 
 //
 // components:
@@ -88,3 +91,4 @@
 @import 'components/restauration/restauration';
 @import 'components/tabs/tabs';
 @import 'components/filters/filters';
+@import 'components/hero/hero';

@@ -1,36 +1,53 @@
+
 {% include '@utilities/access-nav/access-nav.twig' %}
 
-<div class="nav-toggle">
-  {% block header %}
-    {% include '@components/header/header.twig' %}
-  {% endblock %}
+{% block fullintro %}{% endblock %}
 
-  <div class="main-container nav-toggle">
+{% block header %}
+  {% include '@components/header/header.twig' %}
+{% endblock %}
+
+<div class="main-container">
+  {% if not isHomepage %}
+  {% block breadcrumb %}
+    <div class="breadcrumb-container">
+      <div>{% include '@utilities/nav-toggle/nav-toggle.twig' %}</div>
+      {% include '@components/breadcrumbs/breadcrumbs.twig' %}
+    </div>
+  {% endblock %}
+  {% endif %}
+
+  <div{% if not isHomepage %} class="nav-toggle-layout nav-aside-layout"{% endif %}>
 
     {% block nav %}
-      {% include '@utilities/nav/nav.twig' with {'no_toggle_wrapper' : true} %}
+      {% include '@utilities/nav/nav.twig' %}
     {% endblock %}
 
-    {% block breadcrumb %}
-      <div class="container breadcrumb-container">
-        {% include '@components/breadcrumbs/breadcrumbs.twig' %}
-      </div>
-    {% endblock %}
+    <div class="w-100 pb-5">
 
-    {% block main %}
-      <main id="main" role="main" class="content">
-        {% block content %}{% endblock %}
-      </main>
-    {% endblock %}
+      {% block main %}
+        <main id="main" role="main" class="content {% block grid %}container-grid{% endblock %}">
+          {% block content %}{% endblock %}
+        </main>
+      {% endblock %}
 
-    {% block footer_container %}
-      <div class="bg-gray-100 pt-5 mt-5">
-        <div class="container">
-          {% block footer %}
-            {% include '@components/footer/footer-dark.twig' %}
-          {% endblock %}
-        </div>
-      </div>
-    {% endblock %}
+    </div>
+
+    {% if not isHomepage %}
+    <aside class="nav-aside-wrapper">
+      {% include '@utilities/nav-aside/nav-aside.twig' %}
+    </aside>
+    {% endif %}
+  </div>
+
+  {% block footer_container %}
+  <div class="bg-gray-100 pt-5">
+    <div class="container">
+      {% block footer %}
+        {% include '@components/footer/footer-dark.twig' %}
+      {% endblock %}
+    </div>
+  </div>
+  {% endblock %}
   </div>
 </div>

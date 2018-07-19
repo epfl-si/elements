@@ -38,6 +38,11 @@
   padding-top: 1.8rem;
 }
 
+.tlbx-doc-markdown-wrapper {
+  max-width: map-get($container-max-widths, 'sm');
+  margin: 0 auto;
+}
+
 @media screen and (min-width: 768px) {
   .tlbx-toolbar {
     position: fixed;

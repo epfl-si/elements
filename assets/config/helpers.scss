@@ -1,5 +1,21 @@
 @charset 'utf-8';
 
+// Responsive sr-only
+@each $breakpoint in map-keys($grid-breakpoints) {
+  .sr-only-#{$breakpoint} {
+    @include media-breakpoint-up($breakpoint) {
+      @include sr-only();
+    }
+  }
+}
+
+// Intro.js
+.introjs-tooltip {
+  min-width: 500px !important;
+  max-width: 60% !important;
+}
+.introjs-helperNumberLayer { background: theme-color('primary') !important; }
+
 .focused {
   position: relative;
 
