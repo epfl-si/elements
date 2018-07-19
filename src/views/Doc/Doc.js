@@ -33,10 +33,19 @@ class Doc extends Component {
 
   getContent(props) {
     if (!this.state.hasFetched) {
-      const homeFile =
-        props.docs.docs_list.f && props.docs.docs_list.f.includes('index.md')
+      let homeFile = 'index.html';
+
+      // legacy test
+      if (props.docs.docs_list.f) {
+        homeFile = props.docs.docs_list.f.includes('index.md')
           ? 'index.md'
-          : 'index.html';
+          : homeFile;
+      } else {
+        homeFile =
+          props.docs.docs_list && props.docs.docs_list.includes('index.md')
+            ? 'index.md'
+            : homeFile;
+      }
       const slug = props.match.params.slug || homeFile;
 
       this.setState({ homeFile });

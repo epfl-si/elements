@@ -36,7 +36,8 @@ class SidebarDocs extends Component {
     return title.charAt(0).toUpperCase() + title.slice(1);
   }
 
-  renderDocDir(dir, fullpath) {
+  // Using the first doc structure { f: [], dir: {...}}
+  renderDocDirLegacy(dir, fullpath) {
     return (
       <ul className="tlbx-sidebar-item-list">
         {Object.keys(dir).map((item, i) => {
@@ -72,7 +73,47 @@ class SidebarDocs extends Component {
               :
                 <em>{this.titlelize(item)}</em>
               }
-              {this.renderDocDir(dir[item], `${fullpath}${item}--`)}
+              {this.renderDocDirLegacy(dir[item], `${fullpath}${item}--`)}
+            </li>
+          );
+        })}
+      </ul>
+    );
+  }
+
+  // Using the new doc structure since toolbox-utils 1.4.4
+  renderDocDir(dir, fullpath) {
+    return (
+      <ul className="tlbx-sidebar-item-list">
+        {dir.map((item, i) => {
+          if (typeof item === 'string') {
+            if (item !== 'index.md' && item !== 'index.html') {
+              return (
+                <li key={i}>
+                  <NavLink to={`/doc/${fullpath}${item}`}>{this.titlelize(item)}</NavLink>
+                </li>
+              );
+            }
+            return null;
+          }
+
+          const slug = Object.keys(item)[0];
+          const pages = item[slug];
+          const hasIndexMd = pages.includes('index.md');
+          const hasIndexHtml = pages.includes('index.html');
+          const index = hasIndexMd ? '--index.md' : hasIndexHtml ? '--index.html' : '';
+
+          return (
+            <li key={i}>
+              {hasIndexMd || hasIndexHtml
+              ?
+                <NavLink to={`/doc/${slug}${index}`}>
+                  {this.titlelize(slug)}
+                </NavLink>
+              :
+                <em>{this.titlelize(slug)}</em>
+              }
+              {this.renderDocDir(pages, `${fullpath}${slug}--`)}
             </li>
           );
         })}
@@ -89,7 +130,10 @@ class SidebarDocs extends Component {
           <strong>Documentation</strong>
         </button>
         <Collapse className="tlbx-sidebar-collapse" isOpen={this.state.active}>
-          {this.renderDocDir(this.props.docs.docs_list, '')}
+          {this.props.docs.docs_list.f !== undefined
+            ? this.renderDocDirLegacy(this.props.docs.docs_list, '')
+            : this.renderDocDir(this.props.docs.docs_list, '')
+          }
         </Collapse>
       </div>
     );
