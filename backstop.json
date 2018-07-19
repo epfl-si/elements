@@ -1,0 +1,46 @@
+{
+  "id": "epfl_elements",
+  "viewports": [
+    {
+      "label": "phone",
+      "width": 320,
+      "height": 480
+    },
+    {
+      "label": "tablet",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "label": "desktop",
+      "width": 1280,
+      "height": 990
+    }
+  ],
+  "scenarios": [
+    {
+      "label": "Card types",
+      "url": "http://localhost:3000/#/components/alerts/full",
+      "referenceUrl": "http://localhost:3000/#/components/alerts/full",
+      "readyEvent": "backstopjs_ready",
+      "hideSelectors": [
+        "#__bs_notify__",
+        ".tlbx-actions"
+      ]
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/references",
+    "bitmaps_test": "backstop_data/test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["browser", "CI"],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "ignoreHTTPSErrors": false,
+    "args": ["--no-sandbox", "--disable-setuid-sandbox"]
+  },
+  "debug": true
+}

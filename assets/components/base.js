@@ -50,4 +50,7 @@ if (undefined === window.sources) {
 }
 
 // Will init the scripts inside of Toolbox
-document.addEventListener('ToolboxReady', () => init());
+document.addEventListener('ToolboxReady', () => {
+  console.log('backstopjs_ready');
+  init();
+});
