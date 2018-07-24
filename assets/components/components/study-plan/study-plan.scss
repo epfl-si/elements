@@ -3,8 +3,13 @@
 
 
 .table-like {
-  $table-grid-template-columns: 1fr 3fr 1fr 3fr 2fr 2fr 2fr 3fr 1fr;
+  $table-cours-template-columns: minmax(200px, 3fr) minmax(auto, 1fr) minmax(200px, 3fr);
+  $table-grid-template-columns: 1fr $table-cours-template-columns 2fr 2fr 2fr minmax(200px, 3fr) 1fr;
+
   --table-columns: #{$table-grid-template-columns};
+
+  overflow-x: scroll;
+  max-width: 100%;
 
   h4 {
     font-weight: $font-weight-bold;
@@ -92,6 +97,12 @@
       grid-column: 1 / -1;
       height: 0;
     }
+
+    .line-down:last-child {
+      .clear {
+        display: none;
+      }
+    }
   }
   // 👊✋🎤🎶
 
@@ -150,7 +161,7 @@
   // Cours is actually 3 divs for the price of one!
   .cours {
     display: grid;
-    grid-template-columns: 3fr 1fr 3fr;
+    grid-template-columns: $table-cours-template-columns;
     grid-auto-rows: auto;
     grid-column: span 3;
     grid-column-gap: $table-border-width;
