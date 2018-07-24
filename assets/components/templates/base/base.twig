@@ -1,0 +1,53 @@
+
+{% include '@molecules/access-nav/access-nav.twig' %}
+
+{% block fullintro %}{% endblock %}
+
+{% block header %}
+  {% include '@organisms/header/header.twig' %}
+{% endblock %}
+
+<div class="main-container">
+  {% if not isHomepage %}
+  {% block breadcrumb %}
+    <div class="breadcrumb-container">
+      <div>{% include '@atoms/nav-toggle/nav-toggle.twig' %}</div>
+      {% include '@molecules/breadcrumb/breadcrumbs.twig' %}
+    </div>
+  {% endblock %}
+  {% endif %}
+
+  <div{% if not isHomepage %} class="nav-toggle-layout nav-aside-layout"{% endif %}>
+
+    {% block nav %}
+      {% include '@organisms/nav-main/nav-main.twig' %}
+    {% endblock %}
+
+    <div class="w-100 pb-5">
+
+      {% block main %}
+        <main id="main" role="main" class="content {% block grid %}container-grid{% endblock %}">
+          {% block content %}{% endblock %}
+        </main>
+      {% endblock %}
+
+    </div>
+
+    {% if not isHomepage %}
+    <aside class="nav-aside-wrapper">
+      {% include '@organisms/nav-aside/nav-aside.twig' %}
+    </aside>
+    {% endif %}
+  </div>
+
+  {% block footer_container %}
+  <div class="bg-gray-100 pt-5">
+    <div class="container">
+      {% block footer %}
+        {% include '@organisms/footer/footer-dark.twig' %}
+      {% endblock %}
+    </div>
+  </div>
+  {% endblock %}
+  </div>
+</div>

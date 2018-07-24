@@ -1,4 +1,4 @@
-{% extends "@pages/partials/layout.twig" %}
+{% extends "@templates/base/base.twig" %}
 
 {% block content %}
   <h1 class="mb-5">H1 - Basic page</h1>
@@ -8,7 +8,7 @@
 
   <div class="container-full">
     <div class="container">
-      {% include "@components/media/media.twig" %}
+      {% include "@molecules/cover/cover.twig" %}
 
       <div class="row">
         <div class="col-sm-10 col-md-8 col-xl-6 mx-auto">
@@ -22,10 +22,10 @@
           {% include "@atoms/list/list-bullet.twig" %}
 
           <h4>H4 - Let's display a table</h4>
-          {% include "@components/tables/tables-sortable.twig" %}
+          {% include "@molecules/tables/tables-sortable.twig" %}
 
           <h4 class="mt-4">H4 - Let's display a gallery</h4>
-          {% include "@components/media/media-gallery.twig" %}
+          {% include "@molecules/gallery/gallery.twig" %}
 
         </div>
       </div>
@@ -37,7 +37,7 @@
         <div class="row">
           {% for i in [1,2] %}
             <div class="col-sm-6">
-              {% include "@components/teaser-basic-page/teaser-basic-page.twig" %}
+              {% include "@content-types/basic-page/teaser-basic-page.twig" %}
             </div>
           {% endfor %}
         </div>
@@ -48,14 +48,14 @@
       <div class="row">
         <div class="col-sm-10 col-md-8 col-xl-6 mx-auto">
           <h3>H3 - Teaser press review</h3>
-          {% include "@components/teaser-press-review/teaser-press-review.twig" %}
+          {% include "@content-types/press-review/press-review.twig" %}
         </div>
       </div>
 
       <div class="row mb-5">
         <div class="col-sm-10 mx-auto">
           <h5 class="mt-4">H5 - Video !</h5>
-          {% include "@components/media/media-video.twig" %}
+          {% include "@atoms/video/video.twig" %}
         </div>
       </div>
 
@@ -71,14 +71,14 @@
       </div>
     </div>
 
-    {% include "@components/newsletter-sign-up/newsletter-sign-up.twig" %}
+    {% include "@organisms/newsletter-sign-up/newsletter-sign-up.twig" %}
 
     <div class="container mt-5">
       <h2>Facultés</h2>
       <div class="row">
         {% for i in [1,2,3] %}
           <div class="col-sm-6 col-lg-4">
-            {% include "@components/teaser-mission/teaser-mission-faculty.twig" %}
+            {% include "@content-types/faculty/faculty.twig" %}
           </div>
         {% endfor %}
       </div>

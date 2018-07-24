@@ -1,6 +1,6 @@
 {% set isHomepage = true %}
 
-{% extends "@pages/partials/layout.twig" %}
+{% extends "@templates/base/base.twig" %}
 
 {% macro card(card) %}
   <div class="card">
@@ -126,29 +126,29 @@
     {# The Calendar section #}
     {# TODO add card-slider from Yann PR #}
     <div class="bg-gray-100 py-5 mb-3">
-      {% include '@utilities/datepicker/datepicker-fancy.twig' %}
+      {% include '@molecules/datepicker/datepicker-fancy.twig' %}
 
       <div class="overflow-hidden">
         <div class="container">
           <div class="card-slider-wrapper">
             <div class="card-slider">
               <div class="card-slider-cell">
-                {% include "@components/event/event.twig" %}
+                {% include "@content-types/event/event.twig" %}
               </div>
               <div class="card-slider-cell">
-                {% include "@components/event/event.twig" %}
+                {% include "@content-types/event/event.twig" %}
               </div>
               <div class="card-slider-cell">
-                {% include "@components/event/event.twig" %}
+                {% include "@content-types/event/event.twig" %}
               </div>
               <div class="card-slider-cell">
-                {% include "@components/event/event.twig" %}
+                {% include "@content-types/event/event.twig" %}
               </div>
               <div class="card-slider-cell">
-                {% include "@components/event/event.twig" %}
+                {% include "@content-types/event/event.twig" %}
               </div>
               <div class="card-slider-cell">
-                {% include "@components/event/event.twig" %}
+                {% include "@content-types/event/event.twig" %}
               </div>
             </div>
 
@@ -204,7 +204,7 @@
     {% endembed %}
 
     <div class="container-fluid p-0">
-      {% include '@components/question/question.twig' %}
+      {% include '@molecules/question/question.twig' %}
     </div>
 
     {# The last fullwidth teaser #}
@@ -217,7 +217,7 @@
     <div class="bg-gray-100 py-5">
       <div class="container">
         <h2 class="h3">Vivez au rythme de l’école, via les réseaux sociaux</h2>
-        {% include '@components/social/social.twig' %}
+        {% include '@organisms/social-feed-group/social-feed-group.twig' %}
         <p class="text-center">
           <a href="#">Liste des comptes officiels</a>
         </p>
@@ -228,7 +228,7 @@
 
 {% block footer_container %}
   <div class="container py-5">
-    {% include '@components/footer/footer.twig' %}
+    {% include '@organisms/footer/footer.twig' %}
   </div>
 {% endblock %}
 

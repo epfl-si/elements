@@ -11,7 +11,7 @@ notes: |
 
   A card can be a full link or not, see examples below.
 
-  Use `.card-header` inside a `.card-body` to display meta info (See [press release](/#/components/news)) like **Category** + **date** spread out left and right.
+  Use `.card-header` inside a `.card-body` to display meta info (See [press release](/#/content-types/news)) like **Category** + **date** spread out left and right.
 
   Add `.card-distinction` to the `.card` wrapper to display a red ribbon in the card body.
 
