@@ -3,5 +3,5 @@
 {% set discrete = discrete ? ' social-icon-discrete' : '' %}
 {% set negative = negative ? ' social-icon-negative' : '' %}
 <a href="#" class="{{ 'social-icon social-' ~ icon ~ round ~ negative ~ discrete }}">
-  {% include 'content::icon/icon.twig' with { icon: icon } %}
+  {% include '@atoms/icon/icon.twig' with { icon: icon } %}
 </a> 

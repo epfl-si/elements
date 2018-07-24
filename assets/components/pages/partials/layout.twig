@@ -1,5 +1,5 @@
 
-{% include '@utilities/access-nav/access-nav.twig' %}
+{% include '@molecules/access-nav/access-nav.twig' %}
 
 {% block fullintro %}{% endblock %}
 
@@ -11,7 +11,7 @@
   {% if not isHomepage %}
   {% block breadcrumb %}
     <div class="breadcrumb-container">
-      <div>{% include '@utilities/nav-toggle/nav-toggle.twig' %}</div>
+      <div>{% include '@atoms/nav-toggle/nav-toggle.twig' %}</div>
       {% include '@components/breadcrumbs/breadcrumbs.twig' %}
     </div>
   {% endblock %}
@@ -35,7 +35,7 @@
 
     {% if not isHomepage %}
     <aside class="nav-aside-wrapper">
-      {% include '@utilities/nav-aside/nav-aside.twig' %}
+      {% include '@organisms/nav-aside/nav-aside.twig' %}
     </aside>
     {% endif %}
   </div>

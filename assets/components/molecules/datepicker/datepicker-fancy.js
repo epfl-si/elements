@@ -12,7 +12,8 @@ export default () => {
   * define if all dates in a row are disabled
   */
   function isRowDisabled(weekNum, container) {
-    const disabledCount = $('tbody tr:nth-child(' + weekNum + ') .picker__day--outfocus', container).length;
+    const disabledCount = $(`tbody tr:nth-child(${weekNum}) .picker__day--outfocus`, container)
+      .length;
     if (disabledCount === 7) {
       return true;
     }
@@ -44,7 +45,7 @@ export default () => {
     // initialise data attibute
     $('tbody', container).attr('data-week', weekNum);
 
-    $('.picker__nav--next', container).on('click', function (e) {
+    $('.picker__nav--next', container).on('click', (e) => {
       if (weekNum < 6 && !isRowDisabled(weekNum + 1, container)) {
         // if we are not displaying the last row:
         // disable built-in behaviour and update data attribute
@@ -60,7 +61,7 @@ export default () => {
       }
     });
 
-    $('.picker__nav--prev', container).on('click', function (e) {
+    $('.picker__nav--prev', container).on('click', (e) => {
       if (weekNum > 1) {
         // if we are not displaying the first row:
         // disable built-in behaviour and update visual to show previous week
@@ -77,10 +78,13 @@ export default () => {
     });
 
     // enable transitions only when prev/next arrow are clicked
-    $('.picker__day').each(function () {
+    $('.picker__day', container).each(function () {
       $(this).on('click', function () {
-        $(this).parent().parent().parent()
-        .css('transition', 'left 0s');
+        $(this)
+          .parent()
+          .parent()
+          .parent()
+          .css('transition', 'left 0s');
       });
     });
   }
@@ -115,12 +119,8 @@ export default () => {
     next.html(months[nextMonthIndex]);
     prev.html(months[prevMonthIndex]);
 
-    next.clone().appendTo('.picker__box', picker.$root);
-    prev.clone().appendTo('.picker__box', picker.$root);
-  }
-
-  function displayHeroMonths(container) {
-    $('.picker__wrap', container).append('<h2>fèv</h2>');
+    $('.picker__box', picker.$root).append(next.clone());
+    $('.picker__box', picker.$root).append(prev.clone());
   }
 
   /*
@@ -131,7 +131,7 @@ export default () => {
     $('.picker__day--infocus', container).each(function () {
       const currentTimestamp = $(this).data('pick');
       const date = new Date(currentTimestamp);
-      const dateString = date.getFullYear() + '-' + ("0" + (date.getMonth() + 1)).slice(-2) + '-' + ("0" + date.getDate()).slice(-2);
+      const dateString = `${date.getFullYear()}-${`0${date.getMonth() + 1}`.slice(-2)}-${`0${date.getDate()}`.slice(-2)}`;
 
       // this is arbitrary. change this with personal logic when needed and add you own class
       if (dateString === '2018-03-28') {
@@ -143,11 +143,37 @@ export default () => {
   /*
   * INIT datepicket-event
   */
-  $('.datepicker-event').each(function () {
-    const monthsShort = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Jui', 'Jui', 'Aoû', 'Sep', 'Oct', 'Nov', 'Déc'];
+  $('.datepicker-fancy').each(function () {
+    const monthsShort = [
+      'Jan',
+      'Fév',
+      'Mar',
+      'Avr',
+      'Mai',
+      'Jui',
+      'Jui',
+      'Aoû',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Déc',
+    ];
     const container = $(this).parent();
     $(this).pickadate({
-      monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+      monthsFull: [
+        'Janvier',
+        'Février',
+        'Mars',
+        'Avril',
+        'Mai',
+        'Juin',
+        'Juillet',
+        'Août',
+        'Septembre',
+        'Octobre',
+        'Novembre',
+        'Décembre',
+      ],
       monthsShort,
       weekdaysFull: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
       weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
@@ -160,7 +186,7 @@ export default () => {
       today: '',
       clear: '',
       close: '',
-      onRender: function () {
+      onRender() {
         // stop default highlight
         $('div.picker__day--highlighted').each(function () {
           if ($(this).data('pick') !== timestamp) {
@@ -175,7 +201,7 @@ export default () => {
           handlePrevNext(container);
         }
       },
-      onStart: function () {
+      onStart() {
         selectToday(this);
         setHighlights(this);
 
@@ -186,11 +212,7 @@ export default () => {
         }
 
         // enable mobile behaviour when needed
-        isMobile = $('.datepicker-event+.picker table').css('display') === 'block';
-
-        if (!isMobile) {
-          displayHeroMonths(container);
-        }
+        isMobile = $('.datepicker-fancy + .picker table').css('display') === 'block';
       },
     });
   });

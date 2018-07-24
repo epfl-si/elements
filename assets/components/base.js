@@ -2,16 +2,16 @@
 
 import objectFitImages from 'object-fit-images';
 import upload from './atoms/upload/upload';
-import datepicker from './utilities/datepicker/datepicker';
-import datepickerEvent from './utilities/datepicker-event/datepicker-event';
-import popover from './utilities/popover/popover';
-import gallery from './utilities/gallery/gallery';
+import datepicker from './molecules/datepicker/datepicker';
+import datepickerEvent from './molecules/datepicker/datepicker-fancy';
+import popover from './atoms/popover/popover';
+import gallery from './molecules/gallery/gallery';
 import socialShare from './components/social/social-share';
 import selectMultiple from './atoms/select/select-multiple';
 import tagInput from './atoms/tag/tag-input';
-import cardSlider from './utilities/card-slider/card-slider';
+import cardSlider from './organisms/card-slider/card-slider';
 import svgIcons from '../icons/svg-icons';
-import nav from './utilities/nav/nav.js';
+import nav from './organisms/nav-main/nav-main.js';
 import drawer from './atoms/drawer/drawer.js';
 
 import guide from './guide.js';

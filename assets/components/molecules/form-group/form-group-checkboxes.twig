@@ -2,7 +2,7 @@
   <label for="custom-check1">Checkboxes (multiple choice)</label>
 
   {% for i in [1,2,3] %}
-  {% include "content::checkbox/checkbox.twig" with {
+  {% include "@atoms/checkbox/checkbox.twig" with {
     id: i,
     label: 'Option ' ~ i
   } %}

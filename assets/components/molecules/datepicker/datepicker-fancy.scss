@@ -1,6 +1,6 @@
 @charset 'utf-8';
 
-.datepicker-event {
+.datepicker-fancy {
   display: none;
 
   & + .picker .picker__holder {
@@ -72,6 +72,7 @@
         height: 3.8rem;
         background: $white;
         transition: box-shadow 0.2s;
+        z-index: 10;
 
         &:before {
           top: 1.64rem;
@@ -140,7 +141,6 @@
       font-weight: bold;
       color: $gray-200;
       text-transform: uppercase;
-      z-index: -1;
     }
 
     .nextMonthLabel {

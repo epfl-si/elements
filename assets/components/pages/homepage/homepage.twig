@@ -67,7 +67,7 @@
 {% block main %}
   <main id="main" role="main" class="content">
     {# The intro fullwidth teaser #}
-    {% embed '@utilities/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
+    {% embed '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
       {% block title %}{{ homepage.highlight_1.title }}{% endblock %}
       {% block content %}{{ homepage.highlight_1.content }}{% endblock %}
       {% block img %}{{ homepage.highlight_1.image }}{% endblock %}
@@ -117,7 +117,7 @@
     </div>
 
     {# The middle fullwidth teaser #}
-    {% embed '@utilities/fullwidth-teaser/fullwidth-teaser.twig' %}
+    {% embed '@organisms/fullwidth-teaser/fullwidth-teaser.twig' %}
       {% block title %}{{ homepage.highlight_2.title }}{% endblock %}
       {% block content %}{{ homepage.highlight_2.content }}{% endblock %}
       {% block img %}{{ homepage.highlight_2.image }}{% endblock %}
@@ -126,7 +126,7 @@
     {# The Calendar section #}
     {# TODO add card-slider from Yann PR #}
     <div class="bg-gray-100 py-5 mb-3">
-      {% include '@utilities/datepicker-event/datepicker-event.twig' %}
+      {% include '@utilities/datepicker/datepicker-fancy.twig' %}
 
       <div class="overflow-hidden">
         <div class="container">
@@ -171,7 +171,7 @@
     </div>
 
     {# The second middle fullwidth teaser #}
-    {% embed '@utilities/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
+    {% embed '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
       {% block title %}{{ homepage.highlight_3.title }}{% endblock %}
       {% block content %}{{ homepage.highlight_3.content }}{% endblock %}
       {% block img %}{{ homepage.highlight_3.image }}{% endblock %}
@@ -197,7 +197,7 @@
     </div>
 
     {# The third middle fullwidth teaser #}
-    {% embed '@utilities/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
+    {% embed '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
       {% block title %}{{ homepage.highlight_4.title }}{% endblock %}
       {% block content %}{{ homepage.highlight_4.content }}{% endblock %}
       {% block img %}{{ homepage.highlight_4.image }}{% endblock %}
@@ -208,7 +208,7 @@
     </div>
 
     {# The last fullwidth teaser #}
-    {% embed '@utilities/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
+    {% embed '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
       {% block title %}{{ homepage.highlight_5.title }}{% endblock %}
       {% block content %}{{ homepage.highlight_5.content }}{% endblock %}
       {% block img %}{{ homepage.highlight_5.image }}{% endblock %}

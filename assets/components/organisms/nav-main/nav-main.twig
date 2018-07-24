@@ -3,7 +3,7 @@
   <div class="nav-wrapper">
     <div class="nav-container">
       <ul class="nav-menu">
-        {% for i in 1..26 %}
+        {% for i in 1..5 %}
         <li class="{{ i == 2 ? 'current-menu-ancestor menu-item-888' : ''}} menu-item-has-children">
           <a href="#">À propos</a>
           <ul>
@@ -19,7 +19,7 @@
                 À propos
               </a>
             </li>
-            {% for y in 1..25 %}
+            {% for y in 1..10 %}
             <li class="{{ y == 2 and i == 2 ? 'current-menu-parent' : ''}} menu-item-has-children">
               <a data-page-id="77" href="/test">Stratégie de l’enseignement</a>
               <a href="#" role="button" aria-hidden="true" class="nav-arrow">
