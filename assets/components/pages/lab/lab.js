@@ -50,7 +50,7 @@ export default () => {
               This section is intended to <b>provide the context of the laboratory</b>. It is possible for a laboratory to belong to several institutes and/or faculties. If this is the case, we advise you to use a teaser that brings the visitor to a listing page, rather than putting them all on the lab’s homepage. Laboratories can have themes that categorize them. It is recommended to use component “tag” to list them.
             </p>
             <p>
-              For this part, you can use some of the <a href="#/components/teaser-mission" target="_blank">Teaser mission</a> components : <b>Faculty</b> and <b>Institute</b>. The themes are based on the <a href="#/content/tag" target="_blank">tag</a> component.
+              For this part, you can use some of the <a href="#/components/teaser-mission" target="_blank">Teaser mission</a> components : <b>Faculty</b> and <b>Institute</b>. The themes are based on the <a href="#/atoms/tag" target="_blank">tag</a> component.
             </p>
             `,
           },

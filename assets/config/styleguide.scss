@@ -174,10 +174,16 @@
   }
 }
 
-.tlbx-component-menu-toggle-mobile {
-  .menu-toggle-mobile {
+.tlbx-component-nav-toggle-mobile {
+  .nav-toggle-mobile {
     display: flex !important;
     margin-left: 0;
+  }
+}
+
+.tlbx-component-search {
+  .d-lg-none {
+    display: block !important;
   }
 }
 

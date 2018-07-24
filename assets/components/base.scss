@@ -17,27 +17,33 @@
 // to work
 
 //
+// atoms:
+@import 'atoms/button/button';
+@import 'atoms/tag/tag';
+@import 'atoms/alert/alert';
+@import 'atoms/checkbox/checkbox';
+@import 'atoms/collapse/collapse';
+@import 'atoms/drawer/drawer';
+@import 'atoms/icon/icon';
+@import 'atoms/input/input';
+@import 'atoms/nav-lang/nav-lang';
+@import 'atoms/nav-toggle-mobile/nav-toggle-mobile';
+@import 'atoms/link/link';
+@import 'atoms/list/list';
+@import 'atoms/picture/picture';
+@import 'atoms/radio/radio';
+@import 'atoms/select/select';
+@import 'atoms/separator/separator';
+@import 'atoms/social-icon/social-icon';
+@import 'atoms/upload/upload';
+@import 'atoms/video/video';
+
+//
+// molecules:
+@import 'molecules/search/search';
+
+//
 // content:
-@import 'content/link/link';
-@import 'content/input/input';
-@import 'content/select/select';
-@import 'content/upload/upload';
-@import 'content/icon/icon';
-@import 'content/checkbox/checkbox';
-@import 'content/radio/radio';
-@import 'content/picture/picture';
-@import 'content/video/video';
-@import 'content/social-icon/social-icon';
-@import 'content/icon/icon';
-@import 'content/collapse/collapse';
-@import 'content/list/list';
-@import 'content/language-switcher/language-switcher';
-@import 'content/menu-toggle-mobile/menu-toggle-mobile';
-@import 'content/tag/tag';
-@import 'content/alert/alert';
-@import 'content/search/search';
-@import 'content/separator/separator';
-@import 'content/drawer/drawer';
 
 //
 // utilities:
@@ -74,11 +80,9 @@
 @import 'components/publication/publication';
 @import 'components/link/link';
 @import 'components/breadcrumbs/breadcrumbs';
-@import 'components/button/button';
 @import 'components/header/header';
 @import 'components/media/media';
 @import 'components/definition-list/definition-list';
-@import 'components/alerts/alerts';
 @import 'components/form/form';
 @import 'components/pagination/pagination';
 @import 'components/teaser-press-review/teaser-press-review';

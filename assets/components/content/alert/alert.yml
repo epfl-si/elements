@@ -1,5 +1,0 @@
-title: Alert
-name: alert
-notes: |
-  The alert component supports all these color variants:<br>
-  `alert-success`, `alert-warning`, `alert-danger`, `alert-info`.

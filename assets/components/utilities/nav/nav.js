@@ -66,7 +66,7 @@ const nav = () => {
   });
 
   // bind action to mobile menu toggle
-  $('.menu-toggle-mobile').on('click', () => {
+  $('.nav-toggle-mobile').on('click', () => {
     toggleMobileMenu();
   });
 
