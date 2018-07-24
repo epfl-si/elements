@@ -290,7 +290,7 @@ $table-border-width:          $border-width !default;
 $table-border-color:          $gray-200 !default;
 $table-border-color-light:    $gray-100;
 
-$table-head-bg:               $gray-200 !default;
+$table-head-bg:               lighten($gray-100, 5.49) !default;
 $table-head-color:            $gray-600 !default;
 
 $table-dark-bg:               $black !default;
