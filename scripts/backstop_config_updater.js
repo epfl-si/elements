@@ -44,7 +44,7 @@ const scenarios = componentsDirs.reduce((acc, type) => {
       }
 
       return {
-        label: slug.charAt(0).toUpperCase() + slug.slice(1),
+        label: `${type}_${slug}`,
         url: `http://localhost:3000/${url}`,
         referenceUrl: `https://epfl-idevelop.github.io/elements/${url}`,
         readyEvent: 'backstopjs_ready',

@@ -15,7 +15,8 @@
     "test:reference": "backstop reference",
     "test:approve": "backstop approve",
     "test:report": "backstop openReport",
-    "test:update_config": "node scripts/backstop_config_updater.js"
+    "test:update_config": "node scripts/backstop_config_updater.js",
+    "test:info": "node scripts/backstop_status.js"
   },
   "browserslist": [
     "> 1% in CH",
