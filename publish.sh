@@ -28,8 +28,7 @@ jq --version || { echo "⚠️  You have jq installed on your machine (brew inst
 echo "rebuild frontend assets"
 yarn build
 
-echo "update package.json version to $1 and write a copy for publishing"
-npm version $1
+echo "Write a copy of package.json for publishing"
 cp package.json $DIRECTORY/package.json
 jq -e ".dependencies = {} | .devDependencies = {}" $DIRECTORY/package.json > $DIRECTORY/package.json.tmp && cp $DIRECTORY/package.json.tmp $DIRECTORY/package.json && rm $DIRECTORY/package.json.tmp
 
