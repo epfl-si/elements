@@ -30,6 +30,8 @@ const componentsSubdirs = componentsDirs.reduce((acc, value) => {
 }, {});
 
 const scenarios = componentsDirs.reduce((acc, type) => {
+  if (type === 'templates') return acc;
+
   componentsSubdirs[type].forEach((component) => {
     const path = `${config.src}/components/${type}/${component}`;
     const files = fs.readdirSync(path);
@@ -48,6 +50,7 @@ const scenarios = componentsDirs.reduce((acc, type) => {
         url: `http://localhost:3000/${url}`,
         referenceUrl: `https://epfl-idevelop.github.io/elements/${url}`,
         readyEvent: 'backstopjs_ready',
+        delay: 800,
         hideSelectors: ['#__bs_notify__', '.tlbx-actions'],
       };
     });
