@@ -1,34 +1,1025 @@
 {
   "id": "epfl_elements",
-  "viewports": [
-    {
-      "label": "phone",
-      "width": 320,
-      "height": 480
-    },
-    {
-      "label": "tablet",
-      "width": 768,
-      "height": 1024
-    },
-    {
-      "label": "desktop",
-      "width": 1280,
-      "height": 990
-    }
-  ],
-  "scenarios": [
-    {
-      "label": "Card types",
-      "url": "http://localhost:3000/#/components/alerts/full",
-      "referenceUrl": "http://localhost:3000/#/components/alerts/full",
-      "readyEvent": "backstopjs_ready",
-      "hideSelectors": [
-        "#__bs_notify__",
-        ".tlbx-actions"
-      ]
-    }
-  ],
+  "viewports": [{
+    "label": "phone",
+    "width": 320,
+    "height": 480
+  }, {
+    "label": "tablet",
+    "width": 768,
+    "height": 1024
+  }, {
+    "label": "desktop",
+    "width": 1280,
+    "height": 990
+  }, {
+    "label": "large",
+    "width": 1920,
+    "height": 1080
+  }],
+  "scenarios": [{
+    "label": "Alert-types",
+    "url": "http://localhost:3000/#/atoms/alert/types/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/alert/types/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Alert",
+    "url": "http://localhost:3000/#/atoms/alert/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/alert/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Button-secondary-states",
+    "url": "http://localhost:3000/#/atoms/button/secondary-states/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/button/secondary-states/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Button-secondary",
+    "url": "http://localhost:3000/#/atoms/button/secondary/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/button/secondary/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Button-sizes",
+    "url": "http://localhost:3000/#/atoms/button/sizes/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/button/sizes/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Button-states",
+    "url": "http://localhost:3000/#/atoms/button/states/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/button/states/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Button",
+    "url": "http://localhost:3000/#/atoms/button/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/button/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Checkbox",
+    "url": "http://localhost:3000/#/atoms/checkbox/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/checkbox/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Collapse-title",
+    "url": "http://localhost:3000/#/atoms/collapse/title/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/collapse/title/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Collapse",
+    "url": "http://localhost:3000/#/atoms/collapse/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/collapse/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Definition-list-grid",
+    "url": "http://localhost:3000/#/atoms/definition-list/grid/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/definition-list/grid/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Definition-list",
+    "url": "http://localhost:3000/#/atoms/definition-list/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/definition-list/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Drawer",
+    "url": "http://localhost:3000/#/atoms/drawer/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/drawer/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Dropdown",
+    "url": "http://localhost:3000/#/atoms/dropdown/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/dropdown/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Figure",
+    "url": "http://localhost:3000/#/atoms/figure/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/figure/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Icon-list",
+    "url": "http://localhost:3000/#/atoms/icon/list/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/icon/list/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Icon",
+    "url": "http://localhost:3000/#/atoms/icon/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/icon/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Input-disabled",
+    "url": "http://localhost:3000/#/atoms/input/disabled/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/input/disabled/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Input-error",
+    "url": "http://localhost:3000/#/atoms/input/error/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/input/error/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Input-focus",
+    "url": "http://localhost:3000/#/atoms/input/focus/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/input/focus/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Input-hover",
+    "url": "http://localhost:3000/#/atoms/input/hover/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/input/hover/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Input-value",
+    "url": "http://localhost:3000/#/atoms/input/value/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/input/value/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Input",
+    "url": "http://localhost:3000/#/atoms/input/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/input/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Link-icon",
+    "url": "http://localhost:3000/#/atoms/link/icon/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/link/icon/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Link",
+    "url": "http://localhost:3000/#/atoms/link/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/link/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "List-bullet",
+    "url": "http://localhost:3000/#/atoms/list/bullet/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/list/bullet/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "List-numbered",
+    "url": "http://localhost:3000/#/atoms/list/numbered/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/list/numbered/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "List",
+    "url": "http://localhost:3000/#/atoms/list/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/list/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Nav-lang",
+    "url": "http://localhost:3000/#/atoms/nav-lang/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/nav-lang/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Nav-toggle",
+    "url": "http://localhost:3000/#/atoms/nav-toggle/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/nav-toggle/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Nav-toggle-mobile",
+    "url": "http://localhost:3000/#/atoms/nav-toggle-mobile/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/nav-toggle-mobile/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Picture-avatar",
+    "url": "http://localhost:3000/#/atoms/picture/avatar/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/picture/avatar/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Picture-cover",
+    "url": "http://localhost:3000/#/atoms/picture/cover/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/picture/cover/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Picture-news-thumb",
+    "url": "http://localhost:3000/#/atoms/picture/news-thumb/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/picture/news-thumb/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Picture-one-third-square",
+    "url": "http://localhost:3000/#/atoms/picture/one-third-square/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/picture/one-third-square/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Picture-one-third",
+    "url": "http://localhost:3000/#/atoms/picture/one-third/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/picture/one-third/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Picture-question",
+    "url": "http://localhost:3000/#/atoms/picture/question/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/picture/question/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Picture",
+    "url": "http://localhost:3000/#/atoms/picture/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/picture/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Popover",
+    "url": "http://localhost:3000/#/atoms/popover/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/popover/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Radio",
+    "url": "http://localhost:3000/#/atoms/radio/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/radio/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Select-multiple",
+    "url": "http://localhost:3000/#/atoms/select/multiple/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/select/multiple/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Select",
+    "url": "http://localhost:3000/#/atoms/select/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/select/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Separator",
+    "url": "http://localhost:3000/#/atoms/separator/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/separator/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Social-icon-discrete-link",
+    "url": "http://localhost:3000/#/atoms/social-icon/discrete-link/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/social-icon/discrete-link/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Social-icon-group",
+    "url": "http://localhost:3000/#/atoms/social-icon/group/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/social-icon/group/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Social-icon-link-group",
+    "url": "http://localhost:3000/#/atoms/social-icon/link-group/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/social-icon/link-group/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Social-icon-link",
+    "url": "http://localhost:3000/#/atoms/social-icon/link/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/social-icon/link/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Social-icon-negative-link",
+    "url": "http://localhost:3000/#/atoms/social-icon/negative-link/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/social-icon/negative-link/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Social-icon-negative",
+    "url": "http://localhost:3000/#/atoms/social-icon/negative/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/social-icon/negative/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Social-icon-round-discrete-link",
+    "url": "http://localhost:3000/#/atoms/social-icon/round-discrete-link/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/social-icon/round-discrete-link/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Social-icon-round-link",
+    "url": "http://localhost:3000/#/atoms/social-icon/round-link/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/social-icon/round-link/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Social-icon-round",
+    "url": "http://localhost:3000/#/atoms/social-icon/round/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/social-icon/round/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Social-icon-single-link",
+    "url": "http://localhost:3000/#/atoms/social-icon/single-link/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/social-icon/single-link/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Social-icon-single",
+    "url": "http://localhost:3000/#/atoms/social-icon/single/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/social-icon/single/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Social-icon",
+    "url": "http://localhost:3000/#/atoms/social-icon/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/social-icon/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Tag-input",
+    "url": "http://localhost:3000/#/atoms/tag/input/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/tag/input/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Tag",
+    "url": "http://localhost:3000/#/atoms/tag/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/tag/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Trapeze-horizontal",
+    "url": "http://localhost:3000/#/atoms/trapeze/horizontal/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/trapeze/horizontal/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Trapeze-pseudo",
+    "url": "http://localhost:3000/#/atoms/trapeze/pseudo/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/trapeze/pseudo/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Trapeze",
+    "url": "http://localhost:3000/#/atoms/trapeze/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/trapeze/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Upload",
+    "url": "http://localhost:3000/#/atoms/upload/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/upload/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Video",
+    "url": "http://localhost:3000/#/atoms/video/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/atoms/video/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Association",
+    "url": "http://localhost:3000/#/content-types/association/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/association/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Bachelor-project",
+    "url": "http://localhost:3000/#/content-types/bachelor-project/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/bachelor-project/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Basic-page-highlighted",
+    "url": "http://localhost:3000/#/content-types/basic-page/highlighted/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/basic-page/highlighted/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Basic-page",
+    "url": "http://localhost:3000/#/content-types/basic-page/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/basic-page/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Coursebook-program",
+    "url": "http://localhost:3000/#/content-types/coursebook/program/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/coursebook/program/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Coursebook",
+    "url": "http://localhost:3000/#/content-types/coursebook/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/coursebook/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Cursus",
+    "url": "http://localhost:3000/#/content-types/cursus/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/cursus/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Event-highlight",
+    "url": "http://localhost:3000/#/content-types/event/highlight/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/event/highlight/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Event-invitation",
+    "url": "http://localhost:3000/#/content-types/event/invitation/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/event/invitation/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Event-just-finished",
+    "url": "http://localhost:3000/#/content-types/event/just-finished/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/event/just-finished/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Event-wrapper",
+    "url": "http://localhost:3000/#/content-types/event/wrapper/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/event/wrapper/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Event",
+    "url": "http://localhost:3000/#/content-types/event/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/event/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Faculty",
+    "url": "http://localhost:3000/#/content-types/faculty/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/faculty/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Institute",
+    "url": "http://localhost:3000/#/content-types/institute/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/institute/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Laboratory",
+    "url": "http://localhost:3000/#/content-types/laboratory/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/laboratory/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "News-basic-teaser",
+    "url": "http://localhost:3000/#/content-types/news/basic-teaser/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/news/basic-teaser/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "News-distinction",
+    "url": "http://localhost:3000/#/content-types/news/distinction/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/news/distinction/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "News-highlighted",
+    "url": "http://localhost:3000/#/content-types/news/highlighted/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/news/highlighted/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "News-press-release",
+    "url": "http://localhost:3000/#/content-types/news/press-release/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/news/press-release/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "News",
+    "url": "http://localhost:3000/#/content-types/news/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/news/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Press-review",
+    "url": "http://localhost:3000/#/content-types/press-review/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/press-review/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Program",
+    "url": "http://localhost:3000/#/content-types/program/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/program/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Publication",
+    "url": "http://localhost:3000/#/content-types/publication/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/publication/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Research-field",
+    "url": "http://localhost:3000/#/content-types/research-field/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/research-field/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Research-project",
+    "url": "http://localhost:3000/#/content-types/research-project/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/research-project/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Science-question",
+    "url": "http://localhost:3000/#/content-types/science-question/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/science-question/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Section",
+    "url": "http://localhost:3000/#/content-types/section/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/section/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Study-plan",
+    "url": "http://localhost:3000/#/content-types/study-plan/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/study-plan/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Training",
+    "url": "http://localhost:3000/#/content-types/training/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/training/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Access-nav",
+    "url": "http://localhost:3000/#/molecules/access-nav/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/access-nav/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Avatar-teaser-multiple",
+    "url": "http://localhost:3000/#/molecules/avatar-teaser/multiple/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/avatar-teaser/multiple/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Avatar-teaser",
+    "url": "http://localhost:3000/#/molecules/avatar-teaser/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/avatar-teaser/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Breadcrumb",
+    "url": "http://localhost:3000/#/molecules/breadcrumb/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/breadcrumb/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Card-inside-links",
+    "url": "http://localhost:3000/#/molecules/card/inside-links/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/card/inside-links/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Card-link",
+    "url": "http://localhost:3000/#/molecules/card/link/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/card/link/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Card",
+    "url": "http://localhost:3000/#/molecules/card/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/card/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Collapse-group",
+    "url": "http://localhost:3000/#/molecules/collapse-group/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/collapse-group/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Cover",
+    "url": "http://localhost:3000/#/molecules/cover/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/cover/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Datepicker-fancy",
+    "url": "http://localhost:3000/#/molecules/datepicker/fancy/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/datepicker/fancy/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Datepicker",
+    "url": "http://localhost:3000/#/molecules/datepicker/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/datepicker/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Filters",
+    "url": "http://localhost:3000/#/molecules/filters/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/filters/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Footnotes",
+    "url": "http://localhost:3000/#/molecules/footnotes/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/footnotes/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Form-group-checkboxes",
+    "url": "http://localhost:3000/#/molecules/form-group/checkboxes/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/form-group/checkboxes/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Form-group-error",
+    "url": "http://localhost:3000/#/molecules/form-group/error/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/form-group/error/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Form-group-radio",
+    "url": "http://localhost:3000/#/molecules/form-group/radio/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/form-group/radio/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Form-group-select",
+    "url": "http://localhost:3000/#/molecules/form-group/select/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/form-group/select/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Form-group-textarea",
+    "url": "http://localhost:3000/#/molecules/form-group/textarea/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/form-group/textarea/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Form-group-upload",
+    "url": "http://localhost:3000/#/molecules/form-group/upload/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/form-group/upload/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Form-group",
+    "url": "http://localhost:3000/#/molecules/form-group/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/form-group/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Gallery",
+    "url": "http://localhost:3000/#/molecules/gallery/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/gallery/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Links-group-teaser",
+    "url": "http://localhost:3000/#/molecules/links-group/teaser/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/links-group/teaser/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Links-group",
+    "url": "http://localhost:3000/#/molecules/links-group/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/links-group/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "List-group-borderless",
+    "url": "http://localhost:3000/#/molecules/list-group/borderless/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/list-group/borderless/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "List-group",
+    "url": "http://localhost:3000/#/molecules/list-group/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/list-group/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Map",
+    "url": "http://localhost:3000/#/molecules/map/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/map/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Pagination-load-more",
+    "url": "http://localhost:3000/#/molecules/pagination/load-more/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/pagination/load-more/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Pagination",
+    "url": "http://localhost:3000/#/molecules/pagination/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/pagination/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Question",
+    "url": "http://localhost:3000/#/molecules/question/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/question/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Search",
+    "url": "http://localhost:3000/#/molecules/search/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/search/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Share-light",
+    "url": "http://localhost:3000/#/molecules/share/light/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/share/light/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Share",
+    "url": "http://localhost:3000/#/molecules/share/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/share/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Sidenotes",
+    "url": "http://localhost:3000/#/molecules/sidenotes/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/sidenotes/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Social-feed-facebook",
+    "url": "http://localhost:3000/#/molecules/social-feed/facebook/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/social-feed/facebook/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Social-feed-instagram",
+    "url": "http://localhost:3000/#/molecules/social-feed/instagram/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/social-feed/instagram/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Social-feed",
+    "url": "http://localhost:3000/#/molecules/social-feed/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/social-feed/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Sponsor",
+    "url": "http://localhost:3000/#/molecules/sponsor/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/sponsor/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Tables-boxed-sortable",
+    "url": "http://localhost:3000/#/molecules/tables/boxed-sortable/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/tables/boxed-sortable/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Tables-boxed",
+    "url": "http://localhost:3000/#/molecules/tables/boxed/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/tables/boxed/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Tables-sortable",
+    "url": "http://localhost:3000/#/molecules/tables/sortable/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/tables/sortable/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Tables",
+    "url": "http://localhost:3000/#/molecules/tables/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/tables/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Tabs-light",
+    "url": "http://localhost:3000/#/molecules/tabs/light/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/tabs/light/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Tabs-vertical",
+    "url": "http://localhost:3000/#/molecules/tabs/vertical/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/tabs/vertical/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Tabs",
+    "url": "http://localhost:3000/#/molecules/tabs/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/molecules/tabs/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Card-slider",
+    "url": "http://localhost:3000/#/organisms/card-slider/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/card-slider/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Contact-banner",
+    "url": "http://localhost:3000/#/organisms/contact/banner/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/contact/banner/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Contact",
+    "url": "http://localhost:3000/#/organisms/contact/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/contact/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Footer-buttons",
+    "url": "http://localhost:3000/#/organisms/footer/buttons/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/footer/buttons/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Footer-col",
+    "url": "http://localhost:3000/#/organisms/footer/col/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/footer/col/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Footer-dark",
+    "url": "http://localhost:3000/#/organisms/footer/dark/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/footer/dark/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Footer-faculties",
+    "url": "http://localhost:3000/#/organisms/footer/faculties/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/footer/faculties/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Footer-legal",
+    "url": "http://localhost:3000/#/organisms/footer/legal/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/footer/legal/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Footer-light-dark",
+    "url": "http://localhost:3000/#/organisms/footer/light-dark/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/footer/light-dark/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Footer-light",
+    "url": "http://localhost:3000/#/organisms/footer/light/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/footer/light/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Footer-socials",
+    "url": "http://localhost:3000/#/organisms/footer/socials/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/footer/socials/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Footer",
+    "url": "http://localhost:3000/#/organisms/footer/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/footer/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Form",
+    "url": "http://localhost:3000/#/organisms/form/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/form/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Fullwidth-teaser-horizontal",
+    "url": "http://localhost:3000/#/organisms/fullwidth-teaser/horizontal/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/fullwidth-teaser/horizontal/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Fullwidth-teaser",
+    "url": "http://localhost:3000/#/organisms/fullwidth-teaser/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/fullwidth-teaser/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Header-light",
+    "url": "http://localhost:3000/#/organisms/header/light/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/header/light/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Header",
+    "url": "http://localhost:3000/#/organisms/header/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/header/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Hero",
+    "url": "http://localhost:3000/#/organisms/hero/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/hero/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Introduction-gray",
+    "url": "http://localhost:3000/#/organisms/introduction/gray/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/introduction/gray/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Introduction",
+    "url": "http://localhost:3000/#/organisms/introduction/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/introduction/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Nav-aside",
+    "url": "http://localhost:3000/#/organisms/nav-aside/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/nav-aside/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Nav-main",
+    "url": "http://localhost:3000/#/organisms/nav-main/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/nav-main/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Newsletter-sign-up",
+    "url": "http://localhost:3000/#/organisms/newsletter-sign-up/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/newsletter-sign-up/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Restauration-schedules",
+    "url": "http://localhost:3000/#/organisms/restauration/schedules/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/restauration/schedules/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Restauration",
+    "url": "http://localhost:3000/#/organisms/restauration/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/restauration/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Social-feed-group",
+    "url": "http://localhost:3000/#/organisms/social-feed-group/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/organisms/social-feed-group/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Article-page",
+    "url": "http://localhost:3000/#/pages/article-page/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/pages/article-page/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Basic-page",
+    "url": "http://localhost:3000/#/pages/basic-page/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/pages/basic-page/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Homepage",
+    "url": "http://localhost:3000/#/pages/homepage/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/pages/homepage/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Lab",
+    "url": "http://localhost:3000/#/pages/lab/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/pages/lab/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "People-page",
+    "url": "http://localhost:3000/#/pages/people-page/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/pages/people-page/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }, {
+    "label": "Base",
+    "url": "http://localhost:3000/#/templates/base/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/templates/base/full",
+    "readyEvent": "backstopjs_ready",
+    "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
+  }],
   "paths": {
     "bitmaps_reference": "tests/backstop/references",
     "bitmaps_test": "tests/backstop/test",
