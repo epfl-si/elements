@@ -1,0 +1,24 @@
+<div class="news-listing">
+
+    {% for i in 1..4 %}
+      <a href="#" class="news link-trapeze-vertical">
+        <div class="news-container">
+          <div class="news-thumbnail">
+            {% include '@atoms/picture/picture.twig' with {'variant':'news-thumb'} %}
+          </div>
+          <div class="news-content">
+            <p class="h5">Physics: new e-books for the AIAA Education Series</p>
+            <p>
+              <time datetime="2018-03-26"><span class="sr-only">Published:</span>26.03.2018</time>
+              <span class="text-muted">— Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si enim ad populum me vocas, eum. Quid enim me prohiberet
+                Epicureum esse, si probarem, quae ille diceret?</span>
+            </p>
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+
+    <a href="#" class="news-listing-more">
+      Afficher plus d'actualités
+    </a>
+</div>
