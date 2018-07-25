@@ -44,6 +44,13 @@ With Docker, you can run:
 - `$ docker-compose up builder` same as `$ yarn build` but in containers
 - `$ docker-compose up server` same as `$ yarn start` but in containers
 
+## Publish
+
+1. From your local `dev` branch, `$ git flow release start x.x.x`
+2. Update `VERSION`, `CHANGELOG.md` and package.json `version`
+3. `$ git flow release finish -p 'x.x.x'`
+4. From your local `master` branch, `$ sh publish.sh x.x.x`
+
 ## Contribute
 
 The project is using the **Gitflow workflow**. It defines a strict branching model designed around the project release.
