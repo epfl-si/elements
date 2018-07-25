@@ -1,0 +1,108 @@
+@charset 'utf-8';
+
+.breadcrumb-container {
+  position: relative;
+  margin-bottom: $spacer * 1.6;
+
+  @include media-breakpoint-down(lg) {
+    height: $mm-breadcrumbs-height;
+    padding: 0;
+
+    &:before {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 3 * $spacer;
+      height: 100%;
+      z-index: 120;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    // create space out of container on the left for hamburger button
+    display: flex;
+    position: relative;
+    margin: 0 $spacer * 3;
+    margin-bottom: $spacer * 2;
+  }
+}
+
+.breadcrumb-wrapper {
+  @include media-breakpoint-up(xl) {
+    flex: 1 0 auto;
+    border-bottom: 1px solid gray('300');
+  }
+}
+
+.breadcrumb {
+  padding: 0;
+  margin-bottom: 0;
+
+  @include media-breakpoint-down(lg) {
+    height: $mm-breadcrumbs-height;
+    overflow-x: scroll;
+    white-space: nowrap;
+    margin: 0;
+    padding: (0.64 * $spacer) (0.8 * $spacer) 0;
+    z-index: 110;
+
+    .icon {
+      color: gray('300');
+    }
+
+    li:last-child {
+      padding-right: 5rem;
+    }
+  }
+}
+
+.breadcrumb-item {
+  display: inline-block;
+  position: relative;
+  font-size: $font-size-sm;
+  line-height: 1.5rem;
+
+  &:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    bottom: -0.1rem;
+    left: 0;
+    width: 0;
+    height: 1px;
+    padding: 0;
+    background: $red;
+    transition: width 0.3s ease;
+  }
+
+  &:not(.active):hover:before {
+    width: calc(100% - 0.6rem);
+  }
+
+  &:after {
+    content: '\203A';
+    padding-left: 0.3rem;
+    color: $gray-700;
+  }
+
+  a {
+    background-image: none !important;
+    color: $gray-700;
+    text-decoration: none;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  .icon { font-size: 0.86em; }
+
+  &:last-child:after {
+    content: none;
+  }
+
+  &.active {
+    color: $gray-700;
+  }
+}

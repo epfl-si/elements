@@ -1,0 +1,7 @@
+title: Nav main
+name: nav-main
+wrapper: nav-solid-layout
+notes: |
+  The navigation has two different modes: **solid** and **toggled**. To differentiate the CSS and js behavior, we use the classes `.nav-toggle-layout` and `.nav-solid-layout` on the `.main-container`.
+
+  Both navigations will behave the same way on mobile.

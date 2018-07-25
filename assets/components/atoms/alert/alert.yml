@@ -1,0 +1,8 @@
+title: Alert
+name: alert
+variants:
+  - name: types
+    title: Alert types
+    notes: |
+      The alert component supports all these color variants:<br>
+      `alert-success`, `alert-warning`, `alert-danger`, `alert-info`.
