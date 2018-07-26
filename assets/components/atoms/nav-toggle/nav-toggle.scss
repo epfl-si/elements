@@ -2,8 +2,9 @@
 
 .nav-toggle {
   display: none;
-  z-index: 101;
   position: relative;
+  top: 1px;
+  z-index: 101;
   margin-right: $grid-gutter-width / 3;
   padding: $spacer / 4 $spacer / 2;
   &:hover { cursor: pointer; }
@@ -17,5 +18,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &:after {
+      content: ' ';
+      position: absolute;
+      top: -1px;
+      bottom: -1px;
+      left: calc(100% + 1px);
+      width: $grid-gutter-width / 3;
+      z-index: 11;
+      background: $white;
+    }
+
+    .bg-gray-100 &:after { background: gray('100'); }
   }
 }
