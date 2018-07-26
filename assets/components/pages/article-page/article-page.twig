@@ -1,4 +1,4 @@
-{% extends "@pages/partials/layout.twig" %}
+{% extends "@templates/base/base.twig" %}
 
 {% block grid %}{% endblock %}
 
@@ -14,7 +14,7 @@
           <p class="lead">Des rats paraplégiques retrouvent l’usage de leurs pattes à la suite d’une rééducation neuroprosthétique qui provoque la création de nouvelles connexions cérébrales. Celles-ci transmettent les commandes motrices jusqu’aux centres d'exécution de la moelle épinière en aval de la blessure, permettant ainsi de marcher, nager et même monter des escaliers.</p>
         </div>
         <div class="col-lg-6">
-          {% include '@content/picture/picture.twig' %}
+          {% include '@atoms/picture/picture.twig' %}
         </div>
       </div>
     </div>
@@ -61,7 +61,7 @@
           {% for i in 0..1 %}
             <div class="row mb-3">
               <div class="col-4">
-                <a href="#">{% include '@content/picture/picture-news-thumb.twig' %}</a>
+                <a href="#">{% include '@atoms/picture/picture-news-thumb.twig' %}</a>
               </div>
               <div class="col-8">
                 5760 x 3840 px

@@ -1,0 +1,21 @@
+<footer class="footer" role="contentinfo">
+
+  <div class="footer-group footer-sitemap">
+      {% include "@organisms/footer/footer-col.twig" with { id: loop.index } %}
+  </div>
+
+  <div class="footer-group">
+    {% include "@organisms/footer/footer-faculties.twig" %}
+  </div>
+
+  <div class="footer-group footer-buttons">
+    {% include "@organisms/footer/footer-buttons.twig" %}
+  </div>
+
+  <div class="footer-group footer-socials">
+    {% include "@organisms/footer/footer-socials.twig" %}
+  </div>
+
+  {% include "@organisms/footer/footer-legal.twig" %}
+
+</footer>
