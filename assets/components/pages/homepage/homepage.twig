@@ -1,6 +1,6 @@
 {% set isHomepage = true %}
 
-{% extends "@pages/partials/layout.twig" %}
+{% extends "@templates/base/base.twig" %}
 
 {% macro card(card) %}
   <div class="card">
@@ -52,7 +52,7 @@
     <div class="card-body">
       <h3 class="card-title link-icon mb-0 h5">
         {{ card.title }}
-        {% include '@content/icon/icon.twig' with {'icon': 'icon-arrow-right'} %}
+        {% include '@atoms/icon/icon.twig' with {'icon': 'icon-arrow-right'} %}
       </h3>
     </div>
   </a>
@@ -67,7 +67,7 @@
 {% block main %}
   <main id="main" role="main" class="content">
     {# The intro fullwidth teaser #}
-    {% embed '@utilities/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
+    {% embed '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
       {% block title %}{{ homepage.highlight_1.title }}{% endblock %}
       {% block content %}{{ homepage.highlight_1.content }}{% endblock %}
       {% block img %}{{ homepage.highlight_1.image }}{% endblock %}
@@ -117,7 +117,7 @@
     </div>
 
     {# The middle fullwidth teaser #}
-    {% embed '@utilities/fullwidth-teaser/fullwidth-teaser.twig' %}
+    {% embed '@organisms/fullwidth-teaser/fullwidth-teaser.twig' %}
       {% block title %}{{ homepage.highlight_2.title }}{% endblock %}
       {% block content %}{{ homepage.highlight_2.content }}{% endblock %}
       {% block img %}{{ homepage.highlight_2.image }}{% endblock %}
@@ -126,39 +126,39 @@
     {# The Calendar section #}
     {# TODO add card-slider from Yann PR #}
     <div class="bg-gray-100 py-5 mb-3">
-      {% include '@utilities/datepicker-event/datepicker-event.twig' %}
+      {% include '@molecules/datepicker/datepicker-fancy.twig' %}
 
       <div class="overflow-hidden">
         <div class="container">
           <div class="card-slider-wrapper">
             <div class="card-slider">
               <div class="card-slider-cell">
-                {% include "@components/event/event.twig" %}
+                {% include "@content-types/event/event.twig" %}
               </div>
               <div class="card-slider-cell">
-                {% include "@components/event/event.twig" %}
+                {% include "@content-types/event/event.twig" %}
               </div>
               <div class="card-slider-cell">
-                {% include "@components/event/event.twig" %}
+                {% include "@content-types/event/event.twig" %}
               </div>
               <div class="card-slider-cell">
-                {% include "@components/event/event.twig" %}
+                {% include "@content-types/event/event.twig" %}
               </div>
               <div class="card-slider-cell">
-                {% include "@components/event/event.twig" %}
+                {% include "@content-types/event/event.twig" %}
               </div>
               <div class="card-slider-cell">
-                {% include "@components/event/event.twig" %}
+                {% include "@content-types/event/event.twig" %}
               </div>
             </div>
 
             <div class="card-slider-footer">
               <div>
                 <button role="button" id="card-slider-prev" class="card-slider-btn link-trapeze-horizontal disabled">
-                  {% include "@content/icon/icon.twig" with { icon: 'icon-chevron-left' } %}
+                  {% include "@atoms/icon/icon.twig" with { icon: 'icon-chevron-left' } %}
                 </button>
                 <button role="button" id="card-slider-next" class="card-slider-btn link-trapeze-horizontal">
-                  {% include "@content/icon/icon.twig" with { icon: 'icon-chevron-right' } %}
+                  {% include "@atoms/icon/icon.twig" with { icon: 'icon-chevron-right' } %}
                 </button>
               </div>
               <div>
@@ -171,7 +171,7 @@
     </div>
 
     {# The second middle fullwidth teaser #}
-    {% embed '@utilities/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
+    {% embed '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
       {% block title %}{{ homepage.highlight_3.title }}{% endblock %}
       {% block content %}{{ homepage.highlight_3.content }}{% endblock %}
       {% block img %}{{ homepage.highlight_3.image }}{% endblock %}
@@ -197,18 +197,18 @@
     </div>
 
     {# The third middle fullwidth teaser #}
-    {% embed '@utilities/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
+    {% embed '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
       {% block title %}{{ homepage.highlight_4.title }}{% endblock %}
       {% block content %}{{ homepage.highlight_4.content }}{% endblock %}
       {% block img %}{{ homepage.highlight_4.image }}{% endblock %}
     {% endembed %}
 
     <div class="container-fluid p-0">
-      {% include '@components/question/question.twig' %}
+      {% include '@molecules/question/question.twig' %}
     </div>
 
     {# The last fullwidth teaser #}
-    {% embed '@utilities/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
+    {% embed '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
       {% block title %}{{ homepage.highlight_5.title }}{% endblock %}
       {% block content %}{{ homepage.highlight_5.content }}{% endblock %}
       {% block img %}{{ homepage.highlight_5.image }}{% endblock %}
@@ -217,7 +217,7 @@
     <div class="bg-gray-100 py-5">
       <div class="container">
         <h2 class="h3">Vivez au rythme de l’école, via les réseaux sociaux</h2>
-        {% include '@components/social/social.twig' %}
+        {% include '@organisms/social-feed-group/social-feed-group.twig' %}
         <p class="text-center">
           <a href="#">Liste des comptes officiels</a>
         </p>
@@ -228,7 +228,7 @@
 
 {% block footer_container %}
   <div class="container py-5">
-    {% include '@components/footer/footer.twig' %}
+    {% include '@organisms/footer/footer.twig' %}
   </div>
 {% endblock %}
 

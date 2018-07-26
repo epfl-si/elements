@@ -1,7 +1,0 @@
-title: Nav
-name: nav
-wrapper: desktop-menu-open
-notes: |
-  The navigation has two different modes: **solid** and **toggled**. To differentiate the CSS and js behavior, we use the classes `.nav-toggle-layout` and `.nav-solid-layout` on the `.main-container`.
-
-  Both navigations will behave the same way on mobile.

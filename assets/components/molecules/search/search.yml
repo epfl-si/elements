@@ -1,0 +1,4 @@
+title: Search
+name: search
+notes: |
+  Currently only used on mobile breakpoints inside of the [header](#/organisms/header) component.

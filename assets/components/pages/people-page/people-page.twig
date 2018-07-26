@@ -1,4 +1,4 @@
-{% extends "@pages/partials/layout.twig" %}
+{% extends "@templates/base/base.twig" %}
 
 {% block grid %}{% endblock %}
 
@@ -8,7 +8,7 @@
     <div class="d-flex flex-wrap justify-content-between align-items-baseline mb-5">
       <h1 class="mr-3">Xavier Alexandre</h1>
       <a href="#" class="btn btn-sm btn-secondary">
-        {% include '@content/icon/icon.twig' %}
+        {% include '@atoms/icon/icon.twig' %}
         Edit profile <span class="sr-only">of Xavier Alexandre</span>
       </a>
     </div>
@@ -22,7 +22,7 @@
             {# Person avatar and buttons #}
             <div class="row">
               <div class="col-md-6">
-                {% include '@content/picture/picture-avatar.twig' %}
+                {% include '@atoms/picture/picture-avatar.twig' %}
               </div>
               <div class="col-md-6">
                 <p>Habilitation Dr. Ing</p>
@@ -35,7 +35,7 @@
 
           <div class="col-md-6">
             {# Collapsible info #}
-            {% include '@components/text/text.twig' %}
+            {% include '@molecules/collapse-group/collapse-group.twig' %}
 
             <div>
               <p>
@@ -122,7 +122,7 @@
           <div class="text-center">
             <a class="collapsed text-muted" data-toggle="collapse" aria-hidden="true" href="#biography-text">
               Show full biography
-              {% include '@content/icon/icon.twig' with {icon: 'icon-triangle'} %}
+              {% include '@atoms/icon/icon.twig' with {icon: 'icon-triangle'} %}
             </a>
           </div>
         </div>
@@ -137,7 +137,7 @@
 
       {# Publications #}
       <h2 id="publications" class="mr-3 mb-4">Publications<span class="sr-only">of Xavier Alexandre</span></h2>
-      {% include '@utilities/list-group/list-group-borderless.twig' %}
+      {% include '@molecules/list-group/list-group-borderless.twig' %}
 
       {# Teaching and PHD area #}
       <h2 id="teaching-and-phd">Teaching & PHD<span class="sr-only">of Xavier Alexandre</span></h2>
@@ -174,5 +174,5 @@
 {% endblock %}
 
 {% block footer %}
-  {% include '@components/footer/footer-light.twig' %}
+  {% include '@organisms/footer/footer-light.twig' %}
 {% endblock %}
