@@ -19,11 +19,7 @@
 {% import _self as macros %}
 
 {# The intro fullwidth teaser #}
-{% embed '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
-  {% block title %}{{ homepage.highlight_1.title }}{% endblock %}
-  {% block content %}{{ homepage.highlight_1.content }}{% endblock %}
-  {% block img %}{{ homepage.highlight_1.image }}{% endblock %}
-{% endembed %}
+{% include '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
 
 {# First teasers #}
 <div class="container pb-5 offset-xl-top">
