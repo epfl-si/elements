@@ -1,22 +1,39 @@
 @charset 'utf-8';
 
 .breadcrumb-container {
+  display: flex;
   position: relative;
   margin-bottom: $spacer * 1.6;
 
-  @include media-breakpoint-down(lg) {
-    height: $mm-breadcrumbs-height;
-    padding: 0;
+  &:before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $spacer * 3;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, $white 80%, $white 100%);
+    z-index: 120;
+  }
 
-    &:before {
+  @include media-breakpoint-up(xl) {
+    &:after {
       content: ' ';
       position: absolute;
-      top: 0;
-      right: 0;
-      width: 3 * $spacer;
-      height: 100%;
-      z-index: 120;
+      top: calc(100% - #{$spacer});
+      left: 0;
+      width: 100%;
+      height: $spacer;
+      z-index: 10;
+      background: $white;
+      border-top: 1px solid gray('300');
     }
+
+    .bg-gray-100 &:after { background: gray('100'); }
+  }
+
+  @include media-breakpoint-down(lg) {
+    height: $mm-breadcrumbs-height;
   }
 
   @include media-breakpoint-up(xl) {
@@ -29,9 +46,15 @@
 }
 
 .breadcrumb-wrapper {
-  @include media-breakpoint-up(xl) {
-    flex: 1 0 auto;
-    border-bottom: 1px solid gray('300');
+  max-width: 100%;
+  border-bottom: 1px solid gray('300');
+
+  @include media-breakpoint-up(lg) {
+    overflow-x: auto;
+    overflow-y: visible;
+    white-space: nowrap;
+    user-select: none;
+    cursor: grabbing;
   }
 }
 
@@ -39,12 +62,19 @@
   padding: 0;
   margin-bottom: 0;
 
+  @include media-breakpoint-up(lg) {
+    max-width: 100%;
+    white-space: nowrap;
+    padding: 0.1rem 0;
+    .breadcrumb-item:last-child { padding-right: $spacer * 3; }
+  }
+
   @include media-breakpoint-down(lg) {
     height: $mm-breadcrumbs-height;
     overflow-x: scroll;
     white-space: nowrap;
     margin: 0;
-    padding: (0.64 * $spacer) (0.8 * $spacer) 0;
+    padding: $spacer * 0.64 $spacer* 0.8;
     z-index: 110;
 
     .icon {
@@ -76,7 +106,7 @@
     transition: width 0.3s ease;
   }
 
-  &:not(.active):hover:before {
+  &:not(.active):not(.breadcrumb-tags-wrapper):hover:before {
     width: calc(100% - 0.6rem);
   }
 
