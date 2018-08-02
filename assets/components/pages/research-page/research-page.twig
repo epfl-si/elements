@@ -38,7 +38,7 @@
 </div>
 
 <div class="container">
-  <div class="mt-5 mb-6" id="tour-intro">
+  <div class="mb-4 mt-6">
     <p>
       L'EPFL s'engage dans des projets novateurs alliant recherche fondamentale et recherche appliquée. Cette orientation permet de transformer l'excellence scientifique en compétitivité économique, en emplois et en qualité de vie, grâce au transfert des technologies.</p>
       <p>L'Ecole dispose d'une organisation unique pour stimuler les recherches transdisciplinaires et favoriser les partenariats avec d'autres institutions.</p>
@@ -47,19 +47,18 @@
   </div>
 </div>
 
-<div class="container">
-  <h2 class="mb-4 mt-6">Explore</h2>
-  <div class="row">
-    {% for i in 1..3 %}
-      <div class="col-md-4">
-        {% include '@content-types/basic-page/basic-page.twig' %}
-      </div>
-    {% endfor %}
+<div class="bg-gray-100 py-5 mb-5 mt-6">
+  <div class="container">
+    <h2 class="mb-4 mt-6">Explore</h2>
+    <div class="row">
+      {% for i in 1..3 %}
+        <div class="col-md-4">
+          {% include '@content-types/basic-page/basic-page.twig' %}
+        </div>
+      {% endfor %}
+    </div>
+    </p>
   </div>
-  </p>
-</div>
-
-<div class="bg-gray-100 py-5 mb-5">
   <div class="container">
     <h2 class="mb-4 mt-6">Engage</h2>
     <div class="row">
@@ -75,12 +74,14 @@
 
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-4" id="tour-team">
-      {% include '@organisms/contact/contact.twig' %}
-    </div>
-    <div class="col-md-8" id="tour-sponsors">
-      {% include '@content-types/basic-page/basic-page.twig' %}
+  <div class="mb-4 mt-6">
+    <div class="row">
+      <div class="col-md-4">
+        {% include '@organisms/contact/contact.twig' %}
+      </div>
+      <div class="col-md-8">
+        {% include '@content-types/basic-page/basic-page.twig' %}
+      </div>
     </div>
   </div>
 </div>
