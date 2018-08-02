@@ -1,0 +1,112 @@
+{% set isHomepage = true %}
+
+{% extends "@templates/base/base.twig" %}
+
+{% block grid %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="hero">
+    <div class="hero-content-container">
+      <h1 class="hero-title">Association name</h1>
+    </div>
+    <div class="hero-img">
+      <img src="images/gallery/gallery_01.jpg" alt="IMAGE DESCRIPTION HERE" class="img-fluid">
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="container-grid mt-5 mb-6">
+    <p>
+      This is an introduction text about the association. It's always interesting to know in few lines what is all about.
+    </p>
+  </div>
+</div>
+
+<div class="bg-gray-100 py-5 mb-3">
+  <div class="overflow-hidden">
+    <div class="container">
+      <h2 class="mb-4 mt-4">The next events</h2>
+      <div class="card-slider-wrapper">
+        <div class="card-slider">
+          <div class="card-slider-cell">
+            {% include "@content-types/event/event.twig" %}
+          </div>
+          <div class="card-slider-cell">
+            {% include "@content-types/event/event.twig" %}
+          </div>
+          <div class="card-slider-cell">
+            {% include "@content-types/event/event.twig" %}
+          </div>
+          <div class="card-slider-cell">
+            {% include "@content-types/event/event.twig" %}
+          </div>
+          <div class="card-slider-cell">
+            {% include "@content-types/event/event.twig" %}
+          </div>
+          <div class="card-slider-cell">
+            {% include "@content-types/event/event.twig" %}
+          </div>
+        </div>
+
+        <div class="card-slider-footer">
+          <div>
+            <button role="button" id="card-slider-prev" class="card-slider-btn link-trapeze-horizontal disabled">
+              {% include "@atoms/icon/icon.twig" with { icon: 'icon-chevron-left' } %}
+            </button>
+            <button role="button" id="card-slider-next" class="card-slider-btn link-trapeze-horizontal">
+              {% include "@atoms/icon/icon.twig" with { icon: 'icon-chevron-right' } %}
+            </button>
+          </div>
+          <div>
+            <a href="#">Voir l’agenda complet des événements</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2 class="mb-4 mt-6">The last news</h2>
+  <div class="row">
+    {% for i in 1..2 %}
+      <div class="col-md-6">
+        {% include '@content-types/news/news-basic-teaser.twig' %}
+      </div>
+    {% endfor %}
+  </div>
+  <p class="text-center">
+    <a class="link-pretty" href="#">See all news</a>
+  </p>
+</div>
+
+<div class="bg-gray-100 py-5 mb-4 mt-6">
+  <div class="container">
+    <div class="mb-4 mt-4">
+      <div class="row">
+        <div class="col-md-6" id="tour-team">
+          {% include '@content-types/basic-page/basic-page.twig' %}
+        </div>
+        <div class="col-md-6" id="tour-sponsors">
+          <h3 class="mb-4">Our sponsors</h3>
+          {% include '@molecules/sponsor/sponsor.twig' %}
+          {% include '@molecules/sponsor/sponsor.twig' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    {% include '@organisms/contact/contact-banner.twig' %}
+  </div>
+  </p>
+</div>
+
+
+{% endblock %}
+
