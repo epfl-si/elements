@@ -19,17 +19,6 @@
     justify-content: center;
     align-items: center;
 
-    &:after {
-      content: ' ';
-      position: absolute;
-      top: -1px;
-      bottom: -1px;
-      left: calc(100% + 1px);
-      width: $grid-gutter-width / 3;
-      z-index: 11;
-      background: $white;
-    }
-
     .bg-gray-100 &:after { background: gray('100'); }
   }
 }
