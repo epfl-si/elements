@@ -16,22 +16,6 @@
     z-index: 120;
   }
 
-  @include media-breakpoint-up(xl) {
-    &:after {
-      content: ' ';
-      position: absolute;
-      top: calc(100% - #{$spacer});
-      left: 0;
-      width: 100%;
-      height: $spacer;
-      z-index: 10;
-      background: $white;
-      border-top: 1px solid gray('300');
-    }
-
-    .bg-gray-100 &:after { background: gray('100'); }
-  }
-
   @include media-breakpoint-down(lg) {
     height: $mm-breadcrumbs-height;
   }
