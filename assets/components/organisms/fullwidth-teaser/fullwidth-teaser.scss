@@ -4,7 +4,6 @@
   position: relative;
   width: 100%;
   min-height: 30rem;
-  padding: 0 ($grid-gutter-width / 2);
   margin-bottom: $spacer * 2;
   background: $gray-100;
 
@@ -208,7 +207,7 @@
   @include media-breakpoint-up(xl) {
     .fullwidth-teaser-text {
       left: 10%;
-      width: 85%;
+      width: 80%;
       justify-content: flex-end;
       padding-bottom: 8rem;
     }
@@ -224,7 +223,7 @@
 
     .fullwidth-teaser-title {
       width: auto;
-      max-width: 60%;
+      max-width: 70%;
       overflow: visible;
       white-space: normal;
       text-overflow: initial;
@@ -237,11 +236,18 @@
 
     .fullwidth-teaser-content {
       p {
-        width: 67%;
+        width: 89%;
         margin: 0 11% 0 0;
         padding-right: 5.3rem;
         max-width: none;
       }
+    }
+  }
+
+    @include media-breakpoint-up(xxl) {
+    .fullwidth-teaser-text {
+      left: 20%;
+      width: 60%;
     }
   }
 }

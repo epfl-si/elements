@@ -11,10 +11,12 @@ $input-group-inner-space: 8px;
 
 .newsletter-signup-wrapper {
   @include media-breakpoint-down(xs) {
+    overflow: hidden;
+
     .form-control,
     .input-group-append,
     .btn {
-      flex: 1 1 100%;
+      flex: 0 1 100%;
       width: 100%;
     }
 

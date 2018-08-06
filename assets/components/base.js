@@ -2,6 +2,7 @@
 
 import objectFitImages from 'object-fit-images';
 import upload from './atoms/upload/upload';
+import breadcrumb from './molecules/breadcrumb/breadcrumb';
 import datepicker from './molecules/datepicker/datepicker';
 import datepickerEvent from './molecules/datepicker/datepicker-fancy';
 import popover from './atoms/popover/popover';
@@ -31,6 +32,7 @@ const init = () => {
   nav();
   cardSlider();
   drawer();
+  breadcrumb();
 
   guide();
 

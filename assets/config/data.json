@@ -1,6 +1,8 @@
 {
   "icons":[
+    "arrow-left",
     "arrow-right",
+    "browse",
     "chevron-last-left",
     "chevron-last-right",
     "chevron-left",
@@ -8,10 +10,14 @@
     "elements",
     "facebook",
     "googleplus",
+    "home",
+    "info",
     "instagram",
     "lock",
     "mail-plane",
     "triangle",
+    "search",
+    "search-bold",
     "twitter",
     "upload",
     "whatsapp"
