@@ -1,9 +1,9 @@
 {% for col in footer %}
   <div class="footer-sitemap-col">
-    <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-{{id ?: 1}}" aria-expanded="false" aria-controls="collapse-{{id ?: 1}}">
+    <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-footer-{{loop.index ?: 1}}" aria-expanded="false" aria-controls="collapse-footer-{{loop.index ?: 1}}">
       <strong>{{col.heading}}</strong>
     </button>
-    <div class="collapse collapse-item" id="collapse-{{id ?: 1}}">
+    <div class="collapse collapse-item" id="collapse-footer-{{loop.index ?: 1}}">
       <ul class="footer-links">
         {% for item in col.items %}
           <li>
