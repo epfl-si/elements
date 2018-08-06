@@ -1,0 +1,13 @@
+@charset 'utf-8';
+
+/*
+ * Custom css for Wordpress theme only 
+*/
+
+body.epfl-wp {
+  .entry-content {
+    > p > img {
+      max-width: 100%;
+    }
+  }
+}
