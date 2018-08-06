@@ -12,6 +12,14 @@
   .icon {
     margin-right: 0.2rem;
     font-size: 0.7rem;
+
+    &:first-child {
+      display: block;
+    }
+
+    &:last-child {
+      display: none;
+    }
   }
 
   @include media-breakpoint-up(xl) {
@@ -20,5 +28,15 @@
     align-items: center;
 
     .bg-gray-100 &:after { background: gray('100'); }
+  }
+}
+
+.desktop-menu-open .nav-toggle {
+  .icon:first-child {
+    display: none;
+  }
+
+  .icon:last-child {
+    display: block;
   }
 }
