@@ -1,0 +1,64 @@
+@charset 'utf-8';
+
+.card-deck {
+  position: relative;
+
+  @include media-breakpoint-up(lg) {
+    &.card-deck-line {
+        
+      &:before {
+        content: ' ';
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        width: 30%;
+        z-index: 0;
+        border-bottom: 1px solid $gray-100;
+      }
+
+      &:after {
+        content: ' ';
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        width: 30%;
+        z-index: 0;
+        border-bottom: 1px solid $gray-100;
+      }
+
+    }
+
+    > .card {
+      z-index: 1;
+
+      // only one card is present
+      &:first-child:last-child {
+        flex: 0 0 33%;
+        margin: auto;
+        border-left: $spacer solid white;
+        border-right: $spacer solid white;
+      }
+
+      // two cards are present
+      &:nth-last-child(n + 2) {
+        flex: 0 0 33%;
+        margin-left: auto;
+        border-left: $spacer solid white;
+      }
+    
+      &:nth-last-child(n + 2) ~ * {
+        flex: 0 0 33%;
+        margin-right: auto;
+        border-right: $spacer solid white;
+      }
+
+      // three or more cards are present
+      &:nth-last-child(n + 3),
+      &:nth-last-child(n + 3) ~ * {
+        flex: 1 1 0%;
+        margin: none;
+        border: none;
+      }
+    }
+  }
+}
