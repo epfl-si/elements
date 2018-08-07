@@ -33,9 +33,7 @@
 
     > .card {
       z-index: 1;
-      margin-left: $spacer * 0.5;
-      margin-right: $spacer * 0.5;
-      margin-bottom: $spacer;
+      margin: $spacer * 0.5;
 
       // only one card is present
       &:first-child:last-child {
@@ -59,7 +57,7 @@
       &:nth-last-child(n + 3),
       &:nth-last-child(n + 3) ~ * {
         flex: 1 1 30%;
-        margin: 0 ($spacer * 0.5);
+        margin: $spacer * 0.5;
       }
     }
 
