@@ -2,43 +2,22 @@
 
 {% extends "@templates/base/base.twig" %}
 
-{% block grid %}{% endblock %}
-
 {% block content %}
 
-<div class="hero">
-  <div class="hero-content-container">
-    <h1 class="hero-title">Event name</h1>
-  </div>
-  <div class="hero-img">
-    <img src="images/gallery/gallery_01.jpg" alt="IMAGE DESCRIPTION HERE" class="img-fluid">
-  </div>
+<div class="container-full">
+  {% include '@organisms/hero/hero.twig' with {img: 'images/gallery/gallery_01.jpg', title: 'Event name', content: false} %}
 </div>
 
-<div class="container">
-  <div class="container-grid mt-5 mb-6">
-    <p>
-      This is an introduction text about the event. It's always interesting to know in few lines what is all about.
-    </p>
-  </div>
+<div class="container-full container">
+  {% include '@organisms/introduction/introduction.twig' with {title: 'Introduction', content: "This is an introduction text about the association. It's always interesting to know in few lines what is all about."} %}
 </div>
 
-<div class="container">
-  <h2 class="mb-4 mt-6">The last news</h2>
-  <div class="row">
-    {% for i in 1..2 %}
-      <div class="col-md-6">
-        {% include '@content-types/news/news-basic-teaser.twig' %}
-      </div>
-    {% endfor %}
-  </div>
-  <p class="text-center">
-    <a class="link-pretty" href="#">See all news</a>
-  </p>
+<div class="container-full container">
+  {% include '@content-types/news/news-latest-two.twig' %}
 </div>
 
-<div class="container">
-  <h2 class="mb-4 mt-6">Useful informations</h2>
+<div class="container-full container mt-5">
+  <h2 class="mb-4">Useful informations</h2>
   <div class="row">
     {% for i in 1..2 %}
       <div class="col-md-6">
@@ -46,19 +25,17 @@
       </div>
     {% endfor %}
   </div>
-  </p>
 </div>
 
-<div class="container">
-  <h2 class="mb-4 mt-6">Program</h2>
-  <div class="row">
-    {% include '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
+<div class="container-full mt-5">
+  <div class="container">
+    <h2 class="mb-4">Program</h2>
   </div>
-  </p>
+  {% include '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
 </div>
 
-<div class="container">
-  <h2 class="mb-4 mt-6">Our sponsors</h2>
+<div class="container-full container mt-5">
+  <h2 class="mb-4">Our sponsors</h2>
   <div class="row">
     {% for i in 1..3 %}
       <div class="col-md-4">
@@ -66,16 +43,11 @@
       </div>
     {% endfor %}
   </div>
-  </p>
 </div>
 
-<div class="container">
-  <div class="row">
-    {% include '@organisms/contact/contact-banner.twig' %}
-  </div>
-  </p>
+<div class="container container-full mt-5">
+  {% include '@organisms/contact/contact-banner.twig' %}  
 </div>
-
 
 {% endblock %}
 
