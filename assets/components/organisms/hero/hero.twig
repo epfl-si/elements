@@ -1,12 +1,16 @@
+{% if title is not defined %}{% set title = 'Recherche' %}{% endif %}
+{% if content is not defined %}{% set content = '<p>Une organisation unique nous permet de figurer systématiquement dans le haut du classement mondial des universités pour les programmes de recherche.</p>
+      <p>Découvrez tout ce qui fait de l’EPFL le creuset idéal des meilleurs projets de recherche en Europe et à l’international.</p>' %}{% endif %}
 <div class="hero">
   <div class="hero-content-container">
-    <h1 class="hero-title">Recherche</h1>
-    <div class="hero-content">
-      <p>Une organisation unique nous permet de figurer systématiquement dans le haut du classement mondial des universités pour les programmes de recherche.</p>
-      <p>Découvrez tout ce qui fait de l’EPFL le creuset idéal des meilleurs projets de recherche en Europe et à l’international.</p>
-    </div>
+    <h1 class="hero-title">{{title}}</h1>
+    {% if content %}
+      <div class="hero-content">
+        {{content}}
+      </div>
+    {% endif %}
   </div>
   <div class="hero-img">
-    {% include '@atoms/picture/picture-cover.twig' %}
+    {% include '@atoms/picture/picture-cover.twig' with { img: img } %}
   </div>
 </div>
