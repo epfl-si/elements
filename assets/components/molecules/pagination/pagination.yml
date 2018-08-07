@@ -7,3 +7,5 @@ variants:
       The Load more variant.
     background: ''
     wrapper: ''
+  - name: center
+    title: Centered pagination
