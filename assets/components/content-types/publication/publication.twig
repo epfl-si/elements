@@ -23,3 +23,9 @@
     </div>
   {% endfor %}
 </div>
+{% if bottomlink is not defined %}{% set bottomlink = true %}{% endif %}
+{% if bottomlink %}
+<p class="text-center">
+  <a class="link-pretty" href="#">See all publications</a>
+</p>
+{% endif %}
