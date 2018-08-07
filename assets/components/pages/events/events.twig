@@ -1,0 +1,40 @@
+{% set isHomepage = true %}
+
+{% extends "@templates/base/base.twig" %}
+
+{% block header %}
+  {% include '@organisms/header/header-light.twig' %}
+{% endblock %}
+
+{% block content %}
+<h1>Événements</h1>
+<div class="container-full container mt-4">
+  <div class="row">
+    <div class="col-md-4">
+      <div>
+        {% include '@molecules/datepicker/datepicker.twig' %}
+      </div>
+      <div class="mt-4">
+        {% include '@molecules/filters/filters.twig' %}
+      </div>
+    </div>
+    <div class="col-md-8">
+        {% for i in 1..8 %}
+            {% include '@content-types/event/event.twig' %}
+        {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer_container %}
+  <div class="bg-gray-100 pt-5">
+    <div class="container">
+      {% block footer %}
+        {% include '@organisms/footer/footer-light.twig' %}
+      {% endblock %}
+    </div>
+  </div>
+  {% endblock %}
+  </div>
+</div>
