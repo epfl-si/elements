@@ -7,9 +7,16 @@
 {% endblock %}
 
 {% block content %}
-<h1>Actualités</h1>
-<div class="container-full container mt-4">
+
+<div class="container-full container">
+  <h1>Actualités</h1>
+</div>
+
+<div class="container-full mt-4">
   {% include '@organisms/headlines/headlines.twig' with {bottomlink: false} %}
+</div>
+
+<div class="container-full container">
   <div class="row">
     <div class="col-md-4">
       {% include '@molecules/filters/filters.twig' %}
