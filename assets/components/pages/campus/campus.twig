@@ -1,20 +1,26 @@
 {% extends "@templates/base/base.twig" %}
 
-{% block grid %}{% endblock %}
-
 {% block content %}
 
-<div class="container">
+<div class="container-full">
+  <div class="hero">
+    <div class="hero-content-container">
+      <h1 class="hero-title">Campus</h1>
+    </div>
+    <div class="hero-img">
+      <img src="images/gallery/gallery_01.jpg" alt="IMAGE DESCRIPTION HERE" class="img-fluid">
+    </div>
+  </div>
+</div>
+
+
+<div class="container-full container mt-5">
   <div class="row">
-    <div class="col-md-8">
-      <div class="hero">
-        <div class="hero-content-container">
-          <h1 class="hero-title">Campus</h1>
-        </div>
-        <div class="hero-img">
-          <img src="images/gallery/gallery_01.jpg" alt="IMAGE DESCRIPTION HERE" class="img-fluid">
-        </div>
-      </div>
+    <div class="col-md-4">
+      {% include '@content-types/basic-page/basic-page.twig' %}
+    </div>
+    <div class="col-md-4">
+      {% include '@content-types/basic-page/basic-page.twig' %}
     </div>
     <div class="col-md-4">
       {% include '@molecules/links-group/links-group.twig' %}
@@ -23,82 +29,18 @@
 </div>
 
 
-<div class="container">
-  <div class="mb-4 mt-6">
-    <div class="row">
-      <div class="col-md-4">
-        {% include '@content-types/basic-page/basic-page.twig' %}
-      </div>
-      <div class="col-md-4">
-        {% include '@content-types/basic-page/basic-page.twig' %}
-      </div>
-      <div class="col-md-4">
-        composant "se rendre à l'EPFL"
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="bg-gray-100 py-5 mb-3">
+<div class="container-full bg-gray-100 py-5 mt-5">
   <div class="overflow-hidden">
     <div class="container">
       <h2 class="mb-4 mt-4">The next events</h2>
-      <div class="card-slider-wrapper">
-        <div class="card-slider">
-          <div class="card-slider-cell">
-            {% include "@content-types/event/event.twig" %}
-          </div>
-          <div class="card-slider-cell">
-            {% include "@content-types/event/event.twig" %}
-          </div>
-          <div class="card-slider-cell">
-            {% include "@content-types/event/event.twig" %}
-          </div>
-          <div class="card-slider-cell">
-            {% include "@content-types/event/event.twig" %}
-          </div>
-          <div class="card-slider-cell">
-            {% include "@content-types/event/event.twig" %}
-          </div>
-          <div class="card-slider-cell">
-            {% include "@content-types/event/event.twig" %}
-          </div>
-        </div>
-
-        <div class="card-slider-footer">
-          <div>
-            <button role="button" id="card-slider-prev" class="card-slider-btn link-trapeze-horizontal disabled">
-              {% include "@atoms/icon/icon.twig" with { icon: 'icon-chevron-left' } %}
-            </button>
-            <button role="button" id="card-slider-next" class="card-slider-btn link-trapeze-horizontal">
-              {% include "@atoms/icon/icon.twig" with { icon: 'icon-chevron-right' } %}
-            </button>
-          </div>
-          <div>
-            <a href="#">See all events</a>
-          </div>
-        </div>
-      </div>
+      {% include '@organisms/card-slider/card-slider.twig' %}
     </div>
   </div>
 </div>
 
-<div class="container">
-  <h2 class="mb-4 mt-6">The last news</h2>
-  <div class="row">
-    {% for i in 1..2 %}
-      <div class="col-md-6">
-        {% include '@content-types/news/news-basic-teaser.twig' %}
-      </div>
-    {% endfor %}
-  </div>
-  <p class="text-center">
-    <a class="link-pretty" href="#">See all news</a>
-  </p>
-</div>
+{% include '@content-types/news/news-latest-two.twig' %}
 
-<div class="bg-gray-100 py-5 mb-5">
+<div class="container-full bg-gray-100 py-5 mt-5">
   <div class="container">
     <h2 class="mb-4">Lausanne</h2>
     <div class="row">
@@ -111,11 +53,11 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container-full container">
   <h2 class="mb-4 mt-6">Composant "chiffre clés"</h2>
 </div>
 
-<div class="bg-gray-100 py-5 mb-5">
+<div class="container-full bg-gray-100 py-5 mt-5">
   <div class="container">
     <div class="row">
       <div class="col-md-6">
@@ -128,7 +70,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container-full container mt-5">
   {% include '@organisms/contact/contact-banner.twig' %}
 </div>
 
