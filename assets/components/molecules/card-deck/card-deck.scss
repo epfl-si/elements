@@ -4,6 +4,7 @@
   position: relative;
   margin-left: $spacer * -0.5;
   margin-right: $spacer * -0.5;
+  flex-wrap: wrap;
 
   @include media-breakpoint-up(lg) {
     &.card-deck-line {
@@ -32,13 +33,13 @@
 
     > .card {
       z-index: 1;
-      margin-left: $spacer * 0.5;
-      margin-right: $spacer * 0.5;
+      margin: $spacer * 0.5;
 
       // only one card is present
       &:first-child:last-child {
         flex: 0 0 33%;
-        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       // two cards are present
@@ -55,8 +56,8 @@
       // three or more cards are present
       &:nth-last-child(n + 3),
       &:nth-last-child(n + 3) ~ * {
-        flex: 1 1 0%;
-        margin: 0 ($spacer * 0.5);
+        flex: 1 1 30%;
+        margin: $spacer * 0.5;
       }
     }
 
@@ -157,7 +158,7 @@
       // three or more cards are present
       &:nth-last-child(n + 3),
       &:nth-last-child(n + 3) ~ * {
-        flex: 1 1 0%;
+        flex: 1 1 30%;
         border: none;
       }
     }
