@@ -21,7 +21,8 @@
       "node_modules/pickadate/lib/themes/classic.date.css",
       "node_modules/flickity/dist/flickity.css",
       "node_modules/flickity-fullscreen/fullscreen.css",
-      "node_modules/intro.js/introjs.css"
+      "node_modules/intro.js/introjs.css",
+      "node_modules/tablesaw/dist/tablesaw.css"
     ],
     "js": [
       "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
