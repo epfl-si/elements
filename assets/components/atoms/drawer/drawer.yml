@@ -1,4 +1,5 @@
 title: Drawer
 name: drawer
 notes: |
-  Only used in the [Header light variant](#/organisms/header). Provide a link to the main website.
+  The drawer component serves one purpose only. It enables people to go to the EPFL main site. This component should appear in all EPFL related websites, as part of their header. It is part of the “[Header light](#/organisms/header)” component.
+  

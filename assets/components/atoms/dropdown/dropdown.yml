@@ -1,2 +1,6 @@
 name: dropdown
 title: Dropdown
+notes: |
+  The dropdown component triggers an action. Use it when people need to perform an action in the page. Do not confuse this component with the [select component](#/atoms/select).
+
+  Remember to keep the list of items useful. Too many items confuse people in their choice. If you have few items (2 to 3), use other components, such as links or buttons.
