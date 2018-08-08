@@ -13,7 +13,6 @@
 </div>
 {% endblock %}
 
-
 {% block content %}
 <div class="container-full" id="tour-hero">
   {% include '@organisms/hero/hero.twig' with {img: 'images/gallery/gallery_01.jpg', title: 'Laboratory Full Name LFN', content: false} %}
@@ -33,14 +32,14 @@
   </div>
 </div>
 
-<div class="container-full container">
+<div class="container">
   <div id="tour-publications">
     <h2 class="mb-4 mt-6">Our publications</h2>
     {% include '@content-types/publication/publication.twig' with { bottomlink: true } %}
   </div>
 </div>
 
-<div class="container-full container">
+<div class="container">
   <div id="tour-news">
     {% include '@content-types/news/news-latest-two.twig' %}
   </div>
