@@ -58,7 +58,8 @@
     grid-column: content;
   }
 
-  .container-full {
+  .container-full, 
+  .container {
     grid-column: full;
   }
 }
