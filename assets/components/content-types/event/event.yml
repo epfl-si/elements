@@ -8,6 +8,9 @@ variants:
   - name: highlight
     title: Highlight
     wrapper: col-md-8 bg-gray-100
+  - name: highlight-listing
+    title: Highlight + listing
+    wrapper: bg-gray-100
   - name: invitation
     title: Invitation
   - name: just-finished

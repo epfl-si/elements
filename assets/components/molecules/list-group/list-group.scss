@@ -7,6 +7,12 @@
   border-left: 0;
 }
 
+.list-group-item-gray .list-group-teaser-container {
+  background: gray('100');
+  transition: background 0.25s;
+  &:hover { background: $white; }
+}
+
 .list-group {
   .list-group-teaser {
     display: block;
@@ -27,9 +33,8 @@
     flex: 0 0 12rem;
     padding: 1rem;
     padding-top: 1rem;
-    background: $white;
     z-index: 1;
-    border: 1px solid $gray-100;
+    border: 1px solid gray('200');
     transition: border-color 0.2s;
 
     @include media-breakpoint-up(lg) {
@@ -44,8 +49,7 @@
   .list-group-teaser-content {
     flex: 0 1 100%;
     padding: 1rem;
-    background: $white;
-    border: 1px solid $gray-100;
+    border: 1px solid gray('200');
     transition: border-color 0.2s;
     z-index: 1;
 
@@ -92,7 +96,7 @@
     display: block;
     padding: 0.4rem 1rem;
     background: $white;
-    border: 1px solid $gray-100 !important;
+    border: 1px solid gray('200') !important;
     font-size: 90%;
     background-image: none !important;
     text-align: center;
