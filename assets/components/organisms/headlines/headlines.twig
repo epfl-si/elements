@@ -18,6 +18,8 @@
 {% endmacro %}
 {% import _self as macros %}
 
+{% set bottomlink = bottomlink|default(true) %}
+
 {# The intro fullwidth teaser #}
 {% include '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
 
@@ -32,9 +34,11 @@
           </div>
         {% endfor %}
       </div>
-      <p class="text-center">
-        <a class="link-pretty" href="#">{{ homepage.section_one.readmore }}</a>
-      </p>
+      {% if bottomlink %}
+        <p class="text-center">
+          <a class="link-pretty" href="#">{{ homepage.section_one.readmore }}</a>
+        </p>
+      {% endif %}
     </div>
   </div>
 </div>

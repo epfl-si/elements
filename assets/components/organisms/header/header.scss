@@ -93,11 +93,34 @@
   }
 }
 
-.header-light .header-light-content {
-  flex-grow: 1;
-  flex-flow: nowrap row;
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
+.header-light {
+  .logo {
+    margin-right: $spacer;
+    padding-right: $spacer;
+    border-right: 1px solid gray('300');
+
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+  }
+
+  h1 {
+    align-self: flex-start;
+    flex: 0 1 100px;
+    margin: 1rem 0;
+    font-size: $font-size-base;
+    color: theme-color('primary');
+    text-transform: uppercase;
+  }
+
+  .header-light-content {
+    flex-grow: 1;
+    flex-flow: nowrap row;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-header { margin-left: $spacer * 2; }
 }

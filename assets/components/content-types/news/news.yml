@@ -3,6 +3,8 @@ name: news
 variants:
   - name: highlighted
     title: Highlighted
+  - name: latest-two
+    title: Latest two
   - name: basic-teaser
     title: Basic teaser
     wrapper: col-md-6
