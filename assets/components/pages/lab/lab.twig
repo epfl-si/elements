@@ -15,7 +15,11 @@
 
 {% block content %}
 <div class="container-full" id="tour-hero">
-  {% include '@organisms/hero/hero.twig' with {img: 'images/gallery/gallery_01.jpg', title: 'Laboratory Full Name LFN', content: false} %}
+  {% include '@organisms/hero/hero.twig' with {
+    cover_path: 'images/cover/cover01_',
+    title: 'Laboratory Full Name LFN',
+    content: false
+  } %}
 </div>
 
 <div class="mt-5" id="tour-lab">
@@ -71,10 +75,15 @@
 </div>
 
 
-<div class="container-full">
-  <div id="tour-team">
-    <div id="tour-sponsors">
-      {% include '@content-types/sponsor/sponsor.twig' %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6" id="tour-team">
+      {% include '@content-types/basic-page/basic-page.twig' %}
+    </div>
+    <div class="col-md-6" id="tour-sponsors">
+      <h3 class="mb-4">Our sponsors</h3>
+      {% include '@molecules/sponsor/sponsor.twig' %}
+      {% include '@molecules/sponsor/sponsor.twig' %}
     </div>
   </div>
 </div>

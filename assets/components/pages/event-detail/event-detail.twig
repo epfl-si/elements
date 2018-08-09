@@ -3,26 +3,20 @@
 {% extends "@templates/base/base.twig" %}
 
 {% block header %}
-  {% include '@organisms/header/header-light.twig' %}
+  {% include '@organisms/header/header-light.twig' with { site_title: 'Event title' } %}
 {% endblock %}
 
 {% block content %}
 
-<div class="container">
-  <h1>Event page</h1>
-</div>
-
-<div class="container-full mt-5">
-  <div class="bg-gray-100 py-5 mb-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <p class="lead">Summary of the event. For example :</p>
-          <p>L'exposition Kung Fu Motion retrace l’histoire dynamique des arts martiaux traditionnels de la Chine méridionale et de Hong Kong, à travers le prisme de technologies d’archivage de pointe. Située à l’intersection des arts, de la science et des pratiques rituelles, cette exposition expérimentale ouvre de nouvelles perspectives sur notre rapport au patrimoine culturel immatériel.</p>
-        </div>
-        <div class="col-lg-6">
-          {% include '@atoms/picture/picture.twig' %}
-        </div>
+<div class="container-full bg-gray-100 py-5 mb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <p class="lead">Summary of the event. For example :</p>
+        <p>L'exposition Kung Fu Motion retrace l’histoire dynamique des arts martiaux traditionnels de la Chine méridionale et de Hong Kong, à travers le prisme de technologies d’archivage de pointe. Située à l’intersection des arts, de la science et des pratiques rituelles, cette exposition expérimentale ouvre de nouvelles perspectives sur notre rapport au patrimoine culturel immatériel.</p>
+      </div>
+      <div class="col-lg-6">
+        {% include '@atoms/picture/picture.twig' %}
       </div>
     </div>
   </div>
@@ -37,7 +31,7 @@
         {% include '@atoms/button/button.twig' %}
       </div>
     </div>
-   
+
     <div class="col-md-4 offset-md-2">
       <div>
         {% include '@atoms/button/button.twig' %}
@@ -64,7 +58,7 @@
         <ul class="list-bullet mb-5">
           <li>Organisation Bureau ArtLab</li>
           <li>Accessibilité Tout public</li>
-           <li>Accès Libre</li>       
+           <li>Accès Libre</li>
         </ul>
       </div>
 

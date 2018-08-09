@@ -2,10 +2,14 @@
 
 {% extends "@templates/base/base.twig" %}
 
+{% block header %}
+  {% include '@organisms/header/header-light.twig' with { site_title: 'Association title' } %}
+{% endblock %}
+
 {% block content %}
 
 <div class="container-full">
-  {% include '@organisms/hero/hero.twig' with {title: 'Association title', img: 'images/gallery/gallery_01.jpg', content: 'Welcome to our association homepage'} %}
+  {% include '@organisms/hero/hero.twig' with {title: 'Association title', cover_path: 'images/cover/cover01_', content: 'Welcome to our association homepage'} %}
 </div>
 
 <div class="container">

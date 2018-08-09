@@ -1,6 +1,5 @@
-{% if title is not defined %}{% set title = 'Recherche' %}{% endif %}
-{% if content is not defined %}{% set content = '<p>Une organisation unique nous permet de figurer systématiquement dans le haut du classement mondial des universités pour les programmes de recherche.</p>
-      <p>Découvrez tout ce qui fait de l’EPFL le creuset idéal des meilleurs projets de recherche en Europe et à l’international.</p>' %}{% endif %}
+{% set title = title|default('Recherche') %}
+{% set content = content|default('<p>Une organisation unique nous permet de figurer systématiquement dans le haut du classement mondial des universités pour les programmes de recherche.</p><p>Découvrez tout ce qui fait de l’EPFL le creuset idéal des meilleurs projets de recherche en Europe et à l’international.</p>') %}
 <div class="hero">
   <div class="hero-content-container">
     <h1 class="hero-title">{{title}}</h1>
@@ -11,6 +10,6 @@
     {% endif %}
   </div>
   <div class="hero-img">
-    {% include '@atoms/picture/picture-cover.twig' with { img: img } %}
+    {% include '@atoms/picture/picture-cover.twig' %}
   </div>
 </div>

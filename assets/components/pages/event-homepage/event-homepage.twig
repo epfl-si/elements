@@ -2,10 +2,14 @@
 
 {% extends "@templates/base/base.twig" %}
 
+{% block header %}
+  {% include '@organisms/header/header-light.twig' with { site_title: 'Event title' } %}
+{% endblock %}
+
 {% block content %}
 
 <div class="container-full">
-  {% include '@organisms/hero/hero.twig' with {img: 'images/gallery/gallery_01.jpg', title: 'Event name', content: false} %}
+  {% include '@organisms/hero/hero.twig' with {cover_path: 'images/cover/cover01_', title: 'Event title', content: false} %}
 </div>
 
 <div class="container">
@@ -46,7 +50,7 @@
 </div>
 
 <div class="container mt-5">
-  {% include '@organisms/contact/contact-banner.twig' %}  
+  {% include '@organisms/contact/contact-banner.twig' %}
 </div>
 
 {% endblock %}
