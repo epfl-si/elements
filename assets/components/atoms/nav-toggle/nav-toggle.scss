@@ -2,8 +2,9 @@
 
 .nav-toggle {
   display: none;
-  z-index: 101;
   position: relative;
+  top: 1px;
+  z-index: 101;
   margin-right: $grid-gutter-width / 3;
   padding: $spacer / 4 $spacer / 2;
   &:hover { cursor: pointer; }
@@ -11,11 +12,31 @@
   .icon {
     margin-right: 0.2rem;
     font-size: 0.7rem;
+
+    &:first-child {
+      display: block;
+    }
+
+    &:last-child {
+      display: none;
+    }
   }
 
   @include media-breakpoint-up(xl) {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .bg-gray-100 &:after { background: gray('100'); }
+  }
+}
+
+.desktop-menu-open .nav-toggle {
+  .icon:first-child {
+    display: none;
+  }
+
+  .icon:last-child {
+    display: block;
   }
 }

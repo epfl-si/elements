@@ -1,6 +1,5 @@
 {% extends "@templates/base/base.twig" %}
 
-{% block grid %}{% endblock %}
 {% set nav_aside_items = [{
   label: "Laboratory Full Name",
   children: ["Projects", "Publications", "News", "Team", "Teaching"]
@@ -14,66 +13,43 @@
 </div>
 {% endblock %}
 
-
 {% block content %}
-<div class="hero" id="tour-hero">
-  <div class="hero-content-container">
-    <h1 class="hero-title">Laboratory Full Name LFN</h1>
-  </div>
-  <div class="hero-img">
-    <img src="images/gallery/gallery_01.jpg" alt="IMAGE DESCRIPTION HERE" class="img-fluid">
-  </div>
+<div class="container-full" id="tour-hero">
+  {% include '@organisms/hero/hero.twig' with {
+    cover_path: 'images/cover/cover01_',
+    title: 'Laboratory Full Name LFN',
+    content: false
+  } %}
 </div>
 
-<div class="container" id="tour-lab">
-  <div class="container-grid mt-5 mb-6" id="tour-intro">
+<div class="mt-5" id="tour-lab">
+  <div id="tour-intro">
     <p>
       This is a laboratory introduction text about all the good stuff that are made here, the current project and the passionate people who work here. It's always interesting to know in few lines what is all about.
     </p>
   </div>
 </div>
 
-<div class="bg-gray-100 py-5 mb-5" id="tour-projects">
+<div class="container-full bg-gray-100 py-5 mt-5" id="tour-projects">
   <div class="container">
-    <h2 class="mb-4">Our current projects</h2>
-    <div class="row">
-      {% for i in 1..3 %}
-        <div class="col-md-4">
-          {% include '@content-types/research-project/research-project.twig' %}
-        </div>
-      {% endfor %}
-    </div>
-    <p class="text-center">
-      <a class="link-pretty" href="#">See all projects</a>
-    </p>
+    {% include '@content-types/project/project.twig' %}
   </div>
 </div>
 
 <div class="container">
   <div id="tour-publications">
     <h2 class="mb-4 mt-6">Our publications</h2>
-    {% include '@content-types/publication/publication.twig' %}
-    <p class="text-center">
-      <a class="link-pretty" href="#">See all publications</a>
-    </p>
-  </div>
-
-  <div id="tour-news">
-    <h2 class="mb-4 mt-6">The last news</h2>
-    <div class="row">
-      {% for i in 1..2 %}
-        <div class="col-md-6">
-          {% include '@content-types/news/news-basic-teaser.twig' %}
-        </div>
-      {% endfor %}
-    </div>
-    <p class="text-center">
-      <a class="link-pretty" href="#">See all news</a>
-    </p>
+    {% include '@content-types/publication/publication.twig' with { bottomlink: true } %}
   </div>
 </div>
 
-<div class="bg-gray-100 py-5 my-5">
+<div class="container">
+  <div id="tour-news">
+    {% include '@content-types/news/news-latest-two.twig' %}
+  </div>
+</div>
+
+<div class="container-full bg-gray-100 py-5 my-5">
   <div class="container">
     <div id="tour-partof">
       <h2 class="mb-4">DCSL is part of</h2>
@@ -98,6 +74,7 @@
   </div>
 </div>
 
+
 <div class="container">
   <div class="row">
     <div class="col-md-6" id="tour-team">
@@ -110,4 +87,5 @@
     </div>
   </div>
 </div>
+
 {% endblock %}

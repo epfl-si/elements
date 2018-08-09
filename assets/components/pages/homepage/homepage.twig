@@ -23,25 +23,6 @@
   </div>
 {% endmacro %}
 
-{% macro card_link(card) %}
-  <a href="#" class="card link-trapeze-horizontal">
-    <div class="card-body">
-      <h3 class="card-title">{{ card.title }}</h3>
-      <div class="card-info">
-        {% if card.date %}
-          <span class="card-info-date">
-            <time datetime="DATETIME HERE">{{ card.date }}</time>
-          </span>
-        {% endif %}
-        {% for item in card.info %}
-          <span>{{ item }}</span>
-        {% endfor %}
-      </div>
-      <p>{{ card.content }}</p>
-    </div>
-  </a>
-{% endmacro %}
-
 {% macro card_arrow(card) %}
   <a href="#" class="card card-sm link-trapeze-horizontal">
     {% if card.image %}
@@ -49,10 +30,11 @@
         <img src="{{ card.image }}" class="img-fluid" title="{{ card.title }}" alt="ALT OF IMAGE HERE"/>
       </picture>
     {% endif %}
-    <div class="card-body">
-      <h3 class="card-title link-icon mb-0 h5">
-        {{ card.title }}
-        {% include '@atoms/icon/icon.twig' with {'icon': 'icon-arrow-right'} %}
+      <div class="card-body">
+        <h3 class="card-title link-icon mb-0 h5">
+          {{ card.title }}
+        {% include '@atoms/icon/icon.twig' with {'icon': 'icon-arrow-right'}
+      %}
       </h3>
     </div>
   </a>
@@ -66,30 +48,7 @@
 
 {% block main %}
   <main id="main" role="main" class="content">
-    {# The intro fullwidth teaser #}
-    {% embed '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
-      {% block title %}{{ homepage.highlight_1.title }}{% endblock %}
-      {% block content %}{{ homepage.highlight_1.content }}{% endblock %}
-      {% block img %}{{ homepage.highlight_1.image }}{% endblock %}
-    {% endembed %}
-
-    {# First teasers #}
-    <div class="container pb-5 offset-xl-top">
-      <div class="row">
-        <div class="col-lg-10 offset-lg-1">
-          <div class="row mb-4">
-            {% for card in homepage.section_one.cards %}
-              <div class="col-md-6 d-flex">
-                {{ macros.card_link(card) }}
-              </div>
-            {% endfor %}
-          </div>
-          <p class="text-center">
-            <a class="link-pretty" href="#">{{ homepage.section_one.readmore }}</a>
-          </p>
-        </div>
-      </div>
-    </div>
+    {% include '@organisms/headlines/headlines.twig' %}
 
     {# Second teasers, on gray background #}
     <div class="bg-gray-100 py-5">
@@ -117,11 +76,12 @@
     </div>
 
     {# The middle fullwidth teaser #}
-    {% embed '@organisms/fullwidth-teaser/fullwidth-teaser.twig' %}
-      {% block title %}{{ homepage.highlight_2.title }}{% endblock %}
-      {% block content %}{{ homepage.highlight_2.content }}{% endblock %}
-      {% block img %}{{ homepage.highlight_2.image }}{% endblock %}
-    {% endembed %}
+    {% include '@organisms/fullwidth-teaser/fullwidth-teaser.twig' with {
+        title: homepage.highlight_2.title,
+        content: homepage.highlight_2.content,
+        img: homepage.highlight_2.image
+      }
+    %}
 
     {# The Calendar section #}
     {# TODO add card-slider from Yann PR #}
@@ -153,12 +113,14 @@
             </div>
 
             <div class="card-slider-footer">
-              <div>
-                <button role="button" id="card-slider-prev" class="card-slider-btn link-trapeze-horizontal disabled">
-                  {% include "@atoms/icon/icon.twig" with { icon: 'icon-chevron-left' } %}
-                </button>
-                <button role="button" id="card-slider-next" class="card-slider-btn link-trapeze-horizontal">
-                  {% include "@atoms/icon/icon.twig" with { icon: 'icon-chevron-right' } %}
+                <div>
+                  <button role="button" id="card-slider-prev" class="card-slider-btn link-trapeze-horizontal disabled">
+                  {% include "@atoms/icon/icon.twig" with { icon: 'icon-chevron-left' }
+                %}
+                  </button>
+                  <button role="button" id="card-slider-next" class="card-slider-btn link-trapeze-horizontal">
+                  {% include "@atoms/icon/icon.twig" with { icon: 'icon-chevron-right' }
+                %}
                 </button>
               </div>
               <div>
@@ -171,11 +133,12 @@
     </div>
 
     {# The second middle fullwidth teaser #}
-    {% embed '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
-      {% block title %}{{ homepage.highlight_3.title }}{% endblock %}
-      {% block content %}{{ homepage.highlight_3.content }}{% endblock %}
-      {% block img %}{{ homepage.highlight_3.image }}{% endblock %}
-    {% endembed %}
+    {% include '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' with {
+        title: homepage.highlight_3.title,
+        content: homepage.highlight_3.content,
+        img: homepage.highlight_3.image
+      }
+    %}
 
     {# City teasers #}
     <div class="container py-6">
@@ -197,22 +160,24 @@
     </div>
 
     {# The third middle fullwidth teaser #}
-    {% embed '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
-      {% block title %}{{ homepage.highlight_4.title }}{% endblock %}
-      {% block content %}{{ homepage.highlight_4.content }}{% endblock %}
-      {% block img %}{{ homepage.highlight_4.image }}{% endblock %}
-    {% endembed %}
+    {% include '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' with {
+        title: homepage.highlight_4.title,
+        content: homepage.highlight_4.content,
+        img: homepage.highlight_4.image
+      }
+    %}
 
     <div class="container-fluid p-0">
       {% include '@molecules/question/question.twig' %}
     </div>
 
     {# The last fullwidth teaser #}
-    {% embed '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
-      {% block title %}{{ homepage.highlight_5.title }}{% endblock %}
-      {% block content %}{{ homepage.highlight_5.content }}{% endblock %}
-      {% block img %}{{ homepage.highlight_5.image }}{% endblock %}
-    {% endembed %}
+    {% include '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' with {
+        title: homepage.highlight_5.title,
+        content: homepage.highlight_5.content,
+        img: homepage.highlight_5.image
+      }
+    %}
 
     <div class="bg-gray-100 py-5">
       <div class="container">

@@ -1,0 +1,12 @@
+title: Card Deck
+name: card-deck
+variants:
+  - name: duo
+    title: Duo
+  - name: single
+    title: Single
+notes: |
+  This component allows you to display multiple cards side by side, in a set of equal width and height. You just have to wrap cards inside of a `.card-deck` component.
+  <br/>
+  <br/>
+  Add the `.card-deck-line` class to the container, when you want to display 1 ou 2 cards only, to add a visual touch on desktop helping readability
