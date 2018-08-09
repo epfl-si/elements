@@ -1,0 +1,27 @@
+{% set isHomepage = true %}
+
+{% extends "@templates/base/base.twig" %}
+
+{% block content %}
+
+<div class="container">
+  <h1>Résultats de recherche pour "Nom de la personne"</h1>
+  <h2>10 résultats</h2>
+</div>
+
+<div class="container mt-5">
+  Insérer le composant "Contact block listing"
+</div>
+{% endblock %}
+
+{% block footer_container %}
+  <div class="bg-gray-100 pt-5">
+    <div class="container">
+      {% block footer %}
+        {% include '@organisms/footer/footer-light.twig' %}
+      {% endblock %}
+    </div>
+  </div>
+  {% endblock %}
+  </div>
+</div>
