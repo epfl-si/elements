@@ -1,3 +1,3 @@
-# Icons
+# Iconography
 
 #### More soon...
