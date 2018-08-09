@@ -1,3 +1,3 @@
-# Logotype
+# Brand identity
 
 #### More soon...
