@@ -1,3 +1,4 @@
+{% set bottomlink = bottomlink|default(true) %}
 <div class="list-group mb-5">
   {% for i in 1..4 %}
     <div class="list-group-item list-group-item-publication">
@@ -23,3 +24,8 @@
     </div>
   {% endfor %}
 </div>
+{% if bottomlink %}
+<p class="text-center">
+  <a class="link-pretty" href="#">See all publications</a>
+</p>
+{% endif %}

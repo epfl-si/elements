@@ -1,0 +1,25 @@
+{% extends "@templates/base/base.twig" %}
+
+{% block grid %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="container-grid mt-5 mb-6">
+    <h1 class="mb-5">Les facultés de l'EPFL</h1>
+
+    <p>What is a faculty ? Explain in a few sentences.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    {% for i in 1..8 %}
+      <div class="col-md-6">
+        {% include '@content-types/faculty/faculty.twig' %}
+      </div>  
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+

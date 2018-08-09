@@ -6,32 +6,25 @@
   <p>This is a simple paragraph directly in the WYSIWYG editor. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consectetur deleniti doloremque eveniet libero minima neque repudiandae sequi suscipit vitae. Ab corporis doloremque earum eius illo incidunt ipsa magnam molestias, nam, necessitatibus neque porro quaerat repellendus tenetur unde velit veritatis? Aliquam amet aut cumque distinctio dolor dolore ducimus eaque est eveniet excepturi explicabo fugit illum inventore iure labore libero magnam minima pariatur provident quam quasi quo, recusandae rem repudiandae sapiente sunt voluptate voluptates! Asperiores, assumenda atque aut eos est in maiores nemo omnis perferendis, quam recusandae rem saepe sint! Consequuntur doloribus dolorum iste, optio placeat rerum. Dolor quis repudiandae soluta?</p>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur autem consequatur, cum hic iure maiores nihil nulla repellendus sequi velit! Asperiores aspernatur, blanditiis culpa deleniti dignissimos eum expedita illum ipsa itaque magnam molestias mollitia nobis, nostrum nulla numquam soluta voluptatum? Aliquam architecto consequatur cumque doloribus ex maiores nemo veritatis voluptatem.</p>
 
-  <div class="container-full">
-    <div class="container">
-      {% include "@molecules/cover/cover.twig" %}
+  <div class="container">
+    {% include "@molecules/cover/cover.twig" %}
+  </div>
 
-      <div class="row">
-        <div class="col-sm-10 col-md-8 col-xl-6 mx-auto">
-          <h2>H2 - Title sample</h2>
+  <h2 class="mt-5">H2 - Title sample</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si enim ita est, vide ne facinus facias, cum mori suadeas. Habent enim et bene longam et satis litigiosam disputationem. -delector enim, quamquam te non possum, ut ais, corrumpere, delector, inquam, et familia vestra et nomine. Virtutis, magnitudinis animi, patientiae, fortitudinis fomentis dolor mitigari solet. Cur tantas regiones barbarorum pedibus obiit, tot maria transmisit? Multoque hoc melius nos veriusque quam Stoici. Duo Reges: constructio interrete. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Quid, si etiam iucunda memoria est praeteritorum malorum? In eo enim positum est id, quod dicimus esse expetendum.
+  </p>
 
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si enim ita est, vide ne facinus facias, cum mori suadeas. Habent enim et bene longam et satis litigiosam disputationem. -delector enim, quamquam te non possum, ut ais, corrumpere, delector, inquam, et familia vestra et nomine. Virtutis, magnitudinis animi, patientiae, fortitudinis fomentis dolor mitigari solet. Cur tantas regiones barbarorum pedibus obiit, tot maria transmisit? Multoque hoc melius nos veriusque quam Stoici. Duo Reges: constructio interrete. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Quid, si etiam iucunda memoria est praeteritorum malorum? In eo enim positum est id, quod dicimus esse expetendum.
-          </p>
+  <h3 class="mt-5">H3 - Sub level title</h3>
+  {% include "@atoms/list/list-bullet.twig" %}
 
-          <h3>H3 - Sub level title</h3>
-          {% include "@atoms/list/list-bullet.twig" %}
+  <h4 class="mt-5">H4 - Let's display a table</h4>
+  {% include "@molecules/tables/tables-sortable.twig" %}
 
-          <h4>H4 - Let's display a table</h4>
-          {% include "@molecules/tables/tables-sortable.twig" %}
+  <h4 class="mt-5">H4 - Let's display a gallery</h4>
+  {% include "@molecules/gallery/gallery.twig" %}
 
-          <h4 class="mt-4">H4 - Let's display a gallery</h4>
-          {% include "@molecules/gallery/gallery.twig" %}
-
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-gray-100 py-5 my-5">
+    <div class="container-full bg-gray-100 py-5 my-5">
       <div class="container">
         <h2 class="mb-4">H2 - Call page teasers</h2>
         <div class="row">
@@ -44,34 +37,22 @@
       </div>
     </div>
 
-    <div class="container mb-5">
-      <div class="row">
-        <div class="col-sm-10 col-md-8 col-xl-6 mx-auto">
-          <h3>H3 - Teaser press review</h3>
-          {% include "@content-types/press-review/press-review.twig" %}
-        </div>
-      </div>
+    <h3>H3 - Teaser press review</h3>
+    {% include "@content-types/press-review/press-review.twig" %}
 
-      <div class="row mb-5">
-        <div class="col-sm-10 mx-auto">
-          <h5 class="mt-4">H5 - Video !</h5>
-          {% include "@atoms/video/video.twig" %}
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-10 col-md-8 col-xl-6 mx-auto">
-          <h3>H3 - A last word</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si enim ita est, vide ne facinus facias, cum mori suadeas. Habent enim et bene longam et satis litigiosam disputationem. -delector enim, quamquam te non possum, ut ais, corrumpere, delector, inquam, et familia vestra et nomine. Virtutis, magnitudinis animi, patientiae, fortitudinis fomentis dolor mitigari solet. Cur tantas regiones barbarorum pedibus obiit, tot maria transmisit? Multoque hoc melius nos veriusque quam Stoici. Duo Reges: constructio interrete. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Quid, si etiam iucunda memoria est praeteritorum malorum? In eo enim positum est id, quod dicimus esse expetendum.
-          </p>
-          <a href="#" class="btn btn-primary">Register</a>
-          <a href="#" class="btn btn-secondary">More information</a>
-        </div>
-      </div>
+    <div class="container">
+      <h5 class="mt-5">H5 - Video !</h5>
+      {% include "@atoms/video/video.twig" %}
     </div>
 
-    {% include "@organisms/newsletter-sign-up/newsletter-sign-up.twig" %}
+    <h3 class="mt-5">H3 - A last word</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si enim ita est, vide ne facinus facias, cum mori suadeas. Habent enim et bene longam et satis litigiosam disputationem. -delector enim, quamquam te non possum, ut ais, corrumpere, delector, inquam, et familia vestra et nomine. Virtutis, magnitudinis animi, patientiae, fortitudinis fomentis dolor mitigari solet. Cur tantas regiones barbarorum pedibus obiit, tot maria transmisit? Multoque hoc melius nos veriusque quam Stoici. Duo Reges: constructio interrete. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Quid, si etiam iucunda memoria est praeteritorum malorum? In eo enim positum est id, quod dicimus esse expetendum.
+    </p>
+
+    <div class="container-full mt-5">
+      {% include "@organisms/newsletter-sign-up/newsletter-sign-up.twig" %}
+    </div>
 
     <div class="container mt-5">
       <h2>Facultés</h2>
@@ -84,6 +65,5 @@
       </div>
     </div>
 
-  </div>
 
 {% endblock %}
