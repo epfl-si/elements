@@ -3,12 +3,12 @@
 {% extends "@templates/base/base.twig" %}
 
 {% block header %}
-  {% include '@organisms/header/header-light.twig' %}
+  {% include '@organisms/header/header-light.twig' with { site_title: 'Event title' } %}
 {% endblock %}
 
 {% block content %}
 
-<div class="container">
+<div class="container mt-5">
   <h1>Événements</h1>
 </div>
 
@@ -23,9 +23,7 @@
       </div>
     </div>
     <div class="col-md-8">
-      {% for i in 1..8 %}
-        {% include '@content-types/event/event.twig' %}
-      {% endfor %}
+      {% include '@content-types/event/event-listing.twig' %}
     </div>
   </div>
 </div>

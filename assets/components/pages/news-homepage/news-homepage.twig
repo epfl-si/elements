@@ -3,17 +3,12 @@
 {% extends "@templates/base/base.twig" %}
 
 {% block header %}
-  {% include '@organisms/header/header-light.twig' %}
+  {% include '@organisms/header/header-light.twig' with { site_title: 'Actu' } %}
 {% endblock %}
 
 {% block content %}
-
-<div class="container">
-  <h1>Actualités</h1>
-</div>
-
-<div class="container-full mt-5">
-  {% include '@organisms/headlines/headlines.twig' with {bottomlink: false} %}
+<div class="container-full">
+  {% include '@organisms/headlines/headlines.twig' with { bottomlink: false } %}
 </div>
 
 <div class="container">

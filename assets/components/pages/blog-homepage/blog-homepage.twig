@@ -2,13 +2,12 @@
 
 {% extends "@templates/base/base.twig" %}
 
+{% block header %}
+  {% include '@organisms/header/header-light.twig' with { site_title: 'example blog name' } %}
+{% endblock %}
+
 {% block content %}
-
-<div class="container">
-  <h1>Blog name</h1>
-</div>
-
-<div class="container-full mt-3">
+<div class="container-full">
   {% include '@content-types/news/news-highlighted.twig' %}
 </div>
 

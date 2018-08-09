@@ -11,3 +11,7 @@ variants:
       The Borderless variant.
     background: ''
     wrapper: ''
+  - name: teasers
+    title: Teasers
+    notes: |
+      List group variant that can be used to display a teasers listing

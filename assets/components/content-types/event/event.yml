@@ -2,6 +2,9 @@ title: Event
 name: event
 wrapper: col-md-5 bg-gray-100
 variants:
+  - name: listing
+    title: Listing
+    wrapper: bg-gray-100
   - name: highlight
     title: Highlight
     wrapper: col-md-8 bg-gray-100
@@ -12,7 +15,6 @@ variants:
   - name: wrapper
     title: Slider wrapper
     wrapper: bg-gray-100
-
 notes: |
 
   ### Basic teaser
