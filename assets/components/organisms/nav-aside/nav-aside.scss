@@ -58,6 +58,10 @@
       &:before { content: none; }
     }
 
+    &.active:not(.menu-item-has-children)+li>a:before {
+      content: none;
+    }
+
     @include media-breakpoint-down(lg) {
       &.active > a { margin-right: $spacer * 2; }
     }
