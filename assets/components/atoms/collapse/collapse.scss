@@ -41,9 +41,29 @@ $collapse-chevron-size: 12px;
   border: none;
   transition: box-shadow 0.25s;
 
+  &:before {
+    content: ' ';
+      position: absolute;
+      top: 0;
+      left: $spacer * -0.3;
+      width: $spacer * 0.6;
+      height: 100%;
+      background: $primary;
+      opacity: 0;
+      transition: 
+        opacity 0.3s,
+        transform 0.2s;
+      z-index: -1;
+  }
+
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px $red;
+    position: relative;
+
+    &:before {
+      transform: translateX($spacer * -0.7);
+      opacity: 1;
+    }
   }
 
   &.collapse-title-desktop {

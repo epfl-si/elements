@@ -18,8 +18,9 @@ Based on **12 columns**, the grid is pretty easy to use. For example, **if you w
   </div>
 </div>
 ```
+See [the layout demo page](#/pages/layout-demo) to understand the usage we make of bootstrap grid.
 
-Read the [documentation](https://getbootstrap.com/docs/4.1/layout/grid/) to learn more about the grid.
+Read the [Bootstrap documentation](https://getbootstrap.com/docs/4.1/layout/grid/) to learn more about the grid.
 
 ### Spacing
 
@@ -37,4 +38,4 @@ Read the [documentation](https://getbootstrap.com/docs/4.1/utilities/spacing/) t
 
 Depending on your use case, **you can pick a page types**. For each of the following page type example, **there is a complete tour** to show you how the page is built and which component you can use to reproduce it.
 
-- [Laboratory page](#/pages/lab)
+- [Laboratory page](#/pages/lab-homepage)
