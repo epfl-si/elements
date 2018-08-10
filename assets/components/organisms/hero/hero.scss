@@ -9,15 +9,13 @@
 
 .hero-content-container {
   @include media-breakpoint-up(md) {
+    flex: 0 0 50%;
     position: relative;
     margin-top: ($grid-gutter-width * 4);
-    margin-right: -25%;
-    max-width: 50%;
   }
 
   @include media-breakpoint-up(lg) {
-    margin-right: -15%;
-    max-width: 30%;
+    flex: 0 0 30%;
   }
 }
 
@@ -31,6 +29,7 @@
 
 .hero-title {
   @include media-breakpoint-up(md) {
+    max-width: 90%;
     display: inline-block;
     margin-bottom: 0;
     padding-top: ($grid-gutter-width / 2);
@@ -39,7 +38,15 @@
 }
 
 .hero-img {
-  flex: 1 0 75%;
+  @include media-breakpoint-up(md) {
+    flex: 0 0 85%;
+    margin-left: -35%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-left: -15%;
+  }
+
 
   img {
     max-width: 100%;

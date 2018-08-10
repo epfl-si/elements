@@ -9,6 +9,7 @@
 @import '../config/typography';
 @import '../config/layout';
 @import '../config/helpers';
+@import '../config/wordpress';
 @import '../../node_modules/tablesaw/src/tables.stack-mixin.scss';
 
 // Don't edit the following sections, they should always be preceded by a blank
@@ -69,6 +70,7 @@
 @import 'molecules/tables/tables';
 @import 'molecules/tabs/tabs';
 @import 'molecules/collapse-group/collapse-group';
+@import 'molecules/card-deck/card-deck';
 
 //
 // organisms:
@@ -86,6 +88,7 @@
 @import 'organisms/newsletter-sign-up/newsletter-sign-up';
 @import 'organisms/restauration/restauration';
 @import 'organisms/social-feed-group/social-feed-group';
+@import 'organisms/headlines/headlines';
 
 //
 // content-types:
@@ -107,3 +110,4 @@
 @import 'content-types/association/association';
 @import 'content-types/program/program';
 @import 'content-types/bachelor-project/bachelor-project';
+@import 'content-types/project/project';

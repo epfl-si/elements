@@ -58,7 +58,10 @@
     grid-column: content;
   }
 
-  .container-full {
+  .container-full, 
+  .container,
+  .embed-responsive,
+  & > iframe {
     grid-column: full;
   }
 }
