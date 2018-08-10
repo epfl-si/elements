@@ -3,3 +3,5 @@ name: fullwidth-teaser
 variants:
   - name: horizontal
     title: Horizontal
+  - name: left
+    title: Left aligned
