@@ -249,3 +249,24 @@
     }
   }
 }
+
+.fullwidth-teaser-left {
+
+  @include media-breakpoint-up(md) {
+    picture img {
+      right: -10%;
+      left: auto;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    picture img {
+      right: 0;
+    }
+    .fullwidth-teaser-text {
+      right: auto;
+      left: 2rem;
+    }
+  }
+}
+
