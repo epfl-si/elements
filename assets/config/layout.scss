@@ -59,7 +59,9 @@
   }
 
   .container-full, 
-  .container {
+  .container,
+  .embed-responsive,
+  & > iframe {
     grid-column: full;
   }
 }
