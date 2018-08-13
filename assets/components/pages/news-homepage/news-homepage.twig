@@ -3,7 +3,10 @@
 {% extends "@templates/base/base.twig" %}
 
 {% block header %}
-  {% include '@organisms/header/header-light.twig' with { site_title: 'Actu' } %}
+  {% include '@organisms/header/header-light.twig' with {
+    site_title: 'Actu',
+    dropdown: true
+  } %}
 {% endblock %}
 
 {% block content %}
