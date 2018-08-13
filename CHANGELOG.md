@@ -1,6 +1,13 @@
 
 # CHANGELOG
 
+*1.1.1* (2018-08-13)
+  - contact compact component
+  - add date in headline
+  - fix visual regression on headline
+  - implement header dropdown
+  - enhance hero component and image size
+
 *1.1.0* (2018-08-10)
   - implement Taggable breadcrumb
   - implement headlines
