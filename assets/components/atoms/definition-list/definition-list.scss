@@ -24,6 +24,7 @@
     font-weight: $font-weight-base;
     color: $text-muted;
     padding-right: $grid-gutter-width / 2;
+    &:last-of-type { border-bottom: none; }
 
     &.definition-list-item-full {
       padding-bottom: 0;
@@ -33,10 +34,7 @@
 
   dd {
     grid-column: 2;
-
-    &:last-child {
-      border-bottom: none;
-    }
+    &:last-of-type { border-bottom: none; }
   }
 
   dt,
