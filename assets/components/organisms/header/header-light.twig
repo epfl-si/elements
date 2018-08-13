@@ -7,6 +7,18 @@
     </a>
     <h1>{{site_title}}</h1>
     <ul aria-hidden="true" class="nav-header d-none d-xl-flex">
+      {% if dropdown %}
+      <li class="dropdown">
+        <button class="btn btn-link dropdown-toggle nav-item" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Canal d'actualités
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Option 1</a>
+          <a class="dropdown-item" href="#">Option 2</a>
+          <a class="dropdown-item" href="#">Option 3</a>
+        </div>
+      </li>
+      {% endif %}
       <li id="menu-item-888">
         <a class="nav-item" href="/propos-0/">À propos</a>
       </li>
