@@ -20,25 +20,27 @@
 
 {% set bottomlink = bottomlink|default(true) %}
 
-{# The intro fullwidth teaser #}
-{% include '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
+<div class="headlines">
+  {# The intro fullwidth teaser #}
+  {% include '@organisms/fullwidth-teaser/fullwidth-teaser-horizontal.twig' %}
 
-{# First teasers #}
-<div class="container pb-5 offset-xl-top pt-5 pt-xl-0">
-  <div class="row">
-    <div class="col-lg-10 offset-lg-1">
-      <div class="row mb-4">
-        {% for card in homepage.section_one.cards %}
-          <div class="col-md-6 d-flex">
-            {{ macros.card_link(card) }}
-          </div>
-        {% endfor %}
+  {# First teasers #}
+  <div class="container pb-5 offset-xl-top pt-5 pt-xl-0">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <div class="row mb-4">
+          {% for card in homepage.section_one.cards %}
+            <div class="col-md-6 d-flex">
+              {{ macros.card_link(card) }}
+            </div>
+          {% endfor %}
+        </div>
+        {% if bottomlink %}
+          <p class="text-center">
+            <a class="link-pretty" href="#">{{ homepage.section_one.readmore }}</a>
+          </p>
+        {% endif %}
       </div>
-      {% if bottomlink %}
-        <p class="text-center">
-          <a class="link-pretty" href="#">{{ homepage.section_one.readmore }}</a>
-        </p>
-      {% endif %}
     </div>
   </div>
 </div>
