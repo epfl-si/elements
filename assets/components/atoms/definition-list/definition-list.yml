@@ -1,7 +1,7 @@
 title: Definition list
 name: definition-list
 notes: |
-  The definition list component is a **set of definitions**. Every definition contains a title and a paragraph. You can add links in both titles and texts. There is no hierarchy or levels in this list.
+  The definition list component is a **set of definitions**. Every definition forme of two elements: a **term** to define, and a **definition** explaining its meaning. You can add links in both titles and texts. There is no hierarchy or levels in this list.
 
   ### Standard definition list
 variants:
