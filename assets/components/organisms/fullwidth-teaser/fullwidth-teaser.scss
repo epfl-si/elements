@@ -96,7 +96,7 @@
   @include media-breakpoint-up(md) {
     padding: 1rem $grid-gutter-width 0;
   }
-  
+
   @include media-breakpoint-up(xl) {
     display: flex;
     flex-direction: column;
@@ -210,9 +210,9 @@
       padding-bottom: 3rem;
     }
 
-    .headlines & .fullwidth-teaser-text {
-      justify-content: center;
-    }
+    // .headlines & .fullwidth-teaser-text {
+    //   justify-content: center;
+    // }
 
     .fullwidth-teaser-header {
       justify-content: flex-end;
