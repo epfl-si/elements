@@ -1,6 +1,8 @@
 title: Contact
 name: contact
 variants:
+  - name: compact
+    title: Contact bloc compact
   - name: banner
     title: Banner
     wrapper: bg-gray-100
