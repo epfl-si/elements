@@ -1,13 +1,14 @@
 - index.html
-- accessibility.md
-- design principles.md
-- how it works.md
-- how to start.md
-- iconography.md
-- create a page.md
-- brand identity.md
-- typography.html
-- contribution:
-  - documentation.md
+- design:
   - index.md
-- support-and-request.html
+  - brand identity.md
+  - typography.html
+  - iconography.md
+- user documentation:
+  - index.md
+  - accessibility.md
+  - create a page.md
+  - wordpress.md
+- contribute:
+  - index.md
+  - support-and-request.html
