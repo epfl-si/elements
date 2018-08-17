@@ -1,3 +1,0 @@
-# Brand identity
-
-#### More soon...
