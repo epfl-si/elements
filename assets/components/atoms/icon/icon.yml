@@ -5,10 +5,10 @@ notes: |
 
   The icon component requires the icons sprite injected in the page to work. Please have a look at the `svg-icons.js` file.
 
-  **♿️ Note**: the icon is hidden to screen readers with `aria-hidden="true"`, don't forget to add meaning to the component it is placed in (button, label, etc).
+  **A11y note —**
+  The icon is hidden to screen readers with `aria-hidden="true"`, don't forget to add meaning to the component it is placed in (button, label, etc).
 variants:
   - name: list
     title: Icons list
     notes: |
       Here is the list of current available icons used in the styleguide.
-
