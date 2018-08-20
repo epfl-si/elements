@@ -1,9 +1,8 @@
 title: Collapse
 name: collapse
-variants:
-  - name: title
-    title: Collapse Title
-    notes: |
-      This component is **mobile only by default** as in the footer. To offer also the same behaviour on desktop, use the `collapse-title-desktop` and `collapse-item-desktop` classes like below.
 notes: |
-  The collapse JavaScript plugin is used to show and hide content. Buttons or anchors are used as triggers that are mapped to specific elements you toggle. Collapsing an element will `animate the height` from it’s current value to `0`. Given how CSS handles animations, you cannot use padding on a `.collapse` element. Instead, use the class as an independent wrapping element.
+  Collapse component contains chunks of content. You can **display or hide** this content by triggering it. Use it when content is dense and you want to suggest **extra readings**. The collapsed content should not be critical for the reader. You may also allow collapsible items to be open at the same time.
+
+  The collapse JavaScript plugin serves to show and hide content. Buttons or anchors are triggers mapped to the specific elements you toggle. Collapsing an element will `animate the height` from its current value to `0`. Given how CSS handles animations, you cannot use padding on a `.collapse` element. Instead, use the class as an independent wrapping element.
+
+  These elements are useful in groups. Use them to display various types of information, the most common use being **FAQ sections**. For more information, see the [content-group molecule](/#/molecules/collapse-group).

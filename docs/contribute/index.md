@@ -1,6 +1,10 @@
-# Documentation
+# Contribute to Elements
 
-This chapter is about writing documentation for the Element project.
+## How to install
+Refer to our readme file in [the project repository](https://github.com/epfl-idevelop/elements)
+
+## Contribute to the documentation
+This chapter is about writing documentation for the Elements project.
 
 ## File structure
 
@@ -44,4 +48,4 @@ _⚠️ Github UI doesn't provide branch creation, so it will be harder to revie
 
 The documentation can be directly seen inside the `./docs` directory by navigating in the **Github code tab**.
 
-To see the newly edited documentation **in the styleguide**, a **build** and **deploy** is required after merging the related pull requests. **Locally** you just have to `$ yarn deploy` to re-deploy the documentation. 
+To see the newly edited documentation **in the styleguide**, a **build** and **deploy** is required after merging the related pull requests. **Locally** you just have to `$ yarn deploy` to re-deploy the documentation.

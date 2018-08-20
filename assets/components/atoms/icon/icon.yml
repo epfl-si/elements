@@ -1,9 +1,14 @@
 title: Icon
 name: icon
 notes: |
-  The icon component requires the icons sprite to be injected in the page to work. See `svg-icons.js` file.
+  Icons or pictograms are visual cues for interface elements, **use them sparingly**. Remember that icons should (almost) **always come with a label**. One of the exception being the magnyfing-glass icon for the search. This case is well recognized nowadays.
 
-  **♿️ Note**: the icon is hidden to screen readers with `aria-hidden="true"`, don't forget to add meaning to the component it is placed in (button, label, etc).
+  The icon component requires the icons sprite injected in the page to work. Please have a look at the `svg-icons.js` file.
+
+  **A11y note —**
+  The icon is hidden to screen readers with `aria-hidden="true"`, don't forget to add meaning to the component it is placed in (button, label, etc).
 variants:
   - name: list
-    title: Complete list
+    title: Icons list
+    notes: |
+      Here is the list of current available icons used in the styleguide.
