@@ -1,11 +1,13 @@
 title: Definition list
 name: definition-list
 notes: |
-  The definition title can contain links.
+  The definition list component is a **set of definitions**. Every definition forme of two elements: a **term** to define, and a **definition** explaining its meaning. You can add links in both titles and texts. There is no hierarchy or levels in this list.
+
+  ### Standard definition list
 variants:
   - name: grid
-    title: Definition list as a Grid (table-like)
+    title: Grid definition list (table-like)
     notes: |
-      We sometimes need to display data in table-like layout. Definition list is great in these cases.
+      Definitions appear in a grid.
 
-      ♿️ Don't forget to add a title to the table, for a11y purposes.
+      ♿️ **Accessibility note**: Don't forget to add a title to the grid!
