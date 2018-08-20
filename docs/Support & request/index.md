@@ -1,3 +1,0 @@
-# Support & request
-
-#### More soon...
