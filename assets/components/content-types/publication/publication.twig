@@ -3,14 +3,17 @@
   {% for i in 1..4 %}
     <div class="list-group-item list-group-item-publication">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-10">
+          {% if i > 2 %}
+            <img src="https://via.placeholder.com/80x110.jpg" class="float-left mr-3" alt="a publication image">
+          {% endif %}
           <h4 class="h5">Measuring Latency: Am I doing it right?</h4>
           <p class="text-muted small mb-0">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
             Author(s): <a class="text-muted" href="#">John Doe</a>, <a class="text-muted" href="#">John Doe</a>, <a class="text-muted" href="#">John Doe</a>
           </p>
         </div>
-        <div class="col-md-3 offset-md-1 text-right">
+        <div class="col-md-2 text-right mt-4 mt-md-0">
           <p>
             <a href="#" class="btn btn-secondary btn-sm">Detailed record</a>
           </p>
