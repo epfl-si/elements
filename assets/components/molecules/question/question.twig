@@ -1,13 +1,14 @@
-<div class="question">
+<form class="question" action="">
 
   <div class="question-img">
     {% include '@atoms/picture/picture-question.twig' %}
   </div>
 
   <div class="question-content">
-    <p class="h3">À quoi l'éternel brouillard de San Francisco est-il dû ?</p>
+    <h2 class="question-title">Question de science</h2>
+    <h3 class="question-subtitle mt-3 mb-0">À quoi l'éternel brouillard de San Francisco est-il dû ?</h3>
 
-    <div class="question-answers">
+    <div class="question-answers mt-4">
       {% for i in [1,2,3] %}
           <input type="radio" id="custom-radio{{i}}" name="customRadio" class="custom-control-input">
           <label class="custom-control-label" for="custom-radio{{i}}">
@@ -18,5 +19,6 @@
           </label>
       {% endfor %}
     </div>
+    <input type="submit" class="btn btn-primary mt-4 " value="Voter">
   </div>
-</div>
+</form>
