@@ -1,35 +1,38 @@
 {% set bottomlink = bottomlink|default(true) %}
-<h1>2018</h1>
-<h2>Journal Articles</h2>
-<div class="list-group mb-5">
-  {% for i in 1..4 %}
-    <div class="list-group-item list-group-item-publication">
-      <div class="row">
-        <div class="col-md-10">
-          {% if i > 2 %}
-            <img src="https://via.placeholder.com/80x110.jpg" class="float-left mr-3" alt="publication thumbnail">
-          {% endif %}
-          <h4 class="h5">Measuring Latency: Am I doing it right?</h4>
-          <p class="text-muted small mb-0">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
-            Author(s): <a class="text-muted" href="#" target="_blank">John Doe</a>, <a class="text-muted" href="#" target="_blank">John Doe</a>, <a class="text-muted" href="#" target="_blank">John Doe</a>
-          </p>
-        </div>
-        <div class="col-md-2 text-right mt-4 mt-md-0">
-          <p>
-            <a href="#" class="btn btn-secondary btn-sm" target="_blank">Detailed record</a>
-          </p>
-          <p class="text-muted small mb-0">
-            <a class="text-muted" href="#" target="_blank">Full text</a> -
-            <a class="text-muted" href="#" target="_blank">View at publisher</a>
-          </p>
+
+<div class="infoscienceBox no-tex2jax_process">
+  <h1>2018</h1>
+  <h2>Journal Articles</h2>
+  <div class="list-group mb-5">
+    {% for i in 1..4 %}
+      <div class="list-group-item list-group-item-publication">
+        <div class="row">
+          <div class="col-md-10">
+            {% if i > 2 %}
+              <img src="https://via.placeholder.com/80x110.jpg" class="float-left mr-3" alt="publication thumbnail">
+            {% endif %}
+            <h4 class="h5 tex2jax_process">Measuring Latency: Am I doing it right?</h4>
+            <p class="text-muted small mb-0 tex2jax_process">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+              Author(s): <a class="text-muted no-tex2jax_process" href="#" target="_blank">John Doe</a>, <a class="text-muted no-tex2jax_process" href="#" target="_blank">John Doe</a>, <a class="text-muted no-tex2jax_process" href="#" target="_blank">John Doe</a>
+            </p>
+          </div>
+          <div class="col-md-2 text-right mt-4 mt-md-0">
+            <p>
+              <a href="#" class="btn btn-secondary btn-sm" target="_blank">Detailed record</a>
+            </p>
+            <p class="text-muted small mb-0">
+              <a class="text-muted" href="#" target="_blank">Full text</a> -
+              <a class="text-muted" href="#" target="_blank">View at publisher</a>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
+  {% if bottomlink %}
+  <p class="text-center">
+    <a class="link-pretty" href="#" target="_blank">See all publications</a>
+  </p>
+  {% endif %}
 </div>
-{% if bottomlink %}
-<p class="text-center">
-  <a class="link-pretty" href="#" target="_blank">See all publications</a>
-</p>
-{% endif %}
