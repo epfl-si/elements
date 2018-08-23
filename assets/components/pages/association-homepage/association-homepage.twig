@@ -7,7 +7,6 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="container-full">
   {% include '@organisms/hero/hero.twig' with {title: 'Association title', cover_path: 'images/cover/cover01_', content: 'Welcome to our association homepage'} %}
 </div>
@@ -54,7 +53,14 @@
 <div class="container">
   {% include '@organisms/contact/contact-banner.twig' %}
 </div>
-
-
 {% endblock %}
 
+{% block footer_container %}
+<div class="bg-gray-100 pt-5">
+  <div class="container">
+    {% block footer %}
+      {% include '@organisms/footer/footer-light.twig' %}
+    {% endblock %}
+  </div>
+</div>
+{% endblock %}
