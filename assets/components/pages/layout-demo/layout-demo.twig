@@ -1,6 +1,10 @@
-{% set isHomepage = true %}
-
 {% extends "@templates/base/base.twig" %}
+
+{% set nav_aside_items = [{
+  label: "Laboratory Full Name",
+  children: ["Projects", "Publications", "News", "Team", "Teaching"]
+}] %}
+{% set nav_aside_active = 0 %}
 
 {% block content %}
   <div class="alert alert-info">
