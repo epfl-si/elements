@@ -4,13 +4,13 @@
       <img src="./images/event_teaser.png" class="img-fluid" title="professor Xile Hu" alt="a portrait of professor Xile Hu" />
     </picture>
   {% endblock %}
-  <div class="card-body">
-    <h3 class="card-title">News title</h3>
+  <div class="card-body" itemscope itemtype="http://schema.org/Article">
+    <h3 class="card-title" itemprop="name">News title</h3>
     <div class="card-info">
-      <span class="card-info-date">11.09.17</span>
-      <span>Recherche</span>
+      <span class="card-info-date" itemprop="datePublished">11.09.17</span>
+      <span itemprop="about">Recherche</span>
       <span>Prix et récompenses</span>
     </div>
-    <p>The EPFL favors closer ties to industry leading research in order to best meet the scientific, technological and societal</p>
+    <p itemprop="description">The EPFL favors closer ties to industry leading research in order to best meet the scientific, technological and societal</p>
   </div>
 </a>
