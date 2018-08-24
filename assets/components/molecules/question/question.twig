@@ -1,14 +1,14 @@
-<div class="question">
+<form class="question" action="">
 
   <div class="question-img">
     {% include '@atoms/picture/picture-question.twig' %}
   </div>
 
   <div class="question-content">
-    {% if type %}<p class="h6">{{ type }}</p>{% endif %}
-    <p class="h3">À quoi l’éternel brouillard de San Francisco est-il principalement dû ?</p>
+    <h2 class="question-title">{{ type ?: 'Type de question' }}</h2>
+    <h3 class="question-subtitle mt-3">{{ title ?: 'Titre de la question' }}</h3>
 
-    <div class="question-answers">
+    <div class="question-answers mt-4">
       {% set options = options|default(['Option 1', 'Option 2', 'Option 3']) %}
       {% for option in options %}
         <input type="radio" id="custom-radio{{loop.index}}" name="customRadio" class="custom-control-input">
@@ -21,10 +21,6 @@
       {% endfor %}
     </div>
 
-    {% if vote %}
-    <div class="mt-4">
-      <a href="#" class="btn btn-primary">Voter</a>
-    </div>
-    {% endif %}
+    <input type="submit" class="btn btn-primary mt-4" value="Voter">
   </div>
-</div>
+</form>
