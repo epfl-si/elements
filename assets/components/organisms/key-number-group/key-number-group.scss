@@ -11,8 +11,8 @@
   }
 
   @include media-breakpoint-up(md) {
-  .key-number {
-        flex: 1 0 50%;
+    .key-number {
+      flex: 1 0 50%;
     }
   }
 
@@ -26,3 +26,6 @@
     }
   }
 }
+
+@include ie11('.key-number-group .key-number') { flex: 0 0 20%; }
+@include ie11('.key-number-group .key-large') { flex: 0 0 45%; }
