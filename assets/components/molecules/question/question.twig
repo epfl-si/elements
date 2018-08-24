@@ -5,18 +5,26 @@
   </div>
 
   <div class="question-content">
-    <p class="h3">À quoi l'éternel brouillard de San Francisco est-il dû ?</p>
+    {% if type %}<p class="h6">{{ type }}</p>{% endif %}
+    <p class="h3">À quoi l’éternel brouillard de San Francisco est-il principalement dû ?</p>
 
     <div class="question-answers">
-      {% for i in [1,2,3] %}
-          <input type="radio" id="custom-radio{{i}}" name="customRadio" class="custom-control-input">
-          <label class="custom-control-label" for="custom-radio{{i}}">
-            <span class="custom-control-label-content">
-            {{ label ?: 'Option ' ~ i }}</span>
-            <span class="trapeze-horizontal d-none d-lg-block"></span>
-            <span class="trapeze-vertical d-lg-none"></span>
-          </label>
+      {% set options = options|default(['Option 1', 'Option 2', 'Option 3']) %}
+      {% for option in options %}
+        <input type="radio" id="custom-radio{{loop.index}}" name="customRadio" class="custom-control-input">
+        <label class="custom-control-label" for="custom-radio{{loop.index}}">
+          <span class="custom-control-label-content">
+          {{ option }}</span>
+          <span class="trapeze-horizontal d-none d-lg-block"></span>
+          <span class="trapeze-vertical d-lg-none"></span>
+        </label>
       {% endfor %}
     </div>
+
+    {% if vote %}
+    <div class="mt-4">
+      <a href="#" class="btn btn-primary">Voter</a>
+    </div>
+    {% endif %}
   </div>
 </div>
