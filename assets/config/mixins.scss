@@ -208,8 +208,10 @@
 
 
 // IE 11 mixin
+// WARNING: Autoprefixer is off inside this.
 @mixin ie11($selector) {
  _:-ms-fullscreen, :root #{$selector} {
+   /* autoprefixer: off */
    @content;
  }
 }
