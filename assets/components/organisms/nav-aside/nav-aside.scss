@@ -22,6 +22,8 @@
 }
 
 .nav-aside-layout .nav-aside-wrapper {
+  display: block;
+
   @include media-breakpoint-up(xxl){
     flex: 0 0 16.1%;
     max-width: 16.1%;

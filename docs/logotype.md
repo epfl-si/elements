@@ -1,3 +1,0 @@
-# Logotype
-
-#### More soon...
