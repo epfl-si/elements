@@ -1,2 +1,4 @@
 title: Nav toggle
 name: nav-toggle
+notes: |
+  If you want a transitioning loading state, you can apply `is-loading` class on the component during the loading, but don't forget to remove it when it's loaded.
