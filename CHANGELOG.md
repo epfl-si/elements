@@ -1,13 +1,28 @@
 
 # CHANGELOG
 
+*1.1.2* (2018-08-20)
+  - Add documentation new structure
+  - Add branding pages
+  - Add how to use the styleguide in your project
+  - Add illustrations to styleguide homepage
+  - add publication with left image
+  - Refactor collapse and lists component
+
+*1.1.1* (2018-08-13)
+  - contact compact component
+  - add date in headline
+  - fix visual regression on headline
+  - implement header dropdown
+  - enhance hero component and image size
+
 *1.1.0* (2018-08-10)
   - implement Taggable breadcrumb
   - implement headlines
   - refactor homepage and full-width teaser usage
   - use object-fit property for fullwidth teasers
   - decrease fullwidth teaser content width
-  - add fallback grey background for highlights without image 
+  - add fallback grey background for highlights without image
   - implement card-deck component
   - Create the following pages:
     - Association homepage
