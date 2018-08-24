@@ -92,6 +92,17 @@ $animation: 0.2s;
   }
 }
 
+.question-title {
+  font-size: $font-size-base * 1.2;
+  text-transform: uppercase;
+  color: gray('600');
+}
+
+.question-subtitle {
+  font-size: $font-size-base * 1.4;
+  font-weight: bold;
+}
+
 .question-img {
   flex: 0 0 100%;
 }
