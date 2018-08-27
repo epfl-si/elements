@@ -1,6 +1,16 @@
-{% set isHomepage = true %}
+{% set isSpecial = true %}
 
 {% extends "@templates/base/base.twig" %}
+
+{% block header %}
+  {% include '@organisms/header/header-light.twig' with { site_title: 'People' } %}
+{% endblock %}
+
+{% block breadcrumb %}
+<div class="breadcrumb-container">
+  {% include '@molecules/breadcrumb/breadcrumb-tagged.twig' %}
+</div>
+{% endblock %}
 
 {% block content %}
 
@@ -28,6 +38,4 @@
       {% endblock %}
     </div>
   </div>
-  {% endblock %}
-  </div>
-</div>
+{% endblock %}
