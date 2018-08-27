@@ -70,12 +70,6 @@ const nav = () => {
     toggleMobileMenu();
   });
 
-  // close toggle navigation
-  $('.nav-close').on('click', (e) => {
-    e.preventDefault();
-    toggleDesktopMenu();
-  });
-
   // Bind aciton to close toggle navigation, when clicking the white overlay
   $('.overlay').on('click', (e) => {
     e.preventDefault();

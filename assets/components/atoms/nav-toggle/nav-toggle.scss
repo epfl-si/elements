@@ -4,7 +4,7 @@
   display: none;
   position: relative;
   top: 1px;
-  z-index: 101;
+  z-index: $zindex-toggle;
   margin-right: $grid-gutter-width / 3;
   padding: $spacer / 4 $spacer / 2;
   &:hover { cursor: pointer; }
