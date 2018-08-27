@@ -68,7 +68,7 @@
     bottom: -$mm-lang-height;
     width: $mm-lang-width;
     height: $mm-lang-height;
-    z-index: 999120;
+    z-index: $zindex-mobile-lang;
     background: gray('600');
     transition: bottom 0.3s;
 
