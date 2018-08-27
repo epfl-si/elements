@@ -1,9 +1,0 @@
-title: Video
-name: video
-notes : |
-  This is an example of **YouTube** integration but basically, **you can use any king of `<iframe>` URLs** until you keep the wrapper and the classes applied.
-  If you have another type of aspect ration, you can use the corresponding modifier classes:
-    - `.embed-responsive-21by9`
-    - `.embed-responsive-16by9`
-    - `.embed-responsive-4by3`
-    - `.embed-responsive-1by1`

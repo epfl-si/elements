@@ -1,7 +1,0 @@
-title: Key Number
-name: key-number
-wrapper: col-md-6 bg-gray-100
-variants:
-  - name: large
-    title: Large
-    wrapper: 'bg-gray-100'

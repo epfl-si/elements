@@ -1,8 +1,0 @@
-name: access-nav
-title: Access navigation
-notes: |
-  Also called **Skip links**, the access navigation has to be the first element in the markup of every page. Its purpose is to help people using a Screen Reader or just using the keyboard to navigate more easily in the page. The links can be used with keyboard shortcuts (accesskeys) too.
-
-  With the access navigation, the user can jump to the section they want in the page (navigation / main content).
-wrapper: ''
-background: ''

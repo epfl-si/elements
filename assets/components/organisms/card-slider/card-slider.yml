@@ -1,5 +1,0 @@
-title: Card slider
-name: card-slider
-wrapper: bg-gray-100 overflow-hidden
-notes: |
-  Don't forget to wrap your card slider with a wrapper that will hide the overflow (`.overflow-hidden` helper class will achieve just that).

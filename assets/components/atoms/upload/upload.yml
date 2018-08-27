@@ -1,6 +1,0 @@
-title: Upload
-name: upload
-notes: |
-  If you want to **upload more than one file**, you can add the `multiple` attribute on the file input.
-
-  Never forget the `for=""` attribute to link the input to the label.
