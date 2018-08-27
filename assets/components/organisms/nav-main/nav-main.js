@@ -28,12 +28,10 @@ const nav = () => {
     }
   };
 
-  // moves the navigation one level up when clicking a "back" link
-  // eslint-disable-next-line
-  $('.nav-main .nav-back a').on('click', function(e) {
-    e.preventDefault();
-
-    const parents = $(this).parents();
+  // display the parent menu level
+  const displayParentLevel = (node = false) => {
+    if (!node) return false;
+    const parents = $(node).parents();
 
     const parent = parents[2];
     $(parent)
@@ -44,17 +42,12 @@ const nav = () => {
     $(ancestor)
       .removeClass(parentClass)
       .addClass(activeClass);
-  });
+  };
 
-  /*
-    move the navigation one level down,
-    when clicking the "show children" arrow on the right of a menu item
-  */
-  // eslint-disable-next-line
-  $('.nav-main .nav-arrow').on('click', function(e) {
-    e.preventDefault();
-
-    const parents = $(this).parents();
+  // display the parent menu level
+  const displayChildLevel = (node = false) => {
+    if (!node) return false;
+    const parents = $(node).parents();
 
     const parent = parents[0];
     $(parent).addClass(activeClass);
@@ -63,6 +56,76 @@ const nav = () => {
     $(ancestor)
       .addClass(parentClass)
       .removeClass(activeClass);
+  };
+
+  // define if the menu is asynchronous
+  const isAsync = (node = false) => {
+    if (!node) return false;
+    const currentNav = $(node).closest('.nav-main').first();
+    return currentNav.hasClass('nav-async');
+  };
+
+  // moves the navigation one level up when clicking a "back" link
+  $('.nav-main .nav-back a').on('click', (e) => {
+    const $this = $(e.currentTarget);
+    e.preventDefault();
+    const async = isAsync($this);
+    if (async) {
+      // Async nav behaviour
+      const currentNav = $($this).closest('.nav-main').first();
+      currentNav.trigger('loadstart');
+
+      // demo code for actions to trigger after completion
+      const currentNode = $this;
+      setTimeout(() => {
+        currentNav.trigger('loadend', [displayParentLevel, currentNode]);
+      }, 2000, currentNode);
+
+      $('#nav-toggle').addClass('is-loading');
+    } else {
+      // Synchronous nav behaviour, when parent DOM is ready before the click
+      displayParentLevel($this);
+    }
+  });
+
+  /*
+    move the navigation one level down,
+    when clicking the "show children" arrow on the right of a menu item
+  */
+  // eslint-disable-next-line
+  $('.nav-main .nav-arrow').on('click', (e) => {
+    e.preventDefault();
+    const $this = $(e.currentTarget);
+    const $async = isAsync($this);
+    if ($async) {
+      // Async nav behaviour
+      const currentNav = $($this).closest('.nav-main').first();
+      currentNav.trigger('loadstart');
+
+      // demo code for actions to trigger after completion
+      const currentNode = $this;
+      setTimeout(() => {
+        currentNav.trigger('loadend', [displayChildLevel, currentNode]);
+      }, 2000, currentNode);
+    } else {
+      // Normal nav behaviour, when parent DOM is ready before the click
+      displayChildLevel($this);
+    }
+  });
+
+  /**
+   * Bind custom events for async nav loading state
+   */
+  $('.nav-main').on('loadstart', () => {
+    $('#nav-toggle').addClass('is-loading');
+  });
+
+  /**
+   * Bind custom events for async nav loading state
+   */
+  $('.nav-main').on('loadend', (event, action, node) => {
+    $('#nav-toggle').removeClass('is-loading');
+    action(node);
   });
 
   // bind action to mobile menu toggle

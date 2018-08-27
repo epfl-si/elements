@@ -1,5 +1,9 @@
 {% extends "@templates/base/base.twig" %}
 
+{% block nav %}
+  {% include '@organisms/nav-main/nav-main-async.twig' %}
+{% endblock %}
+
 {% block content %}
   <h1 class="mb-5">H1 - Basic page</h1>
 

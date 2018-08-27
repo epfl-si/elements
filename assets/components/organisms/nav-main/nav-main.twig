@@ -1,5 +1,6 @@
+{%- set async = async|default(false) -%}
 <div class="overlay"></div>
-<nav class="nav-main" id="main-navigation" role="navigation">
+<nav class="nav-main {{ async ? ' nav-async' : '' }}" id="main-navigation" role="navigation">
   <div class="nav-wrapper">
     <div class="nav-container">
       <ul class="nav-menu">
