@@ -1,4 +1,10 @@
 title: Nav toggle
 name: nav-toggle
-notes: |
-  If you want a transitioning loading state, you can apply `is-loading` class on the component during the loading, but don't forget to remove it when it's loaded.
+variants:
+  - name: async
+    title: Async
+    notes: >
+      If you want an asynchronous transition, you can apply `nav-toggle-async` class on
+      the component. **It will start the loading** state `onClick` instead of opening the navigation.
+      <br /><br />
+      When your content is ready, **you need to trigger the end of the loading** state using `$('#nav-toggle').trigger('loadend');`
