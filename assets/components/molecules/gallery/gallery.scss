@@ -4,7 +4,7 @@ $gallery-btn-size: 41px;
 $gallery-btn-margin: 14px;
 
 .gallery.is-fullscreen {
-    z-index: 9999999;
+  z-index: $zindex-gallery-opened !important; /* eslint disable line */
 }
 
 .gallery,

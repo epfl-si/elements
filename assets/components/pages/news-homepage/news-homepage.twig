@@ -1,4 +1,4 @@
-{% set isHomepage = true %}
+{% set isSpecial = true %}
 
 {% extends "@templates/base/base.twig" %}
 
@@ -21,7 +21,9 @@
     </div>
     <div class="col-md-8">
         {% include '@content-types/news/news.twig' %}
-        {% include '@molecules/pagination/pagination.twig' %}
+        <div class="mt-3">
+          {% include '@molecules/pagination/pagination.twig' %}
+        </div>
     </div>
   </div>
 </div>

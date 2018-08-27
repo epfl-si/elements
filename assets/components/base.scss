@@ -43,6 +43,7 @@
 @import 'atoms/trapeze/trapeze';
 @import 'atoms/definition-list/definition-list';
 @import 'atoms/figure/figure';
+@import 'atoms/loader/loader';
 
 //
 // molecules:
@@ -71,8 +72,8 @@
 @import 'molecules/tabs/tabs';
 @import 'molecules/collapse-group/collapse-group';
 @import 'molecules/card-deck/card-deck';
+@import 'molecules/key-number/key-number';
 
-//
 // organisms:
 @import 'organisms/card-slider/card-slider';
 @import 'organisms/fullwidth-teaser/fullwidth-teaser';
@@ -89,6 +90,7 @@
 @import 'organisms/restauration/restauration';
 @import 'organisms/social-feed-group/social-feed-group';
 @import 'organisms/headlines/headlines';
+@import 'organisms/key-number-group/key-number-group';
 
 //
 // content-types:
@@ -98,6 +100,7 @@
 @import 'content-types/publication/publication';
 @import 'content-types/science-question/science-question';
 @import 'content-types/study-plan/study-plan';
+@import 'content-types/study-plan/study-plan-ie';
 @import 'content-types/press-review/press-review';
 @import 'content-types/section/section';
 @import 'content-types/faculty/faculty';

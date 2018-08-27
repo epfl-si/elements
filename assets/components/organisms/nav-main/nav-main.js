@@ -19,10 +19,16 @@ const nav = () => {
 
   // Open or close desktop toggle navigation, keeping it's atual position.
   // Used for the hamburger desktop menu to display current position
-  const toggleDesktopMenu = (offset = 0) => {
+  const toggleDesktopMenu = (mustOpen = false) => {
+    const navToggle = $('#nav-toggle');
+    navToggle.toggleClass('open');
+    const offsetX = navToggle.offset().left + navToggle.outerWidth(true);
+    const offsetY = navToggle.offset().top - $(window).scrollTop();
+    $('.nav-main').css('top', offsetY);
+
     $('body').toggleClass('desktop-menu-open');
-    if (offset > 0 && $('body').hasClass('desktop-menu-open')) {
-      $('.nav-main').css('left', offset);
+    if (mustOpen && $('body').hasClass('desktop-menu-open')) {
+      $('.nav-main').css('left', offsetX);
     } else {
       $('.nav-main').css('left', '');
     }
@@ -70,12 +76,6 @@ const nav = () => {
     toggleMobileMenu();
   });
 
-  // close toggle navigation
-  $('.nav-close').on('click', (e) => {
-    e.preventDefault();
-    toggleDesktopMenu();
-  });
-
   // Bind aciton to close toggle navigation, when clicking the white overlay
   $('.overlay').on('click', (e) => {
     e.preventDefault();
@@ -85,11 +85,22 @@ const nav = () => {
   // Bind action to the desktop hamburger (next to breadcrumbs)
   // eslint-disable-next-line
   $('#nav-toggle').on('click', function() {
-    $(this).toggleClass('open');
-    const offsetX = $(this).offset().left + $(this).outerWidth(true);
-    const offsetY = $(this).offset().top - $(window).scrollTop();
-    $('.nav-main').css('top', offsetY);
-    toggleDesktopMenu(offsetX);
+    if ($(this).hasClass('nav-toggle-async') && !$(this).hasClass('open')) {
+      $(this).addClass('is-loading');
+
+      // Demo of loading resolution
+      if ($('#styleguide').length > 0) {
+        setTimeout(() => $('#nav-toggle').trigger('loadend'), 2000);
+      }
+    } else {
+      toggleDesktopMenu(true);
+    }
+  });
+
+  // eslint-disable-next-line
+  $('#nav-toggle').on('loadend', function() {
+    $(this).removeClass('is-loading');
+    toggleDesktopMenu(true);
   });
 };
 
