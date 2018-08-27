@@ -1,4 +1,4 @@
-{% set isHomepage = true %}
+{% set isSpecial = true %}
 
 {% extends "@templates/base/base.twig" %}
 
@@ -55,3 +55,12 @@
 
 {% endblock %}
 
+{% block footer_container %}
+<div class="bg-gray-100 pt-5">
+  <div class="container">
+    {% block footer %}
+      {% include '@organisms/footer/footer-light.twig' %}
+    {% endblock %}
+  </div>
+</div>
+{% endblock %}

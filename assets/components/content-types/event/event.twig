@@ -1,4 +1,4 @@
-<a href="#" class="{% block classes %}card card-gray link-trapeze-horizontal{% endblock %}">
+<a href="#" class="{% block classes %}card card-gray link-trapeze-horizontal{% endblock %}" itemscope itemtype="http://schema.org/Event">
   <div class="card-body">
     {% block img -%}
     <picture class="card-img-top">
@@ -6,16 +6,19 @@
     </picture>
     {% endblock %}
 
-    <h3 class="card-title">{% block title %}Startup Acceleration Workshops{% endblock %}</h3>
+    <h3 class="card-title" itemprop="name">{% block title %}Startup Acceleration Workshops{% endblock %}</h3>
     {% block summary %}{% endblock -%}
     <div class="card-info">
       {% block date %}
-      <span class="card-info-date">10.01.2018</span>
+      <span class="card-info-date" itemprop="startDate" content="2018-01-10T12:00">10.01.2018</span>
       <span>13:00</span>
       <span>17:30</span>
       {% endblock %}
-      <p>
-        {% block info %}Lieu : <b>ArtLab EPFL</b><br> Catégorie : <b>Événements culturel</b><br>{% endblock %}
+      <p itemprop="location" itemscope itemtype="http://schema.org/Place">
+        {% block info %}
+        Lieu : <b><span itemprop="name">ArtLab EPFL</span></b>
+        <br> Catégorie : <b>Événements culturel</b>
+        {% endblock %}
       </p>
     </div>
   </div>
