@@ -72,6 +72,10 @@ First, you must complete the [git-flow](https://danielkummer.github.io/git-flow-
 $ git flow release finish -p 'x.x.x'
 ```
 
+Because the previous command will normally push your release commits and tag, simply **go on Github\* and copy/paste the release's changelog content** in the release's description. (go directly using `https://github.com/epfl-idevelop/elements/releases/edit/x.x.x`)
+
+#### 4. Publish the builds
+
 Complete every commit and tag message if needed. Then put yourself in your local **`master`** branch and type the following command to **start the build publishing task** :
 
 ```bash
