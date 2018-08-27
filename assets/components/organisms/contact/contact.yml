@@ -5,6 +5,14 @@ variants:
     title: Contact bloc compact
   - name: banner
     title: Banner
-    wrapper: bg-gray-100
+    notes: |
+      You can use contact Banner inside a grey wrapper as
+      ```
+      <div class="container-full bg-gray-100 py-5 my-5">
+        <div class="bg-white p-4 p-md-5">
+          ...
+        </div>
+      </div>
+      ```
 notes: |
   ### Contact bloc
