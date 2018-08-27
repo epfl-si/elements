@@ -8,7 +8,7 @@ $nav-spacer: 4px;
 .nav-main {
   position: relative;
   background: color('white');
-  z-index: 100;
+  z-index: $zindex-nav;
   transition: left 0.3s;
   border-right: 1px solid gray('100');
 
@@ -200,54 +200,6 @@ a.nav-arrow {
 }
 
 //
-// Close button for toggle menu
-//
-.nav-close {
-  display: none;
-  z-index: 999;
-  position: absolute;
-  top: $spacer / 2;
-  right: -1 * $spacer;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background: $white;
-  padding-left: 9px;
-  border: 1px solid gray('200');
-  cursor: pointer;
-  transition: all 0.2s;
-
-  &:hover {
-    background: gray('200');
-
-    &:before,
-    &:after {
-      background: $black;
-    }
-  }
-
-  &:before,
-  &:after {
-    content: ' ';
-    display: block;
-    position: absolute;
-    top: 0.95 * $spacer;
-    width: 16px;
-    height: 2px;
-    background: gray('600');
-    border-radius: 2px;
-  }
-
-  &:before {
-    transform: rotate(45deg);
-  }
-
-  &:after {
-    transform: rotate(-45deg);
-  }
-}
-
-//
 // Desktop
 //
 @include media-breakpoint-up(xl) {
@@ -287,8 +239,8 @@ a.nav-arrow {
       position: relative;
     }
 
-    .nav-close {
-      display: block;
+    .nav-aside-wrapper {
+      display: none;
     }
   }
 
@@ -408,7 +360,7 @@ a.nav-arrow {
   height: 0;
   overflow: hidden;
   cursor: pointer;
-  z-index: 50;
+  z-index: $zindex-nav-overlay;
   opacity: 0;
   background: $white;
   transition: opacity 0.3s;

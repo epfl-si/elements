@@ -25,6 +25,7 @@
     [content-start] minmax(min-content, #{col-width(sm, 12)})
     [content-end] 1fr
     [full-end];
+  max-width: 100%;
 
   @include media-breakpoint-down(sm) {
     grid-gap: $grid-gutter-width;

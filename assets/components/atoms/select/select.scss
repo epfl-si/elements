@@ -67,7 +67,7 @@
   overflow: hidden;
   margin-top: -$dropdown-border-width;
   padding: $dropdown-padding-y 0;
-  z-index: 1000;
+  z-index: $zindex-dropdown;
   background: $dropdown-bg;
   border: $dropdown-border-width solid $dropdown-border-color;
   color: $dropdown-link-color;

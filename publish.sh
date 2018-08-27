@@ -22,7 +22,7 @@ then
   npm whoami || { echo "⚠️  You must be logged in to NPM to push a new release" ; exit 1; }
 fi
 
-jq --version || { echo "⚠️  You have jq installed on your machine (brew install jq)" ; exit 1; }
+jq --version || { echo "⚠️  You need jq installed on your machine (brew install jq)" ; exit 1; }
 
 # Proceed =====================================================================
 echo "rebuild frontend assets"
