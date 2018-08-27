@@ -16,7 +16,7 @@
       position: fixed;
       top: 0;
       left: 25px;
-      z-index: 3003;
+      z-index: $zindex-access-nav;
       transform: translateY(-100%);
       transition:
         opacity 0.2s,
