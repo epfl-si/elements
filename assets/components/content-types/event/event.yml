@@ -17,7 +17,7 @@ variants:
     title: Just finished
   - name: wrapper
     title: Slider wrapper
-    wrapper: bg-gray-100
+    wrapper: bg-gray-100 overflow-hidden
 notes: |
 
   ### Basic teaser
