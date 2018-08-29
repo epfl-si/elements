@@ -59,13 +59,15 @@
     grid-column: content;
   }
 
-  .container-full, 
+  .container-full,
   .container,
   .embed-responsive,
   & > iframe {
     grid-column: full;
   }
 }
+
+.container-full[class*="bg-"] + .container-full[class*="bg-"] { margin-top: 0 !important; }
 
 @include ie11('.container-grid') {
   display: block;
