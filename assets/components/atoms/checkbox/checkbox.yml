@@ -1,8 +1,0 @@
-title: Checkbox
-name: checkbox
-variants:
-  - name: states
-    title: Checkbox list sample
-    notes: Here is a sample list with checkboxes.
-notes: |
-   Items list with checkboxes enable people to select some options, or none, or all. Use checkboxes for search options, selection in a form, policy acknowledgment, etc.

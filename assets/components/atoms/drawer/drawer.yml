@@ -1,4 +1,0 @@
-title: Drawer
-name: drawer
-notes: |
-  The drawer component serves one purpose only. **It enables people to go to EPFL’s main website.** This component should appear on all EPFL related websites, as part of their header. It is part of the “[Header light](#/organisms/header)” component.
