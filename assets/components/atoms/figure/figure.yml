@@ -1,5 +1,0 @@
-title: Figure
-name: figure
-notes: |
-  This component is an entity that **is referenced in the flow of the page**. It's a visual version of the [sidenotes](#/molecules/sidenotes) or [footnotes](#/molecules/footnotes). It can contain an image, an illustration, a diagram or a code snippet. You can describe the element with a **caption**.
-  
