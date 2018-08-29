@@ -1,6 +1,20 @@
 
 # CHANGELOG
 
+*1.2.1* (2018-08-29
+- ⚠️ breaking markup changes
+    - none
+
+  - ✨ New implementations
+    - d3304126e8429eb7f907c58c767c390177b5017a card-deck looks beeter when on grey background
+    - card deck variants
+
+  - 🛠 Fixes & other
+    - 5e5daf8fb350f96b90f1af6adfb6c9ffb39b6275 faculties page: 3 columns instead of 2
+    - prevent margin between two followed gray containers
+    - added key numbers on example pages
+
+
 *1.2.0* (2018-08-27)
   - ⚠️ breaking markup changes
     - **Organisms** :
