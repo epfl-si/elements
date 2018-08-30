@@ -32,6 +32,9 @@ echo "Write a copy of package.json for publishing"
 cp package.json $DIRECTORY/package.json
 jq -e ".dependencies = {} | .devDependencies = {}" $DIRECTORY/package.json > $DIRECTORY/package.json.tmp && cp $DIRECTORY/package.json.tmp $DIRECTORY/package.json && rm $DIRECTORY/package.json.tmp
 
+echo "Removing presentation assets"
+rm -rf $DIRECTORY/images/styleguide
+
 echo "backup dist content"
 mkdir "$DIRECTORY-tmp"
 cp -r $DIRECTORY/* "$DIRECTORY-tmp/"
