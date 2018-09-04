@@ -6,7 +6,7 @@
 ## Install
 
 To contribute and run the styleguide, you will need few things :
-- [🔀 Git](https://git-scm.com/) - Version control system 
+- [🔀 Git](https://git-scm.com/) - Version control system
 - either:
 
   - [📗 NodeJS 8+](https://nodejs.org/en/) - JavaScript runtime used to build the project
@@ -84,6 +84,12 @@ $ sh publish.sh x.x.x
 
 That's it ! If everything went fine, **the new release's build is available on the `dist/frontend`** branch thanks to you !
 
+##### 4.1 Note on build images
+Not all images in the styleguide are needed in the `dist/frontend` branch. Most of them only serve a presentation purpose and would be a burden for the production builds. For this reason **the WHOLE `/images/styleguide/` FOLDER** is **removed** during publishing, in the `publish.sh` script.
+
+If you want to ship images to the production build, just make shure they are in the `/images/` folder or any subfolder, as long as it is not named `/images/styleguide/`.
+
+All the images in the `/images/styleguide/` folder will remain available when running `yarn start` or deploying the styleguide on a gh-page.
 
 ## Contribute
 
