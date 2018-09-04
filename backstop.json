@@ -524,9 +524,9 @@
     "delay": 800,
     "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
   }, {
-    "label": "content-types_faculty",
-    "url": "http://localhost:3000/#/content-types/faculty/full",
-    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/faculty/full",
+    "label": "content-types_school",
+    "url": "http://localhost:3000/#/content-types/school/full",
+    "referenceUrl": "https://epfl-idevelop.github.io/elements/#/content-types/school/full",
     "readyEvent": "backstopjs_ready",
     "delay": 800,
     "hideSelectors": ["#__bs_notify__", ".tlbx-actions"]
