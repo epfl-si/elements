@@ -13,6 +13,7 @@
     - no useless image is shipped in the `dist/frontend` branch anymore
     - refactor all "faculty" into "school"
     - fix buttons focus scaling to prevent horizontal scroll when button is full width
+    - fix popover button so the box shadow doesnt get cut off
 
 *1.2.1* (2018-08-29)
 - ⚠️ breaking markup changes

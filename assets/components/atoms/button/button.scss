@@ -124,7 +124,7 @@
 
   @include hover {
     box-shadow: 0 0 0 5px rgba($black, 0.6);
-    outline: none;
+    outline: 1rem solid transparent;
     color: rgba($black, 0.6);
   }
 }
