@@ -37,10 +37,12 @@
     {# Title and actions #}
     <div class="d-flex flex-wrap justify-content-between align-items-baseline mb-5">
       <h1 class="mr-3">Prenom Nom</h1>
-      <a href="#">
+      <div>
         {% include '@atoms/icon/icon.twig' %}
-        Edit profile <span class="sr-only">of Prenom Nom</span>
-      </a>
+        <a href="#">
+          Edit profile <span class="sr-only">of Prenom Nom</span>
+        </a>
+      </div>
     </div>
 
     {# Header area #}
@@ -73,14 +75,23 @@
               <div class="col-sm-12">
                 <p>
                   {% include "@atoms/social-icon/social-icon-link.twig" with {
-                    discrete: true
+                    discrete: true,
+                    icon: "icon-facebook"
                   } %}
                   {% include "@atoms/social-icon/social-icon-link.twig" with {
-                    discrete: true
+                    discrete: true,
+                    icon: "icon-twitter"
                   } %}
                   {% include "@atoms/social-icon/social-icon-link.twig" with {
-                    discrete: true
+                    discrete: true,
+                    icon: "icon-linkedin"
                   } %}
+                </p>
+              </div>
+              <div class="col-sm-12 my-3">
+                <h5>Disponibilités</h5>
+                <p>
+                  Absente un vendredi sur deux.
                 </p>
               </div>
             </div>
@@ -88,17 +99,13 @@
 
           <div class="col-md-6">
             {# Collapsible info #}
-            {% include '@molecules/collapse-group/collapse-group.twig' with { title: false } %}
+            {% include '@molecules/collapse-group/collapse-group-rich-content.twig' with { title: false } %}
 
-            <p>
+            <p class="mt-4">
               <small>
-                <a href="#">
-                  Liste complète des adresses et fonctions
-                </a>
+                <a href="#">Liste complète des adresses et fonctions</a>
                 <br/>
-                <a href="#">
-                  Données administratives
-                </a>
+                {% include "@atoms/icon/icon.twig" with { icon: 'icon-lock' } %}<a href="#">Données administratives</a>
               </small>
             </p>
           </div>
@@ -121,6 +128,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#teaching-and-phd">Teaching & PhD</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#research">Research</a>
           </li>
         </ul>
       </div>
@@ -208,6 +218,21 @@
         {% include '@molecules/tabs/tabs-vertical.twig' %}
       </div>
 
+
+      <div class="my-5">
+        <h2 id="research">Research<span class="sr-only">of Xavier Alexandre</span></h2>
+
+        <h3>Topics</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+        <h3>Ongoing Research Projects</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+      </div>
 
 
     </div>
