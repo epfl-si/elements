@@ -1,7 +1,21 @@
 
 # CHANGELOG
 
-*1.2.1* (2018-08-29
+*1.3.0* (2018-xx-xx)
+- ⚠️ breaking markup changes
+    - **Search** now search and search mobile are different html tag to include in your header. desktop search has been taken out of the menu to ease integration in third party apps
+
+  - ✨ New implementations
+    - molecules/quote
+    - social icon: linkedin
+
+  - 🛠 Fixes & other
+    - no useless image is shipped in the `dist/frontend` branch anymore
+    - refactor all "faculty" into "school"
+    - fix buttons focus scaling to prevent horizontal scroll when button is full width
+    - fix popover button so the box shadow doesnt get cut off
+
+*1.2.1* (2018-08-29)
 - ⚠️ breaking markup changes
     - none
 
