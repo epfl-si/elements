@@ -1,6 +1,9 @@
 title: Collapse group
 name: collapse-group
+variants:
+  - name: rich-content
+    title: Collapse with rich content
 notes: |
   <br/>
-  
+
   This version is **mobile-only by default**, as used in the mobile version of the footer component. For the desktop version: use the classes `collapse-title-desktop` and `collapse-item-desktop`. See example stack below.
