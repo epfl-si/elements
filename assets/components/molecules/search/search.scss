@@ -1,6 +1,28 @@
 @charset 'utf-8';
 
 .header .search {
+  flex: 0 0 auto;
+
+  .dropdown-toggle {
+    padding: $spacer;
+    &:after {
+      display: none;
+    }
+  }
+
+  .search-form {
+    display: flex;
+    border: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  input[type="text"] {
+    width: 12rem;
+  }
+}
+
+.search-mobile {
   display: none;
 
   @include media-breakpoint-down (lg) {
