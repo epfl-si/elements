@@ -1,5 +1,12 @@
 title: Collapse
 name: collapse
+variants:
+  - name: partial
+    title: Partial collapse
+    notes: |
+      The partial collapse allows you to show part of a content to the user. When it is closed, it will fade to white towards the bottom where it is cut.<br>
+      To define the default height of the collapse, you can use `collapse-partial-1` to `collapse-partial-9` classes on the `.collapse-partial` tag.
+
 notes: |
   Collapse component contains chunks of content. You can **display or hide** this content by triggering it. Use it when content is dense and you want to suggest **extra readings**. The collapsed content should not be critical for the reader. You may also allow collapsible items to be open at the same time.
 
