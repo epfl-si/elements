@@ -50,7 +50,7 @@ $collapse-chevron-size: 12px;
       height: 100%;
       background: $primary;
       opacity: 0;
-      transition: 
+      transition:
         opacity 0.3s,
         transform 0.2s;
       z-index: -1;
@@ -165,5 +165,34 @@ $collapse-drop-margin: ($grid-gutter-width * 0.3);
       box-shadow: $dropdown-box-shadow;
       border-bottom: $border-width solid $border-color;
     }
+  }
+}
+
+.collapse-partial:not(.show) {
+  display: block !important;
+  position: relative;
+  height: 7rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.collapse-partial > * {
+  margin: 0;
+}
+
+.collapse-partial:not(.show):after {
+  content: ' ';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(0deg,white 0, rgba(255,255,255,0.9) 15%, transparent)
+}
+
+// helper classes to define partial collapse defaut height
+@for $i from 0 to 10 {
+  .collapse-partial-#{$i}:not(.show) {
+    height: #{$i*2}rem;
   }
 }
