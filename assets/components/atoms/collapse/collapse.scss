@@ -189,3 +189,10 @@ $collapse-drop-margin: ($grid-gutter-width * 0.3);
   height: 100%;
   background: linear-gradient(to top, rgb(255, 255, 255) 0, rgba(255, 255, 255, 0.7) 20%, transparent 100%);
 }
+
+// helper classes to define partial collapse defaut height
+@for $i from 0 to 10 {
+  .collapse-partial-#{$i}:not(.show) {
+    height: #{$i*2}rem;
+  }
+}
