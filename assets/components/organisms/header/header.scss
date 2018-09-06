@@ -4,9 +4,13 @@
   display: flex;
   width: 100%;
   flex-flow: row nowrap;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   height: $header-height;
+
+  @include media-breakpoint-up(xl) {
+    justify-content: flex-start;
+  }
 
   img {
     margin-top: 0;
