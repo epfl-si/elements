@@ -50,7 +50,7 @@ $collapse-chevron-size: 12px;
       height: 100%;
       background: $primary;
       opacity: 0;
-      transition: 
+      transition:
         opacity 0.3s,
         transform 0.2s;
       z-index: -1;
@@ -166,4 +166,26 @@ $collapse-drop-margin: ($grid-gutter-width * 0.3);
       border-bottom: $border-width solid $border-color;
     }
   }
+}
+
+.collapse-partial:not(.show) {
+  display: block !important;
+  position: relative;
+  height: 7rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.collapse-partial > * {
+  margin: 0;
+}
+
+.collapse-partial:not(.show):after {
+  content: ' ';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgb(255, 255, 255) 0, rgba(255, 255, 255, 0.7) 20%, transparent 100%);
 }

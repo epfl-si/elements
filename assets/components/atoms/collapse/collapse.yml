@@ -1,5 +1,8 @@
 title: Collapse
 name: collapse
+variants:
+  - name: partial
+    title: Partial collapse
 notes: |
   Collapse component contains chunks of content. You can **display or hide** this content by triggering it. Use it when content is dense and you want to suggest **extra readings**. The collapsed content should not be critical for the reader. You may also allow collapsible items to be open at the same time.
 

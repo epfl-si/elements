@@ -134,15 +134,7 @@
       <div class="row mt-5">
         <div class="col-md-7">
           <h2 id="biography">Biography<span class="sr-only">of Xavier Alexandre</span></h2>
-          <div class="collapse-half" id="biography-text">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad aperiam culpa dolor dolore eaque esse excepturi incidunt libero maxime molestias mollitia neque odit possimus praesentium quaerat quam quas reprehenderit, saepe similique sit totam veritatis vero voluptas voluptatem voluptates voluptatibus! Ab ad adipisci autem blanditiis cum deleniti deserunt dolor, dolores earum eius enim esse est eveniet exercitationem, fuga fugiat fugit illum ipsum maiores molestias mollitia nesciunt officia perferendis praesentium quisquam quos recusandae rem repellat repudiandae sit temporibus vero vitae voluptatem! Blanditiis excepturi neque officia possimus suscipit? A culpa est ipsa nemo officiis. Corporis distinctio, est iure nihil possimus quis veritatis.</p>
-          </div>
-
-            <a class="collapsed btn btn-light btn-block btn-sm" data-toggle="collapse" aria-hidden="true" href="#biography-text">
-              Show full biography
-              {% include '@atoms/icon/icon.twig' with {icon: 'icon-triangle'} %}
-            </a>
-
+          {% include '@atoms/collapse/collapse-partial.twig' %}
         </div>
         <div class="col-md-5">
           <h2>Fields of expertises<span class="sr-only">of Xavier Alexandre</span></h2>
