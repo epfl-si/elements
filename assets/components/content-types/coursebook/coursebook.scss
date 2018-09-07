@@ -1,1 +1,31 @@
 @charset 'utf-8';
+
+.coursebook-program {
+  .tree {
+    padding: 0;
+    list-style-type: none;
+  }
+  .tree > li {
+    .underline > a {
+      @extend .collapse-title, .collapse-title-desktop;
+      text-decoration: none;
+
+      &:not([aria-expanded]) {
+        @extend .collapsed;
+      }
+    }
+
+    .underline {
+      display: inline;
+    }
+
+    > ul {
+      padding: 0;
+      list-style-type: none;
+
+      li:last-of-type {
+        margin-bottom: $spacer * 1.5;
+      }
+    }
+  }
+}
