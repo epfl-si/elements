@@ -14,5 +14,12 @@ export default () => {
     target.attr('id', itemId);
     toggle.attr('data-target', `#${itemId}`);
     toggle.attr('data-toggle', 'collapse');
+
+    // automatically add full width buttons at the end of the collapse
+    const link = $('<a></a>');
+    link.addClass('btn btn-block btn-primary my-3');
+    link.html("Voir le plan d'études");
+    link.attr('href', toggle.attr('href'));
+    target.append(link);
   });
 };
