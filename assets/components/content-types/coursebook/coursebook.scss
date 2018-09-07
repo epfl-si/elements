@@ -7,12 +7,7 @@
   }
   .tree > li {
     .underline > a {
-      @extend .collapse-title, .collapse-title-desktop;
       text-decoration: none;
-
-      &:not([aria-expanded]) {
-        @extend .collapsed;
-      }
     }
 
     .underline {
