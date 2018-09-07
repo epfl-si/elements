@@ -1,10 +1,10 @@
 title: Coursebook 🚧
 name: coursebook
-wrapper: coursebook-reference-week
+wrapper: coursebook-reference-week col-5
 variants:
   - name: program
     title: Programme plan d'étude
-    wrapper: coursebook-program
+    wrapper: coursebook-program col-5
 notes: |
   <div class="progress"><div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 10%"></div></div><br />
 

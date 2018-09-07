@@ -1,25 +1,49 @@
 @charset 'utf-8';
 
 .coursebook-program {
+
   .tree {
     padding: 0;
     list-style-type: none;
   }
+
   .tree > li {
-    .underline > a {
-      text-decoration: none;
-    }
+    flex: 0 0 50%;
 
     .underline {
       display: inline;
     }
 
+    .underline > a {
+      text-decoration: none;
+    }
+
     > ul {
       padding: 0;
       list-style-type: none;
+      font-size: $font-size-sm;
 
-      li:last-of-type {
-        margin-bottom: $spacer * 1.5;
+      li {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        padding: ($spacer * 0.4) ($spacer * 0.2);
+
+        > * {
+          flex: 0 0 50%;
+        }
+
+        .img_legende, br {
+          display: none;
+        }
+      }
+
+      strong {
+        text-transform: uppercase;
+      }
+
+      > li:nth-child(even) {
+        background: $gray-100;
       }
     }
   }
