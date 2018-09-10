@@ -14,7 +14,7 @@ $collapse-chevron-size: 12px;
   position: relative;
   width: 100%;
   margin-bottom: 0;
-  padding: 0.9rem 0;
+  padding: 0.9rem #{ $collapse-chevron-size + 4px } 0.9rem 0;
   border-top: 1px solid $gray-300;
   font-size: 1.1rem;
   text-align: left;
@@ -23,10 +23,11 @@ $collapse-chevron-size: 12px;
 
   &:after {
     content: $collapse-chevron;
-    float: right;
+    position: absolute;
+    top: $collapse-chevron-size;
+    right: 0;
     width: $collapse-chevron-size;
     height: ($collapse-chevron-size / 2);
-    margin-top: -3px;
     border: 0;
   }
 
@@ -36,6 +37,7 @@ $collapse-chevron-size: 12px;
 }
 
 .collapse-title {
+  position: relative;
   padding: 0;
   background: none;
   border: none;
