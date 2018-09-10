@@ -12,6 +12,11 @@
 
   .tree > li {
     flex: 0 0 50%;
+    font-size: $font-size-sm;
+
+    strong {
+      font-size: $font-size-sm * 0.9;
+    }
 
     .underline {
       display: inline;
@@ -32,11 +37,16 @@
         width: 100%;
         padding: ($spacer * 0.4) ($spacer * 0.2);
 
+
         > * {
-          flex: 0 0 50%;
+          flex: 0 0 auto;
+
+          &:first-child {
+            flex: 0 0 50%;
+          }
         }
 
-        .img_legende, br {
+        br {
           display: none;
         }
       }
@@ -144,40 +154,39 @@
     font-size: $font-size-sm;
 
     li {
-      position: relative;
       margin-bottom: $spacer * 0.1;
-      padding-left: $spacer * 1.35;
     }
   }
+}
 
-  .img_legende {
-    &:before {
-      margin-right: $spacer * 0.3;
-      position: absolute;
-      top:0;
-      left: 0;
-    }
+/**
+* temporary icons style
+**/
+.img_legende {
+  &:before {
+    margin-right: $spacer * 0.3;
+    float: left;
+  }
 
-    &.automne:before {
-      content: '🍂';
-    }
-    &.winter:before {
-      content: '❄️';
-    }
-    &.printemps:before {
-      content: '🌼';
-    }
-    &.sun:before {
-      content: '☀️';
-    }
-    &.anglais:before {
-      content: '🏴󠁧󠁢󠁥󠁮󠁧󠁿󠁧󠁢󠁥󠁮󠁧󠁿';
-    }
-    &.francais:before {
-      content: '🇫🇷';
-    }
-    &.allemand:before {
-      content: '🇩🇪';
-    }
+  &.automne:before {
+    content: '🍂';
+  }
+  &.winter:before {
+    content: '❄️';
+  }
+  &.printemps:before {
+    content: '🌼';
+  }
+  &.sun:before {
+    content: '☀️';
+  }
+  &.anglais:before {
+    content: '🏴󠁧󠁢󠁥󠁮󠁧󠁿󠁧󠁢󠁥󠁮󠁧󠁿';
+  }
+  &.francais:before {
+    content: '🇫🇷';
+  }
+  &.allemand:before {
+    content: '🇩🇪';
   }
 }
