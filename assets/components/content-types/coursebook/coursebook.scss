@@ -1,5 +1,8 @@
 @charset 'utf-8';
 
+/**
+* Program
+**/
 .coursebook-program {
 
   .tree {
@@ -49,6 +52,9 @@
   }
 }
 
+/**
+* Reference week
+**/
 .semaineDeRef {
   @extend .table, .table-boxed;
 
@@ -111,9 +117,67 @@
   width: auto !important;
   margin-right: 0.9rem;
   font-size: $font-size-sm * 1.07;
+}
 
+/**
+* Legend
+**/
 
-  span {
+.box.two-cols {
+  display: flex;
+  flex-flow: row wrap;
 
+  .box-col {
+    flex: 0 0 50%;
+  }
+}
+
+.coursebook-legend {
+  h3 {
+    flex: 0 0 100%;
+    font-size: $font-size-base * 1.2;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    font-size: $font-size-sm;
+
+    li {
+      position: relative;
+      margin-bottom: $spacer * 0.1;
+      padding-left: $spacer * 1.35;
+    }
+  }
+
+  .img_legende {
+    &:before {
+      margin-right: $spacer * 0.3;
+      position: absolute;
+      top:0;
+      left: 0;
+    }
+
+    &.automne:before {
+      content: '🍂';
+    }
+    &.winter:before {
+      content: '❄️';
+    }
+    &.printemps:before {
+      content: '🌼';
+    }
+    &.sun:before {
+      content: '☀️';
+    }
+    &.anglais:before {
+      content: '🏴󠁧󠁢󠁥󠁮󠁧󠁿󠁧󠁢󠁥󠁮󠁧󠁿';
+    }
+    &.francais:before {
+      content: '🇫🇷';
+    }
+    &.allemand:before {
+      content: '🇩🇪';
+    }
   }
 }
