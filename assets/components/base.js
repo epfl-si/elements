@@ -14,6 +14,8 @@ import cardSlider from './organisms/card-slider/card-slider';
 import svgIcons from '../icons/svg-icons';
 import nav from './organisms/nav-main/nav-main.js';
 import drawer from './atoms/drawer/drawer.js';
+import search from './molecules/search/search.js';
+import coursebook from './content-types/coursebook/coursebook.js';
 
 import guide from './guide.js';
 
@@ -27,7 +29,9 @@ const init = () => {
   datepickerEvent();
   popover();
   gallery();
+  search();
   share();
+  coursebook();
   Tablesaw.init();
   nav();
   cardSlider();

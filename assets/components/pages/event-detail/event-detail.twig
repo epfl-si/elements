@@ -3,12 +3,12 @@
 {% extends "@templates/base/base.twig" %}
 
 {% block header %}
-  {% include '@organisms/header/header-light.twig' with { site_title: 'Event title' } %}
+  {% include '@organisms/header/header-light.twig' with { site_title: 'Event title', dropdown: true } %}
 {% endblock %}
 
 {% block breadcrumb %}
 <div class="breadcrumb-container">
-  {% include '@molecules/breadcrumb/breadcrumb-tagged.twig' %}
+  {% include '@molecules/breadcrumb/breadcrumb.twig' %}
 </div>
 {% endblock %}
 
@@ -27,54 +27,7 @@
           {% include '@atoms/picture/picture.twig' %}
         </div>
         <div class="col-lg-4 col-md-6 bg-gray-100">
-          <div class="p-3">
-            <h4>Détails de l'événement</h4>
-            <table class="table">
-              <tbody>
-                <tr>
-                  <td>Date</td>
-                  <td>
-                    <span itemprop="startDate" content="2018-01-13T12:00">
-                      13.01.2018 - 12:00 → 13:30
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Avec</td>
-                  <td>Prof Mohamed Bentires-Alj</td>
-                </tr>
-                <tr>
-                  <td>Lieu</td>
-                  <td>
-                    <div itemprop="location" itemscope itemtype="http://schema.org/Place">
-                      <span itemprop="name"><a href="http://plan.epfl.ch/?room=SV2811">SV 2811</a></span>
-                      <div class="d-none" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                        <span itemprop="streetAddress">EPFL</span><br>
-                        <span itemprop="addressLocality">Lausanne</span>,
-                        <span itemprop="postalCode">1015</span>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Organisé par</td>
-                  <td><a href="https://people.epfl.ch/douglas.hanahan">Douglas Hanahan</a></td>
-                </tr>
-                <tr>
-                  <td>Prix</td>
-                  <td>
-                    <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                     <div itemprop="price" content="0">Accès libre</div>
-                     <span itemprop="priceCurrency" content="CHF" />
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="py-4">
-              {% include '@atoms/button/button.twig' %}
-            </div>
-          </div>
+          {% include '@molecules/metabox/metabox.twig' %}
         </div>
       </div>
     </div>
@@ -91,10 +44,17 @@
       </div>
 
       <div class="col-md-4 offset-md-2">
-
+        <div class="">
+          <a href="#" class="btn btn-secondary">
+            <span class="mr-1">
+              {% include '@atoms/icon/icon.twig' with {icon: 'icon-arrow-right'} %}
+            </span>
+            Ajouter à mon calendrier
+          </a>
+        </div>
 
         <div class="mt-5">
-          <h2 class="h6">Liens</h2>
+          <h2 class="h5 text-uppercase">Liens</h2>
           <ul class="list-bullet">
             <li><a class="link-pretty" href="#">Site web de l'exposition</a></li>
           </ul>
@@ -102,47 +62,40 @@
 
 
         <div class="mt-5">
-          <h2 class="h6">Informations pratiques</h2>
-          <ul class="list-bullet mb-5">
-            <li>Organisation Bureau ArtLab</li>
+          <h2 class="h5 text-uppercase">Informations pratiques</h2>
+          <ul class="list-bullet">
+            <li>Organisation: <a href="#">Bureau ArtLab</a></li>
             <li>Accessibilité Tout public</li>
           </ul>
         </div>
 
         <div class="mt-5">
-          <h2 class="h6">Abonnez-vous aux publications de Mediacom</h2>
-          <div class="form-group">
-            <input type="email" placeholder="Votre email" class="form-control">
-          </div>
-        </div>
-
-        <div class="mt-5">
-          <h2 class="h6">Mots-clés</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, natus.</p>
-        </div>
-
-        <div class="mt-5">
-          <p class="text-muted">Partager sur</p>
+          <p class="h5 text-uppercase">Partager sur</p>
           <div>
-            <a href="#" class="social-icon social-icon-discrete social-icon-facebook">
-              <svg class="icon"><use xlink:href="#icon-facebook"></use></svg>
-            </a>
-            <a href="#" class="social-icon social-icon-discrete social-icon-twitter">
-              <svg class="icon"><use xlink:href="#icon-twitter"></use></svg>
-            </a>
-            <a href="#" class="social-icon social-icon-discrete social-icon-instagram">
-              <svg class="icon"><use xlink:href="#icon-instagram"></use></svg>
-            </a>
-            <a href="#" class="social-icon social-icon-discrete social-icon-mail-plane">
-              <svg class="icon"><use xlink:href="#icon-mail-plane"></use></svg>
-            </a>
-            <a href="#" class="social-icon social-icon-discrete social-icon-whatsapp">
-              <svg class="icon"><use xlink:href="#icon-whatsapp"></use></svg>
-            </a>
-            <a href="#" class="social-icon social-icon-discrete social-icon-googleplus">
-              <svg class="icon"><use xlink:href="#icon-googleplus"></use></svg>
-            </a>
+          {% include '@atoms/social-icon/social-icon-link-group.twig' with {discrete: true} %}
           </div>
+        </div>
+
+        <div class="mt-5">
+          <h2 class="h5 text-uppercase">Abonnez-vous aux publications de Mediacom</h2>
+          <div class="form-group">
+          <div class="input-group">
+            <input type="email" placeholder="Votre email" class="form-control">
+            <button type="submit" class="btn btn-primary input-group-append">
+              {% include '@atoms/icon/icon.twig' with {icon: 'icon-mail-plane'} %}
+            </button>
+          </div>
+          </div>
+        </div>
+
+        <div class="mt-5">
+          <h2 class="h5 text-uppercase">Mots-clés</h2>
+          <span class="tag tag-light">Technologie</span>
+          <span class="tag tag-light">2018</span>
+          <span class="tag tag-light">Public</span>
+          <span class="tag tag-light">EPFL</span>
+          <span class="tag tag-light">Suisse</span>
+          <span class="tag tag-light">A.I.</span>
         </div>
 
       </div>

@@ -3,8 +3,9 @@
 .nav-lang {
   display: none;
   font-size: 0.8 * $font-size-base;
+  margin-left: auto;
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     padding-right: $spacer * 3;
   }
 

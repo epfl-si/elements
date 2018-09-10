@@ -15,6 +15,7 @@
 }
 
 a.social-icon {
+  margin-bottom: $spacer * 0.3;
   transition:
     transform 0.2s ease,
     background-color 0.2s ease,
@@ -45,6 +46,10 @@ a.social-icon {
 
 .social-icon-googleplus {
   background-color: $googleplus;
+}
+
+.social-icon-linkedin {
+  background-color: $linkedin;
 }
 
 // From https://codepen.io/katydecorah/pen/PNLePj
