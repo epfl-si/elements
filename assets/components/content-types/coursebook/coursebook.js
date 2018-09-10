@@ -20,7 +20,7 @@ export default () => {
 
     // automatically add full width buttons at the end of the collapse
     const link = $('<a></a>');
-    link.addClass('btn btn-block btn-primary my-3');
+    link.addClass('btn btn-block btn-sm btn-primary my-3');
     link.html("Voir le plan d'études");
     link.attr('href', toggle.attr('href'));
     target.append(link);
