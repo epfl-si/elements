@@ -51,4 +51,69 @@
 
 .semaineDeRef {
   @extend .table, .table-boxed;
+
+  tbody {
+    tr:first-child {
+      th {
+        padding: ($spacer * 0.12) ($spacer * 0.66);
+        background: $table-head-bg;
+        border-left: 1px solid gray('200');
+        border-bottom: 3px solid gray('200');
+        text-transform: uppercase;
+        color: $table-head-color;
+      }
+      th:first-child {
+        background: $white;
+      }
+    }
+
+    tr {
+      .time {
+        font-weight: bold;
+      }
+
+      td {
+        padding: ($spacer * 0.15) ($spacer * 0.45)
+      }
+    }
+  }
+}
+
+.local-color {
+  background: theme-color("primary");
+}
+
+.local-color-light {
+  background: darken(theme-color("warning"), 5.2);
+}
+
+.local-color-dark {
+  background: theme-color("info");
+}
+
+.taken {
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+
+  a {
+    color: white !important;
+    text-decoration-color: $white;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}
+
+.coursebook-reference-week > div > div {
+  // these are the items out of the table
+  width: auto !important;
+  margin-right: 0.9rem;
+  font-size: $font-size-sm * 1.07;
+
+
+  span {
+
+  }
 }
