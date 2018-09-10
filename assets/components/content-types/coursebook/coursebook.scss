@@ -48,3 +48,7 @@
     }
   }
 }
+
+.semaineDeRef {
+  @extend .table, .table-boxed;
+}
