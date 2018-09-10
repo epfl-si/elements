@@ -1,0 +1,48 @@
+<div class="p-3">
+  <h4>Détails de l'événement</h4>
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>Date</td>
+        <td>
+          <span itemprop="startDate" content="2018-01-13T12:00">
+            13.01.2018 - 12:00 → 13:30
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>Avec</td>
+        <td>Prof Mohamed Bentires-Alj</td>
+      </tr>
+      <tr>
+        <td>Lieu</td>
+        <td>
+          <div itemprop="location" itemscope itemtype="http://schema.org/Place">
+            <span itemprop="name"><a href="http://plan.epfl.ch/?room=SV2811">SV 2811</a></span>
+            <div class="d-none" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+              <span itemprop="streetAddress">EPFL</span><br>
+              <span itemprop="addressLocality">Lausanne</span>,
+              <span itemprop="postalCode">1015</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Organisé par</td>
+        <td><a href="https://people.epfl.ch/douglas.hanahan">Douglas Hanahan</a></td>
+      </tr>
+      <tr>
+        <td>Prix</td>
+        <td>
+          <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <div itemprop="price" content="0">Accès libre</div>
+            <span itemprop="priceCurrency" content="CHF" />
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="py-4">
+    {% include '@atoms/button/button.twig' %}
+  </div>
+</div>
