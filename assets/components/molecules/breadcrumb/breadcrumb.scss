@@ -33,6 +33,7 @@
 .breadcrumb-wrapper {
   max-width: 100%;
   width: 100%;
+  min-height: 2.15rem;
   border-bottom: 1px solid gray('300');
 
   @include media-breakpoint-up(lg) {
