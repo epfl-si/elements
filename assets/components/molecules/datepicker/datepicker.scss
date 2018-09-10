@@ -75,13 +75,14 @@
   display: inline-block;
   width: 2.4rem;
   height: 2.4rem;
+  padding: ($spacer * 0.55) 0 !important;
   background: transparent !important;
   line-height: 1.65rem;
   border-radius: 100%;
 
   &:hover,
   &:focus {
-    border: 1px solid $gray-100;
+    border: 1px solid $gray-200;
   }
 
   &.picker__day--today {
@@ -90,7 +91,9 @@
   }
 
   &.picker__day--highlighted {
-    border-color: $gray-300;
+    border-color: $gray-200 !important;
+    font-weight: normal;
+    color: $body-color;
   }
 
   &.picker__day--selected {
