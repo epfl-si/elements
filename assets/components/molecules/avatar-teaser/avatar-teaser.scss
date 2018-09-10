@@ -19,6 +19,11 @@
   }
 }
 
+.bg-gray-100 .avatar-teaser-body {
+  border-color: gray('200');
+  color: $body-color;
+}
+
 $avatar-size: 50px;
 
 .avatar-teaser-img {
