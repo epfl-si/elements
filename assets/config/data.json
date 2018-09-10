@@ -111,7 +111,7 @@
     "highlight_1": {
       "title": "Des océans plus froids que ce que nous le pensions",
       "content": "Une équipe de chercheurs de l’EPFL et européenne a découvert une erreur dans la façon dont ont été estimées jusqu’ici les températures des océans, faisant potentiellement du réchauffement climatique actuel un évènement sans précédent ces cent derniers millions d’années.",
-      "image": "./images/homepage/1-teaser-news-highlight.jpg"
+      "image": "./images/styleguide/homepage/1-teaser-news-highlight.jpg"
     },
 
     "section_one": {
@@ -156,19 +156,19 @@
           "title": "Artlab",
           "content": "Le Artlab organise une grand diversité d’événements et en s’associant à des institutions culturelles de la région.",
           "button": "Explorez le Artlab",
-          "image": "./images/homepage/2-teaser-basic-page-column1.jpg"
+          "image": "./images/styleguide/homepage/2-teaser-basic-page-column1.jpg"
         },
         {
           "title": "Rolex Center",
           "content": "Le Rolex Learning Center est à la fois un laboratoire d’apprentissage, une bibliothèque abritant 500’000 ouvrages et un centre culturel international.",
           "button": "Découvrez le Rolex Center",
-          "image": "./images/homepage/2-teaser-basic-page-column2.jpg"
+          "image": "./images/styleguide/homepage/2-teaser-basic-page-column2.jpg"
         },
         {
           "title": "SwissTech CC",
           "content": "Le SwissTech Convention Center est un des plus grand centre de congrès de la région lémanique accueillant des évènements de renommée internationale.",
           "button": "Embarquez pour le SwissTech",
-          "image": "./images/homepage/2-teaser-basic-page-column3.jpg"
+          "image": "./images/styleguide/homepage/2-teaser-basic-page-column3.jpg"
         }
       ]
     },
@@ -176,13 +176,13 @@
     "highlight_2": {
       "title": "Étudier à l’EPFL, 13 filières de formation",
       "content": "Treize filières de formation dans les sciences de l’ingénieur, des programmes doctoraux de choix, des laboratoires de pointe dirigés par des professeurs de réputation internationale, un campus moderne en plein développement qui s’étend sur plus de 10’000 mètres carrés.",
-      "image": "./images/homepage/3-teaser-basic-page-highlight.jpg"
+      "image": "./images/styleguide/homepage/3-teaser-basic-page-highlight.jpg"
     },
 
     "highlight_3": {
       "title": "Pour une transformation plus efficace des molécules",
       "content": "Le chimiste Xile Hu est le lauréat du Prix Latsis 2017. Ce professeur à l’Ecole polytechnique fédérale de Lausanne est récompensé pour son impressionnante carrière scientifique et ses excellents travaux de recherche sur la compréhension fondamentale de la catalyse.",
-      "image": "./images/homepage/4-teaser-news-highlight.jpg"
+      "image": "./images/styleguide/homepage/4-teaser-news-highlight.jpg"
     },
 
     "section_3": {
@@ -191,27 +191,27 @@
       "cards": [
         {
           "title": "Lausanne",
-          "image": "./images/homepage/5-teaser-mission-research-lausanne.jpg"
+          "image": "./images/styleguide/homepage/5-teaser-mission-research-lausanne.jpg"
         },
         {
           "title": "Genève",
-          "image": "./images/homepage/5-teaser-mission-research-geneva.jpg"
+          "image": "./images/styleguide/homepage/5-teaser-mission-research-geneva.jpg"
         },
         {
           "title": "Neuchâtel",
-          "image": "./images/homepage/5-teaser-mission-research-neuchatel.jpg"
+          "image": "./images/styleguide/homepage/5-teaser-mission-research-neuchatel.jpg"
         },
         {
           "title": "Fribourg",
-          "image": "./images/homepage/5-teaser-mission-research-fribourg.jpg"
+          "image": "./images/styleguide/homepage/5-teaser-mission-research-fribourg.jpg"
         },
         {
           "title": "Valais",
-          "image": "./images/homepage/5-teaser-mission-research-valais.jpg"
+          "image": "./images/styleguide/homepage/5-teaser-mission-research-valais.jpg"
         },
         {
           "title": "Middle-East",
-          "image": "./images/homepage/5-teaser-mission-research-middle-east.jpg"
+          "image": "./images/styleguide/homepage/5-teaser-mission-research-middle-east.jpg"
         }
       ]
     },
@@ -219,17 +219,17 @@
     "highlight_4": {
       "title": "Explorer le portail étudiants de l'EPFL",
       "content": "Découvrez l'ensemble des services dédiés aux étudiants : vie académique, cours, cartes d'accès et plans, transports et restauration. Mais aussi les bons plans, les réductions et les événements organisés par les nombreuses associations d'étudiants.",
-      "image": "./images/homepage/6-teaser-basic-page-highlight.jpg"
+      "image": "./images/styleguide/homepage/6-teaser-basic-page-highlight.jpg"
     },
 
     "questions": {
-      "image": "./images/homepage/7-science-question-SF.jpg"
+      "image": "./images/styleguide/homepage/7-science-question-SF.jpg"
     },
 
     "highlight_5": {
       "title": "L’EPFL vue du ciel",
       "content": "L'association Aéropoly a pris des images du campus à l'aide d'un dirigeable avant l'ouverture de Balélec. Le dirigeable avait déjà pris son envol une première fois pendant Polynice, événement organisé pour fêter les 60 ans de l'AGEPoly, soit l'association des étudiants de l'EPFL.",
-      "image": "./images/homepage/8-teaser-news-highlight.jpg"
+      "image": "./images/styleguide/homepage/8-teaser-news-highlight.jpg"
     }
   }
 }

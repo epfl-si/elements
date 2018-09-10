@@ -187,13 +187,6 @@ export default () => {
       clear: '',
       close: '',
       onRender() {
-        // stop default highlight
-        $('div.picker__day--highlighted').each(function () {
-          if ($(this).data('pick') !== timestamp) {
-            $(this).removeClass('picker__day--highlighted');
-          }
-        });
-
         handleMonthLabels(this, monthsShort);
 
         if (isMobile) {

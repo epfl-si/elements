@@ -23,15 +23,20 @@
     width: 100%;
     height: auto;
   }
+  figure{
+    margin-bottom: 0;
+  }
 
   picture,
+  figure,
   .fullwidth-teaser-text {
     @include media-breakpoint-up(md) {
       flex: 0 0 50%;
     }
   }
 
-  picture {
+  picture,
+  figure {
     @include media-breakpoint-down(sm) {
       img {
         width: 100% !important;
@@ -57,7 +62,8 @@
     display: block;
     padding: 0;
 
-    picture {
+    picture,
+    figure {
       display: block;
       height: 90vh;
       max-height: 90vh;
@@ -253,14 +259,16 @@
 .fullwidth-teaser-left {
 
   @include media-breakpoint-up(md) {
-    picture img {
+    picture img,
+    figure img {
       right: -10%;
       left: auto;
     }
   }
 
   @include media-breakpoint-up(lg) {
-    picture img {
+    picture img,
+    figure img {
       right: 0;
     }
     .fullwidth-teaser-text {
@@ -269,4 +277,3 @@
     }
   }
 }
-

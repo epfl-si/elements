@@ -1,11 +1,11 @@
-<form action="#" class="d-lg-none">
-  <div class="input-group search" role="search">
-    <div class="input-group-prepend">
-      <span class="input-group-text">
-        {% include '@atoms/icon/icon.twig' with { icon: 'icon-search' } %}
-      </span>
-    </div>
+<div class="dropdown dropright search d-none d-xl-block">
+  <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+    {% include "@atoms/icon/icon.twig" with { icon: 'icon-search' } %}
+  </a>
+  <form action="#" class="dropdown-menu border-0 p-0">
+    <div class="search-form mt-1 input-group">
       <label for="search" class="sr-only">Rechercher sur le site</label>
-      <input type="text" class="form-control" id="search" placeholder="Rechercher">
-  </div>
-</form>
+      <input type="text" class="form-control" name="search" placeholder="Rechercher" >
+      <button type="submit" class="d-none d-xl-block btn btn-primary input-group-append" type="button">Valider</button></div>
+  </form>
+</div>

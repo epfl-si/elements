@@ -10,7 +10,7 @@
       {% if dropdown %}
       <li class="dropdown">
         <button class="btn btn-link dropdown-toggle nav-item" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Canal d'actualités
+          Liste des options
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="#">Option 1</a>
@@ -18,7 +18,7 @@
           <a class="dropdown-item" href="#">Option 3</a>
         </div>
       </li>
-      {% endif %}
+      {% else %}
       <li id="menu-item-888">
         <a class="nav-item" href="/propos-0/">À propos</a>
       </li>
@@ -28,11 +28,7 @@
       <li id="menu-item-666">
         <a class="nav-item" href="/ducation-2/">Éducation</a>
       </li>
-      <li id="menu-item-777">
-        <a class="nav-item" href="/ducation-2/">
-          {% include "@atoms/icon/icon.twig" with { icon: 'icon-search' } %}
-        </a>
-      </li>
+      {% endif %}
     </ul>
     {% include '@molecules/search/search.twig' %}
     {% include '@atoms/nav-lang/nav-lang.twig' %}

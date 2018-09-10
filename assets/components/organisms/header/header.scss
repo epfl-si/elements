@@ -8,6 +8,10 @@
   align-items: center;
   height: $header-height;
 
+  @include media-breakpoint-up(xl) {
+    justify-content: flex-start;
+  }
+
   img {
     margin-top: 0;
     width: 110px;
@@ -26,7 +30,7 @@
 
   .nav-header {
     display: flex;
-    flex: 1 0 auto;
+    flex: 0 0 auto;
     flex-flow: row nowrap;
     margin: 0 0 0 (3.7 * $spacer);
     padding: 0;
@@ -140,7 +144,7 @@
   h1 {
     align-self: flex-start;
     flex: 0 1 100px;
-    margin: 1rem 0;
+    margin: auto 0;
     font-size: $font-size-base;
     color: theme-color('primary');
     text-transform: uppercase;
