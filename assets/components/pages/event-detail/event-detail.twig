@@ -44,10 +44,17 @@
       </div>
 
       <div class="col-md-4 offset-md-2">
-
+        <div class="">
+          <a href="#" class="btn btn-secondary">
+            <span class="mr-1">
+              {% include '@atoms/icon/icon.twig' with {icon: 'icon-arrow-right'} %}
+            </span>
+            Ajouter à mon calendrier
+          </a>
+        </div>
 
         <div class="mt-5">
-          <h2 class="h6">Liens</h2>
+          <h2 class="h5 text-uppercase">Liens</h2>
           <ul class="list-bullet">
             <li><a class="link-pretty" href="#">Site web de l'exposition</a></li>
           </ul>
@@ -55,30 +62,40 @@
 
 
         <div class="mt-5">
-          <h2 class="h6">Informations pratiques</h2>
-          <ul class="list-bullet mb-5">
-            <li>Organisation Bureau ArtLab</li>
+          <h2 class="h5 text-uppercase">Informations pratiques</h2>
+          <ul class="list-bullet">
+            <li>Organisation: <a href="#">Bureau ArtLab</a></li>
             <li>Accessibilité Tout public</li>
           </ul>
         </div>
 
         <div class="mt-5">
-          <h2 class="h6">Abonnez-vous aux publications de Mediacom</h2>
-          <div class="form-group">
-            <input type="email" placeholder="Votre email" class="form-control">
-          </div>
-        </div>
-
-        <div class="mt-5">
-          <h2 class="h6">Mots-clés</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, natus.</p>
-        </div>
-
-        <div class="mt-5">
-          <p class="text-muted">Partager sur</p>
+          <p class="h5 text-uppercase">Partager sur</p>
           <div>
           {% include '@atoms/social-icon/social-icon-link-group.twig' with {discrete: true} %}
           </div>
+        </div>
+
+        <div class="mt-5">
+          <h2 class="h5 text-uppercase">Abonnez-vous aux publications de Mediacom</h2>
+          <div class="form-group">
+          <div class="input-group">
+            <input type="email" placeholder="Votre email" class="form-control">
+            <button type="submit" class="btn btn-primary input-group-append">
+              {% include '@atoms/icon/icon.twig' with {icon: 'icon-mail-plane'} %}
+            </button>
+          </div>
+          </div>
+        </div>
+
+        <div class="mt-5">
+          <h2 class="h5 text-uppercase">Mots-clés</h2>
+          <span class="tag tag-light">Technologie</span>
+          <span class="tag tag-light">2018</span>
+          <span class="tag tag-light">Public</span>
+          <span class="tag tag-light">EPFL</span>
+          <span class="tag tag-light">Suisse</span>
+          <span class="tag tag-light">A.I.</span>
         </div>
 
       </div>
