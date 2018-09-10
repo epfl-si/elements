@@ -6,6 +6,12 @@
   {% include '@organisms/header/header-light.twig' with { site_title: 'Event title' } %}
 {% endblock %}
 
+{% block breadcrumb %}
+<div class="breadcrumb-container">
+  {% include '@molecules/breadcrumb/breadcrumb.twig' %}
+</div>
+{% endblock %}
+
 {% block content %}
 
 <div class="container mt-5">
