@@ -1,10 +1,20 @@
-<nav class="nav-lang justify-self-end" aria-label="Change language">
-  <ul>
+<nav class="nav-lang ml-auto dropdown" aria-label="Change language">
+  <a href="#" class="dropdown-toggle btn btn-secondary" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+    {% include '@atoms/icon/icon.twig' with {icon: 'icon-planet'} %}
+    <span>FR</span>
+  </a>
+  <ul class="dropdown-menu">
     <li>
-      <a href="#" class="active" aria-label="Français (Current language)">FR</a>
+      <a class="active dropdown-item" aria-label="Français (Current language)" >
+        {% include '@atoms/icon/icon.twig' with {icon: 'icon-planet'} %}
+        <span>FR</span>
+      </a>
     </li>
     <li>
-      <a href="#" aria-label="English">EN</a>
+      <a href="#" aria-label="English" class="dropdown-item">
+        {% include '@atoms/icon/icon.twig' with {icon: 'icon-planet'} %}
+        <span>EN</span>
+      </a>
     </li>
   </ul>
 </nav>
