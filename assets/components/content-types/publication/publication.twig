@@ -9,7 +9,7 @@
         <div class="row">
           <div class="col-md-10">
             {% if i > 2 %}
-              <a href="https://via.placeholder.com/{% if i < 3 %}80x110{% else %}433x333{% endif %}.jpg" target="_blank"><img src="https://via.placeholder.com/80x110.jpg" class="float-left mr-3 infoscience_publication_illustration" alt="publication thumbnail"></a>
+              <a href="https://via.placeholder.com/{% if i > 3 %}80x110{% else %}433x333{% endif %}.jpg" target="_blank"><img style="max-width:80px;" src="https://via.placeholder.com/{% if i > 3 %}80x110{% else %}433x333{% endif %}.jpg" class="float-left mr-3 infoscience_publication_illustration" alt="publication thumbnail"></a>
             {% endif %}
             <h4 class="h5 tex2jax_process infoscience_title">Measuring Latency: Am I doing it right?</h4>
             <p class="text-muted small mb-2 infoscience_authors">
