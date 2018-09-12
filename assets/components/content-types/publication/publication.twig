@@ -41,7 +41,7 @@
             <span class="text-muted small mb-0 infoscience_host">
               <p class="text-muted small mb-0 infoscience_journal_publisher"><i>Journal of Lightwave Technology</i></p>
               <p class="text-muted small mb-0 infoscience_publication_date">2018-03-01</p>
-              <span class="text-muted small mb-0 infoscience_journal_volume">Vol. 23 </span>, <span class="text-muted small mb-0 infoscience_journal_number">num. 3</span>,  <span class="text-muted small mb-0 infoscience_journal_page">p. 139-148. </span>
+              <span class="text-muted small mb-0 infoscience_journal_volume">Vol. 23</span>, <span class="text-muted small mb-0 infoscience_journal_number">num. 3</span>,  <span class="text-muted small mb-0 infoscience_journal_page">p. 139-148. </span>
             </span>
             <p class="text-muted small mb-0 infoscience_doi">DOI : 10.1109/JLT.2017.1386235</p>
           </div>
@@ -50,8 +50,10 @@
               <a href="#" class="btn btn-secondary btn-sm" target="_blank">Detailed record</a>
             </p>
             <p class="text-muted small mb-0">
+            {% if i % 2 %}
               <a class="text-muted" href="#" target="_blank">Full text</a> -
               <a class="text-muted" href="#" target="_blank">View at publisher</a>
+            {% endif %}
             </p>
           </div>
         </div>
