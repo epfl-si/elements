@@ -36,3 +36,22 @@
     </li>
   </ul>
 </nav>
+
+<select name="nav-lang" class="nav-lang-mobile form-control">
+  <option value="/en" data-url="https://your-other-language-url/en">
+    {% include '@atoms/icon/icon.twig' with {icon: 'icon-planet'} %}
+    EN
+  </option>
+  <option value="/fr" selected data-url="https://your-other-language-url/fr">
+    {% include '@atoms/icon/icon.twig' with {icon: 'icon-planet'} %}
+    FR
+  </option>
+  <option value="/ru" data-url="https://your-other-language-url/ru">
+    {% include '@atoms/icon/icon.twig' with {icon: 'icon-planet'} %}
+    RU
+  </option>
+  <option value="/de" data-url="https://your-other-language-url/de">
+    {% include '@atoms/icon/icon.twig' with {icon: 'icon-planet'} %}
+    DE
+  </option>
+</select>

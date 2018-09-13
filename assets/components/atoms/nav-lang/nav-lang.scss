@@ -1,6 +1,7 @@
 @charset 'utf-8';
 
 .nav-lang {
+  display: flex;
   margin-right: $spacer * 3;
 
   &.show {
@@ -52,6 +53,7 @@
     background: none;
     border: 0;
     margin-top: 0;
+    transform: translate3d(0px, 40px, 0px) !important;
 
     a:not(.active) {
       background: white;
@@ -88,4 +90,41 @@
       border-color: black !important;
       z-index: 20;
     }
+}
+
+.nav-lang-mobile {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: $mm-lang-width + 0.1rem;
+  height: $mm-lang-height + 0.1rem !important;
+  border-radius: 0;
+  overflow: hidden;
+  opacity: 0;
+  z-index: $zindex-mobile-lang + 2;
+}
+
+@include media-breakpoint-down(lg) {
+  .nav-lang {
+    position: fixed;
+    right: 0;
+    bottom: $mm-lang-height * -1;
+    width: $mm-lang-width;
+    margin: 0;
+    transition: bottom 0.3s ease;
+    z-index: $zindex-mobile-lang;
+
+    .dropdown-toggle {
+      height: $mm-lang-height;
+      padding-top: 0.67rem;
+      background: gray('600');
+      border-color: gray('600');
+      color: $white;
+      border-radius: 0;
+
+      .icon {
+        color: $white;
+      }
+    }
+  }
 }
