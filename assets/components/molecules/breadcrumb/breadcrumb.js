@@ -3,7 +3,7 @@
 export default () => {
   const breadcrumb = $('#breadcrumb-wrapper');
 
-  if ($(breadcrumb).length > 0) {  // don't expect to have the breadcrump on every case
+  if ($(breadcrumb).length > 0) {  // don't expect to have the breadcrumb on every case
     const breadcrumbNode = breadcrumb[0];
     const breadcrumbComponent = breadcrumb.find('.breadcrumb');
 
