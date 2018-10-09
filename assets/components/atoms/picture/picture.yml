@@ -8,6 +8,8 @@ variants:
   - name: avatar
     title: Avatar
     wrapper: col-sm-4 col-md-2 col-lg-1
+    notes: |
+      Avatar picture need an equal height and width in order to be displayed as a circle
   - name: one-third
     title: One third picture
     wrapper: col-md-4
