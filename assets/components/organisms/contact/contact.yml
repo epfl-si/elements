@@ -14,5 +14,7 @@ variants:
         </div>
       </div>
       ```
+  - name: columns
+    title: Columns
 notes: |
   ### Contact bloc
