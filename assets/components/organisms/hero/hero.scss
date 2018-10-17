@@ -11,6 +11,7 @@
   @include media-breakpoint-up(md) {
     flex: 1 0 50%;
     position: relative;
+    z-index: 2;
     margin-top: $grid-gutter-width * 4;
   }
 
