@@ -135,10 +135,6 @@
     margin-right: $spacer;
     padding-right: $spacer;
     border-right: 1px solid gray('300');
-
-    @include media-breakpoint-down(lg) {
-      display: none;
-    }
   }
 
   h1 {
@@ -157,6 +153,12 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+
+    @include media-breakpoint-down(lg) {
+      h1 {
+        margin-right: auto;
+      }
+    }
   }
 
   .nav-header { margin-left: $spacer * 2; }
