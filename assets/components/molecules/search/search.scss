@@ -19,13 +19,14 @@
 
   input[type="text"] {
     width: 12rem;
+    box-shadow: none !important;
   }
 }
 
 .search-mobile {
   display: none;
 
-  @include media-breakpoint-down (lg) {
+  @include media-breakpoint-down (xl) {
     display: flex;
     flex-flow: row nowrap;
     position: fixed;
@@ -34,7 +35,7 @@
     width: calc(100% - #{ $mm-lang-width });
     height: $mm-lang-height;
     transition: bottom 0.3s;
-    z-index: $zindex-search-mobile;
+    z-index: $zindex-mobile-lang - 1;
 
     .form-control {
       padding: 0 0 0 (0.4 * $spacer);

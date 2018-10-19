@@ -1,107 +1,163 @@
 @charset 'utf-8';
 
 .nav-lang {
-  display: none;
-  font-size: 0.8 * $font-size-base;
-  margin-left: auto;
+  display: flex;
+  margin-right: $spacer * 3;
 
-  @include media-breakpoint-up(xl) {
-    padding-right: $spacer * 3;
+  &.show {
+    .dropdown-toggle {
+      border: 1px solid gray('500');
+    }
   }
 
-  ul {
-    display: flex;
-    flex-flow: row nowrap;
-    list-style-type: none;
-    margin-bottom: 0;
-    padding: 0;
-  }
-
-  li {
+  .dropdown-toggle,
+  .dropdown-item {
     position: relative;
+    padding: ($spacer * 0.4) ($spacer * 2) ($spacer * 0.6) ($spacer * 0.7);
+    font-size: $font-size-sm;
     font-weight: bold;
+    transition: background 0.2s ease;
+  }
 
-    & + li {
-      a {
-        padding-left: 0.5 * $spacer;
-      }
-
-      &:before {
-        content: ' ';
-        display: block;
-        position: absolute;
-        top: 0.3 * $spacer;
-        left: 0 * $spacer;
-        width: 1px;
-        height: 0.7 * $spacer;
-        background: gray('200');
-      }
+  .dropdown-toggle {
+    &:before {
+      content: ' ';
+      position: absolute;
+      top: calc(50% - 0.35rem);
+      right: 0.5rem;
+      left: auto;
+      width: 0;
+      height: 0;
+      border-top: 0;
+      border-right: .3em solid transparent;
+      border-bottom: .3em solid;
+      border-left: .3em solid transparent;
     }
 
-    .active {
-      color: theme-color('primary');
+    &:after {
+      position: absolute;
+      right: 0.5rem;
+      bottom: calc(50% - 0.45rem);
     }
+  }
 
-    a {
-      color: gray('200');
+  .dropdown-menu ul,
+  .dropdown-menu li,
+  .dropdown-menu a,
+  .dropdown-toggle {
+      width: 5.8rem;
+  }
+
+  .dropdown-menu {
+    padding: 0;
+    background: none;
+    border: 0;
+    margin-top: 0;
+    transform: translate3d(0px, 40px, 0px) !important;
+
+    a:not(.active) {
+      background: white;
+      border: 1px solid gray('500');
 
       &:hover {
-        color: $body-color;
+        background: gray('100');
       }
     }
   }
 
-  a,
-  span {
-    padding: 0.4 * $spacer;
-    text-decoration: none;
+  a.active {
+    border: 1px solid $primary;
+    color: $white !important;
+
+    .icon {
+      color: $white;
+    }
   }
 
-  @include media-breakpoint-up(xl) {
-    display: flex;
+  .icon {
+    margin-right: $spacer * 0.5;
+    font-size: $font-size-base * 1.1;
+    color: gray('600');
+    transform: translateY($spacer * 0.13);
   }
 
-  // mobile styles
-  @include media-breakpoint-down(lg) {
-    display: flex;
+  .dropdown-item {
+    margin-top: -1px;
+  }
+
+  .dropdown-item:not(.active):active {
+      color: $black;
+      border-color: black !important;
+      z-index: 20;
+    }
+}
+
+.nav-lang-short ul{
+  display: flex;
+  flex-flow: row nowrap;
+  list-style-type: none;
+  margin-bottom: 0;
+  padding: 0;
+  font-size: $font-size-sm;
+  li{
+    & + li {
+      padding-left: 0.5 * $spacer;
+    }
+  }
+}
+
+.nav-lang-mobile {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: $mm-lang-width + 0.1rem;
+  height: $mm-lang-height + 0.1rem !important;
+  border-radius: 0;
+  overflow: hidden;
+  opacity: 0;
+  z-index: $zindex-mobile-lang + 2;
+}
+
+@include media-breakpoint-down(lg) {
+  .nav-lang {
     position: fixed;
     right: 0;
-    bottom: -$mm-lang-height;
+    bottom: $mm-lang-height * -1;
     width: $mm-lang-width;
-    height: $mm-lang-height;
+    margin: 0;
+    transition: bottom 0.3s ease;
     z-index: $zindex-mobile-lang;
-    background: gray('600');
-    transition: bottom 0.3s;
 
-    ul {
-      width: 100%;
-      height: 100%;
-      margin: 0;
+    .dropdown-toggle, &.nav-lang-short ul {
+      height: $mm-lang-height;
+      padding-top: 0.67rem;
+      background: gray('600');
+      border-color: gray('600');
+      color: $white;
+      border-radius: 0;
 
-      li {
-        width: 50%;
+      .icon {
+        color: $white;
       }
     }
+    &.nav-lang-short ul{
+        display: flex;
+        width: 100%;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        padding-top: 0;
+        font-size: $font-size-base;
 
-    li + li:before {
-      top: 1rem;
-      height: 1.4rem;
-    }
-
-    a,
-    span {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      justify-content: center;
-      align-items: center;
-      padding: 0.7 * $spacer;
-      font-size: 1 * $font-size-base;
-    }
-
-    .active {
-      color: $white !important;
-      text-decoration: underline;
+        li{
+          flex-grow: 1;
+          padding: 0;
+          a, span{
+            display: block;
+            line-height: $mm-lang-height;
+            text-align: center;
+            color: $white;
+          }
+        }
     }
   }
 }
