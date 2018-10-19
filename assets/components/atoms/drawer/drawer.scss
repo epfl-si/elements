@@ -27,7 +27,7 @@
     height: 100%;
     min-height: $header-height;
     line-height: 1.2;
-    z-index: 5;
+    z-index: $zindex-5;
     color: $white;
     transition: width 0.3s ease;
 
@@ -55,7 +55,7 @@
     background: $red;
     border: none;
     cursor: pointer;
-    z-index: 10;
+    z-index: $zindex-10;
     color: $white;
 
     .icon {
