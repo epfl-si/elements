@@ -8,7 +8,7 @@
 
   @include media-breakpoint-up(lg) {
     > .card {
-      z-index: 1;
+      z-index: $zindex-1;
       margin: $spacer * 0.5;
 
       // only one card is present
@@ -45,7 +45,7 @@
         top: 50%;
         left: 5%;
         width: 30%;
-        z-index: 0;
+        z-index: $zindex-0;
         border-bottom: 1px solid $gray-100;
 
         .bg-gray-100 & {
@@ -59,7 +59,7 @@
         top: 50%;
         right: 5%;
         width: 30%;
-        z-index: 0;
+        z-index: $zindex-0;
         border-bottom: 1px solid $gray-100;
 
         .bg-gray-100 & {

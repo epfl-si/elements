@@ -1,34 +1,68 @@
 {% set bottomlink = bottomlink|default(true) %}
-<div class="list-group mb-5">
+
+<div class="infoscienceBox no-tex2jax_process">
+  <div class="list-group mb-5">
+  <h1 class="h2 mt-3">2018</h1>
   {% for i in 1..4 %}
-    <div class="list-group-item list-group-item-publication">
-      <div class="row">
-        <div class="col-md-10">
-          {% if i > 2 %}
-            <img src="https://via.placeholder.com/80x110.jpg" class="float-left mr-3" alt="a publication image">
-          {% endif %}
-          <h4 class="h5">Measuring Latency: Am I doing it right?</h4>
-          <p class="text-muted small mb-0">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
-            Author(s): <a class="text-muted" href="#">John Doe</a>, <a class="text-muted" href="#">John Doe</a>, <a class="text-muted" href="#">John Doe</a>
-          </p>
-        </div>
-        <div class="col-md-2 text-right mt-4 mt-md-0">
-          <p>
-            <a href="#" class="btn btn-secondary btn-sm">Detailed record</a>
-          </p>
-          <p class="text-muted small mb-0">
-            <a class="text-muted" href="#">Full text</a> -
-            <a class="text-muted" href="#">Bib TeX</a> -
-            <a class="text-muted" href="#">Endnote XML</a>
-          </p>
+    {% if i % 2 %}
+      {% if i < 3 %}
+  <h2 class="h3 mt-1 mb-2">Theses</h2>
+      {% else %}
+  <h2 class="h3 mt-1 mb-2">Journal Articles</h2>
+      {% endif %}
+    {% endif %}
+        <div class="list-group-item list-group-item-publication">
+        <div class="row">
+          <div class="col-md-10">
+            {% if i > 2 %}
+              {% if i > 3 %}
+              <a href="https://infoscience.epfl.ch/record/254912/files/Graphical%20Abstract.jpg" target="_blank"><img style="max-width:80px;" src="https://infoscience.epfl.ch/record/254912/files/Graphical%20Abstract.jpg" class="float-left mr-3 infoscience_publication_illustration" alt="publication thumbnail"></a>
+              {% else %}
+              <a href="https://infoscience.epfl.ch/record/232935/files/heroguel_controlled_2017_jcat_2.jpg" target="_blank"><img style="max-width:80px;" src="https://infoscience.epfl.ch/record/232935/files/heroguel_controlled_2017_jcat_2.jpg" class="float-left mr-3 infoscience_publication_illustration" alt="publication thumbnail"></a>
+              {% endif %}
+            {% endif %}
+            <h4 class="h5 tex2jax_process infoscience_title">Measuring Latency: Am I doing it right?</h4>
+            <p class="text-muted small mb-2 infoscience_authors">
+            {% if i > 1 %}
+              <a class="text-muted infoscience_author" href="https://infoscience.epfl.ch/search?p=John++Doe" target="_blank">John Doe</a>;
+              <a class="text-muted infoscience_author" href="https://infoscience.epfl.ch/search?p=John++Doe" target="_blank">John Doe</a>;
+              <a class="text-muted infoscience_author" href="https://infoscience.epfl.ch/search?p=John++Doe" target="_blank">John Doe</a>;
+              <a class="text-muted infoscience_author" href="https://infoscience.epfl.ch/search?p=John++Doe" target="_blank">John Doe</a>;
+              <a class="text-muted infoscience_author" href="https://infoscience.epfl.ch/search?p=John++Doe" target="_blank">John Doe</a>
+              et al.&nbsp;
+            {% else %}
+              <a class="text-muted infoscience_author" href="https://infoscience.epfl.ch/search?p=John++Doe" target="_blank">John Doe</a> /
+              <a class="text-muted infoscience_author" href="https://infoscience.epfl.ch/search?p=John++Doe" target="_blank">John Doe (Dir.)</a>
+            {% endif %}
+            </p>
+            <p class="text-muted small mb-0 infoscience_abstract tex2jax_process">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <span class="text-muted small mb-0 infoscience_host">
+              <p class="text-muted small mb-0 infoscience_journal_publisher"><i>Journal of Lightwave Technology</i></p>
+              <p class="text-muted small mb-0 infoscience_publication_date">2018-03-01</p>
+              <span class="text-muted small mb-0 infoscience_journal_volume">Vol. 23</span>, <span class="text-muted small mb-0 infoscience_journal_number">num. 3</span>,  <span class="text-muted small mb-0 infoscience_journal_page">p. 139-148. </span>
+            </span>
+            <p class="text-muted small mb-0 infoscience_doi">DOI : 10.1109/JLT.2017.1386235</p>
+          </div>
+          <div class="col-md-2 text-right mt-4 mt-md-0">
+            <p>
+              <a href="#" class="btn btn-secondary btn-sm" target="_blank">Detailed record</a>
+            </p>
+            <p class="text-muted small mb-0">
+            {% if i % 2 %}
+              <a class="text-muted" href="#" target="_blank">Full text</a> -
+              <a class="text-muted" href="#" target="_blank">View at publisher</a>
+            {% endif %}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
+  {% if bottomlink %}
+  <p class="text-center">
+    <a class="link-pretty" href="#" target="_blank">See all publications</a>
+  </p>
+  {% endif %}
 </div>
-{% if bottomlink %}
-<p class="text-center">
-  <a class="link-pretty" href="#">See all publications</a>
-</p>
-{% endif %}
