@@ -13,7 +13,7 @@
     width: $spacer * 3;
     height: calc(100% - 2px);
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, $white 80%, $white 100%);
-    z-index: 120;
+    z-index: $zindex-breadcrumbs + 10;
   }
 
   @include media-breakpoint-down(lg) {
@@ -61,7 +61,7 @@
     white-space: nowrap;
     margin: 0;
     padding: $spacer * 0.64 0;
-    z-index: 110;
+    z-index: $zindex-breadcrumbs;
 
     .icon {
       color: gray('300');

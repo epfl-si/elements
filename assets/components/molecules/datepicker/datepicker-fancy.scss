@@ -72,7 +72,7 @@
         height: 3.8rem;
         background: $white;
         transition: box-shadow 0.2s;
-        z-index: 10;
+        z-index: $zindex-10;
 
         &:before {
           top: 1.64rem;
@@ -159,4 +159,3 @@
     }
   }
 }
-

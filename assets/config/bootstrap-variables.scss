@@ -541,6 +541,13 @@ $dropdown-header-color:             $gray-600 !default;
 // Warning: Avoid customizing these values. They're used for a bird's eye view
 // of components dependent on the z-axis and are designed to all work together.
 
+$zindex-background:                 -1 !default;
+$zindex-0:                          0 !default;
+$zindex-1:                          1 !default;
+$zindex-5:                          1 !default;
+$zindex-10:                         0 !default;
+$zindex-breadcrumbs:                110 !default;
+$zindex-search-mobile:              120 !default;
 $zindex-dropdown:                   1000 !default;
 $zindex-sticky:                     1020 !default;
 $zindex-fixed:                      1030 !default;

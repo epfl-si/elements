@@ -118,14 +118,14 @@
 
 @mixin link-trapeze($position: vertical, $color: gray('200'), $size: $trapeze-height) {
   position: relative;
-  z-index: 0;
+  z-index: $zindex-0;
   transition: transform $trapeze-animation-duration;
 
   &:before {
     content: '';
     display: block;
     position: absolute;
-    z-index: -1;
+    z-index: $zindex-background;
     border: $size solid transparent;
     transition: border $trapeze-animation-duration;
   }
@@ -141,7 +141,7 @@
 @mixin trapeze-span-horizontal-container($size: $trapeze-height) {
   display: block;
   position: relative;
-  z-index: 1;
+  z-index: $zindex-1;
   transition:
     margin $trapeze-animation-duration,
     padding $trapeze-animation-duration;
@@ -160,7 +160,7 @@
 @mixin trapeze-span-vertical-container($size: $trapeze-height) {
   display: block;
   position: relative;
-  z-index: 1;
+  z-index: $zindex-1;
   transition:
     margin $trapeze-animation-duration,
     padding $trapeze-animation-duration;
@@ -179,7 +179,7 @@
 @mixin trapeze-span-vertical($color: gray('200'), $size: $trapeze-height) {
   display: block;
   position: absolute;
-  z-index: 0;
+  z-index: $zindex-0;
   top: 0;
   left: 0;
   width: 0;
@@ -194,7 +194,7 @@
 @mixin trapeze-span-horizontal($color: gray('200'), $size: $trapeze-height) {
   display: block;
   position: absolute;
-  z-index: 0;
+  z-index: $zindex-0;
   bottom: 0;
   left: 0;
   width: 100%;
