@@ -17,12 +17,14 @@ import drawer from './atoms/drawer/drawer.js';
 import search from './molecules/search/search.js';
 import coursebook from './content-types/coursebook/coursebook.js';
 import cookieconsent, {get_cookieconsent_config} from './organisms/cookie-consent/cookie-consent.js';
+import anchors from './anchors';
 
 import guide from './guide.js';
 
 svgIcons(); // Must run as soon as possible
 
 const init = () => {
+  anchors();
   upload();
   selectMultiple();
   tagInput();
