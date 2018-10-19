@@ -34,7 +34,7 @@
     width: calc(100% - #{ $mm-lang-width });
     height: $mm-lang-height;
     transition: bottom 0.3s;
-    z-index: 120;
+    z-index: $zindex-search-mobile;
 
     .form-control {
       padding: 0 0 0 (0.4 * $spacer);

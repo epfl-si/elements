@@ -7,7 +7,7 @@
     position: absolute;
     right: ($grid-gutter-width / 2);
     bottom: ($grid-gutter-width / 2);
-    z-index: 1;
+    z-index: $zindex-1;
 
     @include media-breakpoint-up(md) {
       right: $grid-gutter-width;
