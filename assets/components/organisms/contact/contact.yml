@@ -1,6 +1,8 @@
 title: Contact
 name: contact
 variants:
+  - name: list
+    title: List
   - name: compact
     title: Contact bloc compact
   - name: banner
