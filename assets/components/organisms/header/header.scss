@@ -130,6 +130,7 @@
 
 .header-light {
   padding-left: 0;
+  padding-right: 0;
 
   .logo {
     margin-right: $spacer;
@@ -146,6 +147,15 @@
     text-transform: uppercase;
   }
 
+  .drawer.open + .header-light-content {
+    @include media-breakpoint-down(sm) {
+        .nav-toggle-mobile {
+          margin-right: -5rem;
+          overflow: hidden;
+        }
+    }
+  }
+
   .header-light-content {
     flex-grow: 1;
     flex-flow: row wrap;
@@ -153,6 +163,12 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+
+    @include media-breakpoint-down(sm) {
+      .nav-toggle-mobile {
+        padding: .5rem 0.9rem;
+      }
+    }
 
     @include media-breakpoint-down(lg) {
       height: 100%;
@@ -170,8 +186,8 @@
       }
       .nav-toggle-mobile {
         order: 2;
-        margin: 0;
-        padding: .5rem 0.9rem;
+        margin: 0 1rem 0 0;
+        transition: margin 0.2s;
       }
       h1 {
         flex: 0 0 100%;
