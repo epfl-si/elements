@@ -5,3 +5,15 @@
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label:before {
   border-color: $red;
 }
+
+.custom-control-label:before {
+  top: 3px;
+
+  @include media-breakpoint-up(sm){
+    top: 4px;
+  }
+
+  @include media-breakpoint-up(md){
+    top: 5px;
+  }
+}

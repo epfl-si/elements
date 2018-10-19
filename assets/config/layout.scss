@@ -22,7 +22,7 @@
   grid-column-gap: $grid-gutter-width;
   grid-template-columns:
     [full-start] 1fr
-    [content-start] minmax(min-content, #{col-width(sm, 12)})
+    [content-start] minmax( auto, #{col-width(sm, 12)})
     [content-end] 1fr
     [full-end];
   max-width: 100%;
@@ -34,7 +34,7 @@
   @include media-breakpoint-up(md) {
     grid-template-columns:
       [full-start] 1fr
-      [content-start] minmax(min-content, #{col-width(md, 10)})
+      [content-start] #{col-width(md, 10)}
       [content-end] 1fr
       [full-end];
   }
@@ -42,7 +42,7 @@
   @include media-breakpoint-up(lg) {
     grid-template-columns:
       [full-start] 1fr
-      [content-start] minmax(min-content, #{col-width(lg, 8)})
+      [content-start] #{col-width(lg, 8)}
       [content-end] 1fr
       [full-end];
   }
@@ -50,7 +50,7 @@
   @include media-breakpoint-up(xl) {
     grid-template-columns:
       [full-start] 1fr
-      [content-start] minmax(min-content, #{col-width(xl, 6)})
+      [content-start] #{col-width(xl, 6)}
       [content-end] 1fr
       [full-end];
   }
