@@ -55,7 +55,7 @@ $collapse-chevron-size: 12px;
       transition:
         opacity 0.3s,
         transform 0.2s;
-      z-index: -1;
+      z-index: $zindex-background;
   }
 
   &:focus {
