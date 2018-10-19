@@ -1,6 +1,20 @@
 
 # CHANGELOG
 
+*1.3.1* (2018-10-18)
+  - ✨ New implementations
+    - new language switcher for 3+ languages (see atoms/nav-lang)
+    - implement google analytics
+    - add popover version on hero component
+
+  - 🛠 Fixes & other
+    - center images that are not wide enough for the grid column
+    - stop too wide components to widen the text column
+    - add favicon and theme colors
+    - make anchor links work in styleguide
+    - reset zindex management
+    - enhance header light to display logo and long titles
+
 *1.3.0* (2018-09-10)
   - ⚠️ breaking markup changes
       - **Search** now search and search mobile are different html tag to include in your header. desktop search has been taken out of the menu to ease integration in third party apps
