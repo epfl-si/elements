@@ -24,7 +24,6 @@ import guide from './guide.js';
 svgIcons(); // Must run as soon as possible
 
 const init = () => {
-  anchors();
   upload();
   selectMultiple();
   tagInput();
@@ -43,6 +42,7 @@ const init = () => {
   cookieconsent(get_cookieconsent_config());
 
   guide();
+  anchors();
 
   // Init polyfill for Object Fit on IE11
   const isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
