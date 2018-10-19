@@ -22,7 +22,8 @@
       "node_modules/flickity/dist/flickity.css",
       "node_modules/flickity-fullscreen/fullscreen.css",
       "node_modules/intro.js/introjs.css",
-      "node_modules/tablesaw/dist/tablesaw.css"
+      "node_modules/tablesaw/dist/tablesaw.css",
+      "node_modules/cookieconsent/build/cookieconsent.min.css"
     ],
     "js": [
       "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
@@ -34,7 +35,8 @@
       "node_modules/multiple-select/multiple-select.js",
       "node_modules/selectize.js/dist/js/standalone/selectize.js",
       "node_modules/intro.js/intro.js",
-      "node_modules/jquery-mousewheel/jquery.mousewheel.js"
+      "node_modules/jquery-mousewheel/jquery.mousewheel.js",
+      "node_modules/cookieconsent/build/cookieconsent.min.js"
     ]
   },
   "singles": [{

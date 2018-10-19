@@ -16,6 +16,7 @@ import nav from './organisms/nav-main/nav-main.js';
 import drawer from './atoms/drawer/drawer.js';
 import search from './molecules/search/search.js';
 import coursebook from './content-types/coursebook/coursebook.js';
+import cookieconsent, {get_cookieconsent_config} from './organisms/cookie-consent/cookie-consent.js';
 
 import guide from './guide.js';
 
@@ -37,6 +38,7 @@ const init = () => {
   cardSlider();
   drawer();
   breadcrumb();
+  cookieconsent(get_cookieconsent_config());
 
   guide();
 
