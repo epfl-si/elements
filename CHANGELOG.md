@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+*1.3.2* (2018-10-18)
+  - 🛠 Fixes & other
+    - hotfix z-index ordering
+
 *1.3.1* (2018-10-18)
   - ✨ New implementations
     - new language switcher for 3+ languages (see atoms/nav-lang)
