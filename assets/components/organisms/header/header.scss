@@ -119,7 +119,6 @@
   @include media-breakpoint-down (lg) {
     height: $header-height;
     max-height: $header-height;
-    overflow: hidden;
     padding: 0 (0.9 * $spacer);
 
     .logo {

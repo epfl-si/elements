@@ -40,7 +40,7 @@ $animation: 0.2s;
       transform: scale(0);
       transition: margin $animation;
       box-shadow: none !important;
-      z-index: 15;
+      z-index: $zindex-10 + 5;
     }
 
     &:after {
@@ -51,7 +51,7 @@ $animation: 0.2s;
       background: $custom-checkbox-indicator-icon-checked;
       transform: scale(0);
       transition: margin $animation;
-      z-index: 25;
+      z-index: $zindex-10 + 15;
     }
 
     // base hover behaviour
@@ -60,7 +60,7 @@ $animation: 0.2s;
 
       .custom-control-label-content {
         border-color: $black;
-        z-index: 10;
+        z-index: $zindex-10;
       }
     }
   }
@@ -71,18 +71,18 @@ $animation: 0.2s;
     padding: 1rem 1.3rem;
     background: $white;
     border: 1px solid $gray-200;
-    z-index: 5;
+    z-index: $zindex-5;
     transition: $animation;
   }
 
   // checked animation and styles
   .custom-control-input:checked + .custom-control-label {
     @extend .custom-control-label:hover;
-    z-index: 10;
+    z-index: $zindex-10;
 
     .custom-control-label-content {
       border-color: $black;
-      z-index: 10;
+      z-index: $zindex-10;
     }
 
     &:before,
@@ -149,7 +149,7 @@ $animation: 0.2s;
 
   // checked styles
   .custom-control-input:checked + .custom-control-label {
-    z-index: 10;
+    z-index: $zindex-10;
   }
 }
 
@@ -180,7 +180,7 @@ $animation: 0.2s;
       }
 
       &:hover {
-        z-index: 10;
+        z-index: $zindex-10;
       }
     }
 

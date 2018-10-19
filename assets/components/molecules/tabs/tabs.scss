@@ -29,20 +29,20 @@
     border-radius: 0;
 
     &:hover {
-      z-index: 1;
+      z-index: $zindex-1;
       background-color: darken(gray('100'), 5%);
       color: $body-color;
     }
 
     &:focus:not(:active) {
-      z-index: 1;
+      z-index: $zindex-1;
       border-color: gray('400');
       outline: $nav-tabs-border-width solid gray('400');
       border-radius: 0 !important; // Make sure the border-radius is removed for first and last elements.
     }
 
     &:active {
-      z-index: 1;
+      z-index: $zindex-1;
       background: linear-gradient(0deg, gray('100') 0%, darken(gray('100'), 5%) 100%);
     }
 
