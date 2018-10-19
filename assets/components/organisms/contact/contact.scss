@@ -1,16 +1,19 @@
 @charset 'utf-8';
 
 .contact-list {
-
+  display: table;
+  width: 100%;
 }
 
 .contact-list-item {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  display: table-row;
 
-  picture,
-  img {
-    width: 3rem;
+  > * {
+    display: table-cell;
+  }
+
+  picture {
+    width: 4rem;
+    padding-right: 1rem;
   }
 }
