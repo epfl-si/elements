@@ -1,0 +1,26 @@
+<div class="contact-list">
+
+  <div class="contact-list-row" itemscope itemtype="http://schema.org/Person">
+    <div class="contact-list-avatar contact-list-avatar-placeholder" itemprop="image">
+      <img src="/svg/avatar-placeholder.svg">
+    </div>
+    <a href="#" class="contact-list-item" itemprop="name">John Doe</a>
+    <p class="contact-list-item m-0 text-muted" itemprop="jobTitle">Student class coordinator</p>
+    <a class="contact-list-item text-muted" href="#" itemprop="email">john.doe@epfl.ch</a>
+    <a class="contact-list-item text-muted" href="#" itemprop="telephone">+41 21 69 <b>36054</b></a>
+    <a class="contact-list-item text-muted" href="#" itemprop="workLocation">CM1245</a>
+  </div>
+
+{% for i in 1..9 %}
+  <div class="contact-list-row" itemscope itemtype="http://schema.org/Person">
+    <div class="contact-list-avatar" itemprop="image">
+      {% include '@atoms/picture/picture-avatar.twig' %}
+    </div>
+    <a href="#" class="contact-list-item" itemprop="name">John Doe</a>
+    <p class="contact-list-item m-0 text-muted" itemprop="jobTitle">Student class coordinator</p>
+    <a class="contact-list-item text-muted" href="#" itemprop="email">john.doe@epfl.ch</a>
+    <a class="contact-list-item text-muted" href="#" itemprop="telephone">+41 21 69 <b>36054</b></a>
+    <a class="contact-list-item text-muted" href="#" itemprop="workLocation">CM1245</a>
+  </div>
+{% endfor %}
+</div>
