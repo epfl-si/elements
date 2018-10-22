@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+*1.3.3* (2018-10-22)
+  - ✨ New implementations
+    - Implement contact-list
+
 *1.3.2* (2018-10-18)
   - 🛠 Fixes & other
     - hotfix z-index ordering
