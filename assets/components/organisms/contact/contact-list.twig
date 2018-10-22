@@ -1,9 +1,13 @@
 <div class="contact-list">
-  <div class="contact-list-item">
-    {% include '@atoms/picture/picture-avatar.twig' %}
-    <p>Name</p>
-    <a href="#">john.doe@epfl.ch</a>
-    <a href="#">+41 21 69 <b>36054</b></a>
-    <a href="#">CM1245</a>
+{% for i in 1..9 %}
+  <div class="contact-list-row">
+    <div class="contact-list-avatar">
+      {% include '@atoms/picture/picture-avatar.twig' %}</div>
+    <a href="#" class="contact-list-item">John Doe</a>
+    <p class="contact-list-item m-0 text-muted">Student class coordinator</p>
+    <a class="contact-list-item text-muted" href="#">john.doe@epfl.ch</a>
+    <a class="contact-list-item text-muted" href="#">+41 21 69 <b>36054</b></a>
+    <a class="contact-list-item text-muted" href="#">CM1245</a>
   </div>
+{% endfor %}
 </div>
