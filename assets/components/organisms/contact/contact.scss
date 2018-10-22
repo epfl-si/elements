@@ -104,3 +104,12 @@ $contact-list-avatar: 2.5rem;
     border-bottom: 1px solid $gray-200;
   }
 }
+
+.contact-list-avatar-placeholder {
+  img {
+    background: $gray-200;
+    color: black;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}
