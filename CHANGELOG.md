@@ -12,7 +12,8 @@
 *1.3.1* (2018-10-18)
   - ✨ New implementations
     - new language switcher for 3+ languages (see atoms/nav-lang)
-    - implement google analytics
+    - Add a howto for google analytics
+    - implement cookie consent popup
     - add popover version on hero component
 
   - 🛠 Fixes & other
