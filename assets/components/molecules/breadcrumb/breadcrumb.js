@@ -7,7 +7,9 @@ export default () => {
     const breadcrumbNode = breadcrumb[0];
     const breadcrumbComponent = breadcrumb.find('.breadcrumb');
 
-    if ($(window).width() > 1199 && breadcrumb.width() < breadcrumbComponent[0].scrollWidth) {
+    if ($(window).width() > 1199 &&
+        $(breadcrumbComponent).length > 0 &&  // don't expect to have the breadcrumbComponent on every case
+        breadcrumb.width() < breadcrumbComponent[0].scrollWidth) {
       let isDown = false;
       let startX;
       let scrollLeft;
