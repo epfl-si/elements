@@ -1,6 +1,11 @@
 @charset 'utf-8';
 
 $contact-list-avatar: 2.5rem;
+$person-avatar-height: 8rem;
+
+.person-card-avatar {
+  height: $person-avatar-height;
+}
 
 .contact-list {
   border-top: 2px solid $gray-200;
