@@ -7,8 +7,6 @@ variants:
     title: Contact bloc compact
   - name: columns
     title: Columns
-    notes: |
-      We remove the flex ability, to preserve email and tel. buttons
   - name: banner
     title: Banner
     notes: |
