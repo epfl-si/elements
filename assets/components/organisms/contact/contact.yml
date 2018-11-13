@@ -5,10 +5,6 @@ variants:
     title: List
   - name: compact
     title: Contact bloc compact
-  - name: compact-noflex
-    title: Contact bloc compact without flex buttons
-    notes: |
-      To be used with the columns view, to preserve email and tel. buttons
   - name: columns
     title: Columns
   - name: banner

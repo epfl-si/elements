@@ -1,13 +1,9 @@
 <div class="card-deck">
-  {% for i in 1..3 %}
-    {% include '@organisms/contact/contact-compact-noflex.twig' %}
-  {% endfor %}
-  {% for i in 1..1 %}
-    {% include '@organisms/contact/contact-compact-noflex.twig' %}
+  {% for person in people %}
+    {% include '@organisms/contact/contact-compact-for-columns.twig' with {'increment': person.index, 'person': person} %}
   {% endfor %}
   <div class="">
   </div>
   <div class="">
   </div>
 </div>
-
