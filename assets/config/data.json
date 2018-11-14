@@ -108,6 +108,57 @@
       ]
     }
   ],
+  "faculties": [
+    {
+      "namefr": "Environnement Naturel, Architectural et Construit",
+      "nameen": "Environnement Naturel, Architectural et Construit",
+      "acronym": "ENAC",
+      "urlfr": "",
+      "urlen": ""
+    },
+    {
+      "namefr": "Sciences de Base",
+      "nameen": "Sciences de Base",
+      "acronym": "SB",
+      "urlfr": "",
+      "urlen": ""
+    },
+    {
+      "namefr": "Sciences et Techniques de l'Ingénieur",
+      "nameen": "Sciences et Techniques de l'Ingénieur",
+      "acronym": "STI",
+      "urlfr": "",
+      "urlen": ""
+    },
+    {
+      "namefr": "Informatique et Communications",
+      "nameen": "Informatique et Communications",
+      "acronym": "IC",
+      "urlfr": "",
+      "urlen": ""
+    },
+    {
+      "namefr": "Sciences de la Vie",
+      "nameen": "Sciences de la Vie",
+      "acronym": "SV",
+      "urlfr": "",
+      "urlen": ""
+    },
+    {
+      "namefr": "Collège du Management de la Technologie",
+      "nameen": "Collège du Management de la Technologie",
+      "acronym": "CDM",
+      "urlfr": "",
+      "urlen": ""
+    },
+    {
+      "namefr": "Collège des Humanités",
+      "nameen": "Collège des Humanités",
+      "acronym": "CDH",
+      "urlfr": "",
+      "urlen": ""
+    }
+  ],
   "footer": [
     {
       "headingfr": "A propos de l’EPFL",
