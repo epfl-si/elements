@@ -110,58 +110,327 @@
   ],
   "footer": [
     {
-      "heading": "A propos de l’EPFL",
+      "headingfr": "A propos de l’EPFL",
+      "headingen": "About EPFL",
       "items": [
-        "Vue d’ensemble",
-        "Histoire de l’EPFL",
-        "Actualités",
-        "Organisation administrative",
-        "Actions pour le public extérieur",
-        "Emplois",
-        "Mécénats et dons",
-        "Presse et média"
+        {
+          "namefr": "Vue d’ensemble",
+          "urlfr": "https://www.epfl.ch",
+          "nameen": "Overview",
+          "urlen": "https://www.epfl.ch"
+        },
+        {
+          "namefr": "Président",
+          "urlfr": "#",
+          "nameen": "President",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Direction",
+          "urlfr": "#",
+          "nameen": "Direction",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Vice-presidencies",
+          "urlfr": "#",
+          "nameen": "Vice-presidencies",
+          "urlen": "#"
+        },
+        {
+          "namefr": "EPFL locations",
+          "urlfr": "#",
+          "nameen": "EPFL locations",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Working at EPFL",
+          "urlfr": "#",
+          "nameen": "Working at EPFL",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Recruiting EPFL talents",
+          "urlfr": "#",
+          "nameen": "Recruiting EPFL talents",
+          "urlen": "#"
+        },
+        {
+          "namefr": "News & Media",
+          "urlfr": "#",
+          "nameen": "News & Media",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Scientific activities",
+          "urlfr": "#",
+          "nameen": "Scientific activities",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Philanthropy",
+          "urlfr": "#",
+          "nameen": "Philanthropy",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Cooperation",
+          "urlfr": "#",
+          "nameen": "Cooperation",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Alumni",
+          "urlfr": "#",
+          "nameen": "Alumni",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Laws & regulations",
+          "urlfr": "#",
+          "nameen": "Laws & regulations",
+          "urlen": "#"
+        }
       ]
     },
     {
-      "heading": "Education",
+      "headingfr": "Education",
+      "headingen": "Education",
       "items": [
-        "Bachelors",
-        "Masters",
-        "Doctorats",
-        "MBA",
-        "Calendrier académique",
-        "MOOCS et autoformation"
+        {
+          "namefr": "Bachelor",
+          "urlfr": "#",
+          "nameen": "Bachelor",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Master",
+          "urlfr": "#",
+          "nameen": "Master",
+          "urlen": "#"
+        },
+        {
+          "namefr": "PhD",
+          "urlfr": "#",
+          "nameen": "PhD",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Continuing education",
+          "urlfr": "#",
+          "nameen": "Continuing education",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Mobility",
+          "urlfr": "#",
+          "nameen": "Mobility",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Admissions",
+          "urlfr": "#",
+          "nameen": "Admissions",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Studying at EPFL",
+          "urlfr": "#",
+          "nameen": "Studying at EPFL",
+          "urlen": "#"
+        }
       ]
     },
     {
-      "heading": "Recherche",
+      "headingfr": "Research",
+      "headingen": "Research",
       "items": [
-        "Domaines de recherche par facultés",
-        "Événements scientifiques",
-        "Publications scientifiques",
-        "Organisation administrative",
-        "Annuaire des facultés"
+        {
+          "namefr": "Research at EPFL",
+          "urlfr": "#",
+          "nameen": "Research at EPFL",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Research domains",
+          "urlfr": "#",
+          "nameen": "Research domains",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Laboratories",
+          "urlfr": "#",
+          "nameen": "Laboratories",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Meet our faculty members",
+          "urlfr": "#",
+          "nameen": "Meet our faculty members",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Use our facilities",
+          "urlfr": "#",
+          "nameen": "Use our facilities",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Collaborate & partner",
+          "urlfr": "#",
+          "nameen": "Collaborate & partner",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Services to our researchers",
+          "urlfr": "#",
+          "nameen": "Services to our researchers",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Events, news & deadlines",
+          "urlfr": "#",
+          "nameen": "Events, news & deadlines",
+          "urlen": "#"
+        }
       ]
     },
     {
-      "heading": "Innovation",
+      "headingfr": "Innovation",
+      "headingen": "Innovation",
       "items": [
-        "Partenariat avec l’industrie",
-        "Accompagnement de start-ups",
-        "Soutien aux innovateurs",
-        "Innovation park"
+        {
+          "namefr": "About",
+          "urlfr": "#",
+          "nameen": "About",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Collaboration & partnership",
+          "urlfr": "#",
+          "nameen": "Collaboration & partnership",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Entrepreneurship",
+          "urlfr": "#",
+          "nameen": "Entrepreneurship",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Startups",
+          "urlfr": "#",
+          "nameen": "Startups",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Learn & develop",
+          "urlfr": "#",
+          "nameen": "Learn & develop",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Join & engage",
+          "urlfr": "#",
+          "nameen": "Join & engage",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Contacts",
+          "urlfr": "#",
+          "nameen": "Contacts",
+          "urlen": "#"
+        },
+        {
+          "namefr": "News & Events",
+          "urlfr": "#",
+          "nameen": "News & Events",
+          "urlen": "#"
+        }
       ]
     },
     {
-      "heading": "Campus",
+      "headingfr": "Campus",
+      "headingen": "Campus",
       "items": [
-        "Accéder au campus",
-        "Bâtiments et services",
-        "Recevoir de l’aide",
-        "Bons plans",
-        "Associations sur le campus",
-        "S’installer à Lausanne",
-        "Anciens étudiants"
+        {
+          "namefr": "Access",
+          "urlfr": "#",
+          "nameen": "Access",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Library",
+          "urlfr": "#",
+          "nameen": "Library",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Restaurants. shops, hotels",
+          "urlfr": "#",
+          "nameen": "Restaurants. shops, hotels",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Daycare",
+          "urlfr": "#",
+          "nameen": "Daycare",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Sports",
+          "urlfr": "#",
+          "nameen": "Sports",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Sustainability",
+          "urlfr": "#",
+          "nameen": "Sustainability",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Art, culture, exhibitions",
+          "urlfr": "#",
+          "nameen": "Art, culture, exhibitions",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Help, security, health",
+          "urlfr": "#",
+          "nameen": "Help, security, health",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Associations",
+          "urlfr": "#",
+          "nameen": "Associations",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Events",
+          "urlfr": "#",
+          "nameen": "Events",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Living in Switzerland",
+          "urlfr": "#",
+          "nameen": "Living in Switzerland",
+          "urlen": "#"
+        },
+        {
+          "namefr": "EPFL services",
+          "urlfr": "#",
+          "nameen": "EPFL services",
+          "urlen": "#"
+        },
+        {
+          "namefr": "Students services",
+          "urlfr": "#",
+          "nameen": "Students services",
+          "urlen": "#"
+        }
       ]
     }
   ],

@@ -2,6 +2,8 @@ title: Footer
 name: footer
 wrapper: container
 variants:
+  - name: en
+    title: Standard en anglais
   - name: light
     title: Footer light
   - name: dark
@@ -14,4 +16,4 @@ notes: |
 
   <br>
 
-  ### Standard
+  ### Standard en français
