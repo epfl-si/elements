@@ -15,7 +15,7 @@
         {% for item in col.items %}
           <li>
             {% if language == 'fr' %}
-            <a href="{{item.urlfr|raw}}">{{item.namefr}}</a>
+            <a href="{{item.urlfr}}">{{item.namefr}}</a>
             {% endif %}
             {% if language == 'en' %}
             <a href="{{item.urlen}}">{{item.nameen}}</a>
