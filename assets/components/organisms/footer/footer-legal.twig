@@ -1,3 +1,6 @@
+{% if language is not defined %}{% set language = 'fr' %}{% endif %}
+
+{% if language == 'fr' %}
 <div class="footer-legal">
   <div class="footer-legal-links">
     <a href="">Accessibilité</a>
@@ -7,3 +10,15 @@
     <p>&copy; 2018 EPFL, tous droits réservés</p>
   </div>
 </div>
+{% endif %}
+{% if language == 'en' %}
+<div class="footer-legal">
+  <div class="footer-legal-links">
+    <a href="">Accessibility</a>
+    <a href="">Disclaimer</a>
+  </div>
+  <div>
+    <p>&copy; 2018 EPFL, all rights reserved</p>
+  </div>
+</div>
+{% endif %}
