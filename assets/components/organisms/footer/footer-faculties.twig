@@ -11,13 +11,13 @@
   </button>
   <div class="collapse collapse-item" id="collapse-fac">
     <ul class="footer-links">
-    {% for fac in faculties %}
+    {% for school in schools %}
       <li>
         {% if language == 'fr' %}
-        <a href="{{fac.urlfr}}">{{fac.namefr}} <strong>{{fac.acronym}}</strong></a>
+        <a href="{{school.urlfr}}">{{school.namefr}} <strong>{{school.acronym}}</strong></a>
         {% endif %}
         {% if language == 'en' %}
-        <a href="{{fac.urlen}}">{{fac.nameen}} <strong>{{fac.acronym}}</strong></a>
+        <a href="{{school.urlen}}">{{school.nameen}} <strong>{{school.acronym}}</strong></a>
         {% endif %}
       </li>
     {% endfor %}
