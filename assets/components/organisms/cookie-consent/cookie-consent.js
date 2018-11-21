@@ -2,11 +2,17 @@
 
 // Show it when we are in Toolbox
 document.addEventListener('ToolboxReady', () => {
+    // Open it in the cookie consent page only for toolbox
     if (window.location.href.includes('cookie-consent')) {
-        // Open it for toolbox
-        var popup;
-        popup = cookieconsent(get_cookieconsent_config());
-        popup.open();
+        if (!window.cookie_consent_popup) {
+          window.cookie_consent_popup = cookieconsent(get_cookieconsent_config());
+        }
+        window.cookie_consent_popup.open();
+    } else {
+        // Force close if we are not on the correct page
+        if (window.cookie_consent_popup) {
+            window.cookie_consent_popup.close();
+        }
     }
 });
 
@@ -47,9 +53,10 @@ function get_cookieconsent_config() {
         if (hostParts[0] !== undefined && hostParts[1] !== undefined) {
             domain_name = hostParts[1] + '.' + hostParts[0];
         }
-    }    
-    
+    }
+
     var config = {
+        "theme": "classic",
         "palette": {
         "popup": {
             "background": "rgba(69, 69, 69, 0.96)"

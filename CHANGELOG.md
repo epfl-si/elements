@@ -1,5 +1,16 @@
 
 # CHANGELOG
+*1.3.4* (2018-11-21)
+  - ✨ New implementations
+    - Set the header and the footer in french and english version
+    - Update the footer to have the correct URLs
+    - Rework design on contact, to show in a multiple column style
+
+  - 🛠 Fixes & other
+    - Google analytics doc had a wrong ID
+    - Fix the simple navigation being broken with 1.3.1
+    - Remove the planet icon on all dropdown for language switcher
+    - Fix cookie consent popup being triggred on every page
 
 *1.3.3* (2018-10-22)
   - ✨ New implementations
@@ -12,7 +23,8 @@
 *1.3.1* (2018-10-18)
   - ✨ New implementations
     - new language switcher for 3+ languages (see atoms/nav-lang)
-    - implement google analytics
+    - Add a howto for google analytics
+    - implement cookie consent popup
     - add popover version on hero component
 
   - 🛠 Fixes & other

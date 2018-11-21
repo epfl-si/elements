@@ -1,10 +1,22 @@
+{% if language is not defined %}{% set language = 'fr' %}{% endif %}
+
 <nav class="nav-lang nav-lang-short ml-auto">
   <ul>
+    {% if language == 'fr' %}
     <li>
-      <span class="active" aria-label="Français'">FR</span>
+      <span class="active" aria-label="Français">FR</span>
     </li>
     <li>
       <a href="/en" aria-label="English">EN</a>
     </li>
+    {% endif %}
+    {% if language == 'en' %}
+    <li>
+      <a href="/en" aria-label="English">FR</a>
+    </li>
+    <li>
+      <span class="active" aria-label="Français">EN</span>
+    </li>
+    {% endif %}
   </ul>
 </nav>

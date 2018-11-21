@@ -1,5 +1,11 @@
 title: Header
 name: header
 variants:
-  - name: light
+  - name: en
+    notes: english
+  - name: light-fr
     title: Header light
+    notes: french
+  - name: light-en
+    notes: english
+notes: french
