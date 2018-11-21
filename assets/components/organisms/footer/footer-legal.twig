@@ -1,9 +1,24 @@
+{% if language is not defined %}{% set language = 'fr' %}{% endif %}
+
+{% if language == 'fr' %}
 <div class="footer-legal">
   <div class="footer-legal-links">
-    <a href="">Accessibilité</a>
-    <a href="">Mentions légales</a>
+    <a href="https://epfl-idevelop.github.io/elements/#/doc/accessibility.html">Accessibilité</a>
+    <a href="https://mediacom.epfl.ch/mentions-legales">Mentions légales</a>
   </div>
   <div>
     <p>&copy; 2018 EPFL, tous droits réservés</p>
   </div>
 </div>
+{% endif %}
+{% if language == 'en' %}
+<div class="footer-legal">
+  <div class="footer-legal-links">
+    <a href="https://epfl-idevelop.github.io/elements/#/doc/accessibility.html">Accessibility</a>
+    <a href="https://mediacom.epfl.ch/disclaimer">Legals</a>
+  </div>
+  <div>
+    <p>&copy; 2018 EPFL, all rights reserved</p>
+  </div>
+</div>
+{% endif %}
