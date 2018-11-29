@@ -2,9 +2,9 @@
 
 export default () => {
   $('a').on('click', (e) => {
-    const target = $(e.target).attr('href');
-    if (target && target.length > 1 && target.match('^#')) {
-      $(target)[0].scrollIntoView();
+    const target_href = $(e.target).attr('href');
+    if (target_href && target_href.length > 1 && target_href.match('^#')) {
+      $(e.target)[0].scrollIntoView();
     }
   });
 };
