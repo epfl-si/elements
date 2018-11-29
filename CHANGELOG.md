@@ -1,5 +1,10 @@
 
 # CHANGELOG
+*1.3.5* (2018-11-29)
+  - 🛠 Fixes & other
+    - Fix youtube in social icon
+    - Fix anchor javascript that were throwing error in styleguide
+
 *1.3.4* (2018-11-21)
   - ✨ New implementations
     - Set the header and the footer in french and english version
