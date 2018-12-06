@@ -175,7 +175,7 @@
       "urlen": "https://www.epfl.ch/about/"
     },
     {
-      "namefr": "Education",
+      "namefr": "Éducation",
       "nameen": "Education",
       "urlfr": "https://www.epfl.ch/education/",
       "urlen": "https://www.epfl.ch/education/"
@@ -259,7 +259,7 @@
           "urlen": "https://www.epfl.ch/about/sustainability"
         },
         {
-          "namefr": "Egalité des chances",
+          "namefr": "Égalité des chances",
           "urlfr": "https://equality.epfl.ch",
           "nameen": "Equal opportunities",
           "urlen": "https://equality.epfl.ch"
@@ -285,7 +285,7 @@
       ]
     },
     {
-      "headingfr": "Education",
+      "headingfr": "Éducation",
       "headingen": "Education",
       "items": [
         {
@@ -331,7 +331,7 @@
           "urlen": "https://www.epfl.ch/education/admission"
         },
         {
-          "namefr": "Etudier à l'EPFL",
+          "namefr": "Étudier à l'EPFL",
           "urlfr": "https://www.epfl.ch/education/science-and-education-outreach",
           "nameen": "Studying at EPFL",
           "urlen": "https://www.epfl.ch/education/science-and-education-outreach"
@@ -439,7 +439,7 @@
           "urlen": "https://www.epfl.ch/innovation/join"
         },
         {
-          "namefr": "Evénements",
+          "namefr": "Événements",
           "urlfr": "https://www.epfl.ch/innovation/events",
           "nameen": "Events",
           "urlen": "https://www.epfl.ch/innovation/events"
@@ -475,7 +475,7 @@
           "urlen": "https://www.epfl.ch/campus/restaurants-shops-hotels"
         },
         {
-          "namefr": "Evénements",
+          "namefr": "Événements",
           "urlfr": "https://www.epfl.ch/campus/events",
           "nameen": "Events",
           "urlen": "https://www.epfl.ch/campus/events"
