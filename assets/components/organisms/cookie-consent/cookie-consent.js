@@ -57,7 +57,8 @@ function get_cookieconsent_config() {
         },
         "cookie": {
         "name": "petitpois", // Chosen by a magical unicorn!
-        "domain": domain_name
+        "domain": domain_name,
+        "autoAttach": false // attach it manually to the end, or SEO will crawl it before any content
         }
     }
     return config;
@@ -70,6 +71,7 @@ const cookieconsent = (cookieconsent_config) => {
             if (!window.cookie_consent_popup) {
                 window.cookieconsent.initialise(cookieconsent_config, function (popup) {
                     window.cookie_consent_popup = popup;
+                    document.body.appendChild(popup.element);
                     }, function (err) {
                         console.error(err);
                     }
@@ -87,6 +89,7 @@ const cookieconsent = (cookieconsent_config) => {
         // Init cookieconsent for the site
         window.cookieconsent.initialise(cookieconsent_config, function (popup) {
             p = popup;
+            document.body.appendChild(p.element);
             }, function (err) {
                 console.error(err);
             }
