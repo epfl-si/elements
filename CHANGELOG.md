@@ -1,5 +1,13 @@
 
 # CHANGELOG
+*1.3.6* (2018-12-10)
+  - 🛠 Fixes & other
+    - Move cookie consent window to the end of the page
+    - Fix z-index for cookie-consent
+    - Fix linkedin icon
+    - Change french typo from E to É
+    - Move urls from www2018.epfl.ch to www.epfl.ch
+
 *1.3.5* (2018-11-29)
   - 🛠 Fixes & other
     - Fix youtube in social icon
