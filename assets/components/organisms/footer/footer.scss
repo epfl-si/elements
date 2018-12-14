@@ -4,6 +4,10 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+
+  p {
+    margin: 0;
+  }
 }
 
 .footer-group {
@@ -158,6 +162,7 @@
     padding-top: 1rem;
 
     & > div {
+      display: flex;
       flex: 0 0 auto;
     }
 
