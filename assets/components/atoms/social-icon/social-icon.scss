@@ -52,6 +52,14 @@ a.social-icon {
   background-color: $linkedin;
 }
 
+.social-icon-youtube {
+  background-color: $youtube;
+}
+
+.social-icon-youtube svg {
+  transform:scale(1.3);
+}
+
 // From https://codepen.io/katydecorah/pen/PNLePj
 %instagradient {
   background:

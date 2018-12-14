@@ -1,3 +1,4 @@
+{% if language is not defined %}{% set language = 'fr' %}{% endif %}
 {% set site_title = site_title|default('sub site name') %}
 <header role="banner" class="header header-light">
   {% include '@atoms/drawer/drawer.twig' %}
@@ -19,15 +20,16 @@
         </div>
       </li>
       {% else %}
-      <li id="menu-item-888">
-        <a class="nav-item" href="/propos-0/">À propos</a>
+        {% for head in header %}
+      <li id="menu-item-{{ loop.index }}">
+        {% if language == 'fr' %}
+        <a class="nav-item" href="{{ head.urlfr }}">{{ head.namefr }}</a>
+        {% endif %}
+        {% if language == 'en' %}
+        <a class="nav-item" href="{{ head.urlen }}">{{ head.nameen }}</a>
+        {% endif %}
       </li>
-      <li id="menu-item-999">
-        <a class="nav-item" href="/campus-1/">Campus</a>
-      </li>
-      <li id="menu-item-666">
-        <a class="nav-item" href="/ducation-2/">Éducation</a>
-      </li>
+        {% endfor %}
       {% endif %}
     </ul>
     {% include '@molecules/search/search-mobile.twig' %}
