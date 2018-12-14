@@ -179,7 +179,7 @@
         }
 
         &:nth-last-child(n + 2) ~ * {
-          flex: 0 0 calc(33% + $spacer);
+          flex: 0 0 calc(33% + #{$spacer * 1.5});
           border-right: 1rem solid white;
           .bg-gray-100 & {
             border-right-color: $gray-100;
