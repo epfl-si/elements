@@ -6,6 +6,7 @@
 
   li {
     list-style-type: none;
+    padding-left: $spacer;
 
     &:before {
       content: '\2022';
@@ -15,6 +16,7 @@
       font-size: 1.1rem;
       line-height: 0.9rem;
       color: $red;
+      margin-left: $spacer * -1;
     }
   }
 
@@ -23,7 +25,7 @@
     li:before { display: none; }
   }
 
-  ul { padding-left: 1.6rem; }
+  ul { padding-left: 0; }
   ul li:before { content: '\25e6'; }
   ul ul li:before { content: '\25aa'; }
 }
@@ -35,6 +37,7 @@
 
   li {
     list-style-type: none;
+    padding-left: $spacer;
 
     &:before {
       content: counter(item);
@@ -44,12 +47,13 @@
       font-size: 0.8rem;
       font-weight: $font-weight-bold;
       color: $red;
+      margin-left: $spacer * -1;
     }
   }
 
   ol {
     counter-reset: secondary-item;
-    padding-left: 2.2rem;
+    padding-left: 0;
   }
   ol ol { counter-reset: third-item; }
 
