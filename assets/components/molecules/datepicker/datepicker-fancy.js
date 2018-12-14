@@ -23,8 +23,8 @@ export default () => {
   /*
   * Custom managemet of prev / next on mobile
   */
-  function handlePrevNext(container) {
-    let weekNum = 1;
+  function handlePrevNext(container, selected) {
+    let weekNum = $('tr', container).index($('tr:has(.picker__day--selected)', container));
     if (initialWeek) {
       weekNum = initialWeek;
       initialWeek = false;
@@ -206,7 +206,7 @@ export default () => {
 
         // enable mobile behaviour when needed
         isMobile = $('.datepicker-fancy + .picker table').css('display') === 'block';
-      },
+      }
     });
   });
 };
