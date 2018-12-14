@@ -55,7 +55,6 @@
 
     @include media-breakpoint-down(md) {
       border-top: none;
-      padding-right: 0;
     }
 
     @include media-breakpoint-up(lg) {
