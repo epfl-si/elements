@@ -120,14 +120,6 @@
       padding: 1.5rem 2rem;
       background-color: $white;
       max-width: 24rem;
-
-      .list-inline {
-        font-size: 0.85 * $font-size-base;
-        margin-bottom: -0.3 * $spacer;
-        color: $text-muted;
-        li { margin-right: 0; }
-        li:not(:last-child):after { content: ' \203A'; }
-      }
     }
 
     h3,
@@ -135,6 +127,18 @@
       display: inline-block;
       margin-bottom: 0;
       font-size: 1.75rem;
+    }
+  }
+
+  .list-inline {
+    font-size: 0.85 * $font-size-base;
+    margin-bottom: 0;
+    color: $text-muted;
+    li { margin-right: 0; }
+    li:not(:last-child):after { content: ' \203A'; }
+
+    @include media-breakpoint-up('xl') {
+      margin-bottom: $spacer * -0.3;
     }
   }
 }
@@ -188,6 +192,8 @@
 }
 
 .fullwidth-teaser-content {
+  padding: 1rem 0 0;
+
   @include media-breakpoint-up(md) {
     padding: 1rem 0;
   }
