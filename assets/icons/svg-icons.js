@@ -13,12 +13,13 @@ const svgIcons = () => {
 
   const ajaxFeather = new XMLHttpRequest();
   const featherSvgPath = window.featherSvgPath || 'icons/feather-sprite.svg';
+  console.log(featherSvgPath);
   ajaxFeather.open('GET', featherSvgPath, true);
   ajaxFeather.send();
   ajaxFeather.onload = function (e) {
     if(e.target.status == 200) {
       var div = document.createElement('div');
-      div.innerHTML = ajax.responseText;
+      div.innerHTML = ajaxFeather.responseText;
       document.body.insertBefore(div, document.body.childNodes[0]);
     }
   };
