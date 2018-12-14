@@ -544,8 +544,8 @@ $dropdown-header-color:             $gray-600 !default;
 $zindex-background:                 -1 !default;
 $zindex-0:                          0 !default;
 $zindex-1:                          1 !default;
-$zindex-5:                          1 !default;
-$zindex-10:                         0 !default;
+$zindex-5:                          5 !default;
+$zindex-10:                         10 !default;
 $zindex-breadcrumbs:                110 !default;
 $zindex-search-mobile:              120 !default;
 $zindex-dropdown:                   1000 !default;
@@ -561,6 +561,7 @@ $zindex-toggle:                     1120 !default;
 $zindex-gallery-opened:             1120 !default;
 $zindex-mobile-lang:                1140 !default;
 $zindex-access-nav:                 3003 !default;
+$zindex-cookie-consent:             4004 !default;
 
 // Navs
 

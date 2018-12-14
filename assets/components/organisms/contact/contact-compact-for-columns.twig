@@ -1,0 +1,23 @@
+{# to set random missing elements in this template, we allow to set an increment #}
+<div class="card">
+  <div class="card-body">
+    <div class="align-items-center">
+      {% if person.photo_url %}
+      <img class="img-fluid rounded-circle mb-2 person-card-avatar" src="{{ person.photo_url }}" alt="{{ person.prenom }} {{ person.nom }}">
+      {% else %}
+      <img class="img-fluid rounded-circle mb-2 person-card-avatar" src="./images/defaults/person-avatar-default-small.png" alt="{{ person.prenom }} {{ person.nom }}">
+      {% endif %}
+    <h3><a class="link-pretty" href="#">{{ person.prenom }} {{ person.nom }}</a></h3>
+    <dl class="definition-list definition-list-grid mb-0">
+      <dt>Fonction</dt>
+      <dd>{{ person.functions.0 }}</dd>
+      <dt>Bureau</dt>
+      <dd><a class="link-pretty" href="#">{{ person.rooms.0 }}</a></dd>
+    </dl>
+      <div class="w-100 mt-2 mt-md-0">
+        <a class="btn btn-block btn-primary mb-2" href="mailto:{{ person.email }}">{{ person.email }}</a>
+        <a class="btn btn-block btn-secondary" href="tel:+4179{{ person.phones.0 }}">+41 79 {{ person.phones.0 }}</a>
+      </div>
+    </div>
+  </div>
+</div>

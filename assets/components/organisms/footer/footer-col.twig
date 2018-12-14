@@ -1,13 +1,25 @@
+{% if language is not defined %}{% set language = 'fr' %}{% endif %}
+
 {% for col in footer %}
   <div class="footer-sitemap-col">
     <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-footer-{{loop.index ?: 1}}" aria-expanded="false" aria-controls="collapse-footer-{{loop.index ?: 1}}">
-      <strong>{{col.heading}}</strong>
+      {% if language == 'fr' %}
+      <strong>{{col.headingfr}}</strong>
+      {% endif %}
+      {% if language == 'en' %}
+      <strong>{{col.headingen}}</strong>
+      {% endif %}
     </button>
     <div class="collapse collapse-item" id="collapse-footer-{{loop.index ?: 1}}">
       <ul class="footer-links">
         {% for item in col.items %}
           <li>
-            <a href="#">{{item}}</a>
+            {% if language == 'fr' %}
+            <a href="{{item.urlfr}}">{{item.namefr}}</a>
+            {% endif %}
+            {% if language == 'en' %}
+            <a href="{{item.urlen}}">{{item.nameen}}</a>
+            {% endif %}
           </li>
         {% endfor %}
       </ul>

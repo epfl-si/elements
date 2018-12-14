@@ -1,10 +1,8 @@
 {% set round = round ? round : false %}
 {% set discrete = discrete ? discrete : false %}
 {% set negative = negative ? negative : false %}
-{% include '@atoms/social-icon/social-icon-single-link.twig' with { icon: 'icon-facebook', round: round, discrete: discrete, negative: negative } %}
-{% include '@atoms/social-icon/social-icon-single-link.twig' with { icon: 'icon-twitter', round: round, discrete: discrete, negative: negative } %}
-{% include '@atoms/social-icon/social-icon-single-link.twig' with { icon: 'icon-instagram', round: round, discrete: discrete, negative: negative } %}
-{% include '@atoms/social-icon/social-icon-single-link.twig' with { icon: 'icon-mail-plane', round: round, discrete: discrete, negative: negative } %}
-{% include '@atoms/social-icon/social-icon-single-link.twig' with { icon: 'icon-whatsapp', round: round, discrete: discrete, negative: negative } %}
-{% include '@atoms/social-icon/social-icon-single-link.twig' with { icon: 'icon-googleplus', round: round, discrete: discrete, negative: negative } %}
-{% include '@atoms/social-icon/social-icon-single-link.twig' with { icon: 'icon-linkedin', round: round, discrete: discrete, negative: negative } %}
+{% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Facebook', icon: 'icon-facebook', round: round, discrete: discrete, negative: negative, url: 'https://www.facebook.com/epflcampus' } %}
+{% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Twitter', icon: 'icon-twitter', round: round, discrete: discrete, negative: negative, url: 'https://twitter.com/epfl' } %}
+{% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Instagram', icon: 'icon-instagram', round: round, discrete: discrete, negative: negative, url: 'http://instagram.com/epflcampus' } %}
+{% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Youtube', icon: 'icon-youtube', round: round, discrete: discrete, negative: negative, url: 'https://www.youtube.com/user/epflnews' } %}
+{% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'LinkedIn', icon: 'icon-linkedin', round: round, discrete: discrete, negative: negative, url: 'https://www.linkedin.com/school/epfl/' } %}

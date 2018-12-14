@@ -1,10 +1,43 @@
 
 # CHANGELOG
+*1.3.6* (2018-12-10)
+  - 🛠 Fixes & other
+    - Move cookie consent window to the end of the page
+    - Fix z-index for cookie-consent
+    - Fix linkedin icon
+    - Change french typo from E to É
+    - Move urls from www2018.epfl.ch to www.epfl.ch
+
+*1.3.5* (2018-11-29)
+  - 🛠 Fixes & other
+    - Fix youtube in social icon
+    - Fix anchor javascript that were throwing error in styleguide
+
+*1.3.4* (2018-11-21)
+  - ✨ New implementations
+    - Set the header and the footer in french and english version
+    - Update the footer to have the correct URLs
+    - Rework design on contact, to show in a multiple column style
+
+  - 🛠 Fixes & other
+    - Google analytics doc had a wrong ID
+    - Fix the simple navigation being broken with 1.3.1
+    - Remove the planet icon on all dropdown for language switcher
+    - Fix cookie consent popup being triggred on every page
+
+*1.3.3* (2018-10-22)
+  - ✨ New implementations
+    - Implement contact-list
+
+*1.3.2* (2018-10-18)
+  - 🛠 Fixes & other
+    - hotfix z-index ordering
 
 *1.3.1* (2018-10-18)
   - ✨ New implementations
     - new language switcher for 3+ languages (see atoms/nav-lang)
-    - implement google analytics
+    - Add a howto for google analytics
+    - implement cookie consent popup
     - add popover version on hero component
 
   - 🛠 Fixes & other
