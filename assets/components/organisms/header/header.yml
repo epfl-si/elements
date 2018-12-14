@@ -8,4 +8,5 @@ variants:
     notes: french
   - name: light-en
     notes: english
-notes: french
+notes: |
+  To style current menu item, add `active` ou `current-menu-item` (Wordpress default class) on the `<li>` element containing the current item menu
