@@ -72,7 +72,9 @@
 }
 
 .datepicker-wrapper .picker__day {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   width: 2.4rem;
   height: 2.4rem;
   padding: ($spacer * 0.55) 0 !important;
@@ -99,5 +101,6 @@
   &.picker__day--selected {
     background: $red !important;
     border-color: $red;
+    color: $white;
   }
 }
