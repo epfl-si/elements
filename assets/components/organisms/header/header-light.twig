@@ -15,13 +15,13 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="#">Option 1</a>
-          <a class="dropdown-item" href="#">Option 2</a>
+          <a class="dropdown-item active" href="#">Option 2</a>
           <a class="dropdown-item" href="#">Option 3</a>
         </div>
       </li>
       {% else %}
         {% for head in header %}
-      <li id="menu-item-{{ loop.index }}">
+      <li id="menu-item-{{ loop.index }}" {% if loop.index == 2 %} class="current-menu-item"{% endif %}>
         {% if language == 'fr' %}
         <a class="nav-item" href="{{ head.urlfr }}">{{ head.namefr }}</a>
         {% endif %}
