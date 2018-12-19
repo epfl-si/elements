@@ -11,4 +11,8 @@ variants:
   - name: list
     title: Icons list
     notes: |
-      Here is the list of current available icons used in the styleguide.
+      Here is the list of custom icons used in the styleguide.
+  - name: list-feather
+    title: Feather icons
+    notes: |
+      When using an icon from the feathericon category, the `svg` element must have the `feather` class to display correctly.
