@@ -1,5 +1,11 @@
 
 # CHANGELOG
+*1.3.8* (2018-12-18)
+  - 🛠 Fixes & other
+    - fix lists multiline alignment
+    - fix manifest favicons
+    - update manifest
+
 *1.3.7* (2018-12-18)
   - 🛠 Fixes & other
     - update footer links
