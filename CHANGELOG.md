@@ -1,5 +1,11 @@
 
 # CHANGELOG
+*1.3.9* (2018-03-07)
+  - ✨ New implementations
+    - Add modal
+  - 🛠 Fixes & other
+    - Update header links
+
 *1.3.8* (2018-12-18)
   - 🛠 Fixes & other
     - fix lists multiline alignment
