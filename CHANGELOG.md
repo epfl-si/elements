@@ -1,5 +1,34 @@
 
 # CHANGELOG
+*1.3.9* (2018-03-07)
+  - ✨ New implementations
+    - Add modal
+  - 🛠 Fixes & other
+    - Update header links
+
+*1.3.8* (2018-12-18)
+  - 🛠 Fixes & other
+    - fix lists multiline alignment
+    - fix manifest favicons
+    - update manifest
+
+*1.3.7* (2018-12-18)
+  - 🛠 Fixes & other
+    - update footer links
+    - update cookie consent link
+    - align datepicker
+    - remove padding
+    - fix mobile fancy datepicker behaviour
+    - lists spacing and padding
+    - fix duo card link
+    - fix header light mobile
+    - fix fullwidth teaser categories style on mobile
+    - fix list-group
+    - document header current menu item
+    - fix menu and dropdown active state + doc
+    - fix favicon
+    - fix footer alignment
+
 *1.3.6* (2018-12-10)
   - 🛠 Fixes & other
     - Move cookie consent window to the end of the page

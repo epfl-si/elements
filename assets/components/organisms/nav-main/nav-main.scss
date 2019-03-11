@@ -12,7 +12,7 @@ $nav-spacer: 4px;
   transition: left 0.3s;
   border-right: 1px solid gray('100');
 
-  li.current_page_item {
+  li.current-menu-item {
     & > a:first-child,
     & > a:first-child:hover {
       background: theme-color('primary');
