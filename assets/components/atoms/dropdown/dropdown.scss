@@ -2,4 +2,9 @@
 
 .dropdown-item {
   text-decoration: none;
+
+  &.active {
+    background: $primary;
+    color: $white !important;
+  }
 }
