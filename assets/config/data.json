@@ -403,7 +403,7 @@
       "headingen": "Innovation",
       "items": [
         {
-          "namefr": "Domaine d'innovation",
+          "namefr": "Domaines d'innovation",
           "urlfr": "https://www.epfl.ch/innovation/about/fr/domaines/",
           "nameen": "Innovation domains",
           "urlen": "https://www.epfl.ch/innovation/about/domains/"
@@ -415,7 +415,7 @@
           "urlen": "https://www.epfl.ch/innovation/industry/"
         },
         {
-          "namefr": "Entrepreneuriat et start-up",
+          "namefr": "Entrepreneuriat et start-ups",
           "urlfr": "https://www.epfl.ch/innovation/entrepreneurship/fr/startup/",
           "nameen": "Entrepreneurship and start-ups",
           "urlen": "https://www.epfl.ch/innovation/entrepreneurship/start-up/"
