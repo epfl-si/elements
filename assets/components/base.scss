@@ -2,6 +2,52 @@
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
 
+@font-face {
+  font-family: 'SuisseIntl';
+  font-weight: 400;
+  src:  url('../fonts/SuisseIntl-Regular-WebS.eot');
+  src:  url('../fonts/SuisseIntl-Regular-WebS.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SuisseIntl-Regular-WebS.woff2') format('woff2'),
+        url('../fonts/SuisseIntl-Regular-WebS.woff') format('woff'),
+        url('../fonts/SuisseIntl-Regular-WebS.ttf') format('truetype'),
+        url('../fonts/SuisseIntl-Regular-WebS.svg#svgFontName') format('svg');
+}
+
+@font-face {
+  font-family: 'SuisseIntl';
+  font-weight: 400;
+  font-style: italic;
+  src:  url('../fonts/SuisseIntl-RegularItalic-WebS.eot');
+  src:  url('../fonts/SuisseIntl-RegularItalic-WebS.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SuisseIntl-RegularItalic-WebS.woff2') format('woff2'),
+        url('../fonts/SuisseIntl-RegularItalic-WebS.woff') format('woff'),
+        url('../fonts/SuisseIntl-RegularItalic-WebS.ttf') format('truetype'),
+        url('../fonts/SuisseIntl-RegularItalic-WebS.svg#svgFontName') format('svg');
+}
+
+@font-face {
+  font-family: 'SuisseIntl';
+  font-weight: 700;
+  src:  url('../fonts/SuisseIntl-SemiBold-WebS.eot');
+  src:  url('../fonts/SuisseIntl-SemiBold-WebS.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SuisseIntl-SemiBold-WebS.woff2') format('woff2'),
+        url('../fonts/SuisseIntl-SemiBold-WebS.woff') format('woff'),
+        url('../fonts/SuisseIntl-SemiBold-WebS.ttf') format('truetype'),
+        url('../fonts/SuisseIntl-SemiBold-WebS.svg#svgFontName') format('svg');
+}
+
+@font-face {
+  font-family: 'SuisseIntl';
+  font-weight: 700;
+  font-style: italic;
+  src:  url('../fonts/SuisseIntl-SemiBoldItalic-WebS.eot');
+  src:  url('../fonts/SuisseIntl-SemiBoldItalic-WebS.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SuisseIntl-SemiBoldItalic-WebS.woff2') format('woff2'),
+        url('../fonts/SuisseIntl-SemiBoldItalic-WebS.woff') format('woff'),
+        url('../fonts/SuisseIntl-SemiBoldItalic-WebS.ttf') format('truetype'),
+        url('../fonts/SuisseIntl-SemiBoldItalic-WebS.svg#svgFontName') format('svg');
+}
+
 // init:
 @import '../config/mixins';
 @import '../config/variables';
