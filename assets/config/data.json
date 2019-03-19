@@ -134,6 +134,7 @@
     },
     {
       "namefr": "Faculté informatique et communications",
+      "nameen": "School of computer and communication sciences",
       "acronym": "IC",
       "urlfr": "https://www.epfl.ch/schools/ic/fr/faculte-informatique-et-communication/",
       "urlen": "https://www.epfl.ch/schools/ic/"
@@ -163,8 +164,8 @@
       "namefr": "Middle East",
       "nameen": "Middle East",
       "acronym": "ME",
-      "urlfr": "https://www.epfl.ae",
-      "urlen": "https://www.epfl.ae"
+      "urlfr": "http://www.epfl.ae",
+      "urlen": "http://www.epfl.ae"
     }
   ],
   "header": [
@@ -263,7 +264,7 @@
           "urlfr": "https://equality.epfl.ch/fr/index-fr-html/",
           "nameen": "Equal opportunities",
           "urlen": "https://equality.epfl.ch"
-        },        
+        },
         {
           "namefr": "Philanthropie",
           "urlfr": "https://www.epfl.ch/about/philanthropy/fr/philanthropie/",
@@ -341,7 +342,7 @@
           "urlfr": "https://www.epfl.ch/education/education-and-science-outreach/fr/index-fr-html/",
           "nameen": "Sciences and education outreach",
           "urlen": "https://www.epfl.ch/education/education-and-science-outreach/"
-        }        
+        }
       ]
     },
     {
@@ -395,7 +396,7 @@
           "urlfr": "https://www.epfl.ch/research/awards/fr/prix-distinctions/",
           "nameen": "Research awards",
           "urlen": "https://www.epfl.ch/research/awards/"
-        }        
+        }
       ]
     },
     {
@@ -403,28 +404,28 @@
       "headingen": "Innovation",
       "items": [
         {
-          "namefr": "Domaine d'innovation",
-          "urlfr": "https://vpi.epfl.ch/fr/projetsinnovation/",
+          "namefr": "Domaines d'innovation",
+          "urlfr": "https://www.epfl.ch/innovation/about/fr/domaines/",
           "nameen": "Innovation domains",
-          "urlen": "https://vpi.epfl.ch/innovationprojects/"
+          "urlen": "https://www.epfl.ch/innovation/about/domains/"
         },
         {
-          "namefr": "Collaboration avec les entreprises",
-          "urlfr": "https://vpi.epfl.ch/fr/collaborationindustrielle/",
-          "nameen": "Collaborate with industries",
-          "urlen": "https://vpi.epfl.ch/industrycollaboration/"
+          "namefr": "Collaboration avec l'industrie",
+          "urlfr": "https://www.epfl.ch/innovation/industry/fr/industries/",
+          "nameen": " Collaborate with industry",
+          "urlen": "https://www.epfl.ch/innovation/industry/"
         },
         {
-          "namefr": "Entrepreneuriat et start-up",
-          "urlfr": "https://www.epfl.ch/innovation/entrepreneurship/fr/entrepreneuriat/",
-          "nameen": "Entrepreneurship and startups",
-          "urlen": "https://www.epfl.ch/innovation/entrepreneurship/"
+          "namefr": "Entrepreneuriat et start-ups",
+          "urlfr": "https://www.epfl.ch/innovation/entrepreneurship/fr/startup/",
+          "nameen": "Entrepreneurship and start-ups",
+          "urlen": "https://www.epfl.ch/innovation/entrepreneurship/start-up/"
         },
         {
-          "namefr": "Apprendre et se développer",
-          "urlfr": "https://www.epfl.ch/innovation/fr/innovation-2/",
+          "namefr": "Développer son expertise",
+          "urlfr": "https://www.epfl.ch/innovation/industry/fr/industries/formation/",
           "nameen": "Learn and develop",
-          "urlen": "https://www.epfl.ch/innovation/"
+          "urlen": "https://www.epfl.ch/innovation/industry/industry/learn-and-develop/"
         }
       ]
     },
