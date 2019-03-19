@@ -1,6 +1,12 @@
-
 # CHANGELOG
-*1.3.9* (2018-03-07)
+
+*2.0.0* (2019-03-18)
+  - ✨ New implementations
+    - New logo, new colors, new font !
+  - 🛠 Fixes & other
+    - Fix missing label for IC in the footer
+
+*1.3.9* (2019-03-07)
   - ✨ New implementations
     - Add modal
   - 🛠 Fixes & other
