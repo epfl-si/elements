@@ -46,7 +46,7 @@ function get_cookieconsent_config() {
             "background": "rgba(69, 69, 69, 0.96)"
         },
         "button": {
-            "background": "#e2001a"
+            "background": "#b51f1f"
         }
         },
         "content": {

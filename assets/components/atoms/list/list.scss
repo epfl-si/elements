@@ -7,19 +7,20 @@
   li {
     list-style-type: none;
     padding-left: $spacer;
+    position: relative;
 
     $bullet-size: $spacer * 0.8;
 
     &:before {
-      content: '\2022';
-      display: inline-block;
-      padding-right: 0.3rem;
-      width: $bullet-size;
-      height: $bullet-size;
-      margin-left: $bullet-size * -1;
+      content: '';
+      background: $red;
+      top: 0.7rem;
+      right: calc(100% - 0.5rem);
       font-size: 1.1rem;
       line-height: $bullet-size;
-      color: $red;
+      position: absolute;
+      width: 6px;
+      height: 5px;
     }
   }
 
@@ -29,8 +30,14 @@
   }
 
   ul { padding-left: 0; }
-  ul li:before { content: '\25e6'; }
-  ul ul li:before { content: '\25aa'; }
+  ul li:before {
+    background: transparent;
+    border: 1px solid $red;
+  }
+  ul ul li:before {
+    background: $red;
+    border: none;
+  }
 }
 
 .list-numbered {
@@ -47,7 +54,7 @@
       content: counter(item);
       counter-increment: item;
       position: absolute;
-      top: 0.32rem;
+      top: 0.3rem;
       right: calc(100% - 0.5rem);
       font-size: 0.8rem;
       font-weight: $font-weight-bold;
