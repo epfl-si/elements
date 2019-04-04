@@ -1,5 +1,12 @@
 # CHANGELOG
 
+*2.0.1* (2019-04-04)
+  - 🛠 Fixes & other
+    - Add speaker to event content-type
+    - Add some missing À
+    - Fix viewport jumping when clicking on collapse (#374)
+    - Fix doc for collapse (Thanks ponsfrilus)
+
 *2.0.0* (2019-03-18)
   - ✨ New implementations
     - New logo, new colors!
