@@ -13,11 +13,19 @@
             <span class="event-time">13:00</span>
             <span class="event-time">17:30</span>
             {% endblock %}
-            <p itemprop="location" itemscope itemtype="http://schema.org/Place">
+            <p>
+            <span itemprop="performer" itemscope itemtype="http://schema.org/performer">
+            {% block speaker %}
+              Avec <b>Prof. Dr. Aditya Mueller</b>
+            {% endblock %}
+            </span>            
+            <span itemprop="location" itemscope itemtype="http://schema.org/Place">
+              <br>
               {% block info %}
               Lieu : <b><span itemprop="name">ArtLab EPFL</span></b>
               <br> Catégorie : <b>Événements culturel</b><br>
               {% endblock %}
+            </span>
             </p>
           </div>
         </div>
