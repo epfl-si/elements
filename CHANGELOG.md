@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*2.0.2* (2019-04-23)
+  - 🛠 Fixes & other
+    - Fix breadcrumb folding (#379)
+
 *2.0.1* (2019-04-04)
   - 🛠 Fixes & other
     - Add speaker to event content-type
