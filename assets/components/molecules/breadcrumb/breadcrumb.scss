@@ -57,7 +57,7 @@
 
   @include media-breakpoint-down(lg) {
     //height: $mm-breadcrumbs-height;
-    overflow-x: scroll;
+    //overflow-x: scroll;
     //white-space: nowrap;
     margin: 0;
     padding: $spacer * 0.64 0;
