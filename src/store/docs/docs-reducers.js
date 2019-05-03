@@ -4,13 +4,9 @@ import {
   CLEAN_DOC_CONTENT,
 } from '../actions/docs';
 
-const defaultState = {
-  current_doc: {
-    content: ' ',
-  },
-};
+import initialState from './docs-initial-state';
 
-export default function docsReducer(state = defaultState, action) {
+export default function docsReducer(state = initialState, action) {
   switch (action.type) {
 
     // Add the base doc collection

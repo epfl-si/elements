@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import alert from './alert';
-import atomic from './atomic';
-import docs from './docs';
-import navigation from './navigation';
+import { reducers as alert } from './alert/index';
+import { reducers as atomic } from './atomic/index';
+import { reducers as docs } from './docs/index';
+import { reducers as navigation } from './navigation/index';
 
 const rootReducer = combineReducers({
   alert,

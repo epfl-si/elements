@@ -4,10 +4,7 @@ import {
   TOGGLE_MENU,
 } from '../actions/navigation';
 
-const defaultState = {
-  showMenu: false,
-  showAllCode: true,
-};
+import initialState from './navigation-initial-state'
 
 export default function navigationReducer(state = defaultState, action) {
   switch (action.type) {

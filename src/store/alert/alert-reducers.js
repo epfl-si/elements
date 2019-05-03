@@ -2,11 +2,9 @@ import {
   SET_VERSION,
 } from '../actions/alert';
 
-const defaultState = {
-  local_version: window.builder || null,
-};
+import initialState from './alert-initial-state';
 
-export default function alertReducer(state = defaultState, action) {
+export default function alertReducer(state = initialState, action) {
   switch (action.type) {
 
     case SET_VERSION:

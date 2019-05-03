@@ -6,9 +6,9 @@ import {
   SET_VARIANT_MARKUP,
 } from '../actions/atomic';
 
-const defaultState = {};
+import initialState from './atomic-initial-state';
 
-const atomicReducer = p((state = defaultState, action) => {
+const atomicReducer = p((state = initialState, action) => {
   switch (action.type) {
 
     // Add the base components collection
