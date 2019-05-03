@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Collapse from 'react-css-collapse';

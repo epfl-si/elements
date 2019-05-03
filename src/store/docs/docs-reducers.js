@@ -2,7 +2,7 @@ import {
   GET_DOCS,
   SET_DOC_CONTENT,
   CLEAN_DOC_CONTENT,
-} from '../actions/docs';
+} from './docs-actions';
 
 import initialState from './docs-initial-state';
 
@@ -27,7 +27,7 @@ export default function docsReducer(state = initialState, action) {
     case CLEAN_DOC_CONTENT:
       return {
         ...state,
-        current_doc: defaultState.current_doc,
+        current_doc: initialState.current_doc,
       };
     default: return state;
   }

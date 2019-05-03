@@ -4,7 +4,7 @@ import {
   SET_COMPONENTS,
   SET_COMPONENT_MARKUP,
   SET_VARIANT_MARKUP,
-} from '../actions/atomic';
+} from './atomic-actions';
 
 import initialState from './atomic-initial-state';
 

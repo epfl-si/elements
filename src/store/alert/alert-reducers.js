@@ -1,6 +1,6 @@
 import {
   SET_VERSION,
-} from '../actions/alert';
+} from './alert-actions';
 
 import initialState from './alert-initial-state';
 

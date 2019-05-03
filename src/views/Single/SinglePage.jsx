@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { getComponentMarkup } from '../../actions/atomic';
+import { actions as atomicActions } from '../../store/atomic';
 import parentUrl from '../../helpers/parentUrl';
 
 import Single from './Single';
@@ -45,8 +45,12 @@ class SinglePage extends Single {
   render() {
     return (
       <div>
-        { undefined === this.state.component.content ? <Loader /> : '' }
-        <div role="presentation" onClick={this.handlePageClick.bind(this)} dangerouslySetInnerHTML={{ __html: this.state.component.content }} />
+        {undefined === this.state.component.content ? <Loader /> : ''}
+        <div
+          role="presentation"
+          onClick={this.handlePageClick.bind(this)}
+          dangerouslySetInnerHTML={{ __html: this.state.component.content }}
+        />
       </div>
     );
   }
@@ -57,17 +61,17 @@ SinglePage.propTypes = {
   components: PropTypes.object,
 };
 
-function mapState(state) {
-  return {
-    atomic: state.atomic,
-    navigation: state.navigation,
-  };
-}
+const mapState = ({ atomic, navigation }) => ({
+  atomic,
+  navigation,
+});
 
-function mapDispatch(dispatch) {
-  return bindActionCreators({
-    getComponentMarkup,
-  }, dispatch);
-}
+const mapDispatch = dispatch => {
+  const { getComponentMarkup } = atomicActions;
+  return bindActionCreators({ getComponentMarkup }, dispatch);
+};
 
-export default connect(mapState, mapDispatch)(SinglePage);
+export default connect(
+  mapState,
+  mapDispatch,
+)(SinglePage);

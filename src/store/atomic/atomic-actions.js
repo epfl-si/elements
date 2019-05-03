@@ -135,3 +135,18 @@ export const getVariantMarkup = (variant, basePath, types) => {
     dispatch(getMarkup(payload));
   };
 };
+
+export default {
+  GET_COMPONENTS,
+  GET_MARKUP,
+  SET_COMPONENTS,
+  SET_COMPONENT_MARKUP,
+  SET_VARIANT_MARKUP,
+  setComponents,
+  getComponents,
+  setComponentMarkup,
+  setVariantMarkup,
+  getMarkup,
+  getComponentMarkup,
+  getVariantMarkup,
+};

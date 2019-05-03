@@ -20,3 +20,10 @@ export const getVersion = () => {
       .catch(err => console.error(err));
   }
 }
+
+export default {
+  GET_VERSION,
+  SET_VERSION,
+  setVersion,
+  getVersion,
+};

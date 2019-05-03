@@ -40,3 +40,14 @@ export const cleanDocContent = () => {
     type: CLEAN_DOC_CONTENT,
   };
 }
+
+export default {
+  GET_DOCS,
+  GET_DOC_CONTENT,
+  SET_DOC_CONTENT,
+  CLEAN_DOC_CONTENT,
+  getDocs,
+  setDocContent,
+  getDocContent,
+  cleanDocContent,
+};

@@ -2,11 +2,11 @@ import {
   BASE_URL_UPDATE,
   TOGGLE_CODE,
   TOGGLE_MENU,
-} from '../actions/navigation';
+} from './navigation-actions';
 
 import initialState from './navigation-initial-state'
 
-export default function navigationReducer(state = defaultState, action) {
+export default function navigationReducer(state = initialState, action) {
   switch (action.type) {
     // Set the current app url
     case BASE_URL_UPDATE:

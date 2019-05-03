@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 
-import { getComponentMarkup, getVariantMarkup } from '../../actions/atomic';
+import { actions as atomicActions } from '../../store/atomic';
 
 import Single from './Single';
 import Item from '../../components/Item/Item';
@@ -25,26 +25,28 @@ class SingleStyleguide extends Single {
   }
 
   renderVariants() {
-    return this.state.component.variants.length > 0 && (
-      <div>
-        {this.state.component.variants.map((variant, key) => {
-          return (
-            <div key={key}>
-              <h3 className="tlbx-variant-heading">{variant.title}</h3>
-              {variant.notes
-                ?
+    return (
+      this.state.component.variants.length > 0 && (
+        <div>
+          {this.state.component.variants.map((variant, key) => {
+            return (
+              <div key={key}>
+                <h3 className="tlbx-variant-heading">{variant.title}</h3>
+                {variant.notes ? (
                   <div className="tlbx-notes">
                     <ReactMarkdown source={variant.notes} />
                   </div>
-                : ''
-              }
-              <Item component={this.state.component} variant={variant}>
-                {variant.content || ''}
-              </Item>
-            </div>
-          );
-        })}
-      </div>
+                ) : (
+                  ''
+                )}
+                <Item component={this.state.component} variant={variant}>
+                  {variant.content || ''}
+                </Item>
+              </div>
+            );
+          })}
+        </div>
+      )
     );
   }
 
@@ -70,18 +72,17 @@ SingleStyleguide.propTypes = {
   components: PropTypes.object,
 };
 
-function mapState(state) {
-  return {
-    atomic: state.atomic,
-    navigation: state.navigation,
-  };
-}
+const mapState = ({ atomic, navigation }) => ({
+  atomic,
+  navigation,
+});
 
-function mapDispatch(dispatch) {
-  return bindActionCreators({
-    getComponentMarkup,
-    getVariantMarkup,
-  }, dispatch);
-}
+const mapDispatch = dispatch => {
+  const { getComponentMarkup, getVariantMarkup } = atomicActions;
+  return bindActionCreators({ getComponentMarkup, getVariantMarkup }, dispatch);
+};
 
-export default connect(mapState, mapDispatch)(SingleStyleguide);
+export default connect(
+  mapState,
+  mapDispatch,
+)(SingleStyleguide);

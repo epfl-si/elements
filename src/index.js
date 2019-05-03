@@ -9,8 +9,6 @@ import store from './store';
 import App from './components/App/App';
 import printIcons from './components/Icon/Icons';
 
-const store = Store();
-
 const router = (
   <Provider store={store}>
     <Router>
