@@ -17,7 +17,7 @@ const Alert = ({ alert, getVersion }) => {
 
   useEffect(() => {
     getVersion();
-  }, [getVersion]);
+  }, []);
 
   useEffect(() => {
     setIsVisible(
@@ -25,7 +25,7 @@ const Alert = ({ alert, getVersion }) => {
         alert.remote_version !== alert.local_version &&
         !closed,
     );
-  }, [alert.local_version, alert.remote_version, closed]);
+  }, [closed]);
 
   return (
     <div className={`tlbx-alert${isVisible ? ' open' : ''}`}>

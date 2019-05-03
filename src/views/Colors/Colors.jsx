@@ -6,7 +6,7 @@ import ColorTable from './../../components/ColorTable/ColorTable';
 import './Colors.css';
 
 const Colors = () => {
-  const contrast = useState(colorable(window.colors));
+  const contrast = colorable(window.colors);
 
   return (
     <div className="container-fluid">

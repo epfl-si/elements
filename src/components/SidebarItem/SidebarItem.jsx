@@ -10,11 +10,11 @@ const SidebarItem = ({ group, location, atomic }) => {
   const [active, setActive] = useState(false);
 
   useEffect(() => {
-    const regex = new RegExp('^/doc/');
+    const regex = new RegExp(`^/${group}/`);
     const isCurrent = location.pathname.match(regex);
 
     setActive(!!isCurrent);
-  }, [location.pathname]);
+  }, []);
 
   return (
     <div className={active ? ' tlbx-open' : ''}>

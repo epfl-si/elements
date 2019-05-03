@@ -14,9 +14,10 @@ const SidebarDocs = ({ location, docs }) => {
     const isCurrent = location.pathname.match(regex);
 
     setActive(!!isCurrent);
-  }, [location.pathname]);
+  }, []);
 
-  if (Object.keys(docs.docs_list).length <= 0) return false;
+  if (docs.docs_list === undefined || Object.keys(docs.docs_list).length <= 0)
+    return false;
 
   return (
     <div className={active ? ' tlbx-open' : ''}>

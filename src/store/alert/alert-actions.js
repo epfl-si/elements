@@ -13,7 +13,7 @@ export const setVersion = (version) => {
 export const getVersion = () => {
   return dispatch => {
     axios
-      .get('https://cdn.jsdelivr.net/gh/frontend/toolbox-reader/package.json')
+      .get('https://cdn.jsdelivr.net/gh/frontend/toolbox-utils/package.json')
       .then(res => {
         dispatch(setVersion(res.data.version));
       })

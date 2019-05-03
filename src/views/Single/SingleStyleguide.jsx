@@ -26,6 +26,7 @@ class SingleStyleguide extends Single {
 
   renderVariants() {
     return (
+      this.state.component.variants &&
       this.state.component.variants.length > 0 && (
         <div>
           {this.state.component.variants.map((variant, key) => {

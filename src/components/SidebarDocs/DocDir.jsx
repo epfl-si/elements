@@ -51,7 +51,7 @@ const DocDir = ({ dir, fullpath }) => {
 };
 
 DocDir.propTypes = {
-  dir: PropTypes.string.isRequired,
+  dir: PropTypes.array.isRequired,
   fullpath: PropTypes.string.isRequired,
 };
 DocDir.defaultProps = {};

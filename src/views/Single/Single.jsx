@@ -11,11 +11,13 @@ import './Single.css';
  */
 class Single extends Component {
   componentDidMount() {
-    this.getContent(this.props);
+    if (this.props.atomic.sources) this.getContent(this.props);
   }
 
-  componentDidUpdate() {
-    this.getContent(this.props);
+  componentDidUpdate(prevProps) {
+    if (this.props.atomic.updated !== prevProps.atomic.updated) {
+      this.getContent(this.props);
+    }
   }
 
   /**

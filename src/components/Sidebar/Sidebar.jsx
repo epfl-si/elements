@@ -35,18 +35,19 @@ const Sidebar = ({ atomic, location }) => (
 
     <SidebarDocs location={location} />
 
-    {Object.keys(atomic.sourcesOrder || atomic.sources).map(group => {
-      if (atomic.sourcesOrder) {
-        return (
-          <SidebarItem
-            key={atomic.sourcesOrder[group]}
-            group={atomic.sourcesOrder[group]}
-            location={location}
-          />
-        );
-      }
-      return <SidebarItem key={group} group={group} location={location} />;
-    })}
+    {(atomic.sourcesOrder || atomic.sources) &&
+      Object.keys(atomic.sourcesOrder || atomic.sources).map(group => {
+        if (atomic.sourcesOrder) {
+          return (
+            <SidebarItem
+              key={atomic.sourcesOrder[group]}
+              group={atomic.sourcesOrder[group]}
+              location={location}
+            />
+          );
+        }
+        return <SidebarItem key={group} group={group} location={location} />;
+      })}
   </div>
 );
 
@@ -55,9 +56,8 @@ Sidebar.propTypes = {
   location: PropTypes.object.isRequired,
 };
 
-const mapState = ({ atomic, location }) => ({
+const mapState = ({ atomic }) => ({
   atomic,
-  location,
 });
 
 export default connect(mapState)(Sidebar);

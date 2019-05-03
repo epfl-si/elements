@@ -56,7 +56,7 @@ const DocDirLegacy = ({ dir, fullpath }) => {
 };
 
 DocDirLegacy.propTypes = {
-  dir: PropTypes.string.isRequired,
+  dir: PropTypes.array.isRequired,
   fullpath: PropTypes.string.isRequired,
 };
 DocDirLegacy.defaultProps = {};
