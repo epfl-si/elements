@@ -1,5 +1,6 @@
 import { Observable } from 'rxjs';
-import 'rxjs/add/operator/switchMap';
+import { switchMap, map, filter } from 'rxjs/Operator';
+import { ofType } from 'redux-observable';
 import yaml from 'yamljs';
 import Twig from 'twig';
 
@@ -17,9 +18,10 @@ import {
  * @returns setComponents()
  */
 export function getComponentsEpic(action$) {
-  return action$.ofType(GET_COMPONENTS)
-    .filter(action => action.payload.sources !== null)
-    .map(({ payload }) => {
+  return action$.pipe(
+    ofType(GET_COMPONENTS),
+    filter(action => action.payload.sources !== null),
+    map(({ payload }) => {
       // Loop over each components types
       Object.keys(payload)
         .map(type =>
@@ -61,10 +63,11 @@ export function getComponentsEpic(action$) {
           }));
 
       return payload;
-    })
-    .switchMap((result) => {
+    }),
+    switchMap((result) => {
       return Observable.of(setComponents(result));
-    });
+    }),
+  );
 }
 
 /**
@@ -73,9 +76,9 @@ export function getComponentsEpic(action$) {
  * @returns setComponentMarkup()
  */
 export function getMarkupEpic(action$) {
-  return action$
-    .ofType(GET_MARKUP)
-    .switchMap(({ payload }) => {
+  return action$.pipe(
+    ofType(GET_MARKUP),
+    switchMap(({ payload }) => {
       const fixPath = path => path.replace('./', payload.basePath);
 
       const component = payload.component || payload.variant;
@@ -99,5 +102,6 @@ export function getMarkupEpic(action$) {
         const isVariant = result.parent_id !== undefined;
         return isVariant ? setVariantMarkup(result) : setComponentMarkup(result);
       });
-    });
+    }),
+  );
 }

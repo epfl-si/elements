@@ -1,4 +1,5 @@
-import 'rxjs/add/operator/switchMap';
+import { switchMap } from 'rxjs/Operator';
+import { ofType } from 'redux-observable';
 import axios from 'axios';
 
 import {
@@ -12,15 +13,16 @@ import {
  * @returns setVersion()
  */
 export function getPackageLatestVersion(action$) {
-  return action$
-    .ofType(GET_VERSION)
-    .switchMap(() => {
+  return action$.pipe(
+    ofType(GET_VERSION),
+    switchMap(() => {
       return axios
         .get('https://api.github.com/repos/frontend/toolbox-utils/releases/latest')
         .then((res) => {
           return setVersion(res.data.tag_name);
         });
-    });
+    }),
+  );
 }
 
 export default getPackageLatestVersion;

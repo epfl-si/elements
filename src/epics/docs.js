@@ -1,4 +1,5 @@
-import 'rxjs/add/operator/switchMap';
+import { switchMap } from 'rxjs/Operator';
+import { ofType } from 'redux-observable';
 import axios from 'axios';
 
 import {
@@ -12,9 +13,10 @@ import {
  * @returns setDocContent()
  */
 export function getDocContentEpic(action$) {
-  return action$
-    .ofType(GET_DOC_CONTENT)
-    .switchMap(({ payload }) => {
+  console.log('run doc epix');
+  return action$.pipe(
+    ofType(GET_DOC_CONTENT),
+    switchMap(({ payload }) => {
       const path = `./docs/${payload.slug.replace(/--/g, '/')}`;
       const format = payload.slug.split('.')[payload.slug.split('.').length - 1];
 
@@ -24,7 +26,8 @@ export function getDocContentEpic(action$) {
           format,
           content: res.data,
         }));
-    });
+    }),
+  );
 }
 
 export default getDocContentEpic;

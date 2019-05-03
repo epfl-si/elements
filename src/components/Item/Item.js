@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 import ClipboardButton from 'react-clipboard.js';
 
 import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/dist/light';
-import xml from 'react-syntax-highlighter/dist/languages/xml';
-import { atomOneDark } from 'react-syntax-highlighter/dist/styles';
+import xml from 'react-syntax-highlighter/dist/languages/hljs/xml';
+import atomOneDark from 'react-syntax-highlighter/dist/styles/hljs/atom-one-dark';
 
 import Loader from './../Loader/Loader';
 
