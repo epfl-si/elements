@@ -10,12 +10,12 @@ import './Single.css';
  * @extends {Component}
  */
 class Single extends Component {
-  componentWillMount() {
+  componentDidMount() {
     this.getContent(this.props);
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.getContent(nextProps);
+  componentDidUpdate() {
+    this.getContent(this.props);
   }
 
   /**
@@ -31,11 +31,20 @@ class Single extends Component {
     const component = components.find(item => item.name === params.slug);
 
     if (undefined === component.content) {
-      props.getComponentMarkup(component, props.navigation.base_url, props.atomic.types);
+      props.getComponentMarkup(
+        component,
+        props.navigation.base_url,
+        props.atomic.types,
+      );
     }
 
-    component.variants.forEach((variant) => {
-      if (undefined === variant.content) props.getVariantMarkup(variant, props.navigation.base_url, props.atomic.types);
+    component.variants.forEach(variant => {
+      if (undefined === variant.content)
+        props.getVariantMarkup(
+          variant,
+          props.navigation.base_url,
+          props.atomic.types,
+        );
     });
 
     this.setState({ component });

@@ -14,22 +14,44 @@ export const Theme = styled.div`
   background: ${config.bodyBackground || base.white};
   color: ${config.bodyForeground || base.black};
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: ${config.headingForeground || base.black};
   }
 
-  .tlbx-toolbar-btn { color: ${config.toolbarIconsForeground || base.white}; }
-  .tlbx-toolbar-wrapper { background: ${config.primary || base.primary}; }
+  .tlbx-toolbar-btn {
+    color: ${config.toolbarIconsForeground || base.white};
+  }
+  .tlbx-toolbar-wrapper {
+    background: ${config.primary || base.primary};
+  }
   .tlbx-sidebar-item-list a.active,
   .tlbx-sidebar-item-list a:hover {
     color: ${config.secondary || base.secondary};
-    &:before { border-left-color: ${config.secondary || base.secondary}; }
+    &:before {
+      border-left-color: ${config.secondary || base.secondary};
+    }
   }
-  .tlbx-sidebar-item:after { border-top-color: ${config.secondary || base.secondary} }
+  .tlbx-sidebar-item:after {
+    border-top-color: ${config.secondary || base.secondary};
+  }
   .tlbx-sidebar-wrapper {
     background: ${config.sidebarBackground || base.grayLighter};
     color: ${config.sidebarForeground || base.black};
-    a, button, h1, h2, h3, h4, h5, h6 { color: ${config.sidebarForeground || base.black}; }
+    a,
+    button,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: ${config.sidebarForeground || base.black};
+    }
   }
 
   .tlbx-actions-link {

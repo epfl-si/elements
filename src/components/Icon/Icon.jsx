@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import './Icon.css';
 
-const Icon = (props) => {
-  const useTag = `<use xlink:href="#${props.name}" />`;
+const Icon = ({ name }) => {
+  const useTag = `<use xlink:href="#${name}" />`;
 
   return (
     <svg dangerouslySetInnerHTML={{ __html: useTag }} className="tblx-icon" />
