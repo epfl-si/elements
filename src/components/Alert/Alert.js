@@ -16,7 +16,7 @@ class Alert extends Component {
   }
 
   componentWillMount() {
-    this.props.getVersion();
+    // this.props.getVersion();
   }
 
   handleClose() {
@@ -25,12 +25,17 @@ class Alert extends Component {
 
   render() {
     const alert = this.props.alert;
-    const isVisible = alert.remote_version && alert.remote_version !== alert.local_version && !this.state.closed;
+    const isVisible =
+      alert.remote_version && alert.remote_version !== alert.local_version && !this.state.closed;
 
     return (
       <div className={`tlbx-alert${isVisible ? ' open' : ''}`}>
         <span>🚨</span>
-        <p>Looks like you've built your styleguide using an <b>old version of toolbox-utils</b> (local <b>{alert.local_version || 'undefined'}</b>, current <b>{alert.remote_version}</b>).<br />See <a href="http://frontend.github.io/toolbox/updates.html">update doc</a>.</p>
+        <p>
+          Looks like you've built your styleguide using an <b>old version of toolbox-utils</b>{' '}
+          (local <b>{alert.local_version || 'undefined'}</b>, current <b>{alert.remote_version}</b>).<br />See{' '}
+          <a href="http://frontend.github.io/toolbox/updates.html">update doc</a>.
+        </p>
         <button onClick={this.handleClose.bind(this)}>&times;</button>
       </div>
     );
@@ -49,9 +54,15 @@ function mapState(state) {
 }
 
 function mapDispatch(dispatch) {
-  return bindActionCreators({
-    getVersion,
-  }, dispatch);
+  return bindActionCreators(
+    {
+      getVersion,
+    },
+    dispatch,
+  );
 }
 
-export default connect(mapState, mapDispatch)(Alert);
+export default connect(
+  mapState,
+  mapDispatch,
+)(Alert);

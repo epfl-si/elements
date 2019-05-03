@@ -32,14 +32,14 @@ class SingleFull extends Single {
     let content = component.content;
     let background = component.background;
     let wrapper = component.wrapper;
-    let slugClass = `tlbx-${component.name}`;
+    let slugClass = `tlbx-component-${component.name}`;
 
     if (isVariant) {
       const variant = component.variants.find(item => item.name === params.variant);
       content = variant.content;
       background = variant.background || component.background;
       wrapper = variant.wrapper || component.wrapper;
-      slugClass = `tlbx-${component.name}-${variant.name}`;
+      slugClass = `tlbx-component-${component.name}-${variant.name}`;
     }
 
     return (
