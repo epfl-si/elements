@@ -1,3 +1,5 @@
+import nanoid from 'nanoid';
+
 import {
   GET_DOCS,
   SET_DOC_CONTENT,
@@ -14,6 +16,7 @@ export default function docsReducer(state = initialState, action) {
       return {
         ...state,
         docs_list: action.payload,
+        updated: nanoid(),
       };
 
     // Set the current_doc object
@@ -21,6 +24,7 @@ export default function docsReducer(state = initialState, action) {
       return {
         ...state,
         current_doc: action.payload,
+        updated: nanoid(),
       };
 
     // Reset the current_doc object to it default state
@@ -28,6 +32,7 @@ export default function docsReducer(state = initialState, action) {
       return {
         ...state,
         current_doc: initialState.current_doc,
+        updated: nanoid(),
       };
     default: return state;
   }

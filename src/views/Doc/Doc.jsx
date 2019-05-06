@@ -23,7 +23,10 @@ class Doc extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (JSON.stringify(this.props) !== JSON.stringify(prevProps)) {
+    if (
+      this.props.docs.updated !== prevProps.docs.updated ||
+      this.props.location.pathname !== prevProps.location.pathname
+    ) {
       this.setState({ hasFetched: false });
       this.getContent(this.props);
     }

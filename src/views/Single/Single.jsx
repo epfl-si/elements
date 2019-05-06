@@ -15,7 +15,10 @@ class Single extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.atomic.updated !== prevProps.atomic.updated) {
+    if (
+      this.props.atomic.updated !== prevProps.atomic.updated ||
+      this.props.location.pathname !== prevProps.location.pathname
+    ) {
       this.getContent(this.props);
     }
   }
