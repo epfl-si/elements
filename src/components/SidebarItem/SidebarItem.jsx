@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import './SidebarItem.css';
 
-const SidebarItem = ({ group, location, atomic }) => {
+const SidebarItem = ({ group, location, atomic, navigation }) => {
   const [active, setActive] = useState(false);
 
   useEffect(() => {
@@ -15,6 +15,12 @@ const SidebarItem = ({ group, location, atomic }) => {
 
     setActive(!!isCurrent);
   }, []);
+
+  useEffect(() => {
+    if (navigation.backFromPages) {
+      setActive(group === 'pages');
+    }
+  }, [navigation]);
 
   return (
     <div className={active ? ' tlbx-open' : ''}>
@@ -52,11 +58,12 @@ SidebarItem.propTypes = {
   group: PropTypes.string.isRequired,
   location: PropTypes.object.isRequired,
   atomic: PropTypes.object.isRequired,
+  navigation: PropTypes.object.isRequired,
 };
 
-const mapState = ({ atomic, routing }) => ({
+const mapState = ({ atomic, navigation }) => ({
   atomic,
-  routing,
+  navigation,
 });
 
 export default connect(mapState)(SidebarItem);

@@ -34,6 +34,13 @@ class App extends Component {
     this.props.history.listen(() => this.updateHook());
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      const isAPage = prevProps.location.pathname.includes('/pages/');
+      this.props.setBackFromPages(isAPage);
+    }
+  }
+
   updateHook() {
     setTimeout(() => {
       document.dispatchEvent(new Event('ToolboxReady'));
@@ -114,12 +121,13 @@ const mapState = ({ atomic, docs, navigation }) => ({
 const mapDispatch = dispatch => {
   const { getComponents } = atomicActions;
   const { getDocs } = docsActions;
-  const { setBaseURL } = navigationActions;
+  const { setBaseURL, setBackFromPages } = navigationActions;
   return bindActionCreators(
     {
       getComponents,
       getDocs,
       setBaseURL,
+      setBackFromPages,
     },
     dispatch,
   );

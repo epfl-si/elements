@@ -2,6 +2,7 @@ import {
   BASE_URL_UPDATE,
   TOGGLE_CODE,
   TOGGLE_MENU,
+  BACK_FROM_PAGES,
 } from './navigation-actions';
 
 import initialState from './navigation-initial-state'
@@ -27,6 +28,13 @@ export default function navigationReducer(state = initialState, action) {
       return {
         ...state,
         showMenu: !state.showMenu,
+      };
+
+    // Set if last page was a “page”
+    case BACK_FROM_PAGES:
+      return {
+        ...state,
+        backFromPages: action.payload,
       };
     default: return state;
   }

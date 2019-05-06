@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import ClipboardButton from 'react-clipboard.js';
 
 const ColorSwatch = ({ color }) => {
-  console.log(color);
   const [copied, setCopied] = useState(false);
 
   const copySuccess = () => {

@@ -4,7 +4,6 @@ export const GET_VERSIONS = 'GET_VERSION';
 export const SET_VERSIONS = 'SET_VERSION';
 
 export const setVersions = (versions) => {
-  console.log(versions);
   return {
     type: SET_VERSIONS,
     payload: versions,
