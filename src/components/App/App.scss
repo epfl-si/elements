@@ -88,3 +88,22 @@ body {
 .tlbx-content {
   padding: 1.2rem 2rem;
 }
+
+.tlbx-notes,
+.tlbx-doc-markdown-wrapper {
+  table {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  table th,
+  table td {
+    padding: .75rem;
+    border-top: 1px solid #dee2e6;
+  }
+
+  table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+  }
+}
