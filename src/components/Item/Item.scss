@@ -14,14 +14,7 @@
     max-height: 30vh;
 
     code { font-family: Monaco, monospace; }
-
-    // Code sample
-    code:last-child {
-      // Hide last empty line (:empty not working, because React)
-      > span:last-of-type {
-        display: none;
-      }
-    }
+    .react-syntax-highlighter-line-number { line-height: 1.47em; }
   }
 }
 
