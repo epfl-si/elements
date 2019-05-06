@@ -64,7 +64,6 @@ const Item = ({ component, variant, children, navigation }) => {
       {/* Item's preview */}
       {children.length > 0 ? (
         <div
-          role="presentation"
           className={`tlbx-item-preview ${wrapper} ${slugClass}`}
           style={background ? { backgroundColor: background } : {}}
           dangerouslySetInnerHTML={{ __html: children }}
@@ -72,7 +71,6 @@ const Item = ({ component, variant, children, navigation }) => {
         />
       ) : (
         <div
-          role="presentation"
           className={`tlbx-item-preview ${wrapper} ${slugClass}`}
           style={background ? { backgroundColor: background } : {}}
           onClick={() => handleItemClick()}

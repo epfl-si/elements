@@ -47,7 +47,6 @@ class SinglePage extends Single {
       <div>
         {undefined === this.state.component.content ? <Loader /> : ''}
         <div
-          role="presentation"
           onClick={this.handlePageClick.bind(this)}
           dangerouslySetInnerHTML={{ __html: this.state.component.content }}
         />
