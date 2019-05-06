@@ -7,47 +7,58 @@ import { actions as alertActions } from '../../store/alert';
 
 import './Alert.css';
 
-const Alert = ({ alert, getVersion }) => {
+const Alert = ({ alert, getVersions }) => {
+  const hasDiff = alert.utils_diff || alert.reader_diff;
   const [closed, setClosed] = useState(false);
-  const [isVisible, setIsVisible] = useState(
-    alert.remote_version &&
-      alert.remote_version !== alert.local_version &&
-      !closed,
-  );
+  const [isVisible, setIsVisible] = useState(hasDiff && !closed);
 
   useEffect(() => {
-    getVersion();
+    getVersions();
   }, []);
 
   useEffect(() => {
-    setIsVisible(
-      alert.remote_version &&
-        alert.remote_version !== alert.local_version &&
-        !closed,
-    );
-  }, [closed]);
+    const hasNewDiff = alert.utils_diff || alert.reader_diff;
+    setIsVisible(hasNewDiff && !closed);
+  }, [alert, closed]);
 
   return (
     <div className={`tlbx-alert${isVisible ? ' open' : ''}`}>
       <span role="img" aria-label="Alert">
         🚨
       </span>
-      <p>
-        Looks like you've built your styleguide using an{' '}
-        <b>old version of toolbox-utils</b> (local{' '}
-        <b>{alert.local_version || 'undefined'}</b>, current{' '}
-        <b>{alert.remote_version}</b>).
-        <br />
-        See{' '}
-        <a href="http://frontend.github.io/toolbox/updates.html">update doc</a>.
-      </p>
+      <div>
+        <ul>
+          {alert.utils_diff && (
+            <li>
+              Looks like you've built your styleguide using an{' '}
+              <b>old version of toolbox-utils</b> (local{' '}
+              <b>{alert.utils_local_version || 'undefined'}</b>, current{' '}
+              <b>{alert.utils_remote_version}</b>).
+            </li>
+          )}
+          {alert.reader_diff && (
+            <li>
+              A <b>new version of toolbox-reader</b> is available! (local{' '}
+              <b>{alert.reader_local_version || 'undefined'}</b>, current{' '}
+              <b>{alert.reader_remote_version}</b>).
+            </li>
+          )}
+        </ul>
+        <p>
+          See{' '}
+          <a href="http://frontend.github.io/toolbox/updates.html">
+            <u>update doc</u>
+          </a>
+          .
+        </p>
+      </div>
       <button onClick={() => setClosed(!closed)}>&times;</button>
     </div>
   );
 };
 
 Alert.propTypes = {
-  getVersion: PropTypes.func.isRequired,
+  getVersions: PropTypes.func.isRequired,
   alert: PropTypes.object,
 };
 
@@ -56,8 +67,8 @@ const mapState = ({ alert }) => ({
 });
 
 const mapDispatch = dispatch => {
-  const { getVersion } = alertActions;
-  return bindActionCreators({ getVersion }, dispatch);
+  const { getVersions } = alertActions;
+  return bindActionCreators({ getVersions }, dispatch);
 };
 
 export default connect(

@@ -1,29 +1,40 @@
 import axios from 'axios';
 
-export const GET_VERSION = 'GET_VERSION';
-export const SET_VERSION = 'SET_VERSION';
+export const GET_VERSIONS = 'GET_VERSION';
+export const SET_VERSIONS = 'SET_VERSION';
 
-export const setVersion = (version) => {
+export const setVersions = (versions) => {
+  console.log(versions);
   return {
-    type: SET_VERSION,
-    payload: version,
+    type: SET_VERSIONS,
+    payload: versions,
   };
 }
 
-export const getVersion = () => {
+export const getVersions = () => {
   return dispatch => {
-    axios
+    const utils = axios
       .get('https://cdn.jsdelivr.net/gh/frontend/toolbox-utils/package.json')
-      .then(res => {
-        dispatch(setVersion(res.data.version));
-      })
+      .then(res => res.data.version)
       .catch(err => console.error(err));
+
+    const reader = axios
+      .get('https://cdn.jsdelivr.net/gh/frontend/toolbox-reader/package.json')
+      .then(res => res.data.version)
+      .catch(err => console.error(err));
+
+    Promise.all([utils, reader]).then(values => {
+      dispatch(setVersions({
+        utils: values[0],
+        reader: values[1],
+      }));
+    });
   }
 }
 
 export default {
-  GET_VERSION,
-  SET_VERSION,
-  setVersion,
-  getVersion,
+  GET_VERSIONS,
+  SET_VERSIONS,
+  setVersions,
+  getVersions,
 };

@@ -1,5 +1,5 @@
 import {
-  SET_VERSION,
+  SET_VERSIONS,
 } from './alert-actions';
 
 import initialState from './alert-initial-state';
@@ -7,10 +7,13 @@ import initialState from './alert-initial-state';
 export default function alertReducer(state = initialState, action) {
   switch (action.type) {
 
-    case SET_VERSION:
+    case SET_VERSIONS:
       return {
         ...state,
-        remote_version: action.payload,
+        utils_remote_version: action.payload.utils,
+        reader_remote_version: action.payload.reader,
+        utils_diff: action.payload.utils !== state.utils_local_version,
+        reader_diff: action.payload.reader !== state.reader_local_version,
       };
 
     default: return state;
