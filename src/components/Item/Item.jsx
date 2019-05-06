@@ -7,6 +7,7 @@ import ClipboardButton from 'react-clipboard.js';
 import SyntaxHighlighter, {
   registerLanguage,
 } from 'react-syntax-highlighter/dist/light';
+import { html_beautify } from 'js-beautify';
 import xml from 'react-syntax-highlighter/dist/languages/hljs/xml';
 import atomOneDark from 'react-syntax-highlighter/dist/styles/hljs/atom-one-dark';
 
@@ -19,6 +20,11 @@ registerLanguage('html', xml);
 
 const Item = ({ component, variant, children, navigation }) => {
   const [copied, setCopied] = useState(false);
+  const beautify = str =>
+    html_beautify(str, {
+      indent_size: 2,
+      space_in_empty_paren: true,
+    });
 
   const copySuccess = () => {
     setCopied(true);
@@ -53,7 +59,7 @@ const Item = ({ component, variant, children, navigation }) => {
           View full render
         </Link>
         <ClipboardButton
-          data-clipboard-text={children}
+          data-clipboard-text={beautify(children)}
           className="tlbx-actions-link"
           onSuccess={() => copySuccess()}
         >
@@ -102,7 +108,7 @@ const Item = ({ component, variant, children, navigation }) => {
             lineHeight: '1.4em',
           }}
         >
-          {children}
+          {beautify(children)}
         </SyntaxHighlighter>
       </div>
     </div>
