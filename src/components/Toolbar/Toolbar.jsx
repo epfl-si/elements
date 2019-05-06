@@ -17,7 +17,7 @@ const Toolbar = ({ navigation, toggleCode, toggleMenu }) => {
         className="tlbx-toolbar-btn tlbx-brand"
         onClick={() => alert('Toolbox is amazing !')}
       >
-        <Icon name="icon-toolbox" />
+        <Icon name="tlbx-icon-toolbox" />
       </button>
 
       {/* Code toggle button */}
@@ -27,7 +27,7 @@ const Toolbar = ({ navigation, toggleCode, toggleMenu }) => {
         }`}
         onClick={() => toggleCode()}
       >
-        <Icon name="icon-code" />
+        <Icon name="tlbx-icon-code" />
       </button>
 
       {/* Menu toggle button */}
@@ -35,7 +35,7 @@ const Toolbar = ({ navigation, toggleCode, toggleMenu }) => {
         className="tlbx-toolbar-btn tlbx-toolbar-toggle-menu"
         onClick={() => toggleMenu()}
       >
-        <Icon name="icon-menu" />
+        <Icon name="tlbx-icon-menu" />
       </button>
     </div>
   );

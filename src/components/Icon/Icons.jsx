@@ -3,19 +3,19 @@ export default () => {
   document.body.innerHTML = `
     <div>
       <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-        <symbol id="icon-code" viewbox="0 0 114 102">
+        <symbol id="tlbx-icon-code" viewbox="0 0 114 102">
           <title>code</title>
           <g fill="currentColor" fill-rule="evenodd">
             <path d="M24.884 23L0 51l24.884 28L32 72.815 12.612 51 32 29.186zM89.116 23L82 29.185 101.388 51 82 72.815 89.116 79 114 51zM30 98.032L75.528 0 84 3.968 38.472 102z"
             />
           </g>
         </symbol>
-        <symbol id="icon-search" viewbox="0 0 97 97">
+        <symbol id="tlbx-icon-search" viewbox="0 0 97 97">
           <title>search</title>
           <path d="M96.61 90.8L72.075 66.267c12.785-15.891 11.812-39.262-2.93-54.008C61.493 4.609 51.325.395 40.504.395c-10.816 0-20.988 4.21-28.637 11.863C4.215 19.91 0 30.082 0 40.898 0 51.716 4.21 61.888 11.863 69.54c7.648 7.648 17.82 11.863 28.637 11.863 9.344 0 18.199-3.149 25.371-8.934L90.402 97l6.208-6.2zM40.505 72.63c-8.473 0-16.441-3.305-22.434-9.293-5.993-5.993-9.293-13.961-9.293-22.438 0-8.477 3.3-16.441 9.293-22.438 5.992-5.993 13.96-9.293 22.434-9.293 8.476 0 16.445 3.3 22.438 9.293 12.367 12.37 12.367 32.5 0 44.875-5.993 5.992-13.961 9.293-22.438 9.293z"
             fill="currentColor" fill-rule="evenodd" />
         </symbol>
-        <symbol id="icon-menu" viewbox="0 0 100 76">
+        <symbol id="tlbx-icon-menu" viewbox="0 0 100 76">
           <title>menu</title>
           <g fill="currentColor">
             <rect x="0" y="0" width="100" height="10"></rect>
@@ -23,8 +23,11 @@ export default () => {
             <rect x="0" y="66" width="100" height="10"></rect>
           </g>
         </symbol>
-        ${ window.theme && window.theme.brand ? window.theme.brand : `
-        <symbol id="icon-toolbox" viewbox="0 0 117 98">
+        ${
+          window.theme && window.theme.brand
+            ? window.theme.brand
+            : `
+        <symbol id="tlbx-icon-toolbox" viewbox="0 0 117 98">
           <title>toolbox</title>
           <g fill="currentColor" fill-rule="evenodd">
             <path d="M101.983 21h-6.325c.045 0 .256.178.297.256.379.666.75 1.474.75 2.25v3.984c0 2.497-2.36 4.245-4.854 4.245H80.67c-2.5 0-4.264-1.748-4.264-4.245v-6.485h-37.01v6.485c0 2.497-1.787 4.245-4.292 4.245h-11.17c-2.5 0-4.835-1.748-4.835-4.245v-3.984c0-.772.347-1.575.722-2.237.046-.077.247-.264.297-.264h-4.982L0 37.55V52h50.14v-3.222c0-2.09 1.847-3.93 3.94-3.93h7.797c2.098 0 3.78 1.84 3.78 3.93V52H117V37.55L101.983 21z"
@@ -35,7 +38,8 @@ export default () => {
             />
           </g>
         </symbol>
-        `}
+        `
+        }
       </svg>
     </div>
     ${body}
