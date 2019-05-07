@@ -1,5 +1,22 @@
 # Changelog
 
+*2.2.0* (2019-05-07)
+  - 🎨 improve alert messages (c4f46c9) 
+  - ✨ rewire React Script configuration (be870e5) 
+  - ✨ add pages collapse open by default when user came from a Page using back button (5e4a108) 
+  - ✨ add alert for reader update too (5249856) 
+  - 💄 finalllly fix that font family and color conflicts (8d5a73b) 
+  - 💄 after table support (module update), enhance tables visual #41 (3117847) 
+  - 💄 enhance/fix codeblocks (22a4805) 
+  - ✨ beautify code blocks and markup to copy #43 (500cd1d) 
+  - ✨ add icon prefix #36 (725e067) 
+  - 🔥 remove role=presentation attribute #37 (a920a97) 
+  - ✨ add updated data to docs store for easier tests (4d8d5f5) 
+  - ⚡️ make it work after the great refactoring (099faeb) 
+  - 🔨 refactor components (not yet tested) (222d497) 
+  - 🔨 refactor data management (not yet tested) (c7596b6) 
+  - ⬆️ start by updating all deps (still broken at this point) (67e1d26)
+
 *2.1.2* (2018-06-19)
   - ✨ get sourcesOrder and use it (957856c)
 
