@@ -1,6 +1,11 @@
 {
-  "main.css": "static/css/main.b3d6cd5e.css",
-  "main.css.map": "static/css/main.b3d6cd5e.css.map",
-  "main.js": "static/js/main.b7896e38.js",
-  "main.js.map": "static/js/main.b7896e38.js.map"
+  "files": {
+    "main.css": "/static/css/main.css",
+    "main.js": "/static/js/main.js",
+    "main.js.map": "/static/js/main.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.a8fb27c299c510461d30b5b26862ced9.js": "/precache-manifest.a8fb27c299c510461d30b5b26862ced9.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.css.map": "/static/css/main.css.map"
+  }
 }
