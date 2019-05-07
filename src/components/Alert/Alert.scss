@@ -11,10 +11,14 @@
   &.open { display: flex; }
   * { color: $black; }
 
-  p {
+  > div {
     flex: 1 1 100%;
     margin: 0;
   }
+
+  p,
+  ul { margin: 0; }
+  ul { padding-left: 1em; }
 
   span {
     position: relative;
@@ -28,15 +32,12 @@
     border: 0;
     font-size: 2em;
     margin-left: 15px;
+    margin-top: -0.2em;
     transition: color 0.25s;
 
     &:hover {
       cursor: pointer;
       color: #FA351F;
     }
-  }
-
-  @media only screen and (max-width: 767px) {
-    margin-top: $toolbar-width;
   }
 }
