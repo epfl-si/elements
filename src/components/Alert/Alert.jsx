@@ -30,15 +30,15 @@ const Alert = ({ alert, getVersions }) => {
         <ul>
           {alert.utils_diff && (
             <li>
-              Looks like you've built your styleguide using an{' '}
-              <b>old version of toolbox-utils</b> (local{' '}
+              <b>toolbox-utils</b>: looks like you've built your styleguide
+              using an old version (local{' '}
               <b>{alert.utils_local_version || 'undefined'}</b>, current{' '}
               <b>{alert.utils_remote_version}</b>).
             </li>
           )}
           {alert.reader_diff && (
             <li>
-              A <b>new version of toolbox-reader</b> is available! (local{' '}
+              <b>toolbox-reader</b>: a new version is available! (local{' '}
               <b>{alert.reader_local_version || 'undefined'}</b>, current{' '}
               <b>{alert.reader_remote_version}</b>).
             </li>
@@ -46,7 +46,10 @@ const Alert = ({ alert, getVersions }) => {
         </ul>
         <p>
           See{' '}
-          <a href="http://frontend.github.io/toolbox/updates.html">
+          <a
+            href="http://frontend.github.io/toolbox/updates.html"
+            target="_blank"
+          >
             <u>update doc</u>
           </a>
           .
