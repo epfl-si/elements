@@ -27,7 +27,7 @@ export default () => {
           window.theme && window.theme.brand
             ? window.theme.brand
             : `
-        <symbol id="tlbx-icon-toolbox" viewbox="0 0 117 98">
+        <symbol id="icon-toolbox" viewbox="0 0 117 98">
           <title>toolbox</title>
           <g fill="currentColor" fill-rule="evenodd">
             <path d="M101.983 21h-6.325c.045 0 .256.178.297.256.379.666.75 1.474.75 2.25v3.984c0 2.497-2.36 4.245-4.854 4.245H80.67c-2.5 0-4.264-1.748-4.264-4.245v-6.485h-37.01v6.485c0 2.497-1.787 4.245-4.292 4.245h-11.17c-2.5 0-4.835-1.748-4.835-4.245v-3.984c0-.772.347-1.575.722-2.237.046-.077.247-.264.297-.264h-4.982L0 37.55V52h50.14v-3.222c0-2.09 1.847-3.93 3.94-3.93h7.797c2.098 0 3.78 1.84 3.78 3.93V52H117V37.55L101.983 21z"
