@@ -1,6 +1,6 @@
 {
   "name": "toolbox-reader",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "private": true,
   "eslintConfig": {
     "extends": "react-app",
