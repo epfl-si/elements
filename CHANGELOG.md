@@ -1,5 +1,8 @@
 # Changelog
 
+*2.2.1* (2019-05-07)
+  - ✨ add better version comparison (5621b61)
+
 *2.2.0* (2019-05-07)
   - 🎨 improve alert messages (c4f46c9) 
   - ✨ rewire React Script configuration (be870e5) 
