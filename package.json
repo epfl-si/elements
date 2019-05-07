@@ -49,7 +49,7 @@
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
-    "build": "react-app-rewired build",
+    "build": "npm run build-css && react-app-rewired build && rm ./build/precache-manifest.*",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "copy-build": "mv build/static/js/main.*.js build/static/js/main.js && mv build/static/js/main.*.js.map build/static/js/main.js.map && mv build/static/css/main.*.css build/static/css/main.css && mv build/static/css/main.*.css.map build/static/css/main.css.map"
