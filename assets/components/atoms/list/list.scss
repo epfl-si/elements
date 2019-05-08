@@ -13,14 +13,14 @@
 
     &:before {
       content: '';
-      background: $red;
+      position: absolute;
       top: 0.7rem;
       right: calc(100% - 0.5rem);
-      font-size: 1.1rem;
-      line-height: $bullet-size;
-      position: absolute;
       width: 6px;
       height: 5px;
+      font-size: 1.1rem;
+      line-height: $bullet-size;
+      background: $red;
     }
   }
 

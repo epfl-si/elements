@@ -82,11 +82,16 @@
       }
     }
 
-    h4 {
+    h3, h4 {
       grid-column: 1 / -1;
       background-color: $body-bg;
       margin-bottom: 0;
       padding-bottom: $headings-margin-bottom;
+    }
+    
+    .line-down + h3,
+    .line-down +  h4 {
+      padding-top: 2em;
     }
 
     .first-line + .clear,
