@@ -206,8 +206,10 @@ $transition-collapse:         height .35s ease !default;
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      "Open Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
-$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+// official font is Suisse Int'l, but the license only allow to host
+// on a epfl domain, so we set it to Arial, the official fallback
+$font-family-sans-serif:      Arial, sans-serif, !default;
+$font-family-monospace:       monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
 
