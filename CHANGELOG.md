@@ -1,5 +1,12 @@
 # CHANGELOG
 
+*2.0.3* (2019-05-08)
+  - 🛠 Fixes & other
+    - Fix breadcrumb x-scroll overflow (#383)
+    - Fix title for study plan (#383)
+    - Fix doc on font (#385)
+    - Update dependancies
+
 *2.0.2* (2019-04-23)
   - 🛠 Fixes & other
     - Fix breadcrumb folding (#379)
