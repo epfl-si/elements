@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*2.0.4* (2019-05-13)
+  - 🛠 Fixes & other
+    - Set a generic name for theme light top menu (#387)
+
 *2.0.3* (2019-05-08)
   - 🛠 Fixes & other
     - Fix breadcrumb x-scroll overflow (#383)
