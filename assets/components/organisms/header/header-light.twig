@@ -20,14 +20,9 @@
         </div>
       </li>
       {% else %}
-        {% for head in header %}
+        {% for i in 1..5 %}
       <li id="menu-item-{{ loop.index }}" {% if loop.index == 2 %} class="current-menu-item"{% endif %}>
-        {% if language == 'fr' %}
-        <a class="nav-item" href="{{ head.urlfr }}">{{ head.namefr }}</a>
-        {% endif %}
-        {% if language == 'en' %}
-        <a class="nav-item" href="{{ head.urlen }}">{{ head.nameen }}</a>
-        {% endif %}
+        <a class="nav-item" href="#">Page {{ i }}</a>
       </li>
         {% endfor %}
       {% endif %}
