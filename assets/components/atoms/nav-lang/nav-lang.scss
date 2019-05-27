@@ -17,6 +17,11 @@
     font-size: $font-size-sm;
     font-weight: bold;
     transition: background 0.2s ease;
+    
+    @include media-breakpoint-up(sm) {
+      padding-top: ($spacer * 0.6);
+      padding-bottom: ($spacer * 0.7);
+    }
   }
 
   .dropdown-toggle {
@@ -155,26 +160,18 @@
 
 @include media-breakpoint-down(lg) {
   .nav-lang {
-    position: fixed;
-    right: 0;
-    bottom: $mm-lang-height * -1;
-    width: $mm-lang-width;
-    margin: 0;
+    //position: absolute;
+    //right: 120px;
+    //bottom: auto;
+    width: auto;
+    margin: 0 1rem !important;
     transition: bottom 0.3s ease;
     z-index: $zindex-mobile-lang;
-
-    .dropdown-toggle, &.nav-lang-short ul {
-      height: $mm-lang-height;
-      padding-top: 0.67rem;
-      background: gray('600');
-      border-color: gray('600');
-      color: $white;
-      border-radius: 0;
-
-      .icon {
-        color: $white;
-      }
+    
+    &.nav-lang-short {
+      margin: 0 .25rem !important;
     }
+    
     &.nav-lang-short ul{
         display: flex;
         width: 100%;
@@ -188,18 +185,19 @@
           padding: 0;
           a, span{
             display: block;
-            padding: 0;
+            padding: 0 0.4 * $spacer;
             line-height: $mm-lang-height;
             text-align: center;
-            color: gray('300');
+            //color: gray('300');
 
             &.active{
-              color: $white;
+              //color: $white;
             }
           }
           & + li {
             &:before {
-              display: none;
+              //display: none;
+              top: 1.1 * $spacer
             }
           }
         }

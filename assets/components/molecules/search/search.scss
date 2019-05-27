@@ -23,16 +23,28 @@
   }
 }
 
+.search-mobile-toggle {
+  
+  .icon {
+    height: 16px;
+    width: 16px;
+  }
+}
+
 .search-mobile {
   display: none;
 
   @include media-breakpoint-down (xl) {
+    background: $black;
     display: flex;
     flex-flow: row nowrap;
-    position: fixed;
-    bottom: -$mm-lang-height;
+    position: absolute;
+    top: -$mm-lang-height;
     left: 0;
-    width: calc(100% - #{ $mm-lang-width });
+    bottom: auto;
+    right: 0;
+    //width: calc(100% - #{ $mm-lang-width });
+    width: 100%;
     height: $mm-lang-height;
     transition: bottom 0.3s;
     z-index: $zindex-mobile-lang - 1;
@@ -59,5 +71,30 @@
     .icon {
       color: gray('300');
     }
+    
+    .searchform-controller .icon {
+      display: block;
+      transition: color .2s ease-in-out;
+    }
+    
+    .search-mobile-close {
+      align-items: center;
+      display: flex;
+      margin: 0 (0.9 * $spacer);
+      
+      &:hover .icon {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.site {
+  position: relative;
+  top: 0;
+  transition: top .3s ease-in-out;
+  
+  .search-open & {
+    top: $mm-lang-height;
   }
 }
