@@ -1,11 +1,21 @@
 <form action="#" class="d-xl-none">
+  <a id="search-mobile-toggle" class="search-mobile-toggle searchform-controller" href="#">
+    {% include '@atoms/icon/icon.twig' with { icon: 'icon-search' } %}
+    <span class="toggle-label sr-only">Afficher / masquer le formulaire de recherche</span>
+  </a>
   <div class="input-group search-mobile" role="search">
     <div class="input-group-prepend">
       <span class="input-group-text">
         {% include '@atoms/icon/icon.twig' with { icon: 'icon-search' } %}
       </span>
     </div>
-      <label for="search" class="sr-only">Rechercher sur le site</label>
-      <input type="text" class="form-control" name="search" placeholder="Rechercher">
+    <label for="search" class="sr-only">Rechercher sur le site</label>
+    <input type="text" class="form-control" name="search" placeholder="Rechercher">
+    <div class="input-group-append">
+      <a id="search-mobile-close" class="search-mobile-close searchform-controller" href="#">
+        {% include '@atoms/icon/icon.twig' with { icon: 'icon-close' } %}
+        <span class="toggle-label sr-only">Masquer le formulaire de recherche</span>
+      </a>
+    </div>
   </div>
 </form>
