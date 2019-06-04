@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*2.0.6* (2019-05-28)
+  - 🛠 Fixes & other
+    - Fix for the header light (#392)
+
 *2.0.5* (2019-05-28)
   - ✨ New implementations
     - Improve the display of search and language selection for small screen devices
