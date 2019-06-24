@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*Unreleased*
+  - Update footer links and buttons
+  - Update cookie consent links
+
 *2.0.4* (2019-05-13)
   - 🛠 Fixes & other
     - Set a generic name for theme light top menu (#387)
