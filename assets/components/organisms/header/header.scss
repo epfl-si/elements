@@ -4,7 +4,7 @@
   display: flex;
   width: 100%;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   height: $header-height;
 
@@ -18,13 +18,16 @@
   }
 
   .logo {
-    margin: 0;
+    margin: 0 auto 0 (3 * $spacer);
     border: none;
     background-image: none;
-    margin-left: 3 * $spacer;
 
     &:before {
       content: none;
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin-right: 0;
     }
   }
 
@@ -175,7 +178,7 @@
       overflow: hidden;
 
       .logo {
-        order: 1;
+        //order: 1;
         margin: 0 auto 0 0;
         padding: 0;
         border: 0;
