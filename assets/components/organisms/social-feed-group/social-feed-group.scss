@@ -1,12 +1,20 @@
 @charset 'utf-8';
 
 .social-feed-group {
+  margin-left: -16px;
+  margin-right: -16px;
   padding: 4rem 0;
+  
+  .social-feed {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     display: flex;
     flex-flow: row nowrap;
     align-items: stretch;
+    margin: 0;
     padding: 2rem 0;
 
     .social-feed-container {
@@ -19,6 +27,7 @@
 
       .social-feed {
         height: 100%;
+        padding: 2.2rem 1.5rem 1.5rem;
       }
 
       &:first-child {
@@ -33,17 +42,18 @@
 }
 
 .social-feed-container {
+  align-items: center;
   display: flex;
   flex-flow: column nowrap;
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     flex-flow: row nowrap;
   }
 
   .social-feed {
     margin-bottom: 3rem;
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(xl) {
       margin-bottom: 0;
       height: 100%;
     }
