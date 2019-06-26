@@ -8,7 +8,7 @@ function get_cookieconsent_config() {
             'of cookies to improve your user experience and to make statistics ' +
             'of visits.',
         link: 'Read the disclaimer',
-        href: '//www.epfl.ch/about/overview/overview/regulations-and-guidelines/disclaimer/'
+        href: '//www.epfl.ch/about/overview/regulations-and-guidelines/disclaimer/'
         },
         fr: {
         msg: 'En poursuivant votre navigation sur ce site, vous acceptez ' +
