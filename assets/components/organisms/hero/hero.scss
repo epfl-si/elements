@@ -1,6 +1,8 @@
 @charset 'utf-8';
 
 .hero {
+  overflow: hidden;
+  
   @include media-breakpoint-up(md) {
     display: flex;
     justify-content: space-between;
