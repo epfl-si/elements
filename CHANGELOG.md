@@ -1,8 +1,12 @@
 # CHANGELOG
 
-*Unreleased*
-  - Update footer links and buttons
-  - Update cookie consent links
+*2.1.0* (2019-07-03)
+  - 🛠 Fixes & other
+    - Fix lateral scroll issue (#394)
+    - Fix display of social media feeds for smaller screens (#394)
+    - Add overflow to Hero (#395)
+    - Apply min-height property only for screens larger or equal to 768 px (#396)
+    - Update footer and cookie consent links
 
 *2.0.6* (2019-05-28)
   - 🛠 Fixes & other
