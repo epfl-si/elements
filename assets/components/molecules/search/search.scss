@@ -88,13 +88,3 @@
     }
   }
 }
-
-.site {
-  position: relative;
-  top: 0;
-  transition: top .3s ease-in-out;
-  
-  .search-open & {
-    top: $mm-lang-height;
-  }
-}
