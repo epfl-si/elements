@@ -3,7 +3,6 @@
 .fullwidth-teaser {
   position: relative;
   width: 100%;
-  min-height: 30rem;
   background: $gray-100;
 
   .vimeo-wrapper {
@@ -13,6 +12,7 @@
   @include media-breakpoint-up(md) {
     display: flex;
     flex-flow: row nowrap;
+    min-height: 30rem;
   }
 
   @include media-breakpoint-up(lg) {
