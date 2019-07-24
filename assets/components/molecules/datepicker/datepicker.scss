@@ -101,7 +101,7 @@
 
   &.picker__day--selected {
     background: $red !important;
-    border-color: $red;
+    border-color: $red !important;
     color: $white;
   }
 }
