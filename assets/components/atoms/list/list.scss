@@ -14,13 +14,17 @@
     &:before {
       content: '';
       position: absolute;
-      top: 0.7rem;
+      top: .6rem;
       right: calc(100% - 0.5rem);
       width: 6px;
       height: 5px;
       background: $red;
       font-size: 1.1rem;
       line-height: $bullet-size;
+
+      @include media-breakpoint-down (xs) {
+        top: .5rem;
+      }
     }
   }
 
@@ -54,11 +58,15 @@
       content: counter(item);
       counter-increment: item;
       position: absolute;
-      top: 0.3rem;
+      top: 0.2rem;
       right: calc(100% - 0.5rem);
       font-size: 0.8rem;
       font-weight: $font-weight-bold;
       color: $red;
+
+      @include media-breakpoint-down (xs) {
+        top: 0;
+      }
     }
   }
 
