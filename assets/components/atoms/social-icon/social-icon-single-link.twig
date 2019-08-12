@@ -4,7 +4,7 @@
 {% set discrete = discrete ? ' social-icon-discrete' : '' %}
 {% set negative = negative ? ' social-icon-negative' : '' %}
 {% set url = url or '#' %}
-<a href="{{ url }}" class="{{ 'social-icon social-' ~ icon ~ round ~ negative ~ discrete }}">
+<a href="{{ url }}" class="{{ 'social-icon social-' ~ icon ~ round ~ negative ~ discrete }}" rel="nofollow">
   {% include '@atoms/icon/icon.twig' with { icon: icon } %}
   <span class="sr-only">Follow us on {{ pretty_name }}.</span>
 </a>
