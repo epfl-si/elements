@@ -412,7 +412,7 @@
         {
           "namefr": "Collaboration avec l'industrie",
           "urlfr": "https://www.epfl.ch/innovation/industry/fr/industries/",
-          "nameen": " Collaborate with industry",
+          "nameen": "Industry Collaborations",
           "urlen": "https://www.epfl.ch/innovation/industry/"
         },
         {
@@ -420,12 +420,6 @@
           "urlfr": "https://www.epfl.ch/innovation/entrepreneurship/fr/startup/",
           "nameen": "Entrepreneurship and start-ups",
           "urlen": "https://www.epfl.ch/innovation/entrepreneurship/start-up/"
-        },
-        {
-          "namefr": "Développer son expertise",
-          "urlfr": "https://www.epfl.ch/innovation/industry/fr/industries/formation/",
-          "nameen": "Learn and develop",
-          "urlen": "https://www.epfl.ch/innovation/industry/industry/learn-and-develop/"
         }
       ]
     },
