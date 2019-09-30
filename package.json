@@ -8,9 +8,9 @@
     "url": "git@github.com:epfl-si/elements.git"
   },
   "scripts": {
-    "start": "toolbox serve",
-    "build": "toolbox build",
-    "deploy": "toolbox build styleguide && toolbox deploy",
+    "start": ": toolbox serve",
+    "build": ": toolbox build",
+    "deploy": ": toolbox build styleguide && : toolbox deploy",
     "test": "backstop test",
     "test:reference": "backstop reference",
     "test:approve": "backstop approve",
@@ -103,8 +103,7 @@
     "pickadate": "^3.6.4",
     "selectize.js": "^0.12.12",
     "stylelint-scss": "^3.18.0",
-    "tablesaw": "^3.1.2",
-    "toolbox-utils": "https://github.com/epfl-si/toolbox-utils"
+    "tablesaw": "^3.1.2"
   },
   "devDependencies": {
     "backstopjs": "^5.0.1",
