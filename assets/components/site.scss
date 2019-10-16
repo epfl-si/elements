@@ -12,6 +12,17 @@ body {
   .search-open & {
     top: $mm-lang-height;
   }
+}
+
+/* Containers */
+
+.container-grid {
+
+  @include media-breakpoint-down(sm) {
+    grid-row-gap: 0;
+  }
+}
+
 /* Typography */
 
 .content {
