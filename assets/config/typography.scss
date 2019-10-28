@@ -11,32 +11,63 @@ body {
   @include media-breakpoint-down(xs) { font-size: $font-size-base * 0.875; }
 }
 
-h1 {
-  line-height: 1.111em;
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: .75rem;
+}
+
+h1,
+.h1 {
+  font-size: 3rem;
+  line-height: 1.1em;
   font-weight: $font-weight-bold;
+}
+
+h2,
+.h2 {
+  font-size: 2.375rem;
+  line-height: 1.2em;
 }
 
 h3,
 .h3 {
+  font-size: 1.75rem;
   line-height: 1.35em;
   font-weight: $font-weight-bold;
 }
 
 h4,
 .h4 {
+  font-size: 1.5rem;
   line-height: 1.35em;
 }
 
 h5,
 .h5 {
+  font-size: 1.25rem;
   line-height: 1.4em;
   font-weight: $font-weight-bold;
 }
 
 h6,
 .h6 {
+  font-size: 1.125rem;
   line-height: 1.5em;
   text-transform: uppercase;
+}
+
+.lead {
+  font-size: 1.375rem;
 }
 
 small {
@@ -45,6 +76,11 @@ small {
 
 del,
 s { color: $gray-600; }
+
+blockquote,
+.blockquote {
+  font-size: 1.5rem;
+}
 
 blockquote {
   padding-left: 1.66rem;
@@ -77,4 +113,68 @@ blockquote {
 
 table {
   font-size: 0.83rem;
+}
+
+@include media-breakpoint-down(md) {
+  
+  h1,
+  .h1 {
+    font-size: 2.875rem;
+  }
+  
+  h2,
+  .h2 {
+    font-size: 2.25rem;
+  }
+  
+  h3,
+  .h3 {
+    font-size: 1.625rem;
+  }
+  
+  h4,
+  .h4 {
+    font-size: 1.375rem;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  
+  h1,
+  .h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  
+  h1,
+  .h1 {
+    font-size: 2rem;
+  }
+  
+  h2,
+  .h2 {
+    font-size: 1.625rem;
+  }
+  
+  h3,
+  .h3 {
+    font-size: 1.375rem;
+  }
+  
+  h4,
+  .h4 {
+    font-size: 1.25rem;
+  }
+  
+  h5,
+  .h5 {
+    font-size: 1rem;
+  }
+  
+  h6,
+  .h6 {
+    font-size: 0.9375rem;
+  }
 }
