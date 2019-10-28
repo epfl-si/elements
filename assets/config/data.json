@@ -273,7 +273,7 @@
         },
         {
           "namefr": "Cooperation",
-          "urlfr": "https://cooperation.epfl.ch/accueil/",
+          "urlfr": "https://cooperation.epfl.ch/fr/index-fr-html/",
           "nameen": "Cooperation",
           "urlen": "https://cooperation.epfl.ch"
         },
@@ -492,6 +492,12 @@
           "urlfr": "https://www.epfl.ch/campus/associations/fr/index-fr-html/",
           "nameen": "Associations",
           "urlen": "https://www.epfl.ch/campus/associations/"
+        },
+        {
+          "namefr": "Mobilité et transport",
+          "urlfr": "https://www.epfl.ch/campus/mobility/fr/mobilite/",
+          "nameen": "Mobility and transport",
+          "urlen": "https://www.epfl.ch/campus/mobility/"
         }
       ]
     }
