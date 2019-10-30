@@ -1,5 +1,16 @@
 # CHANGELOG
 
+*2.2.0* (2019-10-30)
+  - 🛠 Fixes & other
+    - Add nofollow to some external links in the footer (#410)
+    - Improve text size and space (#415)
+    - Evolve some links in footer
+    - Fixes for styleguide presentation:
+      - Fix styleint for study plan (#404)
+      - Fix social icons missing (#407)
+      - Fix link to cover from popover(#409)
+      - Fix missing translation in header (#416)
+
 *2.1.0* (2019-07-03)
   - 🛠 Fixes & other
     - Fix lateral scroll issue (#394)
