@@ -51,11 +51,6 @@
     right: 0;
     width: 20px;
     height: 25px;
-    background: url('multiple-select.png') left top no-repeat;
-
-    &.open {
-      background: url('multiple-select.png') right top no-repeat;
-    }
   }
 }
 
