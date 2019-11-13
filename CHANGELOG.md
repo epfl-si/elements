@@ -1,4 +1,7 @@
 # CHANGELOG
+*2.2.1* (2019-11-13)
+  - 🛠 Fixes & other
+    - Fix multiple select image (#401)
 
 *2.2.0* (2019-10-30)
   - 🛠 Fixes & other
