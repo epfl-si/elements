@@ -17,6 +17,7 @@ import drawer from './atoms/drawer/drawer.js';
 import search from './molecules/search/search.js';
 import searchMobile from './molecules/search/search-mobile.js';
 import coursebook from './content-types/coursebook/coursebook.js';
+import studyplan from './content-types/study-plan/study-plan.js';
 import cookieconsent, {get_cookieconsent_config} from './organisms/cookie-consent/cookie-consent.js';
 import anchors from './anchors';
 
