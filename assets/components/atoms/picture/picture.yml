@@ -10,6 +10,11 @@ variants:
     wrapper: col-sm-4 col-md-2 col-lg-1
     notes: |
       Avatar picture need an equal height and width in order to be displayed as a circle
+  - name: portrait
+    title: Portrait
+    wrapper: col-md-3
+    notes: |
+      Portrait picture is used in People pages
   - name: one-third
     title: One third picture
     wrapper: col-md-4
