@@ -59,14 +59,6 @@
             </div>
             <div class="row">
               <div class="col-sm-12">
-                
-                <p>
-                  <a href="#" class="btn btn-sm btn-primary">prenom.nom@epfl.ch</a>
-                  <a href="#" class="btn btn-sm btn-secondary">+41 21 666 77 88</a>
-                  <a href="#" class="btn btn-sm btn-secondary">abbr.epfl.ch</a>
-                </p>
-              </div>
-              <div class="col-sm-12">
                 <p>
                   {% include "@atoms/social-icon/social-icon-link.twig" with {
                     discrete: true,
@@ -92,7 +84,17 @@
           </div>
 
           <div class="col-md-8 offset-lg-1">
-            <h2>Professeur titulaire, directeur du département XY</h2>
+            <div class="row">
+              <div class="col-sm-12 mb-4">
+                <h2 class="people-title mb-3">Professeur titulaire, directeur du département XY</h2>
+                <p>
+                  <a href="#" class="btn btn-sm btn-primary">prenom.nom@epfl.ch</a>
+                  <a href="#" class="btn btn-sm btn-secondary">+41 21 666 77 88</a>
+                  <a href="#" class="btn btn-sm btn-secondary">abbr.epfl.ch</a>
+                </p>
+                <p>Nationalité: suisse et allemande</p>
+              </div>
+            </div>
             {# Collapsible info #}
             {% include '@molecules/collapse-group/collapse-group-rich-content.twig' with { title: false } %}
 
