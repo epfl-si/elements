@@ -74,16 +74,10 @@
                   } %}
                 </p>
               </div>
-              <div class="col-sm-12 my-3">
-                <h5>Disponibilités</h5>
-                <p>
-                  Absente un vendredi sur deux.
-                </p>
-              </div>
             </div>
           </div>
 
-          <div class="col-md-8 offset-lg-1">
+          <div class="people-contacts col-md-8 offset-lg-1">
             <div class="row">
               <div class="col-sm-12 mb-4">
                 <h2 class="people-title mb-3">Professeur titulaire, directeur du département XY</h2>
@@ -97,6 +91,14 @@
             </div>
             {# Collapsible info #}
             {% include '@molecules/collapse-group/collapse-group-people-contacts.twig' with { title: false } %}
+            <hr>
+            <div class="row">
+              <div class="people-extra-info col-sm-12 mt-5">
+                <p><strong>Informations complémentaires</strong></p>
+                <p>Disponibilités: absente un vendredi sur deux.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor urna id nulla ornare, placerat gravida nulla tincidunt. Nullam scelerisque mauris neque. Quisque condimentum nisl dolor, id auctor lorem interdum non.</p>
+              </div>
+            </div>
             <p class="mt-4">
               <small>
                 <a href="#">Liste complète des adresses et fonctions</a>
