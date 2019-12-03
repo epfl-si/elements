@@ -29,7 +29,7 @@
     }
   }
 
-  .list-group-teaser-thumbnail {
+  .list-group-teaser-thumbnail{
     flex: 0 0 12rem;
     padding: 1rem;
     padding-top: 1rem;
@@ -105,5 +105,37 @@
     &:hover {
       border: 1px solid $black !important;
     }
+  }
+}
+
+.list-group-item-infoscience {
+  
+  .infoscience-date {
+    display: inline;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-right: 0.5em;
+  }
+  
+  .infoscience-links {
+    display: inline;
+    margin-bottom: 0;
+  }
+  
+  &.has-thumbnail {
+    display: flex;
+    
+    .list-group-thumbnail{
+      flex: 0 0 8rem;
+      margin-right: 1rem;
+      z-index: $zindex-1;
+    }
+    
+    .list-group-content {
+      flex: 0 1 100%;
+      z-index: $zindex-1;
+    }
+    
   }
 }

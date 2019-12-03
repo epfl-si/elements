@@ -162,18 +162,21 @@
     </div>
     
     <hr class="darker">
+    
+    <div class="container">
+      {# Publications #}
+      <div class="my-5">
+        <h2 id="publications">Publications<span class="sr-only">de Xavier Alexandre</span></h2>
+        <h3>Infoscience</h3>
+        {% include '@molecules/list-group/list-group-infoscience.twig' %}
+        <h3>Autres publications</h3>
+        {% include '@molecules/list-group/list-group-infoscience.twig' %}
+      </div>
+    </div>
+    
+    <hr class="darker">
 
     <div class="container">
-
-      {# Publications #}
-      <div class="mt-5">
-        <h2 id="publications">Publications<span class="sr-only">of Xavier Alexandre</span></h2>
-        {% include '@molecules/list-group/list-group-borderless.twig' %}
-          <a class="btn btn-light btn-block btn-sm" aria-hidden="true" href="#publications">
-            Show all publications
-          </a>
-      </div>
-
       {# Teaching and PHD area #}
       <div class="mt-5">
         <h2 id="teaching-and-phd">Teaching & PHD<span class="sr-only">of Xavier Alexandre</span></h2>
