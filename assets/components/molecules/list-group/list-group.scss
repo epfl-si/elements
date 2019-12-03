@@ -14,6 +14,7 @@
 }
 
 .list-group {
+  
   .list-group-teaser {
     display: block;
     text-decoration: none;
@@ -106,22 +107,23 @@
       border: 1px solid $black !important;
     }
   }
+  
+  .item-metadata {
+    
+    p {
+      display: inline-block;
+      margin-bottom: 0;
+    }
+    
+    .item-date {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-right: 0.5em;
+    }
+  }
 }
 
 .list-group-item-infoscience {
-  
-  .infoscience-date {
-    display: inline;
-    font-size: 1rem;
-    font-weight: bold;
-    margin-bottom: 0;
-    margin-right: 0.5em;
-  }
-  
-  .infoscience-links {
-    display: inline;
-    margin-bottom: 0;
-  }
   
   &.has-thumbnail {
     display: flex;
@@ -139,3 +141,5 @@
     
   }
 }
+
+.list-group-item-award {}
