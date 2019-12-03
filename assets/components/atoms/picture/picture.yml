@@ -23,6 +23,9 @@ variants:
   - name: news-thumb
     title: News Listing Thumbnail
     wrapper: col-3 col-md-2
+  - name: thumb-square
+    title: Listing square Thumbnail
+    wrapper: col-3 col-md-2
 notes: |
   <br>
 
