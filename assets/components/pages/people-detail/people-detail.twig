@@ -59,20 +59,21 @@
             </div>
             <div class="row">
               <div class="col-sm-12">
+                
                 <p>
-                  {% include "@atoms/social-icon/social-icon-link.twig" with {
-                    discrete: true,
-                    icon: "icon-facebook"
-                  } %}
-                  {% include "@atoms/social-icon/social-icon-link.twig" with {
-                    discrete: true,
-                    icon: "icon-twitter"
-                  } %}
-                  {% include "@atoms/social-icon/social-icon-link.twig" with {
-                    discrete: true,
-                    icon: "icon-linkedin"
+                  {% include "@atoms/social-icon/social-icon-scientific-networks.twig" with {
+                    discrete: true
                   } %}
                 </p>
+                
+                <p class="mt-4">
+                  <small>
+                    <a href="#">Liste complète des adresses et fonctions</a>
+                    <br/>
+                    {% include "@atoms/icon/icon.twig" with { icon: 'icon-lock' } %}<a href="#">Données administratives</a>
+                  </small>
+                </p>
+                
               </div>
             </div>
           </div>
@@ -99,13 +100,6 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor urna id nulla ornare, placerat gravida nulla tincidunt. Nullam scelerisque mauris neque. Quisque condimentum nisl dolor, id auctor lorem interdum non.</p>
               </div>
             </div>
-            <p class="mt-4">
-              <small>
-                <a href="#">Liste complète des adresses et fonctions</a>
-                <br/>
-                {% include "@atoms/icon/icon.twig" with { icon: 'icon-lock' } %}<a href="#">Données administratives</a>
-              </small>
-            </p>
           </div>
 
         </div>
