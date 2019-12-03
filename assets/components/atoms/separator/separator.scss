@@ -1,9 +1,14 @@
 @charset 'utf-8';
 
 hr {
+  border-color: $gray-100;
   width: 100%;
 
   &.bold {
     border-top-width: 3px;
+  }
+  
+  &.darker {
+    border-color: $gray-200;
   }
 }
