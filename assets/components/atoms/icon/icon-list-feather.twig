@@ -1,0 +1,10 @@
+<table class="table">
+  <tbody>
+    {% for icon in feathericons %}
+      <tr>
+        <td>{% include "@atoms/icon/icon.twig" with { icon:  icon, icon_classes:'feather' } %}</td>
+        <td><code>#{{icon}}</code></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

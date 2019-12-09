@@ -40,8 +40,8 @@
     ]
   },
   "singles": [{
-    "src": "",
-    "dest": ""
+    "src": "./node_modules/feather-icons/dist/feather-sprite.svg",
+    "dest": "./build/icons/"
   }],
   "theme": {
     "title": "Elements <br><span>EPFL Web Styleguide</span>",
