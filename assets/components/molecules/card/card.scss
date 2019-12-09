@@ -45,6 +45,10 @@ a.card-gray:hover .card-body { background: $white; }
   + .card-footer {
     padding-top: 0;
   }
+  
+  .card-info + p {
+    margin-top: .5em;
+  }
 
   p:last-of-type {
     margin-bottom: 0;
