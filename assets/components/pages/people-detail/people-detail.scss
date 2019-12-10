@@ -16,3 +16,11 @@
 .list-group + h3 {
   margin-top: 2em;
 }
+
+.people-contents {
+  
+  .list-group .list-group-item-borderless:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+  }
+}

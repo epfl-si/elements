@@ -128,22 +128,20 @@
       </div>
     </nav>
     
-    <div class="container">
+    <div class="container people-contents">
       {# Biography area #}
-      <div class="row my-5">
-        <div class="col-sm-12">
-          <h2 id="biography">Biographie <span class="sr-only">de Xavier Alexandre</span></h2>
-          <!--{% include '@atoms/collapse/collapse-partial.twig' %} -->
-          <div class="biogaphy-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor urna id nulla ornare, placerat gravida nulla tincidunt. Nullam scelerisque mauris neque. Quisque condimentum nisl dolor, id auctor lorem interdum non. Pellentesque ut ligula imperdiet, dictum risus eu, cursus eros. Curabitur elementum sapien nec velit egestas consequat. Ut fermentum dolor eu purus efficitur rutrum ac at purus. Curabitur eu risus vel leo vehicula auctor. Aenean in velit nisi. Curabitur ultricies lacinia odio, sed egestas ex facilisis nec. Pellentesque et sagittis justo, id consequat odio. Nullam molestie sit amet eros quis consequat.</p>
-            <h3>Mission</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor urna id nulla ornare, placerat gravida nulla tincidunt. Nullam scelerisque mauris neque. Quisque condimentum nisl dolor, id auctor lorem interdum non. Pellentesque ut ligula imperdiet, dictum risus eu, cursus eros.</p>
-            <p>Curabitur elementum sapien nec velit egestas consequat. Ut fermentum dolor eu purus efficitur rutrum ac at purus. Curabitur eu risus vel leo vehicula auctor. Aenean in velit nisi. Curabitur ultricies lacinia odio, sed egestas ex facilisis nec. Pellentesque et sagittis justo, id consequat odio. Nullam molestie sit amet eros quis consequat.</p>
-            <h3>Travail en cours</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor urna id nulla ornare, placerat gravida nulla tincidunt. Nullam scelerisque mauris neque. Quisque condimentum nisl dolor, id auctor lorem interdum non. Pellentesque ut ligula imperdiet, dictum risus eu, cursus eros. Curabitur elementum sapien nec velit egestas consequat. Ut fermentum dolor eu purus efficitur rutrum ac at purus.</p>
-          </div>
+      <div class="my-5">
+        <h2 id="biography">Biographie <span class="sr-only">de Xavier Alexandre</span></h2>
+        <!--{% include '@atoms/collapse/collapse-partial.twig' %} -->
+        <div class="biogaphy-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor urna id nulla ornare, placerat gravida nulla tincidunt. Nullam scelerisque mauris neque. Quisque condimentum nisl dolor, id auctor lorem interdum non. Pellentesque ut ligula imperdiet, dictum risus eu, cursus eros. Curabitur elementum sapien nec velit egestas consequat. Ut fermentum dolor eu purus efficitur rutrum ac at purus. Curabitur eu risus vel leo vehicula auctor. Aenean in velit nisi. Curabitur ultricies lacinia odio, sed egestas ex facilisis nec. Pellentesque et sagittis justo, id consequat odio. Nullam molestie sit amet eros quis consequat.</p>
+          <h3>Mission</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor urna id nulla ornare, placerat gravida nulla tincidunt. Nullam scelerisque mauris neque. Quisque condimentum nisl dolor, id auctor lorem interdum non. Pellentesque ut ligula imperdiet, dictum risus eu, cursus eros.</p>
+          <p>Curabitur elementum sapien nec velit egestas consequat. Ut fermentum dolor eu purus efficitur rutrum ac at purus. Curabitur eu risus vel leo vehicula auctor. Aenean in velit nisi. Curabitur ultricies lacinia odio, sed egestas ex facilisis nec. Pellentesque et sagittis justo, id consequat odio. Nullam molestie sit amet eros quis consequat.</p>
+          <h3>Travail en cours</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor urna id nulla ornare, placerat gravida nulla tincidunt. Nullam scelerisque mauris neque. Quisque condimentum nisl dolor, id auctor lorem interdum non. Pellentesque ut ligula imperdiet, dictum risus eu, cursus eros. Curabitur elementum sapien nec velit egestas consequat. Ut fermentum dolor eu purus efficitur rutrum ac at purus.</p>
         </div>
-        <div class="col-sm-12 mt-5">
+        <div class="mt-5">
           <h3>Champs de compétences</h3>
           <p>
             <a href="#" class="tag tag-primary">Mot clé</a>
@@ -158,7 +156,7 @@
           {# Free content area #}
           <p>architecture web, ergonomie, usability, ergonomie, design et architecture de l’information, cms, iconographie, graphisme web, charte graphique, design, logo, expertise communication web, html, css2, ui design</p>
         </div>
-        <div class="col-sm-12 mt-5">
+        <div class="mt-5">
           <h3>Récompenses</h3>
           {% include '@molecules/list-group/list-group-awards.twig' %}
         </div>
@@ -167,14 +165,18 @@
     
     <hr class="darker">
     
-    <div class="container">
+    <div class="container people-contents">
       {# Publications #}
       <div class="my-5">
         <h2 id="publications">Publications <span class="sr-only">de Xavier Alexandre</span></h2>
-        <h3>Infoscience</h3>
-        {% include '@molecules/list-group/list-group-infoscience.twig' %}
+        <div class="mt-5">
+          <h3>Infoscience</h3>
+          {% include '@molecules/list-group/list-group-infoscience.twig' %}
+        </div>
+        <div class="mt-5">
         <h3>Autres publications</h3>
-        {% include '@molecules/list-group/list-group-infoscience.twig' %}
+          {% include '@molecules/list-group/list-group-infoscience.twig' %}
+        </div>
       </div>
     </div>
     
