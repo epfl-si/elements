@@ -19,9 +19,6 @@ variants:
     title: Round Discrete Link
   - name: negative-link
     title: Negative Link
-    title: Scientific networks
-  - name: scientific-networks
-    title: Scientific networks
 notes: |
 
   Icons to accomodate social boxes. The available social networks are:
