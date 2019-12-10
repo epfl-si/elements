@@ -158,7 +158,18 @@
         </div>
         <div class="mt-5">
           <h3>Récompenses</h3>
-          {% include '@molecules/list-group/list-group-awards.twig' %}
+          <div class="list-group">
+            {% for i in 1..4 %}
+            <div class="list-group-item list-group-item-borderless">
+              <p><strong>Titre de la récompense</strong></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel tortor nulla. In vehicula ante vel turpis rhoncus, ut malesuada magna tincidunt. Pellentesque purus sapien, porta ut aliquet et, sagittis ut diam.</p>
+              <div class="item-metadata">
+                <p class="item-date">12.11.2019</p>
+                <p class="small">Type: Lorem ipsum dolor – Source: Nom de l'institution – <a href="#">Lien</a></p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
         </div>
       </div>
     </div>
