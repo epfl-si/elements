@@ -15,10 +15,6 @@ variants:
     title: Infoscience
     notes: |
       List of Infoscience publications.
-  - name: awards
-    title: Awards
-    notes: |
-      List of awards.
   - name: teasers
     title: Teasers
     notes: |
