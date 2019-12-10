@@ -24,3 +24,20 @@
     margin-bottom: 0;
   }
 }
+
+.education-list {
+  display: grid;
+  grid-template-columns: minmax(20%,4fr) minmax(20%,3fr) minmax(20%,3fr) 8rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  
+  p {
+    margin: 0;
+    padding-right: 1rem;
+    
+    &:last-child {
+      padding-right: 0;
+      text-align: right;
+    }
+  }
+}
