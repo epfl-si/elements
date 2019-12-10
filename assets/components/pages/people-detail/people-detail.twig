@@ -137,7 +137,7 @@
             <a class="nav-link" href="#publications">Publications</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#teaching-and-phd">Teaching & PhD</a>
+            <a class="nav-link" href="#teaching-and-phd">Teaching &amp; PhD</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#research">Research</a>
@@ -158,6 +158,38 @@
           <p>Curabitur elementum sapien nec velit egestas consequat. Ut fermentum dolor eu purus efficitur rutrum ac at purus. Curabitur eu risus vel leo vehicula auctor. Aenean in velit nisi. Curabitur ultricies lacinia odio, sed egestas ex facilisis nec. Pellentesque et sagittis justo, id consequat odio. Nullam molestie sit amet eros quis consequat.</p>
           <h3>Travail en cours</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor urna id nulla ornare, placerat gravida nulla tincidunt. Nullam scelerisque mauris neque. Quisque condimentum nisl dolor, id auctor lorem interdum non. Pellentesque ut ligula imperdiet, dictum risus eu, cursus eros. Curabitur elementum sapien nec velit egestas consequat. Ut fermentum dolor eu purus efficitur rutrum ac at purus.</p>
+        </div>
+        <div class="mt-5">
+          <h3>Formation</h3>
+          <div class="list-group">
+            <div class="list-group-item list-group-item-borderless education-list">
+              <p><strong>Dr. ès Sciences</strong></p>
+              <p>Microtechnologie</p>
+              <p>Université de Neuchâtel</p>
+              <p>2001</p>
+            </div>
+            <div class="list-group-item list-group-item-borderless education-list">
+              <p><strong>Master in Applied Sciences</strong></p>
+              <p>Engineering Physics</p>
+              <p>École Polytechnique de Montréal</p>
+              <p>1997</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-5">
+          <h3>Parcours professionnel</h3>
+          <div class="list-group">
+            {% for i in 1..3 %}
+            <div class="list-group-item list-group-item-borderless">
+              <p><strong>Intitulé du poste</strong></p>
+              <p>Description du poste, lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel tortor nulla. In vehicula ante vel turpis rhoncus, ut malesuada magna tincidunt. Pellentesque purus sapien, porta ut aliquet et, sagittis ut diam.</p>
+              <div class="item-metadata">
+                <p class="item-date">2017 – 2019</p>
+                <p class="small">Nom de l'entreprise – <a href="#">Lien</a></p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
         </div>
         <div class="mt-5">
           <h3>Champs de compétences</h3>
