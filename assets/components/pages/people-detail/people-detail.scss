@@ -19,9 +19,12 @@
 
 .people-contents {
   
-  .list-group .list-group-item-borderless:last-child {
-    border-bottom: 0;
-    margin-bottom: 0;
+  .list-group {
+    
+    .list-group-item-borderless:not(.education-list):last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+    }
   }
 }
 
