@@ -1,5 +1,14 @@
 @charset 'utf-8';
 
+.list-group-item {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .list-group-item-borderless {
   padding-right: 0;
   padding-left: 0;
@@ -141,5 +150,3 @@
     
   }
 }
-
-.list-group-item-award {}
