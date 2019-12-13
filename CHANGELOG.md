@@ -1,4 +1,8 @@
 # CHANGELOG
+*2.3.1* (2019-12-13)
+  - 🛠 Fixes & other
+    - Update markup according to WordPress standards (#429)
+
 *2.3.0* (2019-12-10)
   - ✨ New implementations
     - Blog pages design (#425)
