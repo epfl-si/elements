@@ -25,16 +25,16 @@
   }
   
   .user {
-    line-height: 24px;
     position: relative;
     top: 2px;
+    line-height: 24px;
     vertical-align: bottom;
   }
   
   .icon + .user {
-    line-height: 1em;
     margin-left: .25em;
     top: -1px;
+    line-height: 1em;
   }
 }
 
