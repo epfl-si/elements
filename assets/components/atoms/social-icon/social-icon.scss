@@ -14,6 +14,30 @@
   }
 }
 
+.social-icon-details {
+  min-height: 2.6em;
+  text-decoration: none !important;
+  vertical-align: bottom;
+  
+  &:hover {
+    background: $gray-600;
+    color: white;
+  }
+  
+  .user {
+    position: relative;
+    top: 2px;
+    line-height: 24px;
+    vertical-align: bottom;
+  }
+  
+  .icon + .user {
+    margin-left: .25em;
+    top: -1px;
+    line-height: 1em;
+  }
+}
+
 a.social-icon {
   margin-bottom: $spacer * 0.3;
   transition:

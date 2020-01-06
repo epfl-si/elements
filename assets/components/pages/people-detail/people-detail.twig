@@ -41,66 +41,84 @@
     {# Header area #}
     <div class="row mt-5">
       <div class="col-md-12">
-        <div class="row">
+        <div class="row people-basic-info">
 
-          <div class="col-md-6">
+          <div class="col-md-4 col-lg-3 offset-lg-1 mb-3">
             {# Person avatar and buttons #}
             <div class="row">
-              <div class="col-sm-12 col-md-6 mb-3">
+              <div class="col-sm-12 mb-3">
                 <!-- Default profile picture markup -->
+                
                 <!--
-                {% include '@atoms/picture/picture-avatar.twig' %}
+                {% include '@atoms/picture/picture-portrait.twig' %}
                 -->
 
                 <!-- Placeholder when there is no profile picture -->
-                <img src="svg/avatar-placeholder.svg" alt="Avatar placeholder image" class="img-fluid rounded-circle bg-gray-100">
+                <img src="svg/portrait-placeholder.svg" alt="Avatar placeholder image" class="img-fluid bg-gray-100">
               </div>
             </div>
             <div class="row">
               <div class="col-sm-12">
-                <h4>Habilitation Dr. Ing</h4>
+                
+                <p>
+                  <small>
+                    <a href="#">Liste complète des adresses et fonctions</a>
+                    <br/>
+                    {% include "@atoms/icon/icon.twig" with { icon: 'icon-lock' } %}<a href="#">Données administratives</a>
+                  </small>
+                </p>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="people-contacts col-md-8">
+            <div class="row">
+              <div class="col-sm-12 mb-4">
+                <h2 class="people-title mb-3">Professeur titulaire, directeur du département XY</h2>
                 <p>
                   <a href="#" class="btn btn-sm btn-primary">prenom.nom@epfl.ch</a>
                   <a href="#" class="btn btn-sm btn-secondary">+41 21 666 77 88</a>
                   <a href="#" class="btn btn-sm btn-secondary">abbr.epfl.ch</a>
                 </p>
-              </div>
-              <div class="col-sm-12">
-                <p>
-                  {% include "@atoms/social-icon/social-icon-link.twig" with {
-                    discrete: true,
-                    icon: "icon-facebook"
-                  } %}
-                  {% include "@atoms/social-icon/social-icon-link.twig" with {
-                    discrete: true,
-                    icon: "icon-twitter"
-                  } %}
-                  {% include "@atoms/social-icon/social-icon-link.twig" with {
-                    discrete: true,
-                    icon: "icon-linkedin"
-                  } %}
-                </p>
-              </div>
-              <div class="col-sm-12 my-3">
-                <h5>Disponibilités</h5>
-                <p>
-                  Absente un vendredi sur deux.
-                </p>
+                <p>Nationalité: suisse et allemande</p>
+                <div class="mt-1">
+                  <p>
+                    <a href="true" class="social-icon social-icon-details social-icon-linkedin social-icon-discrete" rel="nofollow" title="View on LinkedIn">
+                      <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-linkedin"></use>
+                      </svg>
+                      <span class="user">firstname.name</span>
+                    </a>
+                    <a href="true" class="social-icon social-icon-details social-icon-google social-icon-discrete" rel="nofollow" title="View on Google Scholar">
+                      <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-google"></use>
+                      </svg>
+                      <span class="user">firstname.name</span>
+                    </a>
+                    <a href="true" class="social-icon social-icon-details social-icon-discrete" rel="nofollow" title="View on Scopus">
+                      <span class="user">Scopus: 123456789</span>
+                    </a>
+                    <a href="true" class="social-icon social-icon-details social-icon-discrete" rel="nofollow" title="View on Orcid">
+                      <span class="user">Orcid: 123456789</span>
+                    </a>
+                    <a href="true" class="social-icon social-icon-details social-icon-discrete" rel="nofollow" title="View on ResearcherID">
+                      <span class="user">ResearcherID: 123456789</span>
+                    </a>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="col-md-6">
             {# Collapsible info #}
-            {% include '@molecules/collapse-group/collapse-group-rich-content.twig' with { title: false } %}
-
-            <p class="mt-4">
-              <small>
-                <a href="#">Liste complète des adresses et fonctions</a>
-                <br/>
-                {% include "@atoms/icon/icon.twig" with { icon: 'icon-lock' } %}<a href="#">Données administratives</a>
-              </small>
-            </p>
+            {% include '@molecules/collapse-group/collapse-group-people-contacts.twig' with { title: false } %}
+            <hr>
+            <div class="row">
+              <div class="people-extra-info col-sm-12 mt-5">
+                <p><strong>Informations complémentaires</strong></p>
+                <p>Disponibilités: absente un vendredi sur deux.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor urna id nulla ornare, placerat gravida nulla tincidunt. Nullam scelerisque mauris neque. Quisque condimentum nisl dolor, id auctor lorem interdum non.</p>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -114,13 +132,13 @@
       <div class="container">
         <ul class="nav nav-tabs-light">
           <li class="nav-item">
-            <a class="nav-link active" href="#biography">Biography</a>
+            <a class="nav-link active" href="#biography">Biographie</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#publications">Publications</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#teaching-and-phd">Teaching & PhD</a>
+            <a class="nav-link" href="#teaching-and-phd">Teaching &amp; PhD</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#research">Research</a>
@@ -128,94 +146,152 @@
         </ul>
       </div>
     </nav>
-
-    <div class="container">
+    
+    <div class="container people-contents">
       {# Biography area #}
-      <div class="row mt-5">
-        <div class="col-md-7">
-          <h2 id="biography">Biography<span class="sr-only">of Xavier Alexandre</span></h2>
-          {% include '@atoms/collapse/collapse-partial.twig' %}
+      <div class="my-5">
+        <h2 id="biography">Biographie <span class="sr-only">de Xavier Alexandre</span></h2>
+        <!--{% include '@atoms/collapse/collapse-partial.twig' %} -->
+        <div class="biogaphy-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor urna id nulla ornare, placerat gravida nulla tincidunt. Nullam scelerisque mauris neque. Quisque condimentum nisl dolor, id auctor lorem interdum non. Pellentesque ut ligula imperdiet, dictum risus eu, cursus eros. Curabitur elementum sapien nec velit egestas consequat. Ut fermentum dolor eu purus efficitur rutrum ac at purus. Curabitur eu risus vel leo vehicula auctor. Aenean in velit nisi. Curabitur ultricies lacinia odio, sed egestas ex facilisis nec. Pellentesque et sagittis justo, id consequat odio. Nullam molestie sit amet eros quis consequat.</p>
+          <h3>Mission</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor urna id nulla ornare, placerat gravida nulla tincidunt. Nullam scelerisque mauris neque. Quisque condimentum nisl dolor, id auctor lorem interdum non. Pellentesque ut ligula imperdiet, dictum risus eu, cursus eros.</p>
+          <p>Curabitur elementum sapien nec velit egestas consequat. Ut fermentum dolor eu purus efficitur rutrum ac at purus. Curabitur eu risus vel leo vehicula auctor. Aenean in velit nisi. Curabitur ultricies lacinia odio, sed egestas ex facilisis nec. Pellentesque et sagittis justo, id consequat odio. Nullam molestie sit amet eros quis consequat.</p>
+          <h3>Travail en cours</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor urna id nulla ornare, placerat gravida nulla tincidunt. Nullam scelerisque mauris neque. Quisque condimentum nisl dolor, id auctor lorem interdum non. Pellentesque ut ligula imperdiet, dictum risus eu, cursus eros. Curabitur elementum sapien nec velit egestas consequat. Ut fermentum dolor eu purus efficitur rutrum ac at purus.</p>
         </div>
-        <div class="col-md-5">
-          <h2>Fields of expertises<span class="sr-only">of Xavier Alexandre</span></h2>
+        <div class="mt-5">
+          <h3>Champs de compétences</h3>
           <p>
-            <a href="#" class="tag tag-primary">Expertise</a>
-            <a href="#" class="tag tag-primary">Expertise</a>
-            <a href="#" class="tag tag-primary">Expertise</a>
-            <a href="#" class="tag tag-primary">Expertise</a>
-            <a href="#" class="tag tag-primary">Expertise</a>
-            <a href="#" class="tag tag-primary">Expertise</a>
-            <a href="#" class="tag tag-primary">Expertise</a>
-            <a href="#" class="tag tag-primary">Expertise</a>
+            <a href="#" class="tag tag-primary">Mot clé</a>
+            <a href="#" class="tag tag-primary">Mot clé</a>
+            <a href="#" class="tag tag-primary">Mot clé</a>
+            <a href="#" class="tag tag-primary">Mot clé</a>
+            <a href="#" class="tag tag-primary">Mot clé</a>
+            <a href="#" class="tag tag-primary">Mot clé</a>
+            <a href="#" class="tag tag-primary">Mot clé</a>
+            <a href="#" class="tag tag-primary">Mot clé</a>
+          </p>
+          {# Free content area #}
+          <p>architecture web, ergonomie, usability, ergonomie, design et architecture de l’information, cms, iconographie, graphisme web, charte graphique, design, logo, expertise communication web, html, css2, ui design</p>
+        </div>
+        <div class="mt-5">
+          <h3>Formation</h3>
+          <div class="list-group">
+            <div class="list-group-item list-group-item-borderless education-list">
+              <p><strong>Dr. ès Sciences</strong></p>
+              <p>Microtechnologie</p>
+              <p>Université de Neuchâtel</p>
+              <p>2001</p>
+            </div>
+            <div class="list-group-item list-group-item-borderless education-list">
+              <p><strong>Master in Applied Sciences</strong></p>
+              <p>Engineering Physics</p>
+              <p>École Polytechnique de Montréal</p>
+              <p>1997</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-5">
+          <h3>Parcours professionnel</h3>
+          <div class="list-group">
+            {% for i in 1..3 %}
+            <div class="list-group-item list-group-item-borderless">
+              <p><strong>Intitulé du poste</strong></p>
+              <p>Description du poste, lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel tortor nulla. In vehicula ante vel turpis rhoncus, ut malesuada magna tincidunt. Pellentesque purus sapien, porta ut aliquet et, sagittis ut diam.</p>
+              <div class="item-metadata">
+                <p class="item-date">2017 – 2019</p>
+                <p class="small">Nom de l'entreprise – <a href="#">Lien</a></p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="mt-5">
+          <h3>Récompenses</h3>
+          <div class="list-group">
+            {% for i in 1..4 %}
+            <div class="list-group-item list-group-item-borderless">
+              <p><strong>Titre de la récompense</strong></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel tortor nulla. In vehicula ante vel turpis rhoncus, ut malesuada magna tincidunt. Pellentesque purus sapien, porta ut aliquet et, sagittis ut diam.</p>
+              <div class="item-metadata">
+                <p class="item-date">12.11.2019</p>
+                <p class="small">Type: Lorem ipsum dolor – Source: Nom de l'institution – <a href="#">Lien</a></p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <hr class="darker">
+    
+    <div class="container people-contents">
+      {# Publications #}
+      <div class="my-5">
+        <h2 id="publications">Publications <span class="sr-only">de Xavier Alexandre</span></h2>
+        <div class="mt-5">
+          <h3>Infoscience</h3>
+          {% include '@molecules/list-group/list-group-infoscience.twig' %}
+        </div>
+        <div class="mt-5">
+        <h3>Autres publications</h3>
+          {% include '@molecules/list-group/list-group-infoscience.twig' %}
+        </div>
+      </div>
+    </div>
+    
+    <hr class="darker">
+
+    <div class="container people-contents">
+      {# Teaching and PHD area #}
+      <div class="my-5">
+        <h2 id="teaching-and-phd">Enseignement <span class="sr-only">of Xavier Alexandre</span></h2>
+        <div class="mt-5">
+          <h3 class="h4">Matières enseignées</h3>
+          <p>Informatique, Systèmes de communication, Architecture logiciels</p>
+          <h3 class="h4">Programmes doctoraux</h3>
+          <p>Doctoral program in computer and communication science, Doctoral program in Electrical Engineering</p>
+          <h3 class="h4">Doctorant·es</h3>
+          <p><a href="#">Gwendoline Woodroff</a>, <a href="#">Hurlu Berlu</a>, <a href="#">Anne Hughes</a>, <a href="#">Martin Richard-Foy</a></p>
+          <h3 class="h4">Ancien·nes doctorant·es</h3>
+          <p><a href="#">Gwendoline Woodroff</a>, <a href="#">Hurlu Berlu</a>, <a href="#">Anne Hughes</a>, <a href="#">Martin Richard-Foy</a>, <a href="#">Gwendoline Woodroff</a>, <a href="#">Hurlu Berlu</a>, <a href="#">Anne Hughes</a>, <a href="#">Martin Richard-Foy</a>, <a href="#">Gwendoline Woodroff</a>, <a href="#">Hurlu Berlu</a>, <a href="#">Anne Hughes</a>, <a href="#">Martin Richard-Foy</a>, <a href="#">Gwendoline Woodroff</a>, <a href="#">Hurlu Berlu</a>, <a href="#">Anne Hughes</a>, <a href="#">Martin Richard-Foy</a>, <a href="#">Gwendoline Woodroff</a>, <a href="#">Hurlu Berlu</a>, <a href="#">Anne Hughes</a>, <a href="#">Martin Richard-Foy</a></p>
+        </div>
+        <div class="mt-5">
+          <h3>Cours <span class="sr-only">of Xavier Alexandre</span></h3>
+          <div class="list-group">
+            {% for i in 1..3 %}
+            <div class="list-group-item list-group-item-borderless">
+              <h4><a href="#">Nom du cours</a></h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel tortor nulla. In vehicula ante vel turpis rhoncus, ut malesuada magna tincidunt. Pellentesque purus sapien, porta ut aliquet et, sagittis ut diam.</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <hr class="darker">
+
+    <div class="container people-contents">
+      {# Research area #}
+      <div class="mt-5">
+        <h2 id="research">Recherche <span class="sr-only">of Xavier Alexandre</span></h2>
+        <div class="mt-5">
+          <h3>Sujets</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+
+          <h3>Projets de recherche en cours</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
       </div>
-
-      {# Publications #}
-      <div class="mt-5">
-        <h2 id="publications">Publications<span class="sr-only">of Xavier Alexandre</span></h2>
-        {% include '@molecules/list-group/list-group-borderless.twig' %}
-          <a class="btn btn-light btn-block btn-sm" aria-hidden="true" href="#publications">
-            Show all publications
-          </a>
-      </div>
-
-      {# Teaching and PHD area #}
-      <div class="mt-5">
-        <h2 id="teaching-and-phd">Teaching & PHD<span class="sr-only">of Xavier Alexandre</span></h2>
-        <div class="row mt-4">
-          <div class="col-md-4">
-            <h4>Teaching</h4>
-            <div class="card">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Computer science</li>
-                <li class="list-group-item">Communication systems</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <h4>PhD Programs</h4>
-            <div class="card">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, reiciendis!</li>
-                <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur.</li>
-                <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <h4>PhD Students</h4>
-            <div class="mt-3">
-              {% include '@molecules/avatar-teaser/avatar-teaser.twig' %}
-              {% include '@molecules/avatar-teaser/avatar-teaser.twig' %}
-              {% include '@molecules/avatar-teaser/avatar-teaser.twig' %}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-5">
-        <h2 id="courses">Courses<span class="sr-only">of Xavier Alexandre</span></h2>
-        {% include '@molecules/tabs/tabs-vertical.twig' %}
-      </div>
-
-
-      <div class="mt-5">
-        <h2 id="research">Research<span class="sr-only">of Xavier Alexandre</span></h2>
-
-        <h3>Topics</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-
-        <h3>Ongoing Research Projects</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-
-      </div>
-
     </div>
+    
   </div>
 {% endblock %}
 
