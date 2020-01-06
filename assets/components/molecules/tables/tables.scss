@@ -6,7 +6,7 @@
   thead {
     th {
       border-bottom: 3px solid $gray-200;
-      padding: 0.3rem 0;
+      padding: 0.3rem 0.45rem;
     }
   }
 
@@ -15,7 +15,7 @@
     color: $black;
 
     td {
-      padding: 0.3rem 0;
+      padding: 0.3rem 0.45rem;
       border-bottom: 1px solid $gray-200;
 
       @include media-breakpoint-down(sm) {
@@ -50,8 +50,6 @@
   thead th,
   tbody td,
   tfoot td {
-    padding-left: 0.45rem;
-    padding-right: 0.45rem;
     border-right: 1px solid $gray-200;
 
     @include media-breakpoint-down(sm) {
