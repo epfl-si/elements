@@ -5,6 +5,26 @@
   margin-left: $spacer * -0.5;
   margin-right: $spacer * -0.5;
   flex-wrap: wrap;
+  
+  @include media-breakpoint-up(sm) {
+    
+    > .card {
+      
+      // only one card is present
+      &:first-child:last-child {
+        flex: 0 0 60%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      // two or more cards are present
+      &:nth-last-child(n + 2),
+      &:nth-last-child(n + 2) ~ * {
+        flex: 1 1 47%;
+        margin: $spacer * 0.5;
+      }
+    }
+  }
 
   @include media-breakpoint-up(lg) {
     > .card {
@@ -14,8 +34,6 @@
       // only one card is present
       &:first-child:last-child {
         flex: 0 0 33%;
-        margin-left: auto;
-        margin-right: auto;
       }
 
       // two cards are present
