@@ -1,4 +1,10 @@
 # CHANGELOG
+*2.4.0* (2020-01-06)
+  - ✨ New implementations
+    - People detail page (#430)
+  - 🛠 Fixes & other
+    - Move padding from 'table-boxed' class to 'table' class  (#431)
+
 *2.3.1* (2019-12-13)
   - 🛠 Fixes & other
     - Update markup according to WordPress standards (#429)
