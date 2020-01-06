@@ -2,8 +2,12 @@
 
 .form-group {
   label {
-    font-size: $font-size-sm;
+    font-size: 1em;
     color: $gray-600;
+  }
+
+  .custom-control label {
+    font-size: $font-size-sm;
   }
 }
 

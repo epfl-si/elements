@@ -1,0 +1,19 @@
+@charset 'utf-8';
+
+article.blog-post {
+  
+  header {
+    border-bottom: 1px solid $gray-100;
+  }
+  
+  footer {
+    border-color: $gray-100;
+  }
+}
+
+.entry-content {
+  
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
