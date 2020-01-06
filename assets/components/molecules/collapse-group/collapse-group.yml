@@ -3,6 +3,10 @@ name: collapse-group
 variants:
   - name: rich-content
     title: Collapse with rich content
+  - name: people-contacts
+    title: Collapse with contact info
+    notes: |
+      Used in People pages
 notes: |
   <br/>
 

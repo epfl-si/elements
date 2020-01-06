@@ -1,5 +1,14 @@
 @charset 'utf-8';
 
+.list-group-item {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .list-group-item-borderless {
   padding-right: 0;
   padding-left: 0;
@@ -14,6 +23,7 @@
 }
 
 .list-group {
+  
   .list-group-teaser {
     display: block;
     text-decoration: none;
@@ -29,7 +39,7 @@
     }
   }
 
-  .list-group-teaser-thumbnail {
+  .list-group-teaser-thumbnail{
     flex: 0 0 12rem;
     padding: 1rem;
     padding-top: 1rem;
@@ -105,5 +115,38 @@
     &:hover {
       border: 1px solid $black !important;
     }
+  }
+  
+  .item-metadata {
+    
+    p {
+      display: inline-block;
+      margin-bottom: 0;
+    }
+    
+    .item-date {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-right: 0.5em;
+    }
+  }
+}
+
+.list-group-item-infoscience {
+  
+  &.has-thumbnail {
+    display: flex;
+    
+    .list-group-thumbnail{
+      flex: 0 0 8rem;
+      margin-right: 1rem;
+      z-index: $zindex-1;
+    }
+    
+    .list-group-content {
+      flex: 0 1 100%;
+      z-index: $zindex-1;
+    }
+    
   }
 }
