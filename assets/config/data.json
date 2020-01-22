@@ -113,14 +113,14 @@
   "schools": [
     {
       "namefr": "Faculté de l'environnement naturel, architectural et construit",
-      "nameen": "School of architecture, civil and environmental engineering",
+      "nameen": "School of Architecture, Civil and Environmental Engineering",
       "acronym": "ENAC",
       "urlfr": "https://www.epfl.ch/schools/enac/fr/home/",
       "urlen": "https://www.epfl.ch/schools/enac/"
     },
     {
       "namefr": "Faculté des sciences de base",
-      "nameen": "School of basic sciences",
+      "nameen": "School of Basic Sciences",
       "acronym": "SB",
       "urlfr": "https://www.epfl.ch/schools/sb/fr/",
       "urlen": "https://www.epfl.ch/schools/sb/"
@@ -134,28 +134,28 @@
     },
     {
       "namefr": "Faculté informatique et communications",
-      "nameen": "School of computer and communication sciences",
+      "nameen": "School of Computer and Communication Sciences",
       "acronym": "IC",
       "urlfr": "https://www.epfl.ch/schools/ic/fr/faculte-informatique-et-communication/",
       "urlen": "https://www.epfl.ch/schools/ic/"
     },
     {
       "namefr": "Faculté des sciences de la vie",
-      "nameen": "School of life sciences",
+      "nameen": "School of Life Sciences",
       "acronym": "SV",
       "urlfr": "https://www.epfl.ch/schools/sv/fr/science-de-la-vie/",
       "urlen": "https://www.epfl.ch/schools/sv/"
     },
     {
       "namefr": "Collège du management de la technologie",
-      "nameen": "College of management of technology",
+      "nameen": "College of Management of Technology",
       "acronym": "CDM",
       "urlfr": "https://www.epfl.ch/schools/cdm/fr/college-du-management-de-la-technologie/",
       "urlen": "https://www.epfl.ch/schools/cdm/"
     },
     {
       "namefr": "Collège des humanités",
-      "nameen": "College of humanities",
+      "nameen": "College of Humanities",
       "acronym": "CDH",
       "urlfr": "https://www.epfl.ch/schools/cdh/fr/index-fr-html/",
       "urlen": "https://www.epfl.ch/schools/cdh/"
@@ -273,9 +273,9 @@
         },
         {
           "namefr": "Cooperation",
-          "urlfr": "https://cooperation.epfl.ch/fr/index-fr-html/",
+          "urlfr": "https://essentialtech.center",
           "nameen": "Cooperation",
-          "urlen": "https://cooperation.epfl.ch"
+          "urlen": "https://essentialtech.center"
         },
         {
           "namefr": "Alumni",

@@ -1,4 +1,11 @@
 # CHANGELOG
+*2.4.1* (2020-01-22)
+  - 🛠 Fixes & other
+    - Lateral margins on hero content (#432)
+    - Add lateral margins to the content on small devices
+    - Add spacing between content and image on small devices
+    - Update title and links for footer
+
 *2.4.0* (2020-01-06)
   - ✨ New implementations
     - People detail page (#430)
