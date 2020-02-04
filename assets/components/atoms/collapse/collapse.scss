@@ -192,6 +192,14 @@ $collapse-drop-margin: ($grid-gutter-width * 0.3);
   background: linear-gradient(0deg,white 0, rgba(255,255,255,0.9) 15%, transparent)
 }
 
+.collapse-partial + button .icon {
+  top: 0.2em;
+}
+
+.collapse-partial.show + button .icon {
+  transform: rotate(180deg);
+}
+
 // helper classes to define partial collapse defaut height
 @for $i from 0 to 10 {
   .collapse-partial-#{$i}:not(.show) {
