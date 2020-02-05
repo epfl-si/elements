@@ -18,6 +18,7 @@ import search from './molecules/search/search.js';
 import searchMobile from './molecules/search/search-mobile.js';
 import coursebook from './content-types/coursebook/coursebook.js';
 import cookieconsent, {get_cookieconsent_config} from './organisms/cookie-consent/cookie-consent.js';
+import backToTopBtn from './organisms/footer/back-to-top-button.js';
 import anchors from './anchors';
 
 import guide from './guide.js';
@@ -41,6 +42,7 @@ const init = () => {
   drawer();
   breadcrumb();
   cookieconsent(get_cookieconsent_config());
+  backToTopBtn();
 
   guide();
   anchors();
