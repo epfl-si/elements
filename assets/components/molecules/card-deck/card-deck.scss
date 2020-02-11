@@ -1,12 +1,14 @@
 @charset 'utf-8';
 
 .card-deck {
+  display: block;
   position: relative;
   margin-left: $spacer * -0.5;
   margin-right: $spacer * -0.5;
-  flex-wrap: wrap;
   
   @include media-breakpoint-up(sm) {
+    display: flex;
+    flex-wrap: wrap;
     
     > .card {
       
