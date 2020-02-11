@@ -1,4 +1,12 @@
 # CHANGELOG
+*2.5.0* (2020-02-11)
+  - ✨ New implementations
+    - Back to top on pages (#436)
+    - Add map to footer
+  - 🛠 Fixes & other
+    - Fix an occasional display bug of the card deck on smartphones (#433)
+    - Partial collapse: rotate arrow when the element is "uncollapsed" (#435)
+
 *2.4.1* (2020-01-22)
   - 🛠 Fixes & other
     - Lateral margins on hero content (#432)
