@@ -48,7 +48,7 @@ const scenarios = componentsDirs.reduce((acc, type) => {
       return {
         label: `${type}_${slug}`,
         url: `http://localhost:3000/${url}`,
-        referenceUrl: `https://epfl-idevelop.github.io/elements/${url}`,
+        referenceUrl: `https://epfl-si.github.io/elements/${url}`,
         readyEvent: 'backstopjs_ready',
         delay: 800,
         hideSelectors: ['#__bs_notify__', '.tlbx-actions'],
