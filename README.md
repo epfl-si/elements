@@ -1,7 +1,7 @@
 # Elements
 #### *EPFL Web Styleguide*
 
-#### [👉 View online](https://epfl-idevelop.github.io/elements)
+#### [👉 View online](https://epfl-si.github.io/elements)
 
 ## Install
 
@@ -19,7 +19,7 @@ To contribute and run the styleguide, you will need few things :
 Then, to install the project on your environment :
 
 ```bash
-$ git clone git@github.com:epfl-idevelop/elements.git
+$ git clone git@github.com:epfl-si/elements.git
 $ cd ./elements
 $ yarn
 ```
@@ -27,7 +27,7 @@ $ yarn
 Docker variant:
 
 ```bash
-$ git clone git@github.com:epfl-idevelop/elements.git
+$ git clone git@github.com:epfl-si/elements.git
 $ cd ./elements
 $ docker-compose up builder
 ```
@@ -38,7 +38,7 @@ As listed in the `package.json` you have **3 commands** available :
 
 - `$ yarn start` : Will launch a live reloaded server to help you **during development**
 - `$ yarn build` : Will build your assets for **production usage**
-- `$ yarn deploy` : Will **deploy the styleguide** in the dedicated [`gh-pages`](https://epfl-idevelop.github.io/elements)
+- `$ yarn deploy` : Will **deploy the styleguide** in the dedicated [`gh-pages`](https://epfl-si.github.io/elements)
 
 With Docker, you can run:
 - `$ docker-compose up builder` same as `$ yarn build` but in containers
@@ -72,7 +72,7 @@ First, you must complete the [git-flow](https://danielkummer.github.io/git-flow-
 $ git flow release finish -p 'x.x.x'
 ```
 
-Because the previous command will normally push your release commits and tag, simply **go on Github\* and copy/paste the release's changelog content** in the release's description. (go directly using `https://github.com/epfl-idevelop/elements/releases/edit/x.x.x`)
+Because the previous command will normally push your release commits and tag, simply **go on Github\* and copy/paste the release's changelog content** in the release's description. (go directly using `https://github.com/epfl-si/elements/releases/edit/x.x.x`)
 
 #### 4. Publish the builds
 
@@ -92,7 +92,7 @@ If you want to ship images to the production build, just make shure they are in 
 All the images in the `/images/styleguide/` folder will remain available when running `yarn start` or deploying the styleguide on a gh-page.
 
 #### 5. Update github.io
-- A `$ yarn deploy` should **deploy the styleguide** in the dedicated [`gh-pages`](https://epfl-idevelop.github.io/elements)
+- A `$ yarn deploy` should **deploy the styleguide** in the dedicated [`gh-pages`](https://epfl-si.github.io/elements)
 
 ## Contribute
 

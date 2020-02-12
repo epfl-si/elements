@@ -1,7 +1,7 @@
 {
   "generator-toolbox": {
     "promptValues": {
-      "repo": "git@github.com:epfl-idevelop/elements.git",
+      "repo": "git@github.com:epfl-si/elements.git",
       "src": "assets/",
       "dest": "build/",
       "atomic": "atoms<molecules<organisms<content-types"
