@@ -1,8 +1,6 @@
 /* global $ */
 
-$(document).ready(function($){
-
-  $('html').addClass('redpandas-will-rule-the-world');
+export default () => {
 
   $('#search-mobile-toggle').click(function(event){
     
@@ -17,7 +15,7 @@ $(document).ready(function($){
     }
     
   });
-
+  
   $('#search-mobile-close').click(function(event){
     
     var searchContainer = $('.search-mobile');
@@ -28,4 +26,4 @@ $(document).ready(function($){
     
   });
   
-});
+};
