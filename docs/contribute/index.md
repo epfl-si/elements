@@ -1,7 +1,7 @@
 # Contribute to Elements
 
 ## How to install
-Refer to our readme file in [the project repository](https://github.com/epfl-idevelop/elements)
+Refer to our readme file in [the project repository](https://github.com/epfl-si/elements)
 
 ## Contribute to the documentation
 This chapter is about writing documentation for the Elements project.
@@ -32,7 +32,7 @@ There is no depth limitation, but try to keep things **simple** and **understand
 ## Contributing
 
 #### Locally
-1. Clone the [repository](https://github.com/epfl-idevelop/elements)
+1. Clone the [repository](https://github.com/epfl-si/elements)
 2. Create a new `doc/YOUR_BRANCHS_NAME` branch
 3. **Add** _or_ **edit** your documentation file under `./docs`
 4. **Commit** and **push** all your changes
@@ -40,7 +40,7 @@ There is no depth limitation, but try to keep things **simple** and **understand
 
 #### Online
 _⚠️ Github UI doesn't provide branch creation, so it will be harder to review._
-1. Go to the Github [repository](https://github.com/epfl-idevelop/elements)
+1. Go to the Github [repository](https://github.com/epfl-si/elements)
 2. **Add** _or_ **edit** your documentation file under `./docs`
 3. **Save** (will do a commit)
 

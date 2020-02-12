@@ -14,9 +14,9 @@ Because you're supposed to be an advanced user, you can do whatever you want and
 
 ## Get the builds (recommended)
 
-Under the [releases tab](https://github.com/epfl-idevelop/elements/releases), you will find all the releases of Elements and the related changes.
+Under the [releases tab](https://github.com/epfl-si/elements/releases), you will find all the releases of Elements and the related changes.
 
-**To download the last release's build**, you can [download this zip](https://github.com/epfl-idevelop/elements/archive/dist/frontend.zip) which always reflect the last release state of Elements. If you feel more comfortable with Github, the branch `dist/frontend` is the build location.
+**To download the last release's build**, you can [download this zip](https://github.com/epfl-si/elements/archive/dist/frontend.zip) which always reflect the last release state of Elements. If you feel more comfortable with Github, the branch `dist/frontend` is the build location.
 
 Now that you've downloaded the build archive, you will find every CSS, Javascript and assets files required to apply Elements design on your project.
 
@@ -31,7 +31,7 @@ Now that you've downloaded the build archive, you will find every CSS, Javascrip
     <!-- Elements CSS -->
     <link rel="stylesheet" href="./vendors/elements/css/vendors.min.css">
     <link rel="stylesheet" href="./vendors/elements/css/base.css">
-    
+
     <!-- [...] -->
   </head>
   <body>
@@ -39,7 +39,7 @@ Now that you've downloaded the build archive, you will find every CSS, Javascrip
 
     <!-- jQuery through CDN is not already present -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    
+
     <!-- Elements JS -->
     <script src="./vendors/elements/js/vendors.min.js"></script>
     <script src="./vendors/elements/js/vendors.bundle.js"></script>
@@ -49,4 +49,4 @@ Now that you've downloaded the build archive, you will find every CSS, Javascrip
 
 ## Something is wrong ?
 
-Feel free to use the [support and request page](#/doc/Support & request--Request.md) or to open an issue on the [Github repository](https://github.com/epfl-idevelop/elements/issues).
+Feel free to use the [support and request page](#/doc/Support & request--Request.md) or to open an issue on the [Github repository](https://github.com/epfl-si/elements/issues).
