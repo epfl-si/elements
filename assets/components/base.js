@@ -34,6 +34,7 @@ const init = () => {
   popover();
   gallery();
   search();
+  searchMobile();
   share();
   coursebook();
   Tablesaw.init();

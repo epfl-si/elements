@@ -1,11 +1,11 @@
 {
   "name": "epfl-elements",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "license": "MIT",
   "main": "index.html",
   "repository": {
     "type": "git",
-    "url": "git@github.com:epfl-idevelop/elements.git"
+    "url": "git@github.com:epfl-si/elements.git"
   },
   "scripts": {
     "start": "toolbox serve",
