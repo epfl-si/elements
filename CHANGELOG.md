@@ -1,4 +1,10 @@
 # CHANGELOG
+*2.5.1* (2020-02-12)
+  - 🛠 Fixes & other
+    - Remove link from teaser block and add it only on title and image (#434)
+    - Feature/people mobile search (#438)
+    - Move repository from epfl-idevelop to epfl-si
+
 *2.5.0* (2020-02-11)
   - ✨ New implementations
     - Back to top on pages (#436)
