@@ -44,8 +44,6 @@
     padding: 1rem;
     padding-top: 1rem;
     z-index: $zindex-1;
-    border: 1px solid gray('200');
-    transition: border-color 0.2s;
 
     @include media-breakpoint-up(lg) {
       border-right: none;
@@ -59,16 +57,10 @@
   .list-group-teaser-content {
     flex: 0 1 100%;
     padding: 1rem;
-    border: 1px solid gray('200');
-    transition: border-color 0.2s;
     z-index: $zindex-1;
 
     @include media-breakpoint-down(md) {
       border-top: none;
-    }
-
-    @include media-breakpoint-up(lg) {
-      border-left: none;
     }
 
     span {
@@ -88,12 +80,20 @@
     display: flex;
     flex-flow: row nowrap;
     width: 100%;
+    border: 1px solid gray('200');
+    transition: border-color 0.2s;
+    
+    &.teaser-img-right {
+      flex-direction: row-reverse;
+    }
 
     @include media-breakpoint-down(md) {
       flex-direction: column;
     }
 
     &:hover {
+      border-color: $black;
+      
       .list-group-teaser-content,
       .list-group-teaser-thumbnail {
         border-color: $black;
