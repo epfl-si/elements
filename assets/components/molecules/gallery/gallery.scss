@@ -211,5 +211,9 @@ $gallery-btn-margin: 14px;
 .gallery.is-fullscreen .gallery-item {
   height: 100%;
   padding: 0;
+  
+  .gallery-item-inner {
+    background: transparent;
+  }
 }
 
