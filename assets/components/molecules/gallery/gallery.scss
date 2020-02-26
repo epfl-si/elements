@@ -215,5 +215,11 @@ $gallery-btn-margin: 14px;
   .gallery-item-inner {
     background: transparent;
   }
+  
+  figcaption {
+    border-top: 1px solid $gray-100;
+    margin-left: 6%;
+    margin-right: 6%;
+    width: 88%;
+  }
 }
-
