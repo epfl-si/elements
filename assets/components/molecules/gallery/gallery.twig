@@ -1,3 +1,5 @@
+<div class="gallery-container">
+  
 <div id="my-gallery-{{ id ?: 1 }}" class="gallery gallery-main">
   {% for i in 1..8 %}
     <figure class="gallery-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
@@ -20,4 +22,6 @@
       <figcaption>Picture of an amazing science topic</figcaption>
     </figure>
   {% endfor %}
+</div>
+  
 </div>
