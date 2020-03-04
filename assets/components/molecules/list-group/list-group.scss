@@ -74,6 +74,12 @@
         margin-bottom: 0.4rem;
       }
     }
+    
+    .teaser-url {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-word;
+    }
   }
 
   .list-group-teaser-container {
@@ -82,13 +88,14 @@
     width: 100%;
     border: 1px solid gray('200');
     transition: border-color 0.2s;
-    
-    &.teaser-img-right {
-      flex-direction: row-reverse;
-    }
 
     @include media-breakpoint-down(md) {
       flex-direction: column;
+      
+      .list-group-teaser-thumbnail {
+        flex-basis: 0;
+        padding-bottom: 0;
+      }
     }
 
     &:hover {
@@ -97,6 +104,21 @@
       .list-group-teaser-content,
       .list-group-teaser-thumbnail {
         border-color: $black;
+      }
+    }
+    
+    &.teaser-img-right {
+      flex-direction: row-reverse;
+      
+      @include media-breakpoint-down(md) {
+        display: block;
+        
+        .list-group-teaser-thumbnail {
+          float: right;
+          max-width: 50%;
+          padding-bottom: 1rem;
+          width: calc( 100px + 2rem );
+        }
       }
     }
   }
