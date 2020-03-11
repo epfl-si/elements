@@ -1,4 +1,14 @@
 # CHANGELOG
+*2.7.0* (2020-03-11)
+  - ✨ New implementations
+    - Add Feather icons #424
+  - 🛠 Fixes & other
+    - Fix height of nav-main #412
+    - Fix bullet alignment #408
+    - Fix typo in docs #423
+    - Fix layout with drawer open and header light #405
+    - Fix datepicker selected day #402
+
 *2.6.0* (2020-03-11)
   - ✨ New implementations
     - Mini-cards (#440)
