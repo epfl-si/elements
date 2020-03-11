@@ -21,6 +21,14 @@
       background: $red;
       font-size: 1.1rem;
       line-height: $bullet-size;
+
+      @include media-breakpoint-down (sm) {
+        top: 0.6rem;
+      }
+
+      @include media-breakpoint-down (xs) {
+        top: 0.5rem;
+      }
     }
   }
 
@@ -59,6 +67,14 @@
       font-size: 0.8rem;
       font-weight: $font-weight-bold;
       color: $red;
+
+      @include media-breakpoint-down (sm) {
+        top: 0.2rem;
+      }
+
+      @include media-breakpoint-down (xs) {
+        top: 0.1rem;
+      }
     }
   }
 
