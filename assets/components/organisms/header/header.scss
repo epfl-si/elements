@@ -151,9 +151,10 @@
 
   .drawer.open + .header-light-content {
     @include media-breakpoint-down(sm) {
-        .nav-toggle-mobile {
-          margin-right: -5rem;
-          overflow: hidden;
+        .nav-toggle-mobile,
+        .nav-lang,
+        .search-mobile-toggle {
+          display: none;
         }
     }
   }
@@ -182,6 +183,7 @@
         margin: 0 auto 0 0;
         padding: 0;
         border: 0;
+        line-height: $mm-lang-height;
         img {
           width: 90px;
         }
