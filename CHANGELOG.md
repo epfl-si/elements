@@ -1,4 +1,11 @@
 # CHANGELOG
+*2.6.0* (2020-03-11)
+  - ✨ New implementations
+    - Mini-cards (#440)
+  - 🛠 Fixes & other
+    - Improve gallery (#439)
+    - Improve search result teasers (#441)
+
 *2.5.1* (2020-02-12)
   - 🛠 Fixes & other
     - Remove link from teaser block and add it only on title and image (#434)
