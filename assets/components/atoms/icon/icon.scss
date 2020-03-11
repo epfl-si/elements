@@ -25,3 +25,13 @@ $icon-size-base: 1em;
 .icon-rotate-90 {
   transform: rotate(90deg);
 }
+
+.feather {
+  width: 1em;
+  height: 1em;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
