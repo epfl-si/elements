@@ -285,9 +285,9 @@
 }
 
 .fullwidth-teaser-horizontal.thinner-teaser {
-  background: yellow;
+  background: $gray-100;
   min-height: 24rem;
-  
+
   @include media-breakpoint-up(xl) {
 
     picture,
@@ -296,7 +296,7 @@
       max-height: 50vh;
       min-height: 24rem;
     }
-    
+
     .fullwidth-teaser-text {
       padding-bottom: $spacer * 3;
     }
