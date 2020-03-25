@@ -1,4 +1,9 @@
 # CHANGELOG
+
+*2.7.1* (2020-03-25)
+  - Set background color to gray for fullwidth teaser horizontal #442
+  - Fix name and paths in site webmanifest #443
+
 *2.7.0* (2020-03-11)
   - ✨ New implementations
     - Add Feather icons #424
