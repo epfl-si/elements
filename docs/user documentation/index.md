@@ -49,4 +49,4 @@ Now that you've downloaded the build archive, you will find every CSS, Javascrip
 
 ## Something is wrong ?
 
-Feel free to use the [support and request page](#/doc/Support & request--Request.md) or to open an issue on the [Github repository](https://github.com/epfl-si/elements/issues).
+Feel free to use the [support and request page](#/doc/contribute--support-and-request.html) or to open an issue on the [Github repository](https://github.com/epfl-si/elements/issues).
