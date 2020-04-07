@@ -78,6 +78,12 @@ $collapse-chevron-size: 12px;
 }
 
 .collapse-item {
+  padding-bottom: 2rem;
+  
+  *:last-child {
+    margin-bottom: 0;
+  }
+  
   &:not(.collapse-item-desktop) {
     @include media-breakpoint-up(md) {
       display: block !important;
