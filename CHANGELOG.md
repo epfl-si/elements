@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*2.7.2* (2020-04-07)
+  - Remove unused Open font loading #447
+  - Fix visual identity link #446
+
 *2.7.1* (2020-03-25)
   - Set background color to gray for fullwidth teaser horizontal #442
   - Fix name and paths in site webmanifest #443
