@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*2.8.0* (2020-04-15)
+  - Allow multiple memento sliders per page #449
+
 *2.7.2* (2020-04-07)
   - Remove unused Open font loading #447
   - Fix visual identity link #446
