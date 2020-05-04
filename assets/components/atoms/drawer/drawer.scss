@@ -12,9 +12,6 @@
   transition: width 0.3s ease;
 
   &.open {
-    @include media-breakpoint-up(xl) {
-      width: auto;
-    }
     @include media-breakpoint-down(lg) {
       width: 50%;
     }
