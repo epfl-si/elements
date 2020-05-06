@@ -217,6 +217,17 @@
   }
 
   &.mini-cards {
+    justify-content: center;
+    
+    @include media-breakpoint-down(xs) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      
+      > .card {
+        margin: $spacer * 0.5;
+      }
+    }
     
     .deck-title {
       flex-basis: 100%;
@@ -234,18 +245,19 @@
     }
     
     > .card {
-      flex-basis: 47%;
+      flex-basis: calc( 50% - #{$spacer} );
+      flex-grow: 0;
     }
     
     @include media-breakpoint-up(sm) {
       > .card {
-        flex-basis: 30%;
+        flex-basis: calc( 33.3334% - #{$spacer} );
       }
     }
 
     @include media-breakpoint-up(xl) {
       > .card {
-        flex-basis: 14%;
+        flex-basis: calc( 16.6667% - #{$spacer} );
       }
     }
     
