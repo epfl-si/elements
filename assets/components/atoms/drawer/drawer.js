@@ -9,12 +9,14 @@ const drawer = () => {
 
     if ($drawer.hasClass('open')) {
       $drawer.removeClass('open');
+      $drawer.css({ width: '' });
       $drawerLink.css({ width: $drawerToggle.width() });
     } else {
       let linkWidth = '100%';
 
       if ($(window).width() > breakpoint) {
         linkWidth = $drawerLink.find('.text').outerWidth();
+        $drawer.css({ width: linkWidth });
       }
       $drawer.addClass('open');
       $drawerLink.css({ width: linkWidth });
