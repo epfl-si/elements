@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*2.9.0* (2020-05-06)
+  - Improve mini cards display #453
+  - Fix drawer animation #452
+
 *2.8.0* (2020-04-15)
   - Allow multiple memento sliders per page #449
 
