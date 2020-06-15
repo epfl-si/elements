@@ -32,6 +32,7 @@ $gallery-btn-margin: 14px;
 }
 
 .gallery.flickity-enabled.is-fullscreen {
+  margin: 0 !important;
   background: $white;
 
   .flickity-slider {
@@ -47,10 +48,26 @@ $gallery-btn-margin: 14px;
   .gallery-item {
     align-items: center;
     max-height: 80vmin;
+    
+    .gallery-item-inner {
+      height: 100%;
+      padding: 0;
+      
+      .img-wrapper {
+        max-height: 100%;
+        position: relative;
+      }
+    }
 
     .img-fluid {
+      max-height: calc( 80vmin - 2rem );
       max-width: 100vmin;
       margin: 0 auto;
+    }
+    
+    figcaption {
+      position: relative;
+      top: 2rem;
     }
 
     figcaption span:last-child { padding-left: 3rem; }
