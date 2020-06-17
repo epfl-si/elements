@@ -1,5 +1,12 @@
 # CHANGELOG
 
+*2.10.0* (2020-06-17)
+  - Make the footer stick to the bottom of the page #455
+  - Fix display of fullscreen gallery #457
+  - Update html for publication #459
+  - Change support destination in doc
+  - Remove package-lock.json #456
+
 *2.9.0* (2020-05-06)
   - Improve mini cards display #453
   - Fix drawer animation #452
