@@ -21,3 +21,6 @@ variants:
     title: Icon
     notes: |
       You can set up a link with a custom icon. The icon will automatically be at the other end of the element (with flex).
+  - name: login
+    title: Login link
+    notes: 
