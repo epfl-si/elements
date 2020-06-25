@@ -1,4 +1,7 @@
 # CHANGELOG
+*2.11.0* (2020-06-25)
+  - Fix header shrinking in Safari #461
+  - Add login link (atom) #460
 
 *2.10.0* (2020-06-17)
   - Make the footer stick to the bottom of the page #455
