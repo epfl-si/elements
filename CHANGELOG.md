@@ -1,4 +1,9 @@
 # CHANGELOG
+
+*2.12.0* (2020-07-28)
+  - Use lighter gray for separation lines #464
+  - Add border around the whole link card #463
+
 *2.11.0* (2020-06-25)
   - Fix header shrinking in Safari #461
   - Add login link (atom) #460
