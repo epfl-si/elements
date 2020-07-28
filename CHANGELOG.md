@@ -1,4 +1,18 @@
 # CHANGELOG
+*2.11.0* (2020-06-25)
+  - Fix header shrinking in Safari #461
+  - Add login link (atom) #460
+
+*2.10.0* (2020-06-17)
+  - Make the footer stick to the bottom of the page #455
+  - Fix display of fullscreen gallery #457
+  - Update html for publication #459
+  - Change support destination in doc
+  - Remove package-lock.json #456
+
+*2.9.0* (2020-05-06)
+  - Improve mini cards display #453
+  - Fix drawer animation #452
 
 *2.8.0* (2020-04-15)
   - Allow multiple memento sliders per page #449

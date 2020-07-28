@@ -3,6 +3,7 @@ name: card-deck
 variants:
   - name: mini-cards
     title: Mini cards
+    notes: When less than 6 mini cards are displayed, the cards are centered in the row.
   - name: duo
     title: Duo
   - name: duo-gray
