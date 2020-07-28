@@ -1,12 +1,12 @@
 {% set bottomlink = bottomlink|default(true) %}
 
 <div class="infoscienceBox no-tex2jax_process">
-  <div class="list-group mb-5">
+  <div class="list-group my-3">
   <h1 class="h2 mt-3">2018</h1>
   {% for i in 1..4 %}
     {% if i % 2 %}
       {% if i < 3 %}
-  <h2 class="h3 mt-1 mb-2">Theses</h2>
+  <h2 class="h2 mt-3">Theses</h2>
       {% else %}
   <h2 class="h3 mt-1 mb-2">Journal Articles</h2>
       {% endif %}
@@ -29,7 +29,7 @@
               <a class="text-muted infoscience_author" href="https://infoscience.epfl.ch/search?p=John++Doe" target="_blank">John Doe</a>;
               <a class="text-muted infoscience_author" href="https://infoscience.epfl.ch/search?p=John++Doe" target="_blank">John Doe</a>;
               <a class="text-muted infoscience_author" href="https://infoscience.epfl.ch/search?p=John++Doe" target="_blank">John Doe</a>
-              et al.&nbsp;
+              <span class="infoscience_more_authors_element">et al.&nbsp;</span>
             {% else %}
               <a class="text-muted infoscience_author" href="https://infoscience.epfl.ch/search?p=John++Doe" target="_blank">John Doe</a> /
               <a class="text-muted infoscience_author" href="https://infoscience.epfl.ch/search?p=John++Doe" target="_blank">John Doe (Dir.)</a>
@@ -51,7 +51,7 @@
             </p>
             <p class="text-muted small mb-0">
             {% if i % 2 %}
-              <a class="text-muted" href="#" target="_blank">Full text</a> -
+              <a class="text-muted" href="#" target="_blank">Full text</a> &#8211;
               <a class="text-muted" href="#" target="_blank">View at publisher</a>
             {% endif %}
             </p>
