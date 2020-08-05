@@ -1,6 +1,6 @@
 {
   "name": "epfl-elements",
-  "version": "2.11.0",
+  "version": "2.13.0",
   "license": "MIT",
   "main": "index.html",
   "repository": {
@@ -104,7 +104,7 @@
     "selectize.js": "^0.12.12",
     "stylelint-scss": "^3.18.0",
     "tablesaw": "^3.1.2",
-    "toolbox-utils": "^1.5.0"
+    "toolbox-utils": "https://github.com/epfl-si/toolbox-utils"
   },
   "devDependencies": {
     "backstopjs": "^5.0.1",
