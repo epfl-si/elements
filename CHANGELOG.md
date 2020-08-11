@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*2.14.0* (2020-08-11)
+  - Update versions, Bootstrap, Jquery, ... #454
+
 *2.13.0* (2020-08-05)
   - Add the carousel feature #462
 
