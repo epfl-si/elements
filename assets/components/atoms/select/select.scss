@@ -1,4 +1,18 @@
-@charset 'utf-8';
+@charset "utf-8";
+
+.ms-offscreen {
+  clip: rect(0 0 0 0)!important;
+  position: absolute!important;
+  overflow: hidden!important;
+  top: auto!important;
+  left: auto!important;
+  width: 1px!important;
+  height: 1px!important;
+  margin: 0!important;
+  padding: 0!important;
+  border: 0!important;
+  outline: 0!important;
+}
 
 .ms-parent {
   display: block;
