@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*2.14.1* (2020-08-12)
+  - Fix the original select list being visible on multiple select atom
+
 *2.14.0* (2020-08-11)
   - Update versions, Bootstrap, Jquery, ... #454
 
