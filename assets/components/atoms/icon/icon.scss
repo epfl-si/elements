@@ -1,4 +1,4 @@
-@charset 'utf-8';
+@charset "utf-8";
 
 $icon-size-base: 1em;
 
@@ -6,7 +6,7 @@ $icon-size-base: 1em;
   display: inline-flex;
   align-self: center;
   position: relative;
-  top: 0.11em;
+  top: -0.11em;
   width: $icon-size-base;
   height: $icon-size-base;
   color: inherit;
