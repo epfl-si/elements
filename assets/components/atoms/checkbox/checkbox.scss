@@ -6,8 +6,13 @@
   border-color: $red;
 }
 
+.custom-control {
+  padding-left: 1.5rem;
+}
+
 .custom-control-label:before, .custom-control-label:after {
   top: 3.5px;
+  left: -1.5rem;
 
   @include media-breakpoint-up(sm){
     top: 3.5px;
