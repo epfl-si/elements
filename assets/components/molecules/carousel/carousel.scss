@@ -65,6 +65,8 @@
   }
 
   li {
+    border-top: inherit;
+    border-bottom: inherit;
     border-radius: 50%;
     cursor: pointer;
     width: 12px;
