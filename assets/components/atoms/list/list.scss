@@ -95,3 +95,27 @@
     counter-increment: third-item;
   }
 }
+
+.list-inline {
+  
+  li {
+    display: inline-block;
+    
+    &:not(:last-child) {
+      margin-right: .5em;
+    }
+  }
+  
+  &.has-sep {
+    
+    li:not(:last-child):after {
+      content: "|";
+      position: relative;
+      top: -1px;
+      right: -0.125em;
+      font-weight: 400;
+      margin-left: .5em;
+      color: $gray-300;
+    }
+  }
+}
