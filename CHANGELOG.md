@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*2.14.3* (2020-08-26)
+  - Fix carousel bugs #468
+
 *2.14.2* (2020-08-19)
   - Differents fixes for Boostrap 
 
