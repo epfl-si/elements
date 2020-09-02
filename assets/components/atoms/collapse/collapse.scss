@@ -16,7 +16,7 @@ $collapse-chevron-size: 12px;
   margin-bottom: 0;
   padding: 0.9rem #{ $collapse-chevron-size + 4px } 0.9rem 0;
   border-top: 1px solid $gray-300;
-  font-size: 1.1rem;
+  font-size: 1.125rem;
   text-align: left;
   font-weight: 800;
   &:hover { cursor: pointer; }
@@ -99,6 +99,26 @@ $collapse-chevron-size: 12px;
       min-height: 1px !important;
       overflow: visible !important;
       transition: none !important;
+    }
+  }
+}
+
+header.collapse-title {
+  font-size: inherit;
+  
+  p {
+    font-size: 1rem;
+  }
+  
+  @include media-breakpoint-up(md) {
+    p {
+      font-size: 1.125rem;
+    }
+  }
+  
+  @include media-breakpoint-up(lg) {
+    p.title {
+      font-size: 1.25rem;
     }
   }
 }
@@ -216,6 +236,21 @@ $collapse-drop-margin: ($grid-gutter-width * 0.3);
 
 .collapse-partial.show + button .icon {
   transform: rotate(180deg);
+}
+
+.collapse-container {
+  border-top: 1px solid #c1c1c1;
+  border-bottom: 1px solid #c1c1c1;
+  margin-bottom: ($spacer * 3);
+  
+  .collapse-title {
+    border-top: 0;
+  }
+  
+  & + .collapse-container {
+    border-top: 0;
+    margin-top: -($spacer * 3);
+  }
 }
 
 // helper classes to define partial collapse defaut height
