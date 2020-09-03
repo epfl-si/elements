@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*2.15.0* (2020-09-03)
+  - Add project-list #469
+
 *2.14.3* (2020-08-26)
   - Fix carousel bugs #468
 
