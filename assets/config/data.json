@@ -704,10 +704,10 @@
           "urlen": "https://www.epfl.ch/innovation/industry/"
         },
         {
-          "namefr": "Entrepreneuriat et start-ups",
-          "urlfr": "https://www.epfl.ch/innovation/entrepreneurship/fr/startup/",
-          "nameen": "Entrepreneurship and start-ups",
-          "urlen": "https://www.epfl.ch/innovation/entrepreneurship/start-up/"
+          "namefr": "Start-up",
+          "urlfr": "https://www.epfl.ch/innovation/startup/fr/",
+          "nameen": "Startup",
+          "urlen": "https://www.epfl.ch/innovation/startup/"
         }
       ]
     },
