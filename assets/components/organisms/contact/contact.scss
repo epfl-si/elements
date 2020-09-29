@@ -1,4 +1,4 @@
-@charset 'utf-8';
+@charset "utf-8";
 
 $contact-list-avatar: 2.5rem;
 $person-avatar-height: 8rem;
@@ -11,6 +11,7 @@ $person-avatar-height: 8rem;
   border-top: 2px solid $gray-200;
   font-size: $font-size-base * 0.95;
 }
+
 .contact-list-row {
   position: relative;
   padding: 0.9rem 0 0.9rem ($contact-list-avatar + 0.6rem);

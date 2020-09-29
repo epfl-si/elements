@@ -22,8 +22,26 @@
 <div class="container mt-5">
   <div class="row">
     {% for i in 1..8 %}
-      <div class="col-md-6">
-        {% include '@organisms/contact/contact-compact.twig' %}
+      <div class="col-md-4">
+        {% if i % 3 == 0 %}
+          {% include '@organisms/contact/contact-compact.twig' with {
+            'function': 'Doctoral Assistant, Project Assistant, Scientist, Professor, Guest',
+            'picture_url': 'https://randomuser.me/api/portraits/women/3.jpg',
+            'name': 'Dolores Felicitas Lane',
+            'email': 'dolores.felicitas.lane@epfl.ch'
+          } %}
+        {% endif %}
+        {% if i % 3 == 1 %}
+          {% include '@organisms/contact/contact-compact.twig' with {
+            'function': 'Doctoral Assistant, Project Assistant, Scientist, Full time Professor, Educational technologist',
+            'picture_url': 'https://randomuser.me/api/portraits/men/4.jpg',
+            'name': 'Marcellus Bradley',
+            'email': 'marcellus.bradley@epfl.ch'
+          } %}
+        {% endif %}
+        {% if i % 3 == 2 %}
+          {% include '@organisms/contact/contact-compact.twig' %}
+        {% endif %}
       </div>
     {% endfor %}
   </div>
