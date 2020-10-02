@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+.faq-item {
+  border-top: 1px solid $gray-300;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  h4.faq-item-question { font-weight: bold; }
+}
