@@ -9,13 +9,13 @@
       {% endif %}
     </div>
     <h3><a class="link-pretty" href="#">{{ person.prenom }} {{ person.nom }}</a></h3>
-    <dl class="definition-list definition-list-grid mb-0">
+    <dl class="definition-list definition-list-grid my-0">
       <dt>Fonction</dt>
       <dd>{{ person.functions.0 }}</dd>
       <dt>Bureau</dt>
       <dd><a class="link-pretty" href="#">{{ person.rooms.0 }}</a></dd>
     </dl>
-      <div class="w-100 mt-2 mt-md-0">
+      <div class="w-100 mt-2 mt-md-auto">
         <a class="btn btn-block btn-primary mb-2" href="mailto:{{ person.email }}">{{ person.email }}</a>
         <a class="btn btn-block btn-secondary" href="tel:+4179{{ person.phones.0 }}">+41 79 {{ person.phones.0 }}</a>
       </div>
