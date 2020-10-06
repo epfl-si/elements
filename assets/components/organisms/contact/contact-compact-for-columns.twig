@@ -1,7 +1,6 @@
 {# to set random missing elements in this template, we allow to set an increment #}
 <div class="card">
   <div class="card-body">
-    <div class="align-items-center">
       {% if person.photo_url %}
       <img class="img-fluid rounded-circle mb-2 person-card-avatar" src="{{ person.photo_url }}" alt="{{ person.prenom }} {{ person.nom }}">
       {% else %}
@@ -18,6 +17,5 @@
         <a class="btn btn-block btn-primary mb-2" href="mailto:{{ person.email }}">{{ person.email }}</a>
         <a class="btn btn-block btn-secondary" href="tel:+4179{{ person.phones.0 }}">+41 79 {{ person.phones.0 }}</a>
       </div>
-    </div>
   </div>
 </div>
