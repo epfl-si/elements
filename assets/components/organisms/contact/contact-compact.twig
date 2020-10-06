@@ -4,7 +4,7 @@
       <img
               class="img-fluid rounded-circle mb-2 person-card-avatar"
               src="{{ picture_url ?:'https://randomuser.me/api/portraits/women/2.jpg' }}"
-              alt="{{ name ?:"Shawna Reeves O'Neill Edwards" }}"
+              alt="{{ name ?:'Shawna Reeves O\'Neill Edwards' }}"
       >
     </div>
     <h3><a class="link-pretty" href="#">{{ name ?:"Shawna Reeves O'Neill Edwards" }}</a></h3>
@@ -15,7 +15,7 @@
       <dd><a class="link-pretty" href="#">BM 4129</a></dd>
     </dl>
     <div class="w-100 mt-2 mt-md-0 bottom-align-text">
-      <a class="btn btn-block btn-primary mb-2" href="mailto:{{ email ?: "shawna.reeves.oneill.edwards@epfl.ch" }}">{{ email ?: "shawna.reeves.oneill.edwards@epfl.ch" }}</a>
+      <a class="btn btn-block btn-primary mb-2" href="mailto:{{ email ?: 'shawna.reeves.oneill.edwards@epfl.ch' }}">{{ email ?: "shawna.reeves.oneill.edwards@epfl.ch" }}</a>
       <a class="btn btn-block btn-secondary" href="tel:+41791234567">+41 79 123 45 67</a>
     </div>
   </div>
