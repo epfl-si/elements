@@ -3,6 +3,8 @@ name: news
 variants:
   - name: highlighted
     title: Highlighted
+    notes:  |
+      Use the class 'fullwidth-teaser-news' only in cases where you want to prevent the cover image from being cropped.
   - name: highlighted-carousel
     title: Highlighted Carousel
   - name: latest-two
