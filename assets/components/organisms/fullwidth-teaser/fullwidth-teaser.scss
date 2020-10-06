@@ -84,6 +84,15 @@
   }
 }
 
+.fullwidth-teaser-news {
+  
+  picture,
+  figure {
+    height: auto;
+    max-height: none;
+  }
+}
+
 .fullwidth-teaser-text {
   padding: 1rem $grid-gutter-width/2 0;
   background: $white;

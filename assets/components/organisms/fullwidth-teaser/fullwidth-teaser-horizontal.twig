@@ -1,6 +1,6 @@
 {% set thinner_teaser = thinner_teaser|default(false) %}
 
-<div class="fullwidth-teaser fullwidth-teaser-horizontal{% if thinner_teaser %} thinner-teaser{% endif %}">
+<div class="fullwidth-teaser fullwidth-teaser-horizontal{% if thinner_teaser %} thinner-teaser{% endif %}{% if news_teaser %} fullwidth-teaser-news{% endif %}">
   <picture>
     {% if not img %}{% set img %}./images/styleguide/basic_page_teaser.jpg{% endset %}{% endif %}
     <img src="{{img}}" aria-labelledby="background-label" alt="An image description"/>
