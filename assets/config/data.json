@@ -332,6 +332,20 @@
     "Sa",
     "Di"
   ],
+  "faq": [
+    ["Why you should make an FAQ page",
+     "An FAQ, or Frequently Asked Questions, page allows for visitors to find answers to all their questions in one place. Not only does it make life easier for your website visitors, it can save your time and resources because you don't have as many people contacting you for answers."
+    ],
+    ["Is an egg a fruit or a vegetable?",
+     "It is a fruit that grows from a plant called Eggnoramus Logicalus. Although the plant is low to the ground and is often a part of a vegetable farm, it is still a fruit, similar to tomato."
+    ],
+    ["How were unicorns made?",
+     "A kid with ice cream was like \"Ooh pony\". The kid tried to ride it but dropped his ice cream on the pony's head. The cone stayed and when the pony had a baby, the baby was an unicorn."
+    ],
+    ["What is the phobia of chansaws called?",
+     "Common sense."
+    ]
+  ],
   "people": [
     {
       "nom": "Buratto",
