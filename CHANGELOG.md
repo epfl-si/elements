@@ -1,5 +1,10 @@
 # CHANGELOG
 
+*2.16.0* (2020-10-07)
+  - Add FAQ organism #473
+  - Remove spacing between full containers with coloured background #475
+  - Use googleapis instead of code.jquery for fetching jquery lib  
+
 *2.15.0* (2020-09-03)
   - Add project-list #469
 
