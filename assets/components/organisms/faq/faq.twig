@@ -1,5 +1,5 @@
 <div class="grid">
-    <ul class="link-list epfl-faq-header mb-4 pb-2">
+    <ul class="link-list epfl-faq-header">
         {% for f in faq %}
         <li>
             <a href="#faq-item-{{ loop.index }}">{{ f.0 }}</a>
@@ -7,7 +7,7 @@
         {% endfor %}
     </ul>
     {% for f in faq %}
-    <div class="faq-item py-4" id="faq-item-{{ loop.index }}">
+    <div class="faq-item" id="faq-item-{{ loop.index }}">
         <h4 class="faq-item-question">{{ f.0 }}</h4>
         {{ f.1 }}
     </div>
