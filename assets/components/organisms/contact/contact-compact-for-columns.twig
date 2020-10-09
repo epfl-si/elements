@@ -10,7 +10,8 @@
     <h3><a class="link-pretty" href="#">{{ person.prenom }} {{ person.nom }}</a></h3>
     <dl class="definition-list definition-list-grid mb-0">
       <dt>Fonction</dt>
-      <dd>{{ person.functions.0 }}</dd>
+      <dd>{{ person.functions|join(', ') }}
+      </dd>
       <dt>Bureau</dt>
       <dd><a class="link-pretty" href="#">{{ person.rooms.0 }}</a></dd>
     </dl>
