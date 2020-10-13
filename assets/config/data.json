@@ -345,10 +345,55 @@
   ],
   "people": [
     {
+      "nom": "Traill",
+      "prenom": "Heidy",
+      "email": "heidy.traill@epfl.ch",
+      "photo_url": "https://randomuser.me/api/portraits/women/2.jpg",
+      "people_url": "https://people.epfl.ch/heidy.traill",
+      "functions": [
+        "Professor"
+      ],
+      "research_fields": [
+        "Inorganic Chemistry",
+        "Organic Chemistry",
+        "Renewable Energy"
+      ],
+      "phones" : [
+        "57218",
+        "81448"
+      ],
+      "rooms" : [
+        "BM 4129"
+      ]
+    },
+    {
+      "nom": "Felicitas Lane",
+      "prenom": "Dolores",
+      "email": "dolores.felicitas.lane@epfl.ch",
+      "photo_url": "https://randomuser.me/api/portraits/women/8.jpg",
+      "people_url": "https://people.epfl.ch/dolores.felicitas.lane",
+      "functions": [
+        "Information systems director",
+        "Doctoral Assistant",
+        "Project Assistant",
+        "Scientist",
+        "Professor",
+        "Full time Professor",
+        "Educational technologist",
+        "Guest"
+      ],
+      "phones" : [
+        "34567"
+      ],
+      "rooms" : [
+        "AM 275"
+      ]
+    },
+    {
       "nom": "Buratto",
       "prenom": "Philip",
       "email": "philip.buratto@epfl.ch",
-      "photo_url": "https://images.unsplash.com/photo-1503443062224-9f77d743cf25?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=81129fd559fa94dda68324798a6ad632&auto=format&fit=crop&w=2618&q=80",
+      "photo_url": "https://randomuser.me/api/portraits/men/7.jpg",
       "people_url": "https://people.epfl.ch/philip.buratto",
       "functions": [
         "Staff"
@@ -367,7 +412,7 @@
       "photo_url": "",
       "people_url": "https://people.epfl.ch/shawna.reeves.oneill.edwards",
       "functions": [
-        "Staff"
+        "Guest"
       ],
       "phones" : [
         "34868"
@@ -380,10 +425,10 @@
       "nom": "Camus",
       "prenom": "Vail",
       "email": "vail.camus@epfl.ch",
-      "photo_url": "https://cdn.plixs.com/uploads/preview/girl-2051733-10891527607591fgjvd0458b.jpg",
+      "photo_url": "https://randomuser.me/api/portraits/women/14.jpg",
       "people_url": "https://people.epfl.ch/vail.camus",
       "functions": [
-        "Staff"
+        "Scientist"
       ],
       "phones" : [
         "31171"
@@ -406,6 +451,23 @@
       ],
       "rooms" : [
         "CM 3129"
+      ]
+    },
+    {
+      "nom": "Bradley",
+      "prenom": "Marcellus",
+      "email": "marcellus.bradley@epfl.ch",
+      "photo_url": "https://randomuser.me/api/portraits/men/4.jpg",
+      "people_url": "https://people.epfl.ch/marcellus.bradley",
+      "functions": [
+        "Doctoral Assistant",
+        "Project Assistant"
+      ],
+      "phones" : [
+        "11471"
+      ],
+      "rooms" : [
+        "GM 3129"
       ]
     }
   ],
