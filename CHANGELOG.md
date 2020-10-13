@@ -1,5 +1,10 @@
 # CHANGELOG
 
+*2.16.1* (2020-10-13)
+- Fix loading jQuery in a non-http server
+- Fix contact list data
+- Improve contacts column data
+
 *2.16.0* (2020-10-07)
   - Add FAQ organism #473
   - Remove spacing between full containers with coloured background #475
