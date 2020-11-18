@@ -40,17 +40,43 @@
     
   <footer class="post-footer pt-4">
     
-    <h2 class="h5">Mots-clés</h2>
-    <p>
-      <a href="#" class="tag tag-primary">Lorem ipsum</a>
-      <a href="#" class="tag tag-primary">Dolor sit amet</a>
-      <a href="#" class="tag tag-primary">Consectetur</a>
-      <a href="#" class="tag tag-primary">Adipiscing</a>
-      <a href="#" class="tag tag-primary">Praesent</a>
-      <a href="#" class="tag tag-primary">Viverra a augue</a>
-      <a href="#" class="tag tag-primary">Morbi ante nisi</a>
-      <a href="#" class="tag tag-primary">Venenatis</a>
-    </p>
+    <div class="post-nav py-md-1">
+      
+      <div class="nav-next">
+        <a class="btn btn-secondary post-link" href="#">
+          <span class="label muted">
+            {% include '@atoms/icon/icon.twig' with { icon: 'arrow-left', icon_classes:'feather' } %}
+            Next post<span class="colon">:</span>
+          </span>
+          <span class="post-title"><strong>Lorem ipsum dolor sit amet</strong></span>
+        </a>
+      </div>
+      
+      <div class="nav-prev">
+        <a class="btn btn-secondary post-link" href="#">
+          <span class="label muted">
+            Previous post<span class="colon">:</span>
+            {% include '@atoms/icon/icon.twig' with { icon: 'arrow-right', icon_classes:'feather' } %}
+          </span>
+          <span class="post-title"><strong>Consectetur adipiscing elit</strong></span>
+        </a>
+      </div>
+      
+    </div>
+    
+    <div class="post-meta mt-4">
+      <h2 class="h5">Mots-clés</h2>
+      <p>
+        <a href="#" class="tag tag-primary">Lorem ipsum</a>
+        <a href="#" class="tag tag-primary">Dolor sit amet</a>
+        <a href="#" class="tag tag-primary">Consectetur</a>
+        <a href="#" class="tag tag-primary">Adipiscing</a>
+        <a href="#" class="tag tag-primary">Praesent</a>
+        <a href="#" class="tag tag-primary">Viverra a augue</a>
+        <a href="#" class="tag tag-primary">Morbi ante nisi</a>
+        <a href="#" class="tag tag-primary">Venenatis</a>
+      </p>
+    </div>
 
   </footer>
 

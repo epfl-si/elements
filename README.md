@@ -79,6 +79,7 @@ Because the previous command will normally push your release commits and tag, si
 Complete every commit and tag message if needed. Then put yourself in your local **`master`** branch and type the following command to **start the build publishing task** :
 
 ```bash
+$ git checkout master
 $ sh publish.sh x.x.x
 ```
 

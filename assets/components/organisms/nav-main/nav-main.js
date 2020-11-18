@@ -17,10 +17,10 @@ const nav = () => {
     $('body').toggleClass('mobile-menu-open');
   };
 
-  // Open or close desktop toggle navigation, keeping it's atual position.
+  // Open or close desktop toggle navigation, keeping it's actual position.
   // Used for the hamburger desktop menu to display current position
   const toggleDesktopMenu = (mustOpen = false) => {
-    const navToggle = $('#nav-toggle');
+    const navToggle = $('.nav-toggle');
     navToggle.toggleClass('open');
     const offsetX = navToggle.offset().left + navToggle.outerWidth(true);
     const offsetY = navToggle.offset().top - $(window).scrollTop();
@@ -76,7 +76,7 @@ const nav = () => {
     toggleMobileMenu();
   });
 
-  // Bind aciton to close toggle navigation, when clicking the white overlay
+  // Bind action to close toggle navigation, when clicking the white overlay
   $('.overlay').on('click', (e) => {
     e.preventDefault();
     toggleDesktopMenu();
@@ -84,13 +84,13 @@ const nav = () => {
 
   // Bind action to the desktop hamburger (next to breadcrumbs)
   // eslint-disable-next-line
-  $('#nav-toggle').on('click', function() {
+  $('.nav-toggle').on('click', function() {
     if ($(this).hasClass('nav-toggle-async') && !$(this).hasClass('open')) {
       $(this).addClass('is-loading');
 
       // Demo of loading resolution
       if ($('#styleguide').length > 0) {
-        setTimeout(() => $('#nav-toggle').trigger('loadend'), 2000);
+        setTimeout(() => $('.nav-toggle-async').trigger('loadend'), 700);
       }
     } else {
       toggleDesktopMenu(true);
@@ -98,7 +98,7 @@ const nav = () => {
   });
 
   // eslint-disable-next-line
-  $('#nav-toggle').on('loadend', function() {
+  $('.nav-toggle').on('loadend', function() {
     $(this).removeClass('is-loading');
     toggleDesktopMenu(true);
   });
