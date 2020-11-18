@@ -1,5 +1,5 @@
 {
-  "icons":[
+  "icons": [
     "accessibility",
     "arrow-left",
     "arrow-right",
@@ -333,14 +333,17 @@
     "Di"
   ],
   "faq": [
-    ["Why you should make an FAQ page",
-     "An FAQ, or Frequently Asked Questions, page allows for visitors to find answers to all their questions in one place. Not only does it make life easier for your website visitors, it can save your time and resources because you don't have as many people contacting you for answers."
+    [
+      "Why you should make an FAQ page",
+      "An FAQ, or Frequently Asked Questions, page allows for visitors to find answers to all their questions in one place. Not only does it make life easier for your website visitors, it can save your time and resources because you don't have as many people contacting you for answers."
     ],
-    ["Is an egg a fruit or a vegetable?",
-     "It is a fruit that grows from a plant called Eggnoramus Logicalus. Although the plant is low to the ground and is often a part of a vegetable farm, it is still a fruit, similar to tomato."
+    [
+      "Is an egg a fruit or a vegetable?",
+      "It is a fruit that grows from a plant called Eggnoramus Logicalus. Although the plant is low to the ground and is often a part of a vegetable farm, it is still a fruit, similar to tomato."
     ],
-    ["How were unicorns made?",
-     "A kid with ice cream was like \"Ooh pony\". The kid tried to ride it but dropped his ice cream on the pony's head. The cone stayed and when the pony had a baby, the baby was an unicorn."
+    [
+      "How were unicorns made?",
+      "A kid with ice cream was like \"Ooh pony\". The kid tried to ride it but dropped his ice cream on the pony's head. The cone stayed and when the pony had a baby, the baby was an unicorn."
     ]
   ],
   "people": [
@@ -358,11 +361,11 @@
         "Organic Chemistry",
         "Renewable Energy"
       ],
-      "phones" : [
+      "phones": [
         "57218",
         "81448"
       ],
-      "rooms" : [
+      "rooms": [
         "BM 4129"
       ]
     },
@@ -382,10 +385,10 @@
         "Educational technologist",
         "Guest"
       ],
-      "phones" : [
+      "phones": [
         "34567"
       ],
-      "rooms" : [
+      "rooms": [
         "AM 275"
       ]
     },
@@ -398,10 +401,10 @@
       "functions": [
         "Staff"
       ],
-      "phones" : [
+      "phones": [
         "34567"
       ],
-      "rooms" : [
+      "rooms": [
         "BM 4129"
       ]
     },
@@ -414,10 +417,10 @@
       "functions": [
         "Guest"
       ],
-      "phones" : [
+      "phones": [
         "34868"
       ],
-      "rooms" : [
+      "rooms": [
         "BM 4129"
       ]
     },
@@ -430,10 +433,10 @@
       "functions": [
         "Scientist"
       ],
-      "phones" : [
+      "phones": [
         "31171"
       ],
-      "rooms" : [
+      "rooms": [
         "EM 3129"
       ]
     },
@@ -446,10 +449,10 @@
       "functions": [
         "Staff"
       ],
-      "phones" : [
+      "phones": [
         "31471"
       ],
-      "rooms" : [
+      "rooms": [
         "CM 3129"
       ]
     },
@@ -463,10 +466,10 @@
         "Doctoral Assistant",
         "Project Assistant"
       ],
-      "phones" : [
+      "phones": [
         "11471"
       ],
-      "rooms" : [
+      "rooms": [
         "GM 3129"
       ]
     }
@@ -869,25 +872,29 @@
       "content": "Une équipe de chercheurs de l’EPFL et européenne a découvert une erreur dans la façon dont ont été estimées jusqu’ici les températures des océans, faisant potentiellement du réchauffement climatique actuel un évènement sans précédent ces cent derniers millions d’années.",
       "image": "./images/styleguide/homepage/1-teaser-news-highlight.jpg"
     },
-
     "section_one": {
       "cards": [
         {
           "title": "La valse quantique des électrons dessine les puces de demain",
           "date": "16.09.17",
-          "info": ["Actualité", "Nanotechnologies"],
+          "info": [
+            "Actualité",
+            "Nanotechnologies"
+          ],
           "content": "Des chercheurs de l’EPFL ont réussi à mesurer certaines propriétés quantiques d’électrons de semi-conducteurs à deux dimensions. Leurs travaux dans le domaine de la spintronique pourraient notamment aboutir à la fabrication de puces plus petites et dégageant moins de chaleur."
         },
         {
           "title": "Un système intelligent et miniature qui analyse les biomarqueurs de la sueur",
           "date": "15.09.17",
-          "info": ["Recherche", "Prix et récompenses"],
+          "info": [
+            "Recherche",
+            "Prix et récompenses"
+          ],
           "content": "Des chercheurs de l’EPFL et de la start-up Xsensio ont intégré sur une puce de moins d’un centimètre carré un système portable entier à faible énergie permettant l’encapsulation et l’analyse des biomarqueurs contenus dans la sueur."
         }
       ],
       "readmore": "Toutes les actualités"
     },
-
     "section_two": {
       "title": "EPFL en bref",
       "subtitle_1": "Les missions de l'école",
@@ -928,19 +935,16 @@
         }
       ]
     },
-
     "highlight_2": {
       "title": "Étudier à l’EPFL, 13 filières de formation",
       "content": "Treize filières de formation dans les sciences de l’ingénieur, des programmes doctoraux de choix, des laboratoires de pointe dirigés par des professeurs de réputation internationale, un campus moderne en plein développement qui s’étend sur plus de 10’000 mètres carrés.",
       "image": "./images/styleguide/homepage/3-teaser-basic-page-highlight.jpg"
     },
-
     "highlight_3": {
       "title": "Pour une transformation plus efficace des molécules",
       "content": "Le chimiste Xile Hu est le lauréat du Prix Latsis 2017. Ce professeur à l’Ecole polytechnique fédérale de Lausanne est récompensé pour son impressionnante carrière scientifique et ses excellents travaux de recherche sur la compréhension fondamentale de la catalyse.",
       "image": "./images/styleguide/homepage/4-teaser-news-highlight.jpg"
     },
-
     "section_3": {
       "title": "Une école multi-sites, de Lausanne vers le monde",
       "subtitle": "Une école, plusieurs campus",
@@ -971,21 +975,87 @@
         }
       ]
     },
-
     "highlight_4": {
       "title": "Explorer le portail étudiants de l'EPFL",
       "content": "Découvrez l'ensemble des services dédiés aux étudiants : vie académique, cours, cartes d'accès et plans, transports et restauration. Mais aussi les bons plans, les réductions et les événements organisés par les nombreuses associations d'étudiants.",
       "image": "./images/styleguide/homepage/6-teaser-basic-page-highlight.jpg"
     },
-
     "questions": {
       "image": "./images/styleguide/homepage/7-science-question-SF.jpg"
     },
-
     "highlight_5": {
       "title": "L’EPFL vue du ciel",
       "content": "L'association Aéropoly a pris des images du campus à l'aide d'un dirigeable avant l'ouverture de Balélec. Le dirigeable avait déjà pris son envol une première fois pendant Polynice, événement organisé pour fêter les 60 ans de l'AGEPoly, soit l'association des étudiants de l'EPFL.",
       "image": "./images/styleguide/homepage/8-teaser-news-highlight.jpg"
     }
-  }
+  },
+  "menu": [
+    {
+      "url": "https://www.epfl.ch/about/fr/",
+      "title": "À propos",
+      "submenu" : [
+        {
+          "url": "https://www.epfl.ch/about/presidency/fr/accueil/",
+          "title": "Présidence"
+        },
+        {
+          "url": "https://www.epfl.ch/about/overview/fr/presentation/",
+          "title": "Présentation",
+          "submenu": [
+            {
+              "url": "https://www.epfl.ch/about/overview/fr/histoire/",
+              "title": "Histoire de l'EPFL"
+            },
+            {
+              "url": "https://www.epfl.ch/about/overview/fr/statistiques-institutionnelles/",
+              "title": "Statistiques Institutionnelles",
+              "selected": true,
+              "submenu": [
+                {
+                  "url": "https://www.epfl.ch/about/overview/fr/statistiques-institutionnelles/statistiques-rankings/",
+                  "title": "Statistiques Rankings",
+                  "submenu": [
+                    {
+                      "url": "https://www.epfl.ch/about/overview/fr/statistiques-institutionnelles/statistiques-rankings/glossaire-rankings/",
+                      "title": "Glossaire Rankings"
+                    }
+                  ]
+                }
+                ]
+            },
+            {
+              "url": "https://www.epfl.ch/about/overview/fr/identite/",
+              "title": "Identité"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.epfl.ch/education/fr/education/",
+      "title": "Éducation",
+      "submenu" : [
+        {
+          "url": "https://www.epfl.ch/education/bachelor/fr/index-fr-html/",
+          "title": "Bachelor"
+        },
+        {
+          "url": "https://www.epfl.ch/education/master/fr/index-fr-html/",
+          "title": "Master"
+        },
+        {
+          "url": "https://www.epfl.ch/education/phd/fr/index-fr-html/",
+          "title": "Doctorat"
+        }
+      ]
+    },
+    {
+      "url": "https://www.epfl.ch/research/fr/recherche/",
+      "title": "Recherche"
+    },
+    {
+      "url": "https://www.epfl.ch/innovation/fr/innovation-2/",
+      "title": "Innovation"
+    }
+  ]
 }
