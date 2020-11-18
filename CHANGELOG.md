@@ -1,5 +1,10 @@
 # CHANGELOG
 
+*2.17.0* (2020-11-18)
+- Add posts navigation to the blog detail #480 #481
+- Fix contact columns alignment #478
+- Fix browse button in async mode #477
+
 *2.16.1* (2020-10-13)
 - Fix loading jQuery in a non-http server
 - Fix contact list data
