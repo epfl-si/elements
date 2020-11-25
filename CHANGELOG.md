@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*2.17.1* (2020-11-25)
+- Fix icons position #483
+
 *2.17.0* (2020-11-18)
 - Add posts navigation to the blog detail #480 #481
 - Fix contact columns alignment #478
