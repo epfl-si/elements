@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*2.17.2* (2020-12-09)
+- Add link to legal footer
+
 *2.17.1* (2020-11-25)
 - Fix icons position #483
 
