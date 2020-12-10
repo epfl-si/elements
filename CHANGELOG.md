@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*2.18.0-beta* (2020-12-10)
+- Add german examples
+
 *2.17.2* (2020-12-09)
 - Add link to legal footer
 
