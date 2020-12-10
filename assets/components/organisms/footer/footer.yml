@@ -2,32 +2,25 @@ title: Footer
 name: footer
 wrapper: container
 variants:
+  - name: ge
+    notes: german (WIP)
   - name: en
     notes: english
   - name: light
     title: Footer light
     notes: french
+  - name: light-ge
+    notes: german  (WIP)
   - name: light-en
     notes: english
   - name: dark
     title: Footer Dark
-    notes: french
-    wrapper: bg-dark container
-    notes: Add .bg-dark to the container\:
-  - name: dark-en
-    notes: english
+    notes: Add .bg-dark to the container
     wrapper: bg-dark container
   - name: light-dark
     title: Footer dark light
-    notes: french
-    wrapper: bg-dark container
-    notes: To get the light footer in dark, use this specific html and add .bg-dark to the container:
-  - name: light-dark-en
-    notes: english
+    notes: Add .bg-dark to the light container
     wrapper: bg-dark container
 notes: |
-
-  <br>
-
   ### Standard
   french

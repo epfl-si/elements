@@ -3,11 +3,10 @@ name: header
 variants:
   - name: en
     notes: english
-  - name: light-fr
+  - name: ge
+    notes: german (WIP)
+  - name: light
     title: Header light
-    notes: french
-  - name: light-en
-    notes: english
 notes: |
   **Current item highlight**
 

@@ -475,390 +475,511 @@
     {
       "namefr": "Faculté de l'environnement naturel, architectural et construit",
       "nameen": "School of Architecture, Civil and Environmental Engineering",
+      "namege": "Fakultät für Bau, Architektur und Umwelt",
       "acronym": "ENAC",
       "urlfr": "https://www.epfl.ch/schools/enac/fr/home/",
-      "urlen": "https://www.epfl.ch/schools/enac/"
+      "urlen": "https://www.epfl.ch/schools/enac/",
+      "urlge": "https://www.epfl.ch/schools/enac/"
     },
     {
       "namefr": "Faculté des sciences de base",
       "nameen": "School of Basic Sciences",
+      "namege": "Fakultät für Grundlagenwissenschaften",
       "acronym": "SB",
       "urlfr": "https://www.epfl.ch/schools/sb/fr/",
-      "urlen": "https://www.epfl.ch/schools/sb/"
+      "urlen": "https://www.epfl.ch/schools/sb/",
+      "urlge": "https://www.epfl.ch/schools/sb/"
     },
     {
       "namefr": "Faculté des sciences et techniques de l'ingénieur",
       "nameen": "School of Engineering",
+      "namege": "Fakultät für Ingenieurwissenschaften",
       "acronym": "STI",
       "urlfr": "https://sti.epfl.ch/fr/",
-      "urlen": "https://sti.epfl.ch"
+      "urlen": "https://sti.epfl.ch",
+      "urlge": "https://sti.epfl.ch"
     },
     {
       "namefr": "Faculté informatique et communications",
       "nameen": "School of Computer and Communication Sciences",
+      "namege": "Fakultät für Informatik und Kommunikation",
       "acronym": "IC",
       "urlfr": "https://www.epfl.ch/schools/ic/fr/faculte-informatique-et-communication/",
-      "urlen": "https://www.epfl.ch/schools/ic/"
+      "urlen": "https://www.epfl.ch/schools/ic/",
+      "urlge": "https://www.epfl.ch/schools/ic/"
     },
     {
       "namefr": "Faculté des sciences de la vie",
       "nameen": "School of Life Sciences",
+      "namege": "Fakultät für Lebenswissenschaften",
       "acronym": "SV",
       "urlfr": "https://www.epfl.ch/schools/sv/fr/science-de-la-vie/",
-      "urlen": "https://www.epfl.ch/schools/sv/"
+      "urlen": "https://www.epfl.ch/schools/sv/",
+      "urlge": "https://www.epfl.ch/schools/sv/"
     },
     {
       "namefr": "Collège du management de la technologie",
       "nameen": "College of Management of Technology",
+      "namege": "College of Management of Technology",
       "acronym": "CDM",
       "urlfr": "https://www.epfl.ch/schools/cdm/fr/college-du-management-de-la-technologie/",
-      "urlen": "https://www.epfl.ch/schools/cdm/"
+      "urlen": "https://www.epfl.ch/schools/cdm/",
+      "urlge": "https://www.epfl.ch/schools/cdm/"
     },
     {
       "namefr": "Collège des humanités",
       "nameen": "College of Humanities",
+      "namege": "College of Humanities CDH",
       "acronym": "CDH",
       "urlfr": "https://www.epfl.ch/schools/cdh/fr/index-fr-html/",
-      "urlen": "https://www.epfl.ch/schools/cdh/"
+      "urlen": "https://www.epfl.ch/schools/cdh/",
+      "urlge": "https://www.epfl.ch/schools/cdh/"
     },
     {
       "namefr": "Middle East",
       "nameen": "Middle East",
+      "namege": "Middle East",
       "acronym": "ME",
       "urlfr": "http://www.epfl.ae",
-      "urlen": "http://www.epfl.ae"
+      "urlen": "http://www.epfl.ae",
+      "urlge": "http://www.epfl.ae"
     }
   ],
   "header": [
     {
       "namefr": "À propos",
       "nameen": "About",
+      "namege": "Über uns",
       "urlfr": "https://www.epfl.ch/about/fr/a-propos/",
-      "urlen": "https://www.epfl.ch/about/"
+      "urlen": "https://www.epfl.ch/about/",
+      "urlge": "https://www.epfl.ch/about/"
     },
     {
       "namefr": "Éducation",
       "nameen": "Education",
+      "namege": "Bildung",
       "urlfr": "https://www.epfl.ch/education/fr/education/",
-      "urlen": "https://www.epfl.ch/education/"
+      "urlen": "https://www.epfl.ch/education/",
+      "urlge": "https://www.epfl.ch/education/"
     },
     {
       "namefr": "Recherche",
       "nameen": "Research",
+      "namege": "Forschung",
       "urlfr": "https://www.epfl.ch/research/fr/recherche/",
-      "urlen": "https://www.epfl.ch/research/"
+      "urlen": "https://www.epfl.ch/research/",
+      "urlge": "https://www.epfl.ch/research/"
     },
     {
       "namefr": "Innovation",
       "nameen": "Innovation",
+      "namege": "Innovation",
       "urlfr": "https://www.epfl.ch/innovation/fr/innovation-2/",
-      "urlen": "https://www.epfl.ch/innovation/"
+      "urlen": "https://www.epfl.ch/innovation/",
+      "urlge": "https://www.epfl.ch/innovation/"
     },
     {
       "namefr": "Facultés",
       "nameen": "Schools",
+      "namege": "Fakultäten",
       "urlfr": "https://www.epfl.ch/schools/fr/facultes/",
-      "urlen": "https://www.epfl.ch/schools/"
+      "urlen": "https://www.epfl.ch/schools/",
+      "urlge": "https://www.epfl.ch/schools/"
     },
     {
       "namefr": "Campus",
       "nameen": "Campus",
+      "namege": "Campus",
       "urlfr": "https://www.epfl.ch/campus/fr/campus/",
-      "urlen": "https://www.epfl.ch/campus/"
+      "urlen": "https://www.epfl.ch/campus/",
+      "urlge": "https://www.epfl.ch/campus/"
     }
   ],
   "footer": [
     {
       "headingfr": "À propos",
       "headingen": "About",
+      "headingge": "Über uns",
       "items": [
         {
           "namefr": "Présentation",
           "urlfr": "https://www.epfl.ch/about/overview/fr/presentation/",
           "nameen": "Overview",
-          "urlen": "https://www.epfl.ch/about/overview/"
+          "urlen": "https://www.epfl.ch/about/overview/",
+          "namege": "Präsentation",
+          "urlge": "https://www.epfl.ch/about/overview/"
         },
         {
           "namefr": "Président",
           "urlfr": "https://www.epfl.ch/about/presidency/fr/accueil/",
           "nameen": "President",
-          "urlen": "https://www.epfl.ch/about/presidency/"
+          "urlen": "https://www.epfl.ch/about/presidency/",
+          "namege": "Präsident",
+          "urlge": "https://www.epfl.ch/about/presidency/"
         },
         {
           "namefr": "Vice-Présidences",
           "urlfr": "https://www.epfl.ch/about/vice-presidencies/fr/vice-presidences/",
           "nameen": "Vice-presidencies",
-          "urlen": "https://www.epfl.ch/about/vice-presidencies/"
+          "urlen": "https://www.epfl.ch/about/vice-presidencies/",
+          "namege": "Vizepräsidium",
+          "urlge": "https://www.epfl.ch/about/presidency/"
         },
         {
           "namefr": "Campus étendus",
           "urlfr": "https://www.epfl.ch/about/campus/fr/accueil/",
           "nameen": "Extended campus",
-          "urlen": "https://www.epfl.ch/about/campus/"
+          "urlen": "https://www.epfl.ch/about/campus/",
+          "namege": "Erweiterter Campus",
+          "urlge": "https://www.epfl.ch/about/campus/"
         },
         {
           "namefr": "Travailler à l'EPFL",
           "urlfr": "https://www.epfl.ch/about/working/fr/travailler-a-lepfl/",
           "nameen": "Working at EPFL",
-          "urlen": "https://www.epfl.ch/about/working/"
+          "urlen": "https://www.epfl.ch/about/working/",
+          "namege": "Bei der EPFL arbeiten",
+          "urlge": "https://www.epfl.ch/about/working/"
         },
         {
           "namefr": "Recruter des talents de l'EPFL",
           "urlfr": "https://www.epfl.ch/about/recruiting/fr/recrutement/",
           "nameen": "Recruiting EPFL talents",
-          "urlen": "https://www.epfl.ch/about/recruiting/"
+          "urlen": "https://www.epfl.ch/about/recruiting/",
+          "namege": "Rekrutierung von Talenten durch die EPFL",
+          "urlge": "https://www.epfl.ch/about/recruiting/"
         },
         {
           "namefr": "News & médias",
           "urlfr": "https://www.epfl.ch/about/news-and-media/fr/accueil/",
           "nameen": "News & media",
-          "urlen": "https://www.epfl.ch/about/news-and-media/"
+          "urlen": "https://www.epfl.ch/about/news-and-media/",
+          "namege": "News & Medien",
+          "urlge": "https://www.epfl.ch/about/news-and-media/"
         },
         {
           "namefr": "Durabilité",
           "urlfr": "https://www.epfl.ch/about/sustainability/fr/accueil/",
           "nameen": "Sustainability",
-          "urlen": "https://www.epfl.ch/about/sustainability/"
+          "urlen": "https://www.epfl.ch/about/sustainability/",
+          "namege": "Nachhaltigkeit",
+          "urlge": "https://www.epfl.ch/about/sustainability/"
         },
         {
           "namefr": "Égalité des chances",
           "urlfr": "https://equality.epfl.ch/fr/index-fr-html/",
           "nameen": "Equal opportunities",
-          "urlen": "https://equality.epfl.ch"
+          "urlen": "https://equality.epfl.ch",
+          "namege": "Chancengleichheit",
+          "urlge": "https://equality.epfl.ch"
         },
         {
           "namefr": "Philanthropie",
           "urlfr": "https://www.epfl.ch/about/philanthropy/fr/philanthropie/",
           "nameen": "Philanthropy",
-          "urlen": "https://www.epfl.ch/about/philanthropy/"
+          "urlen": "https://www.epfl.ch/about/philanthropy/",
+          "namege": "Philanthropie\n",
+          "urlge": "https://www.epfl.ch/about/philanthropy/"
         },
         {
           "namefr": "Cooperation",
           "urlfr": "https://essentialtech.center",
           "nameen": "Cooperation",
-          "urlen": "https://essentialtech.center"
+          "urlen": "https://essentialtech.center",
+          "namege": "Zusammenarbeit",
+          "urlge": "https://essentialtech.center"
         },
         {
           "namefr": "Alumni",
           "urlfr": "https://www.epflalumni.ch/fr/",
           "nameen": "Alumni",
-          "urlen": "https://www.epflalumni.ch"
+          "urlen": "https://www.epflalumni.ch",
+          "namege": "Alumni",
+          "urlge": "https://www.epflalumni.ch"
         }
       ]
     },
     {
       "headingfr": "Éducation",
       "headingen": "Education",
+      "headingge": "Bildung",
       "items": [
         {
           "namefr": "Initiatives pédagogiques",
           "urlfr": "https://www.epfl.ch/education/educational-initiatives/fr/accueil/",
           "nameen": "Educational initiatives",
-          "urlen": "https://www.epfl.ch/education/educational-initiatives/"
+          "urlen": "https://www.epfl.ch/education/educational-initiatives/",
+          "namege": "Bildungsinitiativen",
+          "urlge": "https://www.epfl.ch/education/educational-initiatives/"
         },
         {
           "namefr": "Bachelor",
           "urlfr": "https://www.epfl.ch/education/bachelor/fr/index-fr-html/",
           "nameen": "Bachelor",
-          "urlen": "https://www.epfl.ch/education/bachelor/"
+          "urlen": "https://www.epfl.ch/education/bachelor/",
+          "namege": "Bachelor",
+          "urlge": "https://www.epfl.ch/education/educational-initiatives/"
         },
         {
           "namefr": "Master",
           "urlfr": "https://www.epfl.ch/education/master/fr/index-fr-html/",
           "nameen": "Master",
-          "urlen": "https://www.epfl.ch/education/master/"
+          "urlen": "https://www.epfl.ch/education/master/",
+          "namege": "Master",
+          "urlge": "https://www.epfl.ch/education/master/"
         },
         {
           "namefr": "Doctorat",
           "urlfr": "https://phd.epfl.ch",
           "nameen": "PhD",
-          "urlen": "https://phd.epfl.ch"
+          "urlen": "https://phd.epfl.ch",
+          "namege": "Doktorat",
+          "urlge": "https://phd.epfl.ch"
         },
         {
           "namefr": "Formation continue",
           "urlfr": "https://www.epfl.ch/education/continuing-education/fr/formation-continue/",
           "nameen": "Continuing education",
-          "urlen": "https://www.epfl.ch/education/continuing-education/"
+          "urlen": "https://www.epfl.ch/education/continuing-education/",
+          "namege": "Weiterbildung",
+          "urlge": "https://www.epfl.ch/education/continuing-education/"
         },
         {
           "namefr": "International",
           "urlfr": "https://www.epfl.ch/education/international/fr/mobilite/",
           "nameen": "International",
-          "urlen": "https://www.epfl.ch/education/international/en/mobility/"
+          "urlen": "https://www.epfl.ch/education/international/en/mobility/",
+          "namege": "International",
+          "urlge": "https://www.epfl.ch/education/international/en/mobility/"
         },
         {
           "namefr": "Admission",
           "urlfr": "https://www.epfl.ch/education/admission/fr/admission/",
           "nameen": "Admission",
-          "urlen": "https://www.epfl.ch/education/admission/"
+          "urlen": "https://www.epfl.ch/education/admission/",
+          "namege": "Zulassung",
+          "urlge": "https://www.epfl.ch/education/admission/"
         },
         {
           "namefr": "Gestion des études",
           "urlfr": "https://www.epfl.ch/education/studies/",
           "nameen": "Study management",
-          "urlen": "https://www.epfl.ch/education/studies/en/epfl-studies/"
+          "urlen": "https://www.epfl.ch/education/studies/en/epfl-studies/",
+          "namege": "Studienverwaltung",
+          "urlge": "https://www.epfl.ch/education/studies/en/epfl-studies/"
         },
         {
           "namefr": "Promotion de l'éducation et des sciences",
           "urlfr": "https://www.epfl.ch/education/education-and-science-outreach/fr/index-fr-html/",
           "nameen": "Sciences and education outreach",
-          "urlen": "https://www.epfl.ch/education/education-and-science-outreach/"
+          "urlen": "https://www.epfl.ch/education/education-and-science-outreach/",
+          "namege": "Förderung von Bildung und Wissenschaft",
+          "urlge": "https://www.epfl.ch/education/education-and-science-outreach/"
         }
       ]
     },
     {
       "headingfr": "Recherche",
       "headingen": "Research",
+      "headingge": "Forschung",
       "items": [
         {
           "namefr": "Domaines de recherche",
           "urlfr": "https://www.epfl.ch/research/domains/fr/domaines/",
           "nameen": "Research domains",
-          "urlen": "https://www.epfl.ch/research/domains/"
+          "urlen": "https://www.epfl.ch/research/domains/",
+          "namege": "Forschungsbereiche",
+          "urlge": "https://www.epfl.ch/research/domains/"
         },
         {
           "namefr": "Nos Professeurs",
           "urlfr": "https://www.epfl.ch/research/faculty-members/fr/nos-professeur-e-s/",
           "nameen": "Faculty members",
-          "urlen": "https://www.epfl.ch/research/faculty-members/"
+          "urlen": "https://www.epfl.ch/research/faculty-members/",
+          "namege": "Unsere Lehrkräfte",
+          "urlge": "https://www.epfl.ch/research/faculty-members/"
         },
         {
           "namefr": "Collaborer avec nos chercheurs",
           "urlfr": "https://www.epfl.ch/research/collaborate/fr/collaborer-avec-nos-chercheurs/",
           "nameen": "Collaborate with our researchers",
-          "urlen": "https://www.epfl.ch/research/collaborate/"
+          "urlen": "https://www.epfl.ch/research/collaborate/",
+          "namege": "Mit unseren Forschenden zusammenarbeiten",
+          "urlge": "https://www.epfl.ch/research/collaborate/"
         },
         {
           "namefr": "Infrastructures à disposition",
           "urlfr": "https://www.epfl.ch/research/facilities/fr/infrastructure-a-disposition/",
           "nameen": "Research facilities",
-          "urlen": "https://www.epfl.ch/research/facilities/"
+          "urlen": "https://www.epfl.ch/research/facilities/",
+          "namege": "Verfügbare Infrastruktur",
+          "urlge": "https://www.epfl.ch/research/facilities/"
         },
         {
           "namefr": "Accéder à nos technologies",
           "urlfr": "https://www.epfl.ch/research/access-technology/fr/acceder-a-nos-technologies/",
           "nameen": "Access our technologies",
-          "urlen": "https://www.epfl.ch/research/access-technology/"
+          "urlen": "https://www.epfl.ch/research/access-technology/",
+          "namege": "Zugang zu unseren Technologien",
+          "urlge": "https://www.epfl.ch/research/access-technology/"
         },
         {
           "namefr": "Services aux chercheurs",
           "urlfr": "https://www.epfl.ch/research/services/fr/services-pour-nos-labos/",
           "nameen": "Services for researchers",
-          "urlen": "https://www.epfl.ch/research/services/"
+          "urlen": "https://www.epfl.ch/research/services/",
+          "namege": "Dienstleistungen für Forschende",
+          "urlge": "https://www.epfl.ch/research/services/"
         },
         {
           "namefr": "Déclaration d'éthique",
           "urlfr": "https://www.epfl.ch/research/ethic-statement/fr/declaration-ethique/",
           "nameen": "Ethical statement",
-          "urlen": "https://www.epfl.ch/research/ethic-statement/"
+          "urlen": "https://www.epfl.ch/research/ethic-statement/",
+          "namege": "Ethikerklärung",
+          "urlge": "https://www.epfl.ch/research/ethic-statement/"
         },
         {
           "namefr": "Prix et distinctions",
           "urlfr": "https://www.epfl.ch/research/awards/fr/prix-distinctions/",
           "nameen": "Research awards",
-          "urlen": "https://www.epfl.ch/research/awards/"
+          "urlen": "https://www.epfl.ch/research/awards/",
+          "namege": "Preise und Auszeichnungen",
+          "urlge": "https://www.epfl.ch/research/awards/"
         }
       ]
     },
     {
       "headingfr": "Innovation",
       "headingen": "Innovation",
+      "headingge": "Innovation",
       "items": [
         {
           "namefr": "Domaines d'innovation",
           "urlfr": "https://www.epfl.ch/innovation/domains/fr/domaines/",
           "nameen": "Innovation domains",
-          "urlen": "https://www.epfl.ch/innovation/domains/"
+          "urlen": "https://www.epfl.ch/innovation/domains/",
+          "namege": "Innovationsbereiche",
+          "urlge": "https://www.epfl.ch/innovation/domains/"
         },
         {
           "namefr": "Collaboration avec l'industrie",
           "urlfr": "https://www.epfl.ch/innovation/industry/fr/industries/",
           "nameen": "Industry Collaborations",
-          "urlen": "https://www.epfl.ch/innovation/industry/"
+          "urlen": "https://www.epfl.ch/innovation/industry/",
+          "namege": "Zusammenarbeit mit der Industrie",
+          "urlge": "https://www.epfl.ch/innovation/industry/"
         },
         {
           "namefr": "Start-up",
           "urlfr": "https://www.epfl.ch/innovation/startup/fr/",
           "nameen": "Startup",
-          "urlen": "https://www.epfl.ch/innovation/startup/"
+          "urlen": "https://www.epfl.ch/innovation/startup/",
+          "namege": "Unternehmertum und Start-ups",
+          "urlge": "https://www.epfl.ch/innovation/startup/"
         }
       ]
     },
     {
       "headingfr": "Campus",
       "headingen": "Campus",
+      "headingge": "Campus",
       "items": [
         {
           "namefr": "Information visiteurs",
           "urlfr": "https://www.epfl.ch/campus/visitors/fr/informations-visiteurs/",
           "nameen": "Visitors information",
-          "urlen": "https://www.epfl.ch/campus/visitors/"
+          "urlen": "https://www.epfl.ch/campus/visitors/",
+          "namege": "Besucherinformationen",
+          "urlge": "https://www.epfl.ch/campus/visitors/"
         },
         {
           "namefr": "Services et ressources",
           "urlfr": "https://www.epfl.ch/campus/services/",
           "nameen": "Services and resources",
-          "urlen": "https://www.epfl.ch/campus/services/en/homepage/"
+          "urlen": "https://www.epfl.ch/campus/services/en/homepage/",
+          "namege": "Services und Ressourcen",
+          "urlge": "https://www.epfl.ch/campus/services/en/homepage/"
         },
         {
           "namefr": "Bibliothèque",
           "urlfr": "https://www.epfl.ch/campus/library/fr/bibliotheque/",
           "nameen": "Library",
-          "urlen": "https://www.epfl.ch/campus/library/"
+          "urlen": "https://www.epfl.ch/campus/library/",
+          "namege": "Bibliothek",
+          "urlge": "https://www.epfl.ch/campus/library/"
         },
         {
           "namefr": "Restaurants, commerces et hôtels",
           "urlfr": "https://restauration.epfl.ch",
           "nameen": "Restaurants, shops and hotels",
-          "urlen": "https://restauration.epfl.ch"
+          "urlen": "https://restauration.epfl.ch",
+          "namege": "Restaurants, Geschäfte und Hotels",
+          "urlge": "https://restauration.epfl.ch"
         },
         {
           "namefr": "Événements",
           "urlfr": "https://www.epfl.ch/campus/events/fr/evenements/",
           "nameen": "Events",
-          "urlen": "https://www.epfl.ch/campus/events/"
+          "urlen": "https://www.epfl.ch/campus/events/",
+          "namege": "Veranstaltungen",
+          "urlge": "https://www.epfl.ch/campus/events/"
         },
         {
           "namefr": "Crèches et garderies",
           "urlfr": "https://equality.epfl.ch/fr/famille_vieprivee_prof/garderies/",
           "nameen": "Childcare",
-          "urlen": "https://equality.epfl.ch/family_worklife/daycare/"
+          "urlen": "https://equality.epfl.ch/family_worklife/daycare/",
+          "namege": "Kinderkrippen und Tagesstätten",
+          "urlge": "https://equality.epfl.ch/family_worklife/daycare/"
         },
         {
           "namefr": "Sport",
           "urlfr": "https://sport.unil.ch",
           "nameen": "Sport",
-          "urlen": "https://sport.unil.ch"
+          "urlen": "https://sport.unil.ch",
+          "namege": "Sport",
+          "urlge": "https://sport.unil.ch"
         },
         {
           "namefr": "Art et culture",
           "urlfr": "https://www.epfl.ch/campus/art-culture/fr/accueil/",
           "nameen": "Art and culture",
-          "urlen": "https://www.epfl.ch/campus/art-culture/"
+          "urlen": "https://www.epfl.ch/campus/art-culture/",
+          "namege": "Kunst und Kultur",
+          "urlge": "https://www.epfl.ch/campus/art-culture/"
         },
         {
           "namefr": "Aide, santé et sécurité",
           "urlfr": "https://securite.epfl.ch/securite-fr/",
           "nameen": "Health, security and safety",
-          "urlen": "https://securite.epfl.ch"
+          "urlen": "https://securite.epfl.ch",
+          "namege": "Hilfe, Gesundheit und Sicherheit",
+          "urlge": "https://securite.epfl.ch"
         },
         {
           "namefr": "Aumônerie",
           "urlfr": "https://www.epfl.ch/campus/spiritual-care/fr/index-fr-html/",
           "nameen": "Chaplaincy",
-          "urlen": "https://www.epfl.ch/campus/spiritual-care/"
+          "urlen": "https://www.epfl.ch/campus/spiritual-care/",
+          "namege": "Seelsorge",
+          "urlge": "https://www.epfl.ch/campus/spiritual-care/"
         },
         {
           "namefr": "Associations",
           "urlfr": "https://www.epfl.ch/campus/associations/fr/index-fr-html/",
           "nameen": "Associations",
-          "urlen": "https://www.epfl.ch/campus/associations/"
+          "urlen": "https://www.epfl.ch/campus/associations/",
+          "namege": "Vereinigungen",
+          "urlge": "https://www.epfl.ch/campus/associations/"
         },
         {
           "namefr": "Mobilité et transport",
           "urlfr": "https://www.epfl.ch/campus/mobility/fr/mobilite/",
           "nameen": "Mobility and transport",
-          "urlen": "https://www.epfl.ch/campus/mobility/"
+          "urlen": "https://www.epfl.ch/campus/mobility/",
+          "namege": "Mobilität und Transport",
+          "urlge": "https://www.epfl.ch/campus/mobility/"
         }
       ]
     }
