@@ -5,6 +5,9 @@
 {% if language == 'en' %}
 <p class="footer-title footer-title-no-underline">Follow EPFL on social media</p>
 {% endif %}
+{% if language == 'ge' %}
+  <p class="footer-title footer-title-no-underline">Der EPFL in sozialen Netzwerken folgen</p>
+{% endif %}
 <div class="footer-social">
   {% include '@atoms/social-icon/social-icon-link-group.twig' with { negative: true } %}
 </div>

@@ -27,6 +27,11 @@
     border-color: $nav-tabs-border-color;
     text-decoration: none;
     border-radius: 0;
+    padding: .5rem .8125rem;
+    
+    @include media-breakpoint-up(md) {
+      padding: .5rem 1rem;
+    }
 
     &:hover {
       z-index: $zindex-1;

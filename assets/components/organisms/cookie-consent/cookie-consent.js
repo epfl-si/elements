@@ -8,7 +8,7 @@ function get_cookieconsent_config() {
             'of cookies to improve your user experience and to make statistics ' +
             'of visits.',
         link: 'Read the disclaimer',
-        href: '//www.epfl.ch/about/overview/regulations-and-guidelines/disclaimer/'
+        href: '//go.epfl.ch/privacy-policy'
         },
         fr: {
         msg: 'En poursuivant votre navigation sur ce site, vous acceptez ' +
@@ -16,7 +16,7 @@ function get_cookieconsent_config() {
             'exp&eacute;rience utilisateur et r&eacute;aliser des statistiques ' +
             'de visites.',
         link: 'Lire les mentions l&eacute;gales',
-        href: '//www.epfl.ch/about/overview/fr/reglements-et-directives/mentions-legales/'
+        href: '//go.epfl.ch/protection-des-donnees'
         }
     };
     // Retrieve language, default 'fr'
