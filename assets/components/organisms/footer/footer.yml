@@ -3,14 +3,14 @@ name: footer
 wrapper: container
 variants:
   - name: ge
-    notes: german (WIP)
+    notes: german
   - name: en
     notes: english
   - name: light
     title: Footer light
     notes: french
   - name: light-ge
-    notes: german  (WIP)
+    notes: german
   - name: light-en
     notes: english
   - name: dark

@@ -1,10 +1,10 @@
 title: Header
 name: header
 variants:
+  - name: ge
+    notes: german
   - name: en
     notes: english
-  - name: ge
-    notes: german (WIP)
   - name: light
     title: Header light
 notes: |
