@@ -13,6 +13,9 @@
         {% if language == 'en' %}
         <a class="nav-item" href="{{ head.urlen }}">{{ head.nameen }}</a>
         {% endif %}
+        {% if language == 'ge' %}
+          <a class="nav-item" href="{{ head.urlge }}">{{ head.namege }}</a>
+        {% endif %}
       </li>
     {% endfor %}
   </ul>

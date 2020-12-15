@@ -1,13 +1,12 @@
 title: Header
 name: header
 variants:
+  - name: ge
+    notes: german
   - name: en
     notes: english
-  - name: light-fr
+  - name: light
     title: Header light
-    notes: french
-  - name: light-en
-    notes: english
 notes: |
   **Current item highlight**
 

@@ -9,6 +9,9 @@
       {% if language == 'en' %}
       <strong>{{col.headingen}}</strong>
       {% endif %}
+      {% if language == 'ge' %}
+        <strong>{{col.headingge}}</strong>
+      {% endif %}
     </button>
     <div class="collapse collapse-item" id="collapse-footer-{{loop.index ?: 1}}">
       <ul class="footer-links">
@@ -19,6 +22,9 @@
             {% endif %}
             {% if language == 'en' %}
             <a href="{{item.urlen}}">{{item.nameen}}</a>
+            {% endif %}
+            {% if language == 'ge' %}
+              <a href="{{item.urlge}}">{{item.namege}}</a>
             {% endif %}
           </li>
         {% endfor %}

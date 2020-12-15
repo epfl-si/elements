@@ -1,5 +1,10 @@
 # CHANGELOG
 
+*2.18.0* (2020-12-15)
+- Add german language for header and footer
+- Add slider
+- Rework the organism 'restauration'
+
 *2.17.2* (2020-12-09)
 - Add link to legal footer
 

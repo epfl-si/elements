@@ -10,11 +10,21 @@
   {% for day in restauration %}
   <div class="tab-pane fade show {% if loop.first %}active{% endif %}" id="{{ day|lower }}" role="tabpanel" aria-labelledby="{{ day|lower }}-tab">
     <div class="row my-3">
-      <div class="col-md-4 mb-3">
+      <div class="col-md-4">
         {% include '@atoms/select/select-multiple.twig' %}
       </div>
-      <div class="col-md-4 mb-3">
+      <div class="col-md-4">
         {% include '@atoms/select/select-multiple.twig' %}
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="formControlRange">Score Nutrimenu minimum</label>
+          <input type="range" id="nutrimenu-score" name="nutrimenu-score" class="form-control-range custom-range" min="1" max="10" step="1" value="4">
+          <output for="nutrimenu-score" aria-hidden="true"><strong>B+</strong></output>
+        </div>
+      </div>
+      <div class="col-12 mb-2">
+        {% include '@atoms/radio/radio-inline.twig' %}
       </div>
     </div>
     <div class="row">
@@ -31,7 +41,7 @@
       </div>
     </div>
     <div class="tablesaw-container">
-      <table class="table tablesaw tablesaw-stack" data-tablesaw-mode="stack">
+      <table class="table table-restauration tablesaw tablesaw-stack" data-tablesaw-mode="stack">
         <thead class="sr-only">
           <tr>
             <th>Menu</th>
@@ -41,45 +51,59 @@
         </thead>
         <tbody>
           <tr>
-            <td>
-              <img class="float-right float-md-left mx-3" src="./images/styleguide/restauration_illustration.png">
-              <b>Filets de perche (Estonie) sauce tartare</b><br>
-              Frites<br>
-              Salade mêlée
+            <td class="menu">
+              <div class="menu-content">
+                <div class="logo float-left pr-3">
+                  <img class="" src="./images/styleguide/restauration_illustration.png">
+                </div>
+                <div class="descr">
+                  <b>Filets de perche (Estonie) sauce tartare</b><br>
+                  Frites<br>
+                  Salade mêlée
+                </div>
+                <div class="nutrimenu">
+                  <img src="./images/styleguide/nutrimenu-score/nutrimenu-score-A.svg" alt="NutriMenu Score: A+" height="80">
+                </div>
+              </div>
             </td>
-            <td>
+            <td class="restaurant">
               <a href="#">Cafétéria BC</a>
             </td>
-            <td>
-              <div class="row">
-                <div class="col-6 text-primary"><abbr title="Prix étudiant">E</abbr></div>
-                <div class="col-6 text-right">11.90</div>
-              </div>
-              <div class="row">
-                <div class="col-6 text-primary"><abbr title="Prix visiteurs">V</abbr></div>
-                <div class="col-6 text-right">14.00</div>
-              </div>
-              <div class="row">
-                <div class="col-6 text-primary"><abbr title="Prix doctorants">D</abbr></div>
-                <div class="col-6 text-right">11.90</div>
-              </div>
-              <div class="row">
-                <div class="col-6 text-primary"><abbr title="Prix campus">C</abbr></div>
-                <div class="col-6 text-right">14.00</div>
-              </div>
+            <td class="prices">
+              <span class="price">
+                <abbr title="Prix étudiant" class="text-primary">E</abbr> 11.90 CHF
+              </span>
+              <span class="price">
+                <abbr title="Prix visiteurs" class="text-primary">V</abbr> 14.00 CHF
+              </span>
+              <span class="price">
+                <abbr title="Prix doctorants" class="text-primary">D</abbr> 11.90 CHF
+              </span>
+              <span class="price">
+                <abbr title="Prix campus" class="text-primary">C</abbr> 14.00 CHF
+              </span>
             </td>
           </tr>
           <tr>
-            <td>
-              <img class="float-right float-md-left mx-3" src="./images/styleguide/restauration_illustration.png">
-              <b>Galette</b><br>
+            <td class="menu">
+              <div class="menu-content">
+                <div class="logo float-left pr-3">
+                  <img class="" src="./images/styleguide/restauration_illustration.png">
+                </div>
+                <div class="descr">
+                <b>Galette</b><br>
               Thon, oignons, Fromage, Roquette<br>
+                </div>
+                <div class="nutrimenu">
+                  <img src="./images/styleguide/nutrimenu-score/nutrimenu-score-B.svg" alt="NutriMenu Score: B" height="80">
+                </div>
+              </div>
             </td>
-            <td>
+            <td class="restaurant">
               <a href="#">L'Esplanade</a>
             </td>
-            <td>
-              <div class="text-md-right">9.90</div>
+            <td class="prices">
+              <span class="price">9.90 CHF</span>
             </td>
           </tr>
         </tbody>

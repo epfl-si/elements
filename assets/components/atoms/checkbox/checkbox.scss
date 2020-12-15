@@ -19,6 +19,12 @@
   }
 
   @include media-breakpoint-up(md){
-    top: 2px;
+    top: 5px;
   }
+}
+
+.custom-controls-inline .custom-control {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1rem;
 }
