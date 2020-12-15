@@ -12,7 +12,11 @@
         <div class="col-md-9 col-lg-10">
           <div class="ml-md-2 ml-lg-5">
             <ul class="list-inline list-unstyled">
-              <li class="list-inline-item text-white">Contact</li>
+              {% if language == 'ge' %}
+                <li class="list-inline-item text-white">Kontact</li>
+              {% else %}
+                <li class="list-inline-item text-white">Contact</li>
+              {% endif %}
               <li class="list-inline-item text-gray-300 pl-3"><small>EPFL  CH-1015 Lausanne</small></li>
               <li class="list-inline-item text-gray-300 pl-3"><small>+41 21 693 11 11</small></li>
             </ul>
@@ -22,6 +26,9 @@
             {% endif %}
             {% if language == 'en' %}
               <small>Follow the EPFL on social media</small>
+            {% endif %}
+            {% if language == 'ge' %}
+              <small>Der EPFL in sozialen Netzwerken folgen</small>
             {% endif %}
               <span>
                 {% include '@atoms/social-icon/social-icon-link-group.twig' with { negative: true }  %}
@@ -34,7 +41,7 @@
     </div>
   </div>
 </footer>
-  
+
 <button id="back-to-top" class="btn btn-primary btn-back-to-top">
   <span class="sr-only">Back to top</span>
   {% include '@atoms/icon/icon.twig' with {icon: 'icon-chevron-top'} %}
