@@ -20,6 +20,7 @@ import coursebook from './content-types/coursebook/coursebook.js';
 import cookieconsent, {get_cookieconsent_config} from './organisms/cookie-consent/cookie-consent.js';
 import backToTopBtn from './organisms/footer/back-to-top-button.js';
 import anchors from './anchors';
+import rangeSlider from './atoms/range/range.js';
 
 import guide from './guide.js';
 
@@ -44,6 +45,7 @@ const init = () => {
   breadcrumb();
   cookieconsent(get_cookieconsent_config());
   backToTopBtn();
+  rangeSlider();
 
   guide();
   anchors();
