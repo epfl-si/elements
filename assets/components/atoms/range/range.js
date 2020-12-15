@@ -9,8 +9,6 @@ export default () => {
   rangeSlider.style.setProperty('--max', + rangeSlider.max);
   rangeSlider.style.setProperty('--min', + rangeSlider.min);
 
-  document.documentElement.classList.add('js');
-
   rangeSlider.addEventListener('input', e => {
     rangeSlider.style.setProperty('--val', + rangeSlider.value);
   }, false);
