@@ -6,4 +6,3 @@ variants:
     notes: Here is a sample list with radio buttons.
   - name: inline
     title: Inline radio list
-    notes: 
