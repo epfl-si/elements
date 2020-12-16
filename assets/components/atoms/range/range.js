@@ -1,16 +1,16 @@
 /* global $ */
 
 export default () => {
-  
   // Create colored progress bar for damn webkit browsers >.<
-  
-  const rangeSlider = document.querySelector('[type="range"]');
-  rangeSlider.style.setProperty('--val', + rangeSlider.value);
-  rangeSlider.style.setProperty('--max', + rangeSlider.max);
-  rangeSlider.style.setProperty('--min', + rangeSlider.min);
+  const rangeSlider = $('input[type="range"]');
 
-  rangeSlider.addEventListener('input', e => {
-    rangeSlider.style.setProperty('--val', + rangeSlider.value);
-  }, false);
-  
+  if (rangeSlider.length > 0) {
+    rangeSlider.css('--val', +rangeSlider.value);
+    rangeSlider.css('--max', +rangeSlider.max);
+    rangeSlider.css('--min', +rangeSlider.min);
+
+    rangeSlider.on('input', () => {
+      $(this).css('--val', +rangeSlider.value);
+    }, false);
+  }
 };
