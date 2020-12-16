@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*2.18.2* (2020-12-16)
+- Fix error when there is no range in the DOM
+
 *2.18.1* (2020-12-16)
 - Set a dynamic nutriscore for restauration
 
