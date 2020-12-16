@@ -21,6 +21,7 @@ import cookieconsent, {get_cookieconsent_config} from './organisms/cookie-consen
 import backToTopBtn from './organisms/footer/back-to-top-button.js';
 import anchors from './anchors';
 import rangeSlider from './atoms/range/range.js';
+import restauration from './organisms/restauration/restauration';
 
 import guide from './guide.js';
 
@@ -46,6 +47,7 @@ const init = () => {
   cookieconsent(get_cookieconsent_config());
   backToTopBtn();
   rangeSlider();
+  restauration();
 
   guide();
   anchors();
