@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*2.18.1* (2020-12-16)
+- Set a dynamic nutriscore for restauration
+
 *2.18.0* (2020-12-15)
 - Add german language for header and footer
 - Add slider
