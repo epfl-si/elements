@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*2.18.3* (2021-01-13)
+- Fix icon position inisde navlang #489
+
 *2.18.2* (2020-12-16)
 - Fix error when there is no range in the DOM
 
