@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*2.18.4* (2021-01-20)
+- Fix position of the icon for the navlang on multiple languages #491
+
 *2.18.3* (2021-01-13)
 - Fix icon position inisde navlang #489
 
