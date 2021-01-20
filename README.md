@@ -44,6 +44,15 @@ With Docker, you can run:
 - `$ docker-compose up builder` same as `$ yarn build` but in containers
 - `$ docker-compose up server` same as `$ yarn start` but in containers
 
+### Troubleshooting local install
+
+- Error: `You don't have any local Toolbox Reader bundles to use... Please connecte yourlsef before retrying`
+  - Faulty node_modules/toolbox-utils/tasks/prepare.js, Line 17
+  - Fix with:
+    - `mkdir ~/.toolbox && cd ~/.toolbox`
+    - `wget https://cdn.jsdelivr.net/gh/frontend/toolbox-reader@2.2.2/build/static/css/main.css`
+    - `wget https://cdn.jsdelivr.net/gh/frontend/toolbox-reader@2.2.2/build/static/js/main.js`
+
 ## Create a new release
 
 #### 1. Git release
