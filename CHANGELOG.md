@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*2.18.4* (2021-02-02)
+- Remove "overflow: hidden" from .header-light-content on small screens #492
+
 *2.18.4* (2021-01-20)
 - Fix position of the icon for the navlang on multiple languages #491
 
