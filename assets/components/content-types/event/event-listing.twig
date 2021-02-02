@@ -33,7 +33,7 @@
     </a>
   {% endfor %}
 
-  {% if bottomlink %}
+  {% if bottomlink|default(true) %}
     <a href="#" class="list-group-teaser-more">
       Afficher plus d'événements
     </a>
