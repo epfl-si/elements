@@ -186,10 +186,6 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
 
   // Cours
   .line .cours {
-    //display: grid;
-    //grid-template-columns: $table-cours-template-columns;
-    //grid-auto-rows: auto;
-    //grid-column: span 3;
     grid-column-gap: $table-border-width;
     padding: 0 !important; // Have to do this, the > and + are so specific
     background-color: #fff;
@@ -289,33 +285,6 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
   }
 
   // Languages
-  
-  /*
-  .first-line .langue {
-    &:before {
-      content: 'Langue';
-    }
-  }
-
-  .langue {
-    &.francais {
-      &:before {
-        content: 'FR';
-      }
-    }
-
-    &.anglais {
-      &:before {
-        content: 'EN';
-      }
-    }
-
-    .diet_icon {
-      display: none;
-    }
-  }
-  
-  */
 
   // Icons
   .exam-icon {
