@@ -269,7 +269,7 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
       li {
         display: inline;
         font-size: .875rem;
-        margin-bottom: .25em;
+        margin-bottom: 0;
 
         &:after {
           content: ";";
@@ -281,9 +281,14 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
 
         li {
           display: inline-block;
+          white-space: nowrap;
 
           &:before {
-            top: .5em;
+            top: .38em;
+          }
+          
+          &:after {
+            display: none;
           }
         }
       }
