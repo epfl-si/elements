@@ -231,6 +231,12 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
       grid-row: span 2;
     }
   }
+  
+  // Lang
+  
+  .langue {
+    text-align: center;
+  }
 
   // Exam
   .examen {
