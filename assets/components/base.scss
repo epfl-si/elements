@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
-
 // init:
 @import '../config/mixins';
 @import '../config/variables';
@@ -35,6 +33,7 @@
 @import 'atoms/list/list';
 @import 'atoms/picture/picture';
 @import 'atoms/radio/radio';
+@import 'atoms/range/range';
 @import 'atoms/select/select';
 @import 'atoms/separator/separator';
 @import 'atoms/social-icon/social-icon';
@@ -55,6 +54,7 @@
 @import 'molecules/access-nav/access-nav';
 @import 'molecules/avatar-teaser/avatar-teaser';
 @import 'molecules/card/card';
+@import 'molecules/carousel/carousel';
 @import 'molecules/datepicker/datepicker';
 @import 'molecules/datepicker/datepicker-fancy';
 @import 'molecules/footnotes/footnotes';
@@ -98,6 +98,7 @@
 @import 'organisms/headlines/headlines';
 @import 'organisms/key-number-group/key-number-group';
 @import 'organisms/cookie-consent/cookie-consent';
+@import 'organisms/faq/faq';
 
 //
 // content-types:
@@ -121,3 +122,9 @@
 @import 'content-types/program/program';
 @import 'content-types/bachelor-project/bachelor-project';
 @import 'content-types/project/project';
+@import 'content-types/project-list/project-list';
+
+//
+// pages:
+@import 'pages/people-detail/people-detail';
+@import 'pages/blog-single/blog-single';

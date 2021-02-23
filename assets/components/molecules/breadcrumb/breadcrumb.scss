@@ -34,7 +34,7 @@
   max-width: 100%;
   width: 100%;
   //min-height: 2.15rem;
-  border-bottom: 1px solid gray('300');
+  border-bottom: 1px solid gray('200');
 
   @include media-breakpoint-up(lg) {
     overflow-x: auto;
@@ -78,17 +78,17 @@
   position: relative;
   font-size: $font-size-sm;
   line-height: 1.5rem;
-  
+
   &.breadcrumb-tags-wrapper {
     display: inline;
   }
-  
+
   @include media-breakpoint-down(sm) {
-    
+
     &:not(.breadcrumb-tags-wrapper) {
       display: none;
     }
-    
+
     &.breadcrumb-tags-wrapper:after {
       display: none;
     }
@@ -127,7 +127,10 @@
     }
   }
 
-  .icon { font-size: 0.86em; }
+  .icon {
+    top: -0.08em;
+    font-size: 0.86em;
+  }
 
   &:last-child:after {
     content: none;

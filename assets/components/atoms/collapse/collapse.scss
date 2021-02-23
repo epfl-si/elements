@@ -1,4 +1,4 @@
-@charset 'utf-8';
+@charset "utf-8";
 
 $collapse-chevron-active: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{theme-color('primary')}' viewBox='0 0 6 3'%3E%3Cpath d='M3 3 6 0 0 0z'/%3E%3C/svg%3E"), "#", "%23");
 $collapse-chevron: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$gray-600}' viewBox='0 0 6 3'%3E%3Cpath d='M3 0 6 3 0 3z'/%3E%3C/svg%3E"), "#", "%23");
@@ -16,7 +16,7 @@ $collapse-chevron-size: 12px;
   margin-bottom: 0;
   padding: 0.9rem #{ $collapse-chevron-size + 4px } 0.9rem 0;
   border-top: 1px solid $gray-300;
-  font-size: 1.1rem;
+  font-size: 1.125rem;
   text-align: left;
   font-weight: 800;
   &:hover { cursor: pointer; }
@@ -75,9 +75,23 @@ $collapse-chevron-size: 12px;
   @include media-breakpoint-down(sm) {
     @include collapse-btn();
   }
+  
+  p {
+    margin-bottom: 0.25em;
+  }
+  
+  *:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .collapse-item {
+  padding-bottom: 2rem;
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+
   &:not(.collapse-item-desktop) {
     @include media-breakpoint-up(md) {
       display: block !important;
@@ -87,6 +101,30 @@ $collapse-chevron-size: 12px;
       transition: none !important;
     }
   }
+}
+
+header.collapse-title {
+  font-size: inherit;
+  
+  p {
+    font-size: 1rem;
+  }
+  
+  @include media-breakpoint-up(md) {
+    p {
+      font-size: 1.125rem;
+    }
+  }
+  
+  @include media-breakpoint-up(lg) {
+    p.title {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+header.collapse-title + .collapse-item {
+  padding-top: 0.5rem;
 }
 
 .collapse-group {
@@ -123,7 +161,7 @@ $collapse-chevron-size: 12px;
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-    .collapse#{$infix}-show { display: block; }
+    .collapse#{$infix}-show { display: block !important; }
   }
 }
 
@@ -190,6 +228,29 @@ $collapse-drop-margin: ($grid-gutter-width * 0.3);
   width: 100%;
   height: 40%;
   background: linear-gradient(0deg,white 0, rgba(255,255,255,0.9) 15%, transparent)
+}
+
+.collapse-partial + button .icon {
+  top: 0.2em;
+}
+
+.collapse-partial.show + button .icon {
+  transform: rotate(180deg);
+}
+
+.collapse-container {
+  border-top: 1px solid #c1c1c1;
+  border-bottom: 1px solid #c1c1c1;
+  margin-bottom: ($spacer * 3);
+  
+  .collapse-title {
+    border-top: 0;
+  }
+  
+  & + .collapse-container {
+    border-top: 0;
+    margin-top: -($spacer * 3);
+  }
 }
 
 // helper classes to define partial collapse defaut height

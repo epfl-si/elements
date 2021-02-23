@@ -32,7 +32,7 @@
       "node_modules/tablesaw/dist/tablesaw.jquery.js",
       "node_modules/tablesaw/dist/tablesaw-init.js",
       "node_modules/clipboard/dist/clipboard.js",
-      "node_modules/multiple-select/multiple-select.js",
+      "node_modules/multiple-select/dist/multiple-select.js",
       "node_modules/selectize.js/dist/js/standalone/selectize.js",
       "node_modules/intro.js/intro.js",
       "node_modules/jquery-mousewheel/jquery.mousewheel.js",
@@ -40,8 +40,8 @@
     ]
   },
   "singles": [{
-    "src": "",
-    "dest": ""
+    "src": "./node_modules/feather-icons/dist/feather-sprite.svg",
+    "dest": "./build/icons/"
   }],
   "theme": {
     "title": "Elements <br><span>EPFL Web Styleguide</span>",

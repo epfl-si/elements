@@ -1,5 +1,9 @@
 {% extends "@templates/base/base.twig" %}
 
+{% block header %}
+  {% include '@organisms/header/header.twig' with { long_nav_lang: true } %}
+{% endblock %}
+
 {% block content %}
   <h1 class="mb-5">H1 - Basic page</h1>
 

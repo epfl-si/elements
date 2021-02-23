@@ -8,7 +8,11 @@ notes: |
   **A11y note —**
   The icon is hidden to screen readers with `aria-hidden="true"`, don't forget to add meaning to the component it is placed in (button, label, etc).
 variants:
-  - name: list
-    title: Icons list
+  - name: list-feather
+    title: Feather icons
     notes: |
-      Here is the list of current available icons used in the styleguide.
+      When using an icon from the Feather icons category, the `svg` element must have the `feather` class to display correctly.
+  - name: list
+    title: Elements icons
+    notes: |
+      Here is the list of custom icons used in the styleguide.

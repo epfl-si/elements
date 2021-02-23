@@ -3,6 +3,7 @@
 //
 // Normal card
 .card {
+  border-radius: 0;
   flex: 1 1 0%;
   max-width: 100%;
   margin-bottom: $grid-gutter-width;
@@ -44,6 +45,10 @@ a.card-gray:hover .card-body { background: $white; }
 
   + .card-footer {
     padding-top: 0;
+  }
+  
+  .card-info + p {
+    margin-top: .5em;
   }
 
   p:last-of-type {
@@ -168,13 +173,7 @@ a.card-title,
 //
 // Whole card as a link
 a.card {
-  border: none;
   text-decoration: none;
-
-  .card-body {
-    border: $card-border-width solid $card-border-color;
-    transition: border 0.3s;
-  }
 
   .card-title {
     transition: 0.4s ease;
@@ -182,14 +181,18 @@ a.card {
 
   &:hover {
     color: $body-color;
-
-    .card-body {
-      border-color: $body-color;
-    }
+    border-color: $body-color;
 
     .card-title {
       color: $link-hover-color;
     }
+  }
+  
+  &.link-trapeze-horizontal:before {
+    top: calc(100% + 1px);
+    right: -1px;
+    left: -1px;
+    width: auto;
   }
 }
 

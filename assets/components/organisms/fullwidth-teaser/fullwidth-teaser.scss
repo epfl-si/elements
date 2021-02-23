@@ -49,11 +49,14 @@
       overflow: hidden;
 
       img {
-        position: absolute;
-        top: 0;
-        left: -10%;
-        width: auto;
+        position: relative;
+        left: 0;
+        object-fit: cover;
+        object-position: center center;
+        font-family: 'object-fit: cover;'; /* stylelint-disable-line */
+        width: 100%;
         height: 100%;
+        max-width: none;
       }
     }
   }
@@ -67,16 +70,6 @@
       display: block;
       height: 90vh;
       max-height: 90vh;
-
-      img {
-        position: relative;
-        left: 0;
-        object-fit: cover;
-        object-position: center center;
-        font-family: 'object-fit: cover;'; /* stylelint-disable-line */
-        width: 100%;
-        height: 100%;
-      }
     }
   }
 
@@ -280,6 +273,25 @@
     .fullwidth-teaser-text {
       right: auto;
       left: 2rem;
+    }
+  }
+}
+
+.fullwidth-teaser-horizontal.thinner-teaser {
+  background: $gray-100;
+  min-height: 24rem;
+
+  @include media-breakpoint-up(xl) {
+
+    picture,
+    figure {
+      height: 30vw;
+      max-height: 50vh;
+      min-height: 24rem;
+    }
+
+    .fullwidth-teaser-text {
+      padding-bottom: $spacer * 3;
     }
   }
 }

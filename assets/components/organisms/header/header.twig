@@ -1,4 +1,5 @@
 {% if language is not defined %}{% set language = 'fr' %}{% endif %}
+{% if long_nav_lang is not defined %}{% set long_nav_lang = false %}{% endif %}
 
 <header role="banner" class="header">
   <a class="logo" href="#">
@@ -13,11 +14,19 @@
         {% if language == 'en' %}
         <a class="nav-item" href="{{ head.urlen }}">{{ head.nameen }}</a>
         {% endif %}
+        {% if language == 'ge' %}
+          <a class="nav-item" href="{{ head.urlge }}">{{ head.namege }}</a>
+        {% endif %}
       </li>
     {% endfor %}
   </ul>
   {% include '@molecules/search/search.twig' %}
   {% include '@molecules/search/search-mobile.twig' %}
-  {% include '@atoms/nav-lang/nav-lang-short.twig' %}
+  {%  if long_nav_lang %}
+    {% include '@atoms/nav-lang/nav-lang.twig' %}
+  {% endif %}
+  {%  if long_nav_lang == false %}
+    {% include '@atoms/nav-lang/nav-lang-short.twig' %}
+  {% endif %}
   {% include '@atoms/nav-toggle-mobile/nav-toggle-mobile.twig' %}
 </header>

@@ -11,6 +11,10 @@ variants:
       The Borderless variant.
     background: ''
     wrapper: ''
+  - name: infoscience
+    title: Infoscience
+    notes: |
+      List of Infoscience publications.
   - name: teasers
     title: Teasers
     notes: |

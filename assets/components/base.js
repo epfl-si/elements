@@ -19,7 +19,10 @@ import searchMobile from './molecules/search/search-mobile.js';
 import coursebook from './content-types/coursebook/coursebook.js';
 import studyplan from './content-types/study-plan/study-plan.js';
 import cookieconsent, {get_cookieconsent_config} from './organisms/cookie-consent/cookie-consent.js';
+import backToTopBtn from './organisms/footer/back-to-top-button.js';
 import anchors from './anchors';
+import rangeSlider from './atoms/range/range.js';
+import restauration from './organisms/restauration/restauration';
 
 import guide from './guide.js';
 
@@ -34,6 +37,7 @@ const init = () => {
   popover();
   gallery();
   search();
+  searchMobile();
   share();
   coursebook();
   Tablesaw.init();
@@ -42,6 +46,9 @@ const init = () => {
   drawer();
   breadcrumb();
   cookieconsent(get_cookieconsent_config());
+  backToTopBtn();
+  rangeSlider();
+  restauration();
 
   guide();
   anchors();

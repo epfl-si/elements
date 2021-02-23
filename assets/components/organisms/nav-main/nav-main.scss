@@ -334,7 +334,7 @@ a.nav-arrow {
     }
 
     .main-container {
-      max-height: calc(100vh - #{$header-height + $mm-breadcrumbs-height });
+      height: calc(100vh - #{$header-height + $mm-breadcrumbs-height });
       overflow: hidden;
     }
 

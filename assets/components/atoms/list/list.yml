@@ -7,3 +7,5 @@ variants:
     title: Numbered list
   - name: bullet
     title: Bulleted list
+  - name: inline
+    title: Inline list

@@ -69,6 +69,13 @@
 
 .container-full[class*="bg-"] + .container-full[class*="bg-"] { margin-top: 0 !important; }
 
+@for $i from 1 through 6 {
+  .container-full.my-#{$i}[class*="bg-"] + .container-full[class*="bg-"],
+  .container-full.mb-#{$i}[class*="bg-"] + .container-full[class*="bg-"] {
+    @extend .mt-n#{$i};
+  }
+}
+
 @include ie11('.container-grid') {
   display: block;
 }
