@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*2.19.0* (2021-02-24)
+- Fix custom range input for non-firefox browsers #494
+- Update campus names in footer b6f6b72
+
 *2.18.4* (2021-02-02)
 - Remove "overflow: hidden" from .header-light-content on small screens #492
 
