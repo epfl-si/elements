@@ -1,4 +1,4 @@
-@charset 'utf-8';
+@charset "utf-8";
 
 $gallery-btn-size: 41px;
 $gallery-btn-margin: 14px;
@@ -48,11 +48,11 @@ $gallery-btn-margin: 14px;
   .gallery-item {
     align-items: center;
     max-height: 80vmin;
-    
+
     .gallery-item-inner {
       height: 100%;
       padding: 0;
-      
+
       .img-wrapper {
         max-height: 100%;
         position: relative;
@@ -64,7 +64,7 @@ $gallery-btn-margin: 14px;
       max-width: 100vmin;
       margin: 0 auto;
     }
-    
+
     figcaption {
       position: relative;
       top: 2rem;
@@ -106,7 +106,7 @@ $gallery-btn-margin: 14px;
       padding-left: 1rem;
     }
   }
-  
+
   img {
     display: block;
     max-height: 100%;
@@ -114,24 +114,24 @@ $gallery-btn-margin: 14px;
   }
 }
 .gallery-item .gallery-item-inner {
-  
+
   /* center images in cells with flexbox */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+
   position: relative;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  
+
   width: 100%;
   height: 0;
   padding: 0 0 66.6667%;
   background: $gray-100;
-  
+
   .img-wrapper {
     display: flex;
     align-items: center;
@@ -218,7 +218,6 @@ $gallery-btn-margin: 14px;
 
   svg.flickity-button-icon {
     width: 17px;
-    margin-top: 6px;
     * { fill: $white; }
   }
 
@@ -228,11 +227,11 @@ $gallery-btn-margin: 14px;
 .gallery.is-fullscreen .gallery-item {
   height: 100%;
   padding: 0;
-  
+
   .gallery-item-inner {
     background: transparent;
   }
-  
+
   figcaption {
     border-top: 1px solid $gray-100;
     margin-left: 6%;
