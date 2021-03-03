@@ -173,6 +173,12 @@
       }
     }
 
+    @include media-breakpoint-down(xs) {
+      .nav-toggle-mobile {
+        padding: .625rem 0.9rem;
+      }
+    }
+
     @include media-breakpoint-down(lg) {
       height: 100%;
       padding: 0.3rem 0;
