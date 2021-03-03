@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*2.19.0* (2021-03-03)
+- Fix icon position for flickity buttons (fullscreen and center) a665280
+- Improve display of 'nav lang' and 'nav toggle' buttons #497
+
 *2.19.0* (2021-02-24)
 - Fix custom range input for non-firefox browsers #494
 - Update campus names in footer b6f6b72
