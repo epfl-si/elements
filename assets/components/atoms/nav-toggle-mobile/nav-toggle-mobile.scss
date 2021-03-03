@@ -10,7 +10,7 @@
   font-weight: bold !important;
     
   @include media-breakpoint-up(sm) {
-    padding: (.6 * $spacer) (.9 * $spacer);
+    padding: (.625 * $spacer) (.9 * $spacer);
   }
   
   .label {
