@@ -3,10 +3,18 @@
 $table-cours-template-columns: minmax(200px, 3fr) minmax(auto, 1fr) minmax(200px, 3fr);
 $table-grid-template-columns: 1fr $table-cours-template-columns 2fr 2fr 2fr minmax(200px, 3fr) 1fr;
 
+$study-plan-2-semesters: minmax(300px, 4fr) 1fr 2fr 2fr minmax(200px, 3fr) 1fr;
+$study-plan-3-semesters: minmax(300px, 4fr) 1fr 2fr 2fr 2fr minmax(200px, 3fr) 1fr;
+$study-plan-4-semesters: minmax(300px, 4fr) 1fr 2fr 2fr 2fr 2fr minmax(200px, 3fr) 1fr;
+
+$study-plan-master: minmax(250px, 3fr) 1fr 2fr 2fr minmax(170px, 3fr) minmax(140px, 3fr) 1fr;
+$study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr) 1fr;
+
+
 .table-like {
   --table-columns: #{$table-grid-template-columns};
 
-  overflow-x: scroll;
+  overflow-x: initial;
   max-width: 100%;
 
   h4 {
@@ -24,14 +32,13 @@ $table-grid-template-columns: 1fr $table-cours-template-columns 2fr 2fr 2fr minm
 
     // Cells
     > div {
-      padding: $table-cell-padding;
       border-bottom: $table-border-width solid $table-border-color;
 
       &:first-child {
         border-left: $table-border-width solid $table-border-color;
       }
 
-      &:last-child {
+      &:last-of-type {
         border-right: $table-border-width solid $table-border-color;
       }
 
@@ -48,8 +55,23 @@ $table-grid-template-columns: 1fr $table-cours-template-columns 2fr 2fr 2fr minm
     text-transform: uppercase;
 
     > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       border-top: $table-border-width solid $table-border-color;
       border-bottom-width: $table-border-width * 2;
+      padding: $table-cell-padding;
+    }
+  }
+  
+  .line {
+    
+    > div {
+      padding: 0;
+      
+      > div {
+        padding: $table-cell-padding;
+      }
     }
   }
 
@@ -115,10 +137,11 @@ $table-grid-template-columns: 1fr $table-cours-template-columns 2fr 2fr 2fr minm
   }
 
   .bachlor .titre,
-  .bachlor-text {
+  .line .bachlor-text {
     display: grid;
     grid-column-gap: 2px;
     grid-template-columns: repeat(3, 1fr);
+    padding: 0;
 
     .cep {
 
@@ -161,23 +184,43 @@ $table-grid-template-columns: 1fr $table-cours-template-columns 2fr 2fr 2fr minm
     }
   }
 
-  // Cours is actually 3 divs for the price of one!
-  .cours {
-    display: grid;
-    grid-template-columns: $table-cours-template-columns;
-    grid-auto-rows: auto;
-    grid-column: span 3;
+  // Cours
+  .line .cours {
     grid-column-gap: $table-border-width;
     padding: 0 !important; // Have to do this, the > and + are so specific
-    background-color: $table-border-color !important; // Will override the normal background color for grid gap color
+    background-color: #fff;
 
     > div {
-      padding: $table-cell-padding;
+      padding: 0 $table-cell-padding;
       background-color: $body-bg;
+      
+      &:first-child {
+        padding-top: .6rem;
+      }
+      
+      &:last-child {
+        padding-bottom: .6rem;
+      }
+    }
+
+    .cours-name {
+      font-weight: bold;
+      padding-bottom: .6rem !important;
+      
+      i {
+        font-weight: normal;
+      }
     }
 
     .cours-code {
       grid-area: 2 / 1;
+      padding-top: 0 !important;
+    }
+
+    .cours-title {
+      .bold {
+        color: $body-color;
+      }
     }
 
     .section-name,
@@ -185,19 +228,11 @@ $table-grid-template-columns: 1fr $table-cours-template-columns 2fr 2fr 2fr minm
       grid-row: span 2;
     }
   }
-
-  .cours-name {
-    padding-bottom: 0 !important;
-  }
-
-  .cours-code {
-    padding-top: 0 !important;
-  }
-
-  .cours-title {
-    .bold {
-      color: $body-color;
-    }
+  
+  // Lang
+  
+  .langue {
+    text-align: center;
   }
 
   // Exam
@@ -208,34 +243,56 @@ $table-grid-template-columns: 1fr $table-cours-template-columns 2fr 2fr 2fr minm
   // Credit
   .credit-time {
     font-size: $font-size-lg;
-    text-align: right;
+    text-align: center;
     color: $text-muted;
+  }
+  
+  // Specialisations
+  
+  .specialisation {
+  
+    p {
+      display: inline-block;
+      font-size: .875rem;
+      margin-right: .6rem;
+    }
+
+    ul.spec {
+      list-style: none;
+      margin: 0;
+      padding-left: 0;
+      text-align: left;
+
+      li {
+        display: inline;
+        font-size: .875rem;
+        margin-bottom: 0;
+
+        &:after {
+          content: ";";
+        }
+      }
+
+      &.list-bullet {
+        margin-left: 0;
+
+        li {
+          display: inline-block;
+          white-space: nowrap;
+
+          &:before {
+            top: .38em;
+          }
+          
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
   }
 
   // Languages
-  .first-line .langue {
-    &:before {
-      content: 'Langue';
-    }
-  }
-
-  .langue {
-    &.francais {
-      &:before {
-        content: 'FR';
-      }
-    }
-
-    &.anglais {
-      &:before {
-        content: 'EN';
-      }
-    }
-
-    .diet_icon {
-      display: none;
-    }
-  }
 
   // Icons
   .exam-icon {
@@ -253,7 +310,7 @@ $table-grid-template-columns: 1fr $table-cours-template-columns 2fr 2fr 2fr minm
   }
 
   // Hover on line
-  .line {
+  .line-down .line {
     &:hover {
       > div,
       .cours > div,
@@ -286,4 +343,146 @@ $table-grid-template-columns: 1fr $table-cours-template-columns 2fr 2fr 2fr minm
   .clear {
     display: none;
   }
+    
+  .btn-collapse {
+    display: none;
+  }
+}
+
+
+.study-plan-2-semesters {
+  --table-columns: #{$study-plan-2-semesters};
+}
+.study-plan-3-semesters {
+  --table-columns: #{$study-plan-3-semesters};
+}
+.study-plan-4-semesters {
+  --table-columns: #{$study-plan-4-semesters};
+}
+
+.study-plan-master-pdm {
+  --table-columns: #{$study-plan-master-pdm};
+}
+
+.study-plan-master {
+  --table-columns: #{$study-plan-master};
+}
+
+@media all and (max-width: 1359px) {
+
+  .table-like {
+    display: block;
+    
+    .line-up {
+      display: none;
+    }
+    
+    .line-down {
+      display: block;
+    
+      .line {
+        border-bottom: 4px solid #fff;
+        display: block;
+        max-height: 1000px;
+        overflow: hidden;
+        position: relative;
+        transition: max-height .2s ease-in-out;
+
+        &:not(.open) {
+          max-height: 34px;
+        }
+        
+        .btn-collapse {
+          display: block;
+          position: absolute;
+          top: 4px; right: 0; left: 0;
+          width: 100%;
+          height: 20px;
+          background: transparent;
+          border: 0;
+          cursor: pointer;
+          padding-top: 0;
+          
+          & > * {
+            float: right;
+          }
+          
+          & > span {
+            @include sr-only;
+          }
+          
+          .icon {
+            color: $gray-200;
+            transition: all .3s ease-in-out;
+          }
+        }
+        
+        &:hover {
+          
+          .btn-collapse .icon {
+            color: $white;
+          }
+        }
+        
+        &.open {
+          
+          .btn-collapse svg {
+            transform: rotate(180deg);
+          }
+        }
+      }
+      
+      .line > div {
+        border-right: 1px solid #d5d5d5;
+      }
+    }
+  
+    .line > div {
+      display: block;
+      
+      &:before {
+        content: attr(data-title);
+        display: block !important;
+        margin: -1px -1px 0;
+        padding: .3rem .6rem;
+        background: #D5D5D5;
+        color: #000;
+        min-width: 100%;
+      }
+      
+      &.cours:before {
+        background: #707070;
+        font-weight: bold;
+        color: #fff;
+      }
+    }
+    
+    .line {
+      
+      .examen > div {
+        display: inline-block;
+      }
+      
+      .langue {
+        text-align: left;
+      }
+
+      .credit-time {
+        text-align: left;
+      }
+
+      .specialisation {
+        text-align: left;
+      }
+      
+      .cep .label {
+        clip: auto;
+        clip-path: none;
+        position: static;
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+
 }
