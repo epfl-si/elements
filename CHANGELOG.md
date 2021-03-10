@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*2.20.0* (2021-03-10)
+- Improve study plan #495
+- Fix rangeslider check missing aae43fb
+
 *2.19.0* (2021-03-03)
 - Fix icon position for flickity buttons (fullscreen and center) a665280
 - Improve display of 'nav lang' and 'nav toggle' buttons #497
