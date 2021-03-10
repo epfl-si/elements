@@ -17,6 +17,7 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
   overflow-x: initial;
   max-width: 100%;
 
+  h3,
   h4 {
     font-size: $font-size-base;
     font-weight: $font-weight-bold;
@@ -55,12 +56,12 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
     text-transform: uppercase;
 
     > div {
-      padding: $table-cell-padding;
-      border-top: $table-border-width solid $table-border-color;
-      border-bottom-width: $table-border-width * 2;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      border-top: $table-border-width solid $table-border-color;
+      border-bottom-width: $table-border-width * 2;
+      padding: $table-cell-padding;
     }
   }
   
@@ -108,7 +109,7 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
       grid-column: 1 / -1;
       background-color: $body-bg;
       margin-bottom: 0;
-      padding-bottom: $headings-margin-bottom;
+      padding-bottom: calc( #{$headings-margin-bottom} * 1.5) ;
     }
 
     .line-down + h3,
