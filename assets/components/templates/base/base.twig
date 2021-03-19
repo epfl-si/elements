@@ -35,7 +35,9 @@
 
     {% if not isSpecial %}
     <aside class="nav-aside-wrapper">
-      {% include '@organisms/nav-aside/nav-aside.twig' %}
+      {% block sideNav %}
+        {% include '@organisms/nav-aside/nav-aside.twig' %}
+      {% endblock %}
     </aside>
     {% endif %}
   </div>
