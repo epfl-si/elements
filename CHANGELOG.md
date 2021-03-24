@@ -1,5 +1,12 @@
 # CHANGELOG
 
+*2.21.0* (2021-03-24)
+- Update URLs for footer and header #501
+- Fix social icons having the wrong url  6c714a5
+- Update url for twitter 6c714a5
+- Set language from GE to DE #500
+- Add page template for Study plan #499
+
 *2.20.0* (2021-03-10)
 - Improve study plan #495
 - Fix rangeslider check missing aae43fb
