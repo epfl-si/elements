@@ -17,6 +17,7 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
   overflow-x: initial;
   max-width: 100%;
 
+  h3,
   h4 {
     font-size: $font-size-base;
     font-weight: $font-weight-bold;
@@ -63,12 +64,12 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
       padding: $table-cell-padding;
     }
   }
-  
+
   .line {
-    
+
     > div {
       padding: 0;
-      
+
       > div {
         padding: $table-cell-padding;
       }
@@ -108,7 +109,7 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
       grid-column: 1 / -1;
       background-color: $body-bg;
       margin-bottom: 0;
-      padding-bottom: $headings-margin-bottom;
+      padding-bottom: calc( #{$headings-margin-bottom} * 1.5) ;
     }
 
     .line-down + h3,
@@ -193,11 +194,11 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
     > div {
       padding: 0 $table-cell-padding;
       background-color: $body-bg;
-      
+
       &:first-child {
         padding-top: .6rem;
       }
-      
+
       &:last-child {
         padding-bottom: .6rem;
       }
@@ -206,7 +207,7 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
     .cours-name {
       font-weight: bold;
       padding-bottom: .6rem !important;
-      
+
       i {
         font-weight: normal;
       }
@@ -228,9 +229,9 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
       grid-row: span 2;
     }
   }
-  
+
   // Lang
-  
+
   .langue {
     text-align: center;
   }
@@ -246,11 +247,11 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
     text-align: center;
     color: $text-muted;
   }
-  
+
   // Specialisations
-  
+
   .specialisation {
-  
+
     p {
       display: inline-block;
       font-size: .875rem;
@@ -278,12 +279,12 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
 
         li {
           display: inline-block;
-          white-space: nowrap;
+          //white-space: nowrap;
 
           &:before {
             top: .38em;
           }
-          
+
           &:after {
             display: none;
           }
@@ -343,7 +344,7 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
   .clear {
     display: none;
   }
-    
+
   .btn-collapse {
     display: none;
   }
@@ -372,14 +373,14 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
 
   .table-like {
     display: block;
-    
+
     .line-up {
       display: none;
     }
-    
+
     .line-down {
       display: block;
-    
+
       .line {
         border-bottom: 4px solid #fff;
         display: block;
@@ -391,7 +392,7 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
         &:not(.open) {
           max-height: 34px;
         }
-        
+
         .btn-collapse {
           display: block;
           position: absolute;
@@ -402,44 +403,44 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
           border: 0;
           cursor: pointer;
           padding-top: 0;
-          
+
           & > * {
             float: right;
           }
-          
+
           & > span {
             @include sr-only;
           }
-          
+
           .icon {
             color: $gray-200;
             transition: all .3s ease-in-out;
           }
         }
-        
+
         &:hover {
-          
+
           .btn-collapse .icon {
             color: $white;
           }
         }
-        
+
         &.open {
-          
+
           .btn-collapse svg {
             transform: rotate(180deg);
           }
         }
       }
-      
+
       .line > div {
         border-right: 1px solid #d5d5d5;
       }
     }
-  
+
     .line > div {
       display: block;
-      
+
       &:before {
         content: attr(data-title);
         display: block !important;
@@ -449,20 +450,20 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
         color: #000;
         min-width: 100%;
       }
-      
+
       &.cours:before {
         background: #707070;
         font-weight: bold;
         color: #fff;
       }
     }
-    
+
     .line {
-      
+
       .examen > div {
         display: inline-block;
       }
-      
+
       .langue {
         text-align: left;
       }
@@ -474,7 +475,7 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
       .specialisation {
         text-align: left;
       }
-      
+
       .cep .label {
         clip: auto;
         clip-path: none;

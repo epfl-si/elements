@@ -1,8 +1,8 @@
 title: Header
 name: header
 variants:
-  - name: ge
-    notes: german
+  - name: de
+    notes: deutsch
   - name: en
     notes: english
   - name: light
