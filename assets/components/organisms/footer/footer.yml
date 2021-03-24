@@ -2,15 +2,15 @@ title: Footer
 name: footer
 wrapper: container
 variants:
-  - name: ge
-    notes: german
+  - name: de
+    notes: deutsch
   - name: en
     notes: english
   - name: light
     title: Footer light
     notes: french
-  - name: light-ge
-    notes: german
+  - name: light-de
+    notes: deutsch
   - name: light-en
     notes: english
   - name: dark

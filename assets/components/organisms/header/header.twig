@@ -9,13 +9,13 @@
     {% for head in header %}
       <li id="menu-item-{{ loop.index }}" {% if loop.index == 2 %} class="current-menu-item"{% endif %}>
         {% if language == 'fr' %}
-        <a class="nav-item" href="{{ head.urlfr }}">{{ head.namefr }}</a>
+        <a class="nav-item" href="{{ head.url_fr }}">{{ head.name_fr }}</a>
         {% endif %}
         {% if language == 'en' %}
-        <a class="nav-item" href="{{ head.urlen }}">{{ head.nameen }}</a>
+        <a class="nav-item" href="{{ head.url_en }}">{{ head.name_en }}</a>
         {% endif %}
-        {% if language == 'ge' %}
-          <a class="nav-item" href="{{ head.urlge }}">{{ head.namege }}</a>
+        {% if language == 'de' %}
+          <a class="nav-item" href="{{ head.url_de }}">{{ head.name_de }}</a>
         {% endif %}
       </li>
     {% endfor %}
