@@ -18,13 +18,13 @@
         {% for item in col.items %}
           <li>
             {% if language == 'fr' %}
-            <a href="{{item.url_fr}}">{{item.name_fr}}</a>
+            <a href="{{item.url_fr}}"{{ item.target_blank_fr ? ' target="_blank"' }}{{ item.rel_noopener_fr ? ' rel="noopener"' }}>{{item.name_fr}}</a>
             {% endif %}
             {% if language == 'en' %}
-            <a href="{{item.url_en}}">{{item.name_en}}</a>
+            <a href="{{item.url_en}}"{{ item.target_blank_en ? ' target="_blank"' }}{{ item.rel_noopener_en ? ' rel="noopener"' }}>{{item.name_en}}</a>
             {% endif %}
             {% if language == 'de' %}
-              <a href="{{item.url_de}}">{{item.name_de}}</a>
+              <a href="{{item.url_de}}"{{ item.target_blank_de ? ' target="_blank"' }}{{ item.rel_noopener_de ? ' rel="noopener"' }}>{{item.name_de}}</a>
             {% endif %}
           </li>
         {% endfor %}
