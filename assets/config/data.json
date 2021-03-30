@@ -639,7 +639,7 @@
           "url_fr": "https://www.epfl.ch/about/campus/fr/",
           "name_en": "Associated campuses",
           "url_en": "https://www.epfl.ch/about/campus/",
-          "name_de": "Assoziierte Campusse",
+          "name_de": "Assoziierte Campus",
           "url_de": "https://www.epfl.ch/about/campus/de/"
         },
         {
@@ -655,7 +655,7 @@
           "url_fr": "https://www.epfl.ch/about/recruiting/fr/",
           "name_en": "Recruiting EPFL talents",
           "url_en": "https://www.epfl.ch/about/recruiting/",
-          "name_de": "Rekrutierung von Talenten durch die EPFL",
+          "name_de": "EPFL Talente",
           "url_de": "https://www.epfl.ch/about/recruiting/"
         },
         {
@@ -680,7 +680,7 @@
           "name_en": "Equality",
           "url_en": "https://www.epfl.ch/about/equality/",
           "name_de": "Chancengleichheit",
-          "url_de": "https://equality.epfl.ch"
+          "url_de": "https://www.epfl.ch/about/equality/"
         },
         {
           "name_fr": "Philanthropie",
@@ -867,6 +867,14 @@
           "url_en": "https://www.epfl.ch/research/awards/",
           "name_de": "Preise und Auszeichnungen",
           "url_de": "https://www.epfl.ch/research/awards/de/"
+        }
+        {
+          "name_fr": "Open Science",
+          "url_fr": "https://www.epfl.ch/research/open-science/fr/",
+          "name_en": "Open Science",
+          "url_en": "https://www.epfl.ch/research/open-science/",
+          "name_de": "Open Science",
+          "url_de": "https://www.epfl.ch/research/open-science/de/"
         }
       ]
     },
