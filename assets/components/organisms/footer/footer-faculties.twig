@@ -8,7 +8,7 @@
     {% if language == 'en' %}
     Schools
     {% endif %}
-    {% if language == 'ge' %}
+    {% if language == 'de' %}
     Fakultäten
     {% endif %}
   </button>
@@ -17,13 +17,13 @@
     {% for school in schools %}
       <li>
         {% if language == 'fr' %}
-        <a href="{{school.urlfr}}">{{school.namefr}} <strong>{{school.acronym}}</strong></a>
+        <a href="{{school.url_fr}}"{{ school.target_blank_fr ? ' target="_blank"' }}{{ school.rel_noopener_fr ? ' rel="noopener"' }}>{{school.name_fr}} <strong>{{school.acronym}}</strong></a>
         {% endif %}
         {% if language == 'en' %}
-        <a href="{{school.urlen}}">{{school.nameen}} <strong>{{school.acronym}}</strong></a>
+        <a href="{{school.url_en}}"{{ school.target_blank_en ? ' target="_blank"' }}{{ school.rel_noopener_en ? ' rel="noopener"' }}>{{school.name_en}} <strong>{{school.acronym}}</strong></a>
         {% endif %}
-        {% if language == 'ge' %}
-          <a href="{{school.urlge}}">{{school.namege}} <strong>{{school.acronym}}</strong></a>
+        {% if language == 'de' %}
+          <a href="{{school.url_de}}"{{ school.target_blank_de ? ' target="_blank"' }}{{ school.rel_noopener_de ? ' rel="noopener"' }}>{{school.name_de}} <strong>{{school.acronym}}</strong></a>
         {% endif %}
       </li>
     {% endfor %}

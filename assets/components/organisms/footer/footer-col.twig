@@ -4,13 +4,13 @@
   <div class="footer-sitemap-col">
     <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-footer-{{loop.index ?: 1}}" aria-expanded="false" aria-controls="collapse-footer-{{loop.index ?: 1}}">
       {% if language == 'fr' %}
-      <strong>{{col.headingfr}}</strong>
+      <strong>{{col.heading_fr}}</strong>
       {% endif %}
       {% if language == 'en' %}
-      <strong>{{col.headingen}}</strong>
+      <strong>{{col.heading_en}}</strong>
       {% endif %}
-      {% if language == 'ge' %}
-        <strong>{{col.headingge}}</strong>
+      {% if language == 'de' %}
+        <strong>{{col.heading_de}}</strong>
       {% endif %}
     </button>
     <div class="collapse collapse-item" id="collapse-footer-{{loop.index ?: 1}}">
@@ -18,13 +18,13 @@
         {% for item in col.items %}
           <li>
             {% if language == 'fr' %}
-            <a href="{{item.urlfr}}">{{item.namefr}}</a>
+            <a href="{{item.url_fr}}"{{ item.target_blank_fr ? ' target="_blank"' }}{{ item.rel_noopener_fr ? ' rel="noopener"' }}>{{item.name_fr}}</a>
             {% endif %}
             {% if language == 'en' %}
-            <a href="{{item.urlen}}">{{item.nameen}}</a>
+            <a href="{{item.url_en}}"{{ item.target_blank_en ? ' target="_blank"' }}{{ item.rel_noopener_en ? ' rel="noopener"' }}>{{item.name_en}}</a>
             {% endif %}
-            {% if language == 'ge' %}
-              <a href="{{item.urlge}}">{{item.namege}}</a>
+            {% if language == 'de' %}
+              <a href="{{item.url_de}}"{{ item.target_blank_de ? ' target="_blank"' }}{{ item.rel_noopener_de ? ' rel="noopener"' }}>{{item.name_de}}</a>
             {% endif %}
           </li>
         {% endfor %}

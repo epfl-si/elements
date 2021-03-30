@@ -1,4 +1,4 @@
-@charset 'utf-8';
+@charset "utf-8";
 
 .nav-lang {
   display: flex;
@@ -23,7 +23,7 @@
       padding-top: ($spacer * 0.6);
       padding-bottom: ($spacer * 0.7);
     }
-    
+
     @include media-breakpoint-up(md) {
       height: 2.875rem;
       padding-top: ($spacer * 0.75);
@@ -167,7 +167,7 @@
 }
 
 @include media-breakpoint-down(lg) {
-  
+
   .nav-lang {
     width: auto;
     margin: 0 1rem !important;
@@ -213,17 +213,17 @@
 
 
 @include media-breakpoint-down(xs) {
-  
+
   .nav-lang {
     margin: 0 0.5rem 0 0.75rem !important;
-    
+
     .dropdown-toggle,
     .dropdown-item {
+      width: auto;
       height: 2.125rem;
       padding: ($spacer * 0.4) ($spacer * 1.5) ($spacer * 0.4) ($spacer * 0.5);
-      width: auto;
     }
-    
+
     .icon {
       transform: translateY($spacer * 0.1);
     }
