@@ -4661,7 +4661,7 @@ flickity-fullscreen@^1.1.1:
   dependencies:
     flickity "^2.1.0"
 
-flickity@^2.0.0, flickity@^2.1.0, flickity@^2.2.1:
+flickity@2.2.1, flickity@^2.0.0, flickity@^2.1.0:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/flickity/-/flickity-2.2.1.tgz#81126e3d656cb54577358a5f959ffdbda088e670"
   integrity sha512-fCZJGNqabgDrIhaUBqt2ydE8c5V6iiB3KQAf6dH3Z45MoDUm7g6+uZmteN0aLV9pzVItNqCbfOJQjsJM/rHuSA==
