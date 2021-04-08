@@ -17,6 +17,12 @@ function get_cookieconsent_config() {
             'de visites.',
         link: 'Lire les mentions l&eacute;gales',
         href: '//go.epfl.ch/protection-des-donnees'
+        },
+        de: {
+            msg: 'Die Navigation auf dieser Seite verwendet Cookies zur ' +
+              'Verbesserung Ihrer Benutzererfahrung und zur Durchführung von Besucherstatistiken.',
+            link: 'Datenschutzerklärung lesen',
+            href: '//go.epfl.ch/privacy-policy'
         }
     };
     // Retrieve language, default 'fr'
