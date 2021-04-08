@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*2.22.0* (2021-04-08)
+- Add DE translation for CookieConsent
+- Revert and set flickity to version to 2.2.1 to fix strange dev behavior
+
 *2.21.0* (2021-03-24)
 - Update URLs for footer and header #501
 - Fix social icons having the wrong url  6c714a5
