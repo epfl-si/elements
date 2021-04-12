@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*2.22.1* (2021-04-12)
+- Fix gallery nav being unresponsive the first time loaded, by rewriting the JS #505
+
 *2.22.0* (2021-04-08)
 - Add DE translation for CookieConsent
 - Revert and set flickity to version to 2.2.1 to fix strange dev behavior
