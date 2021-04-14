@@ -1,5 +1,12 @@
 # CHANGELOG
 
+*2.23.0* (2021-04-14)
+- Small german + footer updates #502
+- Allow overflow:visible on the dropdown component #504
+- Add "all events" link underneath a list of events #493
+- Update "study plan" templates #506
+- Update some packages (y18n and elliptic)
+
 *2.22.1* (2021-04-12)
 - Fix gallery nav being unresponsive the first time loaded, by rewriting the JS #505
 
