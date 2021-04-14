@@ -39,6 +39,13 @@
   overflow: hidden;
 }
 
+/*  Dropdown needs `overflow: visible` to allow it to
+    escape its container. */
+.tlbx-item-preview.tlbx-component-dropdown {
+  overflow: visible;
+}
+
+
 .tlbx-sidebar-item-list {
   margin-left: 0;
   padding: 0;
