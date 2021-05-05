@@ -131,74 +131,7 @@
       <div class="study-plans">
         <h2 class="h5">Dans les plans d'études</h2>
         
-        <button
-          class="collapse-title collapse-title-desktop"
-          type="button"
-          data-toggle="collapse"
-          data-target="#study-plan-1"
-          aria-expanded="true"
-          aria-controls="study-plan-1"
-        >
-          Architecture<br>
-          <span class="d-block font-weight-normal">2020-2021, Bachelor semestre 6</span>
-        </button>
-
-        <div class="collapse collapse-item show collapse-item-desktop" id="study-plan-1">
-          <ul class="list-bullet">
-            <li><strong>Semestre:</strong> Printemps</li>
-            <li><strong>Examen:</strong> Oral (session d’été)</li>
-            <li><strong>Crédits:</strong> 10</li>
-            <li><strong>Matière examinée:</strong> Art et Architecture</li>
-            <li><strong>Cours:</strong> 2 heures hebdo x 14 semaines</li>
-            <li><strong>Projet:</strong> 4 heures hebdo x 14 semaines</li>
-          </ul>
-        </div>
-        
-        <button
-          class="collapse-title collapse-title-desktop collapsed"
-          type="button"
-          data-toggle="collapse"
-          data-target="#study-plan-2"
-          aria-expanded="false"
-          aria-controls="study-plan-2"
-        >
-          Architecture<br>
-          <span class="d-block font-weight-normal">2020-2021, Bachelor semestre 6b</span>
-        </button>
-
-        <div class="collapse collapse-item collapse-item-desktop" id="study-plan-2">
-          <ul class="list-bullet">
-            <li><strong>Semestre:</strong> Printemps</li>
-            <li><strong>Examen:</strong> Oral (session d’été)</li>
-            <li><strong>Crédits:</strong> 10</li>
-            <li><strong>Matière examinée:</strong> Art et Architecture</li>
-            <li><strong>Cours:</strong> 2 heures hebdo x 14 semaines</li>
-            <li><strong>Projet:</strong> 4 heures hebdo x 14 semaines</li>
-          </ul>
-        </div>
-        
-        <button
-          class="collapse-title collapse-title-desktop collapsed"
-          type="button"
-          data-toggle="collapse"
-          data-target="#study-plan-3"
-          aria-expanded="false"
-          aria-controls="study-plan-3"
-        >
-          Lorem ipsum dolor sit amet<br>
-          <span class="d-block font-weight-normal">2020-2021, Semestre automne</span>
-        </button>
-
-        <div class="collapse collapse-item collapse-item-desktop" id="study-plan-3">
-          <ul class="list-bullet">
-            <li><strong>Semestre:</strong> Printemps</li>
-            <li><strong>Examen:</strong> Oral (session d’été)</li>
-            <li><strong>Crédits:</strong> 10</li>
-            <li><strong>Matière examinée:</strong> Art et Architecture</li>
-            <li><strong>Cours:</strong> 2 heures hebdo x 14 semaines</li>
-            <li><strong>Projet:</strong> 4 heures hebdo x 14 semaines</li>
-          </ul>
-        </div>
+        {% include '@content-types/coursebook/coursebook-program.twig' %}
         
       </div>
       
