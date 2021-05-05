@@ -9,8 +9,5 @@ variants:
     title: Légende
     wrapper: coursebook-legend col-md-5
 notes: |
-  <div class="progress"><div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 10%"></div></div><br />
-
-  <br />
 
   ### Reference week
