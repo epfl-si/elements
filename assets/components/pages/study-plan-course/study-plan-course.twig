@@ -47,6 +47,12 @@
     Télécharger la fiche de cours (PDF)
   </button>
   </header>
+  <div class="alert-container mb-4">
+    {% include "@atoms/alert/alert.twig" with {
+      type: "info",
+      content: "Attention, ce contenu correspond à la fiche de cours de l'année passée."
+    } %}
+  </div>
   <div class="row">
     <div class="course-details col-xl-7">
       <div class="course-summary mb-5">
