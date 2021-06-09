@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*2.24.0* (2021-06-09)
+- Add margin to category breadcrumb #515
+
 *2.23.0* (2021-04-14)
 - Small german + footer updates #502
 - Allow overflow:visible on the dropdown component #504
