@@ -1,7 +1,7 @@
 /* globals $ */
 
 export default () => {
-  $('.tag-input').selectize({
+  new TomSelect('.tag-input', {
     plugins: ['remove_button'],
     render: {
       item: (data, escape) => `<div class="tag tag-primary">${escape(data.text)}</div>`,
