@@ -101,9 +101,9 @@
     "multiple-select": "^1.5.2",
     "object-fit-images": "^3.2.4",
     "pickadate": "^3.6.4",
-    "selectize.js": "^0.12.12",
     "stylelint-scss": "^3.18.0",
     "tablesaw": "^3.1.2",
+    "tom-select": "^1.7.5",
     "toolbox-utils": "https://github.com/epfl-si/toolbox-utils"
   },
   "devDependencies": {
