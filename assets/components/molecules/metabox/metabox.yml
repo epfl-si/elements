@@ -1,6 +1,0 @@
-title: Metabox
-name: metabox
-wrapper: col-md-5 bg-gray-100
-notes: |
-  A box allowing the display of meta-information concerning the content of the page, whether it's an event, a laboratory, etc.
-  You can also add a call to action at the bottom if an action is available for the users

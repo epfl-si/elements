@@ -1,8 +1,0 @@
-name: hero
-title: Hero
-notes: |
-  The hero component is used as intro to basic pages.
-
-variants:
-  - name: legend
-    title: Hero with image legend

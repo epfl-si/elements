@@ -1,9 +1,0 @@
-title: Search
-name: search
-variants:
-  - name: mobile
-    title: Search Mobile
-    notes: |
-      Used on mobile breakpoints only, inside of the [header](#/organisms/header) component, displayed when the menu is opened.
-notes: |
-  Used on desktop only. When the icon is clicked, a search form is displayed in a dropdown

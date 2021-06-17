@@ -1,5 +1,0 @@
-title: Gallery
-name: gallery
-wrapper: col-md-8
-notes: |
-  The gallery component uses [Flickity](https://flickity.metafizzy.co/) to manage the slider and fullscreen capabilities.

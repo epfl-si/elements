@@ -1,8 +1,0 @@
-name: carousel
-title: Carousel
-notes: |
-  Basic carousel using Bootstrap functionality: https://getbootstrap.com/docs/4.0/components/carousel/.
-  
-  Use the 'data-interval' attribute to change the automatic slide delay.
-  
-  **Important**: always use a unique 'id' attribute on each carousel displayed on a same page.

@@ -1,9 +1,0 @@
-{% extends "@molecules/carousel/carousel-base.twig" %}
-
-{% block slide %}
-  {% for i in 1..4 %}
-  <div class="carousel-item {% if loop.index0 == 0 %}active{% endif %}">
-    {% include '@atoms/picture/picture-cover.twig' %}
-  </div>
-  {% endfor %}
-{% endblock %}

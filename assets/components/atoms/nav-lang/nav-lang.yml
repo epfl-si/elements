@@ -1,7 +1,0 @@
-title: Nav lang
-name: nav-lang
-variants:
-  - name: short
-    title: Less than 2 languages
-    notes: >
-      When only 2 languages are available, displaying 2 options doesn't require a dropdown menu

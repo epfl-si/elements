@@ -1,7 +1,0 @@
-title: Datepicker
-name: datepicker
-variants:
-  - name: fancy
-    title: Datepicker fancy
-    notes: |
-      Offers big months on desktop and a single line view on mobile.

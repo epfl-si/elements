@@ -1,8 +1,0 @@
-title: Radio
-name: radio
-variants:
-  - name: list
-    title: Radio list sample
-    notes: Here is a sample list with radio buttons.
-  - name: inline
-    title: Inline radio list
