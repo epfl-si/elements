@@ -34,15 +34,14 @@ $ docker-compose up builder
 
 ## Run locally
 
-As listed in the `package.json` you have **3 commands** available :
+As listed in the `package.json`, the following commands are available:
 
 - `$ yarn start` : Will launch a live reloaded server to help you **during development**
 - `$ yarn build` : Will build your assets for **production usage**
-- `$ yarn deploy` : Will **deploy the styleguide** in the dedicated [`gh-pages`](https://epfl-si.github.io/elements)
 
 With Docker, you can run:
-- `$ docker-compose up builder` same as `$ yarn build` but in containers
 - `$ docker-compose up server` same as `$ yarn start` but in containers
+- `$ docker-compose up builder` same as `$ yarn build` but in containers
 
 ### Troubleshooting local install
 
