@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*2.25.0* (2021-06-17)
+- Dependency overhaul - 0 critical, 6 high vulnerabilities found by `yarn audit` (compared to 361 high and 2 critical)
+- No functional changes
+
 *2.24.0* (2021-06-09)
 - Add margin to category breadcrumb #515
 
