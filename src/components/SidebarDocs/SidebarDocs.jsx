@@ -16,7 +16,7 @@ const SidebarDocs = ({ location, docs }) => {
     setActive(!!isCurrent);
   }, []);
 
-  if (docs.docs_list === undefined || Object.keys(docs.docs_list).length <= 0)
+  if (! (docs.docs_list &&  Object.keys(docs.docs_list).length))
     return false;
 
   return (
