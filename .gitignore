@@ -6,9 +6,6 @@
 # testing
 /coverage
 
-# production
-/public
-
 /build/components
 /build/docs
 /build/css
