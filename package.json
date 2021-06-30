@@ -1,5 +1,5 @@
 {
-  "name": "toolbox-reader",
+  "name": "epfl-elements-toolbox-reader",
   "version": "2.2.2",
   "private": true,
   "eslintConfig": {
