@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*2.26.0* (2021-06-30)
+- Add 'study plan: course' page template #508
+
 *2.25.0* (2021-06-17)
 - Dependency overhaul - 0 critical, 6 high vulnerabilities found by `yarn audit` (compared to 361 high and 2 critical)
 - No functional changes
