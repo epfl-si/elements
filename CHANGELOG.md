@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*2.26.1* (2021-06-30)
+- Fix problematic dependencies
+
 *2.26.0* (2021-06-30)
 - Add 'study plan: course' page template #508
 
