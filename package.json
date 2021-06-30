@@ -104,7 +104,7 @@
     "selectize.js": "^0.12.12",
     "stylelint-scss": "^3.18.0",
     "tablesaw": "^3.1.2",
-    "toolbox-utils": "https://github.com/epfl-si/toolbox-utils"
+    "epfl-elements-toolbox-utils": "https://github.com/epfl-si/epfl-elements-toolbox-utils"
   },
   "devDependencies": {
     "backstopjs": "^5.0.1",
