@@ -33,6 +33,10 @@
     &:hover {
       z-index: $zindex-10;
     }
+    
+    & + .list-group-teaser {
+      margin-top: -1px;
+    }
   }
 
   .list-group-teaser-thumbnail{

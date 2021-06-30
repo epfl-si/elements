@@ -1,5 +1,19 @@
 # CHANGELOG
 
+*2.25.0* (2021-06-17)
+- Dependency overhaul - 0 critical, 6 high vulnerabilities found by `yarn audit` (compared to 361 high and 2 critical)
+- No functional changes
+
+*2.24.0* (2021-06-09)
+- Add margin to category breadcrumb #515
+
+*2.23.0* (2021-04-14)
+- Small german + footer updates #502
+- Allow overflow:visible on the dropdown component #504
+- Add "all events" link underneath a list of events #493
+- Update "study plan" templates #506
+- Update some packages (y18n and elliptic)
+
 *2.22.1* (2021-04-12)
 - Fix gallery nav being unresponsive the first time loaded, by rewriting the JS #505
 
