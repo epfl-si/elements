@@ -1,0 +1,17 @@
+@charset 'utf-8';
+
+.course-details {
+  position: relative;
+  
+  @include media-breakpoint-up(xl) {
+    &:after {
+      content: "";
+      border-right: 1px solid $gray-300;
+      position: absolute;
+      top: 0;
+      right: -3rem;
+      bottom: 0; 
+      left: auto;
+    }
+  }
+}

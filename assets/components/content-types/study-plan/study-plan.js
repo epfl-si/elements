@@ -1,12 +1,15 @@
 /* global $ */
 
-$(document).ready(function($){
+export default () => {
   
-  $(".line .btn-collapse").click(function(){
-    $(this).parent(".line").toggleClass('open');
-    $(this).find("span").toggleClass('show');
+  $('.btn-collapse').click(function(){
+    
+    const parent = $(this).parent(".line");
+    const toggleIcon = $(this).find("span")
+    
+    parent.toggleClass('open');
+    toggleIcon.toggleClass('show');
   });
-
-  $('html').addClass('testjs');
   
-});
+};
+  

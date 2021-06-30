@@ -49,6 +49,7 @@ const init = () => {
   backToTopBtn();
   rangeSlider();
   restauration();
+  studyplan();
 
   guide();
   anchors();

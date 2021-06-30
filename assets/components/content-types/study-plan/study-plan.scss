@@ -3,11 +3,19 @@
 $table-cours-template-columns: minmax(200px, 3fr) minmax(auto, 1fr) minmax(200px, 3fr);
 $table-grid-template-columns: 1fr $table-cours-template-columns 2fr 2fr 2fr minmax(200px, 3fr) 1fr;
 
+$study-plan-0-semesters: minmax(300px, 4fr) 1fr minmax(auto, 2fr) 1fr;
 $study-plan-1-semesters: minmax(300px, 4fr) 1fr 2fr minmax(200px, 3fr) 1fr;
 $study-plan-2-semesters: minmax(300px, 4fr) 1fr 2fr 2fr minmax(200px, 3fr) 1fr;
 $study-plan-3-semesters: minmax(300px, 4fr) 1fr 2fr 2fr 2fr minmax(200px, 3fr) 1fr;
 $study-plan-4-semesters: minmax(300px, 4fr) 1fr 2fr 2fr 2fr 2fr minmax(200px, 3fr) 1fr;
+$study-plan-5-semesters: minmax(300px, 4fr) 1fr 2fr 2fr 2fr 2fr 2fr minmax(200px, 3fr) 1fr;
 
+$study-plan-master-0-semesters: minmax(250px, 3fr) 1fr minmax(140px, 3fr) 1fr;
+$study-plan-master-1-semesters: minmax(250px, 3fr) 1fr 2fr minmax(140px, 3fr) 1fr;
+$study-plan-master-2-semesters: minmax(250px, 3fr) 1fr 2fr 2fr minmax(140px, 3fr) 1fr;
+$study-plan-master-3-semesters: minmax(250px, 3fr) 1fr 2fr 2fr 2fr minmax(140px, 3fr) 1fr;
+$study-plan-master-4-semesters: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr) 1fr;
+$study-plan-master-5-semesters: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr 2fr minmax(140px, 3fr) 1fr;
 $study-plan-master: minmax(250px, 3fr) 1fr 2fr 2fr minmax(170px, 3fr) minmax(140px, 3fr) 1fr;
 $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr) 1fr;
 
@@ -351,6 +359,9 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
   }
 }
 
+.study-plan-0-semesters {
+  --table-columns: #{$study-plan-0-semesters};
+}
 .study-plan-1-semesters {
   --table-columns: #{$study-plan-1-semesters};
 }
@@ -362,6 +373,31 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
 }
 .study-plan-4-semesters {
   --table-columns: #{$study-plan-4-semesters};
+}
+
+.study-plan-5-semesters {
+  --table-columns: #{$study-plan-5-semesters};
+}
+
+.study-plan-master-0-semesters {
+  --table-columns: #{$study-plan-master-0-semesters};
+}
+
+.study-plan-master-1-semesters {
+  --table-columns: #{$study-plan-master-1-semesters};
+}
+.study-plan-master-2-semesters {
+  --table-columns: #{$study-plan-master-2-semesters};
+}
+.study-plan-master-3-semesters {
+  --table-columns: #{$study-plan-master-3-semesters};
+}
+.study-plan-master-4-semesters {
+  --table-columns: #{$study-plan-master-4-semesters};
+}
+
+.study-plan-master-5-semesters {
+  --table-columns: #{$study-plan-master-5-semesters};
 }
 
 .study-plan-master-pdm {
