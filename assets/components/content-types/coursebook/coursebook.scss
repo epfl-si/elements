@@ -65,47 +65,6 @@
 /**
 * Reference week
 **/
-.semaineDeRef {
-  @extend .table, .table-boxed;
-
-  tbody {
-    tr:first-child {
-      th {
-        padding: ($spacer * 0.12) ($spacer * 0.66);
-        background: $table-head-bg;
-        border-left: 1px solid gray('200');
-        border-bottom: 3px solid gray('200');
-        text-transform: uppercase;
-        color: $table-head-color;
-      }
-      th:first-child {
-        background: $white;
-      }
-    }
-
-    tr {
-      .time {
-        font-weight: bold;
-      }
-
-      td {
-        padding: ($spacer * 0.15) ($spacer * 0.45)
-      }
-    }
-  }
-}
-
-.local-color {
-  background: theme-color("primary");
-}
-
-.local-color-light {
-  background: darken(theme-color("warning"), 5.2);
-}
-
-.local-color-dark {
-  background: theme-color("info");
-}
 
 .taken {
   color: white;
@@ -127,6 +86,125 @@
   width: auto !important;
   margin-right: 0.9rem;
   font-size: $font-size-sm * 1.07;
+}
+
+.semaineDeRef {
+  @extend .table, .table-boxed;
+  position: relative;
+  border: 0;
+  
+  &:before,
+  &:after {
+    content: "";
+    border-bottom: 1px solid $gray-200;
+    position: absolute;
+    right: 0;
+    left: 0;
+  }
+  
+  &:before {
+    top: calc(2rem - 2px);
+    bottom: auto;
+  }
+  
+  &:after {
+    top: auto;
+    bottom: -1px;
+  }
+  
+  tbody {
+    
+    tr:first-child {
+      th {
+        padding: ($spacer * 0.12) ($spacer * 0.66);
+      }
+    }
+    tr {
+
+      td {
+        padding: ($spacer * 0.15) ($spacer * 0.45);
+        transition: background-color .3s ease-in-out;
+      }
+      
+      &:hover {
+        td {
+          background: $gray-200;
+        }
+      }
+    }
+    
+    td,
+    th {
+      width: 16.6667%;
+    }
+
+    th {
+      height: 2rem;
+      background: transparent;
+      border: solid $gray-200;
+      border-width: 1px 0;
+      text-align: center;
+    }
+
+    td {
+      height: 2rem;
+      background: $gray-100;
+      border: 2px solid #fff;
+    }
+
+    td.time {
+      background: transparent;
+      color: $black;
+      padding-left: 0;
+    }
+    
+    td.taken {
+      color: #fff;
+
+      a {
+        color: #fff;
+      }
+
+      &.cours {
+        background: $red;
+      }
+
+      &.exercice {
+        background: $red-dark url(../images/icons/icon-course-exercise.svg) no-repeat 4px 4px;
+      }
+
+      &.projet {
+        background: #8e0000 url(../images/icons/icon-course-project.svg) no-repeat 4px 4px;
+      }
+    }
+  }
+}
+
+.coursebook-week-caption {
+  .caption {
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    
+    .caption-icon {
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      margin-right: .25rem;
+      vertical-align: middle;
+    }
+  }
+  
+  .caption-cours .caption-icon {
+    background: $red;
+  }
+  
+  .caption-exercice .caption-icon {
+    background: $red-dark url(../images/icons/icon-course-exercise.svg) no-repeat .5rem .5rem;
+  }
+  
+  .caption-projet .caption-icon {
+    background: #8e0000 url(../images/icons/icon-course-project.svg) no-repeat .5rem .5rem;
+  }
 }
 
 /**
