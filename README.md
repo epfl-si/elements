@@ -22,7 +22,7 @@ Then, to install the project on your environment :
 $ git clone git@github.com:epfl-si/elements.git
 $ cd ./elements
 $ yarn
-$ npx gulp -f node_modules/toolbox-utils/gulpfile.js prepare --project=$PWD
+$ npx gulp -f node_modules/epfl-elements-toolbox-utils/gulpfile.js prepare --project=$PWD
 ```
 
 (The latter command creates and populates your `~/.toolbox/` directory)
