@@ -1,7 +1,0 @@
-@charset 'utf-8';
-
-.custom-radio .custom-control-label:before { border: 1px solid $gray-600; }
-
-.custom-radio .custom-control-input:checked ~ .custom-control-label:before {
-  border-color: $red;
-}
