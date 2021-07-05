@@ -13,7 +13,7 @@
     "colorable": "^1.0.5",
     "connected-react-router": "^6.4.0",
     "history": "^4.9.0",
-    "immer": "^3.1.1",
+    "immer": "^9.0.5",
     "js-beautify": "^1.10.0",
     "nanoid": "^2.0.1",
     "node-sass": "^6.0.0",
