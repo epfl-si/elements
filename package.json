@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "colorable": "^1.0.5",
+    "colorable": "https://github.com/epfl-si/colorable",
     "connected-react-router": "^6.4.0",
     "history": "^4.9.0",
     "immer": "^9.0.5",
