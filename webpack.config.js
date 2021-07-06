@@ -1,5 +1,6 @@
 const path                      = require('path')
 const BrowserSyncPlugin         = require('browser-sync-webpack-plugin')
+const HtmlWebpackPlugin         = require('html-webpack-plugin')
 const CopyPlugin                = require('copy-webpack-plugin')
 const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally')
 
@@ -40,9 +41,7 @@ module.exports = (env, argv) => {
     output: {
       path: buildDir,
       publicPath: '',
-      filename: isProd ? 'js/[name].bundle.js'
-        // TODO: remove this toolbox-era bogon
-        : '[name].bundle.js'
+      filename: 'js/[name].bundle.js'
     },
     module: {
       rules: [
@@ -67,6 +66,10 @@ module.exports = (env, argv) => {
     },
     resolve: { extensions: ['.js', '.jsx'] },
     plugins: [
+      new HtmlWebpackPlugin({
+        template: 'reader/index.html',
+        inject: false   // We'll handle the <script>s and <link>s ourselves.
+      }),
       CopyServableAssets(  // Below
         ["**/*.twig", "**/*.yml", "**/*.js"],
         buildDir
