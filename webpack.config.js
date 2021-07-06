@@ -1,6 +1,31 @@
-const path              = require('path')
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
-const CopyPlugin        = require('copy-webpack-plugin')
+const path                      = require('path')
+const BrowserSyncPlugin         = require('browser-sync-webpack-plugin')
+const CopyPlugin                = require('copy-webpack-plugin')
+const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally')
+
+const vendors = {
+  css: [
+    "node_modules/pickadate/lib/themes/classic.date.css",
+    "node_modules/flickity/dist/flickity.css",
+    "node_modules/flickity-fullscreen/fullscreen.css",
+    "node_modules/intro.js/introjs.css",
+    "node_modules/tablesaw/dist/tablesaw.css",
+    "node_modules/cookieconsent/build/cookieconsent.min.css"
+  ],
+  js: [
+    "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+    "node_modules/pickadate/lib/picker.js",
+    "node_modules/pickadate/lib/picker.date.js",
+    "node_modules/tablesaw/dist/tablesaw.jquery.js",
+    "node_modules/tablesaw/dist/tablesaw-init.js",
+    "node_modules/clipboard/dist/clipboard.js",
+    "node_modules/multiple-select/dist/multiple-select.js",
+    "node_modules/selectize.js/dist/js/standalone/selectize.js",
+    "node_modules/intro.js/intro.js",
+    "node_modules/jquery-mousewheel/jquery.mousewheel.js",
+    "node_modules/cookieconsent/build/cookieconsent.min.js"
+  ]
+}
 
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production'
@@ -46,6 +71,12 @@ module.exports = (env, argv) => {
         ["**/*.twig", "**/*.yml", "**/*.js"],
         buildDir
       ),
+      new MergeIntoSingleFilePlugin({
+        files: {
+          "js/vendors.min.js": vendors.js,
+          "css/vendors.min.css": vendors.css,
+        }
+      }),
       new BrowserSyncPlugin({
         host: 'localhost',
         port: 3000,
