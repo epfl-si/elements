@@ -1,6 +1,6 @@
-const webpack           = require('webpack')
 const path              = require('path')
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+const CopyPlugin        = require('copy-webpack-plugin')
 
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production'
@@ -15,9 +15,9 @@ module.exports = (env, argv) => {
     output: {
       path: buildDir,
       publicPath: '',
-      filename: isProd ? 'js/[name].bundle.js' :
+      filename: isProd ? 'js/[name].bundle.js'
         // TODO: remove this toolbox-era bogon
-        '[name].bundle.js'
+        : '[name].bundle.js'
     },
     module: {
       rules: [
@@ -35,6 +35,10 @@ module.exports = (env, argv) => {
     },
     resolve: { extensions: ['.js', '.jsx'] },
     plugins: [
+      CopyServableAssets(  // Below
+        ["**/*.twig", "**/*.yml", "**/*.js"],
+        buildDir
+      ),
       new BrowserSyncPlugin({
         host: 'localhost',
         port: 3000,
@@ -44,4 +48,18 @@ module.exports = (env, argv) => {
   }
 
   return webpackConfig
+}
+
+function CopyServableAssets (matchers, target) {
+
+  function copiedAssetPath ({ context, absoluteFilename }) {
+    const relative = path.relative(context, absoluteFilename),
+      relativeToAssets = relative.replace(/^assets\//, "")
+    return path.resolve(target, relativeToAssets)
+  }
+
+  const patterns = matchers.map((pattern) => ({
+    from: `assets/${pattern}`, to: copiedAssetPath
+  }))
+  return new CopyPlugin({ patterns })
 }
