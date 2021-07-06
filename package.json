@@ -16,7 +16,9 @@
     "test:approve": "backstop approve",
     "test:report": "backstop openReport",
     "test:update_config": "node scripts/backstop_config_updater.js",
-    "test:info": "node scripts/backstop_status.js"
+    "test:info": "node scripts/backstop_status.js",
+    "clean": "rm -rf build/ dist/",
+    "realclean": "rm -rf build/ dist/ node_modules/"
   },
   "browserslist": [
     "> 1% in CH",
