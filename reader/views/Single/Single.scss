@@ -1,0 +1,28 @@
+@import '../../variables.scss';
+
+.tlbx-notes {
+  max-width: 700px;
+  line-height: 1.55em;
+}
+
+.tlbx-single-full {
+  min-height: 100vh;
+
+  .tlbx-item-preview {
+    border: 0;
+  }
+
+  .tlbx-single-full-intro h1 {
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
+.tlbx-single-full-intro {
+  padding: 1rem;
+  background-color: $gray-lighter;
+}
+
+.tlbx-variant-heading {
+  margin-top: 1.2em;
+}

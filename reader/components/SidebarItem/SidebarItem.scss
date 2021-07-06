@@ -1,0 +1,108 @@
+@import '../../variables.scss';
+
+.tlbx-sidebar-item {
+  display: flex;
+  margin: 0 0 0.5rem 0;
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-size: 1rem;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:after {
+    content: '';
+    line-height: 0;
+    align-self: center;
+    margin-left: auto;
+    margin-right: 1rem;
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid $link-color;
+    font-size: 0;
+    line-height: 0;
+  }
+
+  .tlbx-open & {
+    &:after {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.tlbx-sidebar-collapse {
+  transition: height 250ms cubic-bezier(.4, 0, .2, 1);
+}
+
+.tlbx-sidebar-item-list {
+  margin-top: 0;
+  list-style: none;
+  padding: 0;
+
+  strong,
+  em { padding-left: 2rem; }
+
+  a {
+    display: block;
+    position: relative;
+    padding: 0.25rem 0.5rem 0.25rem;
+    padding-left: 2rem;
+    color: $body-color;
+    transition: color 250ms ease;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      border-left: 0 solid $link-color;
+      transition: border-width 100ms ease;
+    }
+
+    &.active,
+    &:hover {
+      color: $link-color;
+      text-decoration: none;
+
+      &:before {
+        border-left-width: 4px;
+      }
+    }
+
+    &.active {
+      font-weight: bold;
+    }
+
+  }
+
+  ul a,
+  ul strong,
+  ul em { padding-left: 3rem; }
+  ul ul a,
+  ul ul strong,
+  ul ul em { padding-left: 4rem; }
+  ul ul ul a,
+  ul ul ul strong,
+  ul ul ul em { padding-left: 5rem; }
+}
+
+.tlbx-sidebar-item-list-empty {
+  display: block;
+  margin-left: 1rem;
+}
