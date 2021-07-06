@@ -35,7 +35,34 @@
       "camelcase": 0,
       "global-require": 0,
       "import/extensions": 0,
-      "import/no-unresolved": 0
+      "import/no-unresolved": 0,
+      "semi": 0,
+      "comma-dangle": 0,
+      "quotes": 0,
+      "no-multi-spaces": 0,
+      "space-before-function-paren": 0,
+      "no-use-before-define": ["error", { "functions": false }],
+      "one-var": 0,
+      "padded-blocks": 0,
+      "object-property-newline": 0,
+      "import/prefer-default-export": 0,
+      "max-classes-per-file": 0,
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": true
+        }
+      ],
+      "no-unused-vars": [
+        "error",
+        {
+          "varsIgnorePattern": "[uU]nused"
+        }
+      ],
+      "no-restricted-syntax": 0,
+      "no-underscore-dangle": 0,
+      "no-shadow": 0,
+      "no-continue": 0
     }
   },
   "stylelint": {
