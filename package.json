@@ -41,7 +41,12 @@
       "quotes": 0,
       "no-multi-spaces": 0,
       "space-before-function-paren": 0,
-      "no-use-before-define": ["error", { "functions": false }],
+      "no-use-before-define": [
+        "error",
+        {
+          "functions": false
+        }
+      ],
       "one-var": 0,
       "padded-blocks": 0,
       "object-property-newline": 0,
@@ -184,6 +189,7 @@
     "twig": "^1.15.4",
     "webpack": "^5.42.1",
     "webpack-cli": "^4.7.2",
+    "webpack-merge-and-include-globally": "^2.3.4",
     "yaml": "^1.10.2"
   }
 }
