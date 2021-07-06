@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "webpack --mode=development --watch",
-    "build": "toolbox build",
+    "build": "webpack --mode=production",
     "deploy": "toolbox build styleguide && toolbox deploy",
     "test": "backstop test",
     "test:reference": "backstop reference",
