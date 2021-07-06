@@ -1,0 +1,43 @@
+@import '../../variables.scss';
+
+.tlbx-alert {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 0;
+  padding: 8px 20px;
+  background: #FFD62B;
+  font-size: 16px;
+  &.open { display: flex; }
+  * { color: $black; }
+
+  > div {
+    flex: 1 1 100%;
+    margin: 0;
+  }
+
+  p,
+  ul { margin: 0; }
+  ul { padding-left: 1em; }
+
+  span {
+    position: relative;
+    top: 0.1em;
+    font-size: 2.2em;
+    padding-right: 15px;
+  }
+
+  button {
+    background: transparent;
+    border: 0;
+    font-size: 2em;
+    margin-left: 15px;
+    margin-top: -0.2em;
+    transition: color 0.25s;
+
+    &:hover {
+      cursor: pointer;
+      color: #FA351F;
+    }
+  }
+}
