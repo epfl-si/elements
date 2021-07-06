@@ -8,7 +8,7 @@
     "url": "git@github.com:epfl-si/elements.git"
   },
   "scripts": {
-    "start": "toolbox serve",
+    "start": "webpack --mode=development --watch",
     "build": "toolbox build",
     "deploy": "toolbox build styleguide && toolbox deploy",
     "test": "backstop test",
