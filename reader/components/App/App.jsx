@@ -9,7 +9,6 @@ import { actions as atomicActions } from '../../store/atomic';
 import { actions as docsActions } from '../../store/docs';
 import { actions as navigationActions } from '../../store/navigation';
 
-import Alert from '../Alert/Alert';
 import Colors from '../../views/Colors/Colors';
 import Doc from '../../views/Doc/Doc';
 import Sidebar from '../Sidebar/Sidebar';
@@ -72,7 +71,6 @@ class App extends Component {
               <Sidebar location={this.props.location} />
             </div>
             <div className="tlbx-content-wrapper">
-              <Alert />
               <div className="tlbx-content">
                 <Switch>
                   {fullHome ? '' : <Route path="/" exact component={Doc} />}
