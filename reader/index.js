@@ -19,12 +19,14 @@ const router = (
   </Provider>
 );
 
-printIcons();
+$(function() {
+  printIcons();
 
-ReactDOM.render(
-  router,
-  document.getElementById('styleguide'),
-);
+  ReactDOM.render(
+    router,
+    document.getElementById('styleguide')
+  );
+});
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
