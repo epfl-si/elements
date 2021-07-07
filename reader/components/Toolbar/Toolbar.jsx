@@ -7,7 +7,7 @@ import { actions as navigationActions } from '../../store/navigation';
 
 import Icon from '../Icon/Icon';
 
-import './Toolbar.css';
+import './Toolbar.scss';
 
 const Toolbar = ({ navigation, toggleCode, toggleMenu }) => {
   return (

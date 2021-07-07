@@ -3,7 +3,7 @@ import colorable from 'colorable';
 
 import ColorSwatch from './ColorSwatch';
 import ColorTable from './../../components/ColorTable/ColorTable';
-import './Colors.css';
+import './Colors.scss';
 
 const Colors = () => {
   const contrast = colorable(window.colors);

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import { actions as alertActions } from '../../store/alert';
 
-import './Alert.css';
+import './Alert.scss';
 
 const Alert = ({ alert, getVersions }) => {
   const hasDiff = alert.utils_diff || alert.reader_diff;

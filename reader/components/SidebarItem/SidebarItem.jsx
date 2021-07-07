@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import Collapse from 'react-css-collapse';
 import PropTypes from 'prop-types';
 
-import './SidebarItem.css';
+import './SidebarItem.scss';
 
 const SidebarItem = ({ group, location, atomic, navigation }) => {
   const [active, setActive] = useState(false);

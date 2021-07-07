@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import colorable from 'colorable';
 import Tooltip from 'rc-tooltip';
-import 'rc-tooltip/assets/bootstrap.css';
+import 'rc-tooltip/assets/bootstrap.scss';
 
-import './ColorTable.css';
+import './ColorTable.scss';
 
 class ColorTable extends Component {
   constructor() {

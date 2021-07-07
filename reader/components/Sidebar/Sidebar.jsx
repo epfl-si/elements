@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import SidebarItem from '../SidebarItem/SidebarItem';
 import SidebarDocs from '../SidebarDocs/SidebarDocs';
 
-import './Sidebar.css';
+import './Sidebar.scss';
 
 const Sidebar = ({ atomic, location }) => (
   <div className="tlbx-sidebar">
