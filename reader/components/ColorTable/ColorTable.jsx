@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import colorable from 'colorable';
 import Tooltip from 'rc-tooltip';
-import 'rc-tooltip/assets/bootstrap.scss';
+import 'rc-tooltip/assets/bootstrap.css';
 
 import './ColorTable.scss';
 
