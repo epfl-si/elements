@@ -3,6 +3,7 @@ const BrowserSyncPlugin         = require('browser-sync-webpack-plugin')
 const HtmlWebpackPlugin         = require('html-webpack-plugin')
 const CopyPlugin                = require('copy-webpack-plugin')
 const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally')
+const MiniCssExtractPlugin      = require('mini-css-extract-plugin')
 
 const vendors = {
   css: [
@@ -36,9 +37,9 @@ module.exports = (env, argv) => {
     entry: {
       // All the JS that is part of elements itself, e.g. to make
       // carousels clicky etc.
-      elements: "./assets/components/base.js",
+      elements: ["./assets/components/base.js", "./assets/components/base.scss"],
       // The React app that lets you browse the style guide:
-      reader: "./reader/index.js"
+      reader: ["./reader/index.js", "./reader/reader.scss"]
     },
     output: {
       path: buildDir,
@@ -71,6 +72,19 @@ module.exports = (env, argv) => {
           generator: {
             filename: 'images/icons/[name][ext][query]'
           }
+        },
+        {
+          test: /\.scss$/,
+          use: [
+            miniCssExtractLoader({ publicPath: "../" }),
+            cssLoader({ importLoaders: 2 }),
+            postcssLoader(),
+            'sass-loader'
+          ]
+        },
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader']
         }
       ]
     },
@@ -94,6 +108,9 @@ module.exports = (env, argv) => {
         host: 'localhost',
         port: 3000,
         server: { baseDir: buildDir }
+      }),
+      new MiniCssExtractPlugin({
+        filename: 'css/[name].css',
       })
     ]
   }
@@ -113,4 +130,29 @@ function CopyServableAssets (matchers, target) {
     from: `assets/${pattern}`, to: copiedAssetPath
   }))
   return new CopyPlugin({ patterns })
+}
+
+function miniCssExtractLoader (options) {
+  return {
+    loader: MiniCssExtractPlugin.loader,
+    options
+  }
+}
+
+function cssLoader (options) {
+  return {
+    loader: "css-loader",
+    options
+  }
+}
+
+function postcssLoader () {
+  return {
+    loader: "postcss-loader",
+    options: {
+      postcssOptions: {
+        plugins: ["postcss-preset-env"]
+      }
+    }
+  }
 }

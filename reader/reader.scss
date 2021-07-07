@@ -1,8 +1,9 @@
 @charset 'utf-8';
 
 @import 'variables';
-@import '../../node_modules/bootstrap/scss/functions';
-@import 'bootstrap-variables';
+@import 'bootstrap/scss/functions';
+// Import the main theme's Bootstrap config:
+@import '../assets/config/bootstrap-variables';
 
 .styleguide {
   font-family: $font-family-base;
