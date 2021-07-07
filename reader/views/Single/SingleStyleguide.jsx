@@ -35,7 +35,7 @@ class SingleStyleguide extends Single {
                 <h3 className="tlbx-variant-heading">{variant.title}</h3>
                 {variant.notes ? (
                   <div className="tlbx-notes">
-                    <ReactMarkdown source={variant.notes} />
+                    <ReactMarkdown>{variant.notes}</ReactMarkdown>
                   </div>
                 ) : (
                   ''
@@ -57,7 +57,7 @@ class SingleStyleguide extends Single {
         <h1 className="tlbx-h1">{this.state.component.title}</h1>
         {this.state.component.notes && (
           <div className="tlbx-notes">
-            <ReactMarkdown source={this.state.component.notes} />
+            <ReactMarkdown>{this.state.component.notes}</ReactMarkdown>
           </div>
         )}
         <Item component={this.state.component}>
