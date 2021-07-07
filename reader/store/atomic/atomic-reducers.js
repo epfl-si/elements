@@ -1,5 +1,5 @@
 import p from 'immer';
-import nanoid from 'nanoid';
+import { nanoid } from 'nanoid';
 
 import {
   SET_COMPONENTS,
