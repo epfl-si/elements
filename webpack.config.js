@@ -94,8 +94,15 @@ module.exports = (env, argv) => {
         template: 'reader/index.html',
         inject: false   // We'll handle the <script>s and <link>s ourselves.
       }),
-      CopyServableAssets(  // Below
-        ["**/*.twig", "**/*.yml", "**/*.js"],
+      Copy(  // Below
+        ["twig", "yml", "js", "png", "gif", "svg", "jpg", "webmanifest"].map(
+          (ext) => `assets/**/*.${ext}`
+        ),
+        buildDir,
+        { munch: "assets/" }
+      ),
+      Copy(
+        ["docs/**/*"],
         buildDir
       ),
       new MergeIntoSingleFilePlugin({
@@ -118,16 +125,20 @@ module.exports = (env, argv) => {
   return webpackConfig
 }
 
-function CopyServableAssets (matchers, target) {
+function Copy (matchers, target, opts) {
+  const { munch } = opts || {}
+  function rewritePath (p) {
+    return munch ? p.replace(new RegExp(`^${munch}`), "") : p
+  }
 
   function copiedAssetPath ({ context, absoluteFilename }) {
     const relative = path.relative(context, absoluteFilename),
-      relativeToAssets = relative.replace(/^assets\//, "")
-    return path.resolve(target, relativeToAssets)
+      munched = rewritePath(relative)
+    return path.resolve(target, munched)
   }
 
   const patterns = matchers.map((pattern) => ({
-    from: `assets/${pattern}`, to: copiedAssetPath
+    from: pattern, to: copiedAssetPath
   }))
   return new CopyPlugin({ patterns })
 }
