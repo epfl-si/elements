@@ -1,4 +1,4 @@
-import yaml from 'yamljs';
+import yaml from 'yaml';
 import Twig from 'twig';
 
 export const GET_COMPONENTS = 'GET_COMPONENTS';
