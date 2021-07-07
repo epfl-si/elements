@@ -36,7 +36,9 @@ module.exports = (env, argv) => {
     entry: {
       // All the JS that is part of elements itself, e.g. to make
       // carousels clicky etc.
-      elements: "./assets/components/base.js"
+      elements: "./assets/components/base.js",
+      // The React app that lets you browse the style guide:
+      reader: "./reader/index.js"
     },
     output: {
       path: buildDir,
@@ -56,9 +58,12 @@ module.exports = (env, argv) => {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env']
-            },
-          },
+              presets: [
+                '@babel/preset-env',
+                '@babel/react'
+              ]
+            }
+          }
         },
         {
           test: /\.svg$/,
