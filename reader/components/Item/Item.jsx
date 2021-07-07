@@ -71,13 +71,13 @@ const Item = ({ component, variant, children, navigation }) => {
           className={`tlbx-item-preview ${wrapper} ${slugClass}`}
           style={background ? { backgroundColor: background } : {}}
           dangerouslySetInnerHTML={{ __html: children }}
-          onClick={() => handleItemClick()}
+          onClick={handleItemClick}
         />
       ) : (
         <div
           className={`tlbx-item-preview ${wrapper} ${slugClass}`}
           style={background ? { backgroundColor: background } : {}}
-          onClick={() => handleItemClick()}
+          onClick={handleItemClick}
         >
           <Loader />
         </div>
