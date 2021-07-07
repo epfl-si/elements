@@ -18,7 +18,7 @@ import SinglePage from '../../views/Single/SinglePage';
 import SingleStyleguide from '../../views/Single/SingleStyleguide';
 import Toolbar from '../Toolbar/Toolbar';
 
-import './App.css';
+import './App.scss';
 
 class App extends Component {
   componentWillMount() {

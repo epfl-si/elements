@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-import './Single.css';
+import './Single.scss';
 
 /**
  * Single higher component

@@ -14,7 +14,7 @@ import atomOneDark from 'react-syntax-highlighter/dist/styles/hljs/atom-one-dark
 import Loader from './../Loader/Loader';
 
 import parentUrl from '../../helpers/parentUrl';
-import './Item.css';
+import './Item.scss';
 
 registerLanguage('html', xml);
 

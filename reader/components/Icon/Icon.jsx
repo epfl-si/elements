@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Icon.css';
+import './Icon.scss';
 
 const Icon = ({ name }) => {
   const useTag = `<use xlink:href="#${name}" />`;

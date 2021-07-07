@@ -6,7 +6,7 @@ import ReactMarkdown from 'react-markdown';
 
 import { actions as docsActions } from '../../store/docs';
 
-import './Doc.css';
+import './Doc.scss';
 
 class Doc extends Component {
   constructor() {
