@@ -46,6 +46,11 @@ module.exports = (env, argv) => {
     module: {
       rules: [
         {
+          test: /\.ya?ml$/,
+          type: 'json',  // Meaning that the loader returns a data structure
+          use: 'yaml-loader'
+        },
+        {
           test: /\.(js|jsx)$/,
           exclude: /(node_modules|bower_components)/,
           use: {

@@ -34,6 +34,8 @@
 
    // <% print("\n\n");
 
+   const walkSync = require('walk-sync')
+
    const { version }  = require('../package.json')
    const colors       = require('../assets/config/colors.json')
    const docs         = require('../docs/summary.yml')
@@ -41,6 +43,39 @@
    const data_        = require('../assets/config/data.json')
 
    const windowProperties = { version, colors, docs, theme, data: data_ }
+
+   windowProperties.sources = {}   // Historical bad name
+   const parseYamlPath = new RegExp('^([^/]+)/([^/]+)/([^/]+)\.yml$')
+   for (let path of walkSync('./assets/components')) {
+     let matched = path.match(parseYamlPath)
+     if (! matched) continue
+     let [_unused, taxon, component, componentAgain] = matched
+     if (component !== componentAgain) continue
+
+     if (! windowProperties.sources[taxon]) {
+       windowProperties.sources[taxon] = []
+     }
+     const sources = windowProperties.sources[taxon]
+
+     const newSource =
+       // Webpack parses the variadic require() on the line below, and
+       // figures out that it must bundle all .yml files under
+       // ../assets/components! Very nice, but... fragile. Don't break
+       // it in refactoring; unparsed require() is left as-is during
+       // transpilation, and thus ends up calling the node.js core
+       // implementation at runtime (for YAML files, with an outcome
+       // about as bad as you'd expect).
+       require("../assets/components/" + [taxon, component, componentAgain].join("/") + ".yml")
+
+     newSource.id = sources.length
+     newSource.type = taxon
+     newSource.markup = "components/" + path.replace(/\.yml$/, ".twig")
+     if (! newSource.variants) {
+       newSource.variants = []
+     }
+
+     sources.push(newSource)
+   }
 
    for (const p in windowProperties) {
      const v = windowProperties[p]
