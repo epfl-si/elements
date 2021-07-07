@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import ClipboardButton from 'react-clipboard.js';
+
+import ClipboardButton from '../../components/ClipboardButton/ClipboardButton';
 
 const ColorSwatch = ({ color }) => {
   const [copied, setCopied] = useState(false);

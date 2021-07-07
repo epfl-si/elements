@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import ClipboardButton from 'react-clipboard.js';
 
 import SyntaxHighlighter, {
   registerLanguage,
@@ -12,6 +11,7 @@ import xml from 'react-syntax-highlighter/dist/languages/hljs/xml';
 import atomOneDark from 'react-syntax-highlighter/dist/styles/hljs/atom-one-dark';
 
 import Loader from './../Loader/Loader';
+import ClipboardButton from '../ClipboardButton/ClipboardButton';
 
 import parentUrl from '../../helpers/parentUrl';
 import './Item.scss';
