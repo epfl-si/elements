@@ -3,12 +3,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import SyntaxHighlighter, {
-  registerLanguage,
-} from 'react-syntax-highlighter/dist/light';
+import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { html_beautify } from 'js-beautify';
-import xml from 'react-syntax-highlighter/dist/languages/hljs/xml';
-import atomOneDark from 'react-syntax-highlighter/dist/styles/hljs/atom-one-dark';
+import xml from 'react-syntax-highlighter/dist/esm/languages/hljs/xml';
+import atomOneDark from 'react-syntax-highlighter/dist/esm/styles/hljs/atom-one-dark';
 
 import Loader from './../Loader/Loader';
 import ClipboardButton from '../ClipboardButton/ClipboardButton';
@@ -16,7 +14,7 @@ import ClipboardButton from '../ClipboardButton/ClipboardButton';
 import parentUrl from '../../helpers/parentUrl';
 import './Item.scss';
 
-registerLanguage('html', xml);
+SyntaxHighlighter.registerLanguage('html', xml);
 
 const Item = ({ component, variant, children, navigation }) => {
   const [copied, setCopied] = useState(false);
