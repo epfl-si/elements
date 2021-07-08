@@ -1,5 +1,6 @@
 const path                      = require('path')
 const BrowserSyncPlugin         = require('browser-sync-webpack-plugin')
+const NodePolyfillPlugin        = require("node-polyfill-webpack-plugin")
 const HtmlWebpackPlugin         = require('html-webpack-plugin')
 const CopyPlugin                = require('copy-webpack-plugin')
 const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally')
@@ -114,6 +115,7 @@ module.exports = (env, argv) => {
         port: 3000,
         server: { baseDir: buildDir }
       }),
+      new NodePolyfillPlugin(),
       new MiniCssExtractPlugin({
         filename: 'css/[name].css',
       }),
