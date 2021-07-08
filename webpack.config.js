@@ -30,6 +30,13 @@ module.exports = (env, argv) => {
               presets: ['@babel/preset-env']
             },
           },
+        },
+        {
+          test: /\.svg$/,
+          type: 'asset/resource',
+          generator: {
+            filename: 'images/icons/[name][ext][query]'
+          }
         }
       ]
     },
