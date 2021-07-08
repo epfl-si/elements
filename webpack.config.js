@@ -131,6 +131,14 @@ module.exports = (env, argv) => {
     ]
   }
 
+  if (!isProd) {
+    webpackConfig.devtool = 'source-map'
+    webpackConfig.plugins.push(Copy(
+      "node_modules/bootstrap/dist/js/bootstrap.bundle.js.map",
+      path.join(buildDir, "js")
+    ))
+  }
+
   return webpackConfig
 }
 
@@ -146,9 +154,10 @@ function Copy (matchers, target, opts) {
     return path.resolve(target, munched)
   }
 
-  const patterns = matchers.map((pattern) => ({
-    from: pattern, to: copiedAssetPath
-  }))
+  const matchersList = (matchers instanceof Array ? matchers : [matchers]),
+    patterns = matchersList.map((pattern) => ({
+      from: pattern, to: copiedAssetPath
+    }))
   return new CopyPlugin({ patterns })
 }
 
