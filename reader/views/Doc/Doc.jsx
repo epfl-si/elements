@@ -54,7 +54,7 @@ class Doc extends Component {
       const slug = props.match.params.slug || homeFile;
 
       this.setState({ homeFile });
-      props.getDocContent(slug, props.navigation.base_url);
+      props.getDocContent(slug);
       this.setState({ hasFetched: true });
     }
   }
