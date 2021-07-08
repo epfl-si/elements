@@ -4957,7 +4957,7 @@ loader-runner@^4.2.0:
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-4.2.0.tgz#d7022380d66d14c5fb1d496b89864ebcfd478384"
   integrity sha512-92+huvxMvYlMzMt0iIOukcwYBFpkYJdpl2xsZ7LrlayO7E8SOv+JJUEK17B/dJIHAOLMfh2dZZ/Y18WgmGtYNw==
 
-loader-utils@^1.4.0:
+loader-utils@^1.1.0, loader-utils@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.4.0.tgz#c579b5e34cb34b1a74edc6c1fb36bfa371d5a613"
   integrity sha512-qH0WSMBtn/oHuwjy/NucEgbx5dbxxnxup9s4PVXJUDHZBQY+s0NWA9rJf53RBnQZxfch7euUui7hpoAPvALZdA==
@@ -8303,6 +8303,14 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
+
+twig-html-loader@^0.1.9:
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/twig-html-loader/-/twig-html-loader-0.1.9.tgz#8d55e8a8b5f49405b557cbcea6906b4776153587"
+  integrity sha512-fW5TMgYJZdpjDUwcrEWKS4YMs/tLsdq6HCPT+Cbj4RECwP84oSJdzY7tmrdhX4jeojVDBUj3hgOEBivyUGGX2g==
+  dependencies:
+    loader-utils "^1.1.0"
+    twig "^1.15.4"
 
 twig@^1.15.4:
   version "1.15.4"
