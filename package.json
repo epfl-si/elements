@@ -191,6 +191,7 @@
     "stylelint": "^13.13.1",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-scss": "^3.19.0",
+    "svg-spritemap-webpack-plugin": "^4.0.3",
     "twig": "^1.15.4",
     "walk-sync": "^3.0.0",
     "webpack": "^5.42.1",
