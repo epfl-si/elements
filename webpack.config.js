@@ -57,15 +57,12 @@ module.exports = (env, argv) => {
         {
           test: /\.(js|jsx)$/,
           exclude: /(node_modules|bower_components)/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                '@babel/preset-env',
-                '@babel/react'
-              ]
-            }
-          }
+          use: withOptions('babel-loader', {
+            presets: [
+              '@babel/preset-env',
+              '@babel/react'
+            ]
+          })
         },
         {
           test: /\.svg$/,
@@ -77,9 +74,9 @@ module.exports = (env, argv) => {
         {
           test: /\.scss$/,
           use: [
-            miniCssExtractLoader({ publicPath: "../" }),
-            cssLoader({ importLoaders: 2 }),
-            postcssLoader(),
+            withOptions(MiniCssExtractPlugin.loader, { publicPath: "../" }),
+            withOptions('css-loader', { importLoaders: 2 }),
+            withOptions('postcss-loader', postcssOptionsPresetEnv()),
             'sass-loader'
           ]
         },
@@ -155,27 +152,14 @@ function Copy (matchers, target, opts) {
   return new CopyPlugin({ patterns })
 }
 
-function miniCssExtractLoader (options) {
-  return {
-    loader: MiniCssExtractPlugin.loader,
-    options
-  }
+function withOptions(loader, options) {
+  return { loader, options }
 }
 
-function cssLoader (options) {
+function postcssOptionsPresetEnv () {
   return {
-    loader: "css-loader",
-    options
-  }
-}
-
-function postcssLoader () {
-  return {
-    loader: "postcss-loader",
-    options: {
-      postcssOptions: {
-        plugins: ["postcss-preset-env"]
-      }
+    postcssOptions: {
+      plugins: ["postcss-preset-env"]
     }
   }
 }
