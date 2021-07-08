@@ -4,6 +4,7 @@ const HtmlWebpackPlugin         = require('html-webpack-plugin')
 const CopyPlugin                = require('copy-webpack-plugin')
 const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally')
 const MiniCssExtractPlugin      = require('mini-css-extract-plugin')
+const SVGSpritemapPlugin        = require('svg-spritemap-webpack-plugin')
 
 const vendors = {
   css: [
@@ -118,7 +119,18 @@ module.exports = (env, argv) => {
       }),
       new MiniCssExtractPlugin({
         filename: 'css/[name].css',
-      })
+      }),
+      new SVGSpritemapPlugin("assets/icons/*.svg",
+        {
+          output: { filename: "icons/icons.svg" },
+          sprite: { prefix: "icon-" }
+        }),
+      new SVGSpritemapPlugin("node_modules/feather-icons/dist/icons/*.svg",
+        {
+          output: { filename: "icons/feather-sprite.svg" },
+          sprite: { prefix: false }  // "" doesn't work (yet), see
+          // https://github.com/cascornelissen/svg-spritemap-webpack-plugin/issues/168
+        })
     ]
   }
 
