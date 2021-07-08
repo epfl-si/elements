@@ -19,7 +19,7 @@ export const setDocContent = (doc) => {
   };
 }
 
-export const getDocContent = (slug, basePath) => {
+export const getDocContent = (slug) => {
   return dispatch => {
     const path = `./docs/${slug.replace(/--/g, '/')}`;
     const format = slug.split('.')[slug.split('.').length - 1];

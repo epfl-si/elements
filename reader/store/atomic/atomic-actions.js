@@ -90,14 +90,13 @@ export const setVariantMarkup = variant => {
 // If too many in parallel, use some kind of `pending_markup` status
 export const getMarkup = payload => {
   return dispatch => {
-    const fixPath = path => path.replace('./', payload.basePath);
     const component = payload.component || payload.variant;
 
     // Create the Twig object, then render it and return the result
     // eslint-disable-next-line
     const result = new Promise(resolve => {
       Twig.twig({
-        href: fixPath(component.markup),
+        href: component.markup,
         namespaces: payload.types.reduce((acc, value) => {
           acc[value] = `./components/${value}/`;
           return acc;
@@ -120,16 +119,16 @@ export const getMarkup = payload => {
   };
 };
 
-export const getComponentMarkup = (component, basePath, types) => {
-  const payload = { component, basePath, types };
+export const getComponentMarkup = (component, types) => {
+  const payload = { component, types };
 
   return dispatch => {
     dispatch(getMarkup(payload));
   };
 };
 
-export const getVariantMarkup = (variant, basePath, types) => {
-  const payload = { variant, basePath, types };
+export const getVariantMarkup = (variant, types) => {
+  const payload = { variant, types };
 
   return dispatch => {
     dispatch(getMarkup(payload));
