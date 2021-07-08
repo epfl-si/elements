@@ -20,14 +20,11 @@ import Toolbar from '../Toolbar/Toolbar';
 import './App.scss';
 
 class App extends Component {
-  componentWillMount() {
+  componentDidMount() {
     // Start init actions
     this.props.setBaseURL(this.props.location.pathname);
     this.props.getComponents();
     this.props.getDocs();
-  }
-
-  componentDidMount() {
     // Send a ToolboxReady event when App is mounted and on each page change
     this.updateHook();
     this.props.history.listen(() => this.updateHook());
