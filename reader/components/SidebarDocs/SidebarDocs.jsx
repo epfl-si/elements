@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import Collapse from 'react-css-collapse';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux'
+import { useLocation } from "react-router-dom"
+import Collapse from 'react-css-collapse'
+import PropTypes from 'prop-types'
 
-import DocDir from './DocDir';
-import DocDirLegacy from './DocDirLegacy';
+import DocDir from './DocDir'
 
-const SidebarDocs = ({ location, docs }) => {
-  const [active, setActive] = useState(false);
+import docs from '../../../docs/summary.yml'
+
+export default function SidebarDocs() {
+  const location = useLocation()
+  const [active, setActive] = useState(false)
 
   useEffect(() => {
-    const regex = new RegExp('^/doc/');
-    const isCurrent = location.pathname.match(regex);
+    const regex = new RegExp('^/doc/')
+    const isCurrent = location.pathname.match(regex)
 
-    setActive(!!isCurrent);
-  }, []);
-
-  if (! (docs.docs_list &&  Object.keys(docs.docs_list).length))
-    return false;
+    setActive(!!isCurrent)
+  }, [])
 
   return (
     <div className={active ? ' tlbx-open' : ''}>
@@ -25,23 +25,8 @@ const SidebarDocs = ({ location, docs }) => {
         <strong>Documentation</strong>
       </button>
       <Collapse className="tlbx-sidebar-collapse" isOpen={active}>
-        {docs.docs_list.f !== undefined ? (
-          // Using the first doc structure { f: [], dir: {...}}
-          <DocDirLegacy dir={docs.docs_list} fullpath="" />
-        ) : (
-          // Using the new doc structure since toolbox-utils 1.4.4
-          <DocDir dir={docs.docs_list} fullpath="" />
-        )}
+          <DocDir dir={docs} fullpath="" />
       </Collapse>
     </div>
-  );
-};
-
-SidebarDocs.propTypes = {
-  location: PropTypes.object.isRequired,
-  docs: PropTypes.object.isRequired,
-};
-
-const mapState = ({ docs }) => ({ docs });
-
-export default connect(mapState)(SidebarDocs);
+  )
+}

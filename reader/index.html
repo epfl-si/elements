@@ -42,11 +42,9 @@
 
    const { version }  = require('../package.json')
    const colors       = require('../assets/config/colors.json')
-   const docs         = require('../docs/summary.yml')
    const theme        = require('../toolbox.json').theme
    const data_        = require('../assets/config/data.json')
 
-   const windowProperties = { version, colors, docs, theme, data: data_ }
 
    windowProperties.sources = {}   // Historical bad name
    const parseYamlPath = new RegExp('^([^/]+)/([^/]+)/([^/]+)\.yml$')
@@ -80,6 +78,7 @@
 
      sources.push(newSource)
    }
+   const windowProperties = { version, colors, theme, data: data_ }
 
    for (const p in windowProperties) {
      const v = windowProperties[p]

@@ -1,76 +1,41 @@
-import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import React from 'react'
+import { useHistory } from "react-router-dom"
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
-import { actions as atomicActions } from '../../store/atomic';
-import parentUrl from '../../helpers/parentUrl';
-
-import Single from './Single';
-import Loader from './../../components/Loader/Loader';
+import Item from '../../components/Item/Item'
+import { Element } from '../../asset-components.js'
 
 /**
- * Will display the component as a raw page
- *
- * @class SinglePage
- * @extends {Single}
+ * Displays a page element as “full-screen” page
  */
-class SinglePage extends Single {
-  constructor() {
-    super();
+function SinglePage({ match }) {
+  const history = useHistory()
+  const element = Element.byTypeAndName('pages', match.params.slug)
+  // Pages don't have variants
 
-    this.state = {
-      component: {},
-    };
-  }
-
-  /**
-   * Disable links default behavious inside the page
-   *
-   * @param {Event} e
-   * @memberof SinglePage
-   */
-  handlePageClick(e) {
-    // If it's a link related event, redirect to page
-    const linkParent = parentUrl(e.target);
-    if (linkParent) {
-      e.preventDefault();
-      if (linkParent.href.includes('pages')) {
-        const slug = linkParent.href.split('pages/').slice(-1)[0];
-        this.props.history.push(`/pages/${slug}`);
-      }
-    }
-  }
-
-  render() {
+  if (element) {
+    const onClickHyperlink = fixLinksToOtherPagesOtherwiseEatClick.bind({history})
     return (
-      <div>
-        {undefined === this.state.component.content ? <Loader /> : ''}
-        <div
-          onClick={this.handlePageClick.bind(this)}
-          dangerouslySetInnerHTML={{ __html: this.state.component.content }}
-        />
-      </div>
-    );
+      <Item
+        element={element}
+        onClickHyperlink={onClickHyperlink} />
+    )
   }
+  return <p>Page not found.</p>
 }
 
+
 SinglePage.propTypes = {
-  history: PropTypes.object.isRequired,
-  components: PropTypes.object,
-};
+  match: PropTypes.object.isRequired
+}
 
-const mapState = ({ atomic, navigation }) => ({
-  atomic,
-  navigation,
-});
+export default connect(({ navigation }) => ({ navigation }))(SinglePage)
 
-const mapDispatch = dispatch => {
-  const { getComponentMarkup } = atomicActions;
-  return bindActionCreators({ getComponentMarkup }, dispatch);
-};
-
-export default connect(
-  mapState,
-  mapDispatch,
-)(SinglePage);
+function fixLinksToOtherPagesOtherwiseEatClick (link, e) {
+  e.preventDefault()
+  if (link.href.includes('pages')) {
+    const slug = link.href.split('pages/').slice(-1)[0]
+    this.history.push(`/pages/${slug}`)
+  }
+}
