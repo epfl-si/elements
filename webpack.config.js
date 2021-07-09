@@ -6,6 +6,7 @@ const CopyPlugin                = require('copy-webpack-plugin')
 const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally')
 const MiniCssExtractPlugin      = require('mini-css-extract-plugin')
 const SVGSpritemapPlugin        = require('svg-spritemap-webpack-plugin')
+const { AssetComponentsPlugin } = require('./reader/asset-components.js')
 
 const vendors = {
   css: [
@@ -116,6 +117,7 @@ module.exports = (env, argv) => {
         ["docs/**/*"],
         buildDir
       ),
+      new AssetComponentsPlugin(['atoms', 'molecules', 'organisms', 'content-types', 'pages']),
       new MergeIntoSingleFilePlugin({
         files: {
           "js/vendors.min.js": vendors.js,
