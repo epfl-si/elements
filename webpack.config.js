@@ -88,6 +88,14 @@ module.exports = (env, argv) => {
         {
           test: /\.css$/,
           use: ['style-loader', 'css-loader']
+        },
+        {
+          test: /\.twig$/,
+          type: 'asset/source',
+          use: withOptions("twig-html-loader", {
+            data: watchJSON("assets/config/data.json"),
+            ...twigNamespaces()
+          })
         }
       ]
     },
@@ -177,4 +185,20 @@ function postcssOptionsPresetEnv () {
       plugins: ["postcss-preset-env"]
     }
   }
+}
+
+function watchJSON (jsonPath) {
+  return (context) => {
+    const data = path.join(__dirname, jsonPath)
+    context.addDependency(data) // Force webpack to watch file
+    return context.fs.readJsonSync(data)
+  }
+}
+
+function twigNamespaces () {
+  const namespaces = {}
+  for (const namespace of ['atoms', 'molecules', 'content-types', 'templates', 'organisms']) {
+    namespaces[namespace] = path.join(__dirname, 'assets', 'components', namespace)
+  }
+  return { namespaces }
 }

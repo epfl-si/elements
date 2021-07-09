@@ -46,6 +46,24 @@ class Single extends Component {
 
     this.setState({ component });
   }
+
+  /**
+   * Returns the function that renders the Twig template for this route.
+   */
+  template(opt_variant) {
+    const { location } = this.props
+    const [unused, type, slug] = location.pathname.split('/')
+
+    let templateBasename = slug
+    if (opt_variant) templateBasename = `${slug}-${opt_variant}`
+
+    // Webpack will parse the following line, deduce that any .twig
+    // file under ../../../assets/components could be requested in
+    // this fashion, transpile and bundle them all, and finally
+    // substitute some generated JS so that the return value is
+    // actually what we expect.
+    return require(`../../../assets/components/${type}/${slug}/${templateBasename}.twig`)
+  }
 }
 
 export default Single;
