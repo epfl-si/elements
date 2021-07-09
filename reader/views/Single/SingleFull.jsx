@@ -1,97 +1,44 @@
-import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
-import { actions as atomicActions } from '../../store/atomic';
-
-import Single from './Single';
-import Loader from './../../components/Loader/Loader';
+import Item from '../../components/Item/Item'
+import { Element } from '../../asset-components.js'
 
 /**
- * Will display the component in a full window
- *
- * @class SingleFull
- * @extends {Single}
+ * Displays an element or variant alone, in “full screen”
  */
-class SingleFull extends Single {
-  constructor() {
-    super();
-
-    this.state = {
-      component: {},
-    };
+function SingleFull({ match }) {
+  const element = Element.byTypeAndName(match.params.type, match.params.slug)
+  if (!element) {
+    // eslint-disable-next-line no-console
+    console.log(`No element at ${match.path}`)  // Visible in `yarn test` output
+    return []
   }
+  const variant = match.params.variant ? element.variant(match.params.variant) : undefined
 
-  render() {
-    const params = this.props.match.params;
-    const isVariant = params.variant !== undefined;
-    const component = this.state.component;
-
-    let content = component.content;
-    let background = component.background;
-    let wrapper = component.wrapper;
-    let slugClass = `tlbx-component-${component.name}`;
-
-    if (isVariant) {
-      const variant = component.variants.find(
-        item => item.name === params.variant,
-      );
-      content = variant.content;
-      background = variant.background || component.background;
-      wrapper = variant.wrapper || component.wrapper;
-      slugClass = `tlbx-component-${component.name}-${variant.name}`;
-    }
-
-    return (
-      <div className="tlbx-single-full">
-        <div className="tlbx-single-full-intro">
-          <h1>
-            Full render of:&nbsp;
-            <Link
-              to={`/${component.type}/${component.parent || component.name}`}
-              title={`Go back to ${component.title} component`}
-            >
-              {component.title}
-            </Link>
-          </h1>
-        </div>
-
-        {undefined === content ? (
-          <div
-            style={background ? { backgroundColor: background } : {}}
-            className={`tlbx-item-preview ${slugClass} ${wrapper}`}
+  return (
+    <div className="tlbx-single-full">
+      <div className="tlbx-single-full-intro">
+        <h1>
+          Full render of:&nbsp;
+          <Link
+            to={`/${element.type}/${element.parent || element.name}`}
+            title={`Go back to ${element.title} component`}
           >
-            <Loader />
-          </div>
-        ) : (
-          <div
-            style={background ? { backgroundColor: background } : {}}
-            className={`tlbx-item-preview ${slugClass} ${wrapper}`}
-            dangerouslySetInnerHTML={{ __html: content }}
-          />
-        )}
+            {element.title}
+          </Link>
+        </h1>
       </div>
-    );
-  }
+
+      <Item {...{ element, variant }} />
+    </div>
+  )
 }
 
 SingleFull.propTypes = {
-  components: PropTypes.object,
-};
+  match: PropTypes.object
+}
 
-const mapState = ({ atomic, navigation }) => ({
-  atomic,
-  navigation,
-});
-
-const mapDispatch = dispatch => {
-  const { getComponentMarkup, getVariantMarkup } = atomicActions;
-  return bindActionCreators({ getComponentMarkup, getVariantMarkup }, dispatch);
-};
-
-export default connect(
-  mapState,
-  mapDispatch,
-)(SingleFull);
+export default connect(({ navigation }) => ({ navigation }))(SingleFull)
