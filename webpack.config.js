@@ -60,10 +60,14 @@ module.exports = (env, argv) => {
           exclude: /(node_modules|bower_components)/,
           use: withOptions('babel-loader', {
             presets: [
-              '@babel/preset-env',
+              [
+                '@babel/preset-env',
+                { corejs: '3.1.3', useBuiltIns: "usage" }  // Enable smart polyfills
+              ],
               '@babel/react'
-            ]
-          })
+            ],
+            sourceType: "unambiguous"  // https://stackoverflow.com/a/68352125/435004
+          }),
         },
         {
           test: /\.svg$/,
