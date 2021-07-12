@@ -152,6 +152,7 @@
     "colorable": "https://github.com/epfl-si/colorable",
     "connected-react-router": "^6.9.1",
     "copy-webpack-plugin": "^9.0.1",
+    "core-js": "3",
     "css-loader": "^5.2.6",
     "eslint": "^7.30.0",
     "eslint-config-airbnb": "^18.2.1",
