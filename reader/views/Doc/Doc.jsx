@@ -1,97 +1,49 @@
-import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import ReactMarkdown from 'react-markdown';
+import React from 'react'
+import PropTypes from 'prop-types'
+import ReactMarkdown from 'react-markdown'
 
-import { actions as docsActions } from '../../store/docs';
+import './Doc.scss'
 
-import './Doc.scss';
+export default function Doc({ match }) {
+  const { params, path } = match
 
-class Doc extends Component {
-  constructor() {
-    super();
+  let doc
+  let ext
+  if (path === "/") {
+    doc = require("../../../docs/index.html")
+    ext = "html"
+  } else {
+    if (!params?.slug) return []
+    const matched = params.slug.match(/^(.*)\.(md|html)$/)
+    if (!matched) return []
 
-    this.state = {
-      homeFile: '',
-      hasFetched: false,
-    };
-  }
+    // eslint-disable-next-line prefer-destructuring
+    ext = matched[2]
+    const path = matched[1].replaceAll("--", "/")
 
-  componentDidMount() {
-    this.getContent(this.props);
-  }
-
-  componentDidUpdate(prevProps) {
-    if (
-      this.props.docs.updated !== prevProps.docs.updated ||
-      this.props.location.pathname !== prevProps.location.pathname
-    ) {
-      this.setState({ hasFetched: false });
-      this.getContent(this.props);
+    // Fragile Webpack sorcery below; do not break in refactoring
+    if (ext === 'html') {
+      // eslint-disable-next-line import/no-dynamic-require
+      doc = require(`../../../docs/${path}.html`)
+    } else {
+      // eslint-disable-next-line import/no-dynamic-require
+      doc = require(`../../../docs/${path}.md`)
     }
   }
 
-  componentWillUnmount() {
-    this.props.cleanDocContent();
-  }
-
-  getContent(props) {
-    if (!this.state.hasFetched) {
-      let homeFile = 'index.html';
-
-      // legacy test
-      if (props.docs.docs_list && props.docs.docs_list.f) {
-        homeFile = props.docs.docs_list.f.includes('index.md')
-          ? 'index.md'
-          : homeFile;
-      } else {
-        homeFile =
-          props.docs.docs_list && props.docs.docs_list.includes('index.md')
-            ? 'index.md'
-            : homeFile;
-      }
-      const slug = props.match.params.slug || homeFile;
-
-      this.setState({ homeFile });
-      props.getDocContent(slug);
-      this.setState({ hasFetched: true });
-    }
-  }
-
-  render() {
-    const currentDoc = this.props.docs.current_doc;
-
-    return (
-      <div>
-        {currentDoc.format === 'md' ? (
-          <div className="tlbx-doc-markdown-wrapper">
-            <ReactMarkdown>{currentDoc.content || this.state.default}</ReactMarkdown>
-          </div>
-        ) : (
-          <div dangerouslySetInnerHTML={{ __html: currentDoc.content }} />
-        )}
-      </div>
-    );
-  }
+  return (
+    <div>
+      {ext === 'md' ? (
+        <div className="tlbx-doc-markdown-wrapper">
+          <ReactMarkdown>{doc}</ReactMarkdown>
+        </div>
+      ) : (
+        <div dangerouslySetInnerHTML={{ __html: doc }} />
+      )}
+    </div>
+  )
 }
 
 Doc.propTypes = {
-  docs: PropTypes.object.isRequired,
-  cleanDocContent: PropTypes.func.isRequired,
-};
-
-const mapState = ({ docs, navigation }) => ({
-  docs,
-  navigation,
-});
-
-const mapDispatch = dispatch => {
-  const { getDocContent, cleanDocContent } = docsActions;
-  return bindActionCreators({ getDocContent, cleanDocContent }, dispatch);
-};
-
-export default connect(
-  mapState,
-  mapDispatch,
-)(Doc);
+  match: PropTypes.object.isRequired
+}
