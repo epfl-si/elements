@@ -5,10 +5,6 @@ import PropTypes from 'prop-types'
 import { Route, Switch } from 'react-router-dom'
 import { Theme } from './Theme'
 
-import { actions as atomicActions } from '../../store/atomic'
-import { actions as docsActions } from '../../store/docs'
-import { actions as navigationActions } from '../../store/navigation'
-
 import Colors from '../../views/Colors/Colors'
 import Doc from '../../views/Doc/Doc'
 import Sidebar from '../Sidebar/Sidebar'

@@ -2,20 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import { ConnectedRouter } from 'connected-react-router'
 import * as serviceWorker from './serviceWorker';
-import store, { history } from './store';
+import store from './store';
 
 import App from './components/App/App';
 import printIcons from './components/Icon/Icons';
 
 const router = (
   <Provider store={store}>
-    <ConnectedRouter history={history}>
+    <Router>
       <Router>
         <Route path="/" component={App} />
       </Router>
-    </ConnectedRouter>
+    </Router>
   </Provider>
 );
 
