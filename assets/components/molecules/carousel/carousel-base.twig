@@ -13,11 +13,11 @@
     {% endfor %}
   </ol>
 
-  <button role="button" class="carousel-control carousel-control-prev" role="button" data-slide="prev" data-target="#{{id}}">
+  <button class="carousel-control carousel-control-prev" type="button" data-slide="prev" data-target="#{{id}}">
     {% include "@atoms/icon/icon.twig" with { icon: 'icon-chevron-left' } %}
     <span class="sr-only">Previous</span>
   </button>
-  <button role="button" class="carousel-control carousel-control-next" role="button" data-slide="next" data-target="#{{id}}">
+  <button class="carousel-control carousel-control-next" type="button" data-slide="next" data-target="#{{id}}">
     {% include "@atoms/icon/icon.twig" with { icon: 'icon-chevron-right' } %}
     <span class="sr-only">Next</span>
   </button>
