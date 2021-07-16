@@ -92,13 +92,15 @@ ol {
 }
 
 .list-unstyled,
-.list-inline {
+.list-inline,
+.nav,
+nav {
   
   li {
     padding-left: 0;
     
     &:before {
-      display: none;
+      content: none;
     }
   }
 }
