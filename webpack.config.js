@@ -97,6 +97,15 @@ module.exports = (env, argv) => {
             data: watchJSON("assets/config/data.json"),
             ...twigNamespaces()
           })
+        },
+        {
+          test: /\/docs\/.*\.html$/,
+          type: 'asset/source'
+        },
+        {
+          // TODO: process these with Webpack too
+          test: /\/docs\/.*\.md$/,
+          type: 'asset/source'
         }
       ]
     },
