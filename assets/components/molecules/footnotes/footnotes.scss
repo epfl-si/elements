@@ -16,12 +16,16 @@ article {
       margin-left: 0;
     }
 
-    ol li { display: block; }
+    ol li {
+      display: block;
+      padding-left: 0;
+    }
 
     ol li:before {
       content: counter(item);
       counter-increment: item;
       display: inline-block;
+      position: static;
       height: 0.7rem;
       margin-right: 0.4rem;
       padding-right: 0.15rem;

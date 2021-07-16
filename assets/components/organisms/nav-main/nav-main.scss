@@ -37,7 +37,13 @@ $nav-spacer: 4px;
     flex-flow: row nowrap;
     max-height: 0;
     border-bottom: 1px solid gray('200');
+    position: static;
     transition: max-height 0s 0.2s;
+    padding-left: 0;
+    
+    &:before {
+      content: none;
+    }
   }
 
   .current-menu-parent,
@@ -83,7 +89,9 @@ $nav-spacer: 4px;
 
 // navigation back or home button
 .nav-home,
-.nav-back {
+.nav-back,
+li.nav-back,
+li.nav-home {
   display: block;
   padding-bottom: 1.2 * $spacer;
   margin-left: -2 * $spacer;
