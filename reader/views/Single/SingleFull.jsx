@@ -13,7 +13,7 @@ function SingleFull({ match }) {
   const element = Element.byTypeAndName(match.params.type, match.params.slug)
   if (!element) {
     // eslint-disable-next-line no-console
-    console.log(`No element at ${match.path}`)  // Visible in `yarn test` output
+    console.log(`No element at ${match.url}`)  // Visible in `yarn test` output
     return []
   }
   const variant = match.params.variant ? element.variant(match.params.variant) : undefined
