@@ -41,6 +41,11 @@
   li {
     list-style-type: none;
     font-size: $font-size-base * 0.9;
+    padding-left: 0;
+    
+    &:before {
+      content: none;
+    }
 
     li {
       border-top: none;
