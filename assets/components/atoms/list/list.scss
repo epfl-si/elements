@@ -1,8 +1,8 @@
 @charset 'utf-8';
 
-.list-bullet {
-  padding-left: 0;
-  margin-left: -0.7rem;
+ul {
+  padding-left: $spacer;
+  margin-left: 0;
 
   li {
     $bullet-size: $spacer * 0.8;
@@ -32,12 +32,7 @@
     }
   }
 
-  &.list-unstyled {
-    margin-left: 0;
-    li:before { display: none; }
-  }
-
-  ul { padding-left: 0; }
+  ul { padding-left: calc( #{$spacer} / 2 ); }
   ul li:before {
     background: transparent;
     border: 1px solid $red;
@@ -48,10 +43,10 @@
   }
 }
 
-.list-numbered {
+ol {
   counter-reset: item;
-  padding-left: 0;
-  margin-left: -0.9rem;
+  padding-left: $spacer;
+  margin-left: 0;
 
   li {
     list-style-type: none;
@@ -80,7 +75,7 @@
 
   ol {
     counter-reset: secondary-item;
-    padding-left: 0;
+    padding-left: calc( #{$spacer} / 2 );
   }
   ol ol { counter-reset: third-item; }
 
@@ -93,6 +88,20 @@
   ol ol li:before {
     content: counter(item) "." counter(secondary-item) "." counter(third-item);
     counter-increment: third-item;
+  }
+}
+
+.list-unstyled,
+.list-inline,
+.nav,
+nav {
+  
+  li {
+    padding-left: 0;
+    
+    &:before {
+      content: none;
+    }
   }
 }
 

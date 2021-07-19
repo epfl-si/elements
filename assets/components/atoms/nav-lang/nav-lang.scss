@@ -66,6 +66,14 @@
     border: 0;
     margin-top: 0;
     transform: translate3d(0px, 40px, 0px) !important;
+    
+    li {
+      padding-left: 0;
+      
+      &:before {
+        content: none;
+      }
+    }
 
     a:not(.active) {
       background: white;
