@@ -11,11 +11,10 @@
     "start": "webpack --mode=development --watch",
     "build": "webpack --mode=production",
     "deploy": "toolbox build styleguide && toolbox deploy",
-    "test": "backstop test",
+    "test": "node scripts/make_backstop_json.js && backstop test --config=build/backstop.json",
     "test:reference": "backstop reference",
     "test:approve": "backstop approve",
     "test:report": "backstop openReport",
-    "test:update_config": "node scripts/backstop_config_updater.js",
     "test:info": "node scripts/backstop_status.js",
     "clean": "rm -rf build/ dist/",
     "realclean": "rm -rf build/ dist/ node_modules/"
