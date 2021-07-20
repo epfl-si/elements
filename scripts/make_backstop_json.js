@@ -32,8 +32,10 @@ if (isForDocker) {
   if (os.platform() === "darwin") {
     serverHostname = "host.docker.internal";
   } else if (os.platform() === "linux") { // Also for Travis
-    // The important part being --net=host of course
-    testConfig.dockerCommandTemplate = "docker run --rm -it --net=host --mount type=bind,source=\"{cwd}\",target=/src backstopjs/backstopjs:{version} {backstopCommand} {args}";
+    // Changed from BackstopJS's DEFAULT_DOCKER_COMMAND_TEMPLATE:
+    // - --net=host
+    // - --shm-size=2gb and --cap-add=SYS_ADMIN as per https://github.com/garris/BackstopJS/issues/603#issuecomment-346478523
+    testConfig.dockerCommandTemplate = "docker run --rm -it --net=host --shm-size=2gb --cap-add=SYS_ADMIN --mount type=bind,source=\"{cwd}\",target=/src backstopjs/backstopjs:{version} {backstopCommand} {args}";
   } else {
     throw new Error(`Sorry, don't know how to run tests on ${os.platform()}`);
   }
