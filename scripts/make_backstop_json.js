@@ -1,7 +1,7 @@
 const fs = require('fs');
 const pth = require('path');
-const config = require('../toolbox.json');
 
+const srcDir = pth.resolve(`${__dirname}/..`);
 const testConfig = {
   id: 'epfl_elements',
   viewports: [{
@@ -42,10 +42,10 @@ const sanitizeTwigs = (files, basepath) => {
   }, []);
 };
 
-const componentsDirFiles = fs.readdirSync(`${config.src}/components/`);
-const componentsDirs = sanitizeDirs(componentsDirFiles, `${config.src}/components`);
+const componentsDirFiles = fs.readdirSync(`${srcDir}/assets/components/`);
+const componentsDirs = sanitizeDirs(componentsDirFiles, `${srcDir}/assets/components`);
 const componentsSubdirs = componentsDirs.reduce((acc, value) => {
-  const path = `${config.src}/components/${value}`;
+  const path = `${srcDir}/assets/components/${value}`;
   const files = fs.readdirSync(path);
   const dirs = sanitizeDirs(files, path);
   acc[value] = dirs;
@@ -56,7 +56,7 @@ const scenarios = componentsDirs.reduce((acc, type) => {
   if (type === 'templates') return acc;
 
   componentsSubdirs[type].forEach((component) => {
-    const path = `${config.src}/components/${type}/${component}`;
+    const path = `${srcDir}/assets/components/${type}/${component}`;
     const files = fs.readdirSync(path);
     const templates = sanitizeTwigs(files, path);
 
@@ -92,9 +92,18 @@ const newTestConfig = {
   ...testConfig,
 };
 
-fs.writeFileSync('../build/backstop.json', JSON.stringify(newTestConfig));
+async function writeJSON(path, payload) {
+  return new Promise((resolve, reject) => {
+    fs.writeFile(path, JSON.stringify(payload, null, 2), (err) => {
+      if (err) reject(err); else resolve()
+    });
+  });
+}
 
-fs.writeFile(pth.resolve(`${__dirname}/../backstop.json`), JSON.stringify(newTestConfig), (err) => {
-  if (err) throw err;
-  console.log('backstop.json was successfully created!');
-});
+async function main() {
+  const target = `${srcDir}/build/backstop.json`
+  await writeJSON(target, newTestConfig);
+  console.log(`${target} was successfully created!`);
+}
+
+main();
