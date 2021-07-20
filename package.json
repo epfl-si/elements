@@ -11,7 +11,7 @@
     "start": "webpack --mode=development --watch",
     "build": "webpack --mode=production",
     "deploy": "toolbox build styleguide && toolbox deploy",
-    "test": "node scripts/make_backstop_json.js && backstop test --config=build/backstop.json",
+    "test": "bash -c ' set -e -x; node scripts/make_backstop_json.js \"$@\"; backstop test --config=build/backstop.json \"$@\" ' --",
     "test:reference": "backstop reference",
     "test:approve": "backstop approve",
     "test:report": "backstop openReport",
