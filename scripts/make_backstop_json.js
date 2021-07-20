@@ -1,7 +1,30 @@
 const fs = require('fs');
 const pth = require('path');
 const config = require('../toolbox.json');
-const testsConfig = require('../backstop.json');
+
+const testConfig = {
+  id: 'epfl_elements',
+  viewports: [{
+    label: 'lg',
+    width: 1280,
+    height: 990,
+  }],
+  paths: {
+    bitmaps_reference: 'tests/backstop/references',
+    bitmaps_test: 'tests/backstop/test',
+    engine_scripts: 'tests/backstop/engine_scripts',
+    html_report: 'tests/backstop/html_report',
+    ci_report: 'tests/backstop/ci_report',
+  },
+  report: ['browser', 'CI'],
+  engine: 'puppeteer',
+  engineOptions: {
+    ignoreHTTPSErrors: false,
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  },
+  debug: true,
+  debugWindow: false,
+};
 
 const sanitizeDirs = (files, basepath) => {
   return files.reduce((acc, value) => {
@@ -59,9 +82,12 @@ const scenarios = componentsDirs.reduce((acc, type) => {
   return acc;
 }, []);
 
-const newTestConfig = { ...testsConfig, scenarios };
+const newTestConfig = {
+  scenarios,
+  ...testConfig,
+};
 
-fs.writeFileSync('../backstop.json', JSON.stringify(newTestConfig));
+fs.writeFileSync('../build/backstop.json', JSON.stringify(newTestConfig));
 
 fs.writeFile(pth.resolve(`${__dirname}/../backstop.json`), JSON.stringify(newTestConfig), (err) => {
   if (err) throw err;
