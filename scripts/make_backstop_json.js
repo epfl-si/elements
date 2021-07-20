@@ -68,13 +68,18 @@ const scenarios = componentsDirs.reduce((acc, type) => {
         url = `#/${type}/${component}/${slug.replace(`${component}-`, '')}/full`;
       }
 
+      const hideSelectors = ['#__bs_notify__', '.tlbx-actions'];
+      if (component !== 'cookie-consent') {
+        hideSelectors.push('.cc-window');
+      }
+
       return {
         label: `${type}_${slug}`,
         url: `http://localhost:3000/${url}`,
         referenceUrl: `https://epfl-si.github.io/elements/${url}`,
         readyEvent: 'backstopjs_ready',
         delay: 800,
-        hideSelectors: ['#__bs_notify__', '.tlbx-actions'],
+        hideSelectors,
       };
     });
     acc.push(...componentScenarios);
