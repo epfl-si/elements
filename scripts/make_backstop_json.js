@@ -1,7 +1,7 @@
 const fs = require('fs');
+const os = require('os');
 const pth = require('path');
 
-const srcDir = pth.resolve(`${__dirname}/..`);
 const testConfig = {
   id: 'epfl_elements',
   viewports: [{
@@ -25,6 +25,21 @@ const testConfig = {
   debug: true,
   debugWindow: false,
 };
+
+const isForDocker = process.argv.some((arg) => arg === "--docker");
+let serverHostname = "localhost";  // Except if changed in the block below
+if (isForDocker) {
+  if (os.platform() === "darwin") {
+    serverHostname = "host.docker.internal";
+  } else if (os.platform() === "linux") { // Also for Travis
+    // The important part being --net=host of course
+    testConfig.dockerCommandTemplate = "docker run --rm -it --net=host --mount type=bind,source=\"{cwd}\",target=/src backstopjs/backstopjs:{version} {backstopCommand} {args}";
+  } else {
+    throw new Error(`Sorry, don't know how to run tests on ${os.platform()}`);
+  }
+}
+
+const srcDir = pth.resolve(`${__dirname}/..`);
 
 const sanitizeDirs = (files, basepath) => {
   return files.reduce((acc, value) => {
@@ -75,7 +90,7 @@ const scenarios = componentsDirs.reduce((acc, type) => {
 
       return {
         label: `${type}_${slug}`,
-        url: `http://localhost:3000/${url}`,
+        url: `http://${serverHostname}:3000/${url}`,
         referenceUrl: `https://epfl-si.github.io/elements/${url}`,
         readyEvent: 'backstopjs_ready',
         delay: 800,
