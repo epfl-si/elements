@@ -91,5 +91,5 @@ fs.writeFileSync('../build/backstop.json', JSON.stringify(newTestConfig));
 
 fs.writeFile(pth.resolve(`${__dirname}/../backstop.json`), JSON.stringify(newTestConfig), (err) => {
   if (err) throw err;
-  console.log('backstop.json has been well updated!');
+  console.log('backstop.json was successfully created!');
 });
