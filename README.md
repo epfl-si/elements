@@ -9,30 +9,19 @@ To contribute and run the styleguide, you will need few things :
 - [🔀 Git](https://git-scm.com/) - Version control system
 - either:
 
-  - [📗 NodeJS 8+](https://nodejs.org/en/) - JavaScript runtime used to build the project
+  - [📗 NodeJS 14+](https://nodejs.org/en/) - JavaScript runtime used to build the project
   - [🐈 Yarn](https://yarnpkg.com/lang/en/) - Dependency manager built on top of the NPM registry
 
 - or:
   - [🐳 Docker](https://www.docker.com/) - Container platform provider
   - [🐳 docker-compose](https://www.docker.com/) - Tool for defining and running multi-container Docker applications
 
-Then, to install the project on your environment :
+Then, to install the project onto your workstation:
 
 ```bash
 $ git clone git@github.com:epfl-si/elements.git
 $ cd ./elements
 $ yarn
-$ npx gulp -f node_modules/epfl-elements-toolbox-utils/gulpfile.js prepare --project=$PWD
-```
-
-(The latter command creates and populates your `~/.toolbox/` directory)
-
-Docker variant:
-
-```bash
-$ git clone git@github.com:epfl-si/elements.git
-$ cd ./elements
-$ docker-compose up builder
 ```
 
 ## Run locally
@@ -41,19 +30,6 @@ As listed in the `package.json`, the following commands are available:
 
 - `$ yarn start` : Will launch a live reloaded server to help you **during development**
 - `$ yarn build` : Will build your assets for **production usage**
-
-With Docker, you can run:
-- `$ docker-compose up server` same as `$ yarn start` but in containers
-- `$ docker-compose up builder` same as `$ yarn build` but in containers
-
-### Troubleshooting local install
-
-- Error: `You don't have any local Toolbox Reader bundles to use... Please connecte yourlsef before retrying`
-  - Faulty node_modules/toolbox-utils/tasks/prepare.js, Line 17
-  - Fix with:
-    - `mkdir ~/.toolbox && cd ~/.toolbox`
-    - `wget https://cdn.jsdelivr.net/gh/frontend/toolbox-reader@2.2.2/build/static/css/main.css`
-    - `wget https://cdn.jsdelivr.net/gh/frontend/toolbox-reader@2.2.2/build/static/js/main.js`
 
 ## Create a new release
 
