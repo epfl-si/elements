@@ -39,7 +39,7 @@ module.exports = (env, argv) => {
     entry: {
       // All the JS that is part of elements itself, e.g. to make
       // carousels clicky etc.
-      elements: ["./assets/components/base.js", "./assets/components/base.scss"],
+      elements: ["./assets/components/entrypoint.js", "./assets/components/entrypoint.scss"],
       // The React app that lets you browse the style guide:
       reader: ["./reader/index.js", "./reader/reader.scss"]
     },

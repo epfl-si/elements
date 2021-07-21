@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useHistory, useLocation } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { Route, Switch } from 'react-router-dom'
@@ -16,16 +16,23 @@ import Toolbar from '../Toolbar/Toolbar'
 import './App.scss'
 
 function App({ navigation }) {
-  const history = useHistory()
-  const [prevLocationPathname, updatePrevLocationPathname] = useState(undefined);
+  const location = useLocation()
+  const [prevLocationPathname, updatePrevLocationPathname] = useState(undefined)
   useEffect(() => {
     if (location.pathname !== prevLocationPathname) {
       updatePrevLocationPathname(location.pathname)
-      document.dispatchEvent(new Event('ToolboxReady'))
+      if (window.jQuery.fn.epflElements) {
+        // Re-apply jQuery-esque effects on new element DOM
+        window.jQuery.fn.epflElements()
+      }
+
+      // Forcibly drive presence/absence of the cookie consent bar:
+      window.jQuery.fn.cookieConsent(window.location.href.includes('cookie-consent'))
+
+      // Tell BackstopJS to take a picture now
+      console.log('backstopjs_ready')
     }
   })
-
-  const location = useLocation()
 
   // Remove styleguide shell from pages and full render of components
   const hasStyleguideShell = (
