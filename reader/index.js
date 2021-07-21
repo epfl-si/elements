@@ -5,10 +5,11 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 import store from './store';
 
 import App from './components/App/App';
-import printIcons from './components/Icon/Icons';
+import Icons from './components/Icon/Icons';
 
 const router = (
   <Provider store={store}>
+    <Icons/>
     <Router>
       <Router>
         <Route path="/" component={App} />
@@ -18,8 +19,6 @@ const router = (
 );
 
 $(function() {
-  printIcons();
-
   ReactDOM.render(
     router,
     document.getElementById('styleguide')
