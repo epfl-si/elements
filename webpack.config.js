@@ -1,7 +1,6 @@
 const path                      = require('path')
 const BrowserSyncPlugin         = require('browser-sync-webpack-plugin')
 const NodePolyfillPlugin        = require("node-polyfill-webpack-plugin")
-const HtmlWebpackPlugin         = require('html-webpack-plugin')
 const CopyPlugin                = require('copy-webpack-plugin')
 const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally')
 const MiniCssExtractPlugin      = require('mini-css-extract-plugin')
@@ -111,11 +110,10 @@ module.exports = (env, argv) => {
     },
     resolve: { extensions: ['.js', '.jsx'] },
     plugins: [
-      new HtmlWebpackPlugin({
-        template: 'reader/index.html',
-        inject: false   // We'll handle the <script>s and <link>s ourselves.
-      }),
       Copy(  // Below
+        "reader/index.html", buildDir, { munch: "reader/" }
+      ),
+      Copy(
         ["twig", "yml", "js", "png", "gif", "svg", "jpg", "webmanifest"].map(
           (ext) => `assets/**/*.${ext}`
         ),

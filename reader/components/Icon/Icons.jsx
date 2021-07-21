@@ -1,3 +1,5 @@
+import theme from '../../../assets/config/theme.json'
+
 export default () => {
   const body = document.body.innerHTML;
   document.body.innerHTML = `
@@ -24,8 +26,8 @@ export default () => {
           </g>
         </symbol>
         ${
-          window.theme && window.theme.brand
-            ? window.theme.brand
+          theme && theme.brand
+            ? theme.brand
             : `
         <symbol id="icon-toolbox" viewbox="0 0 117 98">
           <title>toolbox</title>

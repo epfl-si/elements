@@ -32,12 +32,8 @@ function App({ navigation }) {
     !location.pathname.includes('/pages/') &&
     !location.pathname.match(/\/full\/?$/)
   )
-  const fullHome = window.fullhome || false
-  const hasHomeStyleguideShell = !(
-    fullHome && location.pathname === '/'
-  )
 
-  if (hasStyleguideShell && hasHomeStyleguideShell) {
+  if (hasStyleguideShell) {
     return (
       <div>
         <Theme className="styleguide">
@@ -54,7 +50,7 @@ function App({ navigation }) {
           <div className="tlbx-content-wrapper">
             <div className="tlbx-content">
               <Switch>
-                {fullHome ? '' : <Route path="/" exact component={Doc} />}
+                <Route path="/" exact component={Doc} />
                 <Route path="/doc/:slug" component={Doc} />
                 <Route path="/colors" component={Colors} />
                 <Route path="/:type/:slug" component={SingleStyleguide} />
@@ -68,7 +64,6 @@ function App({ navigation }) {
 
   return (
     <div>
-      {fullHome ? <Route path="/" exact component={Doc} /> : ''}
       <Route path="/pages/:slug" exact component={SinglePage} />
       <Route
         path="/:type/:slug/:variant?/full"
