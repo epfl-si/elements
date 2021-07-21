@@ -71,7 +71,7 @@ function get_cookieconsent_config() {
 }
 
 const cookieconsent = (cookieconsent_config) => {
-    if (undefined !== window.sources) {
+    if (window.jQuery("body > div#styleguide").length) {
         // Open it in the cookie consent page only for Toolbox
         if (window.location.href.includes('cookie-consent')) {
             if (!window.cookie_consent_popup) {

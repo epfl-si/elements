@@ -1,6 +1,6 @@
 import styled from 'styled-components';
+import theme from '../../../assets/config/theme.json'
 
-const config = window.theme || {};
 const base = {
   black: '#010a15',
   white: '#fff',
@@ -11,8 +11,8 @@ const base = {
 };
 
 export const Theme = styled.div`
-  background: ${config.bodyBackground || base.white};
-  color: ${config.bodyForeground || base.black};
+  background: ${theme.bodyBackground || base.white};
+  color: ${theme.bodyForeground || base.black};
 
   h1,
   h2,
@@ -20,28 +20,28 @@ export const Theme = styled.div`
   h4,
   h5,
   h6 {
-    color: ${config.headingForeground || base.black};
+    color: ${theme.headingForeground || base.black};
   }
 
   .tlbx-toolbar-btn {
-    color: ${config.toolbarIconsForeground || base.white};
+    color: ${theme.toolbarIconsForeground || base.white};
   }
   .tlbx-toolbar-wrapper {
-    background: ${config.primary || base.primary};
+    background: ${theme.primary || base.primary};
   }
   .tlbx-sidebar-item-list a.active,
   .tlbx-sidebar-item-list a:hover {
-    color: ${config.secondary || base.secondary};
+    color: ${theme.secondary || base.secondary};
     &:before {
-      border-left-color: ${config.secondary || base.secondary};
+      border-left-color: ${theme.secondary || base.secondary};
     }
   }
   .tlbx-sidebar-item:after {
-    border-top-color: ${config.secondary || base.secondary};
+    border-top-color: ${theme.secondary || base.secondary};
   }
   .tlbx-sidebar-wrapper {
-    background: ${config.sidebarBackground || base.grayLighter};
-    color: ${config.sidebarForeground || base.black};
+    background: ${theme.sidebarBackground || base.grayLighter};
+    color: ${theme.sidebarForeground || base.black};
     a,
     button,
     h1,
@@ -50,17 +50,17 @@ export const Theme = styled.div`
     h4,
     h5,
     h6 {
-      color: ${config.sidebarForeground || base.black};
+      color: ${theme.sidebarForeground || base.black};
     }
   }
 
   .tlbx-actions-link {
-    border-color: ${config.secondary || base.secondary};
-    color: ${config.secondary || base.secondary};
+    border-color: ${theme.secondary || base.secondary};
+    color: ${theme.secondary || base.secondary};
   }
 
   .tlbx-item-preview {
-    background: ${config.itemBackground || base.white};
-    border-color: ${config.itemBorder || base.alto};
+    background: ${theme.itemBackground || base.white};
+    border-color: ${theme.itemBorder || base.alto};
   }
 `;

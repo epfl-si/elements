@@ -30,26 +30,6 @@
   <link rel="stylesheet" href="css/elements.css">
   <link rel="stylesheet" href="css/reader.css">
 
-  <script>
-
-   // Compile-time constants on the global `window` object
-
-   // <% print("\n\n");
-
-   const { version }  = require('../package.json')
-   const colors       = require('../assets/config/colors.json')
-   const theme        = require('../toolbox.json').theme
-
-   const windowProperties = { version, colors, theme }
-
-   for (const p in windowProperties) {
-     const v = windowProperties[p]
-     print(`window.${p} = ${JSON.stringify(v, null, 4)};\n`)
-   }
-
-   // %>
-  </script>
-
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="js/vendors.min.js"></script>
   <script src="js/elements.bundle.js"></script>
