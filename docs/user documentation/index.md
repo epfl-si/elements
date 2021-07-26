@@ -43,7 +43,7 @@ Now that you've downloaded the build archive, you will find every CSS, Javascrip
     <!-- Elements JS -->
     <script src="./vendors/elements/js/vendors.min.js"></script>
     <script src="./vendors/elements/js/vendors.bundle.js"></script>
-    <script src="./vendors/elements/js/app.bundle.js"></script>
+    <script src="./vendors/elements/js/elements.bundle.js"></script>
   </body>
   ```
 

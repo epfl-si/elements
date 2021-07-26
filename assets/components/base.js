@@ -26,8 +26,6 @@ import restauration from './organisms/restauration/restauration';
 
 import guide from './guide.js';
 
-svgIcons(); // Must run as soon as possible
-
 const init = () => {
   upload();
   selectMultiple();
@@ -41,8 +39,9 @@ const init = () => {
   share();
   coursebook();
   Tablesaw.init();
-  nav();
   cardSlider();
+  svgIcons();
+  nav();
   drawer();
   breadcrumb();
   cookieconsent(get_cookieconsent_config());

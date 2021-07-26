@@ -1,0 +1,43 @@
+@import '../../variables.scss';
+
+.tlbx-color-swatch-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tlbx-color-swatch {
+  flex: 0 0 14%;
+  padding-right: 1.6%;
+  margin: 1em 0;
+  margin-bottom: 2em;
+}
+
+.tlbx-color-swatch-color {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 150px;
+  height: 12vh;
+
+  &:hover .tlbx-color-swatch-btn { opacity: 1; }
+}
+
+.tlbx-color-swatch-btn {
+  opacity: 0;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 1em;
+  background: $color-primary;
+  color: $white;
+  border: none;
+  transition: opacity 0.3s;
+  &:hover { cursor: pointer; }
+}
+
+.tlbx-color-swatch-infos {
+  h5 { margin: 0.5em 0; }
+  h6 {
+    text-transform: uppercase;
+    margin: 0.5em 0;
+  }
+}

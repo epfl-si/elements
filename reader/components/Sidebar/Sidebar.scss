@@ -1,0 +1,33 @@
+@import '../../variables.scss';
+
+.tlbx-sidebar {
+  padding: 1em 0;
+
+  a {
+    color: $body-color;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  @media only screen and (max-width: 767px) {
+    margin-bottom: 3rem;
+  }
+}
+
+.tlbx-sidebar-title {
+  font-size: 1rem;
+  margin: 0 1rem;
+  margin-top: 0.5rem;
+
+  span {
+    font-weight: 200;
+  }
+}
+
+.tlbx-sidebar-version {
+  margin: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 200;
+}
+
