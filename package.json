@@ -11,9 +11,9 @@
     "start": "webpack --mode=development --watch",
     "build": "webpack --mode=production",
     "test": "bash -c ' set -e -x; node scripts/make_backstop_json.js \"$@\"; backstop test --config=build/backstop.json \"$@\" ' --",
-    "test:reference": "backstop reference",
-    "test:approve": "backstop approve",
-    "test:report": "backstop openReport",
+    "test:reference": "backstop reference --config=build/backstop.json",
+    "test:approve": "backstop approve  --config=build/backstop.json",
+    "test:report": "backstop openReport --config=build/backstop.json",
     "test:info": "node scripts/backstop_status.js",
     "clean": "rm -rf build/ dist/",
     "realclean": "rm -rf build/ dist/ node_modules/"
