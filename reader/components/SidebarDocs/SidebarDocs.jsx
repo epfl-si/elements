@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { connect } from 'react-redux'
 import { useLocation } from "react-router-dom"
 import Collapse from 'react-css-collapse'
 import PropTypes from 'prop-types'
