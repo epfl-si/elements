@@ -113,21 +113,20 @@ class Variant {
  * @constructor
  */
 function AssetComponentsPlugin (order) {
-  const path = 'assets/components'  // From the point of view of webpack.config.js
-
   const { DefinePlugin } = serverSideRequire('webpack')
+  const walkSync = serverSideRequire('walk-sync')
 
-  const runtimeValue = DefinePlugin.runtimeValue(
-    () => JSON.stringify(findAssetsOnFilesystem(serverSideRequire('walk-sync')(path))),
-    /* uncacheable = */ true
-  )
-  const options = {}
-  // Need to dodge the Webpack preprocessor below:
-  // eslint-disable-next-line no-useless-concat
-  options['_WEBPACK_COMPONENT_' + 'ASSET_MANIFEST_'] = runtimeValue
+  const basePath = `${__dirname}/../assets/components`
+  const filesAndDirs = walkSync(basePath)
 
-  const definePlugin = new DefinePlugin(options)
-  return { apply(compiler) { definePlugin.apply(compiler) } }
+  const assets = findAssetsOnFilesystem(filesAndDirs)
+
+  return new DefinePlugin({
+    _WEBPACK_COMPONENT_ASSET_MANIFEST_: DefinePlugin.runtimeValue(
+      () => JSON.stringify(assets),
+      /* uncacheable = */ true
+    )
+  })
 
   // Note: keep all compile-time support code within function AssetPlugin(),
   // so that it gets eliminated in a production build.
