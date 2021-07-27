@@ -120,11 +120,14 @@ function AssetComponentsPlugin (order) {
   const filesAndDirs = walkSync(basePath)
 
   const assets = findAssetsOnFilesystem(filesAndDirs)
+  const dirs = filesAndDirs
+    .filter((d) => d.endsWith("/"))
+    .map((d) => `${basePath}/${d}`)
 
   return new DefinePlugin({
     _WEBPACK_COMPONENT_ASSET_MANIFEST_: DefinePlugin.runtimeValue(
       () => JSON.stringify(assets),
-      /* uncacheable = */ true
+      { econtextDependencies: dirs }
     )
   })
 
