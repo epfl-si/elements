@@ -35,6 +35,27 @@
 // literal strings. This is the reason why the source path
 // (../assets/components) cannot be made flexible.
 
+class Variant {
+  static all (element) {
+    return element.variants.map((v) => new Variant(element, v))
+  }
+
+  constructor (element, variant) {
+    this.element = element
+    Object.assign(this, variant)
+  }
+
+  html () {
+    // Fragile Webpack sorcery below; do not break in refactoring
+    // eslint-disable-next-line import/no-dynamic-require
+    return require(`../assets/components/${this.element.uri()}/${this.element.component}-${this.name}.twig`)
+  }
+
+  uri () {
+    return `${this.element.type}/${this.element.component}/${this.name}`
+  }
+}
+
 class Element {
   static all () {
     const all = []
@@ -85,27 +106,6 @@ class Element {
 
   variant (name) {
     return this.variants.find((v) => v.name === name)
-  }
-}
-
-class Variant {
-  static all (element) {
-    return element.variants.map((v) => new Variant(element, v))
-  }
-
-  constructor (element, variant) {
-    this.element = element
-    Object.assign(this, variant)
-  }
-
-  html () {
-    // Fragile Webpack sorcery below; do not break in refactoring
-    // eslint-disable-next-line import/no-dynamic-require
-    return require(`../assets/components/${this.element.uri()}/${this.element.component}-${this.name}.twig`)
-  }
-
-  uri () {
-    return `${this.element.type}/${this.element.component}/${this.name}`
   }
 }
 
