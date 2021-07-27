@@ -1,7 +1,7 @@
 /* global $ */
 
 const nav = () => {
-  // declare classes used to identify current menu and it's parents (based on wordpress classes)
+  // declare classes used to identify current menu and its parents (based on wordpress classes)
   const activeClass = 'current-menu-parent';
   const parentClass = 'current-menu-ancestor';
 
@@ -17,7 +17,7 @@ const nav = () => {
     $('body').toggleClass('mobile-menu-open');
   };
 
-  // Open or close desktop toggle navigation, keeping it's actual position.
+  // Open or close desktop toggle navigation, keeping its actual position.
   // Used for the hamburger desktop menu to display current position
   const toggleDesktopMenu = (mustOpen = false) => {
     const navToggle = $('.nav-toggle');
