@@ -1,4 +1,32 @@
-/* globals $ */
+/* globals jQuery */
+
+let bannerElement
+function cookieConsent(opt_visible) {
+  if (bannerElement) {
+    setVisibility(bannerElement, opt_visible)
+  } else {
+    window.cookieconsent.initialise(
+      get_cookieconsent_config(),
+      (popup) => {
+        bannerElement = popup.element
+        setVisibility(bannerElement, opt_visible)
+      },
+      (err) => console.error(err)
+    )
+    window.cookieconsent.initialise = (() => {})
+  }
+}
+
+jQuery.fn.extend({ cookieConsent })
+export default cookieConsent
+
+function setVisibility(cookieBanner, visible) {
+  if (visible === true) {
+    jQuery(cookieBanner).show().removeClass("cc-invisible")
+  } else if (visible === false) {
+    jQuery(cookieBanner).hide().addClass("cc-invisible")
+  }
+}
 
 function get_cookieconsent_config() {
     // Translation
@@ -69,40 +97,3 @@ function get_cookieconsent_config() {
     }
     return config;
 }
-
-const cookieconsent = (cookieconsent_config) => {
-    if (undefined !== window.sources) {
-        // Open it in the cookie consent page only for Toolbox
-        if (window.location.href.includes('cookie-consent')) {
-            if (!window.cookie_consent_popup) {
-                window.cookieconsent.initialise(cookieconsent_config, function (popup) {
-                    window.cookie_consent_popup = popup;
-                    document.body.appendChild(popup.element);
-                    }, function (err) {
-                        console.error(err);
-                    }
-                );
-            }
-            window.cookie_consent_popup.open();
-        } else {
-            // Force close if we are not on the correct page
-            if (window.cookie_consent_popup) {
-                window.cookie_consent_popup.close();
-            }
-        }
-    } else {
-        var p;
-        // Init cookieconsent for the site
-        window.cookieconsent.initialise(cookieconsent_config, function (popup) {
-            p = popup;
-            document.body.appendChild(p.element);
-            }, function (err) {
-                console.error(err);
-            }
-        );
-        return p;
-    }
-};
-
-export default cookieconsent;
-export {get_cookieconsent_config};

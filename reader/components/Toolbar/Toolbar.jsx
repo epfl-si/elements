@@ -15,7 +15,6 @@ const Toolbar = ({ navigation, toggleCode, toggleMenu }) => {
       {/* Brand button */}
       <button
         className="tlbx-toolbar-btn tlbx-brand"
-        onClick={() => alert('Toolbox is amazing !')}
       >
         <Icon name="icon-toolbox" />
       </button>

@@ -4,9 +4,10 @@ import colorable from 'colorable';
 import ColorSwatch from './ColorSwatch';
 import ColorTable from './../../components/ColorTable/ColorTable';
 import './Colors.scss';
+import colors from '../../../assets/config/colors.json';
 
 const Colors = () => {
-  const contrast = colorable(window.colors);
+  const contrast = colorable(colors);
 
   return (
     <div className="container-fluid">

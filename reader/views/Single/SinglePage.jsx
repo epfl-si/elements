@@ -1,6 +1,5 @@
 import React from 'react'
 import { useHistory } from "react-router-dom"
-import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import Item from '../../components/Item/Item'
@@ -30,7 +29,7 @@ SinglePage.propTypes = {
   match: PropTypes.object.isRequired
 }
 
-export default connect(({ navigation }) => ({ navigation }))(SinglePage)
+export default SinglePage
 
 function fixLinksToOtherPagesOtherwiseEatClick (link, e) {
   e.preventDefault()
