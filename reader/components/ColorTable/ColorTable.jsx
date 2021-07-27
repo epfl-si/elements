@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import colorable from 'colorable';
 import Tooltip from 'rc-tooltip';
 import 'rc-tooltip/assets/bootstrap.css';
+import colors from '../../../assets/config/colors.json';
 
 import './ColorTable.scss';
 
@@ -11,7 +12,7 @@ class ColorTable extends Component {
 
     this.state = {
       threshold: 4.5,
-      colors: window.colors,
+      colors
     };
 
     this.state.colorable = colorable(

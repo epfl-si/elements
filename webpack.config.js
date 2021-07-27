@@ -1,7 +1,6 @@
 const path                      = require('path')
 const BrowserSyncPlugin         = require('browser-sync-webpack-plugin')
 const NodePolyfillPlugin        = require("node-polyfill-webpack-plugin")
-const HtmlWebpackPlugin         = require('html-webpack-plugin')
 const CopyPlugin                = require('copy-webpack-plugin')
 const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally')
 const MiniCssExtractPlugin      = require('mini-css-extract-plugin')
@@ -40,7 +39,7 @@ module.exports = (env, argv) => {
     entry: {
       // All the JS that is part of elements itself, e.g. to make
       // carousels clicky etc.
-      elements: ["./assets/components/base.js", "./assets/components/base.scss"],
+      elements: ["./assets/components/entrypoint.js", "./assets/components/entrypoint.scss"],
       // The React app that lets you browse the style guide:
       reader: ["./reader/index.js", "./reader/reader.scss"]
     },
@@ -111,11 +110,10 @@ module.exports = (env, argv) => {
     },
     resolve: { extensions: ['.js', '.jsx'] },
     plugins: [
-      new HtmlWebpackPlugin({
-        template: 'reader/index.html',
-        inject: false   // We'll handle the <script>s and <link>s ourselves.
-      }),
       Copy(  // Below
+        "reader/index.html", buildDir, { munch: "reader/" }
+      ),
+      Copy(
         ["twig", "yml", "js", "png", "gif", "svg", "jpg", "webmanifest"].map(
           (ext) => `assets/**/*.${ext}`
         ),

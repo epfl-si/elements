@@ -35,6 +35,27 @@
 // literal strings. This is the reason why the source path
 // (../assets/components) cannot be made flexible.
 
+class Variant {
+  static all (element) {
+    return element.variants.map((v) => new Variant(element, v))
+  }
+
+  constructor (element, variant) {
+    this.element = element
+    Object.assign(this, variant)
+  }
+
+  html () {
+    // Fragile Webpack sorcery below; do not break in refactoring
+    // eslint-disable-next-line import/no-dynamic-require
+    return require(`../assets/components/${this.element.uri()}/${this.element.component}-${this.name}.twig`)
+  }
+
+  uri () {
+    return `${this.element.type}/${this.element.component}/${this.name}`
+  }
+}
+
 class Element {
   static all () {
     const all = []
@@ -88,46 +109,27 @@ class Element {
   }
 }
 
-class Variant {
-  static all (element) {
-    return element.variants.map((v) => new Variant(element, v))
-  }
-
-  constructor (element, variant) {
-    this.element = element
-    Object.assign(this, variant)
-  }
-
-  html () {
-    // Fragile Webpack sorcery below; do not break in refactoring
-    // eslint-disable-next-line import/no-dynamic-require
-    return require(`../assets/components/${this.element.uri()}/${this.element.component}-${this.name}.twig`)
-  }
-
-  uri () {
-    return `${this.element.type}/${this.element.component}/${this.name}`
-  }
-}
-
 /**
  * @constructor
  */
 function AssetComponentsPlugin (order) {
-  const path = 'assets/components'  // From the point of view of webpack.config.js
-
   const { DefinePlugin } = serverSideRequire('webpack')
+  const walkSync = serverSideRequire('walk-sync')
 
-  const runtimeValue = DefinePlugin.runtimeValue(
-    () => JSON.stringify(findAssetsOnFilesystem(serverSideRequire('walk-sync')(path))),
-    /* uncacheable = */ true
-  )
-  const options = {}
-  // Need to dodge the Webpack preprocessor below:
-  // eslint-disable-next-line no-useless-concat
-  options['_WEBPACK_COMPONENT_' + 'ASSET_MANIFEST_'] = runtimeValue
+  const basePath = `${__dirname}/../assets/components`
+  const filesAndDirs = walkSync(basePath)
 
-  const definePlugin = new DefinePlugin(options)
-  return { apply(compiler) { definePlugin.apply(compiler) } }
+  const assets = findAssetsOnFilesystem(filesAndDirs)
+  const dirs = filesAndDirs
+    .filter((d) => d.endsWith("/"))
+    .map((d) => `${basePath}/${d}`)
+
+  return new DefinePlugin({
+    _WEBPACK_COMPONENT_ASSET_MANIFEST_: DefinePlugin.runtimeValue(
+      () => JSON.stringify(assets),
+      { econtextDependencies: dirs }
+    )
+  })
 
   // Note: keep all compile-time support code within function AssetPlugin(),
   // so that it gets eliminated in a production build.
@@ -143,7 +145,7 @@ function AssetComponentsPlugin (order) {
       for (const file of files) {
         // For historical reasons, YAML files explicitly enumerate
         // variants. We could just as easily figure that out
-        // implicitly from from the list of .twig files on the file
+        // implicitly from the list of .twig files on the file
         // system instead.
         const matched = file.match(parseYamlPath)
         if (!matched) continue
