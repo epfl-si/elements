@@ -143,7 +143,7 @@ function AssetComponentsPlugin (order) {
       for (const file of files) {
         // For historical reasons, YAML files explicitly enumerate
         // variants. We could just as easily figure that out
-        // implicitly from from the list of .twig files on the file
+        // implicitly from the list of .twig files on the file
         // system instead.
         const matched = file.match(parseYamlPath)
         if (!matched) continue
