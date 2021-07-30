@@ -1,4 +1,16 @@
+{% set isSpecial = true %}
+
 {% extends "@templates/base/base.twig" %}
+
+{% block header %}
+  {% include '@organisms/header/header-light.twig' with { site_title: 'Actualités' } %}
+{% endblock %}
+
+{% block breadcrumb %}
+<div class="breadcrumb-container">
+  {% include '@molecules/breadcrumb/breadcrumb.twig' %}
+</div>
+{% endblock %}
 
 {% block grid %}{% endblock %}
 
@@ -7,22 +19,14 @@
     <h1 itemprop="name">Des connexions se créent pour dépasser la paralysie</h1>
   </div>
 
-  <div class="bg-gray-100 py-5 mb-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <p class="lead">Des rats paraplégiques retrouvent l’usage de leurs pattes à la suite d’une rééducation neuroprosthétique qui provoque la création de nouvelles connexions cérébrales. Celles-ci transmettent les commandes motrices jusqu’aux centres d'exécution de la moelle épinière en aval de la blessure, permettant ainsi de marcher, nager et même monter des escaliers.</p>
-        </div>
-        <div class="col-lg-6">
-          {% include '@atoms/picture/picture.twig' %}
-        </div>
-      </div>
-    </div>
+  <div class="container">
+    {% include '@atoms/picture/picture.twig' %}
   </div>
 
   <div class="container">
     <div class="row">
       <div class="col-md-6">
+        <p class="bg-gray-100 px-4 py-5 lead mb-5">Des rats paraplégiques retrouvent l’usage de leurs pattes à la suite d’une rééducation neuroprosthétique qui provoque la création de nouvelles connexions cérébrales. Celles-ci transmettent les commandes motrices jusqu’aux centres d'exécution de la moelle épinière en aval de la blessure, permettant ainsi de marcher, nager et même monter des escaliers.</p>
         <p>Par la combinaison de stimulations électrochimiques de la moelle épinière et d’une rééducation assistée par robot, des rats atteints d'une lésion médullaire clinique retrouvent le contrôle des membres paralysés. Mais comment ces commandes cérébrales (de marche, de natation, ou de montée d’escaliers) peuvent-elles contourner la lésion, atteindre la moelle épinière, et ainsi rendre possibles ces tâches complexes ? Des scientifiques de l'EPFL ont observé pour la première fois que le cerveau ré-achemine des commandes motrices spécifiques par des voies alternatives, soit des fibres neuronales poussant du tronc cérébral jusqu’à la moelle épinière. La thérapie provoque le développement de nouvelles connexions entre le cortex moteur et le tronc cérébral, et entre le tronc cérébral et la moelle épinière, reconnectant ainsi le cerveau avec la moelle épinière de l’autre côté de la lésion. Ces résultats paraissent le 19 mars dans la revue Nature Neuroscience.</p>
         <p>Grégoire Courtine, chef d’unité au Centre de neuroprothèses de l’EPFL, explique que « le cerveau développe de nouvelles connexions anatomiques à travers des régions du système nerveux restées intactes après la lésion. Le cerveau rebranche principalement les circuits du cortex cérébral, du tronc cérébral, et de la moelle épinière. Ce recâblage extensif, nous avons pu l’observer avec un niveau de détail jusqu’ici inégalé, grâce aux technologies dernier cri de microscopie du cerveau et de la moelle épinière. »</p>
 
@@ -38,7 +42,9 @@
         <p>Reste encore à voir si la réhabilitation neuroprosthétique conduit aussi, chez l'homme, à un recâblage similaire du cerveau, du tronc cérébral et de la moelle épinière. Grégoire Courtine est optimiste: « Nous avons déjà montré que la plasticité du système nerveux, c’est-à-dire sa remarquable capacité à développer de nouvelles connexions après une lésion de la moelle épinière, est encore plus robuste chez l'homme que chez le rongeur. Nous sommes actuellement en train de tester notre thérapie sur des personnes atteintes d'une lésion de la moelle épinière au Centre hospitalier universitaire vaudois (CHUV). »</p>
 
       </div>
-      <div class="col-md-4 offset-md-2">
+      <div class="col-md-4 offset-md-2 mt-5">
+        <time itemprop="datePublished" datetime="2018-03-19">19.03.18</time>
+        <hr class="mb-4">
         <div class="mb-5">
           <h2 class="h6">Liens</h2>
           <ul class="list-bullet">
