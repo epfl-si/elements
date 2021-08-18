@@ -7863,10 +7863,10 @@ svg-element-attributes@^1.3.1:
   resolved "https://registry.yarnpkg.com/svg-element-attributes/-/svg-element-attributes-1.3.1.tgz#0c55afac6284291ab563d0913c062cf78a8c0ddb"
   integrity sha512-Bh05dSOnJBf3miNMqpsormfNtfidA/GxQVakhtn0T4DECWKeXQRQUceYjJ+OxYiiLdGe4Jo9iFV8wICFapFeIA==
 
-svg-spritemap-webpack-plugin@^4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/svg-spritemap-webpack-plugin/-/svg-spritemap-webpack-plugin-4.0.3.tgz#cebd82e831775454c500748a7babf7130c298864"
-  integrity sha512-63+CEA5FrhjixjgWNIasOXnTIumRGfXSlIp90XCLPtL124k/MdizRYtsNywV4DL9dfELl6dMXMKedge5Ll2Gcg==
+svg-spritemap-webpack-plugin@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/svg-spritemap-webpack-plugin/-/svg-spritemap-webpack-plugin-4.1.0.tgz#b62fa298482c7ee1d40586ff1865787e9fda398e"
+  integrity sha512-M35hgdR/mKPpnldeyLCRAL5v6oDssz0aI/wXeeUyvd2cqx1e0nDHiBuF82VDZpOSkAb44akqX+C0pYsz9NALZA==
   dependencies:
     glob "^7.1.6"
     joi "^17.4.0"

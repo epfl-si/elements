@@ -148,8 +148,7 @@ module.exports = (env, argv) => {
       new SVGSpritemapPlugin("node_modules/feather-icons/dist/icons/*.svg",
         {
           output: { filename: "icons/feather-sprite.svg" },
-          sprite: { prefix: false }  // "" doesn't work (yet), see
-          // https://github.com/cascornelissen/svg-spritemap-webpack-plugin/issues/168
+          sprite: { prefix: "" }
         })
     ]
   }
