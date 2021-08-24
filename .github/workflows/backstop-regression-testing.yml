@@ -3,20 +3,59 @@ on:
   pull_request:
   workflow_dispatch:   # For debug purposes
 jobs:
-  build-and-test:
+  backstop:
     runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1
+      matrix:
+        ref:
+          - ${{ github.base_ref }}
+          - ${{ github.head_ref }}
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: dev
-      - run: |
-          yarn
+          ref: ${{ matrix.ref }}
+
+      - name: Compute variables
+      # See https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#environment-files
+        run: |
+          exec >> $GITHUB_ENV
+          if [ "$current_ref" = "$base_ref" ]; then
+            echo backstop_verb=reference
+          else
+            echo backstop_verb=test
+          fi
+        env:
+          current_ref: ${{ matrix.ref }}
+          base_ref: ${{ github.base_ref }}
+
+      - uses: actions/setup-node@v2
+        with:
+          cache: yarn
+
+      # Work around https://github.com/yarnpkg/yarn/issues/4890
+      - name: Forcibly revalidate Yarn cache
+        run: yarn --frozen-lockfile  --network-timeout 1000000
+
+      - name: Delete old tests (from git) if any
+        run: |
+          rm -rf tests/backstop/
+
+      - if: ${{ env.backstop_verb == 'test' }}
+        name: Download baseline Backstop results from previous run
+        uses: actions/download-artifact@v2
+        with:
+          name: backstop-report
+          path: tests/backstop
+
+      - name: Run Backstop
+        run: |
           yarn start &
-          for retry in $(seq 1 60); do if ! curl http://localhost:3000/ ; then sleep 1; fi; done
-          npx backstop reference
-      - uses: actions/checkout@v2
-      - run: |
-          yarn
-          yarn start &
-          for retry in $(seq 1 60); do if ! curl http://localhost:3000/ ; then sleep 1; fi; done
-          npx backstop
+          for retry in $(seq 1 6); do if ! curl --silent -o /dev/null http://localhost:3000/ ; then sleep 10; fi; done
+          node scripts/make_backstop_json.js
+          npx backstop ${{ env.backstop_verb }} --config=build/backstop.json || true
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: backstop-report
+          path: tests/backstop
