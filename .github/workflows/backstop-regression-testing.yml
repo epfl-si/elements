@@ -1,0 +1,22 @@
+name: backstop-regression-testing
+on:
+  pull_request:
+  workflow_dispatch:   # For debug purposes
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: dev
+      - run: |
+          yarn
+          yarn start &
+          for retry in $(seq 1 60); do if ! curl http://localhost:3000/ ; then sleep 1; fi; done
+          npx backstop reference
+      - uses: actions/checkout@v2
+      - run: |
+          yarn
+          yarn start &
+          for retry in $(seq 1 60); do if ! curl http://localhost:3000/ ; then sleep 1; fi; done
+          npx backstop
