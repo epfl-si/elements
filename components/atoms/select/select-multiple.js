@@ -1,10 +1,1 @@
-/* globals $ */
-
-export default () => {
-  $('.select-multiple').each((index, element) => {
-    $(element).multipleSelect({
-      placeholder: $(element).attr('data-placeholder') || '',
-      width: '100%',
-    });
-  });
-};
+export default()=>{$(".select-multiple").each(((e,l)=>{$(l).multipleSelect({placeholder:$(l).attr("data-placeholder")||"",width:"100%"})}))};

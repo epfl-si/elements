@@ -1,11 +1,13 @@
 name: list
 title: Lists
 notes: |
-  The classic way to display a group of elements, with or without hierarchy. You can use `.list-numbered` and `.list-bullet` classes to override the basic styles of lists (see the variants lower on this page). Use lists in content areas.
+  The classic way to display a group of elements, with or without hierarchy (see the variants lower on this page). Use lists in content areas.
 variants:
-  - name: numbered
-    title: Numbered list
-  - name: bullet
-    title: Bulleted list
+  - name: unordered
+    title: Unordered list (bullets)
+  - name: ordered
+    title: Ordered list (numbers)
   - name: inline
     title: Inline list
+  - name: unstyled
+    title: Unstyled list

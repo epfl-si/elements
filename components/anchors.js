@@ -1,10 +1,1 @@
-/* global $ */
-
-export default () => {
-  $('a').on('click', (e) => {
-    const target_href = $(e.target).attr('href');
-    if (target_href && target_href.length > 1 && target_href.match('^#')) {
-      $(e.target)[0].scrollIntoView();
-    }
-  });
-};
+export default()=>{$("a").on("click",(t=>{const e=$(t.target).attr("href");e&&e.length>1&&e.match("^#")&&$(t.target)[0].scrollIntoView()}))};
