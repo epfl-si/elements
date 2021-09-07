@@ -8,10 +8,26 @@ This chapter is about writing documentation for the Elements project.
 
 ## File structure
 
-The Git repository contains the following major subdirectories:
-- `./assets/` contains the bits and pieces of HTML, JS and (S)CSS that compose the EPFL Web visual identity, along with usage examples (in Twig format) metadata (YAML) and documentation (in Markdown)
-- `./reader/` contains a theming-neutral React Web app to showcase these graphical elements
-- `./docs/` contains general-purpose documentation to help you use epfl-elements in your Web site or app.
+Everything is under the `./docs` directory. [Toolbox-reader](https://github.com/frontend/toolbox-reader) that we are using to render the full Styleguide keeps the file structure as defined. It accept the following file formats.
+- `.md` : [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- `.html` : HTML markup content, no `head`/`body` required.
+
+This an example of how this will work :
+
+````plain
+.
+∟ docs/
+  ⊢ index.md          👈 Styleguide's homepage
+  ⊢ typography.html   👈 Documentation page
+  ⊢ guidelines/       👈 Sub directory
+    ∟ code.md         👈 Sub documentation page
+  ∟ CI/               👈 Sub directory
+    ⊢ index.md        👈 CI directory documentation page
+    ⊢ deploy.md       👈 Sub documentation page
+    ∟ testing.html    👈 Sub documentation page
+````
+
+There is no depth limitation, but try to keep things **simple** and **understandable**.
 
 ## Contributing
 
