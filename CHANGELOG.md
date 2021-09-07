@@ -1,4 +1,12 @@
 # CHANGELOG
+*3.0.0* (2021-09-07)
+- ✨ 3.0 ! Thanks @domq for the dependencies refactor
+  - Rewrite the entire build and test system #521
+  - Misc improvements, simplifications, dead code removal #522
+  - Upgrade svg-spritemap-webpack-plugin #523
+- Update "news detail" page #525
+- Update carousel buttons attributes #517
+- Improve lists #518
 
 *2.26.1* (2021-06-30)
 - Fix problematic dependencies

@@ -2,6 +2,12 @@
 
 .nav-tabs {
   .nav-item {
+    padding-left: 0;
+    
+    &:before {
+      content: none;
+    }
+    
     + .nav-item {
       .nav-link {
         margin-left: -1px;
