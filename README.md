@@ -80,7 +80,10 @@ If you want to ship images to the production build, just make shure they are in 
 All the images in the `/images/styleguide/` folder will remain available when running `yarn start` or deploying the styleguide on a gh-page.
 
 #### 5. Update github.io
-- A `$ yarn deploy` should **deploy the styleguide** in the dedicated [`gh-pages`](https://epfl-si.github.io/elements)
+```bash
+$ git checkout gh-pages
+```
+Then update manually existing folders and index.html from the master /dist folder 
 
 ## Contribute
 
