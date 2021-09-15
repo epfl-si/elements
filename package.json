@@ -1,6 +1,6 @@
 {
   "name": "epfl-elements",
-  "version": "2.26.1",
+  "version": "3.0.0",
   "license": "MIT",
   "main": "index.html",
   "repository": {
@@ -188,7 +188,7 @@
     "twig-html-loader": "^0.1.9",
     "walk-sync": "^3.0.0",
     "webpack": "^5.42.1",
-    "webpack-cli": "^4.7.2",
+    "webpack-cli": "^4.8.0",
     "webpack-merge-and-include-globally": "^2.3.4",
     "yaml-loader": "^0.6.0"
   }
