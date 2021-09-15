@@ -11,7 +11,7 @@
   @extend .focused;
 
   &:before { border-width: 2px; }
-
+  background-color: $orange;
   &:disabled,
   &.disabled { opacity: 1; }
 }
