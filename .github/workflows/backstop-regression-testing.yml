@@ -44,10 +44,6 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile --network-timeout 1000000
 
-      - name: Delete old tests (from git) if any
-        run: |
-          rm -rf tests/backstop/
-
       - if: ${{ env.backstop_verb == 'test' }}
         name: Download baseline Backstop results from previous run
         uses: actions/download-artifact@v2
