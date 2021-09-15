@@ -2,6 +2,13 @@ name: backstop-regression-testing
 on:
   pull_request:
   workflow_dispatch:   # For debug purposes
+
+permissions:           # https://github.com/EnricoMi/publish-unit-test-result-action/issues/161#issuecomment-905921434
+  contents: read
+  issues: write
+  pull-requests: write
+  checks: write
+
 jobs:
   backstop:
     runs-on: ubuntu-latest
@@ -59,3 +66,8 @@ jobs:
         with:
           name: backstop-report
           path: tests/backstop
+
+      - if: ${{ env.backstop_verb == 'test' }}
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        with:
+          files: backstop-report-test/ci_report/xunit.xml
