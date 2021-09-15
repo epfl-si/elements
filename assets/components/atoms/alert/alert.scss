@@ -29,7 +29,7 @@ $alert-icons: (
 
 @each $color, $value in $theme-colors {
   .alert-#{$color} {
-    border-color: $value;
+    border-color: black;
     hr { border-top-color: darken($value, 5%); }
     .alert-link { color: darken($value, 10%); }
   }
