@@ -1,0 +1,165 @@
+{% set isSpecial = true %}
+
+{% extends "@templates/base/base.twig" %}
+
+{% block header %}
+<header role="banner" class="header header-light">
+  {% include '@atoms/drawer/drawer.twig' %}
+  <div class="header-light-content">
+    <a class="logo" href="#">
+      <img src="svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
+    </a>
+    <h1>Plans d'études</h1>
+    {% include '@molecules/search/search-mobile.twig' %}
+    {% include '@molecules/search/search.twig' %}
+    {% include '@atoms/nav-lang/nav-lang-short.twig' %}
+    {% include '@atoms/nav-toggle-mobile/nav-toggle-mobile.twig' %}
+  </div>
+</header>
+{% endblock %}
+
+{% block breadcrumb %}
+<div class="breadcrumb-container">
+  <nav aria-label="breadcrumb" class="breadcrumb-wrapper">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="#">
+          {% include '@atoms/icon/icon.twig' with { icon: 'icon-home' } %}
+        </a>
+      </li>
+      <li class="breadcrumb-item"><a href="#">Éducation</a></li>
+      <li class="breadcrumb-item"><a href="#">Plans d'études</a></li>
+      <li class="breadcrumb-item"><a href="#">Cycle Bachelor</a></li>
+      <li class="breadcrumb-item"><a href="#">Architecture</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Art et architecture</li>
+    </ol>
+  </nav>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+  <header class="page-header d-xl-flex justify-content-xl-between align-items-xl-center mb-5">
+    <h1 class="mb-4 mb-xl-0">Art et architecture</h1>
+    <button class="btn btn-sm btn-secondary">
+    {% include '@atoms/icon/icon.twig' with { icon: 'download', icon_classes:'feather' } %}
+    Télécharger la fiche de cours (PDF)
+  </button>
+  </header>
+  <div class="alert-container mb-4">
+    {% include "@atoms/alert/alert.twig" with {
+      type: "info",
+      content: "Attention, ce contenu correspond à la fiche de cours de l'année passée."
+    } %}
+  </div>
+  <div class="row">
+    <div class="course-details col-xl-7">
+      <div class="course-summary mb-5">
+        <p>AR-153 / <strong>10 crédits</strong></p>
+        <p><strong>Enseignant‧es:</strong> <a href="#">Gargiani Roberto</a>, Profs divers</p>
+        <p><strong>Langue(s):</strong> Français</p>
+        <p><strong>Retrait:</strong> Il n’est pas autorisé de se retirer de cette matière après le délai d’inscription.</p>
+        <p><strong>Remarques:</strong> Inscription faite par la section.</p>
+      </div>
+      <hr>
+      <div class="mt-5">
+        <h2 class="h5">Résumé</h2>
+        <p>Le cours vise à approfondir les principales questions liées aux processus créatifs, aux matériaux et aux technologies expérimentés par les artistes et les architectes depuis les années soixante jusqu’à aujourd’hui.</p>
+      </div>
+      <div class="mt-5">
+        <h2 class="h5">Contenu du cours</h2>
+        <div class="collapse collapse-partial" id="course-content" aria-expanded="false">
+          <p>Les expériences des ateliers, des chantiers et des laboratoires d'art et d'architecture seront analysées afin de mettre en évidence l'impact des nouvelles technologies audiovisuelles, la nature des matériaux et des idées, les figures et les espaces qui se cristallisent en eux et grâce à eux. La connaissance de la concrétisation physique des oeuvres permettra à  l'étudiant d'identifier les trajectoires créatives suivies par les artistes et les relations avec les expériences menées par les architectes.</p>
+          <p>Pendant le cours, l'on considérera des sujets tels que:</p>
+          <ul class="list-bullet">
+            <li>Vers une architecture pop. Des recherches pop de l'independant Group à l'architecture de la consommation de Smithsons et Banham</li>
+            <li>ARTIGRAM. L'oeuvre d'Archigram entre le plasticisme New Bowellism et l'esthétique pop de la société de la consommation</li>
+            <li>Sous les pavés la plage. De l'espace d'engagement de Leonardo Savioli aux performances militantes des étudiants florentins</li>
+            <li>Le Centre Pompidou comme oeuvre d'art totale. Expériences pop, op, cinétiques et audiovisuelles dans le projet de Piano+Rogers Architects.</li>
+            <li>Constructions, figures archaïques et arte povera, de Hooks à André, Pistoletto, Boetti, Zorio, Anselmo, Penone, Takamatsu, Oiticica, jusqu'à la construction économique des bâtiments.</li>
+            <li>Formes du Land Art, de De Maria à Smithson, Heizer, Oppenheim, Aycock, Turrell, à l'architecture radicale.</li>
+          </ul>
+        </div>
+        <button
+          class="collapsed btn btn-light btn-block btn-sm mt-3"
+          data-toggle="collapse"
+          data-target="#course-content"
+          aria-hidden="true"
+          aria-controls="course-content"
+        >
+          Lire la suite
+          {% include '@atoms/icon/icon.twig' with {icon: 'icon-triangle'} %}
+        </button>
+      </div>
+      <div class="mt-5">
+        <h2 class="h5">Mots-clés</h2>
+        <p>Architecture, Arts, Matériel, Immatériel, Contemporain</p>
+      </div>
+      <div class="mt-5">
+        <h2 class="h5">Acquis de formation </h2>
+        <p>A la fin de ce cours l’étudiant doit être capable de:</p>
+        <ul class="list-bullet">
+          <li>Interpréter de façon critique les processus créatifs communs à l’art et à l’architecture de la seconde moitié du Novecento jusqu’à aujourd’hui</li>
+          <li>Evaluer les différents aspects qui caractérisent les formes artistiques analysées</li>
+          <li>Reconnaitre le contexte culturel de la période historique concernée</li>
+        </ul>
+      </div>
+      <div class="mt-5">
+        <h2 class="h5">Méthode d’enseignement</h2>
+        <p>Cours ex-cathedra, séminaires</p>
+      </div>
+      <div class="mt-5">
+        <h2 class="h5">Méthode d’évaluation</h2>
+        <p>L’examen consiste en une épreuve orale pour vérifier les connaissances acquises par l’étudiant durant les cours et par l’étude de la bibliographie obligatoire. Les conditions sine qua non pour réussir l’examen sont que l’étudiant démontre qu’il a étudié parfaitement la bibliographie et qu’il a acquis une connaissance critique des thèmes abordés dans les cours.</p>
+      </div>
+      <div class="mt-5">
+        <h2 class="h5">Ressources</h2>
+        <h3 class="h6">Ressources en bibliothèque:</h3>
+        <ul class="list-bullet">
+          <li><a href="#">Superarchitecture / Rouillard</a></li>
+          <li><a href="#">The Art-architecture Complex / Foster</a></li>
+          <li><a href="#">Art since 1900 / Foster</a></li>
+        </ul>
+        <h3 class="h6">Sites web:</h3>
+        <ul class="list-bullet">
+          <li><a href="#">https://epfl.zoom.us/…</a></li>
+        </ul>
+        <h3 class="h6">Liens Moodle:</h3>
+        <ul class="list-bullet">
+          <li><a href="#">https://moodle.epfl.ch/course/view.php?id=xxxxx</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="course-infos col-xl-4 offset-xl-1 mt-5 mt-lg-0">
+      <div class="study-plans">
+        <h2 class="h5">Dans les plans d'études</h2>
+        
+        {% include '@content-types/coursebook/coursebook-program.twig' %}
+        
+      </div>
+      
+      <div class="course-schedule mt-5">
+        <h2 class="h5">Semaine de référence</h2>
+        
+        {% include '@content-types/coursebook/coursebook.twig' %}
+        
+      </div>
+      
+    </div>
+    
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer_container %}
+<div class="bg-gray-100 pt-5">
+  <div class="container">
+    {% block footer %}
+      {% include '@organisms/footer/footer-light.twig' %}
+    {% endblock %}
+  </div>
+</div>
+{% endblock %}

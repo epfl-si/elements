@@ -1,12 +1,1 @@
-/* global $ */
-
-$(document).ready(function($){
-  
-  $(".line .btn-collapse").click(function(){
-    $(this).parent(".line").toggleClass('open');
-    $(this).find("span").toggleClass('show');
-  });
-
-  $('html').addClass('testjs');
-  
-});
+export default()=>{$(".btn-collapse").click((function(){const s=$(this).parent(".line"),t=$(this).find("span");s.toggleClass("open"),t.toggleClass("show")}))};

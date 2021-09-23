@@ -1,8 +1,8 @@
 # How to use Elements
 
-Because Elements is framework or environment agnostic, it means that you can use it on any kind of frontend project. Basically, it's only **HTML**, **CSS** and a tiny bit of **JavaScript** like any kind of CSS frameworks.
+Because Elements strives to be framework or environment agnostic, you should be able to use it within any frontend Web project. It consists only of **HTML**, **CSS** and a tiny bit of **JavaScript** like many other style packages.
 
-You have **2 options** :
+You have **two options** :
 - You can get the sources and include it on your own frontend infrastructure (advanced users)
 - or simply get the build and linked them to your project (recommended)
 
@@ -43,7 +43,7 @@ Now that you've downloaded the build archive, you will find every CSS, Javascrip
     <!-- Elements JS -->
     <script src="./vendors/elements/js/vendors.min.js"></script>
     <script src="./vendors/elements/js/vendors.bundle.js"></script>
-    <script src="./vendors/elements/js/app.bundle.js"></script>
+    <script src="./vendors/elements/js/elements.bundle.js"></script>
   </body>
   ```
 
