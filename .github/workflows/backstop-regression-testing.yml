@@ -41,12 +41,8 @@ jobs:
           cache: yarn
 
       # Work around https://github.com/yarnpkg/yarn/issues/4890
-      - name: Forcibly revalidate Yarn cache
-        run: yarn --frozen-lockfile  --network-timeout 1000000
-
-      - name: Delete old tests (from git) if any
-        run: |
-          rm -rf tests/backstop/
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --network-timeout 1000000
 
       - if: ${{ env.backstop_verb == 'test' }}
         name: Download baseline Backstop results from previous run
