@@ -1,6 +1,6 @@
 {
   "name": "epfl-elements",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "license": "MIT",
   "main": "index.html",
   "repository": {
@@ -10,6 +10,7 @@
   "scripts": {
     "start": "webpack --mode=development --watch",
     "build": "webpack --mode=production",
+    "deploy": "gh-pages -d dist",
     "test": "bash -c ' set -e -x; node scripts/make_backstop_json.js \"$@\"; backstop test --config=build/backstop.json \"$@\" ' --",
     "test:reference": "backstop reference --config=build/backstop.json",
     "test:approve": "backstop approve  --config=build/backstop.json",

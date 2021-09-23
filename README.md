@@ -33,6 +33,9 @@ As listed in the `package.json`, the following commands are available:
 
 ## Create a new release
 
+1. Check out the `dev` branch
+1. Type <pre>yarn release</pre>
+
 #### 1. Git release
 
 This project follows the [git-flow](https://danielkummer.github.io/git-flow-cheatsheet/)'s guidelines. It means you must use the following command to start a new release from your local **`dev`** branch :
@@ -63,7 +66,7 @@ Because the previous command will normally push your release commits and tag, si
 
 #### 4. Publish the builds
 
-Complete every commit and tag message if needed. Then put yourself in your local **`master`** branch and type the following command to **start the build publishing task** :
+Complete every commit and tag message if needed. Then put yourself in your local **`dev`** branch and type the following command to **start the build publishing task** :
 
 ```bash
 $ git checkout master
