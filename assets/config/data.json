@@ -537,21 +537,6 @@
       "url_fr": "https://www.epfl.ch/schools/cdh/fr/",
       "url_en": "https://www.epfl.ch/schools/cdh/",
       "url_de": "https://www.epfl.ch/schools/cdh/"
-    },
-    {
-      "name_fr": "Middle East",
-      "name_en": "Middle East",
-      "name_de": "Middle East",
-      "acronym": "ME",
-      "url_fr": "http://www.epfl.ae",
-      "target_blank_fr": true,
-      "rel_noopener_fr": true,
-      "url_en": "http://www.epfl.ae",
-      "target_blank_en": true,
-      "rel_noopener_en": true,
-      "url_de": "http://www.epfl.ae",
-      "target_blank_de": true,
-      "rel_noopener_de": true
     }
   ],
   "header": [
@@ -861,6 +846,14 @@
           "url_de": "https://www.epfl.ch/research/ethic-statement/de/"
         },
         {
+          "name_fr": "La recherche avec les animaux",
+          "url_fr": "https://www.epfl.ch/research/fr/recherche-avec-les-animaux-experimentation-animale/",
+          "name_en": "Research with animals",
+          "url_en": "https://www.epfl.ch/research/experimentation-research-with-animals/",
+          "name_de": "Forschung mit Tieren",
+          "url_de": "https://www.epfl.ch/research/de/forschung-mit-tieren-tierversuche/"
+        },
+        {
           "name_fr": "Prix et distinctions",
           "url_fr": "https://www.epfl.ch/research/awards/fr/",
           "name_en": "Awards and prizes",
@@ -894,13 +887,13 @@
         {
           "name_fr": "Collaboration avec l'industrie",
           "url_fr": "https://www.epfl.ch/innovation/industry/fr/",
-          "name_en": "Industry collaborations",
+          "name_en": "Collaboration opportunities",
           "url_en": "https://www.epfl.ch/innovation/industry/",
           "name_de": "Zusammenarbeit mit der Industrie",
           "url_de": "https://www.epfl.ch/innovation/industry/de/"
         },
         {
-          "name_fr": "Unité Start-up",
+          "name_fr": "Startup launchpad",
           "url_fr": "https://www.epfl.ch/innovation/startup/fr/",
           "name_en": "Startup launchpad",
           "url_en": "https://www.epfl.ch/innovation/startup/",
