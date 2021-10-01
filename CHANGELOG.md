@@ -1,4 +1,7 @@
 # CHANGELOG
+*3.0.1* (2021-09-29)
+- Update footer #533
+
 *3.0.0* (2021-09-07)
 - ✨ 3.0 ! Thanks @domq for the dependencies refactor
   - Rewrite the entire build and test system #521
