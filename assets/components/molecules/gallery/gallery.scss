@@ -239,3 +239,11 @@ $gallery-btn-margin: 14px;
     width: 88%;
   }
 }
+
+ol.flickity-page-dots li {
+  padding: 0;
+  
+  &:before {
+    content: none;
+  }
+}
