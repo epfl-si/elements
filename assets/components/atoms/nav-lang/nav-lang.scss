@@ -161,19 +161,6 @@
   }
 }
 
-.nav-lang-mobile {
-  display: none;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  width: $mm-lang-width + 0.1rem;
-  height: $mm-lang-height + 0.1rem !important;
-  border-radius: 0;
-  overflow: hidden;
-  opacity: 0;
-  z-index: $zindex-mobile-lang + 2;
-}
-
 @include media-breakpoint-down(lg) {
 
   .nav-lang {
