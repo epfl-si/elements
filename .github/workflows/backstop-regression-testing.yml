@@ -77,7 +77,8 @@ jobs:
             function getPullRequestNumber (context) {
               return (((context || {}).payload || {}).pull_request || {}).number
             }
-            async function upsertComment(owner, repo, issue_number, purpose, body) {
+
+            async function upsertComment (owner, repo, issue_number, purpose, body) {
               const {data: comments} = await github.rest.issues.listComments({owner, repo, issue_number})
 
               const marker = `<!-- bot: ${purpose} -->`
@@ -98,6 +99,22 @@ jobs:
               }
             }
 
+            function sleep(ms) {
+              return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+            async function getArtifacts (owner, repo, run_id) {
+              for (const i = 0; i < 24; i++) {
+                const results = await github.rest.actions.listWorkflowRunArtifacts({owner, repo, run_id: context.runId})
+                const {data: {artifacts}} = results
+                if (artifacts.length > 0) return artifacts
+                await sleep(5000)
+              }
+              return []  // Give up
+            }
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
             const pr_number = getPullRequestNumber(context)
             if (! pr_number) {
               return core.error(`Unable to figure out current pull request number`)
@@ -105,9 +122,15 @@ jobs:
 
             const { owner, repo } = context.repo
 
-            const {data: {artifacts}} = await github.rest.actions.listWorkflowRunArtifacts({owner, repo, run_id: context.runId})
+            const artifacts = getArtifacts(owner, repo, context.runId)
+            if (! artifacts.length) {
+              return core.error(`No artifacts found for run_id ${context.runId}?`)
+            }
+
+            console.log(artifacts)  // XXX
+
             let body = `🔎 Download the Backstop report for this pull request (link valid for 90 days):\n`;
-            for (const art of artifacts) {
+            for (const art of getArtifacts(owner, repo, context.runId)) {
               body += `\n* [${art.name}.zip](https://nightly.link/${owner}/${repo}/actions/artifacts/${art.id}.zip)`;
             }
 
