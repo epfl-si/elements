@@ -27,7 +27,8 @@
     },
     "hooks": {
       "before:init": [
-        "sh ./scripts/ensure-branch.sh dev"
+        "sh ./scripts/ensure-branch.sh dev",
+        "git pull --rebase --autostash"
       ]
     }
   },
