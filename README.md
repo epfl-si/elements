@@ -33,57 +33,23 @@ As listed in the `package.json`, the following commands are available:
 
 ## Create a new release
 
-#### 1. Git release
+### 1. Create a Git tag
 
-This project follows the [git-flow](https://danielkummer.github.io/git-flow-cheatsheet/)'s guidelines. It means you must use the following command to start a new release from your local **`dev`** branch :
+1. Pick a new version number for the release in accordance with the [semver](https://semver.org/) principles
+1. Append a fragment to CHANGELOG.md and commit
+1. Use `git tag` to create a tag with the chosen version number
+1. Push everything: <pre>
+git push
+git push --tags
+</pre>
 
-```bash
-$ git flow release start x.x.x
-```
+### 2. Create a GitHub release
 
-#### 2. Changelog & versions
+Not functioning yet — To be documented.
 
-Because a new release can impact a lot of projects who use *Element*, **you must precisely list\* all the updates made on the components markup** in the **`CHANGELOG.md`**.
+#### 3. Update github.io
 
-**Check previous versions to give you an idea of how to write it the right way*
-
-Then, don't forget to **update the version number** in the `VERSION` and the `package.json` files.
-
-Commit everything !
-
-#### 3. Complete the release
-
-First, you must complete the [git-flow](https://danielkummer.github.io/git-flow-cheatsheet/) release process with the following command :
-
-```bash
-$ git flow release finish -p 'x.x.x'
-```
-
-Because the previous command will normally push your release commits and tag, simply **go on Github\* and copy/paste the release's changelog content** in the release's description. (go directly using `https://github.com/epfl-si/elements/releases/edit/x.x.x`)
-
-#### 4. Publish the builds
-
-Complete every commit and tag message if needed. Then put yourself in your local **`master`** branch and type the following command to **start the build publishing task** :
-
-```bash
-$ git checkout master
-$ sh publish.sh x.x.x
-```
-
-That's it ! If everything went fine, **the new release's build is available on the `dist/frontend`** branch thanks to you !
-
-##### 4.1 Note on build images
-Not all images in the styleguide are needed in the `dist/frontend` branch. Most of them only serve a presentation purpose and would be a burden for the production builds. For this reason **the WHOLE `/images/styleguide/` FOLDER** is **removed** during publishing, in the `publish.sh` script.
-
-If you want to ship images to the production build, just make shure they are in the `/images/` folder or any subfolder, as long as it is not named `/images/styleguide/`.
-
-All the images in the `/images/styleguide/` folder will remain available when running `yarn start` or deploying the styleguide on a gh-page.
-
-#### 5. Update github.io
-```bash
-$ git checkout gh-pages
-```
-Then update manually existing folders and index.html from the master /dist folder 
+Not functioning yet — To be documented.
 
 ## Contribute
 
