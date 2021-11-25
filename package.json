@@ -21,6 +21,11 @@
     "clean": "rm -rf build/ dist/",
     "realclean": "rm -rf build/ dist/ node_modules/"
   },
+  "release-it": {
+    "npm": {
+      "publish": false
+    }
+  },
   "browserslist": [
     "> 1% in CH",
     "last 2 versions"
