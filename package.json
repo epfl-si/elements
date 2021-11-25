@@ -17,6 +17,7 @@
     "test:approve": "backstop approve  --config=build/backstop.json",
     "test:report": "backstop openReport --config=build/backstop.json",
     "test:info": "node scripts/backstop_status.js",
+    "release": "release-it",
     "clean": "rm -rf build/ dist/",
     "realclean": "rm -rf build/ dist/ node_modules/"
   },
