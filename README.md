@@ -47,23 +47,19 @@ To run a side-by-side comparison between the original state of Elements and your
 
 ## Create a new release
 
-### 1. Create a Git tag
+1. Ensure that all the desired changes have been merged into the main (`dev`) branch on GitHub
+1. Type <pre>yarn release</pre> and follow the interactive instructions.
 
-1. Pick a new version number for the release in accordance with the [semver](https://semver.org/) principles
-1. Append a fragment to CHANGELOG.md and commit
-1. Use `git tag` to create a tag with the chosen version number
-1. Push everything: <pre>
-git push
-git push --tags
-</pre>
+The last step will cause the following things to happen:
+- Ensure that you are on the `dev` branch (or bail out if not)
+- Bump version number
+- Create changelog entry
+- Commit, tag and push
 
-### 2. Create a GitHub release
-
-Not functioning yet — To be documented.
-
-#### 3. Update github.io
-
-Not functioning yet — To be documented.
+... And in turn, *that* last step will cause the following things to happen *server-side*, using GitHub Actions:
+- Create a release on GitHub in .zip format
+- Update the [online demo on GitHub pages](https://epfl-si.github.io/elements/)
+- Update the [`dist/frontend` branch](https://github.com/epfl-si/elements/tree/dist/frontend)
 
 ## Contribute
 
