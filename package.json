@@ -24,6 +24,11 @@
   "release-it": {
     "npm": {
       "publish": false
+    },
+    "hooks": {
+      "before:init": [
+        "sh ./scripts/ensure-branch.sh dev"
+      ]
     }
   },
   "browserslist": [
