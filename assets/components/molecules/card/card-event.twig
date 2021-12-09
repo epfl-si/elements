@@ -1,0 +1,52 @@
+<div href="#" class="list-group-item list-group-teaser" itemscope itemtype="http://schema.org/Event">
+  <div class="list-group-teaser-container">
+    <div class="list-group-teaser-thumbnail">
+      {% include '@atoms/picture/picture.twig' with {'variant':'news-thumb'} %}
+    </div>
+    <div class="list-group-teaser-content">
+      <p class="h5 card-title" itemprop="name">
+        <a href="#">Startup Acceleration Workshops</a>
+      </p>
+      <div class="card-info mt-0">
+        {% block date %}
+        <p class="event-info-date">
+          {% include '@atoms/icon/icon.twig' with { icon:  'calendar', icon_classes:'feather' } %}
+          <span class="card-info-date event-date" itemprop="startDate" content="2018-01-10T12:00">10.01.2018</span>
+          {% include '@atoms/icon/icon.twig' with { icon:  'clock', icon_classes:'feather' } %}
+          <span class="event-time">13:00</span>
+          <span class="event-time">17:30</span>
+          {% endblock %}
+        </p>
+        <p class="event-info mt-1">
+          <span class="event-speaker" itemprop="performer" itemscope itemtype="http://schema.org/performer">
+          {% block speaker %}
+            Intervenant·e: <b>Prof. Dr. Aditya Mueller</b>
+          {% endblock %}
+          </span>            
+          <span class="event-location" itemprop="location" itemscope itemtype="http://schema.org/Place">
+            {% block info %}
+            Lieu et salle: <b><span itemprop="name">ArtLab EPFL</span></b>
+            <br>
+            Catégorie: <b>Événements culturel</b>
+            {% endblock %}
+          </span>
+          <span class="event-audience" itemprop="audience" itemscope itemtype="https://schema.org/audience">
+            {% block audience %}
+              Public cible: <b>Tout public</b>
+            {% endblock %}
+          </span>
+        </p>
+        {% if live_now|default(false) %}
+          <p class="mt-3 event-actions">
+            <a class="btn btn-primary btn-sm">Voir en direct</a>
+          </p>
+        {% endif %}
+        {% if live_future|default(false) %}
+          <p class="mt-3 event-actions">
+            <a class="btn btn-secondary btn-sm">Diffusé en direct</a>
+          </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
