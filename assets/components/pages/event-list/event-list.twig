@@ -38,8 +38,18 @@
 
 {% block content %}
 
-<div class="container mt-5">
-  <h1>Événements</h1>
+<div class="container mt-5 d-flex align-items-center justify-content-between">
+  <h1 class="h2 mb-0">Memento EPFL</h1>
+  {% include '@atoms/dropdown/dropdown.twig' with { dropdown_label: 'Voir un autre memento' } %}
+</div>
+
+<div class="container-full bg-gray-100 py-5 mt-5">
+  <div class="container">
+    <h3 class="h6">Événements à la une</h3>
+    <div class="mt-4">
+      {% include '@content-types/event/event-listing-featured.twig' %}
+    </div>
+  </div>
 </div>
 
 <div class="container mt-5">
@@ -67,6 +77,4 @@
       {% endblock %}
     </div>
   </div>
-  {% endblock %}
-  </div>
-</div>
+{% endblock %}
