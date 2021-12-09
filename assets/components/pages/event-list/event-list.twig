@@ -3,13 +3,37 @@
 {% extends "@templates/base/base.twig" %}
 
 {% block header %}
-  {% include '@organisms/header/header-light.twig' with { site_title: 'Event title' } %}
-{% endblock %}
-
-{% block breadcrumb %}
-<div class="breadcrumb-container">
-  {% include '@molecules/breadcrumb/breadcrumb.twig' %}
-</div>
+  <header role="banner" class="header header-light">
+    {% include '@atoms/drawer/drawer.twig' %}
+    <div class="header-light-content">
+      <a class="logo" href="#">
+        <img src="svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
+      </a>
+      <h1>{{site_title}}</h1>
+      <ul aria-hidden="true" class="nav-header d-none d-xl-flex">
+        <li class="dropdown">
+          <button class="btn btn-link dropdown-toggle nav-item" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Mementos
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Option 1</a>
+            <a class="dropdown-item active" href="#">Option 2</a>
+            <a class="dropdown-item" href="#">Option 3</a>
+          </div>
+        </li>
+        <li id="menu-item-{{ loop.index }}" {% if loop.index == 2 %} class="current-menu-item"{% endif %}>
+          <a class="nav-item" href="#">Announce an event</a>
+        </li>
+        <li id="menu-item-{{ loop.index }}" {% if loop.index == 2 %} class="current-menu-item"{% endif %}>
+          <a class="nav-item" href="#">Subscribe</a>
+        </li>
+      </ul>
+      {% include '@molecules/search/search-mobile.twig' %}
+      {% include '@molecules/search/search.twig' %}
+      {% include '@atoms/nav-lang/nav-lang-short.twig' %}
+      {% include '@atoms/nav-toggle-mobile/nav-toggle-mobile.twig' %}
+    </div>
+  </header>
 {% endblock %}
 
 {% block content %}
