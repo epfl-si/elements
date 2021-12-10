@@ -1,7 +1,5 @@
 name: list
 title: Lists
-notes: |
-  The classic way to display a group of elements, with or without hierarchy (see the variants lower on this page). Use lists in content areas.
 variants:
   - name: unordered
     title: Unordered list (bullets)
@@ -11,3 +9,5 @@ variants:
     title: Inline list
   - name: unstyled
     title: Unstyled list
+notes: |
+  The classic way to display a group of elements, with or without hierarchy (see the variants lower on this page). Use lists in content areas.

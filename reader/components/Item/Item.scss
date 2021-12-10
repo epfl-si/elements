@@ -2,8 +2,11 @@
 
 .tlbx-item-preview {
   position: relative;
-  padding: 1.5rem;
-  border: 2px solid $gray-lighter;
+  
+  .tlbx-item & {
+    padding: 1.5rem;
+    border: 2px solid $gray-lighter;
+  }
 }
 
 .tlbx-item-code {

@@ -4,7 +4,7 @@ ul {
   padding-left: $spacer;
   margin-left: 0;
 
-  li {
+  & > li {
     $bullet-size: $spacer * 0.8;
 
     list-style-type: none;
@@ -33,13 +33,17 @@ ul {
   }
 
   ul { padding-left: calc( #{$spacer} / 2 ); }
-  ul li:before {
+  ul > li:before {
     background: transparent;
     border: 1px solid $red;
   }
-  ul ul li:before {
+  ul ul > li:before {
     background: $red;
     border: none;
+  }
+  
+  ol > li:before {
+    font-weight: 400;
   }
 }
 
@@ -48,7 +52,7 @@ ol {
   padding-left: $spacer;
   margin-left: 0;
 
-  li {
+  & > li {
     list-style-type: none;
     padding-left: $spacer;
     position: relative;
@@ -79,15 +83,24 @@ ol {
   }
   ol ol { counter-reset: third-item; }
 
-  ol li:before {
+  ol > li:before {
     content: counter(item) "." counter(secondary-item);
     counter-increment: secondary-item;
     font-weight: $font-weight-normal;
   }
 
-  ol ol li:before {
+  ol ol > li:before {
     content: counter(item) "." counter(secondary-item) "." counter(third-item);
     counter-increment: third-item;
+  }
+  
+  ul {
+    
+    & > li:before {
+      background: transparent;
+      border: 1px solid $red;
+      top: 0.7rem;
+    }
   }
 }
 

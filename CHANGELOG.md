@@ -1,4 +1,13 @@
 # CHANGELOG
+*3.0.2* (2022-12-10)
+- Remove unused lang switcher select #534 
+- Fix list styles #535 
+- Remove padding from global preview box on page templates #536 
+- Fix checkbox and radio label alignment #537
+- Fix alignment of nav-lang icon and label #538
+- Updated footer #539 
+- Alert box in Pages > News-detail #540 
+
 *3.0.1* (2021-09-29)
 - Update footer #533
 
