@@ -8,6 +8,11 @@
 
   .custom-control label {
     font-size: $font-size-sm;
+    
+    &:before,
+    &:after {
+      top: 2px;
+    }
   }
 }
 
