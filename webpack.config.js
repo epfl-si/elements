@@ -123,7 +123,7 @@ module.exports = (env, argv) => {
       // For your (IE 11) eyes only:
       Copy("assets/favicons/browserconfig.xml", `${buildDir}/favicons`, { munch: "assets/" }),
       Copy(
-        ["docs/**/*"],
+        ["docs/**/*", "package.json"],
         buildDir
       ),
       new AssetComponentsPlugin(['atoms', 'molecules', 'organisms', 'content-types', 'pages']),
