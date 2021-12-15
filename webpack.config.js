@@ -136,7 +136,6 @@ module.exports = (env, argv) => {
         port: 3000,
         server: { baseDir: buildDir }
       }),
-      new NodePolyfillPlugin(),
       new MiniCssExtractPlugin({
         filename: 'css/[name].css',
       }),
@@ -155,6 +154,7 @@ module.exports = (env, argv) => {
 
   if (!isProd) {
     webpackConfig.devtool = 'source-map'
+    webpackConfig.plugins.push(new NodePolyfillPlugin())
     webpackConfig.plugins.push(Copy(
       "node_modules/bootstrap/dist/js/bootstrap.bundle.js.map",
       path.join(buildDir, "js")
