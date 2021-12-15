@@ -114,12 +114,14 @@ module.exports = (env, argv) => {
         "reader/index.html", buildDir, { munch: "reader/" }
       ),
       Copy(
-        ["twig", "yml", "js", "png", "gif", "svg", "jpg", "webmanifest"].map(
+        ["twig", "yml", "js", "png", "gif", "svg", "jpg", "ico", "webmanifest"].map(
           (ext) => `assets/**/*.${ext}`
         ),
         buildDir,
         { munch: "assets/" }
       ),
+      // For your (IE 11) eyes only:
+      Copy("assets/favicons/browserconfig.xml", `${buildDir}/favicons`, { munch: "assets/" }),
       Copy(
         ["docs/**/*"],
         buildDir
