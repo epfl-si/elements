@@ -114,7 +114,7 @@ module.exports = (env, argv) => {
         "reader/index.html", buildDir, { munch: "reader/" }
       ),
       Copy(
-        ["twig", "yml", "js", "png", "gif", "jpg", "ico", "webmanifest"].map(
+        ["twig", "yml", "png", "gif", "jpg", "ico", "webmanifest"].map(
           (ext) => `assets/**/*.${ext}`
         ),
         buildDir,
