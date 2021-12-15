@@ -53,7 +53,6 @@ To run a side-by-side comparison between the original state of Elements and your
 The last step will cause the following things to happen:
 - Ensure that you are on the `dev` branch (or bail out if not)
 - Bump version number
-- Create changelog entry
 - Commit, tag and push
 
 ... And in turn, *that* last step will cause the following things to happen *server-side*, using GitHub Actions:
