@@ -1,1 +1,0 @@
-export const nutrimenuScore=["E","D-","D","D+","C-","C","C+","B-","B","B+","A-","A","A+"];export default()=>{const n=$("#nutrimenu-score"),t=$("output[for='nutrimenu-score']");n.length>0&&t.length>0&&(t.val(nutrimenuScore[parseInt(n.val())-1]),n.on("input",(function(){t.val(nutrimenuScore[parseInt($(this).val())-1])})))};

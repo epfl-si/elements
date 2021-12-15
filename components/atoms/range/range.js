@@ -1,1 +1,0 @@
-export default()=>{const e=document.querySelector("input[type=range]");e&&(e.style.setProperty("--val",+e.value),e.style.setProperty("--max",+e.max),e.style.setProperty("--min",+e.min),e.addEventListener("input",(()=>{e.style.setProperty("--val",+e.value)}),!1))};

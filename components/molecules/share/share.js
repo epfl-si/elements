@@ -1,1 +1,0 @@
-export default()=>{$(".social-share-copy").each((function(){const e=$(this),t=e.text(),c=e.data("success");new ClipboardJS(e[0],{target:e=>$(e).parent().prev()[0]}).on("success",(e=>{$(e.trigger).text(c),setTimeout((()=>$(e.trigger).text(t)),2e3),e.clearSelection()}))}))};

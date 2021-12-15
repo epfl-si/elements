@@ -1,1 +1,0 @@
-export default()=>{const o=$("#back-to-top");$(window).scroll((function(){$(window).scrollTop()>500?o.addClass("show"):o.removeClass("show")})),o.on("click",(function(o){o.preventDefault(),$("html, body").animate({scrollTop:0},"300")}))};

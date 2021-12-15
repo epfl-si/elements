@@ -1,1 +1,0 @@
-export default()=>{$("#search-mobile-toggle").click((function(o){var e=$(".search-mobile"),s=e.find(".form-control");e.toggleClass("show"),$("body").toggleClass("search-open"),e.hasClass("show")&&s.focus()})),$("#search-mobile-close").click((function(o){var e=$(".search-mobile");e.find(".form-control"),e.removeClass("show"),$("body").removeClass("search-open")}))};

@@ -1,1 +1,0 @@
-export default()=>{$("a").on("click",(t=>{const e=$(t.target).attr("href");e&&e.length>1&&e.match("^#")&&$(t.target)[0].scrollIntoView()}))};

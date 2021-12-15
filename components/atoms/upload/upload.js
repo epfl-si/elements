@@ -1,1 +1,0 @@
-export default()=>{$(".upload").find('input[type="file"]').each((function(){const e=$(this),n=e.next().next(".upload-preview");e.on("change",(()=>{const l=e[0].files;let t=l[0].name;l.length>1&&(t=`<ul>${Array.from(l).map((e=>`<li>${e.name}</li>`)).join().replace(/,/g,"")}</ul>`),n.html(t)}))}))};

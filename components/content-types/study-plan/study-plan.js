@@ -1,1 +1,0 @@
-export default()=>{$(".btn-collapse").click((function(){const s=$(this).parent(".line"),t=$(this).find("span");s.toggleClass("open"),t.toggleClass("show")}))};

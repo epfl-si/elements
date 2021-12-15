@@ -1,1 +1,0 @@
-export default()=>{$(".select-multiple").each(((e,l)=>{$(l).multipleSelect({placeholder:$(l).attr("data-placeholder")||"",width:"100%"})}))};

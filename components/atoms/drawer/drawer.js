@@ -1,1 +1,0 @@
-const drawer=()=>{$(".drawer-toggle").click((function(){const s=$(this).parent(".drawer"),t=s.find(".drawer-link"),e=$(this);if(s.hasClass("open"))s.removeClass("open"),s.css({width:""}),t.css({width:e.width()});else{let e="100%";$(window).width()>992&&(e=t.find(".text").outerWidth(),s.css({width:e})),s.addClass("open"),t.css({width:e})}}))};export default drawer;
