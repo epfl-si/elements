@@ -114,7 +114,7 @@ module.exports = (env, argv) => {
         "reader/index.html", buildDir, { munch: "reader/" }
       ),
       Copy(
-        ["twig", "yml", "js", "png", "gif", "svg", "jpg", "ico", "webmanifest"].map(
+        ["twig", "yml", "js", "png", "gif", "jpg", "ico", "webmanifest"].map(
           (ext) => `assets/**/*.${ext}`
         ),
         buildDir,
@@ -150,7 +150,12 @@ module.exports = (env, argv) => {
         {
           output: { filename: "icons/feather-sprite.svg" },
           sprite: { prefix: "" }
-        })
+        }),
+      // Copy the remaining (non-spritemapped) SVGs into buildDir:
+      Copy(
+        "assets/**/*.svg", buildDir,
+        { munch: "assets/", ignore: ["**/assets/icons/**"] }
+      )
     ]
   }
 
@@ -167,7 +172,7 @@ module.exports = (env, argv) => {
 }
 
 function Copy (matchers, target, opts) {
-  const { munch } = opts || {}
+  const { munch, ignore } = opts || {}
   function rewritePath (p) {
     return munch ? p.replace(new RegExp(`^${munch}`), "") : p
   }
@@ -180,7 +185,7 @@ function Copy (matchers, target, opts) {
 
   const matchersList = (matchers instanceof Array ? matchers : [matchers]),
     patterns = matchersList.map((pattern) => ({
-      from: pattern, to: copiedAssetPath
+      from: pattern, to: copiedAssetPath, globOptions: { ignore: ignore || [] }
     }))
   return new CopyPlugin({ patterns })
 }
