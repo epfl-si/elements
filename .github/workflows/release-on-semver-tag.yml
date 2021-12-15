@@ -1,0 +1,95 @@
+name: Release on semver tag
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  release:
+    env:
+      tag: ${{ github.ref_name }}
+      tag_ref: ${{ github.ref }}
+      release_tar_name: elements-${{ github.ref_name }}.tar.gz
+      base_branch: "dev"
+      base_branch_ref: "origin/dev"
+      dist_branch: dist/frontend
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Pull main branch
+        run: |
+          git fetch origin $base_branch
+      - name: Are we on the tip of the main branch?
+        run: |
+          set -e -x
+          git fetch origin
+          exec >> $GITHUB_ENV
+          if [ "$(git rev-parse $tag_ref)" = "$(git rev-parse $base_branch_ref)" ]; then
+            echo is_uptodate=true
+          else
+            echo is_uptodate=false
+          fi
+      - uses: andymckay/cancel-action@0.2
+        if: ${{ env.is_uptodate == 'false' }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --network-timeout 1000000
+      - name: Build release
+        run: yarn dist
+
+      - name: Pluck gh-pages/ directory out of dist/
+        run: |
+          mkdir gh-pages
+          (cd dist; tar --exclude package.json -clf - .) | \
+            (cd gh-pages; tar xpvf -)
+
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./gh-pages
+
+      - name: Pluck frontend/ directory out of dist/
+        run: |
+          mkdir frontend
+          (cd dist; tar --exclude components --exclude docs \
+                        --exclude images/styleguide --exclude index.html \
+                        --exclude "reader.*" -clf - .) | \
+            (cd frontend; tar xpvf -)
+
+      - name: Deploy to “dist/frontend” branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./frontend
+          publish_branch: ${{ env.dist_branch }}
+
+      - name: Pluck release/ out of dist/
+        # The placement scheme is that of https://www.npmjs.com/package/epfl-theme-elements
+        run: |
+          set -e -x
+          mkdir -p release/dist/icons release/dist/css release/dist/js
+          cp $(find dist/ -name icons -prune -false -o -name "*.svg") \
+             dist/icons/* \
+             dist/favicons/*.png dist/favicons/*.ico \
+             release/dist/icons/
+          cp dist/package.json          release/
+          cp dist/css/elements.css      release/dist/css/elements.min.css
+          cp dist/js/elements.bundle.js release/dist/js/elements.min.js
+
+      - name: Create release package
+        # The placement scheme is that of https://www.npmjs.com/package/epfl-theme-elements
+        run: |
+          set -e -x
+          tar -Crelease -zcf $release_tar_name .
+
+      - uses: "marvinpinto/action-automatic-releases@v1.2.1"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: |
+            ${{ env.release_tar_name }}
