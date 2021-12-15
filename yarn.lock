@@ -3701,19 +3701,7 @@ flickity-fullscreen@^1.1.1:
   dependencies:
     flickity "^2.1.0"
 
-flickity@2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/flickity/-/flickity-2.2.1.tgz#81126e3d656cb54577358a5f959ffdbda088e670"
-  integrity sha512-fCZJGNqabgDrIhaUBqt2ydE8c5V6iiB3KQAf6dH3Z45MoDUm7g6+uZmteN0aLV9pzVItNqCbfOJQjsJM/rHuSA==
-  dependencies:
-    desandro-matches-selector "^2.0.0"
-    ev-emitter "^1.1.1"
-    fizzy-ui-utils "^2.0.7"
-    get-size "^2.0.3"
-    unidragger "^2.3.0"
-    unipointer "^2.3.0"
-
-flickity@^2.0.0, flickity@^2.1.0:
+flickity@2.2.2, flickity@^2.0.0, flickity@^2.1.0:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/flickity/-/flickity-2.2.2.tgz#29597ac4d9b81938a58610a0eeb9db915508063d"
   integrity sha512-yiPMuP8tw/zN7ARgeSLZNvzK11GkzI2mp/zlYBsyttguSCROAqxj6wiN2sSfPfW3xMG3hcUHxWUXNQMlk/wYcg==
