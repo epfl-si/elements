@@ -39,8 +39,7 @@ jobs:
           node-version: '14'
       - name: Install dependencies
         run: yarn --frozen-lockfile --network-timeout 1000000
-      - name: Build release
-        run: yarn dist
+      - run: yarn dist
 
       - name: Pluck gh-pages/ directory out of dist/
         run: |
