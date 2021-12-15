@@ -29,7 +29,7 @@ $ yarn
 As listed in the `package.json`, the following commands are available:
 
 - `$ yarn start` : Will launch a live reloaded server to help you **during development**
-- `$ yarn build` : Will build your assets for **production usage**
+- `$ yarn dist` : Will build your assets for **production usage** into the `dist/` directory
 
 ## Backstop tests (local)
 

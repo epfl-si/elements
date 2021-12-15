@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "webpack --mode=development --watch",
-    "build": "webpack --mode=production",
+    "dist": "webpack --mode=production",
+    "build": "yarn dist",
     "test:prepare": "bash -c ' set -e -x; install -d build; node scripts/make_backstop_json.js \"$@\" ' --",
     "test:reference": "backstop reference --config=build/backstop.json",
     "test:changes": "bash -c ' backstop test --config=build/backstop.json \"$@\" ' --",
