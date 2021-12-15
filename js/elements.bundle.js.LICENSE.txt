@@ -1,0 +1,46 @@
+/*!
+ * Flickity asNavFor v2.0.1
+ * enable asNavFor for Flickity
+ */
+
+/*!
+ * Flickity fullscreen v1.1.1
+ * Enable fullscreen view for Flickity
+ */
+
+/*!
+ * Flickity v2.2.2
+ * Touch, responsive, flickable carousels
+ *
+ * Licensed GPLv3 for open source use
+ * or Flickity Commercial License for commercial use
+ *
+ * https://flickity.metafizzy.co
+ * Copyright 2015-2021 Metafizzy
+ */
+
+/*!
+ * Unidragger v2.3.1
+ * Draggable base class
+ * MIT license
+ */
+
+/*!
+ * Unipointer v2.3.0
+ * base class for doing one thing with pointer event
+ * MIT license
+ */
+
+/*!
+ * getSize v2.0.3
+ * measure size of elements
+ * MIT license
+ */
+
+/*!
+ * imagesLoaded v4.1.4
+ * JavaScript is all like "You images are done yet or what?"
+ * MIT License
+ */
+
+/*! npm.im/object-fit-images 3.2.4 */
