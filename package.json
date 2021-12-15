@@ -10,8 +10,9 @@
   "scripts": {
     "start": "webpack --mode=development --watch",
     "build": "webpack --mode=production",
-    "test": "bash -c ' set -e -x; node scripts/make_backstop_json.js \"$@\"; backstop test --config=build/backstop.json \"$@\" ' --",
+    "test:prepare": "bash -c ' set -e -x; install -d build; node scripts/make_backstop_json.js \"$@\" ' --",
     "test:reference": "backstop reference --config=build/backstop.json",
+    "test:changes": "bash -c ' backstop test --config=build/backstop.json \"$@\" ' --",
     "test:approve": "backstop approve  --config=build/backstop.json",
     "test:report": "backstop openReport --config=build/backstop.json",
     "test:info": "node scripts/backstop_status.js",

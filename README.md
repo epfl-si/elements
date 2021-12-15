@@ -31,6 +31,20 @@ As listed in the `package.json`, the following commands are available:
 - `$ yarn start` : Will launch a live reloaded server to help you **during development**
 - `$ yarn build` : Will build your assets for **production usage**
 
+## Backstop tests (local)
+
+EPFL-Elements uses [backstop.js](https://github.com/garris/BackstopJS#backstopjs) to perform visual regression testing.
+
+To run a side-by-side comparison between the original state of Elements and your changes using Backstop, you need to have a locally-running Elements Web app as per the previous §. Then:
+
+1. Make sure all your changes are committed to git (not necessarily pushed)
+1. Run `yarn test:prepare`<br/>💡 **Do not** stop the EPFL-Elements Web app to type in this command! Use a new terminal window instead.
+1. Check out the upstream branch for your work (typically `origin/dev`): <pre>git checkout origin/dev</pre>
+1. Run `yarn test:reference`
+1. Check out your working branch again, e.g. <pre>git checkout feature/myfeature</pre>
+1. Run `yarn test:changes`
+1. The report should open in your browser automatically. If not, just open the `tests/backstop/html_report/index.html` file in your browser
+
 ## Create a new release
 
 ### 1. Create a Git tag
