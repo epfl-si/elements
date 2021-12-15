@@ -17,8 +17,20 @@
     "test:approve": "backstop approve  --config=build/backstop.json",
     "test:report": "backstop openReport --config=build/backstop.json",
     "test:info": "node scripts/backstop_status.js",
+    "release": "release-it",
     "clean": "rm -rf build/ dist/",
     "realclean": "rm -rf build/ dist/ node_modules/"
+  },
+  "release-it": {
+    "npm": {
+      "publish": false
+    },
+    "hooks": {
+      "before:init": [
+        "sh ./scripts/ensure-branch.sh dev",
+        "git pull --rebase --autostash"
+      ]
+    }
   },
   "browserslist": [
     "> 1% in CH",
@@ -180,6 +192,7 @@
     "react-router-dom": "^5.2.0",
     "react-syntax-highlighter": "^15.4.3",
     "redux": "4",
+    "release-it": "^14.11.8",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.0.0",
     "styled-components": "^5.3.0",
