@@ -20,8 +20,21 @@
 .list-group.list-events-featured {
   
   .list-group-teaser-container {
+    background: $gray-100;
     flex-direction: column;
     height: 100%;
+
+    .card-title a {
+      @include link-pretty($red, $gray-100);
+    }
+
+    .btn-secondary {
+      &:hover,
+      &:active,
+      &:focus {
+        background: #fff;
+      }
+    }
   }
   
   .list-group-teaser-content {
@@ -37,10 +50,16 @@
   
   @include media-breakpoint-up(lg) {
     flex-direction: row;
-  
-    .list-group-teaser + .list-group-teaser {
-      margin-top: 0;
-      margin-left: -1px;
+    margin-left: -10px;
+    margin-right: -10px;
+    
+    .list-group-teaser {
+      padding-left: 10px;
+      padding-right: 10px;
+      
+      & + .list-group-teaser {
+        margin-top: 0;
+      }
     }
     
     .list-group-teaser-thumbnail {
