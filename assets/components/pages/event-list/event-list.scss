@@ -29,6 +29,7 @@
   }
   
   .dropdown {
+    margin-bottom: 1rem;
     
     button {
       display: flex;
@@ -42,10 +43,20 @@
     .dropdown-menu.show {
       left: auto !important;
       right: 0;
+      transform: none !important;
+      top: 38px !important;
     }
     
     .picker__holder {
       border: 0;
     }
   }
+  
+  @include media-breakpoint-down(md) {
+    
+    .dropdown {
+      flex-basis: 100%;
+    }
+  }
 }
+

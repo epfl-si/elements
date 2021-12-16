@@ -24,13 +24,7 @@
     height: 100%;
   }
   
-  .list-group-teaser + .list-group-teaser {
-    margin-top: 0;
-    margin-left: -1px;
-  }
-  
   .list-group-teaser-content {
-    padding-top: 0;
     
     .event-actions {
       position: static;
@@ -43,6 +37,15 @@
   
   @include media-breakpoint-up(lg) {
     flex-direction: row;
+  
+    .list-group-teaser + .list-group-teaser {
+      margin-top: 0;
+      margin-left: -1px;
+    }
+    
+    .list-group-teaser-thumbnail {
+      padding-bottom: 0;
+    }
   }
 }
 
