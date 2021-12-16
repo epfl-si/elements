@@ -30,7 +30,7 @@ Now that you've downloaded the build archive, you will find every CSS, Javascrip
 
     <!-- Elements CSS -->
     <link rel="stylesheet" href="./vendors/elements/css/vendors.min.css">
-    <link rel="stylesheet" href="./vendors/elements/css/base.css">
+    <link rel="stylesheet" href="./vendors/elements/css/elements.css">
 
     <!-- [...] -->
   </head>
@@ -42,7 +42,6 @@ Now that you've downloaded the build archive, you will find every CSS, Javascrip
 
     <!-- Elements JS -->
     <script src="./vendors/elements/js/vendors.min.js"></script>
-    <script src="./vendors/elements/js/vendors.bundle.js"></script>
     <script src="./vendors/elements/js/elements.bundle.js"></script>
   </body>
   ```
