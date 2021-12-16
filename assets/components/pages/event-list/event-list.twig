@@ -9,11 +9,11 @@
       <a class="logo" href="#">
         <img src="svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
       </a>
-      <h1>{{site_title}}</h1>
+      <h1>Memento</h1>
       <ul aria-hidden="true" class="nav-header d-none d-xl-flex">
         <li class="dropdown">
           <button class="btn btn-link dropdown-toggle nav-item" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Mementos
+            Mémentos
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="#">Option 1</a>
@@ -22,10 +22,10 @@
           </div>
         </li>
         <li id="menu-item-{{ loop.index }}" {% if loop.index == 2 %} class="current-menu-item"{% endif %}>
-          <a class="nav-item" href="#">Announce an event</a>
+          <a class="nav-item" href="#">Annoncer un événement</a>
         </li>
         <li id="menu-item-{{ loop.index }}" {% if loop.index == 2 %} class="current-menu-item"{% endif %}>
-          <a class="nav-item" href="#">Subscribe</a>
+          <a class="nav-item" href="#">S'abonner</a>
         </li>
       </ul>
       {% include '@molecules/search/search-mobile.twig' %}
@@ -38,8 +38,8 @@
 
 {% block content %}
 
-<div class="container mt-5 d-flex align-items-center justify-content-between">
-  <h1 class="h2 mb-0">Memento EPFL</h1>
+<div class="container mt-5 d-md-flex align-items-center justify-content-between">
+  <h1 class="h2 mb-md-0">Memento EPFL</h1>
   {% include '@atoms/dropdown/dropdown.twig' with { dropdown_label: 'Voir un autre memento' } %}
 </div>
 
@@ -55,8 +55,12 @@
 <div class="container mt-5">
   <h3 class="h6">Prochains événements</h3>
   
+  
+  
   <div class="events-filters mt-4">
+    
     <form action="" method="get">
+      
       {% include '@molecules/form-group/form-group-search.twig' %}
 
       <div class="form-group form-group-select">
@@ -69,7 +73,7 @@
           <option value="congres">Congrès</option>
           <option value="echeance">Echéance</option>
           <option value="evenements-festifs-culturels">Événements festifs et culturels</option>
-          <option value="evenements-scientifiques-grand-public">Evènements scientifiques grand public</option>
+          <option value="evenements-scientifiques-grand-public">Évènements scientifiques grand public</option>
           <option value="expositions">Expositions</option>
           <option value="formations-internes">Formations internes</option>
           <option value="lecons-inaugurales">Leçons inaugurales - Leçons d'honneur</option>
@@ -107,30 +111,22 @@
           <option value="">Expert</option>
         </select>
       </div>
-
-      <div class="form-group form-group-select">
-        <label class="sr-only">Langue</label>
-        <select class="select-multiple" multiple="multiple" data-placeholder="Langue">
-          <option value="">Français</option>
-          <option value="">Anglais</option>
-          <option value="">Allemand</option>
-        </select>
-      </div>
-
+      
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Date</button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           {% include '@molecules/datepicker/datepicker.twig' %}
         </div>
       </div>
+      
     </form>
   </div>
   
   <div class="list-group list-events mt-4">
-    {% include '@molecules/card/card-event.twig' with { live_now: true } %}
+    {% include '@molecules/card/card-event.twig' with { live_now: true, online_event: true } %}
     {% include '@molecules/card/card-event.twig' %}
     {% for i in 1..2 %}
-      {% include '@molecules/card/card-event.twig' with { live_future: true } %}
+      {% include '@molecules/card/card-event.twig' with { live_future: true, online_event: true } %}
     {% endfor %}
     {% for i in 1..6 %}
       {% include '@molecules/card/card-event.twig' %}
