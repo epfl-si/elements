@@ -20,20 +20,29 @@
         <p class="event-info mt-1">
           <span class="event-speaker" itemprop="performer" itemscope itemtype="http://schema.org/performer">
           {% block speaker %}
-            Intervenant·e: <b>Prof. Dr. Aditya Mueller</b>
+            <b>Intervenant·e:</b> Prof. Dr. Aditya Mueller
           {% endblock %}
           </span>            
           <span class="event-location" itemprop="location" itemscope itemtype="http://schema.org/Place">
-            {% block info %}
-            Lieu et salle: <b><span itemprop="name">ArtLab EPFL</span></b>
-            <br>
-            Catégorie: <b>Événements culturel</b>
-            {% endblock %}
+          {% block location %}
+            {% if online_event|default(false) %}
+            <b>Lieu:</b> {% include '@atoms/icon/icon.twig' with { icon: 'monitor', icon_classes:'feather' } %}
+            <span itemprop="name">Online</span>
+            {% else %}
+            <b>Lieu:</b> {% include '@atoms/icon/icon.twig' with { icon: 'map-pin', icon_classes:'feather' } %}
+            <span itemprop="name">ArtLab EPFL</span>
+            {% endif %}
+          {% endblock %}
+          </span>
+          <span class="event-category">
+          {% block category %}
+            <b>Catégorie:</b> Événements culturel
+          {% endblock %}
           </span>
           <span class="event-audience" itemprop="audience" itemscope itemtype="https://schema.org/audience">
-            {% block audience %}
-              Public cible: <b>Tout public</b>
-            {% endblock %}
+          {% block audience %}
+            <b>Public cible:</b> Tout public
+          {% endblock %}
           </span>
         </p>
         {% if live_now|default(false) %}
