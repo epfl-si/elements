@@ -53,19 +53,19 @@
 </div>
 
 <div class="container mt-5">
-  <div class="row">
-    <div class="col-md-4">
-      <div>
-        {% include '@molecules/datepicker/datepicker.twig' %}
-      </div>
-      <div class="mt-5">
-        {% include '@molecules/filters/filters.twig' %}
-      </div>
-    </div>
-    <div class="col-md-8">
-      {% include '@content-types/event/event-listing.twig' %}
-    </div>
+  <h3 class="h6">Prochains événements</h3>
+  
+  <div class="list-group list-events mt-4">
+    {% include '@molecules/card/card-event.twig' with { live_now: true } %}
+    {% include '@molecules/card/card-event.twig' %}
+    {% for i in 1..2 %}
+      {% include '@molecules/card/card-event.twig' with { live_future: true } %}
+    {% endfor %}
+    {% for i in 1..6 %}
+      {% include '@molecules/card/card-event.twig' %}
+    {% endfor %}
   </div>
+  
 </div>
 {% endblock %}
 
