@@ -1,0 +1,51 @@
+.events-filters {
+  
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    margin-left: -10px;
+    margin-right: -10px;
+
+    .form-group-search {
+      flex-basis: 100%;
+
+      .search-container {
+        margin: 0;
+      }
+    }
+
+    & > * {
+      flex-grow: 1;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  
+  .select-multiple .ms-drop,
+  .select-multiple .ms-drop ul,
+  .dropdown .picker__table{
+    width: auto;
+  }
+  
+  .dropdown {
+    
+    button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: $custom-select-padding-y $custom-select-padding-x;
+      text-align: left;
+      width: 100%;
+    }
+    
+    .dropdown-menu.show {
+      left: auto !important;
+      right: 0;
+    }
+    
+    .picker__holder {
+      border: 0;
+    }
+  }
+}

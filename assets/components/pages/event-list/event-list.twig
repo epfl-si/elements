@@ -55,6 +55,77 @@
 <div class="container mt-5">
   <h3 class="h6">Prochains événements</h3>
   
+  <div class="events-filters mt-4">
+    <form action="" method="get">
+      {% include '@molecules/form-group/form-group-search.twig' %}
+
+      <div class="form-group form-group-select">
+        <label class="sr-only">Catégories</label>
+        <select class="select-multiple" multiple="multiple" data-placeholder="Catégories">
+          <option value="activites-scientifiques-jeunes">Activités scientifiques pour les jeunes</option>
+          <option value="appel-proposition">Appel à proposition</option>
+          <option value="autres">Autres types d’événement</option>
+          <option value="conferences-seminaires">Conférences - Séminaires</option>
+          <option value="congres">Congrès</option>
+          <option value="echeance">Echéance</option>
+          <option value="evenements-festifs-culturels">Événements festifs et culturels</option>
+          <option value="evenements-scientifiques-grand-public">Evènements scientifiques grand public</option>
+          <option value="expositions">Expositions</option>
+          <option value="formations-internes">Formations internes</option>
+          <option value="lecons-inaugurales">Leçons inaugurales - Leçons d'honneur</option>
+          <option value="soutenances-de-theses">Soutenances de thèses</option>
+        </select>
+      </div>
+
+      <div class="form-group form-group-select">
+        <label class="sr-only">Périodes</label>
+        <select class="select-multiple" multiple="multiple" data-placeholder="Périodes">
+          <option value="">Un jour</option>
+          <option value="">Deux jours</option>
+          <option value="">Une semaine</option>
+          <option value="">Deux semaines</option>
+          <option value="">Un mois</option>
+          <option value="">Six mois</option>
+          <option value="">Une année</option>
+        </select>
+      </div>
+
+      <div class="form-group form-group-select">
+        <label class="sr-only">Accès</label>
+        <select class="select-multiple" multiple="multiple" data-placeholder="Accès">
+          <option value="">Entrée libre</option>
+          <option value="">Sur inscription</option>
+          <option value="">Sur invitation</option>
+        </select>
+      </div>
+
+      <div class="form-group form-group-select">
+        <label class="sr-only">Public cible</label>
+        <select class="select-multiple" multiple="multiple" data-placeholder="Public cible">
+          <option value="">Tout public</option>
+          <option value="">Public averti</option>
+          <option value="">Expert</option>
+        </select>
+      </div>
+
+      <div class="form-group form-group-select">
+        <label class="sr-only">Langue</label>
+        <select class="select-multiple" multiple="multiple" data-placeholder="Langue">
+          <option value="">Français</option>
+          <option value="">Anglais</option>
+          <option value="">Allemand</option>
+        </select>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Date</button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          {% include '@molecules/datepicker/datepicker.twig' %}
+        </div>
+      </div>
+    </form>
+  </div>
+  
   <div class="list-group list-events mt-4">
     {% include '@molecules/card/card-event.twig' with { live_now: true } %}
     {% include '@molecules/card/card-event.twig' %}
