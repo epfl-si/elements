@@ -66,6 +66,20 @@
     {% endfor %}
   </div>
   
+  <div class="events-footer mt-3">
+    <div class="d-md-flex flex-md-row-reverse justify-content-md-between align-items-md-center">
+      <div class="events-links">
+          <ul class="links">
+          <li><a href="#">S'abonner à ce Memento</a></li>
+          <li><a href="#">Annoncer un événement</a></li>
+        </ul>
+      </div>
+      <div class="events-pager">
+        {% include '@molecules/pagination/pagination.twig' %}
+      </div>
+    </div>
+  </div>
+  
 </div>
 {% endblock %}
 
