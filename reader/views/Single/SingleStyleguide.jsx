@@ -32,7 +32,7 @@ function SingleStyleguide({ match, navigation }) {
         </div>
         )}
       {element ? <SingleStyleguideItem {...{ element, navigation }} /> : "No element"}
-      {element && element.variants && element.variants.length && renderVariants(element, navigation)}
+      {element && element.variants && element.variants.length ? renderVariants(element, navigation) : []}
     </div>
   );
 }
