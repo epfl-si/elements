@@ -7,14 +7,8 @@
 
 To contribute and run the styleguide, you will need few things :
 - [🔀 Git](https://git-scm.com/) - Version control system
-- either:
-
-  - [📗 NodeJS 14+](https://nodejs.org/en/) - JavaScript runtime used to build the project
-  - [🐈 Yarn](https://yarnpkg.com/lang/en/) - Dependency manager built on top of the NPM registry
-
-- or:
-  - [🐳 Docker](https://www.docker.com/) - Container platform provider
-  - [🐳 docker-compose](https://www.docker.com/) - Tool for defining and running multi-container Docker applications
+- [📗 NodeJS 14+](https://nodejs.org/en/) - JavaScript runtime used to build the project
+- [🐈 Yarn](https://yarnpkg.com/lang/en/) - Dependency manager built on top of the NPM registry
 
 Then, to install the project onto your workstation:
 
