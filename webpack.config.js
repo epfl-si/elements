@@ -156,11 +156,11 @@ module.exports = (env, argv) => {
         "assets/**/*.svg", buildDir,
         { munch: "assets/", ignore: ["**/assets/icons/**"] }
       )
-    ]
+    ],
+    devtool: 'source-map'
   }
 
   if (!isProd) {
-    webpackConfig.devtool = 'source-map'
     webpackConfig.plugins.push(new NodePolyfillPlugin())
     webpackConfig.plugins.push(Copy(
       "node_modules/bootstrap/dist/js/bootstrap.bundle.js.map",
