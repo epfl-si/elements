@@ -23,47 +23,52 @@ h3,
 h4,
 h5,
 h6 {
-  margin-bottom: .75em;
+  font-weight: $font-weight-bold;
 }
+
+
 
 h1,
 .h1 {
-  font-size: 3rem;
+  font-size: 2.611rem;
   line-height: 1.1em;
-  font-weight: $font-weight-bold;
+  margin-bottom: 2.722rem;
 }
 
 h2,
 .h2 {
-  font-size: 2.375rem;
+  font-size: 2.056rem;
   line-height: 1.2em;
+  margin-bottom: 1.667rem;
 }
 
 h3,
 .h3 {
-  font-size: 1.75rem;
+  font-size: 1.611rem;
   line-height: 1.35em;
-  font-weight: $font-weight-bold;
+  margin-bottom: 1.056rem;
 }
 
 h4,
 .h4 {
-  font-size: 1.5rem;
+  font-size: 1.278rem;
   line-height: 1.35em;
+  margin-bottom: 0.667rem;
 }
 
 h5,
 .h5 {
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.4em;
-  font-weight: $font-weight-bold;
+  margin-bottom: 0.389rem;
 }
 
 h6,
 .h6 {
-  font-size: 1.125rem;
+  font-size: 0.778rem;
   line-height: 1.5em;
   text-transform: uppercase;
+  margin-bottom: 0.222rem;
 }
 
 .lead {
