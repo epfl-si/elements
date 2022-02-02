@@ -64,14 +64,15 @@
   }
 
   .input-group {
-    margin-left: 0.5rem;
-    padding: 0.2rem;
-    border: 1px solid $gray-200;
 
     .form-control {
       border: none !important;
       box-shadow: none !important;
       &:before { content: none; }
+      
+      &.sr-only {
+        position: absolute;
+      }
     }
   }
 }
