@@ -3,17 +3,56 @@
     <div class="social-share-container">
       <div class="social-share ">
 
-        <div class="social-share-text">
+        <p class="social-share-text">
           Partager sur
-        </div>
-          {% include '@atoms/social-icon/social-icon-link-group.twig' with { discrete: true } %}
+        </p>
+        <ul class="social-share-list list-inline">
+          <li>
+            {% include '@atoms/social-icon/social-icon-single-link.twig' with {
+              pretty_name: 'Share on Facebook',
+              icon: 'icon-facebook',
+              round: round,
+              discrete: true,
+              url: '#'
+            } %}
+          </li>
+          <li>
+            {% include '@atoms/social-icon/social-icon-single-link.twig' with {
+              pretty_name: 'Share on Twitter',
+              icon: 'icon-twitter',
+              round: round,
+              discrete: true,
+              url: '#'
+            } %}
+          </li>
+          <li>
+            {% include '@atoms/social-icon/social-icon-single-link.twig' with {
+              pretty_name: 'Share on LinkedIn',
+              icon: 'icon-linkedin',
+              round: round,
+              discrete: true,
+              url: '#'
+            } %}
+          </li>
+          <li>
+            {% include '@atoms/social-icon/social-icon-single-link.twig' with {
+              pretty_name: 'Share by e-mail',
+              icon: 'icon-mail-plane',
+              round: round,
+              discrete: true,
+              url: '#'
+            } %}
+          </li>
+        </ul>
+        
+        
       </div>
 
       <div class="social-share-copylink">
 
         <div class="input-group">
           <input type="text" class="form-control sr-only" value="www.epfl.ch/xyz" aria-label="Lien de partage">
-          <button class="btn btn-primary btn-sm social-share-copy" title="Copier le lien de la page" type="button" data-success="Lien copié !">Copier le lien</button>
+          <button class="btn btn-primary btn-sm social-share-copy" title="Copier l'URL de la page" type="button" data-success="URL copiée !">Copier l'URL</button>
         </div>
       </div>
     </div>

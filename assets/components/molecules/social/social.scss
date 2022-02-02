@@ -48,6 +48,22 @@
       margin-bottom: 0;
     }
   }
+  
+  .social-share-list {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin: 0;
+    
+    li {
+      margin-right: 0.25rem;
+      margin-bottom: 0.25rem;
+      
+      .social-icon {
+        margin: 0;
+      }
+    }
+  }
 }
 
 .social-share-copylink {
