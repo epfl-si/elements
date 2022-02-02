@@ -32,7 +32,7 @@ function SingleStyleguide({ match, navigation }) {
         </div>
         )}
       {element ? <SingleStyleguideItem {...{ element, navigation }} /> : "No element"}
-      {element && element.variants && element.variants.length && renderVariants(element, navigation)}
+      {element && element.variants && element.variants.length ? renderVariants(element, navigation) : []}
     </div>
   );
 }
@@ -66,7 +66,7 @@ function SingleStyleguideItem ({ element, variant, navigation }) {
     }, 1000);
   }
 
-  const html = beautify(element.html())
+  const html = variant ? beautify(variant.html()) : beautify(element.html())
 
   const isVariant = variant !== undefined;
   const fullPath = `/${element.type}/${element.name}${
