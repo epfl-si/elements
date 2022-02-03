@@ -1,7 +1,0 @@
-title: Share
-name: share
-wrapper: bg-gray-100
-variants:
-  - name: light
-    title: Share Light
-    wrapper: col-12
