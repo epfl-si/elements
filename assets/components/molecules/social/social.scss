@@ -4,7 +4,7 @@
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 1rem 1.5rem;
   background: $white;
   color: $gray-600;
@@ -12,6 +12,7 @@
   @include media-breakpoint-up(lg) {
     flex-flow: row nowrap;
     justify-content: space-between;
+  align-items: center;
   }
 
   &.social-share-light {
@@ -46,22 +47,6 @@
     @include media-breakpoint-up(lg) {
       flex-basis: auto;
       margin-bottom: 0;
-    }
-  }
-  
-  .social-share-list {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    margin: 0;
-    
-    li {
-      margin-right: 0.25rem;
-      margin-bottom: 0.25rem;
-      
-      .social-icon {
-        margin: 0;
-      }
     }
   }
 }
