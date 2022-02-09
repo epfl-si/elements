@@ -5,4 +5,5 @@
 {% set negative = negative ? ' social-icon-negative' : '' %}
 <span class="{{ 'social-icon social-' ~ icon ~ round ~ negative }}">
   {% include '@atoms/icon/icon.twig' with { icon: icon } %}
+  <span class="sr-only">{{ pretty_name }}</span>
 </span>

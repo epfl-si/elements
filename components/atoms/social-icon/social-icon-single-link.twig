@@ -1,4 +1,4 @@
-{% set pretty_name = pretty_name ?: 'Twitter' %}
+{% set pretty_name = pretty_name ?: 'Follow us on Twitter' %}
 {% set icon = icon ?: 'icon-twitter' %}
 {% set round = round ? ' social-icon-round' : '' %}
 {% set discrete = discrete ? ' social-icon-discrete' : '' %}
@@ -6,5 +6,5 @@
 {% set url = url ?:  '#' %}
 <a href="{{ url }}" class="{{ 'social-icon social-' ~ icon ~ round ~ negative ~ discrete }}" target="_blank" rel="nofollow noopener">
   {% include '@atoms/icon/icon.twig' with { icon: icon } %}
-  <span class="sr-only">Follow us on {{ pretty_name }}.</span>
+  <span class="sr-only">{{ pretty_name }}</span>
 </a>

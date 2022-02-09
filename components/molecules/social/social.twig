@@ -1,0 +1,58 @@
+<div class="bg-gray-100 py-5">
+  <div class="container">
+    <div class="social-share-container">
+      
+      <div class="social-share ">
+        <p class="social-share-text">
+          Partager cette page
+        </p>
+        <ul class="social-icon-list list-inline">
+          <li>
+            {% include '@atoms/social-icon/social-icon-single-link.twig' with {
+              pretty_name: 'Share on Facebook',
+              icon: 'icon-facebook',
+              round: round,
+              discrete: true,
+              url: '#'
+            } %}
+          </li>
+          <li>
+            {% include '@atoms/social-icon/social-icon-single-link.twig' with {
+              pretty_name: 'Share on Twitter',
+              icon: 'icon-twitter',
+              round: round,
+              discrete: true,
+              url: '#'
+            } %}
+          </li>
+          <li>
+            {% include '@atoms/social-icon/social-icon-single-link.twig' with {
+              pretty_name: 'Share on LinkedIn',
+              icon: 'icon-linkedin',
+              round: round,
+              discrete: true,
+              url: '#'
+            } %}
+          </li>
+          <li>
+            {% include '@atoms/social-icon/social-icon-single-link.twig' with {
+              pretty_name: 'Share by e-mail',
+              icon: 'icon-mail-plane',
+              round: round,
+              discrete: true,
+              url: '#'
+            } %}
+          </li>
+        </ul>
+      </div>
+
+      <div class="social-share-copylink">
+        <div class="input-group">
+          <input type="text" class="form-control sr-only" value="www.epfl.ch/xyz" aria-label="Lien de partage">
+          <button class="btn btn-primary btn-sm social-share-copy" title="Copier l'URL de la page" type="button" data-success="URL copiée !">Copier l'URL</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
