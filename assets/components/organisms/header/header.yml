@@ -7,6 +7,8 @@ variants:
     notes: english
   - name: light
     title: Header light
+  - name: light-drawer
+    title: Header light with drawer
 notes: |
   **Current item highlight**
 
