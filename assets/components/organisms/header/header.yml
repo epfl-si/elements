@@ -7,8 +7,14 @@ variants:
     notes: english
   - name: light
     title: Header light
+    notes: |
+      * EPFL logo should link to the main EPFL website (https://www.epfl.ch);
+      * Sub site name should link to the sub site homepage (e.g. https://actu.epfl.ch, https://people.epfl.ch, etc ).
   - name: light-drawer
     title: Header light with drawer
+    notes: |
+      * EPFL logo should link to the main EPFL website (https://www.epfl.ch);
+      * Sub site name should link to the sub site homepage (e.g. https://actu.epfl.ch, https://people.epfl.ch, etc ).
 notes: |
   **Current item highlight**
 

@@ -148,6 +148,10 @@
     font-size: $font-size-base;
     color: theme-color('primary');
     text-transform: uppercase;
+    
+    a {
+      text-decoration: none;
+    }
   }
 
   .drawer.open + .header-light-content {
