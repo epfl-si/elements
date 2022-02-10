@@ -1,7 +1,6 @@
 {% if language is not defined %}{% set language = 'fr' %}{% endif %}
 {% set site_title = site_title|default('sub site name') %}
 <header role="banner" class="header header-light">
-  {% include '@atoms/drawer/drawer.twig' %}
   <div class="header-light-content">
     <a class="logo" href="#">
       <img src="svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
