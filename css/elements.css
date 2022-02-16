@@ -13581,8 +13581,8 @@ ol.flickity-page-dots li {
         left: 0;
         -o-object-fit: cover;
            object-fit: cover;
-        -o-object-position: center center;
-           object-position: center center;
+        -o-object-position: top center;
+           object-position: top center;
         font-family: 'object-fit: cover;';
         /* stylelint-disable-line */
         width: 100%;
@@ -14467,15 +14467,6 @@ a.nav-arrow {
     color: #212121; }
 
 .footer-light-socials {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin-bottom: 0;
   padding: 0.5rem 0;
   border-top: 1px solid #e6e6e6; }
@@ -14638,7 +14629,8 @@ a.nav-arrow {
     margin-right: 1rem;
     padding-right: 1rem;
     border-right: 1px solid #c1c1c1; }
-  .header-light h1 {
+  .header-light h1,
+  .header-light .site-title {
     -ms-flex-item-align: start;
         align-self: flex-start;
     -webkit-box-flex: 0;
@@ -14648,6 +14640,12 @@ a.nav-arrow {
     font-size: 1rem;
     color: #ff0000;
     text-transform: uppercase; }
+    .header-light h1 a,
+    .header-light .site-title a {
+      text-decoration: none; }
+  .header-light p.site-title {
+    font-weight: 700;
+    line-height: 1.1em; }
   @media (max-width: 767.98px) {
     .header-light .drawer.open + .header-light-content .nav-toggle-mobile,
     .header-light .drawer.open + .header-light-content .nav-lang,
