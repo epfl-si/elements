@@ -141,13 +141,23 @@
     border-right: 1px solid gray('300');
   }
 
-  h1 {
+  h1,
+  .site-title {
     align-self: flex-start;
     flex: 0 1 100px;
     margin: auto 0;
     font-size: $font-size-base;
     color: theme-color('primary');
     text-transform: uppercase;
+    
+    a {
+      text-decoration: none;
+    }
+  }
+  
+  p.site-title {
+    font-weight: 700;
+    line-height: 1.1em;
   }
 
   .drawer.open + .header-light-content {
