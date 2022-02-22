@@ -8,13 +8,13 @@ variants:
   - name: hover
     title: Hover*
     notes: |
-      *For previewing purposes only. **Do not use in production!***
-      <br>*Represents the input when the mouse cursor hovers the component.*
+      *For previewing purposes only. **Do not use in production!*** \
+      *Represents the input when the mouse cursor hovers the component.*
   - name: focus
     title: Focus*
     notes: |
-      *For previewing purposes only. **Do not use in production!***
-      <br>*Represents the input when you are editing the content inside the component.*
+      *For previewing purposes only. **Do not use in production!*** \
+      *Represents the input when you are editing the content inside the component.*
   - name: error
     title: Error
     notes: |
