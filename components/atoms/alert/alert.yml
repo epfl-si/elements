@@ -6,7 +6,7 @@ variants:
   - name: types
     title: Alert types
     notes: |
-      There is **4 variations** of the alert component:<br>
+      There is **4 variations** of the alert component:
       * `alert-success` — used to confirm a completed task or the successful submission of a form.
       * `alert-info` — used to display an interesting yet non-critical information.
       * `alert-warning` — used for unexpected events, that people must pay attention.
