@@ -660,9 +660,9 @@
           "url_de": "https://www.epfl.ch/about/sustainability/"
         },
         {
-          "name_fr": "Égalité des chances",
+          "name_fr": "Égalité et Diversité",
           "url_fr": "https://www.epfl.ch/about/equality/fr/",
-          "name_en": "Equality",
+          "name_en": "Equality & Diversity",
           "url_en": "https://www.epfl.ch/about/equality/",
           "name_de": "Chancengleichheit",
           "url_de": "https://www.epfl.ch/about/equality/"
@@ -777,9 +777,9 @@
         {
           "name_fr": "Promotion de l'éducation et des sciences",
           "url_fr": "https://www.epfl.ch/education/education-and-science-outreach/fr/",
-          "name_en": "Sciences and education outreach",
+          "name_en": "Education and Science Outreach",
           "url_en": "https://www.epfl.ch/education/education-and-science-outreach/",
-          "name_de": "Förderung von Bildung und Wissenschaft",
+          "name_de": "Bildungs- und Wissenschaftsförderung",
           "url_de": "https://www.epfl.ch/education/education-and-science-outreach/de/"
         }
       ]
@@ -798,11 +798,11 @@
           "url_de": "https://www.epfl.ch/research/domains/de/"
         },
         {
-          "name_fr": "Nos Professeurs",
+          "name_fr": "Professeur·e·s de l’EPFL",
           "url_fr": "https://www.epfl.ch/research/faculty-members/fr/",
           "name_en": "Faculty members",
           "url_en": "https://www.epfl.ch/research/faculty-members/",
-          "name_de": "Unsere Lehrkräfte",
+          "name_de": "Lehrkörper",
           "url_de": "https://www.epfl.ch/research/faculty-members/de/"
         },
         {
@@ -810,7 +810,7 @@
           "url_fr": "https://www.epfl.ch/research/awards/fr/",
           "name_en": "Awards and prizes",
           "url_en": "https://www.epfl.ch/research/awards/",
-          "name_de": "Preise und Auszeichnungen",
+          "name_de": "Auszeichnungen und Preise",
           "url_de": "https://www.epfl.ch/research/awards/de/"
         },
         {
@@ -818,7 +818,7 @@
           "url_fr": "https://www.epfl.ch/research/collaborate/fr/",
           "name_en": "Collaborate with our researchers",
           "url_en": "https://www.epfl.ch/research/collaborate/",
-          "name_de": "Mit unseren Forschenden zusammenarbeiten",
+          "name_de": "Mit unseren Forscher*innen zusammenarbeiten",
           "url_de": "https://www.epfl.ch/research/collaborate/de/"
         },
         {
@@ -887,7 +887,7 @@
         {
           "name_fr": "Domaines d'innovation",
           "url_fr": "https://www.epfl.ch/innovation/domains/fr/",
-          "name_en": "Domains of innovation",
+          "name_en": "Innovation initiatives",
           "url_en": "https://www.epfl.ch/innovation/domains/",
           "name_de": "Innovationsbereiche",
           "url_de": "https://www.epfl.ch/innovation/domains/de/"
@@ -895,7 +895,7 @@
         {
           "name_fr": "Collaboration avec l'industrie",
           "url_fr": "https://www.epfl.ch/innovation/industry/fr/",
-          "name_en": "Collaboration opportunities",
+          "name_en": "Industry collaboration",
           "url_en": "https://www.epfl.ch/innovation/industry/",
           "name_de": "Zusammenarbeit mit der Industrie",
           "url_de": "https://www.epfl.ch/innovation/industry/de/"
@@ -905,7 +905,7 @@
           "url_fr": "https://www.epfl.ch/innovation/startup/fr/",
           "name_en": "Startup launchpad",
           "url_en": "https://www.epfl.ch/innovation/startup/",
-          "name_de": "Unternehmertum und Start-ups",
+          "name_de": "Startup Launchpad",
           "url_de": "https://www.epfl.ch/innovation/startup/de/"
         }
       ]
@@ -920,7 +920,7 @@
           "url_fr": "https://www.epfl.ch/campus/visitors/fr/",
           "name_en": "Visit EPFL",
           "url_en": "https://www.epfl.ch/campus/visitors/",
-          "name_de": "EPFL Besuchen",
+          "name_de": "EPFL besuchen",
           "url_de": "https://www.epfl.ch/campus/visitors/de/"
         },
         {
@@ -980,11 +980,11 @@
           "url_de": "https://www.epfl.ch/campus/art-culture/"
         },
         {
-          "name_fr": "Aide, santé et sécurité",
+          "name_fr": "Sécurité, Prévention et Santé",
           "url_fr": "https://www.epfl.ch/campus/security-safety/",
-          "name_en": "Health, security and safety",
+          "name_en": "Security, Prevention and Health",
           "url_en": "https://www.epfl.ch/campus/security-safety/en/",
-          "name_de": "Hilfe, Gesundheit und Sicherheit",
+          "name_de": "Sicherheit, Prävention und Gesundheit",
           "url_de": "https://www.epfl.ch/campus/security-safety/en/"
         },
         {
@@ -1172,29 +1172,29 @@
       ]
     },
     {
-      "url": "https://www.epfl.ch/education/fr/education/",
+      "url": "https://www.epfl.ch/education/fr/",
       "title": "Éducation",
       "submenu" : [
         {
-          "url": "https://www.epfl.ch/education/bachelor/fr/index-fr-html/",
+          "url": "https://www.epfl.ch/education/bachelor/fr/",
           "title": "Bachelor"
         },
         {
-          "url": "https://www.epfl.ch/education/master/fr/index-fr-html/",
+          "url": "https://www.epfl.ch/education/master/fr/",
           "title": "Master"
         },
         {
-          "url": "https://www.epfl.ch/education/phd/fr/index-fr-html/",
+          "url": "https://www.epfl.ch/education/phd/fr/",
           "title": "Doctorat"
         }
       ]
     },
     {
-      "url": "https://www.epfl.ch/research/fr/recherche/",
+      "url": "https://www.epfl.ch/research/fr/",
       "title": "Recherche"
     },
     {
-      "url": "https://www.epfl.ch/innovation/fr/innovation-2/",
+      "url": "https://www.epfl.ch/innovation/fr/",
       "title": "Innovation"
     }
   ]
