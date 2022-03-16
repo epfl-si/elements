@@ -1,6 +1,6 @@
 {
   "name": "epfl-elements",
-  "version": "3.3.1",
+  "version": "3.3.2",
   "license": "MIT",
   "main": "index.html",
   "repository": {
@@ -200,7 +200,7 @@
     "stylelint": "^13.13.1",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-scss": "^3.19.0",
-    "svg-spritemap-webpack-plugin": "^4.1.0",
+    "svg-spritemap-webpack-plugin": "^4.4.0",
     "twig-html-loader": "^0.1.9",
     "unminified-webpack-plugin": "^3.0.0",
     "walk-sync": "^3.0.0",
