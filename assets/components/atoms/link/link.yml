@@ -2,9 +2,9 @@ title: Link
 name: link
 notes: >
   A link is a **navigation** component. Links are recognized as **doors between pages**. That means **links description** should be **self-explanatory**. People need to understand where they will land, if they click on a link. Avoid having long links. The **3-words-maximum** rule is good.
-  <br><br>
+
+
   Links may - in some situations - activate interactions without loading a new the page. Like loading extra elements from a results list or sort items in a table.
-  <br>
 
   ## Links styles
 

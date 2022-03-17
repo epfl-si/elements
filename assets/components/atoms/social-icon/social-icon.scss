@@ -150,3 +150,26 @@ a.social-icon {
     }
   }
 }
+  
+.social-icon-list {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin: 0;
+
+  li {
+    margin-bottom: 0.25rem;
+
+    .social-icon {
+      margin: 0;
+    }
+    
+    &:not(:last-child) {
+      margin-right: 0.25rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+    }
+  }
+}
