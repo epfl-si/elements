@@ -193,7 +193,7 @@
     "react-router-dom": "^5.2.0",
     "react-syntax-highlighter": "^15.5.0",
     "redux": "4",
-    "release-it": "^14.11.8",
+    "release-it": "^14.13.1",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.0.0",
     "styled-components": "^5.3.0",
