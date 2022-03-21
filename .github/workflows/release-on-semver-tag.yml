@@ -76,9 +76,9 @@ jobs:
              dist/icons/* \
              dist/favicons/*.png dist/favicons/*.ico \
              release/dist/icons/
-          cp dist/package.json          release/
-          cp dist/css/elements.css      release/dist/css/elements.min.css
-          cp dist/js/elements.bundle.js release/dist/js/elements.min.js
+          cp dist/package.json         release/
+          cp dist/css/elements.min.css release/dist/css/elements.min.css
+          cp dist/js/elements.min.js   release/dist/js/elements.min.js
 
       - name: Create release package
         # The placement scheme is that of https://www.npmjs.com/package/epfl-theme-elements

@@ -26,7 +26,7 @@ const vendors = {
     "node_modules/tablesaw/dist/tablesaw-init.js",
     "node_modules/clipboard/dist/clipboard.js",
     "node_modules/multiple-select/dist/multiple-select.js",
-    "node_modules/selectize.js/dist/js/standalone/selectize.js",
+    "node_modules/@selectize/selectize/dist/js/standalone/selectize.js",
     "node_modules/intro.js/intro.js",
     "node_modules/jquery-mousewheel/jquery.mousewheel.js",
     "node_modules/cookieconsent/build/cookieconsent.min.js"
@@ -158,12 +158,12 @@ module.exports = (env, argv) => {
       new SVGSpritemapPlugin("assets/icons/*.svg",
         {
           output: { filename: "icons/icons.svg" },
-          sprite: { prefix: "icon-" }
+          sprite: { prefix: "icon-", generate: { title: false } }
         }),
       new SVGSpritemapPlugin("node_modules/feather-icons/dist/icons/*.svg",
         {
           output: { filename: "icons/feather-sprite.svg" },
-          sprite: { prefix: "" }
+          sprite: { prefix: "", generate: { title: false } }
         }),
       // Copy the remaining (non-spritemapped) SVGs into buildDir:
       Copy(

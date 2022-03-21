@@ -16,6 +16,4 @@ variants:
 notes: |
   Never forget the `for=""` attribute to link the input to the label.
 
-  <br>
-
   ### Standard form group

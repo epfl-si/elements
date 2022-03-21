@@ -7,6 +7,16 @@ variants:
     notes: english
   - name: light
     title: Header light
+    notes: |
+      * EPFL logo should link to the main EPFL website (https://www.epfl.ch);
+      * Sub site name should link to the sub site homepage (e.g. https://actu.epfl.ch, https://people.epfl.ch, etc );
+      * Use `<p class="site-title">` for the sub site title rather than a `<h1>` tag – `<h1>` title should be placed in the page content instead.
+  - name: light-drawer
+    title: Header light with drawer
+    notes: |
+      * EPFL logo should link to the main EPFL website (https://www.epfl.ch);
+      * Sub site name should link to the sub site homepage (e.g. https://actu.epfl.ch, https://people.epfl.ch, etc );
+      * Use `<p class="site-title">` for the sub site title rather than a `<h1>` tag – `<h1>` title should be placed in the page content instead.
 notes: |
   **Current item highlight**
 

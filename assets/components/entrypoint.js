@@ -7,7 +7,7 @@ import datepicker from './molecules/datepicker/datepicker';
 import datepickerEvent from './molecules/datepicker/datepicker-fancy';
 import popover from './atoms/popover/popover';
 import gallery from './molecules/gallery/gallery';
-import share from './molecules/share/share';
+import social from './molecules/social/social';
 import selectMultiple from './atoms/select/select-multiple';
 import tagInput from './atoms/tag/tag-input';
 import cardSlider from './organisms/card-slider/card-slider';
@@ -37,7 +37,7 @@ jQuery.fn.extend({
     gallery();
     search();
     searchMobile();
-    share();
+    social();
     coursebook();
     Tablesaw.init();
     cardSlider();
