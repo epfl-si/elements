@@ -191,7 +191,7 @@
     "react-redux": "^7.2.4",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-syntax-highlighter": "^15.4.3",
+    "react-syntax-highlighter": "^15.5.0",
     "redux": "4",
     "release-it": "^14.11.8",
     "sass-loader": "^12.1.0",
