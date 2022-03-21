@@ -83,26 +83,33 @@ body {
 .content.container-grid,
 .content .container-grid {
   
-  p,
-  ol,
-  ul,
-  dl,
-  table {
+  & > p,
+  & > ol,
+  & > ul,
+  & > dl {
 
     & + h1,
     & + h2,
-    & + h3,
-    & + h4,
-    & + h5,
+    & + h3 {
+      margin-top: 1.25em;
+    }
+    & + h4 {
+      margin-top: 1.125em;
+    }
+    & + h5 {
+      margin-top: 1em;
+    }
     & + h6 {
-      margin-top: 1.5em;
+      margin-top: 0.875em;
     }
   }
 
-  h2 + h3,
-  h3 + h4,
-  h4 + h5,
-  h5 + h6 {
-    margin-top: 0.75em;
+  & > h2 + h3 {
+    margin-top: 0.5em;
+  }
+  & > h3 + h4,
+  & > h4 + h5,
+  & > h5 + h6 {
+    margin-top: 0.625em;
   }
 }
