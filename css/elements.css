@@ -9239,13 +9239,81 @@ body {
 .content table + h4,
 .content table + h5,
 .content table + h6 {
-  margin-top: 1.5em; }
+  margin-top: 1.75em; }
 
 .content h2 + h3,
 .content h3 + h4,
 .content h4 + h5,
 .content h5 + h6 {
   margin-top: 1.5em; }
+
+.content.container-grid > p + h1,
+.content.container-grid > p + h2,
+.content.container-grid > p + h3,
+.content.container-grid > ol + h1,
+.content.container-grid > ol + h2,
+.content.container-grid > ol + h3,
+.content.container-grid > ul + h1,
+.content.container-grid > ul + h2,
+.content.container-grid > ul + h3,
+.content.container-grid > dl + h1,
+.content.container-grid > dl + h2,
+.content.container-grid > dl + h3,
+.content .container-grid > p + h1,
+.content .container-grid > p + h2,
+.content .container-grid > p + h3,
+.content .container-grid > ol + h1,
+.content .container-grid > ol + h2,
+.content .container-grid > ol + h3,
+.content .container-grid > ul + h1,
+.content .container-grid > ul + h2,
+.content .container-grid > ul + h3,
+.content .container-grid > dl + h1,
+.content .container-grid > dl + h2,
+.content .container-grid > dl + h3 {
+  margin-top: 1.25em; }
+
+.content.container-grid > p + h4,
+.content.container-grid > ol + h4,
+.content.container-grid > ul + h4,
+.content.container-grid > dl + h4,
+.content .container-grid > p + h4,
+.content .container-grid > ol + h4,
+.content .container-grid > ul + h4,
+.content .container-grid > dl + h4 {
+  margin-top: 1.125em; }
+
+.content.container-grid > p + h5,
+.content.container-grid > ol + h5,
+.content.container-grid > ul + h5,
+.content.container-grid > dl + h5,
+.content .container-grid > p + h5,
+.content .container-grid > ol + h5,
+.content .container-grid > ul + h5,
+.content .container-grid > dl + h5 {
+  margin-top: 1em; }
+
+.content.container-grid > p + h6,
+.content.container-grid > ol + h6,
+.content.container-grid > ul + h6,
+.content.container-grid > dl + h6,
+.content .container-grid > p + h6,
+.content .container-grid > ol + h6,
+.content .container-grid > ul + h6,
+.content .container-grid > dl + h6 {
+  margin-top: 0.875em; }
+
+.content.container-grid > h2 + h3,
+.content .container-grid > h2 + h3 {
+  margin-top: 0.5em; }
+
+.content.container-grid > h3 + h4,
+.content.container-grid > h4 + h5,
+.content.container-grid > h5 + h6,
+.content .container-grid > h3 + h4,
+.content .container-grid > h4 + h5,
+.content .container-grid > h5 + h6 {
+  margin-top: 0.625em; }
 
 .btn {
   text-decoration: none;
