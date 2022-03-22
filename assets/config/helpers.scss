@@ -107,6 +107,28 @@
 }
 
 /*
+  Text Decoration
+
+  Bootstrap v5 + legacy
+*/
+.underline, .text-decoration-underline {
+  text-decoration: underline;
+}
+
+.overline, .text-decoration-overline {
+  text-decoration: overline;
+}
+
+.line-through, .text-decoration-line-through {
+  text-decoration: line-through;
+}
+
+// .text-decoration-none already exists in v4
+.no-underline {
+  text-decoration: none;
+}
+
+/*
   Triangles
 */
 .triangle-outer-bottom-right {
