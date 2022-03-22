@@ -32,3 +32,10 @@ $opacities: map-merge((
   "90": .9,
   "100": 1,
 ), $opacities);
+
+// Legacy font-size
+$legacy-font-size-xl:   1.25rem;
+$legacy-font-size-lg:   1.125rem;
+$legacy-font-size-base: 1rem;
+$legacy-font-size-sm:   0.875rem;
+$legacy-font-size-xs:   0.75rem;

@@ -77,6 +77,26 @@
   font-size: $font-size-xs;
 }
 
+.text-xs {
+  font-size: $legacy-font-size-xs;
+}
+
+.text-sm {
+  font-size: $legacy-font-size-sm;
+}
+
+.text-base {
+  font-size: $legacy-font-size-base;
+}
+
+.text-lg {
+  font-size: $legacy-font-size-lg;
+}
+
+.text-xl {
+  font-size: $legacy-font-size-xl;
+}
+
 .text-arrow {
   display: flex;
   justify-content: space-between;
