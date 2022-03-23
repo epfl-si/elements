@@ -158,12 +158,12 @@ module.exports = (env, argv) => {
       new SVGSpritemapPlugin("assets/icons/*.svg",
         {
           output: { filename: "icons/icons.svg" },
-          sprite: { prefix: "icon-" }
+          sprite: { prefix: "icon-", generate: { title: false } }
         }),
       new SVGSpritemapPlugin("node_modules/feather-icons/dist/icons/*.svg",
         {
           output: { filename: "icons/feather-sprite.svg" },
-          sprite: { prefix: "" }
+          sprite: { prefix: "", generate: { title: false } }
         }),
       // Copy the remaining (non-spritemapped) SVGs into buildDir:
       Copy(

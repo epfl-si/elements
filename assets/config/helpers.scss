@@ -159,3 +159,10 @@ hr {
     color: $value !important;
   }
 }
+
+// generate all opacity helpers
+@each $key, $value in $opacities {
+  .opacity-#{$key} {
+    opacity: $value;
+  }
+}
