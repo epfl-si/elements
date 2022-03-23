@@ -162,6 +162,10 @@
   
   .drawer {
     margin-left: -(0.9 * $spacer);
+    
+    @include media-breakpoint-up(xl) {
+      margin-left: 0;
+    }
   }
 
   .drawer.open + .header-light-content {
