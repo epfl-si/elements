@@ -24,7 +24,6 @@ variants:
       *For previewing purposes only. **Do not use in production!***
 notes: |
   Button is your interaction friend when you want people to complete an action. By clicking a button, people expect to trigger an event, confirm a form or load a new page. Don't put many buttons on one single page. The primary action should be obvious for people.
-  <br/>
 
   ### Button primary
   Main action in a page uses primary-style buttons. If you have more than one button in a page, **give hierarchy** to those different actions. You can use secondary button style or turn it into a link.
