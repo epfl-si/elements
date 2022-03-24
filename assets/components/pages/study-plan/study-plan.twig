@@ -3,12 +3,13 @@
 
 {% block header %}
 <header role="banner" class="header header-light">
-  {% include '@atoms/drawer/drawer.twig' %}
   <div class="header-light-content">
-    <a class="logo" href="#">
+    <a class="logo" href="https://www.epfl.ch">
       <img src="svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
     </a>
-    <h1>Plans d'études</h1>
+    <p class="site-title">
+      <a href="#">Plan d'études</a>
+    </p>
     {% include '@molecules/search/search-mobile.twig' %}
     {% include '@molecules/search/search.twig' %}
     {% include '@atoms/nav-lang/nav-lang-short.twig' %}
