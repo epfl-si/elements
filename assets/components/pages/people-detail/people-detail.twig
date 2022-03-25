@@ -4,12 +4,13 @@
 
 {% block header %}
 <header role="banner" class="header header-light">
-  {% include '@atoms/drawer/drawer.twig' %}
   <div class="header-light-content">
     <a class="logo" href="#">
       <img src="svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
     </a>
-    <h1>Online People Directory</h1>
+    <p class="site-title">
+      <a href="#">Online People Directory</a>
+    </p>
     {% include '@molecules/search/search-mobile.twig' %}
     {% include '@molecules/search/search.twig' %}
     {% include '@atoms/nav-lang/nav-lang.twig' %}
