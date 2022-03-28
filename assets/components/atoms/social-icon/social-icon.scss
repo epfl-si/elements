@@ -18,19 +18,19 @@
   min-height: 2.6em;
   text-decoration: none !important;
   vertical-align: bottom;
-  
+
   &:hover {
     background: $gray-600;
     color: white;
   }
-  
+
   .user {
     position: relative;
     top: 2px;
     line-height: 24px;
     vertical-align: bottom;
   }
-  
+
   .icon + .user {
     margin-left: .25em;
     top: -1px;
@@ -150,7 +150,7 @@ a.social-icon {
     }
   }
 }
-  
+
 .social-icon-list {
   display: flex;
   flex-flow: row wrap;
@@ -163,7 +163,7 @@ a.social-icon {
     .social-icon {
       margin: 0;
     }
-    
+
     &:not(:last-child) {
       margin-right: 0.25rem;
     }

@@ -2,7 +2,7 @@
 
 
 export default () => {
-  
+
   const backToTopBtn = $('#back-to-top');
 
   $(window).scroll(function() {
@@ -17,5 +17,5 @@ export default () => {
     e.preventDefault();
     $('html, body').animate({scrollTop:0}, '300');
   });
-  
+
 };

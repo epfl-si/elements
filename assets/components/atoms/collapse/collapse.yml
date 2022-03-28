@@ -5,7 +5,7 @@ variants:
     title: Collapse with complex header
     notes: |
       As it is not semantically valid to use an element such as <p> as a child of <button>, this structure can be used when more content is needed in the collapse header.
-      
+
   - name: partial
     title: Partial collapse
     notes: |

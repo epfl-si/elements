@@ -2,12 +2,12 @@
 
 .hero {
   overflow: hidden;
-  
+
   @include media-breakpoint-up(md) {
     display: flex;
     justify-content: space-between;
   }
-  
+
   @include media-breakpoint-down(sm) {
     padding-right: .9rem;
     padding-left: .9rem;
@@ -48,11 +48,11 @@
 }
 
 .hero-content {
-  
+
   @include media-breakpoint-down(sm) {
     margin-bottom: 1rem;
   }
-  
+
   @include media-breakpoint-up(md) {
     width: 110%;
   }

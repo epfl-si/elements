@@ -75,11 +75,11 @@ $collapse-chevron-size: 12px;
   @include media-breakpoint-down(sm) {
     @include collapse-btn();
   }
-  
+
   p {
     margin-bottom: 0.25em;
   }
-  
+
   *:last-child {
     margin-bottom: 0;
   }
@@ -105,17 +105,17 @@ $collapse-chevron-size: 12px;
 
 header.collapse-title {
   font-size: inherit;
-  
+
   p {
     font-size: 1rem;
   }
-  
+
   @include media-breakpoint-up(md) {
     p {
       font-size: 1.125rem;
     }
   }
-  
+
   @include media-breakpoint-up(lg) {
     p.title {
       font-size: 1.25rem;
@@ -242,11 +242,11 @@ $collapse-drop-margin: ($grid-gutter-width * 0.3);
   border-top: 1px solid #c1c1c1;
   border-bottom: 1px solid #c1c1c1;
   margin-bottom: ($spacer * 3);
-  
+
   .collapse-title {
     border-top: 0;
   }
-  
+
   & + .collapse-container {
     border-top: 0;
     margin-top: -($spacer * 3);

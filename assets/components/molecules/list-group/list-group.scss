@@ -3,7 +3,7 @@
 .list-group-item {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-  
+
   p:last-child {
     margin-bottom: 0;
   }
@@ -23,15 +23,15 @@
 }
 
 .list-group {
-  
+
   li,
   li.list-group-item {
-    
+
     &:before {
       content: none;
     }
   }
-  
+
   .list-group-teaser {
     display: block;
     text-decoration: none;
@@ -41,7 +41,7 @@
     &:hover {
       z-index: $zindex-10;
     }
-    
+
     & + .list-group-teaser {
       margin-top: -1px;
     }
@@ -52,7 +52,7 @@
     padding: 1rem;
     padding-top: 1rem;
     z-index: $zindex-1;
-    
+
     > a {
       display: block;
     }
@@ -86,7 +86,7 @@
         margin-bottom: 0.4rem;
       }
     }
-    
+
     .teaser-url {
       overflow-wrap: break-word;
       word-wrap: break-word;
@@ -103,7 +103,7 @@
 
     @include media-breakpoint-down(md) {
       flex-direction: column;
-      
+
       .list-group-teaser-thumbnail {
         flex-basis: 0;
         padding-bottom: 0;
@@ -112,19 +112,19 @@
 
     &:hover {
       //border-color: $black;
-      
+
       .list-group-teaser-content,
       .list-group-teaser-thumbnail {
         border-color: $black;
       }
     }
-    
+
     &.teaser-img-right {
       flex-direction: row-reverse;
-      
+
       @include media-breakpoint-down(md) {
         display: block;
-        
+
         .list-group-teaser-thumbnail {
           float: right;
           max-width: 50%;
@@ -150,14 +150,14 @@
       border: 1px solid $black !important;
     }
   }
-  
+
   .item-metadata {
-    
+
     p {
       display: inline-block;
       margin-bottom: 0;
     }
-    
+
     .item-date {
       font-size: 1rem;
       font-weight: bold;
@@ -167,20 +167,20 @@
 }
 
 .list-group-item-infoscience {
-  
+
   &.has-thumbnail {
     display: flex;
-    
+
     .list-group-thumbnail{
       flex: 0 0 8rem;
       margin-right: 1rem;
       z-index: $zindex-1;
     }
-    
+
     .list-group-content {
       flex: 0 1 100%;
       z-index: $zindex-1;
     }
-    
+
   }
 }

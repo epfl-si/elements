@@ -11,7 +11,9 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 export default (props) => {
   const {children, className, onSuccess} = props
   const text = props["data-clipboard-text"]
-  return <CopyToClipboard text={text} onCopy={onSuccess}>
-           <button className={ className }>{children}</button>
-         </CopyToClipboard>
+  return (
+    <CopyToClipboard text={text} onCopy={onSuccess}>
+      <button className={ className }>{children}</button>
+    </CopyToClipboard>
+  );
 }
