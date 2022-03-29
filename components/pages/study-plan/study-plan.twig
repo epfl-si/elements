@@ -3,12 +3,13 @@
 
 {% block header %}
 <header role="banner" class="header header-light">
-  {% include '@atoms/drawer/drawer.twig' %}
   <div class="header-light-content">
-    <a class="logo" href="#">
+    <a class="logo" href="https://www.epfl.ch">
       <img src="svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
     </a>
-    <h1>Plans d'études</h1>
+    <p class="site-title">
+      <a href="#">Plan d'études</a>
+    </p>
     {% include '@molecules/search/search-mobile.twig' %}
     {% include '@molecules/search/search.twig' %}
     {% include '@atoms/nav-lang/nav-lang-short.twig' %}
@@ -74,7 +75,7 @@
 
 <div class="container-full px-5 px-xxl-6 mt-5">
   <header class="page-header d-xl-flex justify-content-xl-between align-items-xl-center mb-5">
-    <h2 class="mb-4 mb-xl-0">Plan d'études – Cycle Bachelor</h2>
+    <h1 class="mb-4 mb-xl-0">Plan d'études – Cycle Bachelor</h1>
     <button class="btn btn-sm btn-secondary">
     {% include '@atoms/icon/icon.twig' with { icon: 'download', icon_classes:'feather' } %}
     Télécharger le plan d'étude (PDF)

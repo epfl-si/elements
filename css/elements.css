@@ -8941,6 +8941,21 @@ _:-ms-fullscreen, :root .container-grid .container-full {
 .text-small {
   font-size: 0.778rem; }
 
+.text-xs {
+  font-size: 0.75rem; }
+
+.text-sm {
+  font-size: 0.875rem; }
+
+.text-base {
+  font-size: 1rem; }
+
+.text-lg {
+  font-size: 1.125rem; }
+
+.text-xl {
+  font-size: 1.25rem; }
+
 .text-arrow {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8967,6 +8982,23 @@ _:-ms-fullscreen, :root .container-grid .container-full {
 
 .text-spread {
   letter-spacing: 3px; }
+
+/*
+  Text Decoration
+
+  Bootstrap v5 + legacy
+*/
+.underline, .text-decoration-underline {
+  text-decoration: underline; }
+
+.overline, .text-decoration-overline {
+  text-decoration: overline; }
+
+.line-through, .text-decoration-line-through {
+  text-decoration: line-through; }
+
+.no-underline {
+  text-decoration: none; }
 
 /*
   Triangles
@@ -14755,6 +14787,9 @@ a.nav-arrow {
 
 .header-light .drawer {
   margin-left: -0.9rem; }
+  @media (min-width: 1200px) {
+    .header-light .drawer {
+      margin-left: 0; } }
 
 @media (max-width: 767.98px) {
   .header-light .drawer.open + .header-light-content .nav-toggle-mobile,
@@ -15348,6 +15383,7 @@ a.cc-btn {
   overflow-x: visible;
   overflow-x: initial;
   max-width: 100%; }
+  .table-like h2,
   .table-like h3,
   .table-like h4 {
     font-size: 1rem;
@@ -15413,12 +15449,14 @@ a.cc-btn {
           background-color: #fff; }
       .table-like .first-line > div {
         background-color: #f4f4f4; }
+      .table-like h2,
       .table-like h3,
       .table-like h4 {
         grid-column: 1 / -1;
         background-color: #fff;
         margin-bottom: 0;
         padding-bottom: calc( 0.5rem * 1.5); }
+      .table-like .line-down + h2,
       .table-like .line-down + h3,
       .table-like .line-down + h4 {
         padding-top: 2em; }
