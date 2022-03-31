@@ -85,7 +85,7 @@
 }
 
 .fullwidth-teaser-text {
-  padding: 1rem $grid-gutter-width/2 0;
+  padding: $grid-gutter-width/2;
   background: $white;
 
   @include make-col(12, 12);
@@ -201,6 +201,10 @@
 
 .fullwidth-teaser-footer {
   margin-bottom: $grid-gutter-width / 2;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   @include make-col(12);
 
