@@ -1,0 +1,54 @@
+@charset 'utf-8';
+
+progress.progress {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  background-color: $gray-100;
+  height: 0.5rem;
+}
+
+progress.progress::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+progress.progress::-webkit-progress-value {
+  background-color: $red;
+  transition: width 0.6s ease;
+}
+
+progress.progress::-moz-progress-bar {
+  background-color: $red;
+  transition: width 0.6s ease;
+}
+
+progress.progress:indeterminate {
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: moveIndeterminate;
+  animation-timing-function: linear;
+  background-color: $gray-100;
+  background-image: linear-gradient(to right, $red 100%, $gray-100 100%);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 200% 200%;
+  &::-webkit-progress-bar {
+    background-color: transparent;
+  }
+  &::-moz-progress-bar {
+    background-color: transparent;
+  }
+  &::-ms-fill {
+    animation-name: none;
+  }
+}
+
+@keyframes moveIndeterminate {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
