@@ -1,7 +1,6 @@
-name: backstop-regression-testing
+name: Backstop.js regression testing
 on:
   pull_request:
-  workflow_dispatch:   # For debug purposes
 
 permissions:           # https://github.com/EnricoMi/publish-unit-test-result-action/issues/161#issuecomment-905921434
   contents: read
@@ -68,70 +67,3 @@ jobs:
         with:
           fail_on: nothing
           files: tests/backstop/ci_report/xunit.xml
-
-      - if: ${{ env.backstop_verb == 'test' }}
-        name: Link to artifact Zip in PR thread
-        uses: actions/github-script@v5
-        with:
-          script: |
-            function getPullRequestNumber (context) {
-              return (((context || {}).payload || {}).pull_request || {}).number
-            }
-
-            async function upsertComment (owner, repo, issue_number, purpose, body) {
-              const {data: comments} = await github.rest.issues.listComments({owner, repo, issue_number})
-
-              const marker = `<!-- bot: ${purpose} -->`
-              body = marker + `\n` + body
-
-              const existing = comments.filter((c) => c.body.includes(marker))
-              if (existing.length > 0) {
-                const last = existing[existing.length - 1]
-                core.info(`Updating comment ${last.id}`)
-                await github.rest.issues.updateComment({
-                    owner, repo,
-                    body,
-                    comment_id: last.id
-                  })
-              } else {
-                core.info(`Creating a comment`);
-                await github.rest.issues.createComment({issue_number, body, owner, repo})
-              }
-            }
-
-            function sleep(ms) {
-              return new Promise(resolve => setTimeout(resolve, ms));
-            }
-
-            async function getArtifacts (owner, repo, run_id) {
-              for (const i = 0; i < 24; i++) {
-                const results = await github.rest.actions.listWorkflowRunArtifacts({owner, repo, run_id: context.runId})
-                const {data: {artifacts}} = results
-                if (artifacts.length > 0) return artifacts
-                await sleep(5000)
-              }
-              return []  // Give up
-            }
-
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            const pr_number = getPullRequestNumber(context)
-            if (! pr_number) {
-              return core.error(`Unable to figure out current pull request number`)
-            }
-
-            const { owner, repo } = context.repo
-
-            const artifacts = getArtifacts(owner, repo, context.runId)
-            if (! artifacts.length) {
-              return core.error(`No artifacts found for run_id ${context.runId}?`)
-            }
-
-            console.log(artifacts)  // XXX
-
-            let body = `🔎 Download the Backstop report for this pull request (link valid for 90 days):\n`;
-            for (const art of getArtifacts(owner, repo, context.runId)) {
-              body += `\n* [${art.name}.zip](https://nightly.link/${owner}/${repo}/actions/artifacts/${art.id}.zip)`;
-            }
-
-            await upsertComment(owner, repo, pr_number, "download-backstop", body)

@@ -4,7 +4,7 @@
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 1rem 1.5rem;
   background: $white;
   color: $gray-600;
@@ -12,6 +12,7 @@
   @include media-breakpoint-up(lg) {
     flex-flow: row nowrap;
     justify-content: space-between;
+  align-items: center;
   }
 
   &.social-share-light {
@@ -64,14 +65,15 @@
   }
 
   .input-group {
-    margin-left: 0.5rem;
-    padding: 0.2rem;
-    border: 1px solid $gray-200;
 
     .form-control {
       border: none !important;
       box-shadow: none !important;
       &:before { content: none; }
+      
+      &.sr-only {
+        position: absolute;
+      }
     }
   }
 }

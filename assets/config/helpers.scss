@@ -77,6 +77,26 @@
   font-size: $font-size-xs;
 }
 
+.text-xs {
+  font-size: $legacy-font-size-xs;
+}
+
+.text-sm {
+  font-size: $legacy-font-size-sm;
+}
+
+.text-base {
+  font-size: $legacy-font-size-base;
+}
+
+.text-lg {
+  font-size: $legacy-font-size-lg;
+}
+
+.text-xl {
+  font-size: $legacy-font-size-xl;
+}
+
 .text-arrow {
   display: flex;
   justify-content: space-between;
@@ -104,6 +124,28 @@
 
 .text-spread {
   letter-spacing: 3px;
+}
+
+/*
+  Text Decoration
+
+  Bootstrap v5 + legacy
+*/
+.underline, .text-decoration-underline {
+  text-decoration: underline;
+}
+
+.overline, .text-decoration-overline {
+  text-decoration: overline;
+}
+
+.line-through, .text-decoration-line-through {
+  text-decoration: line-through;
+}
+
+// .text-decoration-none already exists in v4
+.no-underline {
+  text-decoration: none;
 }
 
 /*
@@ -157,5 +199,12 @@ hr {
 @each $key, $value in $grays {
   .text-gray-#{$key} {
     color: $value !important;
+  }
+}
+
+// generate all opacity helpers
+@each $key, $value in $opacities {
+  .opacity-#{$key} {
+    opacity: $value;
   }
 }
