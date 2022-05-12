@@ -1,5 +1,5 @@
 <div class="list-group list-events list-events-featured">
   {% include '@molecules/card/card-event.twig' %}
-  {% include '@molecules/card/card-event.twig' with { live_now: true, online_event: true } %}
-  {% include '@molecules/card/card-event.twig' with { live_future: true } %}
+  {% include '@molecules/card/card-event.twig' with { eventLocation: 'online_room', live_now: true, online_event: true } %}
+  {% include '@molecules/card/card-event.twig' with { eventLocation: 'online', online_event: true } %}
 </div>

@@ -25,13 +25,20 @@
           </span>            
           <span class="event-location" itemprop="location" itemscope itemtype="http://schema.org/Place">
           {% block location %}
-            {% if online_event|default(false) %}
+            
+            {% if eventLocation == 'online' %}
             <b>Lieu:</b> {% include '@atoms/icon/icon.twig' with { icon: 'monitor', icon_classes:'feather' } %}
-            <span itemprop="name">Online</span>
+            <span itemprop="name"><a href="#">En ligne</a></span>
+            {% elseif eventLocation == 'online_room' %}
+            <b>Lieu:</b> {% include '@atoms/icon/icon.twig' with { icon: 'map-pin', icon_classes:'feather' } %}
+            <span itemprop="name"><a href="#">ArtLab EPFL</a></span> &amp;
+            {% include '@atoms/icon/icon.twig' with { icon: 'monitor', icon_classes:'feather' } %}
+            <span itemprop="name"><a href="#">En ligne</a></span>
             {% else %}
             <b>Lieu:</b> {% include '@atoms/icon/icon.twig' with { icon: 'map-pin', icon_classes:'feather' } %}
-            <span itemprop="name">ArtLab EPFL</span>
+            <span itemprop="name"><a href="#">ArtLab EPFL</a></span>
             {% endif %}
+            
           {% endblock %}
           </span>
           <span class="event-category">

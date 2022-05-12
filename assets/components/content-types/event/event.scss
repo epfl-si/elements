@@ -1,5 +1,26 @@
 @charset 'utf-8';
 
+// Card
+
+.event-location a {
+  color: $link-color;
+  text-decoration: underline;
+  text-decoration-color: $link-hover-color;
+  transition:
+    text-decoration-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+
+  @include hover-focus-active {
+    text-decoration-color: $link-color;
+  }
+
+  &:active {
+    color: $red;
+  }
+}
+
+// List
+
 .list-events {
   
   @include media-breakpoint-up(xl) {
