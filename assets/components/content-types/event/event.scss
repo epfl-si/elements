@@ -99,17 +99,20 @@
 
 .events-links {
   
-  ul {
-    margin-bottom: 0;
+  @include media-breakpoint-up(lg) {
+    ul {
+      margin-bottom: 0;
+    }
   }
   
   li {
     display: inline-block;
     font-size: 1rem;
     font-weight: bold;
+    margin-right: 1rem;
     
-    & + li {
-      margin-left: 1rem;
+    &:last-child {
+      margin-right: 0;
     }
   }
 }

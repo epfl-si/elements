@@ -134,17 +134,6 @@
     </div>
   </div>
   
-  <div class="list-group list-events mt-4">
-    {% include '@molecules/card/card-event.twig' with { eventLocation: 'online_room', live_now: true } %}
-    {% include '@molecules/card/card-event.twig' %}
-    {% for i in 1..2 %}
-      {% include '@molecules/card/card-event.twig' with { eventLocation: 'online', online_event: true } %}
-    {% endfor %}
-    {% for i in 1..6 %}
-      {% include '@molecules/card/card-event.twig' %}
-    {% endfor %}
-  </div>
-  
   <div class="events-footer mt-3">
     <div class="d-md-flex flex-md-row-reverse justify-content-md-between align-items-md-center">
       <div class="events-links">
@@ -157,6 +146,17 @@
         {% include '@molecules/pagination/pagination.twig' %}
       </div>
     </div>
+  </div>
+  
+  <div class="list-group list-events mt-4">
+    {% include '@molecules/card/card-event.twig' with { eventLocation: 'online_room', live_now: true } %}
+    {% include '@molecules/card/card-event.twig' %}
+    {% for i in 1..2 %}
+      {% include '@molecules/card/card-event.twig' with { eventLocation: 'online', online_event: true } %}
+    {% endfor %}
+    {% for i in 1..6 %}
+      {% include '@molecules/card/card-event.twig' %}
+    {% endfor %}
   </div>
   
 </div>
