@@ -19,14 +19,19 @@
 
 .list-group.list-events-featured {
   
+  .list-group-teaser {
+    background: transparent;
+    margin-bottom: 1rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
   .list-group-teaser-container {
-    background: $gray-100;
+    background: #fff;
     flex-direction: column;
     height: 100%;
-
-    .card-title a {
-      @include link-pretty($red, $gray-100);
-    }
 
     .btn-secondary {
       &:hover,
