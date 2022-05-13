@@ -86,7 +86,11 @@ $collapse-chevron-size: 12px;
 }
 
 .collapse-item {
-  padding-bottom: 2rem;
+  &::after {
+    content: "";
+    display: block;
+    padding-top: 2rem;
+  }
 
   *:last-child {
     margin-bottom: 0;
@@ -124,7 +128,11 @@ header.collapse-title {
 }
 
 header.collapse-title + .collapse-item {
-  padding-top: 0.5rem;
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 0.5rem;
+  }
 }
 
 .collapse-group {
