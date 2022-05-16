@@ -4,7 +4,7 @@
   position: relative;
   top: 0;
   transition: top .3s ease-in-out;
-  
+
   .search-open & {
     top: $mm-lang-height;
   }
@@ -21,21 +21,21 @@ body {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  
+
   > .site {
     display: flex;
     flex-direction: column;
     height: 100%;
-    
+
     > header.header {
       flex-shrink: 0;
     }
   }
-  
+
   > .main-container,
   > .site > .main-container {
     flex: 1 0 auto;
-    
+
     + .bg-gray-100 {
       flex-shrink: 0;
     }
@@ -71,7 +71,7 @@ body {
       margin-top: 1.75em;
     }
   }
-  
+
   h2 + h3,
   h3 + h4,
   h4 + h5,
@@ -79,10 +79,10 @@ body {
     margin-top: 1.5em;
   }
 }
-  
+
 .content.container-grid,
 .content .container-grid {
-  
+
   & > p,
   & > ol,
   & > ul,

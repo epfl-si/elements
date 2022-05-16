@@ -8,20 +8,20 @@
   padding: (.8 * $spacer) (.9 * $spacer);
   font-size: 1 * $font-size-base;
   font-weight: bold !important;
-    
+
   @include media-breakpoint-up(sm) {
     padding: (.625 * $spacer) (.9 * $spacer);
   }
-  
+
   .label {
-    
+
     @include media-breakpoint-down(xs) {
       @include sr-only();
     }
   }
 
   .hamburger {
-    
+
     @include media-breakpoint-up(sm) {
       margin-left: 0.4 * $spacer;
     }

@@ -149,20 +149,20 @@
     font-size: $font-size-base;
     color: theme-color('primary');
     text-transform: uppercase;
-    
+
     a {
       text-decoration: none;
     }
   }
-  
+
   p.site-title {
     font-weight: 700;
     line-height: 1.1em;
   }
-  
+
   .drawer {
     margin-left: -(0.9 * $spacer);
-    
+
     @include media-breakpoint-up(xl) {
       margin-left: 0;
     }

@@ -46,7 +46,7 @@ a.card-gray:hover .card-body { background: $white; }
   + .card-footer {
     padding-top: 0;
   }
-  
+
   .card-info + p {
     margin-top: .5em;
   }
@@ -187,7 +187,7 @@ a.card {
       color: $link-hover-color;
     }
   }
-  
+
   &.link-trapeze-horizontal:before {
     top: calc(100% + 1px);
     right: -1px;

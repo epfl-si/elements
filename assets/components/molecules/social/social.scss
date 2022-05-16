@@ -70,11 +70,10 @@
       border: none !important;
       box-shadow: none !important;
       &:before { content: none; }
-      
+
       &.sr-only {
         position: absolute;
       }
     }
   }
 }
-

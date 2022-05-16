@@ -1,4 +1,4 @@
- @charset "utf-8";
+@charset "utf-8";
 
 // Add a beautiful underline to links
 // Set $bg to false to text-decoration tweak completely.
@@ -210,8 +210,8 @@
 // IE 11 mixin
 // WARNING: Autoprefixer is off inside this.
 @mixin ie11($selector) {
- _:-ms-fullscreen, :root #{$selector} {
-   /* autoprefixer: off */
-   @content;
- }
+  :-ms-fullscreen, :root #{$selector} {
+    /* autoprefixer: off */
+    @content;
+  }
 }

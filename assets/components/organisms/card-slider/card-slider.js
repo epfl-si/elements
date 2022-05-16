@@ -13,7 +13,7 @@ export default () => {
       let cardSlider = $(cardSliderWrapper).find('.card-slider')[0];
 
       Imagesloaded(cardSlider, () => {
-         flkty = new Flickity(cardSlider, {
+        flkty = new Flickity(cardSlider, {
           cellAlign: 'left',
           setGallerySize: true,
           pageDots: isMobile,
