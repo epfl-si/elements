@@ -71,6 +71,12 @@ $collapse-chevron-size: 12px;
 
   &.collapse-title-desktop {
     @include collapse-btn();
+    
+    &:hover,
+    &:focus,
+    &:active {
+      color: $red;
+    }
   }
 
   @include media-breakpoint-down(sm) {
@@ -83,12 +89,6 @@ $collapse-chevron-size: 12px;
 
   *:last-child {
     margin-bottom: 0;
-  }
-  
-  &:hover,
-  &:focus,
-  &:active {
-    color: $red;
   }
 }
 
