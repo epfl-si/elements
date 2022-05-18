@@ -37,11 +37,12 @@ $collapse-chevron-size: 12px;
 }
 
 .collapse-title {
+  color: $black;
   position: relative;
   padding: 0;
   background: none;
   border: none;
-  transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s, color 0.15s;
 
   &:before {
     content: ' ';
@@ -70,6 +71,12 @@ $collapse-chevron-size: 12px;
 
   &.collapse-title-desktop {
     @include collapse-btn();
+    
+    &:hover,
+    &:focus,
+    &:active {
+      color: $red;
+    }
   }
 
   @include media-breakpoint-down(sm) {
