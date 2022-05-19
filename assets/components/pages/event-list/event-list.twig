@@ -150,9 +150,9 @@
   
   <div class="list-group list-events mt-4">
     {% include '@molecules/card/card-event.twig' with { eventLocation: 'online_room', live_now: true } %}
-    {% include '@molecules/card/card-event.twig' %}
+    {% include '@molecules/card/card-event.twig' with { eventLocation: 'online', live_now: true } %}
     {% for i in 1..2 %}
-      {% include '@molecules/card/card-event.twig' with { eventLocation: 'online', online_event: true } %}
+      {% include '@molecules/card/card-event.twig' with { eventLocation: 'online' } %}
     {% endfor %}
     {% for i in 1..6 %}
       {% include '@molecules/card/card-event.twig' %}
