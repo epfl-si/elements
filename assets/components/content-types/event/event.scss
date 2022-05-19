@@ -4,14 +4,15 @@
 
 .event-location a {
   color: $link-color;
-  text-decoration: underline;
+  text-decoration-line: underline !important;
   text-decoration-color: $link-hover-color;
   transition:
     text-decoration-color 0.2s ease-in-out,
     color 0.2s ease-in-out;
 
   @include hover-focus-active {
-    text-decoration-color: $link-color;
+    background: transparent !important;
+    text-decoration-color: $link-color !important;
   }
 
   &:active {
