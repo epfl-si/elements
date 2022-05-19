@@ -43,6 +43,13 @@
         position: absolute;
         top: 0;
         right: 1rem;
+        
+        @for $i from 1 through 7 {
+          .col-md-#{$i} & {
+            position: static;
+          }
+        }
+        
       }
     }
   }
