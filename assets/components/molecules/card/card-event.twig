@@ -52,16 +52,17 @@
           {% endblock %}
           </span>
         </p>
-        {% if live_now|default(false) %}
-          <p class="mt-3 event-actions">
-            <a href="#" class="btn btn-primary btn-sm">Voir en direct</a>
-          </p>
+        
+        <p class="pt-3 event-actions">
+          {% if live_now|default(false) %}
+            <a href="#" class="btn btn-primary btn-sm">{% include '@atoms/icon/icon.twig' with { icon: 'monitor', icon_classes:'feather' } %} Voir en direct</a>
+          {% endif %}
+          {% if live_future|default(false) %}
+            <a href="#" class="btn btn-secondary btn-sm">{% include '@atoms/icon/icon.twig' with { icon: 'monitor', icon_classes:'feather' } %} Diffusé en direct</a>
         {% endif %}
-        {% if live_future|default(false) %}
-          <p class="mt-3 event-actions">
-            <a href="#" class="btn btn-secondary btn-sm">Diffusé en direct</a>
-          </p>
-        {% endif %}
+          <a href="#" class="btn btn-secondary btn-sm">{% include '@atoms/icon/icon.twig' with { icon: 'download', icon_classes:'feather' } %} Importer</a>
+        </p>
+        
       </div>
     </div>
   </div>

@@ -23,6 +23,17 @@
 
 .list-events {
   
+  .list-group-teaser-content {
+    .card-title {
+      max-width: 660px;
+    }
+    .event-actions {
+      .btn + .btn {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+  
   @include media-breakpoint-up(xl) {
     
     .list-group-teaser-content {
@@ -70,6 +81,11 @@
       
       .btn {
         width: 100%;
+        
+        & + .btn {
+          margin-left: 0;
+          margin-top: 0.75rem;
+        }
       }
     }
   }
@@ -91,6 +107,21 @@
     
     .list-group-teaser-thumbnail {
       padding-bottom: 0;
+    }
+    
+    .list-group-teaser-content {
+      display: flex;
+      flex-direction: column;
+      
+      .card-info {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      
+      .event-actions {
+        margin-top: auto;
+      }
     }
   }
 }
