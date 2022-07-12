@@ -6,6 +6,6 @@ variants:
     notes: Here is a sample list with checkboxes.
   - name: inline
     title: Inline checkbox list
-    notes: 
+    notes:
 notes: |
-   Items list with checkboxes enable people to select some options, or none, or all. Use checkboxes for search options, selection in a form, policy acknowledgment, etc.
+  Items list with checkboxes enable people to select some options, or none, or all. Use checkboxes for search options, selection in a form, policy acknowledgment, etc.
