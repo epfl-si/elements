@@ -1204,15 +1204,26 @@
   dependencies:
     "@octokit/openapi-types" "^11.2.0"
 
-"@selectize/selectize@^0.13.4":
-  version "0.13.4"
-  resolved "https://registry.yarnpkg.com/@selectize/selectize/-/selectize-0.13.4.tgz#a87fce9ca75fe0626a468fade82a5e474cde1cb0"
-  integrity sha512-n3jVHwnEvj4btwArPZGV0wllLfCW0kNqFS0K4hPoai5bV1lMeqG7k0mzZng8Q8gDM6VvdTKyIJTI9sOM1PpKew==
+"@selectize/selectize@^0.13.6":
+  version "0.13.6"
+  resolved "https://registry.yarnpkg.com/@selectize/selectize/-/selectize-0.13.6.tgz#d54dd64afa7341e9cb2fc098a34b5a0adbb4484c"
+  integrity sha512-UVkHH92l/4zLH/acfukry419K2yAKiDf6VmFQ9hZzMpWW2epE7xJIgK47mJLjAQnimP0ROo8BStfwelWcoTQyg==
   dependencies:
+    "@selectize/sifter" "^0.6.2"
     microplugin "0.0.3"
-    sifter "^0.5.4"
   optionalDependencies:
     jquery-ui "^1.13.0"
+
+"@selectize/sifter@^0.6.2":
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/@selectize/sifter/-/sifter-0.6.2.tgz#160185859e61faa16dfe4985e408136925b1090f"
+  integrity sha512-rpWQuzaCEV2GOEfBmP5NGST3IsA/RGRd3vugOGQVxAaN1xMI9tsrMmx5rC811iInq6OeFH3Jix5EfglYQ3XwKQ==
+  dependencies:
+    async "^3.2.3"
+    cardinal "^2.1.1"
+    csv-parse "^5.0.4"
+    humanize "^0.0.9"
+    optimist "^0.5.2"
 
 "@sideway/address@^4.1.3":
   version "4.1.3"
@@ -1780,10 +1791,10 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
   dependencies:
     color-convert "^2.0.1"
 
-ansicolors@~0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/ansicolors/-/ansicolors-0.2.1.tgz#be089599097b74a5c9c4a84a0cdbcdb62bd87aef"
-  integrity sha1-vgiVmQl7dKXJxKhKDNvNtivYeu8=
+ansicolors@~0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/ansicolors/-/ansicolors-0.3.2.tgz#665597de86a9ffe3aa9bfbe6cae5c6ea426b4979"
+  integrity sha512-QXu7BPrP29VllRxH8GwB7x5iX5qWKAAMLqKQGWTeLWVlNHNOpVMJ91dsxQAIWXpjuW5wqvxu3Jd/nRjrJ+0pqg==
 
 anymatch@~3.1.2:
   version "3.1.2"
@@ -1938,12 +1949,17 @@ async@1.5.2:
   resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
   integrity sha1-7GphrlZIDAw8skHJVhjiCJL5Zyo=
 
-async@^2.6.0, async@^2.6.2:
+async@^2.6.2:
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/async/-/async-2.6.3.tgz#d72625e2344a3656e3a3ad4fa749fa83299d82ff"
   integrity sha512-zflvls11DCy+dQWzTW2dzuilv8Z5X/pjfmZOWba6TNIVDm+2UDaJmXSOXlasHKfNBs8oo3M0aT50fDEWfKZjXg==
   dependencies:
     lodash "^4.17.14"
+
+async@^3.2.3:
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/async/-/async-3.2.4.tgz#2d22e00f8cddeb5fde5dd33522b56d1cf569a81c"
+  integrity sha512-iAB+JbDEGXhyIUavoDl9WP/Jj106Kz9DEn1DPgYw5ruDn0e3Wgi3sKFm55sASdGBNOQB8F59d9qQ7deqrHA8wQ==
 
 asynckit@^0.4.0:
   version "0.4.0"
@@ -2533,13 +2549,13 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001109, can
   resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001316.tgz"
   integrity sha512-JgUdNoZKxPZFzbzJwy4hDSyGuH/gXz2rN51QmoR8cBQsVo58llD3A0vlRKKRt8FGf5u69P9eQyIH8/z9vN/S0Q==
 
-cardinal@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/cardinal/-/cardinal-1.0.0.tgz#50e21c1b0aa37729f9377def196b5a9cec932ee9"
-  integrity sha1-UOIcGwqjdyn5N33vGWtanOyTLuk=
+cardinal@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/cardinal/-/cardinal-2.1.1.tgz#7cc1055d822d212954d07b085dea251cc7bc5505"
+  integrity sha512-JSr5eOgoEymtYHBjNWyjrMqet9Am2miJhlfKNdqLp6zoeAh0KN5dRAcxlecj5mAJrmQomgiOBj35xHLrFjqBpw==
   dependencies:
-    ansicolors "~0.2.1"
-    redeyed "~1.0.0"
+    ansicolors "~0.3.2"
+    redeyed "~2.1.0"
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -3244,10 +3260,10 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.8.tgz#d2266a792729fb227cd216fb572f43728e1ad340"
   integrity sha512-jXKhWqXPmlUeoQnF/EhTtTl4C9SnrxSH/jZUih3jmO6lBKr99rP3/+FmrMj4EFpOXzMtXHAZkd3x0E6h6Fgflw==
 
-csv-parse@^4.6.5:
-  version "4.16.0"
-  resolved "https://registry.yarnpkg.com/csv-parse/-/csv-parse-4.16.0.tgz#b4c875e288a41f7ff917cb0d7d45880d563034f6"
-  integrity sha512-Zb4tGPANH4SW0LgC9+s9Mnequs9aqn7N3/pCqNbVjs2XhEF6yWNU2Vm4OGl1v2Go9nw8rXt87Cm2QN/o6Vpqgg==
+csv-parse@^5.0.4:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/csv-parse/-/csv-parse-5.3.0.tgz#85cc02fc9d1c89bd1b02e69069c960f8b8064322"
+  integrity sha512-UXJCGwvJ2fep39purtAn27OUYmxB1JQto+zhZ4QlJpzsirtSFbzLvip1aIgziqNdZp/TptvsKEV5BZSxe10/DQ==
 
 damerau-levenshtein@^1.0.6:
   version "1.0.7"
@@ -3987,15 +4003,10 @@ espree@^7.3.0, espree@^7.3.1:
     acorn-jsx "^5.3.1"
     eslint-visitor-keys "^1.3.0"
 
-esprima@^4.0.0:
+esprima@^4.0.0, esprima@~4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.1.tgz#13b04cdb3e6c5d19df91ab6987a8695619b0aa71"
   integrity sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
-
-esprima@~3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/esprima/-/esprima-3.0.0.tgz#53cf247acda77313e551c3aa2e73342d3fb4f7d9"
-  integrity sha1-U88kes2ncxPlUcOqLnM0LT+099k=
 
 esquery@^1.4.0:
   version "1.4.0"
@@ -6303,11 +6314,6 @@ minimist@^1.2.0, minimist@^1.2.5:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
 
-minimist@~0.0.1:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
-  integrity sha1-3j+YVD2/lggr5IrRoMfNqDYwHc8=
-
 minipass-collect@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/minipass-collect/-/minipass-collect-1.0.2.tgz#22b813bf745dc6edba2576b940022ad6edc8c617"
@@ -6775,12 +6781,11 @@ opn@^5.3.0:
   dependencies:
     is-wsl "^1.1.0"
 
-optimist@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/optimist/-/optimist-0.6.1.tgz#da3ea74686fa21a19a111c326e90eb15a0196686"
-  integrity sha1-2j6nRob6IaGaERwybpDrFaAZZoY=
+optimist@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/optimist/-/optimist-0.5.2.tgz#85c8c1454b3315e4a78947e857b1df033450bfbc"
+  integrity sha512-r9M8ZpnM9SXV5Wii7TCqienfcaY3tAiJe9Jchof87icbmbruKgK0xKXngmrnowTDnEawmmI1Qbha59JEoBkBGA==
   dependencies:
-    minimist "~0.0.1"
     wordwrap "~0.0.2"
 
 optionator@^0.9.1:
@@ -8299,12 +8304,12 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
-redeyed@~1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/redeyed/-/redeyed-1.0.1.tgz#e96c193b40c0816b00aec842698e61185e55498a"
-  integrity sha1-6WwZO0DAgWsArshCaY5hGF5VSYo=
+redeyed@~2.1.0:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/redeyed/-/redeyed-2.1.1.tgz#8984b5815d99cb220469c99eeeffe38913e6cc0b"
+  integrity sha512-FNpGGo1DycYAdnrKFxCMmKYgo/mILAqtRYbkdQD8Ep/Hk2PQ5+aEAEx+IU713RTDmuBaH0c8P5ZozurNu5ObRQ==
   dependencies:
-    esprima "~3.0.0"
+    esprima "~4.0.0"
 
 redux@4, redux@^4.0.0:
   version "4.1.0"
@@ -8956,17 +8961,6 @@ side-channel@^1.0.4:
     call-bind "^1.0.0"
     get-intrinsic "^1.0.2"
     object-inspect "^1.9.0"
-
-sifter@^0.5.4:
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/sifter/-/sifter-0.5.4.tgz#3cb9e514889edfc887d8d87a355841b01ebdd1ab"
-  integrity sha512-t2yxTi/MM/ESup7XH5oMu8PUcttlekt269RqxARgnvS+7D/oP6RyA1x3M/5w8dG9OgkOyQ8hNRWelQ8Rj4TAQQ==
-  dependencies:
-    async "^2.6.0"
-    cardinal "^1.0.0"
-    csv-parse "^4.6.5"
-    humanize "^0.0.9"
-    optimist "^0.6.1"
 
 sigmund@^1.0.1:
   version "1.0.1"
