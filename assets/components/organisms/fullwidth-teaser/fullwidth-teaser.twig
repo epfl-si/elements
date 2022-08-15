@@ -1,8 +1,6 @@
 <div class="fullwidth-teaser">
-  <picture>
-    {% if not img %}{% set img %}./images/styleguide/basic_page_teaser.jpg{% endset %}{% endif %}
-    <img src="{{img}}" aria-labelledby="background-label" alt="An image description"/>
-  </picture>
+
+  {% include '@atoms/picture/picture-fullwidth-teaser.twig' %}
 
   <div class="fullwidth-teaser-text">
 
