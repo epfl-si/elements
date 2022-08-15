@@ -1086,12 +1086,12 @@
     "highlight_2": {
       "title": "Étudier à l’EPFL, 13 filières de formation",
       "content": "Treize filières de formation dans les sciences de l’ingénieur, des programmes doctoraux de choix, des laboratoires de pointe dirigés par des professeurs de réputation internationale, un campus moderne en plein développement qui s’étend sur plus de 10’000 mètres carrés.",
-      "image": "./images/styleguide/homepage/3-teaser-basic-page-highlight.jpg"
+      "image": "./images/styleguide/teaser/home-teaser-1"
     },
     "highlight_3": {
       "title": "Pour une transformation plus efficace des molécules",
       "content": "Le chimiste Xile Hu est le lauréat du Prix Latsis 2017. Ce professeur à l’Ecole polytechnique fédérale de Lausanne est récompensé pour son impressionnante carrière scientifique et ses excellents travaux de recherche sur la compréhension fondamentale de la catalyse.",
-      "image": "./images/styleguide/homepage/4-teaser-news-highlight.jpg"
+      "image": "./images/styleguide/teaser/home-teaser-2"
     },
     "section_3": {
       "title": "Une école multi-sites, de Lausanne vers le monde",
@@ -1126,7 +1126,7 @@
     "highlight_4": {
       "title": "Explorer le portail étudiants de l'EPFL",
       "content": "Découvrez l'ensemble des services dédiés aux étudiants : vie académique, cours, cartes d'accès et plans, transports et restauration. Mais aussi les bons plans, les réductions et les événements organisés par les nombreuses associations d'étudiants.",
-      "image": "./images/styleguide/homepage/6-teaser-basic-page-highlight.jpg"
+      "image": "./images/styleguide/teaser/home-teaser-3"
     },
     "questions": {
       "image": "./images/styleguide/homepage/7-science-question-SF.jpg"
@@ -1134,7 +1134,7 @@
     "highlight_5": {
       "title": "L’EPFL vue du ciel",
       "content": "L'association Aéropoly a pris des images du campus à l'aide d'un dirigeable avant l'ouverture de Balélec. Le dirigeable avait déjà pris son envol une première fois pendant Polynice, événement organisé pour fêter les 60 ans de l'AGEPoly, soit l'association des étudiants de l'EPFL.",
-      "image": "./images/styleguide/homepage/8-teaser-news-highlight.jpg"
+      "image": "./images/styleguide/teaser/home-teaser-4"
     }
   },
   "menu": [
