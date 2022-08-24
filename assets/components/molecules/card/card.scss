@@ -21,6 +21,8 @@
 }
 
 .card-gray {
+  border-color: $gray-200;
+
   .card-footer,
   .card-body {
     background: $gray-100;
