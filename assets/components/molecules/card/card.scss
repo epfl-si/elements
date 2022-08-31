@@ -3,6 +3,7 @@
 //
 // Normal card
 .card {
+  border-color: $gray-100;
   border-radius: 0;
   flex: 1 1 0%;
   max-width: 100%;
@@ -20,6 +21,8 @@
 }
 
 .card-gray {
+  border-color: $gray-200;
+
   .card-footer,
   .card-body {
     background: $gray-100;
