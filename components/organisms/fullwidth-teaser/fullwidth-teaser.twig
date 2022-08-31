@@ -1,19 +1,17 @@
 <div class="fullwidth-teaser">
-  <picture>
-    {% if not img %}{% set img %}./images/styleguide/basic_page_teaser.jpg{% endset %}{% endif %}
-    <img src="{{img}}" aria-labelledby="background-label" alt="An image description"/>
-  </picture>
+
+  {% include '@atoms/picture/picture-fullwidth-teaser.twig' %}
 
   <div class="fullwidth-teaser-text">
 
     <div class="fullwidth-teaser-header">
       <div class="fullwidth-teaser-title">
         <h3>
-          {% if not title %}{% set title %}Tech transfer{% endset %}{% endif %}
+          {% if not title %}{% set title %}Évaluer la durabilité dans le domaine spatial{% endset %}{% endif %}
           {{title}}
         </h3>
       </div>
-      <a href="#" aria-label="En savoir plus sur Tech Transfer" class="btn btn-primary triangle-outer-bottom-right d-none d-xl-block">
+      <a href="#" aria-label="En savoir plus sur {{title}}" class="btn btn-primary triangle-outer-bottom-right d-none d-xl-block">
         En savoir plus
         {% include '@atoms/icon/icon.twig' with {icon: 'icon-chevron-right'} %}
       </a>
@@ -22,7 +20,7 @@
     <div class="fullwidth-teaser-content">
       <p>
         {% if not content %}
-        {% set content %}La volonté de garantir que les résultats de notre recherche parviennent à la pratique professionnelle et génèrent des services et produits innovants pour notre société, est au cœur de la mission de l'EPFL. <br> L'ENAC s'emploie à promouvoir et à faciliter ce transfert de technologie en encourageant la création de partenariats avec les institutions publiques et les entreprises et en offrant le programme de sensibilisation et de soutien InnoSeed ENAC.{% endset %}
+        {% set content %}Le nouveau Space Sustainability Rating accueilli par eSpace, le centre spatial de l’EPFL, encourage le secteur de l’espace à concevoir et à mettre en œuvre des missions spatiales durables et responsables — montrant ainsi la voie pour assurer à long terme une approche durable de l’environnement spatial.{% endset %}
         {% endif %}
         {{content}}
       </p>

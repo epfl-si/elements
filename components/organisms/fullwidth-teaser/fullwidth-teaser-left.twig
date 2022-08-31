@@ -1,15 +1,13 @@
 <div class="fullwidth-teaser fullwidth-teaser-left">
-  <picture>
-    {% if not img %}{% set img %}./images/styleguide/basic_page_teaser.jpg{% endset %}{% endif %}
-    <img src="{{img}}" aria-labelledby="background-label" alt="An image description"/>
-  </picture>
+
+  {% include '@atoms/picture/picture-fullwidth-teaser.twig' %}
 
   <div class="fullwidth-teaser-text">
 
     <div class="fullwidth-teaser-header">
       <div class="fullwidth-teaser-title">
         <h3>
-          {% if not title %}{% set title %}Des océans plus froids que ce que nous le pensions{% endset %}{% endif %}
+          {% if not title %}{% set title %}Évaluer la durabilité dans le domaine spatial{% endset %}{% endif %}
           {{title}}
         </h3>
         <ul class="list-inline mt-2">
@@ -27,7 +25,7 @@
     <div class="fullwidth-teaser-content">
       <p>
         {% if not content %}
-        {% set content %}Une équipe de chercheurs de l’EPFL et européenne a découvert une erreur dans la façon dont ont été estimées jusqu’ici les températures des océans, faisant potentiellement du réchauffement climatique actuel un évènement sans précédent ces cent derniers millions d’années.{% endset %}
+        {% set content %}Le nouveau Space Sustainability Rating accueilli par eSpace, le centre spatial de l’EPFL, encourage le secteur de l’espace à concevoir et à mettre en œuvre des missions spatiales durables et responsables — montrant ainsi la voie pour assurer à long terme une approche durable de l’environnement spatial.{% endset %}
         {% endif %}
         {{content}}
       </p>
