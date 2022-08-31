@@ -1,0 +1,18 @@
+{% if not img %}
+{% set img %}./images/styleguide/teaser/news-teaser{% endset %}
+{% endif %}
+<picture>
+  <source
+    media="(min-width: 1200px)"
+    srcset="{{img}}-1294x728.jpg 1x, {{img}}-2216x1244.jpg 2x">
+  <source
+    media="(min-width: 768px)"
+    srcset="{{img}}-928x520.jpg 1x, {{img}}-1376x774.jpg 2x">
+  <source
+    media="(min-width: 576px)"
+    srcset="{{img}}-688x387.jpg 1x, {{img}}-1376x774.jpg 2x">
+  <source
+    media="(max-width: 575px)"
+    srcset="{{img}}-508x286.jpg 1x, {{img}}-1140x641.jpg 2x">
+  <img src="{{img}}-1376x774.jpg" class="img-fluid" alt="image description">
+</picture>
