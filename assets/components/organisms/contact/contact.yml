@@ -13,7 +13,7 @@ variants:
       You can use contact Banner inside a grey wrapper as
       ```
       <div class="container-full bg-gray-100 py-5 my-5">
-        <div class="bg-white p-4 p-md-5">
+        <div class="bg-white container p-4 p-md-5">
           ...
         </div>
       </div>
