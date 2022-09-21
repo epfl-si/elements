@@ -698,15 +698,15 @@
           "rel_noopener_de": true
         },
         {
-          "name_fr": "Alumni",
+          "name_fr": "EPFL Alumni",
           "url_fr": "https://www.epflalumni.ch/fr/",
-          "name_en": "Alumni",
           "target_blank_fr": true,
           "rel_noopener_fr": true,
+          "name_en": "EPFL Alumni",
           "url_en": "https://www.epflalumni.ch",
           "target_blank_en": true,
           "rel_noopener_en": true,
-          "name_de": "Alumni",
+          "name_de": "EPFL Alumni",
           "url_de": "https://www.epflalumni.ch",
           "target_blank_de": true,
           "rel_noopener_de": true
