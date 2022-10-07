@@ -8,6 +8,8 @@ variants:
   - name: fullwidth-teaser
     title: Fullwidth teaser
     wrapper: 'col-md-12'
+    notes: |
+      Picture used in 'Organism > Fullwidth teaser' and 'News > Highlighted'.
   - name: avatar
     title: Avatar
     wrapper: col-sm-4 col-md-2 col-lg-1
