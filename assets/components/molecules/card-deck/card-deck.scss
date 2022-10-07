@@ -181,28 +181,28 @@
         // only one card is present
         &:first-child:last-child {
           flex: 0 0 calc(33% + #{$spacer * 1.5});
-          border-left: 1rem solid white;
-          border-right: 1rem solid white;
+          box-shadow: 1rem 0 0 0 white, -1rem 0 0 0 white;
+
           .bg-gray-100 & {
-            border-right-color: $gray-100;
-            border-left-color: $gray-100;
+            box-shadow: 1rem 0 0 0 $gray-100, -1rem 0 0 0 $gray-100;
           }
         }
 
         // two cards are present
         &:nth-last-child(n + 2) {
           flex: 0 0 calc(33% + #{$spacer * 1.5});
-          border-left: 1rem solid white;
+          box-shadow: -1rem 0 0 0 white;
+
           .bg-gray-100 & {
-            border-left-color: $gray-100;
+            box-shadow: -1rem 0 0 0 $gray-100;
           }
         }
 
         &:nth-last-child(n + 2) ~ * {
           flex: 0 0 calc(33% + #{$spacer * 1.5});
-          border-right: 1rem solid white;
+          box-shadow: 1rem 0 0 0 white;
           .bg-gray-100 & {
-            border-right-color: $gray-100;
+            box-shadow: 1rem 0 0 0 $gray-100;
           }
         }
 
