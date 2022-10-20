@@ -159,7 +159,7 @@
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "backstopjs": "^5.0.1",
-    "browser-sync": "^2.27.9",
+    "browser-sync": "^2.27.10",
     "browser-sync-webpack-plugin": "^2.3.0",
     "colorable": "https://github.com/epfl-si/colorable",
     "copy-webpack-plugin": "^9.0.1",
