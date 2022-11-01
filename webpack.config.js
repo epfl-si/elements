@@ -93,7 +93,7 @@ module.exports = (env, argv) => {
             withOptions('css-loader', { importLoaders: 2 }),
             withOptions('postcss-loader', postcssOptionsPresetEnv()),
             // We'll be taking care of minifying by ourselves:
-            withOptions('sass-loader', { sassOptions: { outputStyle: 'uncompressed' } })
+            withOptions('sass-loader', { sassOptions: { outputStyle: 'expanded' } })
           ]
         },
         {
