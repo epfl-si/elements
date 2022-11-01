@@ -13519,25 +13519,29 @@ ol.flickity-page-dots li {
         -webkit-box-flex: 0;
             -ms-flex: 0 0 calc(33% + 1.5rem);
                 flex: 0 0 calc(33% + 1.5rem);
-        border-left: 1rem solid white;
-        border-right: 1rem solid white; }
+        -webkit-box-shadow: 1rem 0 0 0 white, -1rem 0 0 0 white;
+                box-shadow: 1rem 0 0 0 white, -1rem 0 0 0 white; }
         .bg-gray-100 .card-deck.card-deck-line > a.card:first-child:last-child {
-          border-right-color: #e6e6e6;
-          border-left-color: #e6e6e6; }
+          -webkit-box-shadow: 1rem 0 0 0 #e6e6e6, -1rem 0 0 0 #e6e6e6;
+                  box-shadow: 1rem 0 0 0 #e6e6e6, -1rem 0 0 0 #e6e6e6; }
       .card-deck.card-deck-line > a.card:nth-last-child(n + 2) {
         -webkit-box-flex: 0;
             -ms-flex: 0 0 calc(33% + 1.5rem);
                 flex: 0 0 calc(33% + 1.5rem);
-        border-left: 1rem solid white; }
+        -webkit-box-shadow: -1rem 0 0 0 white;
+                box-shadow: -1rem 0 0 0 white; }
         .bg-gray-100 .card-deck.card-deck-line > a.card:nth-last-child(n + 2) {
-          border-left-color: #e6e6e6; }
+          -webkit-box-shadow: -1rem 0 0 0 #e6e6e6;
+                  box-shadow: -1rem 0 0 0 #e6e6e6; }
       .card-deck.card-deck-line > a.card:nth-last-child(n + 2) ~ * {
         -webkit-box-flex: 0;
             -ms-flex: 0 0 calc(33% + 1.5rem);
                 flex: 0 0 calc(33% + 1.5rem);
-        border-right: 1rem solid white; }
+        -webkit-box-shadow: 1rem 0 0 0 white;
+                box-shadow: 1rem 0 0 0 white; }
         .bg-gray-100 .card-deck.card-deck-line > a.card:nth-last-child(n + 2) ~ * {
-          border-right-color: #e6e6e6; }
+          -webkit-box-shadow: 1rem 0 0 0 #e6e6e6;
+                  box-shadow: 1rem 0 0 0 #e6e6e6; }
       .card-deck.card-deck-line > a.card:nth-last-child(n + 3),
       .card-deck.card-deck-line > a.card:nth-last-child(n + 3) ~ * {
         -webkit-box-flex: 1;
