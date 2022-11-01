@@ -1,12 +1,13 @@
 @charset 'utf-8';
+@use 'sass:math';
 
 .cover {
   position: relative;
 
   figcaption {
     position: absolute;
-    right: ($grid-gutter-width / 2);
-    bottom: ($grid-gutter-width / 2);
+    right: math.div($grid-gutter-width, 2);
+    bottom: math.div($grid-gutter-width, 2);
     z-index: $zindex-1;
 
     @include media-breakpoint-up(md) {

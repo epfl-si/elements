@@ -1,4 +1,5 @@
 @charset 'utf-8';
+@use 'sass:math';
 
 .media-map {
   display: flex;
@@ -23,7 +24,7 @@
 
 .media-map-over {
   position: absolute;
-  right: ($grid-gutter-width / 2);
-  bottom: ($grid-gutter-width / 2);
-  left: ($grid-gutter-width / 2);
+  right: math.div($grid-gutter-width, 2);
+  bottom: math.div($grid-gutter-width, 2);
+  left: math.div($grid-gutter-width, 2);
 }

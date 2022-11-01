@@ -1,4 +1,5 @@
 @charset 'utf-8';
+@use 'sass:math';
 
 // Definition list.
 .definition-list {
@@ -23,7 +24,7 @@
     grid-column: 1;
     font-weight: $font-weight-base;
     color: $text-muted;
-    padding-right: $grid-gutter-width / 2;
+    padding-right: math.div($grid-gutter-width, 2);
     &:last-of-type { border-bottom: none; }
 
     &.definition-list-item-full {
@@ -39,12 +40,12 @@
 
   dt,
   dd {
-    margin-bottom: $grid-gutter-width / 2;
-    padding-bottom: $grid-gutter-width / 2;
+    margin-bottom: math.div($grid-gutter-width, 2);
+    padding-bottom: math.div($grid-gutter-width, 2);
     border-bottom: $border-width solid $border-color;
 
     &:first-of-type {
-      padding-top: $grid-gutter-width / 2;
+      padding-top: math.div($grid-gutter-width, 2);
       border-top: $border-width solid $border-color;
     }
   }

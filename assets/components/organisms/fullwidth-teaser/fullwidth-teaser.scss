@@ -1,4 +1,5 @@
 @charset 'utf-8';
+@use 'sass:math';
 
 .fullwidth-teaser {
   position: relative;
@@ -85,7 +86,7 @@
 }
 
 .fullwidth-teaser-text {
-  padding: $grid-gutter-width/2;
+  padding: math.div($grid-gutter-width, 2);
   background: $white;
 
   @include make-col(12, 12);
@@ -200,7 +201,7 @@
 }
 
 .fullwidth-teaser-footer {
-  margin-bottom: $grid-gutter-width / 2;
+  margin-bottom: math.div($grid-gutter-width, 2);
   
   &:last-child {
     margin-bottom: 0;

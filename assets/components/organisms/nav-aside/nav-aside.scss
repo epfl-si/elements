@@ -1,4 +1,5 @@
 @charset 'utf-8';
+@use 'sass:math';
 
 .nav-aside-layout {
   @include media-breakpoint-up(xl){
@@ -78,7 +79,7 @@
   a {
     display: block;
     position: relative;
-    padding: $spacer / 1.6 $spacer * 3;
+    padding: math.div($spacer, 1.6) $spacer * 3;
     text-decoration: none;
     color: gray('700');
 

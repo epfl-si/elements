@@ -1,8 +1,9 @@
 @charset 'utf-8';
+@use 'sass:math';
 
 $checked-tag: 1.7rem;
-$half-checked-tag: $checked-tag/2;
-$icon-checked-tag: $checked-tag/2.7;
+$half-checked-tag: math.div($checked-tag, 2);
+$icon-checked-tag: math.div($checked-tag, 2.7);
 $animation: 0.2s;
 
 .question {
@@ -131,8 +132,8 @@ $animation: 0.2s;
       }
 
       &:after {
-        top: calc(50% - #{$icon-checked-tag/2});
-        right: -$icon-checked-tag/2;
+        top: calc(50% - #{math.div($icon-checked-tag, 2)});
+        right: - math.div($icon-checked-tag, 2);
         left: auto;
       }
     }
@@ -175,8 +176,8 @@ $animation: 0.2s;
       }
 
       &:after {
-        top: -$icon-checked-tag/2;
-        left: calc(50% - #{$icon-checked-tag/2});
+        top: - math.div($icon-checked-tag, 2);
+        left: calc(50% - #{math.div($icon-checked-tag, 2)});
       }
 
       &:hover {
