@@ -77,7 +77,7 @@ $animation: 0.2s;
 
   // checked animation and styles
   .custom-control-input:checked + .custom-control-label {
-    @extend .custom-control-label:hover;
+    @extend .custom-control-label, :hover;
     z-index: $zindex-10;
 
     .custom-control-label-content {
