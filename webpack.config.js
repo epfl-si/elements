@@ -51,7 +51,7 @@ module.exports = (env, argv) => {
       // carousels clicky etc.
       elements: ["./assets/components/entrypoint.js", "./assets/components/entrypoint.scss"],
       // The React app that lets you browse the style guide:
-      reader: ["./reader/index.js", "./reader/reader.scss"]
+      reader: ["./reader/index.jsx", "./reader/reader.scss"]
     },
     output: {
       path: buildDir,
