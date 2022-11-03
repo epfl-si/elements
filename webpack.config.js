@@ -67,7 +67,10 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.(js|jsx)$/,
-          exclude: /(node_modules|bower_components)/,
+          include(pathToFile) {
+            const relativePath = path.relative(__dirname, pathToFile);
+            return !relativePath.startsWith("node_modules/");
+          },
           use: withOptions('babel-loader', {
             presets: [
               [
