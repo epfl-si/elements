@@ -148,12 +148,16 @@
 
   &:hover,
   &:focus {
-    margin-top: -$size !important;
-    padding-bottom: $size;
+    @include trapeze-span-horizontal-container-active($size);
+  }
+}
 
-    .trapeze-horizontal {
-      border-top-width: $size;
-    }
+@mixin trapeze-span-horizontal-container-active($size: $trapeze-height) {
+  margin-top: -$size !important;
+  padding-bottom: $size;
+
+  .trapeze-horizontal {
+    border-top-width: $size;
   }
 }
 
@@ -167,12 +171,16 @@
 
   &:hover,
   &:focus {
-    padding-left: $trapeze-height;
-    margin-right: $trapeze-height * -1;
+    @include trapeze-span-vertical-container-active($size);
+  }
+}
 
-    .trapeze-vertical {
-      border-right-width: $trapeze-height;
-    }
+@mixin trapeze-span-vertical-container-active($size: $trapeze-height) {
+  padding-left: $trapeze-height;
+  margin-right: $trapeze-height * -1;
+
+  .trapeze-vertical {
+    border-right-width: $trapeze-height;
   }
 }
 
