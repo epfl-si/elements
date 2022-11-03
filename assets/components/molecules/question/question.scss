@@ -78,7 +78,6 @@ $animation: 0.2s;
 
   // checked animation and styles
   .custom-control-input:checked + .custom-control-label {
-    @extend .custom-control-label, :hover;
     z-index: $zindex-10;
 
     .custom-control-label-content {
@@ -150,6 +149,7 @@ $animation: 0.2s;
 
   // checked styles
   .custom-control-input:checked + .custom-control-label {
+    @include trapeze-span-vertical-container-active();
     z-index: $zindex-10;
   }
 }
@@ -210,5 +210,10 @@ $animation: 0.2s;
 
   .question-content {
     padding: 0 4rem;
+  }
+
+  // checked styles
+  .custom-control-input:checked + .custom-control-label {
+    @include trapeze-span-horizontal-container-active();
   }
 }
