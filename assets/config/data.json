@@ -1,4 +1,4 @@
- {
+{
   "icons": [
     "accessibility",
     "arrow-left",
@@ -261,6 +261,7 @@
     "sun",
     "sunrise",
     "sunset",
+    "table",
     "tablet",
     "tag",
     "target",
@@ -698,15 +699,15 @@
           "rel_noopener_de": true
         },
         {
-          "name_fr": "Alumni",
+          "name_fr": "EPFL Alumni",
           "url_fr": "https://www.epflalumni.ch/fr/",
-          "name_en": "Alumni",
           "target_blank_fr": true,
           "rel_noopener_fr": true,
+          "name_en": "EPFL Alumni",
           "url_en": "https://www.epflalumni.ch",
           "target_blank_en": true,
           "rel_noopener_en": true,
-          "name_de": "Alumni",
+          "name_de": "EPFL Alumni",
           "url_de": "https://www.epflalumni.ch",
           "target_blank_de": true,
           "rel_noopener_de": true
@@ -759,6 +760,14 @@
           "url_de": "https://www.epfl.ch/education/international/de/"
         },
         {
+          "name_fr": "Enseignement",
+          "url_fr": "https://www.epfl.ch/education/teaching/fr/",
+          "name_en": "Teaching",
+          "url_en": "https://www.epfl.ch/education/teaching/",
+          "name_de": "Lehre",
+          "url_de": "https://www.epfl.ch/education/teaching/"
+        },
+        {
           "name_fr": "Admission",
           "url_fr": "https://www.epfl.ch/education/admission/fr/",
           "name_en": "Admission",
@@ -806,7 +815,7 @@
           "url_de": "https://www.epfl.ch/research/domains/de/"
         },
         {
-          "name_fr": "Professeur·e·s de l’EPFL",
+          "name_fr": "Professeur·es de l’EPFL",
           "url_fr": "https://www.epfl.ch/research/faculty-members/fr/",
           "name_en": "Faculty Members",
           "url_en": "https://www.epfl.ch/research/faculty-members/",
@@ -822,7 +831,7 @@
           "url_de": "https://www.epfl.ch/research/awards/de/"
         },
         {
-          "name_fr": "Collaborer avec nos chercheurs",
+          "name_fr": "Collaborer avec nos chercheuses et chercheurs",
           "url_fr": "https://www.epfl.ch/research/collaborate/fr/",
           "name_en": "Collaborate With Our Researchers",
           "url_en": "https://www.epfl.ch/research/collaborate/",
@@ -924,14 +933,6 @@
       "heading_de": "Campus",
       "items": [
         {
-          "name_fr": "Visiter l'EPFL",
-          "url_fr": "https://www.epfl.ch/campus/visitors/fr/",
-          "name_en": "Visit EPFL",
-          "url_en": "https://www.epfl.ch/campus/visitors/",
-          "name_de": "EPFL besuchen",
-          "url_de": "https://www.epfl.ch/campus/visitors/de/"
-        },
-        {
           "name_fr": "Services et ressources",
           "url_fr": "https://www.epfl.ch/campus/services/",
           "name_en": "Services & Resources",
@@ -956,20 +957,12 @@
           "url_de": "https://www.epfl.ch/campus/restaurants-shops-hotels/"
         },
         {
-          "name_fr": "Mobilité et voyages",
-          "url_fr": "https://www.epfl.ch/campus/mobility/fr/",
-          "name_en": "Mobility & Travel",
-          "url_en": "https://www.epfl.ch/campus/mobility/",
-          "name_de": "Mobilität und Reise",
-          "url_de": "https://www.epfl.ch/campus/mobility/"
-        },
-        {
-          "name_fr": "Événements",
-          "url_fr": "https://www.epfl.ch/campus/events/fr/",
-          "name_en": "Events",
-          "url_en": "https://www.epfl.ch/campus/events/",
-          "name_de": "Veranstaltungen",
-          "url_de": "https://www.epfl.ch/campus/events/"
+          "name_fr": "Sécurité, prévention et santé",
+          "url_fr": "https://www.epfl.ch/campus/security-safety/",
+          "name_en": "Security, Prevention & Health",
+          "url_en": "https://www.epfl.ch/campus/security-safety/en/",
+          "name_de": "Sicherheit, Prävention und Gesundheit",
+          "url_de": "https://www.epfl.ch/campus/security-safety/en/"
         },
         {
           "name_fr": "Sport",
@@ -980,20 +973,12 @@
           "url_de": "https://www.epfl.ch/campus/sports/en/"
         },
         {
-          "name_fr": "Arts et culture",
-          "url_fr": "https://www.epfl.ch/campus/art-culture/fr/",
-          "name_en": "Arts & Culture",
-          "url_en": "https://www.epfl.ch/campus/art-culture/",
-          "name_de": "Kunst und Kultur",
-          "url_de": "https://www.epfl.ch/campus/art-culture/"
-        },
-        {
-          "name_fr": "Sécurité, prévention et santé",
-          "url_fr": "https://www.epfl.ch/campus/security-safety/",
-          "name_en": "Security, Prevention & Health",
-          "url_en": "https://www.epfl.ch/campus/security-safety/en/",
-          "name_de": "Sicherheit, Prävention und Gesundheit",
-          "url_de": "https://www.epfl.ch/campus/security-safety/en/"
+          "name_fr": "Communauté et soutien",
+          "url_fr": "https://www.epfl.ch/campus/community/fr/",
+          "name_en": "Community & Support",
+          "url_en": "https://www.epfl.ch/campus/community/",
+          "name_de": "Gemeinschaft & Unterstützung",
+          "url_de": "https://www.epfl.ch/campus/community/"
         },
         {
           "name_fr": "Aumônerie",
@@ -1004,12 +989,44 @@
           "url_de": "https://www.epfl.ch/campus/spiritual-care/en/"
         },
         {
+          "name_fr": "Événements",
+          "url_fr": "https://www.epfl.ch/campus/events/fr/",
+          "name_en": "Events",
+          "url_en": "https://www.epfl.ch/campus/events/",
+          "name_de": "Veranstaltungen",
+          "url_de": "https://www.epfl.ch/campus/events/"
+        },
+        {
+          "name_fr": "Arts et culture",
+          "url_fr": "https://www.epfl.ch/campus/art-culture/fr/",
+          "name_en": "Arts & Culture",
+          "url_en": "https://www.epfl.ch/campus/art-culture/",
+          "name_de": "Kunst und Kultur",
+          "url_de": "https://www.epfl.ch/campus/art-culture/"
+        },
+        {
           "name_fr": "Associations",
           "url_fr": "https://www.epfl.ch/campus/associations/fr/",
           "name_en": "Associations",
           "url_en": "https://www.epfl.ch/campus/associations/",
           "name_de": "Vereinigungen",
           "url_de": "https://www.epfl.ch/campus/associations/"
+        },
+        {
+          "name_fr": "Visiter l'EPFL",
+          "url_fr": "https://www.epfl.ch/campus/visitors/fr/",
+          "name_en": "Visit EPFL",
+          "url_en": "https://www.epfl.ch/campus/visitors/",
+          "name_de": "EPFL besuchen",
+          "url_de": "https://www.epfl.ch/campus/visitors/de/"
+        },
+        {
+          "name_fr": "Mobilité et voyages",
+          "url_fr": "https://www.epfl.ch/campus/mobility/fr/",
+          "name_en": "Mobility & Travel",
+          "url_en": "https://www.epfl.ch/campus/mobility/",
+          "name_de": "Mobilität und Reise",
+          "url_de": "https://www.epfl.ch/campus/mobility/"
         }
       ]
     }
@@ -1086,12 +1103,12 @@
     "highlight_2": {
       "title": "Étudier à l’EPFL, 13 filières de formation",
       "content": "Treize filières de formation dans les sciences de l’ingénieur, des programmes doctoraux de choix, des laboratoires de pointe dirigés par des professeurs de réputation internationale, un campus moderne en plein développement qui s’étend sur plus de 10’000 mètres carrés.",
-      "image": "./images/styleguide/homepage/3-teaser-basic-page-highlight.jpg"
+      "image": "./images/styleguide/teaser/home-teaser-1"
     },
     "highlight_3": {
       "title": "Pour une transformation plus efficace des molécules",
       "content": "Le chimiste Xile Hu est le lauréat du Prix Latsis 2017. Ce professeur à l’Ecole polytechnique fédérale de Lausanne est récompensé pour son impressionnante carrière scientifique et ses excellents travaux de recherche sur la compréhension fondamentale de la catalyse.",
-      "image": "./images/styleguide/homepage/4-teaser-news-highlight.jpg"
+      "image": "./images/styleguide/teaser/home-teaser-2"
     },
     "section_3": {
       "title": "Une école multi-sites, de Lausanne vers le monde",
@@ -1126,7 +1143,7 @@
     "highlight_4": {
       "title": "Explorer le portail étudiants de l'EPFL",
       "content": "Découvrez l'ensemble des services dédiés aux étudiants : vie académique, cours, cartes d'accès et plans, transports et restauration. Mais aussi les bons plans, les réductions et les événements organisés par les nombreuses associations d'étudiants.",
-      "image": "./images/styleguide/homepage/6-teaser-basic-page-highlight.jpg"
+      "image": "./images/styleguide/teaser/home-teaser-3"
     },
     "questions": {
       "image": "./images/styleguide/homepage/7-science-question-SF.jpg"
@@ -1134,7 +1151,7 @@
     "highlight_5": {
       "title": "L’EPFL vue du ciel",
       "content": "L'association Aéropoly a pris des images du campus à l'aide d'un dirigeable avant l'ouverture de Balélec. Le dirigeable avait déjà pris son envol une première fois pendant Polynice, événement organisé pour fêter les 60 ans de l'AGEPoly, soit l'association des étudiants de l'EPFL.",
-      "image": "./images/styleguide/homepage/8-teaser-news-highlight.jpg"
+      "image": "./images/styleguide/teaser/home-teaser-4"
     }
   },
   "menu": [

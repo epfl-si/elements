@@ -1,4 +1,4 @@
- @charset "utf-8";
+@charset "utf-8";
 
 // Add a beautiful underline to links
 // Set $bg to false to text-decoration tweak completely.
@@ -148,12 +148,16 @@
 
   &:hover,
   &:focus {
-    margin-top: -$size !important;
-    padding-bottom: $size;
+    @include trapeze-span-horizontal-container-active($size);
+  }
+}
 
-    .trapeze-horizontal {
-      border-top-width: $size;
-    }
+@mixin trapeze-span-horizontal-container-active($size: $trapeze-height) {
+  margin-top: -$size !important;
+  padding-bottom: $size;
+
+  .trapeze-horizontal {
+    border-top-width: $size;
   }
 }
 
@@ -167,12 +171,16 @@
 
   &:hover,
   &:focus {
-    padding-left: $trapeze-height;
-    margin-right: $trapeze-height * -1;
+    @include trapeze-span-vertical-container-active($size);
+  }
+}
 
-    .trapeze-vertical {
-      border-right-width: $trapeze-height;
-    }
+@mixin trapeze-span-vertical-container-active($size: $trapeze-height) {
+  padding-left: $trapeze-height;
+  margin-right: $trapeze-height * -1;
+
+  .trapeze-vertical {
+    border-right-width: $trapeze-height;
   }
 }
 
@@ -210,8 +218,8 @@
 // IE 11 mixin
 // WARNING: Autoprefixer is off inside this.
 @mixin ie11($selector) {
- _:-ms-fullscreen, :root #{$selector} {
-   /* autoprefixer: off */
-   @content;
- }
+  :-ms-fullscreen, :root #{$selector} {
+    /* autoprefixer: off */
+    @content;
+  }
 }

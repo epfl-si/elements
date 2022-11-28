@@ -212,17 +212,17 @@
   transition: background-color .3s, opacity .5s, visibility .5s, bottom .3s;
   visibility: hidden;
   z-index: 1000;
-  
+
   &:hover {
     opacity: 1;
   }
-  
+
   &.show {
     bottom: 10px;
     opacity: 1;
     visibility: visible;
   }
-  
+
   .icon {
     width: 1.5em;
     height: 1.5em;

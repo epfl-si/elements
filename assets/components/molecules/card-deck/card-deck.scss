@@ -5,20 +5,20 @@
   position: relative;
   margin-left: $spacer * -0.5;
   margin-right: $spacer * -0.5;
-  
+
   @include media-breakpoint-up(sm) {
     display: flex;
     flex-wrap: wrap;
-    
+
     > .card {
-      
+
       // only one card is present
       &:first-child:last-child {
         flex: 0 0 60%;
         margin-left: auto;
         margin-right: auto;
       }
-      
+
       // two or more cards are present
       &:nth-last-child(n + 2),
       &:nth-last-child(n + 2) ~ * {
@@ -181,28 +181,28 @@
         // only one card is present
         &:first-child:last-child {
           flex: 0 0 calc(33% + #{$spacer * 1.5});
-          border-left: 1rem solid white;
-          border-right: 1rem solid white;
+          box-shadow: 1rem 0 0 0 white, -1rem 0 0 0 white;
+
           .bg-gray-100 & {
-            border-right-color: $gray-100;
-            border-left-color: $gray-100;
+            box-shadow: 1rem 0 0 0 $gray-100, -1rem 0 0 0 $gray-100;
           }
         }
 
         // two cards are present
         &:nth-last-child(n + 2) {
           flex: 0 0 calc(33% + #{$spacer * 1.5});
-          border-left: 1rem solid white;
+          box-shadow: -1rem 0 0 0 white;
+
           .bg-gray-100 & {
-            border-left-color: $gray-100;
+            box-shadow: -1rem 0 0 0 $gray-100;
           }
         }
 
         &:nth-last-child(n + 2) ~ * {
           flex: 0 0 calc(33% + #{$spacer * 1.5});
-          border-right: 1rem solid white;
+          box-shadow: 1rem 0 0 0 white;
           .bg-gray-100 & {
-            border-right-color: $gray-100;
+            box-shadow: 1rem 0 0 0 $gray-100;
           }
         }
 
@@ -218,37 +218,37 @@
 
   &.mini-cards {
     justify-content: center;
-    
+
     @include media-breakpoint-down(xs) {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      
+
       > .card {
         margin: $spacer * 0.5;
       }
     }
-    
+
     .deck-title {
       flex-basis: 100%;
       margin-left: .5rem;
       font-size: 1.625rem;
     }
-    
+
     .card-body {
       padding: 1rem;
     }
-    
+
     .card-title {
       margin: 0;
       font-size: 1.125rem;
     }
-    
+
     > .card {
       flex-basis: calc( 50% - #{$spacer} );
       flex-grow: 0;
     }
-    
+
     @include media-breakpoint-up(sm) {
       > .card {
         flex-basis: calc( 33.3334% - #{$spacer} );
@@ -260,7 +260,7 @@
         flex-basis: calc( 16.6667% - #{$spacer} );
       }
     }
-    
+
   }
 
 }

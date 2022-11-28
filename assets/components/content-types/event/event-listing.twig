@@ -1,9 +1,9 @@
 <div class="list-group list-events">
-  
+
   {% include '@molecules/card/card-event.twig' with { eventLocation: 'online_room', live_now: true } %}
-  
+
   {% include '@molecules/card/card-event.twig' with { eventLocation: 'online' } %}
-  
+
   {% for i in 1..3 %}
     {% include '@molecules/card/card-event.twig' %}
   {% endfor %}

@@ -3,11 +3,11 @@
 .nav-tabs {
   .nav-item {
     padding-left: 0;
-    
+
     &:before {
       content: none;
     }
-    
+
     + .nav-item {
       .nav-link {
         margin-left: -1px;
@@ -34,7 +34,7 @@
     text-decoration: none;
     border-radius: 0;
     padding: .5rem .8125rem;
-    
+
     @include media-breakpoint-up(md) {
       padding: .5rem 1rem;
     }

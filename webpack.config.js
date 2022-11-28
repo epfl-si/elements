@@ -51,7 +51,7 @@ module.exports = (env, argv) => {
       // carousels clicky etc.
       elements: ["./assets/components/entrypoint.js", "./assets/components/entrypoint.scss"],
       // The React app that lets you browse the style guide:
-      reader: ["./reader/index.js", "./reader/reader.scss"]
+      reader: ["./reader/index.jsx", "./reader/reader.scss"]
     },
     output: {
       path: buildDir,
@@ -67,7 +67,10 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.(js|jsx)$/,
-          exclude: /(node_modules|bower_components)/,
+          include(pathToFile) {
+            const relativePath = path.relative(__dirname, pathToFile);
+            return !relativePath.startsWith("node_modules/");
+          },
           use: withOptions('babel-loader', {
             presets: [
               [
@@ -92,8 +95,13 @@ module.exports = (env, argv) => {
             withOptions(MiniCssExtractPlugin.loader, { publicPath: "../" }),
             withOptions('css-loader', { importLoaders: 2 }),
             withOptions('postcss-loader', postcssOptionsPresetEnv()),
-            // We'll be taking care of minifying by ourselves:
-            withOptions('sass-loader', { sassOptions: { outputStyle: 'uncompressed' } })
+            withOptions('sass-loader', {
+              sassOptions: {
+                quietDeps: true,
+                // We'll be taking care of minifying by ourselves:
+                outputStyle: 'expanded'
+              }
+            })
           ]
         },
         {

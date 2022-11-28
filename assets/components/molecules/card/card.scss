@@ -1,8 +1,10 @@
 @charset 'utf-8';
+@use 'sass:math';
 
 //
 // Normal card
 .card {
+  border-color: $gray-100;
   border-radius: 0;
   flex: 1 1 0%;
   max-width: 100%;
@@ -16,10 +18,12 @@
 }
 
 .card-sm {
-  margin-bottom: $grid-gutter-width / 2;
+  margin-bottom: math.div($grid-gutter-width, 2);
 }
 
 .card-gray {
+  border-color: $gray-200;
+
   .card-footer,
   .card-body {
     background: $gray-100;
@@ -46,7 +50,7 @@ a.card-gray:hover .card-body { background: $white; }
   + .card-footer {
     padding-top: 0;
   }
-  
+
   .card-info + p {
     margin-top: .5em;
   }
@@ -226,7 +230,7 @@ a.card {
       color: $link-hover-color;
     }
   }
-  
+
   &.link-trapeze-horizontal:before {
     top: calc(100% + 1px);
     right: -1px;

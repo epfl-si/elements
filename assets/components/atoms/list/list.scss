@@ -41,7 +41,7 @@ ul {
     background: $red;
     border: none;
   }
-  
+
   ol > li:before {
     font-weight: 400;
   }
@@ -93,9 +93,9 @@ ol {
     content: counter(item) "." counter(secondary-item) "." counter(third-item);
     counter-increment: third-item;
   }
-  
+
   ul {
-    
+
     & > li:before {
       background: transparent;
       border: 1px solid $red;
@@ -108,10 +108,10 @@ ol {
 .list-inline,
 .nav,
 nav {
-  
+
   li {
     padding-left: 0;
-    
+
     &:before {
       content: none;
     }
@@ -119,17 +119,17 @@ nav {
 }
 
 .list-inline {
-  
+
   li {
     display: inline-block;
-    
+
     &:not(:last-child) {
       margin-right: .5em;
     }
   }
-  
+
   &.has-sep {
-    
+
     li:not(:last-child):after {
       content: "|";
       position: relative;

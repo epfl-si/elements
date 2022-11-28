@@ -1,13 +1,14 @@
 @charset 'utf-8';
+@use 'sass:math';
 
 .hero {
   overflow: hidden;
-  
+
   @include media-breakpoint-up(md) {
     display: flex;
     justify-content: space-between;
   }
-  
+
   @include media-breakpoint-down(sm) {
     padding-right: .9rem;
     padding-left: .9rem;
@@ -41,18 +42,18 @@
     max-width: 100%;
     min-width: 75%;
     margin-bottom: 0;
-    padding-top: $grid-gutter-width / 2;
-    padding-bottom: $grid-gutter-width / 2;
+    padding-top: math.div($grid-gutter-width, 2);
+    padding-bottom: math.div($grid-gutter-width, 2);
     text-align: right;
   }
 }
 
 .hero-content {
-  
+
   @include media-breakpoint-down(sm) {
     margin-bottom: 1rem;
   }
-  
+
   @include media-breakpoint-up(md) {
     width: 110%;
   }

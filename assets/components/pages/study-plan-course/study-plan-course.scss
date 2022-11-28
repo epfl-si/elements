@@ -2,7 +2,7 @@
 
 .course-details {
   position: relative;
-  
+
   @include media-breakpoint-up(xl) {
     &:after {
       content: "";
@@ -10,7 +10,7 @@
       position: absolute;
       top: 0;
       right: -3rem;
-      bottom: 0; 
+      bottom: 0;
       left: auto;
     }
   }

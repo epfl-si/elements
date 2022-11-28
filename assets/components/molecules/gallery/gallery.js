@@ -1,9 +1,9 @@
 /* globals $ */
 
 import Flickity from 'flickity';
-import FlickityFullscreen from 'flickity-fullscreen'; // eslint-disable-line
-import FlickityNav from 'flickity-as-nav-for'; // eslint-disable-line
-import Imagesloaded from 'imagesloaded';
+import 'flickity-fullscreen';
+import 'flickity-as-nav-for';
+import 'imagesloaded';
 
 function setFlickityOnGallery($gallery) {
   const $items = $gallery.find('.gallery-item');
@@ -20,7 +20,7 @@ function setFlickityOnGallery($gallery) {
   });
 
   // Instantiate Flickity gallery
-  const flkty = new Flickity($gallery.get(0), {
+  new Flickity($gallery.get(0), {
     pageDots: false,
     fullscreen: true,
     setGallerySize: true,
@@ -55,7 +55,7 @@ function setFlickityGalleryNav($galleryNav) {
       $galleryNav.addClass('ready');
 
       // Instantiate Flickity nav
-      const flkty = new Flickity($galleryNav.get(0), {
+      new Flickity($galleryNav.get(0), {
         asNavFor: `#${target}`,
         cellAlign: 'left',
         pageDots: false,
@@ -69,7 +69,6 @@ function setFlickityGalleryNav($galleryNav) {
 }
 
 export default () => {
-  window.flickityInstances = [];
   const $galleries = $('.gallery');
 
   // Base gallery logic

@@ -1,4 +1,5 @@
 @charset "utf-8";
+@use 'sass:math';
 
 $collapse-chevron-active: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{theme-color('primary')}' viewBox='0 0 6 3'%3E%3Cpath d='M3 3 6 0 0 0z'/%3E%3C/svg%3E"), "#", "%23");
 $collapse-chevron: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$gray-600}' viewBox='0 0 6 3'%3E%3Cpath d='M3 0 6 3 0 3z'/%3E%3C/svg%3E"), "#", "%23");
@@ -6,9 +7,9 @@ $collapse-chevron-size: 12px;
 
 @mixin collapse-btn() {
   $icon-size: 1rem;
-  $icon-size-half: $icon-size / 2;
+  $icon-size-half: math.div($icon-size, 2);
   $icon-thickness: 2px;
-  $icon-thickness-half: $icon-thickness / 2;
+  $icon-thickness-half: math.div($icon-thickness, 2);
 
   display: block;
   position: relative;
@@ -27,7 +28,7 @@ $collapse-chevron-size: 12px;
     top: $collapse-chevron-size;
     right: 0;
     width: $collapse-chevron-size;
-    height: ($collapse-chevron-size / 2);
+    height: math.div($collapse-chevron-size, 2);
     border: 0;
   }
 
@@ -37,11 +38,12 @@ $collapse-chevron-size: 12px;
 }
 
 .collapse-title {
+  color: $black;
   position: relative;
   padding: 0;
   background: none;
   border: none;
-  transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s, color 0.15s;
 
   &:before {
     content: ' ';
@@ -70,23 +72,33 @@ $collapse-chevron-size: 12px;
 
   &.collapse-title-desktop {
     @include collapse-btn();
+    
+    &:hover,
+    &:focus,
+    &:active {
+      color: $red;
+    }
   }
 
   @include media-breakpoint-down(sm) {
     @include collapse-btn();
   }
-  
+
   p {
     margin-bottom: 0.25em;
   }
-  
+
   *:last-child {
     margin-bottom: 0;
   }
 }
 
 .collapse-item {
-  padding-bottom: 2rem;
+  &::after {
+    content: "";
+    display: block;
+    padding-top: 2rem;
+  }
 
   *:last-child {
     margin-bottom: 0;
@@ -105,17 +117,17 @@ $collapse-chevron-size: 12px;
 
 header.collapse-title {
   font-size: inherit;
-  
+
   p {
     font-size: 1rem;
   }
-  
+
   @include media-breakpoint-up(md) {
     p {
       font-size: 1.125rem;
     }
   }
-  
+
   @include media-breakpoint-up(lg) {
     p.title {
       font-size: 1.25rem;
@@ -124,7 +136,11 @@ header.collapse-title {
 }
 
 header.collapse-title + .collapse-item {
-  padding-top: 0.5rem;
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 0.5rem;
+  }
 }
 
 .collapse-group {
@@ -144,7 +160,7 @@ header.collapse-title + .collapse-item {
     display: inline-block;
     width: $collapse-chevron-size;
     height: $collapse-chevron-size;
-    margin-left: ($collapse-chevron-size / 2);
+    margin-left: math.div($collapse-chevron-size, 2);
     background: $collapse-chevron no-repeat center center;
     background-size: contain;
   }
@@ -198,7 +214,7 @@ $collapse-drop-margin: ($grid-gutter-width * 0.3);
   &.show,
   &.collapsing {
     position: relative;
-    margin-top: $collapse-drop-margin / 2;
+    margin-top: math.div($collapse-drop-margin, 2);
     border-top: ($border-width * 2) solid $border-color;
 
     > form {
@@ -242,11 +258,11 @@ $collapse-drop-margin: ($grid-gutter-width * 0.3);
   border-top: 1px solid #c1c1c1;
   border-bottom: 1px solid #c1c1c1;
   margin-bottom: ($spacer * 3);
-  
+
   .collapse-title {
     border-top: 0;
   }
-  
+
   & + .collapse-container {
     border-top: 0;
     margin-top: -($spacer * 3);

@@ -68,6 +68,10 @@ h6,
 
 .lead {
   font-size: 1.375rem;
+  
+  @include media-breakpoint-down(md) { font-size: 1.25rem; }
+
+  @include media-breakpoint-down(xs) { font-size: 1rem; }
 }
 
 small {
@@ -118,22 +122,22 @@ table {
 }
 
 @include media-breakpoint-down(md) {
-  
+
   h1,
   .h1 {
     font-size: 2.875rem;
   }
-  
+
   h2,
   .h2 {
     font-size: 2.25rem;
   }
-  
+
   h3,
   .h3 {
     font-size: 1.625rem;
   }
-  
+
   h4,
   .h4 {
     font-size: 1.375rem;
@@ -141,7 +145,7 @@ table {
 }
 
 @include media-breakpoint-down(sm) {
-  
+
   h1,
   .h1 {
     font-size: 2.5rem;
@@ -149,32 +153,32 @@ table {
 }
 
 @include media-breakpoint-down(xs) {
-  
+
   h1,
   .h1 {
     font-size: 2rem;
   }
-  
+
   h2,
   .h2 {
     font-size: 1.625rem;
   }
-  
+
   h3,
   .h3 {
     font-size: 1.375rem;
   }
-  
+
   h4,
   .h4 {
     font-size: 1.25rem;
   }
-  
+
   h5,
   .h5 {
     font-size: 1rem;
   }
-  
+
   h6,
   .h6 {
     font-size: 0.9375rem;
