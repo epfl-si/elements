@@ -1,4 +1,4 @@
-<div class="list-group list-events">
+<div class="list-group list-events {% if hasGrayBackground|default(false) %}list-group-gray{% endif %}">
 
   {% include '@molecules/card/card-event.twig' with { eventLocation: 'online_room', live_now: true } %}
 
