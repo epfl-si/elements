@@ -7,7 +7,7 @@
   </a>
   <ul aria-hidden="true" class="nav-header d-none d-xl-flex">
     {% for head in header %}
-      <li id="menu-item-{{ loop.index }}" {% if loop.index == 2 %} class="current-menu-item"{% endif %}>
+      <li id="menu-item-{{ loop.index }}" {% if ( loop.index == 2 ) and ( showCurrentMenuItem|default(true) ) %} class="current-menu-item"{% endif %}>
         {% if language == 'fr' %}
         <a class="nav-item" href="{{ head.url_fr }}">{{ head.name_fr }}</a>
         {% endif %}
