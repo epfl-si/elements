@@ -105,6 +105,21 @@ a.card-gray:hover .card-body { background: $white; }
   color: $text-muted;
   &:last-of-type { margin-bottom: 0; }
 
+  // Add the separator between the elements
+  > :not(:last-of-type) {
+    &:after {
+      content: ' \203A ';
+      margin: 0 0.25em 0 0.15em;
+    }
+  }
+  .card-info-date:not(:last-child):after { content: ' \2013 '; }
+
+  // Remove separators after specific card elements
+  .event-info:after,
+  .event-info-date:after {
+    content: none;
+  }
+
   a {
     display: inline-block;
     color: $red;
@@ -113,7 +128,7 @@ a.card-gray:hover .card-body { background: $white; }
     @include hover {
       @include link-pretty($red, $body-bg, $body-color);
     }
-    
+
     &.btn {
       &:hover,
       &.hover {
@@ -121,11 +136,11 @@ a.card-gray:hover .card-body { background: $white; }
         text-shadow: none;
       }
     }
-    
+
     &.btn-primary {
       color: #fff !important;
     }
-    
+
     &.btn-secondary {
       color: $black !important;
     }
@@ -146,18 +161,18 @@ a.card-gray:hover .card-body { background: $white; }
 }
 
 .card-info {
-  
+
   .event-date:not(:last-child):after {
     content: ' \2013 ';
   }
-  
+
   .event-time:not(:last-of-type) {
     &:after {
       content: ' \203A ';
       margin: 0 0.25em 0 0.15em;
     }
   }
-  
+
   .event-info-date {
     .event-date,
     .event-time,
@@ -171,7 +186,7 @@ a.card-gray:hover .card-body { background: $white; }
       width: 18px;
     }
   }
-  
+
   .event-info > span {
     display: block;
   }
