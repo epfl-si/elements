@@ -596,12 +596,28 @@
       "heading_de": "Über uns",
       "items": [
         {
-          "name_fr": "Présentation",
+          "name_fr": "Qui sommes-nous",
           "url_fr": "https://www.epfl.ch/about/overview/fr/",
-          "name_en": "Presentation",
+          "name_en": "Who we are",
           "url_en": "https://www.epfl.ch/about/overview/",
-          "name_de": "Präsentation",
+          "name_de": "Wer wir sind",
           "url_de": "https://www.epfl.ch/about/overview/de/"
+        },
+        {
+          "name_fr": "Campus associés",
+          "url_fr": "https://www.epfl.ch/about/campus/fr/",
+          "name_en": "Associated Campuses",
+          "url_en": "https://www.epfl.ch/about/campus/",
+          "name_de": "Assoziierte Campus",
+          "url_de": "https://www.epfl.ch/about/campus/de/"
+        },
+        {
+          "name_fr": "Facts",
+          "url_fr": "https://www.epfl.ch/about/facts/fr/",
+          "name_en": "Facts",
+          "url_en": "https://www.epfl.ch/about/facts/",
+          "name_de": "Facts",
+          "url_de": "https://www.epfl.ch/about/facts/"
         },
         {
           "name_fr": "Présidence",
@@ -618,14 +634,6 @@
           "url_en": "https://www.epfl.ch/about/vice-presidencies/",
           "name_de": "Vizepräsidium",
           "url_de": "https://www.epfl.ch/about/vice-presidencies/de/"
-        },
-        {
-          "name_fr": "Campus associés",
-          "url_fr": "https://www.epfl.ch/about/campus/fr/",
-          "name_en": "Associated Campuses",
-          "url_en": "https://www.epfl.ch/about/campus/",
-          "name_de": "Assoziierte Campus",
-          "url_de": "https://www.epfl.ch/about/campus/de/"
         },
         {
           "name_fr": "Travailler à l'EPFL",
@@ -682,20 +690,6 @@
           "url_en": "https://www.epfl.ch/about/philanthropy/",
           "name_de": "Philanthropie\n",
           "url_de": "https://www.epfl.ch/about/philanthropy/"
-        },
-        {
-          "name_fr": "Cooperation",
-          "url_fr": "https://essentialtech.center",
-          "target_blank_fr": true,
-          "rel_noopener_fr": true,
-          "name_en": "Cooperation",
-          "url_en": "https://essentialtech.center",
-          "target_blank_en": true,
-          "rel_noopener_en": true,
-          "name_de": "Zusammenarbeit",
-          "url_de": "https://essentialtech.center",
-          "target_blank_de": true,
-          "rel_noopener_de": true
         },
         {
           "name_fr": "EPFL Alumni",
@@ -838,11 +832,11 @@
           "url_de": "https://www.epfl.ch/research/collaborate/de/"
         },
         {
-          "name_fr": "Utiliser nos infrastructures",
+          "name_fr": "Les plateformes de recherche de l'EPFL",
           "url_fr": "https://www.epfl.ch/research/facilities/fr/",
-          "name_en": "Use Our Infrastructure",
+          "name_en": "EPFL Research Facilities",
           "url_en": "https://www.epfl.ch/research/facilities/",
-          "name_de": "Unsere Infrastruktur nutzen",
+          "name_de": "EPFL-Forschungsplattformen",
           "url_de": "https://www.epfl.ch/research/facilities/de/"
         },
         {
