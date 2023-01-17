@@ -1,0 +1,69 @@
+<div href="#" class="list-group-item list-group-teaser" itemscope itemtype="http://schema.org/Event">
+  <div class="list-group-teaser-container">
+    <div class="list-group-teaser-thumbnail">
+      {% include '@atoms/picture/picture.twig' with {'variant':'news-thumb'} %}
+    </div>
+    <div class="list-group-teaser-content">
+      <p class="h5 card-title" itemprop="name">
+        <a href="#">Startup Acceleration Workshops</a>
+      </p>
+      <div class="card-info mt-0">
+        {% block date %}
+        <p class="event-info-date">
+          {% include '@atoms/icon/icon.twig' with { icon:  'calendar', icon_classes:'feather' } %}
+          <span class="card-info-date event-date" itemprop="startDate" content="2018-01-10T12:00">10.01.2018</span>
+          {% include '@atoms/icon/icon.twig' with { icon:  'clock', icon_classes:'feather' } %}
+          <span class="event-time">13:00</span>
+          <span class="event-time">17:30</span>
+          {% endblock %}
+        </p>
+        <p class="event-info mt-1">
+          <span class="event-speaker" itemprop="performer" itemscope itemtype="http://schema.org/performer">
+          {% block speaker %}
+            <b>Intervenant·e:</b> Prof. Dr. Aditya Mueller
+          {% endblock %}
+          </span>            
+          <span class="event-location" itemprop="location" itemscope itemtype="http://schema.org/Place">
+          {% block location %}
+            
+            {% if eventLocation == 'online' %}
+            <b>Lieu:</b> {% include '@atoms/icon/icon.twig' with { icon: 'monitor', icon_classes:'feather' } %}
+            <span itemprop="name"><a href="#">En ligne</a></span>
+            {% elseif eventLocation == 'online_room' %}
+            <b>Lieu:</b> {% include '@atoms/icon/icon.twig' with { icon: 'map-pin', icon_classes:'feather' } %}
+            <span itemprop="name"><a href="#">ArtLab EPFL</a></span> &amp;
+            {% include '@atoms/icon/icon.twig' with { icon: 'monitor', icon_classes:'feather' } %}
+            <span itemprop="name"><a href="#">En ligne</a></span>
+            {% else %}
+            <b>Lieu:</b> {% include '@atoms/icon/icon.twig' with { icon: 'map-pin', icon_classes:'feather' } %}
+            <span itemprop="name"><a href="#">ArtLab EPFL</a></span>
+            {% endif %}
+            
+          {% endblock %}
+          </span>
+          <span class="event-category">
+          {% block category %}
+            <b>Catégorie:</b> Événements culturel
+          {% endblock %}
+          </span>
+          <span class="event-audience" itemprop="audience" itemscope itemtype="https://schema.org/audience">
+          {% block audience %}
+            <b>Public cible:</b> Tout public
+          {% endblock %}
+          </span>
+        </p>
+        
+        <p class="pt-3 event-actions">
+          {% if live_now|default(false) %}
+            <a href="#" class="btn btn-primary btn-sm">{% include '@atoms/icon/icon.twig' with { icon: 'monitor', icon_classes:'feather' } %} Voir en direct</a>
+          {% endif %}
+          {% if live_future|default(false) %}
+            <a href="#" class="btn btn-secondary btn-sm">{% include '@atoms/icon/icon.twig' with { icon: 'monitor', icon_classes:'feather' } %} Diffusé en direct</a>
+        {% endif %}
+          <a href="#" class="btn btn-secondary btn-sm">{% include '@atoms/icon/icon.twig' with { icon: 'download', icon_classes:'feather' } %} Importer</a>
+        </p>
+        
+      </div>
+    </div>
+  </div>
+</div>

@@ -16,10 +16,19 @@
   border-left: 0;
 }
 
+.list-group-gray .list-group-teaser-container,
 .list-group-item-gray .list-group-teaser-container {
-  background: gray('100');
-  transition: background 0.25s;
-  &:hover { background: $white; }
+  --card-bg: #{$gray-100};
+  background: var(--card-bg);
+
+  .card-title a {
+    @include link-pretty($red, var(--card-bg), $body-color);
+    transition: color 0.3s, text-shadow 0.25s;
+  }
+
+  &:hover {
+    --card-bg: $white;
+  }
 }
 
 .list-group {
@@ -99,7 +108,7 @@
     flex-flow: row nowrap;
     width: 100%;
     border: 1px solid gray('200');
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, background 0.25s;
 
     @include media-breakpoint-down(md) {
       flex-direction: column;
