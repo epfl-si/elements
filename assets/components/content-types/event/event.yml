@@ -5,6 +5,9 @@ variants:
   - name: listing
     title: Listing
     wrapper: bg-gray-100
+  - name: listing-featured
+    title: Featured events
+    wrapper: bg-gray-100
   - name: highlight
     title: Highlight
     wrapper: col-md-8 bg-gray-100

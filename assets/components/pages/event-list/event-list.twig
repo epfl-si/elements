@@ -3,35 +3,162 @@
 {% extends "@templates/base/base.twig" %}
 
 {% block header %}
-  {% include '@organisms/header/header-light.twig' with { site_title: 'Event title' } %}
-{% endblock %}
-
-{% block breadcrumb %}
-<div class="breadcrumb-container">
-  {% include '@molecules/breadcrumb/breadcrumb.twig' %}
-</div>
+  <header role="banner" class="header header-light">
+    {% include '@atoms/drawer/drawer.twig' %}
+    <div class="header-light-content">
+      <a class="logo" href="#">
+        <img src="svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
+      </a>
+      <h1>Memento</h1>
+      <ul aria-hidden="true" class="nav-header d-none d-xl-flex">
+        <li class="dropdown">
+          <button class="btn btn-link dropdown-toggle nav-item" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Mémentos
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Option 1</a>
+            <a class="dropdown-item active" href="#">Option 2</a>
+            <a class="dropdown-item" href="#">Option 3</a>
+          </div>
+        </li>
+        <li id="menu-item-{{ loop.index }}" {% if loop.index == 2 %} class="current-menu-item"{% endif %}>
+          <a class="nav-item" href="#">Annoncer un événement</a>
+        </li>
+        <li id="menu-item-{{ loop.index }}" {% if loop.index == 2 %} class="current-menu-item"{% endif %}>
+          <a class="nav-item" href="#">S'abonner</a>
+        </li>
+      </ul>
+      {% include '@molecules/search/search-mobile.twig' %}
+      {% include '@molecules/search/search.twig' %}
+      {% include '@atoms/nav-lang/nav-lang-short.twig' %}
+      {% include '@atoms/nav-toggle-mobile/nav-toggle-mobile.twig' %}
+    </div>
+  </header>
 {% endblock %}
 
 {% block content %}
 
-<div class="container mt-5">
-  <h1>Événements</h1>
+<div class="container mt-5 d-md-flex align-items-center justify-content-between">
+  <h1 class="h2 mb-md-0">Memento EPFL</h1>
+  {% include '@atoms/dropdown/dropdown.twig' with { dropdown_label: 'Voir un autre memento' } %}
+</div>
+
+<div class="container-full mt-5 bg-gray-100 py-5">
+  <div class="container">
+    <h3 class="h6">Événements à la une</h3>
+    <div class="mt-4">
+      {% include '@content-types/event/event-listing-featured.twig' %}
+    </div>
+  </div>
 </div>
 
 <div class="container mt-5">
-  <div class="row">
-    <div class="col-md-4">
+  <h3 class="h6">Prochains événements</h3>
+  
+  <div class="events-filters mt-4">
+    
+    <form action="" method="get">
+      
+      {% include '@molecules/form-group/form-group-search.twig' %}
+
+      <div class="form-group form-group-select">
+        <label class="sr-only">Catégories</label>
+        <select class="select-multiple" multiple="multiple" data-placeholder="Catégories">
+          <option value="activites-scientifiques-jeunes">Activités scientifiques pour les jeunes</option>
+          <option value="appel-proposition">Appel à proposition</option>
+          <option value="autres">Autres types d’événement</option>
+          <option value="conferences-seminaires">Conférences - Séminaires</option>
+          <option value="congres">Congrès</option>
+          <option value="echeance">Echéance</option>
+          <option value="evenements-festifs-culturels">Événements festifs et culturels</option>
+          <option value="evenements-scientifiques-grand-public">Évènements scientifiques grand public</option>
+          <option value="expositions">Expositions</option>
+          <option value="formations-internes">Formations internes</option>
+          <option value="lecons-inaugurales">Leçons inaugurales - Leçons d'honneur</option>
+          <option value="soutenances-de-theses">Soutenances de thèses</option>
+        </select>
+      </div>
+
+      <div class="form-group form-group-select">
+        <label class="sr-only">Périodes</label>
+        <select class="select-multiple" multiple="multiple" data-placeholder="Périodes">
+          <option value="">Un jour</option>
+          <option value="">Deux jours</option>
+          <option value="">Une semaine</option>
+          <option value="">Deux semaines</option>
+          <option value="">Un mois</option>
+          <option value="">Six mois</option>
+          <option value="">Une année</option>
+        </select>
+      </div>
+
+      <div class="form-group form-group-select">
+        <label class="sr-only">Accès</label>
+        <select class="select-multiple" multiple="multiple" data-placeholder="Accès">
+          <option value="">Entrée libre</option>
+          <option value="">Sur inscription</option>
+          <option value="">Sur invitation</option>
+        </select>
+      </div>
+
+      <div class="form-group form-group-select">
+        <label class="sr-only">Public cible</label>
+        <select class="select-multiple" multiple="multiple" data-placeholder="Public cible">
+          <option value="">Tout public</option>
+          <option value="">Public averti</option>
+          <option value="">Expert</option>
+        </select>
+      </div>
+      
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Date</button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          {% include '@molecules/datepicker/datepicker.twig' %}
+        </div>
+      </div>
+      
+    </form>
+  </div>
+  
+  <div class="event-filter-tags mt-2">
+    <div class="tag-group">
+      <label for="">Filtres de recherches</label>
       <div>
-        {% include '@molecules/datepicker/datepicker.twig' %}
+        <a href="javascript:void(0)" class="tag tag-plain">Tout effacer<span class="remove" tabindex="-1" title="Remove">×</span></a>
+        <a href="javascript:void(0)" class="tag tag-primary">Évènements culturels et festifs<span class="remove" tabindex="-1" title="Remove">×</span></a>
+        <a href="javascript:void(0)" class="tag tag-primary">Expositions<span class="remove" tabindex="-1" title="Remove">×</span></a>
+        <a href="javascript:void(0)" class="tag tag-primary">Entrée libre<span class="remove" tabindex="-1" title="Remove">×</span></a>
+        <a href="javascript:void(0)" class="tag tag-primary">Tout public<span class="remove" tabindex="-1" title="Remove">×</span></a>
+        <a href="javascript:void(0)" class="tag tag-primary">Français<span class="remove" tabindex="-1" title="Remove">×</span></a>
       </div>
-      <div class="mt-5">
-        {% include '@molecules/filters/filters.twig' %}
-      </div>
-    </div>
-    <div class="col-md-8">
-      {% include '@content-types/event/event-listing.twig' %}
     </div>
   </div>
+  
+  <div class="events-footer mt-3">
+    <div class="d-md-flex flex-md-row-reverse justify-content-md-between align-items-md-center">
+      <div class="events-links">
+          <ul class="links">
+          <li><a href="#">S'abonner à ce Memento</a></li>
+          <li><a href="#">Annoncer un événement</a></li>
+        </ul>
+      </div>
+      <div class="events-pager">
+        {% include '@molecules/pagination/pagination.twig' %}
+      </div>
+    </div>
+  </div>
+  
+  <div class="list-group list-events mt-4">
+    {% include '@molecules/card/card-event.twig' with { eventLocation: 'online_room', live_now: true } %}
+    {% include '@molecules/card/card-event.twig' with { eventLocation: 'online', live_now: true } %}
+    {% for i in 1..2 %}
+      {% include '@molecules/card/card-event.twig' with { eventLocation: 'online' } %}
+    {% endfor %}
+    {% for i in 1..6 %}
+      {% include '@molecules/card/card-event.twig' %}
+    {% endfor %}
+  </div>
+  
 </div>
 {% endblock %}
 
@@ -43,6 +170,4 @@
       {% endblock %}
     </div>
   </div>
-  {% endblock %}
-  </div>
-</div>
+{% endblock %}

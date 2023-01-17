@@ -114,6 +114,12 @@ a.card-gray:hover .card-body { background: $white; }
   }
   .card-info-date:not(:last-child):after { content: ' \2013 '; }
 
+  // Remove separators after specific card elements
+  .event-info:after,
+  .event-info-date:after {
+    content: none;
+  }
+
   a {
     display: inline-block;
     color: $red;
@@ -121,6 +127,22 @@ a.card-gray:hover .card-body { background: $white; }
 
     @include hover {
       @include link-pretty($red, $body-bg, $body-color);
+    }
+
+    &.btn {
+      &:hover,
+      &.hover {
+        background-image: none;
+        text-shadow: none;
+      }
+    }
+
+    &.btn-primary {
+      color: #fff !important;
+    }
+
+    &.btn-secondary {
+      color: $black !important;
     }
   }
 
@@ -136,6 +158,38 @@ a.card-gray:hover .card-body { background: $white; }
 
 .card-info-border-sm {
   padding: ($spacer * 0.25) 0;
+}
+
+.card-info {
+
+  .event-date:not(:last-child):after {
+    content: ' \2013 ';
+  }
+
+  .event-time:not(:last-of-type) {
+    &:after {
+      content: ' \203A ';
+      margin: 0 0.25em 0 0.15em;
+    }
+  }
+
+  .event-info-date {
+    .event-date,
+    .event-time,
+    .icon {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .icon {
+      color: $gray-600;
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  .event-info > span {
+    display: block;
+  }
 }
 
 //
