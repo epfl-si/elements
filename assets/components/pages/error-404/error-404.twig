@@ -1,0 +1,50 @@
+{% set isSpecial = true %}
+{% if language is not defined %}{% set language = 'en' %}{% endif %}
+
+{% extends "@templates/base/base.twig" %}
+
+{% block header %}
+  {% include '@organisms/header/header.twig' with { long_nav_lang: true, showCurrentMenuItem: false } %}
+{% endblock %}
+
+{% block main %}
+  <main id="main" role="main" class="content">
+
+    {% block content %}
+      <section class="error-404 not-found">
+        <div class="page-content container">
+          <p class="h1 mt-4 error-title">404</p>
+          <h1 class="h3 text-center">
+            {% if language == 'fr' %}
+            Cette page est introuvable.
+            {% elseif language == 'en' %}
+            That page can't be found.
+            {% elseif language == 'de' %}
+            Diese Seite konnte nicht gefunden werden.
+            {% endif %}
+          </h1>
+          <div class="mt-5 pt-2">
+            <form action="#" class="border-0 p-0">
+              <div class="search-form mt-1 input-group">
+                {% if language == 'fr' %}
+                <label for="search" class="sr-only">Rechercher sur le site</label>
+                <input type="text" class="form-control" name="search" placeholder="Rechercher sur le site" >
+                <button type="submit" class="d-none d-xl-block btn btn-primary input-group-append">Valider</button>
+                {% elseif language == 'en' %}
+                <label for="search" class="sr-only">Search on the site</label>
+                <input type="text" class="form-control" name="search" placeholder="Search on the site" >
+                <button type="submit" class="d-none d-xl-block btn btn-primary input-group-append">Validate</button>
+                {% elseif language == 'de' %}
+                <label for="search" class="sr-only">Suchen</label>
+                <input type="text" class="form-control" name="search" placeholder="Suchen" >
+                <button type="submit" class="d-none d-xl-block btn btn-primary input-group-append">Bestätigen</button>
+                {% endif %}
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    {% endblock %}
+
+  </main>
+{% endblock %}
