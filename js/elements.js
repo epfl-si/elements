@@ -8196,9 +8196,7 @@ var imagesloaded_default = /*#__PURE__*/__webpack_require__.n(imagesloaded);
 
 /* globals $ */
 
- // eslint-disable-line
 
- // eslint-disable-line
 
 
 
@@ -8211,7 +8209,7 @@ function setFlickityOnGallery($gallery) {
     $(this).find('figcaption').append("\n            <span class=\"gallery-counter\">".concat(i + 1, "/").concat($items.length, "</span>\n          "));
   }); // Instantiate Flickity gallery
 
-  var flkty = new (js_default())($gallery.get(0), {
+  new (js_default())($gallery.get(0), {
     pageDots: false,
     fullscreen: true,
     setGallerySize: true,
@@ -8231,7 +8229,7 @@ function setFlickityGalleryNav($galleryNav) {
 
     $galleryNav.addClass('ready'); // Instantiate Flickity nav
 
-    var flkty = new (js_default())($galleryNav.get(0), {
+    new (js_default())($galleryNav.get(0), {
       asNavFor: "#".concat(target),
       cellAlign: 'left',
       pageDots: false,
@@ -8244,7 +8242,6 @@ function setFlickityGalleryNav($galleryNav) {
 }
 
 /* harmony default export */ var gallery = (function () {
-  window.flickityInstances = [];
   var $galleries = $('.gallery'); // Base gallery logic
 
   if ($galleries.length > 0) {
