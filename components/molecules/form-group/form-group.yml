@@ -13,6 +13,8 @@ variants:
     title: Textarea
   - name: upload
     title: File upload
+  - name: search
+    title: Search field
 notes: |
   Never forget the `for=""` attribute to link the input to the label.
 
