@@ -1,8 +1,7 @@
 {
   "name": "epfl-elements",
-  "version": "3.6.0",
+  "version": "4.0.0",
   "license": "MIT",
-  "main": "index.html",
   "repository": {
     "type": "git",
     "url": "git@github.com:epfl-si/elements.git"
@@ -22,9 +21,6 @@
     "realclean": "rm -rf build/ dist/ node_modules/"
   },
   "release-it": {
-    "npm": {
-      "publish": false
-    },
     "hooks": {
       "before:init": [
         "sh ./scripts/ensure-branch.sh dev",
@@ -32,6 +28,14 @@
       ]
     }
   },
+  "files": [
+    "dist/**",
+    "assets/config/colors.json",
+    "assets/config/social-colors.scss",
+    "assets/config/variables.scss",
+    "assets/config/bootstrap-variables.scss"
+  ],
+  "main": "dist/js/elements.min.js",
   "browserslist": [
     "> 1% in CH",
     "last 2 versions"
