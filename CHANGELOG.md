@@ -1,4 +1,7 @@
 # CHANGELOG
+*4.0.0* (2023-01-25)
+- First release on npmjs.com under name `epfl-elements`
+
 *3.0.2* (2022-12-10)
 - Remove unused lang switcher select #534 
 - Fix list styles #535 
