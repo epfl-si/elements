@@ -56,6 +56,8 @@ Whenever one creates or updates (pushes to the underlying branch of) a GitHub pu
 
 ## Create a new release
 
+1. [Ensure](https://github.com/lerna/lerna/issues/896#issuecomment-311894609) that your `~/.yarnrc` contains a line like <pre>registry "https://registry.npmjs.org/"
+</pre>
 1. Ensure that all the desired changes have been merged into the main (`dev`) branch on GitHub
 1. Type <pre>yarn release</pre> and follow the interactive instructions.
 
