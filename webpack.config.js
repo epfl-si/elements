@@ -63,7 +63,7 @@ module.exports = (env, argv) => {
         {
           test: /\.ya?ml$/,
           type: 'json',  // Meaning that the loader returns a data structure
-          use: 'yaml-loader'
+          use: withOptions('yaml-loader', { asJSON: true }),
         },
         {
           test: /\.(js|jsx)$/,
