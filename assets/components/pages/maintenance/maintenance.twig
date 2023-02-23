@@ -1,0 +1,52 @@
+{% set isSpecial = true %}
+
+{% extends "@templates/base/base.twig" %}
+
+{% block header %}
+  <header role="banner" class="header">
+    <a class="logo" href="https://www.epfl.ch">
+      <img src="svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
+    </a>
+  </header>
+{% endblock %}
+
+{% block breadcrumb %}
+  <div class="breadcrumb-container">
+    <nav aria-label="breadcrumb" class="breadcrumb-wrapper">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">
+            {% include '@atoms/icon/icon.twig' with { icon: 'icon-home' } %}
+          </a>
+        </li>
+        <li class="breadcrumb-item">Maintenance</li>
+      </ol>
+    </nav>
+  </div>
+{% endblock %}
+
+{% block main %}
+  <main id="main" role="main" class="content container">
+
+    {% block content %}
+      <h1 class="my-5">Maintenance</h1>
+      <p>
+        The site is currently under maintenance. Please come back a little later.
+      </p>
+      <p>
+        Le site est actuellement en maintenance. Merci de revenir un peu plus tard.
+      </p>
+    {% endblock %}
+
+  </main>
+{% endblock %}
+
+{% block footer_container %}
+  <div class="bg-gray-100 pt-5">
+    <div class="container">
+      {% block footer %}
+        {% include '@organisms/footer/footer-light.twig' %}
+      {% endblock %}
+    </div>
+  </div>
+{% endblock %}
