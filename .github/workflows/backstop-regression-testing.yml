@@ -35,9 +35,10 @@ jobs:
           current_ref: ${{ matrix.ref }}
           base_ref: ${{ github.base_ref }}
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           cache: yarn
+          node-version: 16
 
       # Work around https://github.com/yarnpkg/yarn/issues/4890
       - name: Install dependencies
