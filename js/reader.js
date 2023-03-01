@@ -257,6 +257,7 @@ var map = {
 	"./pages/innovation/innovation.twig": 55224,
 	"./pages/lab-homepage/lab-homepage.twig": 67964,
 	"./pages/layout-demo/layout-demo.twig": 12604,
+	"./pages/maintenance/maintenance.twig": 31230,
 	"./pages/news-detail/news-detail.twig": 49866,
 	"./pages/news-homepage/news-homepage.twig": 16674,
 	"./pages/people-detail/people-detail.twig": 55285,
@@ -294,127 +295,128 @@ webpackContext.id = 3604;
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 var map = {
-	"./atoms/alert/alert.yml": 82503,
-	"./atoms/button/button.yml": 74172,
-	"./atoms/checkbox/checkbox.yml": 50654,
-	"./atoms/collapse/collapse.yml": 5889,
-	"./atoms/definition-list/definition-list.yml": 7887,
-	"./atoms/drawer/drawer.yml": 27645,
-	"./atoms/dropdown/dropdown.yml": 61519,
-	"./atoms/favicon/favicon.yml": 1434,
-	"./atoms/figure/figure.yml": 27431,
-	"./atoms/icon/icon.yml": 40486,
-	"./atoms/input/input.yml": 20130,
-	"./atoms/link/link.yml": 34559,
-	"./atoms/list/list.yml": 63260,
-	"./atoms/loader/loader.yml": 43956,
-	"./atoms/nav-lang/nav-lang.yml": 73916,
-	"./atoms/nav-toggle-mobile/nav-toggle-mobile.yml": 92304,
-	"./atoms/nav-toggle/nav-toggle.yml": 1483,
-	"./atoms/picture/picture.yml": 53764,
-	"./atoms/popover/popover.yml": 75446,
-	"./atoms/radio/radio.yml": 14014,
-	"./atoms/range/range.yml": 65314,
-	"./atoms/select/select.yml": 21562,
-	"./atoms/separator/separator.yml": 54713,
-	"./atoms/social-icon/social-icon.yml": 48355,
-	"./atoms/tag/tag.yml": 8660,
-	"./atoms/trapeze/trapeze.yml": 41055,
-	"./atoms/upload/upload.yml": 59127,
-	"./atoms/video/video.yml": 99205,
-	"./content-types/association/association.yml": 19925,
-	"./content-types/bachelor-project/bachelor-project.yml": 52408,
-	"./content-types/basic-page/basic-page.yml": 61285,
-	"./content-types/coursebook/coursebook.yml": 46454,
-	"./content-types/cursus/cursus.yml": 73072,
-	"./content-types/event/event.yml": 27183,
-	"./content-types/institute/institute.yml": 54579,
-	"./content-types/laboratory/laboratory.yml": 94705,
-	"./content-types/news/news.yml": 84491,
-	"./content-types/press-review/press-review.yml": 50909,
-	"./content-types/program/program.yml": 13670,
-	"./content-types/project-list/project-list.yml": 60161,
-	"./content-types/project/project.yml": 40149,
-	"./content-types/publication/publication.yml": 26384,
-	"./content-types/research-field/research-field.yml": 92827,
-	"./content-types/research-project/research-project.yml": 61834,
-	"./content-types/school/school.yml": 81336,
-	"./content-types/science-question/science-question.yml": 55531,
-	"./content-types/section/section.yml": 74049,
-	"./content-types/study-plan/study-plan.yml": 94325,
-	"./content-types/training/training.yml": 95996,
-	"./molecules/access-nav/access-nav.yml": 27627,
-	"./molecules/avatar-teaser/avatar-teaser.yml": 6469,
-	"./molecules/breadcrumb/breadcrumb.yml": 3224,
-	"./molecules/card-deck/card-deck.yml": 76762,
-	"./molecules/card/card.yml": 29936,
-	"./molecules/carousel/carousel.yml": 38737,
-	"./molecules/collapse-group/collapse-group.yml": 69794,
-	"./molecules/cover/cover.yml": 99776,
-	"./molecules/datepicker/datepicker.yml": 43818,
-	"./molecules/filters/filters.yml": 60946,
-	"./molecules/footnotes/footnotes.yml": 32054,
-	"./molecules/form-group/form-group.yml": 56189,
-	"./molecules/gallery/gallery.yml": 49777,
-	"./molecules/key-number/key-number.yml": 96525,
-	"./molecules/links-group/links-group.yml": 25128,
-	"./molecules/list-group/list-group.yml": 88567,
-	"./molecules/map/map.yml": 95565,
-	"./molecules/metabox/metabox.yml": 35444,
-	"./molecules/pagination/pagination.yml": 24712,
-	"./molecules/question/question.yml": 97852,
-	"./molecules/quote/quote.yml": 9727,
-	"./molecules/search/search.yml": 8858,
-	"./molecules/sidenotes/sidenotes.yml": 13895,
-	"./molecules/social-feed/social-feed.yml": 98272,
-	"./molecules/social/social.yml": 91845,
-	"./molecules/sponsor/sponsor.yml": 35249,
-	"./molecules/tables/tables.yml": 56678,
-	"./molecules/tabs/tabs.yml": 60434,
-	"./organisms/card-slider/card-slider.yml": 10182,
-	"./organisms/contact/contact.yml": 9800,
-	"./organisms/cookie-consent/cookie-consent.yml": 33780,
-	"./organisms/faq/faq.yml": 19300,
-	"./organisms/footer/footer.yml": 83701,
-	"./organisms/form/form.yml": 93685,
-	"./organisms/fullwidth-teaser/fullwidth-teaser.yml": 86339,
-	"./organisms/header/header.yml": 9344,
-	"./organisms/headlines/headlines.yml": 70178,
-	"./organisms/hero/hero.yml": 40418,
-	"./organisms/introduction/introduction.yml": 93352,
-	"./organisms/key-number-group/key-number-group.yml": 30852,
-	"./organisms/modal/modal.yml": 27528,
-	"./organisms/nav-aside/nav-aside.yml": 36829,
-	"./organisms/nav-main/nav-main.yml": 70678,
-	"./organisms/newsletter-sign-up/newsletter-sign-up.yml": 22264,
-	"./organisms/restauration/restauration.yml": 38583,
-	"./organisms/social-feed-group/social-feed-group.yml": 74022,
-	"./pages/about/about.yml": 78937,
-	"./pages/association-homepage/association-homepage.yml": 46055,
-	"./pages/association-list/association-list.yml": 3551,
-	"./pages/basic-page/basic-page.yml": 33484,
-	"./pages/blog-homepage/blog-homepage.yml": 19083,
-	"./pages/blog-single/blog-single.yml": 82563,
-	"./pages/campus/campus.yml": 59362,
-	"./pages/education/education.yml": 99765,
-	"./pages/error-404/error-404.yml": 14269,
-	"./pages/event-detail/event-detail.yml": 20078,
-	"./pages/event-homepage/event-homepage.yml": 4497,
-	"./pages/event-list/event-list.yml": 14535,
-	"./pages/facultes/facultes.yml": 65768,
-	"./pages/homepage/homepage.yml": 3582,
-	"./pages/innovation/innovation.yml": 33995,
-	"./pages/lab-homepage/lab-homepage.yml": 75797,
-	"./pages/layout-demo/layout-demo.yml": 24368,
-	"./pages/news-detail/news-detail.yml": 94738,
-	"./pages/news-homepage/news-homepage.yml": 40036,
-	"./pages/people-detail/people-detail.yml": 4400,
-	"./pages/people-list/people-list.yml": 34575,
-	"./pages/programs/programs.yml": 47829,
-	"./pages/research/research.yml": 54064,
-	"./pages/study-plan-course/study-plan-course.yml": 78867,
-	"./pages/study-plan/study-plan.yml": 58835,
-	"./templates/base/base.yml": 16567
+	"./atoms/alert/alert.yml": 62632,
+	"./atoms/button/button.yml": 4907,
+	"./atoms/checkbox/checkbox.yml": 63024,
+	"./atoms/collapse/collapse.yml": 66988,
+	"./atoms/definition-list/definition-list.yml": 13295,
+	"./atoms/drawer/drawer.yml": 27657,
+	"./atoms/dropdown/dropdown.yml": 49931,
+	"./atoms/favicon/favicon.yml": 38950,
+	"./atoms/figure/figure.yml": 450,
+	"./atoms/icon/icon.yml": 61428,
+	"./atoms/input/input.yml": 61790,
+	"./atoms/link/link.yml": 93443,
+	"./atoms/list/list.yml": 95694,
+	"./atoms/loader/loader.yml": 55794,
+	"./atoms/nav-lang/nav-lang.yml": 40602,
+	"./atoms/nav-toggle-mobile/nav-toggle-mobile.yml": 74208,
+	"./atoms/nav-toggle/nav-toggle.yml": 19712,
+	"./atoms/picture/picture.yml": 25973,
+	"./atoms/popover/popover.yml": 99307,
+	"./atoms/radio/radio.yml": 60215,
+	"./atoms/range/range.yml": 24299,
+	"./atoms/select/select.yml": 31643,
+	"./atoms/separator/separator.yml": 65829,
+	"./atoms/social-icon/social-icon.yml": 17488,
+	"./atoms/tag/tag.yml": 8726,
+	"./atoms/trapeze/trapeze.yml": 82479,
+	"./atoms/upload/upload.yml": 5889,
+	"./atoms/video/video.yml": 57030,
+	"./content-types/association/association.yml": 37662,
+	"./content-types/bachelor-project/bachelor-project.yml": 5976,
+	"./content-types/basic-page/basic-page.yml": 57922,
+	"./content-types/coursebook/coursebook.yml": 74098,
+	"./content-types/cursus/cursus.yml": 32325,
+	"./content-types/event/event.yml": 68400,
+	"./content-types/institute/institute.yml": 70898,
+	"./content-types/laboratory/laboratory.yml": 51658,
+	"./content-types/news/news.yml": 17917,
+	"./content-types/press-review/press-review.yml": 69246,
+	"./content-types/program/program.yml": 26825,
+	"./content-types/project-list/project-list.yml": 8966,
+	"./content-types/project/project.yml": 99571,
+	"./content-types/publication/publication.yml": 47147,
+	"./content-types/research-field/research-field.yml": 59656,
+	"./content-types/research-project/research-project.yml": 82108,
+	"./content-types/school/school.yml": 19785,
+	"./content-types/science-question/science-question.yml": 93750,
+	"./content-types/section/section.yml": 54174,
+	"./content-types/study-plan/study-plan.yml": 91789,
+	"./content-types/training/training.yml": 79799,
+	"./molecules/access-nav/access-nav.yml": 44954,
+	"./molecules/avatar-teaser/avatar-teaser.yml": 72828,
+	"./molecules/breadcrumb/breadcrumb.yml": 25437,
+	"./molecules/card-deck/card-deck.yml": 71377,
+	"./molecules/card/card.yml": 79205,
+	"./molecules/carousel/carousel.yml": 76615,
+	"./molecules/collapse-group/collapse-group.yml": 9843,
+	"./molecules/cover/cover.yml": 60410,
+	"./molecules/datepicker/datepicker.yml": 80174,
+	"./molecules/filters/filters.yml": 58036,
+	"./molecules/footnotes/footnotes.yml": 73099,
+	"./molecules/form-group/form-group.yml": 21451,
+	"./molecules/gallery/gallery.yml": 48562,
+	"./molecules/key-number/key-number.yml": 2501,
+	"./molecules/links-group/links-group.yml": 61174,
+	"./molecules/list-group/list-group.yml": 52044,
+	"./molecules/map/map.yml": 40119,
+	"./molecules/metabox/metabox.yml": 83822,
+	"./molecules/pagination/pagination.yml": 35904,
+	"./molecules/question/question.yml": 67462,
+	"./molecules/quote/quote.yml": 22475,
+	"./molecules/search/search.yml": 65761,
+	"./molecules/sidenotes/sidenotes.yml": 19977,
+	"./molecules/social-feed/social-feed.yml": 84654,
+	"./molecules/social/social.yml": 98325,
+	"./molecules/sponsor/sponsor.yml": 62832,
+	"./molecules/tables/tables.yml": 75911,
+	"./molecules/tabs/tabs.yml": 18660,
+	"./organisms/card-slider/card-slider.yml": 90265,
+	"./organisms/contact/contact.yml": 89273,
+	"./organisms/cookie-consent/cookie-consent.yml": 42921,
+	"./organisms/faq/faq.yml": 15590,
+	"./organisms/footer/footer.yml": 60540,
+	"./organisms/form/form.yml": 94035,
+	"./organisms/fullwidth-teaser/fullwidth-teaser.yml": 56969,
+	"./organisms/header/header.yml": 92976,
+	"./organisms/headlines/headlines.yml": 15148,
+	"./organisms/hero/hero.yml": 22772,
+	"./organisms/introduction/introduction.yml": 40152,
+	"./organisms/key-number-group/key-number-group.yml": 98954,
+	"./organisms/modal/modal.yml": 21591,
+	"./organisms/nav-aside/nav-aside.yml": 27236,
+	"./organisms/nav-main/nav-main.yml": 6602,
+	"./organisms/newsletter-sign-up/newsletter-sign-up.yml": 73197,
+	"./organisms/restauration/restauration.yml": 95894,
+	"./organisms/social-feed-group/social-feed-group.yml": 72178,
+	"./pages/about/about.yml": 75803,
+	"./pages/association-homepage/association-homepage.yml": 54669,
+	"./pages/association-list/association-list.yml": 26634,
+	"./pages/basic-page/basic-page.yml": 63222,
+	"./pages/blog-homepage/blog-homepage.yml": 45186,
+	"./pages/blog-single/blog-single.yml": 46958,
+	"./pages/campus/campus.yml": 34393,
+	"./pages/education/education.yml": 16151,
+	"./pages/error-404/error-404.yml": 7427,
+	"./pages/event-detail/event-detail.yml": 84005,
+	"./pages/event-homepage/event-homepage.yml": 91567,
+	"./pages/event-list/event-list.yml": 64407,
+	"./pages/facultes/facultes.yml": 25804,
+	"./pages/homepage/homepage.yml": 15465,
+	"./pages/innovation/innovation.yml": 37642,
+	"./pages/lab-homepage/lab-homepage.yml": 16421,
+	"./pages/layout-demo/layout-demo.yml": 29666,
+	"./pages/maintenance/maintenance.yml": 8099,
+	"./pages/news-detail/news-detail.yml": 80036,
+	"./pages/news-homepage/news-homepage.yml": 40582,
+	"./pages/people-detail/people-detail.yml": 80059,
+	"./pages/people-list/people-list.yml": 36920,
+	"./pages/programs/programs.yml": 51553,
+	"./pages/research/research.yml": 92818,
+	"./pages/study-plan-course/study-plan-course.yml": 43518,
+	"./pages/study-plan/study-plan.yml": 8798,
+	"./templates/base/base.yml": 76453
 };
 
 
@@ -1111,7 +1113,7 @@ var Element = /*#__PURE__*/function () {
     value: function all() {
       var all = []; // eslint-disable-next-line no-undef
 
-      var manifest = [{"type":"atoms","components":["alert","button","checkbox","collapse","definition-list","drawer","dropdown","favicon","figure","icon","input","link","list","loader","nav-lang","nav-toggle-mobile","nav-toggle","picture","popover","radio","range","select","separator","social-icon","tag","trapeze","upload","video"]},{"type":"molecules","components":["access-nav","avatar-teaser","breadcrumb","card-deck","card","carousel","collapse-group","cover","datepicker","filters","footnotes","form-group","gallery","key-number","links-group","list-group","map","metabox","pagination","question","quote","search","sidenotes","social-feed","social","sponsor","tables","tabs"]},{"type":"organisms","components":["card-slider","contact","cookie-consent","faq","footer","form","fullwidth-teaser","header","headlines","hero","introduction","key-number-group","modal","nav-aside","nav-main","newsletter-sign-up","restauration","social-feed-group"]},{"type":"content-types","components":["association","bachelor-project","basic-page","coursebook","cursus","event","institute","laboratory","news","press-review","program","project-list","project","publication","research-field","research-project","school","science-question","section","study-plan","training"]},{"type":"pages","components":["about","association-homepage","association-list","basic-page","blog-homepage","blog-single","campus","education","error-404","event-detail","event-homepage","event-list","facultes","homepage","innovation","lab-homepage","layout-demo","news-detail","news-homepage","people-detail","people-list","programs","research","study-plan-course","study-plan"]}];
+      var manifest = [{"type":"atoms","components":["alert","button","checkbox","collapse","definition-list","drawer","dropdown","favicon","figure","icon","input","link","list","loader","nav-lang","nav-toggle-mobile","nav-toggle","picture","popover","radio","range","select","separator","social-icon","tag","trapeze","upload","video"]},{"type":"molecules","components":["access-nav","avatar-teaser","breadcrumb","card-deck","card","carousel","collapse-group","cover","datepicker","filters","footnotes","form-group","gallery","key-number","links-group","list-group","map","metabox","pagination","question","quote","search","sidenotes","social-feed","social","sponsor","tables","tabs"]},{"type":"organisms","components":["card-slider","contact","cookie-consent","faq","footer","form","fullwidth-teaser","header","headlines","hero","introduction","key-number-group","modal","nav-aside","nav-main","newsletter-sign-up","restauration","social-feed-group"]},{"type":"content-types","components":["association","bachelor-project","basic-page","coursebook","cursus","event","institute","laboratory","news","press-review","program","project-list","project","publication","research-field","research-project","school","science-question","section","study-plan","training"]},{"type":"pages","components":["about","association-homepage","association-list","basic-page","blog-homepage","blog-single","campus","education","error-404","event-detail","event-homepage","event-list","facultes","homepage","innovation","lab-homepage","layout-demo","maintenance","news-detail","news-homepage","people-detail","people-list","programs","research","study-plan-course","study-plan"]}];
 
       var _iterator = _createForOfIteratorHelper(manifest),
           _step;
@@ -1271,7 +1273,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 68201:
+/***/ 44647:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12363,7 +12365,7 @@ function SidebarDocs() {
   })));
 }
 ;// CONCATENATED MODULE: ./package.json
-var package_namespaceObject = {"i8":"4.0.0"};
+var package_namespaceObject = {"i8":"4.1.0"};
 ;// CONCATENATED MODULE: ./reader/components/Sidebar/Sidebar.jsx
 
 
@@ -65182,6 +65184,14 @@ module.exports = "<div class=\"site\">\n<nav class=\"access-nav\" aria-label=\"R
 
 /***/ }),
 
+/***/ 31230:
+/***/ (function(module) {
+
+"use strict";
+module.exports = "<div class=\"site\">\n<nav class=\"access-nav\" aria-label=\"Raccourcis de navigation\">\n  <ul>\n    <li>\n      <a class=\"btn btn-primary\" href=\"/\" title=\"[ALT + 1]\" accesskey=\"1\">Page d'accueil du site</a>\n    </li>\n    <li>\n      <a class=\"btn btn-primary\" href=\"#main\" title=\"[ALT + 2]\" accesskey=\"2\">Accéder au contenu</a>\n    </li>\n    <li>\n      <a class=\"btn btn-primary\" href=\"#main-navigation\" title=\"[ALT + 3]\" accesskey=\"3\">Accéder à la navigation principale</a>\n    </li>\n    <li>\n      <a class=\"btn btn-primary\" href=\"#nav-aside\" title=\"[ALT + 4]\" accesskey=\"4\">Accéder à la navigation latérale</a>\n    </li>\n    <li>\n      <a class=\"btn btn-primary\" href=\"#search\" title=\"[ALT + 5]\" accesskey=\"5\">Accéder à la recherche</a>\n    </li>\n    <li>\n      <a class=\"btn btn-primary\" href=\"mailto:email@example.com\" title=\"[ALT + 6]\" accesskey=\"6\">Nous contacter</a>\n    </li>\n  </ul>\n</nav>\n\n\n  <header role=\"banner\" class=\"header\">\n    <a class=\"logo\" href=\"https://www.epfl.ch\">\n      <img src=\"svg/epfl-logo.svg\" alt=\"Logo EPFL, École polytechnique fédérale de Lausanne\" class=\"img-fluid\">\n    </a>\n  </header>\n\n<div class=\"main-container\">\n    <div class=\"breadcrumb-container\">\n    <nav aria-label=\"breadcrumb\" class=\"breadcrumb-wrapper\">\n      <ol class=\"breadcrumb\">\n        <li class=\"breadcrumb-item\">\n          <a href=\"#\">\n            <svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-home\"></use></svg>\n          </a>\n        </li>\n        <li class=\"breadcrumb-item\">Maintenance</li>\n      </ol>\n    </nav>\n  </div>\n\n  <div>\n\n          \n\n\n\n\n<div class=\"overlay\"></div>\n<nav class=\"nav-main\" id=\"main-navigation\" role=\"navigation\">\n  <div class=\"nav-wrapper\">\n    <div class=\"nav-container\">\n      <ul class=\"nav-menu\">\n                              <li class=\"\n                current-menu-ancestor\n                     menu-item-has-children\">\n    <a href=\"https://www.epfl.ch/about/fr/\">À propos</a>\n          <a href=\"#\" role=\"button\" aria-hidden=\"true\" class=\"nav-arrow\">\n        <div class=\"icon-container\">\n          <svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-chevron-right\"></use></svg>\n        </div>\n      </a>\n      <ul>\n        <li class=\"nav-back\">\n          <a href=\"https://www.epfl.ch/about/fr/\">\n            <svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-arrow-left\"></use></svg>\n À propos\n          </a>\n        </li>\n                  <li class=\"\n        \">\n    <a href=\"https://www.epfl.ch/about/presidency/fr/accueil/\">Présidence</a>\n      </li>\n\n                  <li class=\"\n                current-menu-parent\n               menu-item-has-children\">\n    <a href=\"https://www.epfl.ch/about/overview/fr/presentation/\">Présentation</a>\n          <a href=\"#\" role=\"button\" aria-hidden=\"true\" class=\"nav-arrow\">\n        <div class=\"icon-container\">\n          <svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-chevron-right\"></use></svg>\n        </div>\n      </a>\n      <ul>\n        <li class=\"nav-back\">\n          <a href=\"https://www.epfl.ch/about/overview/fr/presentation/\">\n            <svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-arrow-left\"></use></svg>\n Présentation\n          </a>\n        </li>\n                  <li class=\"\n        \">\n    <a href=\"https://www.epfl.ch/about/overview/fr/histoire/\">Histoire de l'EPFL</a>\n      </li>\n\n                  <li class=\"\n          current-menu-item\n         menu-item-has-children\">\n    <a href=\"https://www.epfl.ch/about/overview/fr/statistiques-institutionnelles/\">Statistiques Institutionnelles</a>\n          <a href=\"#\" role=\"button\" aria-hidden=\"true\" class=\"nav-arrow\">\n        <div class=\"icon-container\">\n          <svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-chevron-right\"></use></svg>\n        </div>\n      </a>\n      <ul>\n        <li class=\"nav-back\">\n          <a href=\"https://www.epfl.ch/about/overview/fr/statistiques-institutionnelles/\">\n            <svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-arrow-left\"></use></svg>\n Statistiques Institutionnelles\n          </a>\n        </li>\n                  <li class=\"\n         menu-item-has-children\">\n    <a href=\"https://www.epfl.ch/about/overview/fr/statistiques-institutionnelles/statistiques-rankings/\">Statistiques Rankings</a>\n          <a href=\"#\" role=\"button\" aria-hidden=\"true\" class=\"nav-arrow\">\n        <div class=\"icon-container\">\n          <svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-chevron-right\"></use></svg>\n        </div>\n      </a>\n      <ul>\n        <li class=\"nav-back\">\n          <a href=\"https://www.epfl.ch/about/overview/fr/statistiques-institutionnelles/statistiques-rankings/\">\n            <svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-arrow-left\"></use></svg>\n Statistiques Rankings\n          </a>\n        </li>\n                  <li class=\"\n        \">\n    <a href=\"https://www.epfl.ch/about/overview/fr/statistiques-institutionnelles/statistiques-rankings/glossaire-rankings/\">Glossaire Rankings</a>\n      </li>\n\n            </ul>\n      </li>\n\n            </ul>\n      </li>\n\n                  <li class=\"\n        \">\n    <a href=\"https://www.epfl.ch/about/overview/fr/identite/\">Identité</a>\n      </li>\n\n            </ul>\n      </li>\n\n            </ul>\n      </li>\n\n                      <li class=\"\n         menu-item-has-children\">\n    <a href=\"https://www.epfl.ch/education/fr/\">Éducation</a>\n          <a href=\"#\" role=\"button\" aria-hidden=\"true\" class=\"nav-arrow\">\n        <div class=\"icon-container\">\n          <svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-chevron-right\"></use></svg>\n        </div>\n      </a>\n      <ul>\n        <li class=\"nav-back\">\n          <a href=\"https://www.epfl.ch/education/fr/\">\n            <svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-arrow-left\"></use></svg>\n Éducation\n          </a>\n        </li>\n                  <li class=\"\n        \">\n    <a href=\"https://www.epfl.ch/education/bachelor/fr/\">Bachelor</a>\n      </li>\n\n                  <li class=\"\n        \">\n    <a href=\"https://www.epfl.ch/education/master/fr/\">Master</a>\n      </li>\n\n                  <li class=\"\n        \">\n    <a href=\"https://www.epfl.ch/education/phd/fr/\">Doctorat</a>\n      </li>\n\n            </ul>\n      </li>\n\n                      <li class=\"\n        \">\n    <a href=\"https://www.epfl.ch/research/fr/\">Recherche</a>\n      </li>\n\n                      <li class=\"\n        \">\n    <a href=\"https://www.epfl.ch/innovation/fr/\">Innovation</a>\n      </li>\n\n              </ul>\n    </div>\n  </div>\n</nav>\n    \n    <div class=\"w-100 pb-5\">\n\n        <main id=\"main\" role=\"main\" class=\"content container\">\n\n          <h1 class=\"my-5\">Maintenance</h1>\n      <p>\n        The site is currently under maintenance. Please come back a little later.\n      </p>\n      <p>\n        Le site est actuellement en maintenance. Merci de revenir un peu plus tard.\n      </p>\n    \n  </main>\n\n    </div>\n\n      </div>\n\n    <div class=\"bg-gray-100 pt-5\">\n    <div class=\"container\">\n              \n<footer class=\"footer-light\" role=\"contentinfo\">\n  <div class=\"row\">\n    <div class=\"col-6 mx-auto mx-md-0 mb-4 col-md-3 col-lg-2\">\n      <a href=\"#\">\n        <img src=\"svg/epfl-logo.svg\" alt=\"Logo EPFL, École polytechnique fédérale de Lausanne\" class=\"img-fluid\">\n      </a>\n    </div>\n    <div class=\"col-md-9 col-lg-10 mb-4\">\n      <div class=\"ml-md-2 ml-lg-5\">\n        <ul class=\"list-inline list-unstyled\">\n                      <li class=\"list-inline-item\">Contact</li>\n                    <li class=\"list-inline-item text-muted pl-3\"><small>EPFL  CH-1015 Lausanne</small></li>\n          <li class=\"list-inline-item text-muted pl-3\"><small>+41 21 693 11 11</small></li>\n        </ul>\n        <div class=\"footer-light-socials\">\n                  <p class=\"footer-title footer-title-no-underline\">Suivez l'EPFL sur les réseaux sociaux</p>\n                                  \n<ul class=\"social-icon-list list-inline\">\n  <li>\n    <a href=\"https://www.facebook.com/epflcampus\" class=\"social-icon social-icon-facebook social-icon-negative\" target=\"_blank\" rel=\"nofollow noopener\">\n  <svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-facebook\"></use></svg>\n  <span class=\"sr-only\">Follow us on Facebook</span>\n</a>\n  </li>\n  <li>\n    <a href=\"https://twitter.com/epfl_en\" class=\"social-icon social-icon-twitter social-icon-negative\" target=\"_blank\" rel=\"nofollow noopener\">\n  <svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-twitter\"></use></svg>\n  <span class=\"sr-only\">Follow us on Twitter</span>\n</a>\n  </li>\n  <li>\n    <a href=\"http://instagram.com/epflcampus\" class=\"social-icon social-icon-instagram social-icon-negative\" target=\"_blank\" rel=\"nofollow noopener\">\n  <svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-instagram\"></use></svg>\n  <span class=\"sr-only\">Follow us on Instagram</span>\n</a>\n  </li>\n  <li>\n    <a href=\"https://www.youtube.com/user/epflnews\" class=\"social-icon social-icon-youtube social-icon-negative\" target=\"_blank\" rel=\"nofollow noopener\">\n  <svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-youtube\"></use></svg>\n  <span class=\"sr-only\">Follow us on Youtube</span>\n</a>\n  </li>\n  <li>\n    <a href=\"https://www.linkedin.com/school/epfl/\" class=\"social-icon social-icon-linkedin social-icon-negative\" target=\"_blank\" rel=\"nofollow noopener\">\n  <svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-linkedin\"></use></svg>\n  <span class=\"sr-only\">Follow us on LinkedIn</span>\n</a>\n  </li>\n</ul>\n        </div>\n        \n<div class=\"footer-legal\">\n  <div class=\"footer-legal-links\">\n    <a href=\"https://www.epfl.ch/about/overview/fr/reglements-et-directives/mentions-legales/\">Accessibilité</a>\n    <a href=\"https://www.epfl.ch/about/overview/fr/reglements-et-directives/mentions-legales/\">Mentions légales</a>\n    <a href=\"https://go.epfl.ch/protection-des-donnees/\">Protection des données</a>\n  </div>\n  <div>\n    <p>&copy; 2021 EPFL, tous droits réservés</p>\n  </div>\n</div>\n      </div>\n    </div>\n  </div>\n</footer>\n\n<button id=\"back-to-top\" class=\"btn btn-primary btn-back-to-top\">\n  <span class=\"sr-only\">Back to top</span>\n  <svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-chevron-top\"></use></svg>\n</button>\n          </div>\n  </div>\n  </div>\n</div>\n</div>\n";
+
+/***/ }),
+
 /***/ 49866:
 /***/ (function(module) {
 
@@ -66878,7 +66888,7 @@ function extend() {
 
 /***/ }),
 
-/***/ 82503:
+/***/ 62632:
 /***/ (function(module) {
 
 "use strict";
@@ -66886,7 +66896,7 @@ module.exports = JSON.parse('{"title":"Alert","name":"alert","notes":"Alerts hel
 
 /***/ }),
 
-/***/ 74172:
+/***/ 4907:
 /***/ (function(module) {
 
 "use strict";
@@ -66894,7 +66904,7 @@ module.exports = JSON.parse('{"title":"Button","name":"button","variants":[{"nam
 
 /***/ }),
 
-/***/ 50654:
+/***/ 63024:
 /***/ (function(module) {
 
 "use strict";
@@ -66902,7 +66912,7 @@ module.exports = JSON.parse('{"title":"Checkbox","name":"checkbox","variants":[{
 
 /***/ }),
 
-/***/ 5889:
+/***/ 66988:
 /***/ (function(module) {
 
 "use strict";
@@ -66910,7 +66920,7 @@ module.exports = JSON.parse('{"title":"Collapse","name":"collapse","variants":[{
 
 /***/ }),
 
-/***/ 7887:
+/***/ 13295:
 /***/ (function(module) {
 
 "use strict";
@@ -66918,7 +66928,7 @@ module.exports = JSON.parse('{"title":"Definition list","name":"definition-list"
 
 /***/ }),
 
-/***/ 27645:
+/***/ 27657:
 /***/ (function(module) {
 
 "use strict";
@@ -66926,7 +66936,7 @@ module.exports = JSON.parse('{"title":"Drawer","name":"drawer","notes":"The draw
 
 /***/ }),
 
-/***/ 61519:
+/***/ 49931:
 /***/ (function(module) {
 
 "use strict";
@@ -66934,7 +66944,7 @@ module.exports = JSON.parse('{"name":"dropdown","title":"Dropdown","notes":"The 
 
 /***/ }),
 
-/***/ 1434:
+/***/ 38950:
 /***/ (function(module) {
 
 "use strict";
@@ -66942,7 +66952,7 @@ module.exports = JSON.parse('{"title":"favicon","name":"favicon"}');
 
 /***/ }),
 
-/***/ 27431:
+/***/ 450:
 /***/ (function(module) {
 
 "use strict";
@@ -66950,7 +66960,7 @@ module.exports = JSON.parse('{"title":"Figure","name":"figure","notes":"This com
 
 /***/ }),
 
-/***/ 40486:
+/***/ 61428:
 /***/ (function(module) {
 
 "use strict";
@@ -66958,7 +66968,7 @@ module.exports = JSON.parse('{"title":"Icon","name":"icon","notes":"Icons or pic
 
 /***/ }),
 
-/***/ 20130:
+/***/ 61790:
 /***/ (function(module) {
 
 "use strict";
@@ -66966,7 +66976,7 @@ module.exports = JSON.parse('{"title":"Input","name":"input","variants":[{"name"
 
 /***/ }),
 
-/***/ 34559:
+/***/ 93443:
 /***/ (function(module) {
 
 "use strict";
@@ -66974,7 +66984,7 @@ module.exports = JSON.parse('{"title":"Link","name":"link","notes":"A link is a 
 
 /***/ }),
 
-/***/ 63260:
+/***/ 95694:
 /***/ (function(module) {
 
 "use strict";
@@ -66982,7 +66992,7 @@ module.exports = JSON.parse('{"name":"list","title":"Lists","variants":[{"name":
 
 /***/ }),
 
-/***/ 43956:
+/***/ 55794:
 /***/ (function(module) {
 
 "use strict";
@@ -66990,7 +67000,7 @@ module.exports = JSON.parse('{"title":"Loader","name":"loader"}');
 
 /***/ }),
 
-/***/ 73916:
+/***/ 40602:
 /***/ (function(module) {
 
 "use strict";
@@ -66998,7 +67008,7 @@ module.exports = JSON.parse('{"title":"Nav lang","name":"nav-lang","variants":[{
 
 /***/ }),
 
-/***/ 92304:
+/***/ 74208:
 /***/ (function(module) {
 
 "use strict";
@@ -67006,7 +67016,7 @@ module.exports = JSON.parse('{"title":"Nav toggle mobile","name":"nav-toggle-mob
 
 /***/ }),
 
-/***/ 1483:
+/***/ 19712:
 /***/ (function(module) {
 
 "use strict";
@@ -67014,7 +67024,7 @@ module.exports = JSON.parse('{"title":"Nav toggle","name":"nav-toggle","variants
 
 /***/ }),
 
-/***/ 53764:
+/***/ 25973:
 /***/ (function(module) {
 
 "use strict";
@@ -67022,7 +67032,7 @@ module.exports = JSON.parse('{"title":"Picture","name":"picture","wrapper":"col-
 
 /***/ }),
 
-/***/ 75446:
+/***/ 99307:
 /***/ (function(module) {
 
 "use strict";
@@ -67030,7 +67040,7 @@ module.exports = JSON.parse('{"name":"popover","title":"Popover","notes":"If you
 
 /***/ }),
 
-/***/ 14014:
+/***/ 60215:
 /***/ (function(module) {
 
 "use strict";
@@ -67038,7 +67048,7 @@ module.exports = JSON.parse('{"title":"Radio","name":"radio","variants":[{"name"
 
 /***/ }),
 
-/***/ 65314:
+/***/ 24299:
 /***/ (function(module) {
 
 "use strict";
@@ -67046,7 +67056,7 @@ module.exports = JSON.parse('{"title":"Range","name":"range","notes":"Custom ran
 
 /***/ }),
 
-/***/ 21562:
+/***/ 31643:
 /***/ (function(module) {
 
 "use strict";
@@ -67054,7 +67064,7 @@ module.exports = JSON.parse('{"title":"Select","name":"select","variants":[{"nam
 
 /***/ }),
 
-/***/ 54713:
+/***/ 65829:
 /***/ (function(module) {
 
 "use strict";
@@ -67062,7 +67072,7 @@ module.exports = JSON.parse('{"title":"Separator","name":"separator","notes":"Us
 
 /***/ }),
 
-/***/ 48355:
+/***/ 17488:
 /***/ (function(module) {
 
 "use strict";
@@ -67070,7 +67080,7 @@ module.exports = JSON.parse('{"title":"Social icon","name":"social-icon","varian
 
 /***/ }),
 
-/***/ 8660:
+/***/ 8726:
 /***/ (function(module) {
 
 "use strict";
@@ -67078,7 +67088,7 @@ module.exports = JSON.parse('{"title":"Tag","name":"tag","variants":[{"name":"in
 
 /***/ }),
 
-/***/ 41055:
+/***/ 82479:
 /***/ (function(module) {
 
 "use strict";
@@ -67086,7 +67096,7 @@ module.exports = JSON.parse('{"name":"trapeze","title":"Trapeze","notes":"The tr
 
 /***/ }),
 
-/***/ 59127:
+/***/ 5889:
 /***/ (function(module) {
 
 "use strict";
@@ -67094,7 +67104,7 @@ module.exports = JSON.parse('{"title":"Upload","name":"upload","notes":"If you w
 
 /***/ }),
 
-/***/ 99205:
+/***/ 57030:
 /***/ (function(module) {
 
 "use strict";
@@ -67102,7 +67112,7 @@ module.exports = JSON.parse('{"title":"Video","name":"video","notes":"This is an
 
 /***/ }),
 
-/***/ 19925:
+/***/ 37662:
 /***/ (function(module) {
 
 "use strict";
@@ -67110,7 +67120,7 @@ module.exports = JSON.parse('{"title":"Association","name":"association","wrappe
 
 /***/ }),
 
-/***/ 52408:
+/***/ 5976:
 /***/ (function(module) {
 
 "use strict";
@@ -67118,7 +67128,7 @@ module.exports = JSON.parse('{"title":"Bachelor project","name":"bachelor-projec
 
 /***/ }),
 
-/***/ 61285:
+/***/ 57922:
 /***/ (function(module) {
 
 "use strict";
@@ -67126,7 +67136,7 @@ module.exports = JSON.parse('{"title":"Basic page","name":"basic-page","wrapper"
 
 /***/ }),
 
-/***/ 46454:
+/***/ 74098:
 /***/ (function(module) {
 
 "use strict";
@@ -67134,7 +67144,7 @@ module.exports = JSON.parse('{"title":"Coursebook","name":"coursebook","wrapper"
 
 /***/ }),
 
-/***/ 73072:
+/***/ 32325:
 /***/ (function(module) {
 
 "use strict";
@@ -67142,7 +67152,7 @@ module.exports = JSON.parse('{"title":"Cursus","name":"cursus","wrapper":"col-md
 
 /***/ }),
 
-/***/ 27183:
+/***/ 68400:
 /***/ (function(module) {
 
 "use strict";
@@ -67150,7 +67160,7 @@ module.exports = JSON.parse('{"title":"Event","name":"event","wrapper":"col-md-5
 
 /***/ }),
 
-/***/ 54579:
+/***/ 70898:
 /***/ (function(module) {
 
 "use strict";
@@ -67158,7 +67168,7 @@ module.exports = JSON.parse('{"title":"Institute","name":"institute","wrapper":"
 
 /***/ }),
 
-/***/ 94705:
+/***/ 51658:
 /***/ (function(module) {
 
 "use strict";
@@ -67166,7 +67176,7 @@ module.exports = JSON.parse('{"title":"Laboratory","name":"laboratory","wrapper"
 
 /***/ }),
 
-/***/ 84491:
+/***/ 17917:
 /***/ (function(module) {
 
 "use strict";
@@ -67174,7 +67184,7 @@ module.exports = JSON.parse('{"title":"News","name":"news","variants":[{"name":"
 
 /***/ }),
 
-/***/ 50909:
+/***/ 69246:
 /***/ (function(module) {
 
 "use strict";
@@ -67182,7 +67192,7 @@ module.exports = JSON.parse('{"title":"Press review","name":"press-review","wrap
 
 /***/ }),
 
-/***/ 13670:
+/***/ 26825:
 /***/ (function(module) {
 
 "use strict";
@@ -67190,7 +67200,7 @@ module.exports = JSON.parse('{"title":"Program","name":"program","wrapper":"col-
 
 /***/ }),
 
-/***/ 60161:
+/***/ 8966:
 /***/ (function(module) {
 
 "use strict";
@@ -67198,7 +67208,7 @@ module.exports = JSON.parse('{"title":"Project list","name":"project-list"}');
 
 /***/ }),
 
-/***/ 40149:
+/***/ 99571:
 /***/ (function(module) {
 
 "use strict";
@@ -67206,7 +67216,7 @@ module.exports = JSON.parse('{"title":"Project","name":"project"}');
 
 /***/ }),
 
-/***/ 26384:
+/***/ 47147:
 /***/ (function(module) {
 
 "use strict";
@@ -67214,7 +67224,7 @@ module.exports = JSON.parse('{"title":"Publication","name":"publication"}');
 
 /***/ }),
 
-/***/ 92827:
+/***/ 59656:
 /***/ (function(module) {
 
 "use strict";
@@ -67222,7 +67232,7 @@ module.exports = JSON.parse('{"title":"Research field","name":"research-field","
 
 /***/ }),
 
-/***/ 61834:
+/***/ 82108:
 /***/ (function(module) {
 
 "use strict";
@@ -67230,7 +67240,7 @@ module.exports = JSON.parse('{"title":"Research project","name":"research-projec
 
 /***/ }),
 
-/***/ 81336:
+/***/ 19785:
 /***/ (function(module) {
 
 "use strict";
@@ -67238,7 +67248,7 @@ module.exports = JSON.parse('{"title":"School","name":"school","wrapper":"col-md
 
 /***/ }),
 
-/***/ 55531:
+/***/ 93750:
 /***/ (function(module) {
 
 "use strict";
@@ -67246,7 +67256,7 @@ module.exports = JSON.parse('{"title":"Science question","name":"science-questio
 
 /***/ }),
 
-/***/ 74049:
+/***/ 54174:
 /***/ (function(module) {
 
 "use strict";
@@ -67254,7 +67264,7 @@ module.exports = JSON.parse('{"title":"Section","name":"section","wrapper":"col-
 
 /***/ }),
 
-/***/ 94325:
+/***/ 91789:
 /***/ (function(module) {
 
 "use strict";
@@ -67262,7 +67272,7 @@ module.exports = JSON.parse('{"title":"Study plan","name":"study-plan","notes":"
 
 /***/ }),
 
-/***/ 95996:
+/***/ 79799:
 /***/ (function(module) {
 
 "use strict";
@@ -67270,7 +67280,7 @@ module.exports = JSON.parse('{"title":"Training","name":"training","wrapper":"co
 
 /***/ }),
 
-/***/ 27627:
+/***/ 44954:
 /***/ (function(module) {
 
 "use strict";
@@ -67278,7 +67288,7 @@ module.exports = JSON.parse('{"name":"access-nav","title":"Access navigation","n
 
 /***/ }),
 
-/***/ 6469:
+/***/ 72828:
 /***/ (function(module) {
 
 "use strict";
@@ -67286,7 +67296,7 @@ module.exports = JSON.parse('{"name":"avatar-teaser","title":"Avatar teaser","no
 
 /***/ }),
 
-/***/ 3224:
+/***/ 25437:
 /***/ (function(module) {
 
 "use strict";
@@ -67294,7 +67304,7 @@ module.exports = JSON.parse('{"title":"Breadcrumb","name":"breadcrumb","notes":"
 
 /***/ }),
 
-/***/ 76762:
+/***/ 71377:
 /***/ (function(module) {
 
 "use strict";
@@ -67302,7 +67312,7 @@ module.exports = JSON.parse('{"title":"Card Deck","name":"card-deck","variants":
 
 /***/ }),
 
-/***/ 29936:
+/***/ 79205:
 /***/ (function(module) {
 
 "use strict";
@@ -67310,7 +67320,7 @@ module.exports = JSON.parse('{"title":"Card","name":"card","wrapper":"col-md-6",
 
 /***/ }),
 
-/***/ 38737:
+/***/ 76615:
 /***/ (function(module) {
 
 "use strict";
@@ -67318,7 +67328,7 @@ module.exports = JSON.parse('{"name":"carousel","title":"Carousel","notes":"Basi
 
 /***/ }),
 
-/***/ 69794:
+/***/ 9843:
 /***/ (function(module) {
 
 "use strict";
@@ -67326,7 +67336,7 @@ module.exports = JSON.parse('{"title":"Collapse group","name":"collapse-group","
 
 /***/ }),
 
-/***/ 99776:
+/***/ 60410:
 /***/ (function(module) {
 
 "use strict";
@@ -67334,7 +67344,7 @@ module.exports = JSON.parse('{"title":"Cover","name":"cover"}');
 
 /***/ }),
 
-/***/ 43818:
+/***/ 80174:
 /***/ (function(module) {
 
 "use strict";
@@ -67342,7 +67352,7 @@ module.exports = JSON.parse('{"title":"Datepicker","name":"datepicker","variants
 
 /***/ }),
 
-/***/ 60946:
+/***/ 58036:
 /***/ (function(module) {
 
 "use strict";
@@ -67350,7 +67360,7 @@ module.exports = JSON.parse('{"name":"filters","title":"Filters","notes":"The fi
 
 /***/ }),
 
-/***/ 32054:
+/***/ 73099:
 /***/ (function(module) {
 
 "use strict";
@@ -67358,7 +67368,7 @@ module.exports = JSON.parse('{"title":"Footnotes","name":"footnotes","notes":"Ba
 
 /***/ }),
 
-/***/ 56189:
+/***/ 21451:
 /***/ (function(module) {
 
 "use strict";
@@ -67366,7 +67376,7 @@ module.exports = JSON.parse('{"title":"Form group","name":"form-group","variants
 
 /***/ }),
 
-/***/ 49777:
+/***/ 48562:
 /***/ (function(module) {
 
 "use strict";
@@ -67374,7 +67384,7 @@ module.exports = JSON.parse('{"title":"Gallery","name":"gallery","wrapper":"col-
 
 /***/ }),
 
-/***/ 96525:
+/***/ 2501:
 /***/ (function(module) {
 
 "use strict";
@@ -67382,7 +67392,7 @@ module.exports = JSON.parse('{"title":"Key Number","name":"key-number","wrapper"
 
 /***/ }),
 
-/***/ 25128:
+/***/ 61174:
 /***/ (function(module) {
 
 "use strict";
@@ -67390,7 +67400,7 @@ module.exports = JSON.parse('{"title":"Links group","name":"links-group","backgr
 
 /***/ }),
 
-/***/ 88567:
+/***/ 52044:
 /***/ (function(module) {
 
 "use strict";
@@ -67398,7 +67408,7 @@ module.exports = JSON.parse('{"name":"list-group","title":"List group","notes":"
 
 /***/ }),
 
-/***/ 95565:
+/***/ 40119:
 /***/ (function(module) {
 
 "use strict";
@@ -67406,7 +67416,7 @@ module.exports = JSON.parse('{"title":"Map","name":"map"}');
 
 /***/ }),
 
-/***/ 35444:
+/***/ 83822:
 /***/ (function(module) {
 
 "use strict";
@@ -67414,7 +67424,7 @@ module.exports = JSON.parse('{"title":"Metabox","name":"metabox","wrapper":"col-
 
 /***/ }),
 
-/***/ 24712:
+/***/ 35904:
 /***/ (function(module) {
 
 "use strict";
@@ -67422,7 +67432,7 @@ module.exports = JSON.parse('{"title":"Pagination","name":"pagination","variants
 
 /***/ }),
 
-/***/ 97852:
+/***/ 67462:
 /***/ (function(module) {
 
 "use strict";
@@ -67430,7 +67440,7 @@ module.exports = JSON.parse('{"title":"Question","name":"question"}');
 
 /***/ }),
 
-/***/ 9727:
+/***/ 22475:
 /***/ (function(module) {
 
 "use strict";
@@ -67438,7 +67448,7 @@ module.exports = JSON.parse('{"title":"Quote","name":"quote","wrapper":"containe
 
 /***/ }),
 
-/***/ 8858:
+/***/ 65761:
 /***/ (function(module) {
 
 "use strict";
@@ -67446,7 +67456,7 @@ module.exports = JSON.parse('{"title":"Search","name":"search","variants":[{"nam
 
 /***/ }),
 
-/***/ 13895:
+/***/ 19977:
 /***/ (function(module) {
 
 "use strict";
@@ -67454,7 +67464,7 @@ module.exports = JSON.parse('{"title":"Sidenotes","name":"sidenotes","notes":"In
 
 /***/ }),
 
-/***/ 98272:
+/***/ 84654:
 /***/ (function(module) {
 
 "use strict";
@@ -67462,7 +67472,7 @@ module.exports = JSON.parse('{"title":"Social feed","name":"social-feed","wrappe
 
 /***/ }),
 
-/***/ 91845:
+/***/ 98325:
 /***/ (function(module) {
 
 "use strict";
@@ -67470,7 +67480,7 @@ module.exports = JSON.parse('{"title":"Social","name":"social","wrapper":"bg-gra
 
 /***/ }),
 
-/***/ 35249:
+/***/ 62832:
 /***/ (function(module) {
 
 "use strict";
@@ -67478,7 +67488,7 @@ module.exports = JSON.parse('{"title":"Sponsor","name":"sponsor"}');
 
 /***/ }),
 
-/***/ 56678:
+/***/ 75911:
 /***/ (function(module) {
 
 "use strict";
@@ -67486,7 +67496,7 @@ module.exports = JSON.parse('{"title":"Table","name":"tables","variants":[{"name
 
 /***/ }),
 
-/***/ 60434:
+/***/ 18660:
 /***/ (function(module) {
 
 "use strict";
@@ -67494,7 +67504,7 @@ module.exports = JSON.parse('{"title":"Tabs","name":"tabs","variants":[{"name":"
 
 /***/ }),
 
-/***/ 10182:
+/***/ 90265:
 /***/ (function(module) {
 
 "use strict";
@@ -67502,7 +67512,7 @@ module.exports = JSON.parse('{"title":"Card slider","name":"card-slider","wrappe
 
 /***/ }),
 
-/***/ 9800:
+/***/ 89273:
 /***/ (function(module) {
 
 "use strict";
@@ -67510,7 +67520,7 @@ module.exports = JSON.parse('{"title":"Contact","name":"contact","variants":[{"n
 
 /***/ }),
 
-/***/ 33780:
+/***/ 42921:
 /***/ (function(module) {
 
 "use strict";
@@ -67518,7 +67528,7 @@ module.exports = JSON.parse('{"title":"Cookie consent","name":"cookie-consent","
 
 /***/ }),
 
-/***/ 19300:
+/***/ 15590:
 /***/ (function(module) {
 
 "use strict";
@@ -67526,7 +67536,7 @@ module.exports = JSON.parse('{"title":"FAQ","name":"faq"}');
 
 /***/ }),
 
-/***/ 83701:
+/***/ 60540:
 /***/ (function(module) {
 
 "use strict";
@@ -67534,7 +67544,7 @@ module.exports = JSON.parse('{"title":"Footer","name":"footer","wrapper":"contai
 
 /***/ }),
 
-/***/ 93685:
+/***/ 94035:
 /***/ (function(module) {
 
 "use strict";
@@ -67542,7 +67552,7 @@ module.exports = JSON.parse('{"title":"Form","name":"form"}');
 
 /***/ }),
 
-/***/ 86339:
+/***/ 56969:
 /***/ (function(module) {
 
 "use strict";
@@ -67550,7 +67560,7 @@ module.exports = JSON.parse('{"title":"Fullwidth teaser","name":"fullwidth-tease
 
 /***/ }),
 
-/***/ 9344:
+/***/ 92976:
 /***/ (function(module) {
 
 "use strict";
@@ -67558,7 +67568,7 @@ module.exports = JSON.parse('{"title":"Header","name":"header","variants":[{"nam
 
 /***/ }),
 
-/***/ 70178:
+/***/ 15148:
 /***/ (function(module) {
 
 "use strict";
@@ -67566,7 +67576,7 @@ module.exports = JSON.parse('{"title":"Headlines","name":"headlines"}');
 
 /***/ }),
 
-/***/ 40418:
+/***/ 22772:
 /***/ (function(module) {
 
 "use strict";
@@ -67574,7 +67584,7 @@ module.exports = JSON.parse('{"name":"hero","title":"Hero","notes":"The hero com
 
 /***/ }),
 
-/***/ 93352:
+/***/ 40152:
 /***/ (function(module) {
 
 "use strict";
@@ -67582,7 +67592,7 @@ module.exports = JSON.parse('{"title":"Introduction","name":"introduction","vari
 
 /***/ }),
 
-/***/ 30852:
+/***/ 98954:
 /***/ (function(module) {
 
 "use strict";
@@ -67590,7 +67600,7 @@ module.exports = JSON.parse('{"title":"Key number group","name":"key-number-grou
 
 /***/ }),
 
-/***/ 27528:
+/***/ 21591:
 /***/ (function(module) {
 
 "use strict";
@@ -67598,7 +67608,7 @@ module.exports = JSON.parse('{"title":"Modal","name":"modal","notes":"The **Boot
 
 /***/ }),
 
-/***/ 36829:
+/***/ 27236:
 /***/ (function(module) {
 
 "use strict";
@@ -67606,7 +67616,7 @@ module.exports = JSON.parse('{"title":"Nav aside","name":"nav-aside"}');
 
 /***/ }),
 
-/***/ 70678:
+/***/ 6602:
 /***/ (function(module) {
 
 "use strict";
@@ -67614,7 +67624,7 @@ module.exports = JSON.parse('{"title":"Nav main","name":"nav-main","wrapper":"na
 
 /***/ }),
 
-/***/ 22264:
+/***/ 73197:
 /***/ (function(module) {
 
 "use strict";
@@ -67622,7 +67632,7 @@ module.exports = JSON.parse('{"title":"Newsletter sign-up","name":"newsletter-si
 
 /***/ }),
 
-/***/ 38583:
+/***/ 95894:
 /***/ (function(module) {
 
 "use strict";
@@ -67630,7 +67640,7 @@ module.exports = JSON.parse('{"title":"Restauration","name":"restauration","note
 
 /***/ }),
 
-/***/ 74022:
+/***/ 72178:
 /***/ (function(module) {
 
 "use strict";
@@ -67638,7 +67648,7 @@ module.exports = JSON.parse('{"title":"Social feed group","name":"social-feed-gr
 
 /***/ }),
 
-/***/ 78937:
+/***/ 75803:
 /***/ (function(module) {
 
 "use strict";
@@ -67646,7 +67656,7 @@ module.exports = JSON.parse('{"name":"about","title":"About"}');
 
 /***/ }),
 
-/***/ 46055:
+/***/ 54669:
 /***/ (function(module) {
 
 "use strict";
@@ -67654,7 +67664,7 @@ module.exports = JSON.parse('{"title":"Association homepage","name":"association
 
 /***/ }),
 
-/***/ 3551:
+/***/ 26634:
 /***/ (function(module) {
 
 "use strict";
@@ -67662,7 +67672,7 @@ module.exports = JSON.parse('{"title":"Association list","name":"association-lis
 
 /***/ }),
 
-/***/ 33484:
+/***/ 63222:
 /***/ (function(module) {
 
 "use strict";
@@ -67670,7 +67680,7 @@ module.exports = JSON.parse('{"title":"Basic page","name":"basic-page"}');
 
 /***/ }),
 
-/***/ 19083:
+/***/ 45186:
 /***/ (function(module) {
 
 "use strict";
@@ -67678,7 +67688,7 @@ module.exports = JSON.parse('{"title":"Blog homepage","name":"blog-homepage"}');
 
 /***/ }),
 
-/***/ 82563:
+/***/ 46958:
 /***/ (function(module) {
 
 "use strict";
@@ -67686,7 +67696,7 @@ module.exports = JSON.parse('{"title":"Blog single","name":"blog-single"}');
 
 /***/ }),
 
-/***/ 59362:
+/***/ 34393:
 /***/ (function(module) {
 
 "use strict";
@@ -67694,7 +67704,7 @@ module.exports = JSON.parse('{"name":"campus","title":"Campus"}');
 
 /***/ }),
 
-/***/ 99765:
+/***/ 16151:
 /***/ (function(module) {
 
 "use strict";
@@ -67702,7 +67712,7 @@ module.exports = JSON.parse('{"name":"education","title":"Education"}');
 
 /***/ }),
 
-/***/ 14269:
+/***/ 7427:
 /***/ (function(module) {
 
 "use strict";
@@ -67710,7 +67720,7 @@ module.exports = JSON.parse('{"name":"error-404","title":"Error 404"}');
 
 /***/ }),
 
-/***/ 20078:
+/***/ 84005:
 /***/ (function(module) {
 
 "use strict";
@@ -67718,7 +67728,7 @@ module.exports = JSON.parse('{"name":"event-detail","title":"Event detail"}');
 
 /***/ }),
 
-/***/ 4497:
+/***/ 91567:
 /***/ (function(module) {
 
 "use strict";
@@ -67726,7 +67736,7 @@ module.exports = JSON.parse('{"title":"Event homepage","name":"event-homepage"}'
 
 /***/ }),
 
-/***/ 14535:
+/***/ 64407:
 /***/ (function(module) {
 
 "use strict";
@@ -67734,7 +67744,7 @@ module.exports = JSON.parse('{"title":"Event list","name":"event-list"}');
 
 /***/ }),
 
-/***/ 65768:
+/***/ 25804:
 /***/ (function(module) {
 
 "use strict";
@@ -67742,7 +67752,7 @@ module.exports = JSON.parse('{"title":"Facultés","name":"facultes"}');
 
 /***/ }),
 
-/***/ 3582:
+/***/ 15465:
 /***/ (function(module) {
 
 "use strict";
@@ -67750,7 +67760,7 @@ module.exports = JSON.parse('{"name":"homepage","title":"Homepage"}');
 
 /***/ }),
 
-/***/ 33995:
+/***/ 37642:
 /***/ (function(module) {
 
 "use strict";
@@ -67758,7 +67768,7 @@ module.exports = JSON.parse('{"name":"innovation","title":"Innovation"}');
 
 /***/ }),
 
-/***/ 75797:
+/***/ 16421:
 /***/ (function(module) {
 
 "use strict";
@@ -67766,7 +67776,7 @@ module.exports = JSON.parse('{"title":"Lab homepage","name":"lab-homepage"}');
 
 /***/ }),
 
-/***/ 24368:
+/***/ 29666:
 /***/ (function(module) {
 
 "use strict";
@@ -67774,7 +67784,15 @@ module.exports = JSON.parse('{"title":"Layout demo","name":"layout-demo"}');
 
 /***/ }),
 
-/***/ 94738:
+/***/ 8099:
+/***/ (function(module) {
+
+"use strict";
+module.exports = JSON.parse('{"title":"Maintenance","name":"maintenance"}');
+
+/***/ }),
+
+/***/ 80036:
 /***/ (function(module) {
 
 "use strict";
@@ -67782,7 +67800,7 @@ module.exports = JSON.parse('{"name":"news-detail","title":"News detail"}');
 
 /***/ }),
 
-/***/ 40036:
+/***/ 40582:
 /***/ (function(module) {
 
 "use strict";
@@ -67790,7 +67808,7 @@ module.exports = JSON.parse('{"title":"News homepage","name":"news-homepage"}');
 
 /***/ }),
 
-/***/ 4400:
+/***/ 80059:
 /***/ (function(module) {
 
 "use strict";
@@ -67798,7 +67816,7 @@ module.exports = JSON.parse('{"name":"people-detail","title":"People detail"}');
 
 /***/ }),
 
-/***/ 34575:
+/***/ 36920:
 /***/ (function(module) {
 
 "use strict";
@@ -67806,7 +67824,7 @@ module.exports = JSON.parse('{"title":"People list","name":"people-list"}');
 
 /***/ }),
 
-/***/ 47829:
+/***/ 51553:
 /***/ (function(module) {
 
 "use strict";
@@ -67814,7 +67832,7 @@ module.exports = JSON.parse('{"title":"Programs","name":"programs"}');
 
 /***/ }),
 
-/***/ 54064:
+/***/ 92818:
 /***/ (function(module) {
 
 "use strict";
@@ -67822,7 +67840,7 @@ module.exports = JSON.parse('{"title":"Research","name":"research"}');
 
 /***/ }),
 
-/***/ 78867:
+/***/ 43518:
 /***/ (function(module) {
 
 "use strict";
@@ -67830,7 +67848,7 @@ module.exports = JSON.parse('{"name":"study-plan-course","title":"Study Plan –
 
 /***/ }),
 
-/***/ 58835:
+/***/ 8798:
 /***/ (function(module) {
 
 "use strict";
@@ -67838,7 +67856,7 @@ module.exports = JSON.parse('{"name":"study-plan","title":"Study Plan"}');
 
 /***/ }),
 
-/***/ 16567:
+/***/ 76453:
 /***/ (function(module) {
 
 "use strict";
@@ -67931,7 +67949,7 @@ module.exports = JSON.parse('{"title":"Base","name":"base"}');
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
-/******/ 	__webpack_require__(68201);
+/******/ 	__webpack_require__(44647);
 /******/ 	var __webpack_exports__ = __webpack_require__(10991);
 /******/ 	
 /******/ })()
