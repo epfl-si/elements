@@ -48,10 +48,13 @@ function get_cookieconsent_config() {
         + 'cookies à l\'aide des paramètres de votre navigateur.'
     },
     de: {
-      msg: 'Die Navigation auf dieser Seite verwendet Cookies zur '
-        + 'Verbesserung Ihrer Benutzererfahrung und zur Durchführung von Besucherstatistiken.',
-      link: 'Datenschutzerklärung lesen',
-      href: '//go.epfl.ch/privacy-policy'
+      msg: 'Wenn Sie auf die Websites der EPFL zugreifen, können wir in '
+        + 'Übereinstimmung mit unserer '
+        + '<a tabindex="0" class="cc-link" target="_blank" '
+        + 'href="//go.epfl.ch/privacy-policy">Datenschutzerklärung</a> '
+        + 'Cookies auf Ihren Geräten speichern und Personendaten bearbeiten. '
+        + 'Über die Einstellungen in Ihrem Browser können Sie Cookies '
+        + 'blockieren.',
     }
   };
   // Retrieve language, default 'fr'
