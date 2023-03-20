@@ -213,6 +213,7 @@
     "styled-components": "^5.3.0",
     "stylelint": "^14.14.0",
     "stylelint-config-recommended-scss": "^8.0.0",
+    "stylelint-order": "^6.0.3",
     "stylelint-scss": "^4.3.0",
     "svg-spritemap-webpack-plugin": "^4.5.0",
     "twig-html-loader": "^0.1.9",
