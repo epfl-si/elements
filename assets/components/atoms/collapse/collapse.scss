@@ -38,11 +38,11 @@ $collapse-chevron-size: 12px;
 }
 
 .collapse-title {
-  color: $black;
   position: relative;
   padding: 0;
   background: none;
   border: none;
+  color: $black;
   transition: box-shadow 0.25s, color 0.15s;
 
   &:before {
@@ -72,7 +72,7 @@ $collapse-chevron-size: 12px;
 
   &.collapse-title-desktop {
     @include collapse-btn();
-    
+
     &:hover,
     &:focus,
     &:active {
@@ -94,7 +94,7 @@ $collapse-chevron-size: 12px;
 }
 
 .collapse-item {
-  &::after {
+  &:after {
     content: "";
     display: block;
     padding-top: 2rem;
@@ -136,7 +136,7 @@ header.collapse-title {
 }
 
 header.collapse-title + .collapse-item {
-  &::before {
+  &:before {
     content: "";
     display: block;
     padding-top: 0.5rem;
@@ -272,6 +272,6 @@ $collapse-drop-margin: ($grid-gutter-width * 0.3);
 // helper classes to define partial collapse defaut height
 @for $i from 0 to 10 {
   .collapse-partial-#{$i}:not(.show) {
-    height: #{$i*2}rem;
+    height: #{$i * 2}rem;
   }
 }

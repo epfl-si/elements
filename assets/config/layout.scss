@@ -3,19 +3,19 @@
 
 // Retrieve content coloumn width
 @function col-width($breakpoint, $columns) {
-  @return map-get($container-max-widths, $breakpoint)  * math.div($columns, $grid-columns);
+  @return map-get($container-max-widths, $breakpoint) * math.div($columns, $grid-columns);
 }
 
-//
-// GRID MANAGEMENT
-//
-// Wrap everything in this class (must be taking the full viewport width) to enable
-// CSS Grid for immediate children.
-//
-// All items that must not take the "content" area into account have the class
-// "container-full". Inside those items, use a regular Bootstrap layout as you
-// would in a normal setup.
-//
+/*
+ * GRID MANAGEMENT
+ *
+ * Wrap everything in this class (must be taking the full viewport width) to enable
+ * CSS Grid for immediate children.
+ *
+ * All items that must not take the "content" area into account have the class
+ * "container-full". Inside those items, use a regular Bootstrap layout as you
+ * would in a normal setup.
+ */
 
 .container-grid {
   display: grid;

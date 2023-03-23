@@ -1,4 +1,5 @@
 @charset 'utf-8';
+@use "sass:color";
 
 $alert-icon-size: 2rem;
 $alert-icons: (
@@ -30,8 +31,8 @@ $alert-icons: (
 @each $color, $value in $theme-colors {
   .alert-#{$color} {
     border-color: $value;
-    hr { border-top-color: darken($value, 5%); }
-    .alert-link { color: darken($value, 10%); }
+    hr { border-top-color: color.adjust($value, $lightness: -5%); }
+    .alert-link { color: color.adjust($value, $lightness: -10%); }
   }
 }
 

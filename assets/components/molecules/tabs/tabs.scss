@@ -1,3 +1,4 @@
+@use "sass:color";
 @charset 'utf-8';
 
 .nav-tabs {
@@ -41,7 +42,7 @@
 
     &:hover {
       z-index: $zindex-1;
-      background-color: darken(gray('100'), 5%);
+      background-color: color.adjust(gray('100'), $lightness: -5%);
       color: $body-color;
     }
 
@@ -54,11 +55,11 @@
 
     &:active {
       z-index: $zindex-1;
-      background: linear-gradient(0deg, gray('100') 0%, darken(gray('100'), 5%) 100%);
+      background: linear-gradient(0deg, gray('100') 0%, color.adjust(gray('100'), $lightness: -5%) 100%);
     }
 
     &.disabled {
-      background-color: darken(gray('100'), 5%);
+      background-color: color.adjust(gray('100'), $lightness: -5%);
       border-color: $nav-tabs-border-color;
       color: gray('300');
       cursor: not-allowed;

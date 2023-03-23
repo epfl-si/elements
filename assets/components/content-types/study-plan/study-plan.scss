@@ -1,3 +1,4 @@
+@use "sass:color";
 @charset 'utf-8';
 
 $table-cours-template-columns: minmax(200px, 3fr) minmax(auto, 1fr) minmax(200px, 3fr);
@@ -332,7 +333,7 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
 
       .cep:nth-child(2),
       .bachlor:nth-child(4) .cep {
-        background-color: darken($table-head-bg, 4%);
+        background-color: color.adjust($table-head-bg, $lightness: -4%);
       }
 
       .bachlor:nth-child(4) .cep:nth-child(2) {

@@ -55,8 +55,8 @@
     text-overflow: ellipsis;
 
     &.placeholder {
-      color: $input-placeholder-color;
       font-size: 1rem;
+      color: $input-placeholder-color;
     }
   }
 
@@ -104,7 +104,7 @@
       list-style: none;
       background-image: none;
       padding-left: 0;
-      
+
       &:before {
         content: none;
       }

@@ -1,4 +1,5 @@
 @charset 'utf-8';
+@use "sass:color";
 
 article {
   counter-reset: footnotes;
@@ -106,5 +107,5 @@ article {
  * Highlight target note
  */
 footer :target {
-  background: transparentize($red, 0.8);
+  background: color.adjust($red, $alpha: -0.8);
 }
