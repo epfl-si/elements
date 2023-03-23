@@ -60,6 +60,8 @@
 .list-group.list-events-featured {
 
   .list-group-teaser {
+    flex-grow: 1;
+    flex-basis: 0;
     background: transparent;
     margin-bottom: 1rem;
 
