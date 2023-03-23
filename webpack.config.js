@@ -173,6 +173,11 @@ module.exports = (env, argv) => {
           output: { filename: "icons/feather-sprite.svg" },
           sprite: { prefix: "", generate: { title: false } }
         }),
+      new SVGSpritemapPlugin("assets/iconsepfl/*.svg",
+        {
+          output: { filename: "icons/icons-epfl.svg" },
+          sprite: { prefix: "icon-epfl-", generate: { title: false } }
+        }),
       // Copy the remaining (non-spritemapped) SVGs into buildDir:
       Copy(
         "assets/**/*.svg", buildDir,

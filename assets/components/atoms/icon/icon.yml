@@ -16,3 +16,7 @@ variants:
     title: Elements icons
     notes: |
       Here is the list of custom icons used in the styleguide.
+  - name: list-epfl
+    title: EPFL icons
+    notes: |
+      Here is the list of corporated icons used by EPFL.

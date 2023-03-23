@@ -1,6 +1,7 @@
 const svgIcons = () => {
   loadIcons(window.svgPath || 'icons/icons.svg');
   loadIcons(window.featherSvgPath || 'icons/feather-sprite.svg');
+  loadIcons(window.epflSvgPath || 'icons/icons-epfl.svg');
 };
 
 export default svgIcons;

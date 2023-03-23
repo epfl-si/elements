@@ -1,0 +1,10 @@
+<table class="table">
+  <tbody>
+    {% for icon in iconsepfl %}
+      <tr>
+        <td>{% include "@atoms/icon/icon.twig" with { icon: 'icon-epfl-' ~ icon } %}</td>
+        <td><code>#icon-epfl-{{icon}}</code></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
