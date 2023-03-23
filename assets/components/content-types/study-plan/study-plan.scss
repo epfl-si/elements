@@ -1,5 +1,5 @@
-@use "sass:color";
 @charset 'utf-8';
+@use 'sass:color';
 
 $table-cours-template-columns: minmax(200px, 3fr) minmax(auto, 1fr) minmax(200px, 3fr);
 $table-grid-template-columns: 1fr $table-cours-template-columns 2fr 2fr 2fr minmax(200px, 3fr) 1fr;
@@ -341,17 +341,6 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
       }
     }
   }
-
-  // Maybe we'll have to handle those colors in some way.
-  //.bachlor {
-  //  &.local-color {
-  //    background-color: $table-border-color;
-  //  }
-  //
-  //  &.local-color-light {
-  //    background-color: gray('100');
-  //  }
-  //}
 
   .clear {
     display: none;
