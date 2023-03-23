@@ -23,7 +23,7 @@
 // List
 
 .list-events {
-  
+
   .list-group-teaser-content {
     .card-title {
       max-width: 660px;
@@ -34,22 +34,22 @@
       }
     }
   }
-  
+
   @include media-breakpoint-up(xl) {
-    
+
     .list-group-teaser-content {
-    
+
       .event-actions {
         position: absolute;
         top: 0;
         right: 1rem;
-        
+
         @for $i from 1 through 7 {
           .col-md-#{$i} & {
             position: static;
           }
         }
-        
+
       }
     }
   }
@@ -58,16 +58,16 @@
 // Featured events
 
 .list-group.list-events-featured {
-  
+
   .list-group-teaser {
     background: transparent;
     margin-bottom: 1rem;
-    
+
     &:last-child {
       margin-bottom: 0;
     }
   }
-  
+
   .list-group-teaser-container {
     background: #fff;
     flex-direction: column;
@@ -81,15 +81,15 @@
       }
     }
   }
-  
+
   .list-group-teaser-content {
-    
+
     .event-actions {
       position: static;
-      
+
       .btn {
         width: 100%;
-        
+
         & + .btn {
           margin-left: 0;
           margin-top: 0.75rem;
@@ -97,36 +97,36 @@
       }
     }
   }
-  
+
   @include media-breakpoint-up(lg) {
     flex-direction: row;
     margin-left: -10px;
     margin-right: -10px;
-    
+
     .list-group-teaser {
       margin-bottom: 0;
       padding-left: 10px;
       padding-right: 10px;
-      
+
       & + .list-group-teaser {
         margin-top: 0;
       }
     }
-    
+
     .list-group-teaser-thumbnail {
       padding-bottom: 0;
     }
-    
+
     .list-group-teaser-content {
       display: flex;
       flex-direction: column;
-      
+
       .card-info {
         display: flex;
         flex-direction: column;
         height: 100%;
       }
-      
+
       .event-actions {
         margin-top: auto;
       }
@@ -137,19 +137,19 @@
 // Events page
 
 .events-links {
-  
+
   @include media-breakpoint-up(lg) {
     ul {
       margin-bottom: 0;
     }
   }
-  
+
   li {
     display: inline-block;
     font-size: 1rem;
     font-weight: bold;
     margin-right: 1rem;
-    
+
     &:last-child {
       margin-right: 0;
     }
