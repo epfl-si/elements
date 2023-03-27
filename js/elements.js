@@ -59,7 +59,7 @@ module.exports = function (key) {
 
 "use strict";
 
-var charAt = __webpack_require__(28710).charAt;
+var charAt = (__webpack_require__(28710).charAt);
 
 // `AdvanceStringIndex` abstract operation
 // https://tc39.es/ecma262/#sec-advancestringindex
@@ -467,31 +467,12 @@ module.exports = !fails(function () {
 
 /***/ }),
 
-/***/ 14230:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-var requireObjectCoercible = __webpack_require__(84488);
-
-var quot = /"/g;
-
-// `CreateHTML` abstract operation
-// https://tc39.es/ecma262/#sec-createhtml
-module.exports = function (string, tag, attribute, value) {
-  var S = String(requireObjectCoercible(string));
-  var p1 = '<' + tag;
-  if (attribute !== '') p1 += ' ' + attribute + '="' + String(value).replace(quot, '&quot;') + '"';
-  return p1 + '>' + S + '</' + tag + '>';
-};
-
-
-/***/ }),
-
 /***/ 24994:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 
-var IteratorPrototype = __webpack_require__(13383).IteratorPrototype;
+var IteratorPrototype = (__webpack_require__(13383).IteratorPrototype);
 var create = __webpack_require__(70030);
 var createPropertyDescriptor = __webpack_require__(79114);
 var setToStringTag = __webpack_require__(58003);
@@ -747,7 +728,7 @@ module.exports = [
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 var global = __webpack_require__(17854);
-var getOwnPropertyDescriptor = __webpack_require__(31236).f;
+var getOwnPropertyDescriptor = (__webpack_require__(31236).f);
 var createNonEnumerableProperty = __webpack_require__(68880);
 var redefine = __webpack_require__(31320);
 var setGlobal = __webpack_require__(83505);
@@ -1626,7 +1607,7 @@ module.exports = CORRECT_PROTOTYPE_GETTER ? Object.getPrototypeOf : function (O)
 
 var has = __webpack_require__(86656);
 var toIndexedObject = __webpack_require__(45656);
-var indexOf = __webpack_require__(41318).indexOf;
+var indexOf = (__webpack_require__(41318).indexOf);
 var hiddenKeys = __webpack_require__(3501);
 
 module.exports = function (object, names) {
@@ -1848,7 +1829,7 @@ var regexpFlags = __webpack_require__(67066);
 var stickyHelpers = __webpack_require__(52999);
 var shared = __webpack_require__(72309);
 var create = __webpack_require__(70030);
-var getInternalState = __webpack_require__(29909).get;
+var getInternalState = (__webpack_require__(29909).get);
 var UNSUPPORTED_DOT_ALL = __webpack_require__(9441);
 var UNSUPPORTED_NCG = __webpack_require__(38173);
 
@@ -2068,7 +2049,7 @@ module.exports = function (key, value) {
 /***/ 58003:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-var defineProperty = __webpack_require__(3070).f;
+var defineProperty = (__webpack_require__(3070).f);
 var has = __webpack_require__(86656);
 var wellKnownSymbol = __webpack_require__(5112);
 
@@ -2144,23 +2125,6 @@ module.exports = function (O, defaultConstructor) {
   var C = anObject(O).constructor;
   var S;
   return C === undefined || (S = anObject(C)[SPECIES]) == undefined ? defaultConstructor : aFunction(S);
-};
-
-
-/***/ }),
-
-/***/ 43429:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-var fails = __webpack_require__(47293);
-
-// check the existence of a method, lowercase
-// of a tag and escaping quotes in arguments
-module.exports = function (METHOD_NAME) {
-  return fails(function () {
-    var test = ''[METHOD_NAME]('"');
-    return test !== test.toLowerCase() || test.split('"').length > 3;
-  });
 };
 
 
@@ -2442,7 +2406,7 @@ $({ target: 'Array', proto: true, forced: FORCED }, {
 "use strict";
 
 var $ = __webpack_require__(82109);
-var $find = __webpack_require__(42092).find;
+var $find = (__webpack_require__(42092).find);
 var addToUnscopables = __webpack_require__(51223);
 
 var FIND = 'find';
@@ -2518,7 +2482,7 @@ $({ target: 'Array', proto: true, forced: ES3_STRINGS || !STRICT_METHOD }, {
 "use strict";
 
 var $ = __webpack_require__(82109);
-var $map = __webpack_require__(42092).map;
+var $map = (__webpack_require__(42092).map);
 var arrayMethodHasSpeciesSupport = __webpack_require__(81194);
 
 var HAS_SPECIES_SUPPORT = arrayMethodHasSpeciesSupport('map');
@@ -2594,7 +2558,7 @@ $({ target: 'Array', proto: true, forced: !HAS_SPECIES_SUPPORT }, {
 /***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
 
 var DESCRIPTORS = __webpack_require__(19781);
-var defineProperty = __webpack_require__(3070).f;
+var defineProperty = (__webpack_require__(3070).f);
 
 var FunctionPrototype = Function.prototype;
 var FunctionPrototypeToString = FunctionPrototype.toString;
@@ -2690,7 +2654,7 @@ if (NOT_GENERIC || INCORRECT_NAME) {
 
 "use strict";
 
-var charAt = __webpack_require__(28710).charAt;
+var charAt = (__webpack_require__(28710).charAt);
 var InternalStateModule = __webpack_require__(29909);
 var defineIterator = __webpack_require__(70654);
 
@@ -2717,26 +2681,6 @@ defineIterator(String, 'String', function (iterated) {
   point = charAt(string, index);
   state.index += point.length;
   return { value: point, done: false };
-});
-
-
-/***/ }),
-
-/***/ 29254:
-/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
-
-"use strict";
-
-var $ = __webpack_require__(82109);
-var createHTML = __webpack_require__(14230);
-var forcedStringHTMLMethod = __webpack_require__(43429);
-
-// `String.prototype.link` method
-// https://tc39.es/ecma262/#sec-string.prototype.link
-$({ target: 'String', proto: true, forced: forcedStringHTMLMethod('link') }, {
-  link: function link(url) {
-    return createHTML(this, 'a', 'href', url);
-  }
 });
 
 
@@ -8584,8 +8528,6 @@ var es_regexp_to_string = __webpack_require__(39714);
 });
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.split.js
 var es_string_split = __webpack_require__(23123);
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.link.js
-var es_string_link = __webpack_require__(29254);
 ;// CONCATENATED MODULE: ./assets/components/organisms/cookie-consent/cookie-consent.js
 
 
@@ -8626,19 +8568,13 @@ function get_cookieconsent_config() {
   // Translation
   var cookieI18n = {
     en: {
-      msg: 'By continuing your browsing on this site, you agree to the use ' + 'of cookies to improve your user experience and to make statistics ' + 'of visits.',
-      link: 'Read the disclaimer',
-      href: '//go.epfl.ch/privacy-policy'
+      msg: 'When you access EPFL websites, we may set cookies on your ' + 'devices and process personal data about you in accordance with ' + 'our <a tabindex="0" class="cc-link" target="_blank" ' + 'href="//go.epfl.ch/privacy-policy">privacy policy</a>. ' + 'You can block cookies by using your browser settings.'
     },
     fr: {
-      msg: 'En poursuivant votre navigation sur ce site, vous acceptez ' + 'l\'utilisation de cookies pour am&eacute;liorer votre ' + 'exp&eacute;rience utilisateur et r&eacute;aliser des statistiques ' + 'de visites.',
-      link: 'Lire les mentions l&eacute;gales',
-      href: '//go.epfl.ch/protection-des-donnees'
+      msg: 'Lorsque vous accédez aux sites web de l\'EPFL, nous pouvons ' + 'installer des cookies sur vos appareils et traiter des données ' + 'personnelles vous concernant conformément à notre ' + '<a tabindex="0" class="cc-link" target="_blank" ' + 'href="//go.epfl.ch/protection-des-donnees">' + 'politique de confidentialité</a>. Vous pouvez bloquer les ' + 'cookies à l\'aide des paramètres de votre navigateur.'
     },
     de: {
-      msg: 'Die Navigation auf dieser Seite verwendet Cookies zur ' + 'Verbesserung Ihrer Benutzererfahrung und zur Durchführung von Besucherstatistiken.',
-      link: 'Datenschutzerklärung lesen',
-      href: '//go.epfl.ch/privacy-policy'
+      msg: 'Wenn Sie auf die Websites der EPFL zugreifen, können wir in ' + 'Übereinstimmung mit unserer ' + '<a tabindex="0" class="cc-link" target="_blank" ' + 'href="//go.epfl.ch/privacy-policy">Datenschutzerklärung</a> ' + 'Cookies auf Ihren Geräten speichern und Personendaten bearbeiten. ' + 'Über die Einstellungen in Ihrem Browser können Sie Cookies ' + 'blockieren.'
     }
   }; // Retrieve language, default 'fr'
 
@@ -8660,31 +8596,30 @@ function get_cookieconsent_config() {
     var hostParts = hostame.split('.').reverse();
 
     if (hostParts[0] !== undefined && hostParts[1] !== undefined) {
-      domain_name = hostParts[1] + '.' + hostParts[0];
+      domain_name = "".concat(hostParts[1], ".").concat(hostParts[0]);
     }
   }
 
   var config = {
-    "theme": "classic",
-    "palette": {
-      "popup": {
-        "background": "rgba(69, 69, 69, 0.96)"
+    theme: 'classic',
+    palette: {
+      popup: {
+        background: 'rgba(69, 69, 69, 0.96)'
       },
-      "button": {
-        "background": "#b51f1f"
+      button: {
+        background: '#b51f1f'
       }
     },
-    "content": {
-      "message": cookieI18n[lang].msg,
-      "dismiss": "OK",
-      "link": cookieI18n[lang].link,
-      "href": cookieI18n[lang].href
+    content: {
+      message: cookieI18n[lang].msg,
+      dismiss: 'OK'
     },
-    "cookie": {
-      "name": "petitpois",
+    showLink: false,
+    cookie: {
+      name: 'petitpois',
       // Chosen by a magical unicorn!
-      "domain": domain_name,
-      "autoAttach": false // attach it manually to the end, or SEO will crawl it before any content
+      domain: domain_name,
+      autoAttach: false // attach it manually to the end, or SEO will crawl it before any content
 
     }
   };
