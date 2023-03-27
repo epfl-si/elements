@@ -18969,6 +18969,10 @@ a.cc-btn {
   text-decoration: none;
 }
 
+a.cc-link {
+  padding: 0.2em 0;
+}
+
 .epfl-faq-header {
   margin-bottom: 2rem;
 }
@@ -19269,6 +19273,11 @@ a.cc-btn {
 }
 
 .list-group.list-events-featured .list-group-teaser {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
   background: transparent;
   margin-bottom: 1rem;
 }
