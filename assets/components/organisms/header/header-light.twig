@@ -9,6 +9,13 @@
       <a href="#">{{site_title}}</a>
     </p>
     <ul aria-hidden="true" class="nav-header d-none d-xl-flex">
+      {% if tabs %}
+        {% for i in 1..5 %}
+      <li id="menu-item-{{ loop.index }}" {% if loop.index == 2 %} class="current-menu-item"{% endif %}>
+        <a class="nav-item" href="#">Page {{ i }}</a>
+      </li>
+        {% endfor %}
+      {% endif %}
       {% if dropdown %}
       <li class="dropdown">
         <button class="btn btn-link dropdown-toggle nav-item" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
