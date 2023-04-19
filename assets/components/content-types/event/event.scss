@@ -71,9 +71,9 @@
   }
 
   .list-group-teaser-container {
+    height: 100%;
     background: #fff;
     flex-direction: column;
-    height: 100%;
 
     .btn-secondary {
       &:hover,

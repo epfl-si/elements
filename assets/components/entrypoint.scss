@@ -8,15 +8,14 @@
 @import '../config/layout';
 @import '../config/helpers';
 @import '../config/wordpress';
-@import '../../node_modules/tablesaw/src/tables.stack-mixin.scss';
+@import '../../node_modules/tablesaw/src/tables.stack-mixin';
 
 // site:
-@import './site.scss';
+@import './site';
 
 // Don't edit the following sections, they should always be preceded by a blank
 // line
 
-//
 // atoms:
 @import 'atoms/button/button';
 @import 'atoms/tag/tag';
@@ -47,7 +46,6 @@
 @import 'atoms/loader/loader';
 @import 'atoms/favicon/favicon';
 
-//
 // molecules:
 @import 'molecules/search/search';
 @import 'molecules/access-nav/access-nav';
@@ -99,7 +97,6 @@
 @import 'organisms/cookie-consent/cookie-consent';
 @import 'organisms/faq/faq';
 
-//
 // content-types:
 @import 'content-types/coursebook/coursebook';
 @import 'content-types/event/event';
@@ -123,7 +120,6 @@
 @import 'content-types/project/project';
 @import 'content-types/project-list/project-list';
 
-//
 // pages:
 @import 'pages/people-detail/people-detail';
 @import 'pages/blog-single/blog-single';

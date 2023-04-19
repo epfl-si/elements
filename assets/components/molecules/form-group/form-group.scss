@@ -21,24 +21,24 @@
 
 .search-container {
   position: relative;
-  
+
   input[type="search"] {
     padding-right: 40px;
   }
-  
+
   .icon {
-    color: $gray-300;
     position: absolute;
     top: 50%;
     right: $input-padding-x;
+    color: $gray-300;
     transform: translateY(-50%);
     transition: color 0.3s;
   }
-  
+
   input[type="search"]:hover + .icon {
     color: $gray-600;
   }
-  
+
   input[type="search"]:focus + .icon {
     color: $black;
   }

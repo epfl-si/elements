@@ -1,5 +1,5 @@
 .events-filters {
-  
+
   form {
     display: flex;
     flex-wrap: wrap;
@@ -21,42 +21,41 @@
       padding-right: 10px;
     }
   }
-  
+
   .select-multiple .ms-drop,
   .select-multiple .ms-drop ul,
   .dropdown .picker__table{
     width: auto;
   }
-  
+
   .dropdown {
     margin-bottom: 1rem;
-    
+
     button {
       display: flex;
+      width: 100%;
+      padding: $custom-select-padding-y $custom-select-padding-x;
       justify-content: space-between;
       align-items: center;
-      padding: $custom-select-padding-y $custom-select-padding-x;
       text-align: left;
-      width: 100%;
     }
-    
+
     .dropdown-menu.show {
-      left: auto !important;
-      right: 0;
-      transform: none !important;
       top: 38px !important;
+      right: 0;
+      left: auto !important;
+      transform: none !important;
     }
-    
+
     .picker__holder {
       border: 0;
     }
   }
-  
+
   @include media-breakpoint-down(md) {
-    
+
     .dropdown {
       flex-basis: 100%;
     }
   }
 }
-

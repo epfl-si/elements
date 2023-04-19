@@ -97,9 +97,9 @@ ol {
   ul {
 
     & > li:before {
+      top: 0.7rem;
       background: transparent;
       border: 1px solid $red;
-      top: 0.7rem;
     }
   }
 }
