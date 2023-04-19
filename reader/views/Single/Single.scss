@@ -1,4 +1,4 @@
-@import '../../variables.scss';
+@import '../../variables';
 
 .tlbx-notes {
   max-width: 700px;
@@ -13,8 +13,8 @@
   }
 
   .tlbx-single-full-intro h1 {
-    font-size: 1rem;
     margin: 0;
+    font-size: 1rem;
   }
 }
 

@@ -1,4 +1,4 @@
-@import '../../variables.scss';
+@import '../../variables';
 
 .tlbx-toolbar {
   display: flex;
@@ -14,15 +14,15 @@
 
 .tlbx-toolbar-btn {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
   width: $toolbar-width - 10px;
   height: 50px;
-  border: none;
   background: none;
-  color: #fff;
-  font-weight: 900;
+  border: none;
   font-size: 1.4em;
+  font-weight: 900;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
   opacity: 1;
 
   &:hover { cursor: pointer; }
