@@ -18,13 +18,13 @@ $alert-icons: (
   color: $body-color;
 
   &:before {
+    display: inline-block;
+    position: absolute;
     top: 50%;
     left: $alert-padding-x;
     width: $alert-icon-size;
     height: $alert-icon-size;
     margin-top: $alert-icon-size * -0.5;
-    display: inline-block;
-    position: absolute;
   }
 }
 
@@ -32,7 +32,7 @@ $alert-icons: (
   .alert-#{$color} {
     border-color: $value;
     hr { border-top-color: color.adjust($value, $lightness: -5%); }
-    .alert-link { color: darken($value, 10%); }
+    .alert-link { color: color.adjust($value, $lightness: -10%); }
   }
 }
 
