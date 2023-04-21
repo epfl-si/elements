@@ -182,7 +182,7 @@
     "browser-sync": "^2.27.12",
     "browser-sync-webpack-plugin": "^2.3.0",
     "colorable": "https://github.com/epfl-si/colorable",
-    "copy-webpack-plugin": "^9.0.1",
+    "copy-webpack-plugin": "^11.0.0",
     "core-js": "3",
     "css-loader": "^5.2.6",
     "css-minimizer-webpack-plugin": "^3.3.1",
