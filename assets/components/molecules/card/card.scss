@@ -109,12 +109,12 @@ a.card-gray:hover .card-body { background: $white; }
       margin: 0 0.25em 0 0.15em;
     }
   }
-  //.card-info-date:not(:last-child):after { content: ' \2013 '; }
+  .card-info-date:not(:last-child):after { content: ' \2013 '; }
 
   // Remove separators after specific card elements
   .event-info:after,
   .event-info-date:after,
-  .event-date:after {
+  .card-info-date.event-date:after {
     content: none;
   }
 
