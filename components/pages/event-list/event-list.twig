@@ -61,7 +61,7 @@
       
       {% include '@molecules/form-group/form-group-search.twig' %}
 
-      <div class="form-group form-group-select">
+      <div class="form-group form-group-select form-group-categories">
         <label class="sr-only">Catégories</label>
         <select class="select-multiple" multiple="multiple" data-placeholder="Catégories">
           <option value="activites-scientifiques-jeunes">Activités scientifiques pour les jeunes</option>
@@ -110,7 +110,7 @@
         </select>
       </div>
       
-      <div class="dropdown">
+      <div class="dropdown dropdown-date">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Date</button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           {% include '@molecules/datepicker/datepicker.twig' %}

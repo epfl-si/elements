@@ -12073,11 +12073,11 @@ a.tag:hover {
 }
 
 .collapse-title {
-  color: #212121;
   position: relative;
   padding: 0;
   background: none;
   border: none;
+  color: #212121;
   -webkit-transition: color 0.15s, -webkit-box-shadow 0.25s;
   transition: color 0.15s, -webkit-box-shadow 0.25s;
   transition: box-shadow 0.25s, color 0.15s;
@@ -12171,7 +12171,7 @@ a.tag:hover {
   margin-bottom: 0;
 }
 
-.collapse-item::after {
+.collapse-item:after {
   content: "";
   display: block;
   padding-top: 2rem;
@@ -12207,7 +12207,7 @@ header.collapse-title p {
   }
 }
 
-header.collapse-title + .collapse-item::before {
+header.collapse-title + .collapse-item:before {
   content: "";
   display: block;
   padding-top: 0.5rem;
@@ -13090,9 +13090,9 @@ ol ol ol > li:before {
   counter-increment: third-item;
 }
 ol ul > li:before {
+  top: 0.7rem;
   background: transparent;
   border: 1px solid #ff0000;
-  top: 0.7rem;
 }
 
 .list-unstyled li,
@@ -13205,8 +13205,8 @@ picture .img-fluid {
   text-overflow: ellipsis;
 }
 .ms-choice > span.placeholder {
-  color: #707070;
   font-size: 1rem;
+  color: #707070;
 }
 .ms-choice > div {
   position: absolute;
@@ -14201,8 +14201,26 @@ a.card-gray:hover .card-body {
   content: " –";
 }
 .card-info .event-info:after,
-.card-info .event-info-date:after {
+.card-info .event-info-date:after,
+.card-info .card-info-date.event-date:after {
   content: none;
+}
+.card-info .event-info-date .event-date,
+.card-info .event-info-date .event-time,
+.card-info .event-info-date .icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+.card-info .event-info-date .icon {
+  width: 18px;
+  height: 18px;
+  color: #707070;
+}
+.card-info .event-info-date .icon:not(:first-child) {
+  margin-left: 0.5em;
+}
+.card-info .event-info > span {
+  display: block;
 }
 .card-info a {
   display: inline-block;
@@ -14330,28 +14348,6 @@ p + .card-info {
 
 .card-info-border-sm {
   padding: 0.25rem 0;
-}
-
-.card-info .event-date:not(:last-child):after {
-  content: " –";
-}
-.card-info .event-time:not(:last-of-type):after {
-  content: " ›";
-  margin: 0 0.25em 0 0.15em;
-}
-.card-info .event-info-date .event-date,
-.card-info .event-info-date .event-time,
-.card-info .event-info-date .icon {
-  display: inline-block;
-  vertical-align: middle;
-}
-.card-info .event-info-date .icon {
-  color: #707070;
-  height: 18px;
-  width: 18px;
-}
-.card-info .event-info > span {
-  display: block;
 }
 
 a.card-img-top {
@@ -15232,10 +15228,10 @@ article aside {
   padding-right: 40px;
 }
 .search-container .icon {
-  color: #c1c1c1;
   position: absolute;
   top: 50%;
   right: 0.75rem;
+  color: #c1c1c1;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   -webkit-transition: color 0.3s;
@@ -18503,8 +18499,8 @@ a.nav-arrow:hover .icon-container {
   text-decoration: none;
 }
 .header-light p.site-title {
-  font-weight: 700;
   line-height: 1.1em;
+  font-weight: 700;
 }
 .header-light .drawer {
   margin-left: -0.9rem;
@@ -19285,12 +19281,12 @@ a.cc-link {
   margin-bottom: 0;
 }
 .list-group.list-events-featured .list-group-teaser-container {
+  height: 100%;
   background: #fff;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100%;
 }
 .list-group.list-events-featured .list-group-teaser-container .btn-secondary:hover, .list-group.list-events-featured .list-group-teaser-container .btn-secondary:active, .list-group.list-events-featured .list-group-teaser-container .btn-secondary:focus {
   background: #fff;
@@ -20089,8 +20085,8 @@ article.blog-post footer {
 }
 
 .error-title {
-  color: #ff0000;
   font-size: 12vw;
+  color: #ff0000;
   margin-bottom: 0.75rem;
   text-align: center;
 }
@@ -20112,55 +20108,71 @@ article.blog-post footer {
   margin-left: -10px;
   margin-right: -10px;
 }
-.events-filters form .form-group-search {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-}
-.events-filters form .form-group-search .search-container {
-  margin: 0;
-}
 .events-filters form > * {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  max-width: 100%;
   padding-left: 10px;
   padding-right: 10px;
 }
-.events-filters .select-multiple .ms-drop,
-.events-filters .select-multiple .ms-drop ul,
-.events-filters .dropdown .picker__table {
-  width: auto;
+.events-filters form .form-group {
+  width: 100%;
 }
-.events-filters .dropdown {
+.events-filters form .dropdown {
+  width: 100%;
   margin-bottom: 1rem;
 }
-.events-filters .dropdown button {
+.events-filters form .dropdown button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0.375rem 0.75rem;
   text-align: left;
-  width: 100%;
 }
-.events-filters .dropdown .dropdown-menu.show {
-  left: auto !important;
+.events-filters form .dropdown .dropdown-menu.show {
+  top: 38px !important;
   right: 0;
+  left: auto !important;
   -webkit-transform: none !important;
           transform: none !important;
-  top: 38px !important;
 }
-.events-filters .dropdown .picker__holder {
+.events-filters form .dropdown .picker__holder {
   border: 0;
 }
-@media (max-width: 991.98px) {
-  .events-filters .dropdown {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+@media (min-width: 768px) {
+  .events-filters form .form-group,
+.events-filters form .dropdown {
+    width: 25%;
   }
+  .events-filters form .form-group-categories {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .events-filters form .form-group,
+.events-filters form .dropdown {
+    width: 15%;
+  }
+  .events-filters form .form-group-categories {
+    width: 30%;
+  }
+}
+.events-filters form .form-group-search {
+  width: 100%;
+}
+.events-filters form .form-group-search .search-container {
+  margin: 0;
+}
+.events-filters .select-multiple .ms-drop,
+.events-filters .select-multiple .ms-drop ul,
+.events-filters .dropdown .picker__table {
+  width: auto;
 }

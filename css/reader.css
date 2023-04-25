@@ -18,8 +18,8 @@
   vertical-align: bottom;
 }
 .tlbx-table thead th .tblx-muted {
-  line-height: 1.1em;
   display: inline-block;
+  line-height: 1.1em;
 }
 .tlbx-table th,
 .tlbx-table td:not([scope]) {
@@ -51,14 +51,14 @@
 }
 
 .tlbx-contrast-color-thumb {
+  font-size: 1.2rem;
+  font-weight: bold;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-weight: bold;
-  font-size: 1.2rem;
 }
 
 .tlbx-contrast-none {
@@ -67,12 +67,12 @@
   overflow: hidden;
 }
 
-.tlbx-contrast-none::after {
+.tlbx-contrast-none:after {
   content: "";
   position: absolute;
-  left: 0;
   top: 1px;
   bottom: 1px;
+  left: 0;
   width: 200%;
   border-width: 40px;
   border-style: solid;
@@ -82,8 +82,8 @@
 .tlbx-contrast-text {
   display: inline-block;
   width: 100%;
-  font-weight: bold;
   font-size: 2rem;
+  font-weight: bold;
   text-align: center;
 }
 
@@ -159,15 +159,15 @@
 }
 
 .tlbx-color-swatch-btn {
-  opacity: 0;
   display: inline-block;
   margin: 0 auto;
   padding: 1em;
   background: #003baf;
-  color: #f0f0f0;
   border: none;
+  color: #f0f0f0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
+  opacity: 0;
 }
 .tlbx-color-swatch-btn:hover {
   cursor: pointer;
@@ -185,15 +185,15 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 0.5rem 0;
   width: 100%;
+  margin: 0 0 0.5rem 0;
+  background: none;
+  border: 0;
+  font-size: 1rem;
   padding-right: 1rem;
   padding-left: 1rem;
-  border: 0;
-  background: none;
   cursor: pointer;
   text-transform: capitalize;
-  font-size: 1rem;
 }
 .tlbx-sidebar-item:hover {
   color: #012f4d;
@@ -205,19 +205,18 @@
 }
 .tlbx-sidebar-item:after {
   content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  font-size: 0;
   line-height: 0;
   -ms-flex-item-align: center;
       align-self: center;
   margin-left: auto;
   margin-right: 1rem;
-  display: block;
-  width: 0;
-  height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 5px solid #3474a8;
-  font-size: 0;
-  line-height: 0;
 }
 .tlbx-open .tlbx-sidebar-item:after {
   -webkit-transform: rotate(180deg);
@@ -305,8 +304,8 @@
 }
 
 .tlbx-sidebar-title {
-  font-size: 1rem;
   margin: 0 1rem;
+  font-size: 1rem;
   margin-top: 0.5rem;
 }
 .tlbx-sidebar-title span {
@@ -353,13 +352,13 @@
 
 .tlbx-actions-link {
   position: relative;
-  z-index: 1;
   padding: 0 0.5em;
   border: 1px solid #3474a8;
+  font-size: 12px;
+  color: #3474a8;
+  z-index: 1;
   background-color: #fff;
   border-radius: 3px;
-  color: #3474a8;
-  font-size: 12px;
   text-decoration: none;
 }
 .tlbx-actions-link:hover {
@@ -383,8 +382,8 @@
   border: 0;
 }
 .tlbx-single-full .tlbx-single-full-intro h1 {
-  font-size: 1rem;
   margin: 0;
+  font-size: 1rem;
 }
 
 .tlbx-single-full-intro {
@@ -399,20 +398,20 @@
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -ms-flex-item-align: center;
-      align-self: center;
   position: relative;
   top: 0.1em;
   width: 1em;
   height: 1em;
-  line-height: 1em;
   font-size: 1em;
+  line-height: 1em;
   color: inherit;
-  fill: currentColor;
   -webkit-transition: -webkit-transform 0.2s;
   transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
   transition: transform 0.2s, -webkit-transform 0.2s;
+  -ms-flex-item-align: center;
+      align-self: center;
+  fill: currentColor;
 }
 .tlbx-toolbar {
   display: -webkit-box;
@@ -443,19 +442,19 @@
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: none;
+  font-size: 1.4em;
+  font-weight: 900;
+  color: #fff;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 50px;
-  height: 50px;
-  border: none;
-  background: none;
-  color: #fff;
-  font-weight: 900;
-  font-size: 1.4em;
   opacity: 1;
 }
 .tlbx-toolbar-btn:hover {
@@ -499,13 +498,7 @@ body {
 }
 
 .styleguide {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-template-columns: 60px 240px 1fr;
-  grid-template-columns: 60px 240px 1fr;
   grid-template-columns: 60px 240px 1fr;
   min-height: 100vh;
   max-width: 100%;
@@ -520,33 +513,33 @@ body {
 }
 
 .tlbx-toolbar-wrapper {
-  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 60px;
+          flex: 0 0 60px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  padding: 5px;
+  color: white;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 5px;
   z-index: 999;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 60px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 60px;
-          flex: 0 0 60px;
   grid-column: 1;
   background-color: #003baf;
-  color: white;
 }
 @media only screen and (max-width: 767px) {
   .tlbx-toolbar-wrapper {
-    width: 100%;
     bottom: auto;
+    width: 100%;
   }
 }
 
@@ -554,28 +547,27 @@ body {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 240px;
           flex: 0 0 240px;
-  -ms-grid-column: 2;
   grid-column: 2;
   background-color: #f2f2f4;
 }
 @media only screen and (max-width: 767px) {
   .tlbx-sidebar-wrapper {
     position: fixed;
-    z-index: 998;
     top: 60px;
-    bottom: 0;
     right: 0;
-    overflow-y: auto;
-    min-height: 100vh;
-    max-width: 240px;
-    -webkit-box-shadow: -3px 0 20px 0 rgba(0, 0, 0, 0.3);
-            box-shadow: -3px 0 20px 0 rgba(0, 0, 0, 0.3);
+    bottom: 0;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
     -webkit-transition: -webkit-transform 0.3s;
     transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
     transition: transform 0.3s, -webkit-transform 0.3s;
+    z-index: 998;
+    overflow-y: auto;
+    min-height: 100vh;
+    max-width: 240px;
+    -webkit-box-shadow: -3px 0 20px 0 rgba(0, 0, 0, 0.3);
+            box-shadow: -3px 0 20px 0 rgba(0, 0, 0, 0.3);
   }
   .tlbx-sidebar-wrapper.tlbx-sidebar-open {
     -webkit-transform: translateX(0);
@@ -587,7 +579,6 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  -ms-grid-column: 3;
   grid-column: 3;
   align-self: start;
   overflow: hidden;
