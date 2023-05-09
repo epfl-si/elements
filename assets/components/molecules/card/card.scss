@@ -113,19 +113,9 @@ a.card-gray:hover .card-body { background: $white; }
 
   // Remove separators after specific card elements
   .event-info:after,
-  .event-info-date:after {
+  .event-info-date:after,
+  .card-info-date.event-date:after {
     content: none;
-  }
-
-  .event-date:not(:last-child):after {
-    content: ' \2013 ';
-  }
-
-  .event-time:not(:last-of-type) {
-    &:after {
-      content: ' \203A ';
-      margin: 0 0.25em 0 0.15em;
-    }
   }
 
   .event-info-date {
@@ -139,6 +129,10 @@ a.card-gray:hover .card-body { background: $white; }
       width: 18px;
       height: 18px;
       color: $gray-600;
+
+      &:not(:first-child) {
+        margin-left: 0.5em;
+      }
     }
   }
 
