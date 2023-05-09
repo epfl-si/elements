@@ -11,16 +11,6 @@
       </a>
       <h1>Memento</h1>
       <ul aria-hidden="true" class="nav-header d-none d-xl-flex">
-        <li class="dropdown">
-          <button class="btn btn-link dropdown-toggle nav-item" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Mémentos
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Option 1</a>
-            <a class="dropdown-item active" href="#">Option 2</a>
-            <a class="dropdown-item" href="#">Option 3</a>
-          </div>
-        </li>
         <li id="menu-item-{{ loop.index }}" {% if loop.index == 2 %} class="current-menu-item"{% endif %}>
           <a class="nav-item" href="#">Annoncer un événement</a>
         </li>
@@ -122,9 +112,9 @@
   
   <div class="event-filter-tags mt-2">
     <div class="tag-group">
-      <label for="">Filtres de recherches</label>
+      <label for="">Filtres de recherche</label>
       <div>
-        <a href="javascript:void(0)" class="tag tag-plain">Tout effacer<span class="remove" tabindex="-1" title="Remove">×</span></a>
+        <a href="javascript:void(0)" class="tag tag-plain">Tout effacer</a>
         <a href="javascript:void(0)" class="tag tag-primary">Évènements culturels et festifs<span class="remove" tabindex="-1" title="Remove">×</span></a>
         <a href="javascript:void(0)" class="tag tag-primary">Expositions<span class="remove" tabindex="-1" title="Remove">×</span></a>
         <a href="javascript:void(0)" class="tag tag-primary">Entrée libre<span class="remove" tabindex="-1" title="Remove">×</span></a>
