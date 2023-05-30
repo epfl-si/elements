@@ -20,22 +20,28 @@ a.tag {
   background: $white;
   border: 1px solid $gray-300;
   line-height: 1;
+  font-size: inherit;
   font-weight: 400;
   color: $gray-800;
   border-radius: $border-radius;
   transition:
     color 0.2s ease-in-out,
-    background 0.2s ease-in-out;
+    background 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+  vertical-align: middle;
 
   .remove {
     text-decoration: none;
     float: right;
+    padding: 0;
+    border: 0;
     font-size: 1.25em;
     line-height: 0.5em;
     margin-top: 0.2em;
     margin-left: 0.3em;
     color: inherit;
-
+    transition: all .2s ease-in-out;
+    
     &:hover {
       color: $red;
     }
@@ -68,6 +74,78 @@ a.tag {
   }
 }
 
+a.tag,
+.btn.tag,
+button.tag {
+  
+  & > * {
+    vertical-align: middle;
+  }
+  
+  .remove {
+    background: $gray-100;
+    border-radius: 2px;
+    line-height: 1.3rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    margin-right: -2px;
+    text-align: center;
+  }
+  
+  &:hover,
+  &:focus {
+    border-color: $black;
+    
+    .remove {
+      color: #fff;
+      background: $red;
+    }
+  }
+  
+  &:focus,
+  &:focus-visible,
+  &.focus,
+  &:focus:not(.focus-visible),
+  &:focus:focus-visible:not(.focus-visible) {
+    outline: solid 2px $red !important;
+    outline-offset: 2px;
+    // That terrible selector is unfortunately necessary to override Bootstrap base style and compilation behaviour. Really annoying. -ak
+  }
+  
+  &:focus:not(:focus-visible) {
+    outline-width: 0 !important;
+  }
+  
+  &.tag-secondary,
+  &.tag-plain {
+    &:focus,
+    &:focus-visible,
+    &.focus,
+    &:focus:not(.focus-visible),
+    &:focus:focus-visible:not(.focus-visible) {
+      outline-color: $gray-600 !important;
+    }
+  }
+  
+  &.tag-plain {
+    .remove {
+      color: $black;
+    }
+    
+    &:hover,
+    &:focus {
+      border-color: $black;
+
+      .remove {
+        color: $red;
+        background: #fff;
+      }
+    }
+  }
+}
+
 .tag-group {
   padding: 1em;
   background: color.adjust($white, $lightness: -5%);
@@ -94,6 +172,15 @@ a.tag {
     background: color.adjust($white, $lightness: -5%);
     border-radius: $border-radius;
     border: 1px solid $gray-300;
+  }
+}
+
+.btn.tag.tag-sm,
+.tag-input-sm .tag.btn {
+  .remove {
+    line-height: 1rem;
+    width: 1rem;
+    height: 1rem;
   }
 }
 
