@@ -1,5 +1,9 @@
 {% extends "@templates/base/base.twig" %}
 
+{% block header %}
+  {% include '@organisms/header/header.twig' with { nav_user: true } %}
+{% endblock %}
+
 {% set nav_aside_items = [{
   label: "Laboratory Full Name",
   children: ["Projects", "Publications", "News", "Team", "Teaching"]

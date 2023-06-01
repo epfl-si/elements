@@ -1,5 +1,6 @@
 {% if language is not defined %}{% set language = 'fr' %}{% endif %}
 {% if long_nav_lang is not defined %}{% set long_nav_lang = false %}{% endif %}
+{% if nav_user is not defined %}{% set nav_user = false %}{% endif %}
 
 <header role="banner" class="header">
   <a class="logo" href="#">
@@ -22,6 +23,9 @@
   </ul>
   {% include '@molecules/search/search.twig' %}
   {% include '@molecules/search/search-mobile.twig' %}
+  {%  if nav_user %}
+    {% include '@atoms/nav-user/nav-user.twig' %}
+  {% endif %}
   {%  if long_nav_lang %}
     {% include '@atoms/nav-lang/nav-lang.twig' %}
   {% endif %}
