@@ -8,3 +8,15 @@
     color: $white !important;
   }
 }
+
+.dropdown {
+  .dropdown-toggle::after {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  &.show {
+    .dropdown-toggle::after {
+      transform: rotate(180deg);
+    }
+  }
+}
