@@ -22,3 +22,74 @@
     margin-left: 0 !important;
   }
 }
+
+@include media-breakpoint-down(lg) {
+  .header .nav-user {
+    margin-left: 1rem;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  
+  .header .nav-user {
+    margin-left: 0.5rem;
+    
+    & + .nav-lang-short > ul {
+      padding-left: 0 !important;
+    }
+    
+    .btn {
+      padding: $btn-padding-y-sm;
+    }
+    .user-avatar {
+      flex-basis: 40px;
+      width: 40px;
+    }
+    
+    &:not(.show) {
+      .btn {
+        border-radius: 50%;
+        
+        &::after {
+          content: none;
+        }
+      }
+      .user-name {
+        @include sr-only;
+      }
+    }
+    
+    &.show {
+      background: white;
+      position: fixed;
+      width: calc(100vw - 1.8rem);
+      margin: 0;
+      left: 0.9rem;
+      right: 0.9rem;
+      z-index: 1199;
+      
+      .btn {
+        border: 2px solid $gray-600;
+        border-bottom: 0;
+        border-radius: 2px 2px 0 0;
+        margin-left: -2px;
+        width: calc(100% + 4px);
+        padding-left: $btn-padding-y;
+        padding-right: $btn-padding-y;
+        
+        &::after {
+          margin-left: auto;
+        }
+      }
+      
+      .dropdown-menu {
+        border: 2px solid $gray-600;
+        border-top: 0;
+        border-radius: 0 0 2px 2px;
+        top: -2px !important;
+        left: 0 !important;
+        width: calc(100% + 4px);
+      }
+    }
+  }
+}
