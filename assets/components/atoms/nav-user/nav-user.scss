@@ -23,6 +23,19 @@
   }
 }
 
+.nav-user.user-login {
+  position: relative;
+  padding-left: 1.5rem;
+  
+  .icon {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    margin-right: 0.25rem;
+  }
+}
+
+
 @include media-breakpoint-down(lg) {
   .header .nav-user {
     margin-left: 1rem;
@@ -30,6 +43,24 @@
 }
 
 @include media-breakpoint-down(sm) {
+  
+  .header .nav-user-login {
+    padding: 0;
+    
+    .user-login-link {
+      padding: 0.5em;
+    }
+    
+    .label {
+      @include sr-only;
+    }
+    .icon {
+      position: static;
+      width: 1.25rem;
+      height: 1.25rem;
+      margin: 0;
+    }
+  }
   
   .header .nav-user {
     margin-left: 0.5rem;

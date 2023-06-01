@@ -1,2 +1,6 @@
 title: Nav user
 name: nav-user
+variants:
+  - name: login
+    title: Login link
+    notes: 
