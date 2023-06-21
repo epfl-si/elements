@@ -10,17 +10,11 @@ input[type="button"] {
   
   &:focus,
   &:focus-visible,
-  &.focus,
-  &:focus:not(.focus-visible),
-  &:focus:focus-visible:not(.focus-visible) {
+  &.focus {
     outline-width: 2px !important;
     outline-style: solid !important;
     // It would be super nice to avoid the !important and extra long selectors, but we're stuck with old Bootstrap base styles and weird compilation behaviour. -ak
     outline-offset: 2px;
-  }
-  
-  &:focus:not(:focus-visible) {
-    outline-width: 0 !important;
   }
 }
 

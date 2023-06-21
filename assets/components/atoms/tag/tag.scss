@@ -106,25 +106,16 @@ button.tag {
   
   &:focus,
   &:focus-visible,
-  &.focus,
-  &:focus:not(.focus-visible),
-  &:focus:focus-visible:not(.focus-visible) {
+  &.focus {
     outline: solid 2px $red !important;
     outline-offset: 2px;
-    // That terrible selector is unfortunately necessary to override Bootstrap base style and compilation behaviour. Really annoying. -ak
-  }
-  
-  &:focus:not(:focus-visible) {
-    outline-width: 0 !important;
   }
   
   &.tag-secondary,
   &.tag-plain {
     &:focus,
     &:focus-visible,
-    &.focus,
-    &:focus:not(.focus-visible),
-    &:focus:focus-visible:not(.focus-visible) {
+    &.focus {
       outline-color: $gray-600 !important;
     }
   }
