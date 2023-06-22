@@ -10,24 +10,54 @@
     {% block summary %}{% endblock -%}
     <div class="card-info">
       {% block date %}
-      <span class="card-info-date" itemprop="startDate" content="2018-01-10T12:00">10.01.2018</span>
-      <span>13:00</span>
-      <span>17:30</span>
-      {% endblock %}
-      <p>
-      <span itemprop="performer" itemscope itemtype="http://schema.org/performer">
-      {% block speaker %}
-        Avec <b>Prof. Dr. Aditya Mueller</b>
-      {% endblock %}
-      </span>
-      <span itemprop="location" itemscope itemtype="http://schema.org/Place">
-      <br>
-        {% block info %}
-        Lieu : <b><span itemprop="name">ArtLab EPFL</span></b>
-        <br> Catégorie : <b>Événements culturel</b>
-        {% endblock %}
-      </span>
+      <p class="event-info-date mb-1">
+        {% include '@atoms/icon/icon.twig' with { icon:  'calendar', icon_classes:'feather' } %}
+        <span class="sr-only">Dates: du</span>
+        <span class="card-info-date event-date" itemprop="startDate" content="2018-01-10T12:00">10.01.2018</span>
+        <span class="sep" aria-hidden="true">›</span>
+        <span class="sr-only">au</span>
+        <span class="card-info-date event-date" itemprop="endDate" content="2018-01-12T12:00">12.01.2018</span>
+        {% include '@atoms/icon/icon.twig' with { icon:  'clock', icon_classes:'feather' } %}
+        <span class="sr-only">Heures: de</span>
+        <span class="event-time">13:00</span>
+        <span class="sep" aria-hidden="true">›</span>
+        <span class="sr-only">à</span>
+        <span class="event-time">17:30</span>
       </p>
+      {% endblock %}
+      <div class="event-info mt-1">
+        {% block speaker %}
+        <p class="event-speaker" itemprop="performer" itemscope itemtype="http://schema.org/performer">
+          <b>Intervenant·e:</b> Prof. Dr. Aditya Mueller
+        </p>  
+        {% endblock %}
+        {% block location %}
+        <p class="event-location" itemprop="location" itemscope itemtype="http://schema.org/Place">
+          {% if eventLocation == 'online' %}
+          <b>Lieu:</b> {% include '@atoms/icon/icon.twig' with { icon: 'monitor', icon_classes:'feather' } %}
+          <span itemprop="name">En ligne</span>
+          {% elseif eventLocation == 'online_room' %}
+          <b>Lieu:</b> {% include '@atoms/icon/icon.twig' with { icon: 'map-pin', icon_classes:'feather' } %}
+          <span itemprop="name">ArtLab EPFL</span> &amp;
+          {% include '@atoms/icon/icon.twig' with { icon: 'monitor', icon_classes:'feather' } %}
+          <span itemprop="name">En ligne</span>
+          {% else %}
+          <b>Lieu:</b> {% include '@atoms/icon/icon.twig' with { icon: 'map-pin', icon_classes:'feather' } %}
+          <span itemprop="name">ArtLab EPFL</span>
+          {% endif %}
+        </p>
+        {% endblock %}
+        {% block category %}
+        <p class="event-category">
+          <b>Catégorie:</b> Événements culturel
+        </p>
+        {% endblock %}
+        {% block audience %}
+        <p class="event-audience" itemprop="audience" itemscope itemtype="https://schema.org/audience">
+          <b>Public cible:</b> Tout public
+        </p>
+        {% endblock %}
+      </div>
     </div>
   </div>
   {% block footer %}{% endblock %}
