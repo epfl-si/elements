@@ -25,14 +25,13 @@
         </p>
         {% endblock %}
         <div class="event-info mt-1">
-          <p class="event-speaker" itemprop="performer" itemscope itemtype="http://schema.org/performer">
           {% block speaker %}
+          <p class="event-speaker" itemprop="performer" itemscope itemtype="http://schema.org/performer">
             <b>Intervenant·e:</b> Prof. Dr. Aditya Mueller
+          </p>  
           {% endblock %}
-          </p>            
-          <p class="event-location" itemprop="location" itemscope itemtype="http://schema.org/Place">
           {% block location %}
-            
+          <p class="event-location" itemprop="location" itemscope itemtype="http://schema.org/Place">
             {% if eventLocation == 'online' %}
             <b>Lieu:</b> {% include '@atoms/icon/icon.twig' with { icon: 'monitor', icon_classes:'feather' } %}
             <span itemprop="name"><a href="#">En ligne</a></span>
@@ -45,19 +44,18 @@
             <b>Lieu:</b> {% include '@atoms/icon/icon.twig' with { icon: 'map-pin', icon_classes:'feather' } %}
             <span itemprop="name"><a href="#">ArtLab EPFL</a></span>
             {% endif %}
-            
-          {% endblock %}
           </p>
-          <p class="event-category">
+          {% endblock %}
           {% block category %}
+          <p class="event-category">
             <b>Catégorie:</b> Événements culturel
-          {% endblock %}
           </p>
-          <p class="event-audience" itemprop="audience" itemscope itemtype="https://schema.org/audience">
+          {% endblock %}
           {% block audience %}
+          <p class="event-audience" itemprop="audience" itemscope itemtype="https://schema.org/audience">
             <b>Public cible:</b> Tout public
-          {% endblock %}
           </p>
+          {% endblock %}
         </div>
         
         <p class="pt-3 event-actions">
