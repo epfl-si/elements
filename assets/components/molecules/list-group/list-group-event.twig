@@ -1,4 +1,4 @@
-<div href="#" class="list-group-item list-group-teaser" itemscope itemtype="http://schema.org/Event">
+<div class="list-group-item list-group-teaser" itemscope itemtype="http://schema.org/Event">
   <div class="list-group-teaser-container">
     <div class="list-group-teaser-thumbnail">
       {% include '@atoms/picture/picture.twig' with {'variant':'news-thumb'} %}
@@ -22,8 +22,8 @@
           <span class="sep" aria-hidden="true">›</span>
           <span class="sr-only">à</span>
           <span class="event-time">17:30</span>
-          {% endblock %}
         </p>
+        {% endblock %}
         <p class="event-info mt-1">
           <span class="event-speaker" itemprop="performer" itemscope itemtype="http://schema.org/performer">
           {% block speaker %}
