@@ -24,13 +24,13 @@
           <span class="event-time">17:30</span>
         </p>
         {% endblock %}
-        <p class="event-info mt-1">
-          <span class="event-speaker" itemprop="performer" itemscope itemtype="http://schema.org/performer">
+        <div class="event-info mt-1">
+          <p class="event-speaker" itemprop="performer" itemscope itemtype="http://schema.org/performer">
           {% block speaker %}
             <b>Intervenant·e:</b> Prof. Dr. Aditya Mueller
           {% endblock %}
-          </span>            
-          <span class="event-location" itemprop="location" itemscope itemtype="http://schema.org/Place">
+          </p>            
+          <p class="event-location" itemprop="location" itemscope itemtype="http://schema.org/Place">
           {% block location %}
             
             {% if eventLocation == 'online' %}
@@ -47,18 +47,18 @@
             {% endif %}
             
           {% endblock %}
-          </span>
-          <span class="event-category">
+          </p>
+          <p class="event-category">
           {% block category %}
             <b>Catégorie:</b> Événements culturel
           {% endblock %}
-          </span>
-          <span class="event-audience" itemprop="audience" itemscope itemtype="https://schema.org/audience">
+          </p>
+          <p class="event-audience" itemprop="audience" itemscope itemtype="https://schema.org/audience">
           {% block audience %}
             <b>Public cible:</b> Tout public
           {% endblock %}
-          </span>
-        </p>
+          </p>
+        </div>
         
         <p class="pt-3 event-actions">
           {% if live_now|default(false) %}
