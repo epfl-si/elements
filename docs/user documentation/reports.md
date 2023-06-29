@@ -2,34 +2,39 @@
 
 ## Google Analytics
 
-To be able to generate EPFL reports, paste the following snippet inside the ```<head>``` tag on each page of your site.
+### Official EPFL measurement ID
 
-Email <1234@epfl.ch> to request a report for your website.
-
-  
+To be able to generate EPFL reports, paste this code as high in the ```<head>``` of your site or tool as possible:
+```html
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PJGBG5R');</script>
+<!-- End Google Tag Manager -->
 ```
-<!-- Global Site Tag (gtag.js) - Google Analytics -->
-<script async src='https://www.googletagmanager.com/gtag/js?id=UA-4833294-1'></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-4833294-1', { 'anonymize_ip': true });
-</script>
+` `  
+Additionally, paste this code immediately after the opening ```<body>``` tag:
+```html
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJGBG5R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 ```
 
+` `  
+` `  
+#### Request a report
+
+Email <1234@epfl.ch> to request a report for your website or tool.
+
+` `  
+` `  
 ### Personal measurement ID
 
 If you already have a Google Analytics account or are considering creating one, you can add your measurement ID like this.
   
-```
-<!-- Global Site Tag (gtag.js) - Google Analytics -->
-<script async src='https://www.googletagmanager.com/gtag/js?id=UA-4833294-1'></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-4833294-1', { 'anonymize_ip': true });
-    gtag('config', 'YOUR-GA-MEASUREMENT-ID', { 'anonymize_ip': true });
-</script>
+```html
+<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-additional-ID"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-additional-ID'); </script>
 ```
