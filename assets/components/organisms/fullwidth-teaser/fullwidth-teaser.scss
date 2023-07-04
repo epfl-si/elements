@@ -169,10 +169,6 @@
   .btn {
     transition: padding 0.15s;
 
-    &:before {
-      border: none;
-    }
-
     &:hover,
     &:focus {
       background: color.adjust($red, $lightness: -15%);
@@ -187,6 +183,18 @@
         background: none;
         border-top-color: color.adjust($red, $lightness: -15%);
       }
+    }
+    
+    &:active::after {
+      border-top-color: color.adjust($red-dark, $lightness: -10%);
+    }
+    
+    &:focus {
+      outline: 0 !important;
+    }
+    &:focus-visible {
+      outline: 2px solid #fff !important;
+      outline-offset: -4px !important;
     }
   }
 }
