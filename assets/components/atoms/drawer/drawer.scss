@@ -38,7 +38,15 @@
       top: 50%;
       padding: 0 2.1em 0 1.1em;
       transform: translateY(-50%);
+      transition: all 0.3s ease-in-out;
       text-decoration: underline;
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 2px;
+    }
+    
+    &:focus-visible .text {
+      text-decoration-thickness: 0.2em;
+      text-underline-offset: 4px;
     }
   }
 
@@ -67,9 +75,19 @@
     &:hover {
       background: $red-dark;
     }
+    
+    &:focus,
+    &:focus-visible {
+      outline: 0 !important;
+    }
   }
 
   &.open .drawer-toggle .icon {
     transform: rotate(180deg) translateY(50%);
+  }
+  
+  &:focus-within {
+    outline: 2px solid $red-dark;
+    outline-offset: 2px;
   }
 }
