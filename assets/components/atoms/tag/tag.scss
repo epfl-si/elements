@@ -83,13 +83,13 @@ button.tag {
   }
   
   .remove {
-    background: $gray-100;
-    border-radius: 2px;
     width: 1.25rem;
     height: 1.25rem;
     margin-top: -1px;
     margin-bottom: -1px;
     margin-right: -2px;
+    background: $gray-100;
+    border-radius: 2px;
     line-height: 1.3rem;
     text-align: center;
   }
