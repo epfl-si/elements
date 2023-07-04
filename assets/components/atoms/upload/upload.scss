@@ -14,4 +14,20 @@
   height: 0.1px;
   opacity: 0;
   z-index: $zindex-background;
+  
+  &:focus,
+  &:focus-visible {
+    & + label.btn {
+      outline: 2px solid;
+      outline-offset: 2px;
+    }
+    
+    & + label.btn-primary {
+      outline-color: $red-dark;
+    }
+    
+    & + label.btn-secondary {
+      outline-color: $gray-600;
+    }
+  }
 }
