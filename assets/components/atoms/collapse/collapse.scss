@@ -93,6 +93,13 @@ $collapse-chevron-size: 12px;
   }
 }
 
+button.collapse-title {
+  &:focus,
+  &:focus-visible {
+    outline: 0 !important;
+  }
+}
+
 .collapse-item {
   &:after {
     content: "";
