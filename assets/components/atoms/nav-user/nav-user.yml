@@ -3,7 +3,7 @@ name: nav-user
 notes: |
   * If included in the header, the user dropdown and login link should be placed between the search form and language selector.
   * If you choose to place it elsewhere, you may need to adjust the Boostratp margin classes on the `.nav-user` element.
-  * An example of user menu integration can be found on the Laboratory Homepage template page.
+  * An example of user menu integration can be found on the [Laboratory Homepage](#/pages/lab-homepage) template page.
 variants:
   - name: login
     title: Login link
