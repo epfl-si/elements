@@ -57,7 +57,9 @@ $collapse-chevron-size: 12px;
       transition:
         opacity 0.3s,
         transform 0.2s;
-      z-index: $zindex-background;
+    /* z-index: $zindex-background;
+      with z-index:-1 the pseudo element is hidden if the section has a background color - ak*/
+      z-index: 0;
   }
 
   &:focus {
@@ -90,6 +92,13 @@ $collapse-chevron-size: 12px;
 
   *:last-child {
     margin-bottom: 0;
+  }
+}
+
+button.collapse-title {
+  &:focus,
+  &:focus-visible {
+    outline: 0 !important;
   }
 }
 

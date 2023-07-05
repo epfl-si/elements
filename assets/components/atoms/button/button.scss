@@ -1,6 +1,23 @@
 @charset 'utf-8';
 @use 'sass:color';
 
+.btn,
+button,
+button.btn,
+input[type="button"] {
+  &:disabled,
+  &.disabled { opacity: 1; }
+  
+  &:focus,
+  &:focus-visible,
+  &.focus {
+    outline-width: 2px !important;
+    outline-style: solid !important;
+    // It would be super nice to avoid the !important and extra long selectors, but we're stuck with old Bootstrap base styles and weird compilation behaviour. -ak
+    outline-offset: 2px;
+  }
+}
+
 .btn {
   text-decoration: none;
   white-space: normal;
@@ -11,10 +28,7 @@
 
   @extend .focused;
 
-  &:before { border-width: 2px; }
-
-  &:disabled,
-  &.disabled { opacity: 1; }
+  &:before { content: none; }
 }
 
 .btn-primary {
@@ -25,9 +39,12 @@
     background: $red-dark;
     border-color: $red-dark;
   }
-
-  &:focus:before,
-  &.focus:before { border-color: $red-dark; }
+  
+  &:focus,
+  &:focus-visible,
+  &.focus {
+    outline-color: $red-dark !important;
+  }
 
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled).active {
@@ -75,8 +92,11 @@
     }
   }
 
-  &:focus:before,
-  &.focus:before { border-color: $gray-600; }
+  &:focus,
+  &:focus-visible,
+  &.focus {
+    outline-color: $gray-600 !important;
+  }
 
   .bg-dark &:focus,
   .bg-dark &.focus {
