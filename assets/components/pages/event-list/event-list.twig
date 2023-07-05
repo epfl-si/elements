@@ -122,14 +122,14 @@
   
   <div class="event-filter-tags mt-2">
     <div class="tag-group">
-      <label for="">Filtres de recherches</label>
+      <label for="">Filtres de recherche</label>
       <div>
-        <a href="javascript:void(0)" class="tag tag-plain">Tout effacer<span class="remove" tabindex="-1" title="Remove">×</span></a>
-        <a href="javascript:void(0)" class="tag tag-primary">Évènements culturels et festifs<span class="remove" tabindex="-1" title="Remove">×</span></a>
-        <a href="javascript:void(0)" class="tag tag-primary">Expositions<span class="remove" tabindex="-1" title="Remove">×</span></a>
-        <a href="javascript:void(0)" class="tag tag-primary">Entrée libre<span class="remove" tabindex="-1" title="Remove">×</span></a>
-        <a href="javascript:void(0)" class="tag tag-primary">Tout public<span class="remove" tabindex="-1" title="Remove">×</span></a>
-        <a href="javascript:void(0)" class="tag tag-primary">Français<span class="remove" tabindex="-1" title="Remove">×</span></a>
+        <button class="btn tag tag-plain">Tout effacer</button>
+        <button class="btn tag tag-primary">Évènements culturels et festifs<span class="remove" title="Remove">×</span></button>
+        <button class="btn tag tag-primary">Expositions<span class="remove" title="Remove">×</span></button>
+        <button class="btn tag tag-primary">Entrée libre<span class="remove" title="Remove">×</span></button>
+        <button class="btn tag tag-primary">Tout public<span class="remove" title="Remove">×</span></button>
+        <button class="btn tag tag-primary">Français<span class="remove" title="Remove">×</span></button>
       </div>
     </div>
   </div>
@@ -149,13 +149,13 @@
   </div>
   
   <div class="list-group list-events mt-4">
-    {% include '@molecules/card/card-event.twig' with { eventLocation: 'online_room', live_now: true } %}
-    {% include '@molecules/card/card-event.twig' with { eventLocation: 'online', live_now: true } %}
+    {% include '@molecules/list-group/list-group-event.twig' with { eventLocation: 'online_room', live_now: true } %}
+    {% include '@molecules/list-group/list-group-event.twig' with { eventLocation: 'online', live_now: true } %}
     {% for i in 1..2 %}
-      {% include '@molecules/card/card-event.twig' with { eventLocation: 'online' } %}
+      {% include '@molecules/list-group/list-group-event.twig' with { eventLocation: 'online' } %}
     {% endfor %}
     {% for i in 1..6 %}
-      {% include '@molecules/card/card-event.twig' %}
+      {% include '@molecules/list-group/list-group-event.twig' %}
     {% endfor %}
   </div>
   

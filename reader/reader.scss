@@ -47,6 +47,13 @@
   overflow: visible;
 }
 
+.tlbx-sidebar button.tlbx-sidebar-item {
+  &:focus,
+  &:focus-visible {
+    outline: revert !important;
+  }
+}
+
 
 .tlbx-sidebar-item-list {
   margin-left: 0;

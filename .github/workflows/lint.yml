@@ -1,0 +1,24 @@
+name: Lint
+on:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          cache: yarn
+          node-version: 16
+
+      # Work around https://github.com/yarnpkg/yarn/issues/4890
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --network-timeout 1000000
+
+      - name: Run stylelint
+        run: yarn stylelint

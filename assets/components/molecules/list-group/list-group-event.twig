@@ -1,4 +1,4 @@
-<div href="#" class="list-group-item list-group-teaser" itemscope itemtype="http://schema.org/Event">
+<div class="list-group-item list-group-teaser" itemscope itemtype="http://schema.org/Event">
   <div class="list-group-teaser-container">
     <div class="list-group-teaser-thumbnail">
       {% include '@atoms/picture/picture.twig' with {'variant':'news-thumb'} %}
@@ -22,17 +22,16 @@
           <span class="sep" aria-hidden="true">›</span>
           <span class="sr-only">à</span>
           <span class="event-time">17:30</span>
-          {% endblock %}
         </p>
-        <p class="event-info mt-1">
-          <span class="event-speaker" itemprop="performer" itemscope itemtype="http://schema.org/performer">
+        {% endblock %}
+        <div class="event-info mt-1">
           {% block speaker %}
+          <p class="event-speaker" itemprop="performer" itemscope itemtype="http://schema.org/performer">
             <b>Intervenant·e:</b> Prof. Dr. Aditya Mueller
+          </p>  
           {% endblock %}
-          </span>            
-          <span class="event-location" itemprop="location" itemscope itemtype="http://schema.org/Place">
           {% block location %}
-            
+          <p class="event-location" itemprop="location" itemscope itemtype="http://schema.org/Place">
             {% if eventLocation == 'online' %}
             <b>Lieu:</b> {% include '@atoms/icon/icon.twig' with { icon: 'monitor', icon_classes:'feather' } %}
             <span itemprop="name"><a href="#">En ligne</a></span>
@@ -45,20 +44,19 @@
             <b>Lieu:</b> {% include '@atoms/icon/icon.twig' with { icon: 'map-pin', icon_classes:'feather' } %}
             <span itemprop="name"><a href="#">ArtLab EPFL</a></span>
             {% endif %}
-            
+          </p>
           {% endblock %}
-          </span>
-          <span class="event-category">
           {% block category %}
+          <p class="event-category">
             <b>Catégorie:</b> Événements culturel
+          </p>
           {% endblock %}
-          </span>
-          <span class="event-audience" itemprop="audience" itemscope itemtype="https://schema.org/audience">
           {% block audience %}
+          <p class="event-audience" itemprop="audience" itemscope itemtype="https://schema.org/audience">
             <b>Public cible:</b> Tout public
+          </p>
           {% endblock %}
-          </span>
-        </p>
+        </div>
         
         <p class="pt-3 event-actions">
           {% if live_now|default(false) %}
