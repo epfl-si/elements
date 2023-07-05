@@ -1,8 +1,8 @@
 .user-dropdown .btn {
   display: flex;
   align-items: center;
-  border: 0;
   padding: $btn-padding-y-sm $btn-padding-x-sm;
+  border: 0;
   
   .user-avatar {
     flex-basis: 50px;
@@ -114,12 +114,12 @@
       }
       
       .dropdown-menu {
-        border: 2px solid $gray-600;
-        border-top: 0;
-        border-radius: 0 0 2px 2px;
         top: -2px !important;
         left: 0 !important;
         width: calc(100% + 4px);
+        border: 2px solid $gray-600;
+        border-top: 0;
+        border-radius: 0 0 2px 2px;
       }
     }
   }
