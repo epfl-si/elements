@@ -56,11 +56,6 @@ a.tag {
     background: $gray-600;
     color: $white;
   }
-  
-  &.tag-light-gray {
-    border-color: $gray-100;
-    background: $gray-100;
-  }
 
   @each $color, $value in $theme-colors {
     &.tag-#{$color} {
