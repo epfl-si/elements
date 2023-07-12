@@ -13,6 +13,6 @@
   }
 
   &::-webkit-slider-runnable-track {
-    background: linear-gradient($red, $red) 0/var(--sx) 100% no-repeat $custom-range-track-bg;
+    background: linear-gradient($red, $red) 0 / var(--sx) 100% no-repeat $custom-range-track-bg;
   }
 }

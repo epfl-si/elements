@@ -1,4 +1,4 @@
-@import '../../variables.scss';
+@import '../../variables';
 
 .tlbx-color-swatch-wrapper {
   display: flex;
@@ -23,14 +23,14 @@
 }
 
 .tlbx-color-swatch-btn {
-  opacity: 0;
   display: inline-block;
   margin: 0 auto;
   padding: 1em;
   background: $color-primary;
-  color: $white;
   border: none;
+  color: $white;
   transition: opacity 0.3s;
+  opacity: 0;
   &:hover { cursor: pointer; }
 }
 

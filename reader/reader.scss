@@ -1,5 +1,6 @@
 @charset 'utf-8';
 
+@use 'sass:map';
 @import 'variables';
 @import 'bootstrap/scss/functions';
 // Import the main theme's Bootstrap config:
@@ -19,7 +20,7 @@
 
 
 .tlbx-doc-markdown-wrapper {
-  max-width: map-get($container-max-widths, 'md');
+  max-width: map.get($container-max-widths, 'md');
   margin: 0 auto;
 }
 
@@ -44,6 +45,13 @@
     escape its container. */
 .tlbx-item-preview.tlbx-component-dropdown {
   overflow: visible;
+}
+
+.tlbx-sidebar button.tlbx-sidebar-item {
+  &:focus,
+  &:focus-visible {
+    outline: revert !important;
+  }
 }
 
 

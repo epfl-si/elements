@@ -4,6 +4,7 @@ const NodePolyfillPlugin        = require("node-polyfill-webpack-plugin")
 const CopyPlugin                = require('copy-webpack-plugin')
 const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally')
 const MiniCssExtractPlugin      = require('mini-css-extract-plugin')
+const StylelintPlugin           = require('stylelint-webpack-plugin');
 const SVGSpritemapPlugin        = require('svg-spritemap-webpack-plugin')
 const CssMinimizerPlugin        = require('css-minimizer-webpack-plugin')
 const UnminifiedWebpackPlugin   = require('unminified-webpack-plugin')
@@ -145,6 +146,7 @@ module.exports = (env, argv) => {
         ["docs/**/*", "package.json"],
         buildDir
       ),
+      new StylelintPlugin({ extensions: 'scss' }),
       new AssetComponentsPlugin(['atoms', 'molecules', 'organisms', 'content-types', 'pages']),
       new MergeIntoSingleFilePlugin({
         files: {

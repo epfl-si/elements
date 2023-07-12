@@ -1,4 +1,4 @@
-@import '../../variables.scss';
+@import '../../variables';
 
 .tlbx-item-preview {
   position: relative;
@@ -29,13 +29,13 @@
 
 .tlbx-actions-link {
   position: relative;
-  z-index: 1;
   padding: 0 0.5em;
   border: 1px solid $link-color;
+  font-size: 12px;
+  color: $link-color;
+  z-index: 1;
   background-color: #fff;
   border-radius: 3px;
-  color: $link-color;
-  font-size: 12px;
   text-decoration: none;
 
   &:hover {

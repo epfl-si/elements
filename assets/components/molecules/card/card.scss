@@ -1,7 +1,6 @@
 @charset 'utf-8';
 @use 'sass:math';
 
-//
 // Normal card
 .card {
   border-color: $gray-100;
@@ -79,7 +78,6 @@ a.card-gray:hover .card-body { background: $white; }
   border: 0;
 }
 
-//
 // Distinction is when you have a little red fancy flag in the card body.
 .card-distinction .card-body {
   position: relative;
@@ -97,7 +95,6 @@ a.card-gray:hover .card-body { background: $white; }
   }
 }
 
-//
 // Card info
 .card-info {
   font-size: $font-size-sm;
@@ -116,8 +113,31 @@ a.card-gray:hover .card-body { background: $white; }
 
   // Remove separators after specific card elements
   .event-info:after,
-  .event-info-date:after {
+  .event-info-date:after,
+  .card-info-date.event-date:after {
     content: none;
+  }
+
+  .event-info-date {
+    .event-date,
+    .event-time,
+    .icon {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .icon {
+      width: 18px;
+      height: 18px;
+      color: $gray-600;
+
+      &:not(:first-child) {
+        margin-left: 0.5em;
+      }
+    }
+  }
+
+  .event-info > span {
+    display: block;
   }
 
   a {
@@ -160,39 +180,6 @@ a.card-gray:hover .card-body { background: $white; }
   padding: ($spacer * 0.25) 0;
 }
 
-.card-info {
-
-  .event-date:not(:last-child):after {
-    content: ' \2013 ';
-  }
-
-  .event-time:not(:last-of-type) {
-    &:after {
-      content: ' \203A ';
-      margin: 0 0.25em 0 0.15em;
-    }
-  }
-
-  .event-info-date {
-    .event-date,
-    .event-time,
-    .icon {
-      display: inline-block;
-      vertical-align: middle;
-    }
-    .icon {
-      color: $gray-600;
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  .event-info > span {
-    display: block;
-  }
-}
-
-//
 // Card items as links
 a.card-img-top {
   position: relative;
@@ -228,7 +215,6 @@ a.card-title,
   }
 }
 
-//
 // Whole card as a link
 a.card {
   text-decoration: none;
@@ -254,7 +240,6 @@ a.card {
   }
 }
 
-//
 // Card overlay image
 .card-img-overlay {
   right: auto;
@@ -279,7 +264,6 @@ a.card {
   min-height: 1px;
 }
 
-//
 // Grayscale look, see event finished
 .card-grayscale {
   &:hover {

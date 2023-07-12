@@ -1,11 +1,12 @@
 @charset 'utf-8';
+@use 'sass:color';
 
 a.tag {
   &:hover {
     background: $gray-100;
-    border-top-color: darken($gray-300, 10%);
-    border-right-color: darken($gray-300, 10%);
-    border-left-color: darken($gray-300, 10%);
+    border-top-color: color.adjust($gray-300, $lightness: -10%);
+    border-right-color: color.adjust($gray-300, $lightness: -10%);
+    border-left-color: color.adjust($gray-300, $lightness: -10%);
     color: $black;
     text-decoration: none;
   }
@@ -18,23 +19,29 @@ a.tag {
   text-decoration: none;
   background: $white;
   border: 1px solid $gray-300;
+  font-size: inherit;
   line-height: 1;
   font-weight: 400;
   color: $gray-800;
   border-radius: $border-radius;
   transition:
     color 0.2s ease-in-out,
-    background 0.2s ease-in-out;
+    background 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+  vertical-align: middle;
 
   .remove {
     text-decoration: none;
     float: right;
+    padding: 0;
+    border: 0;
     font-size: 1.25em;
     line-height: 0.5em;
     margin-top: 0.2em;
     margin-left: 0.3em;
     color: inherit;
-
+    transition: all .2s ease-in-out;
+    
     &:hover {
       color: $red;
     }
@@ -67,9 +74,72 @@ a.tag {
   }
 }
 
+a.tag,
+.btn.tag,
+button.tag {
+  
+  & > * {
+    vertical-align: middle;
+  }
+  
+  .remove {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    margin-right: -2px;
+    background: $gray-100;
+    border-radius: 2px;
+    line-height: 1.3rem;
+    text-align: center;
+  }
+  
+  &:hover,
+  &:focus {
+    border-color: $black;
+    
+    .remove {
+      background: $red;
+      color: #fff;
+    }
+  }
+  
+  &:focus,
+  &:focus-visible,
+  &.focus {
+    outline: solid 2px $red !important;
+    outline-offset: 2px;
+  }
+  
+  &.tag-secondary,
+  &.tag-plain {
+    &:focus,
+    &:focus-visible,
+    &.focus {
+      outline-color: $gray-600 !important;
+    }
+  }
+  
+  &.tag-plain {
+    .remove {
+      color: $black;
+    }
+    
+    &:hover,
+    &:focus {
+      border-color: $black;
+
+      .remove {
+        background: #fff;
+        color: $red;
+      }
+    }
+  }
+}
+
 .tag-group {
   padding: 1em;
-  background: darken($white, 5%);
+  background: color.adjust($white, $lightness: -5%);
   border-radius: $border-radius;
   border: 1px solid $gray-300;
 
@@ -90,9 +160,18 @@ a.tag {
 
   .selectize-input {
     padding: 0.3em 0.2em 0.1em;
-    background: darken($white, 5%);
+    background: color.adjust($white, $lightness: -5%);
     border-radius: $border-radius;
     border: 1px solid $gray-300;
+  }
+}
+
+.btn.tag.tag-sm,
+.tag-input-sm .tag.btn {
+  .remove {
+    width: 1rem;
+    height: 1rem;
+    line-height: 1rem;
   }
 }
 
@@ -114,9 +193,9 @@ a.tag {
       &.active,
       &:hover {
         background: $gray-100;
-        border-top-color: darken($gray-300, 10%);
-        border-right-color: darken($gray-300, 10%);
-        border-left-color: darken($gray-300, 10%);
+        border-top-color: color.adjust($gray-300, $lightness: -10%);
+        border-right-color: color.adjust($gray-300, $lightness: -10%);
+        border-left-color: color.adjust($gray-300, $lightness: -10%);
         color: $black;
         text-decoration: none;
       }
@@ -154,7 +233,7 @@ a.tag {
 
       &:hover,
       &.active {
-        background-color: lighten($gray-100, 5%);
+        background-color: color.adjust($gray-100, $lightness: 5%);
         color: $body-color;
       }
     }

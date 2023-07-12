@@ -1,4 +1,4 @@
-@import '../../variables.scss';
+@import '../../variables';
 
 .tlbx-sidebar {
   padding: 1em 0;
@@ -15,8 +15,8 @@
 }
 
 .tlbx-sidebar-title {
-  font-size: 1rem;
   margin: 0 1rem;
+  font-size: 1rem;
   margin-top: 0.5rem;
 
   span {
@@ -30,4 +30,3 @@
   font-size: 0.8rem;
   font-weight: 200;
 }
-

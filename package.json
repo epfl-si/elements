@@ -1,6 +1,6 @@
 {
   "name": "epfl-elements",
-  "version": "4.1.0",
+  "version": "4.2.1",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -18,6 +18,7 @@
     "test:info": "node scripts/backstop_status.js",
     "release": "release-it",
     "lint": "eslint .",
+    "stylelint": "stylelint '**/*.scss'",
     "clean": "rm -rf build/ dist/",
     "realclean": "rm -rf build/ dist/ node_modules/"
   },
@@ -46,10 +47,15 @@
     "parserOptions": {
       "requireConfigFile": false,
       "babelOptions": {
-        "presets": ["@babel/preset-react"]
+        "presets": [
+          "@babel/preset-react"
+        ]
       }
     },
-    "ignorePatterns": [ "build/", "dist/" ],
+    "ignorePatterns": [
+      "build/",
+      "dist/"
+    ],
     "extends": [
       "airbnb"
     ],
@@ -107,6 +113,7 @@
     ],
     "extends": "stylelint-config-recommended-scss",
     "rules": {
+      "scss/at-extend-no-missing-placeholder": null,
       "at-rule-no-vendor-prefix": true,
       "media-feature-name-no-vendor-prefix": true,
       "property-no-vendor-prefix": true,
@@ -173,10 +180,10 @@
     "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.2",
     "backstopjs": "^6.1.3",
-    "browser-sync": "^2.27.12",
+    "browser-sync": "^2.29.1",
     "browser-sync-webpack-plugin": "^2.3.0",
     "colorable": "https://github.com/epfl-si/colorable",
-    "copy-webpack-plugin": "^9.0.1",
+    "copy-webpack-plugin": "^11.0.0",
     "core-js": "3",
     "css-loader": "^5.2.6",
     "css-minimizer-webpack-plugin": "^3.3.1",
@@ -191,7 +198,7 @@
     "node-polyfill-webpack-plugin": "^1.1.4",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.2.15",
-    "postcss-loader": "^6.1.1",
+    "postcss-loader": "^7.3.0",
     "postcss-preset-env": "^6.7.0",
     "prop-types": "^15.7.2",
     "rc-tooltip": "^5.1.1",
@@ -211,10 +218,11 @@
     "sass-loader": "^12.1.0",
     "style-loader": "^3.0.0",
     "styled-components": "^5.3.0",
-    "stylelint": "^15.3.0",
+    "stylelint": "^15.10.1",
     "stylelint-config-recommended-scss": "^9.0.1",
     "stylelint-order": "^6.0.3",
     "stylelint-scss": "^4.5.0",
+    "stylelint-webpack-plugin": "^4.1.1",
     "svg-spritemap-webpack-plugin": "^4.5.0",
     "twig-html-loader": "^0.1.9",
     "unminified-webpack-plugin": "^3.0.0",

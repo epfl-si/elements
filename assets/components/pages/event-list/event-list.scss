@@ -1,62 +1,81 @@
 .events-filters {
-  
+
   form {
     display: flex;
     flex-wrap: wrap;
     justify-content: stretch;
     margin-left: -10px;
     margin-right: -10px;
+    
+    & > * {
+      flex-grow: 1;
+      max-width: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    
+    .form-group {
+      width: 100%;
+    }
+
+    .dropdown {
+      width: 100%;
+      margin-bottom: 1rem;
+
+      button {
+        display: flex;
+        width: 100%;
+        padding: $custom-select-padding-y $custom-select-padding-x;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+      }
+
+      .dropdown-menu.show {
+        top: 38px !important;
+        right: 0;
+        left: auto !important;
+        transform: none !important;
+      }
+
+      .picker__holder {
+        border: 0;
+      }
+    }
+    
+    @include media-breakpoint-up(md) {
+      .form-group,
+      .dropdown {
+        width: 25%;
+      }
+      .form-group-categories {
+        width: 100%;
+      }
+    }
+    
+    @include media-breakpoint-up(lg) {
+      .form-group,
+      .dropdown {
+        width: 15%;
+      }
+      .form-group-categories {
+        width: 30%;
+      }
+    }
 
     .form-group-search {
-      flex-basis: 100%;
+      width: 100%;
 
       .search-container {
         margin: 0;
       }
     }
-
-    & > * {
-      flex-grow: 1;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
+    
   }
-  
+
   .select-multiple .ms-drop,
   .select-multiple .ms-drop ul,
   .dropdown .picker__table{
     width: auto;
   }
-  
-  .dropdown {
-    margin-bottom: 1rem;
-    
-    button {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: $custom-select-padding-y $custom-select-padding-x;
-      text-align: left;
-      width: 100%;
-    }
-    
-    .dropdown-menu.show {
-      left: auto !important;
-      right: 0;
-      transform: none !important;
-      top: 38px !important;
-    }
-    
-    .picker__holder {
-      border: 0;
-    }
-  }
-  
-  @include media-breakpoint-down(md) {
-    
-    .dropdown {
-      flex-basis: 100%;
-    }
-  }
 }
-
