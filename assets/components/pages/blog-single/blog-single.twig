@@ -6,9 +6,9 @@
 
 {% block content %}
 
-<article class="blog-post">
+<article class="blog-post container">
 
-  <header class="entry-header mb-5">
+  <header class="entry-header mb-5 container-grid">
     <h1 itemprop="name">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
     <div class="post-meta my-4">
       <p class="text-muted">Publié le 9 décembre 2019</p>
@@ -20,7 +20,7 @@
     </div>
   </header>
 
-  <div class="entry-content mb-5">
+  <div class="entry-content mb-5 container-grid">
 
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at pharetra est, non bibendum dolor. Proin turpis neque, viverra a augue vitae, dapibus iaculis tellus. Morbi ante nisi, venenatis vel velit id, ultrices efficitur nisl. Morbi consectetur non turpis eu interdum. Phasellus nec felis at justo efficitur cursus sed quis sapien. Proin facilisis sapien sit amet venenatis pellentesque. Nulla efficitur, massa a facilisis egestas, massa nulla scelerisque tellus, quis fringilla orci ante sed risus.</p>
     <p>Sed varius volutpat mollis. Vestibulum suscipit hendrerit congue. Donec ante urna, molestie et magna quis, pellentesque auctor urna. Donec porta ligula sed nisl consequat vehicula. Maecenas aliquet, sapien vitae iaculis vestibulum, arcu neque viverra tellus, nec pulvinar diam sem id massa. Nunc vestibulum lacus nunc. Nunc sodales nisi in ante molestie gravida. Sed iaculis, libero quis efficitur fermentum, lacus orci sagittis lacus, sit amet consectetur lectus nibh vel nisi. Sed et accumsan orci. Cras imperdiet nibh odio, vitae dictum purus luctus in. Maecenas a nunc sit amet mauris fermentum fermentum. Curabitur sit amet neque sit amet lorem commodo rutrum vitae sed magna. Sed quis lectus dolor. Nullam placerat augue ut sollicitudin pharetra.</p>
@@ -33,12 +33,17 @@
     </blockquote>
 
     <p>In ut viverra mauris. Duis hendrerit, nulla ac condimentum condimentum, quam sem dignissim nulla, ut suscipit lorem purus sodales sapien. Mauris luctus scelerisque malesuada. Maecenas id augue velit. Donec malesuada, dolor vel auctor fermentum, eros enim auctor tellus, non vestibulum felis elit ut arcu. Maecenas sed euismod arcu, quis aliquam mi. Donec faucibus tristique ex, id cursus metus varius quis. Aenean neque mauris, pulvinar id placerat ac, finibus vel quam. Praesent fringilla neque ante, et auctor augue gravida at. Nunc pulvinar, nibh fringilla suscipit interdum, augue velit convallis enim, tempor rutrum risus justo ac mauris. Praesent lobortis odio augue. Curabitur vestibulum condimentum ipsum, a rhoncus est malesuada quis. Fusce luctus nisl et tortor varius ornare.</p>
+
+    <div class="container">
+      {% include '@atoms/video/video.twig' %}
+    </div>
+
     <p>Nunc id imperdiet est. Phasellus a semper ante. Sed purus nisi, iaculis non purus id, ultricies vulputate leo. Ut dignissim vitae quam eget gravida. Nulla nec metus tortor. Nullam quis nisl at purus commodo consequat. Nullam sem dolor, faucibus in turpis eleifend, condimentum ultricies nisi. Phasellus vitae gravida lectus. Nam tellus magna, lacinia vel congue non, egestas at erat. Mauris consequat, justo in lobortis pharetra, nibh sapien gravida risus, vitae commodo nunc tellus eu nisi. Fusce tempus nisl laoreet diam luctus dictum. Aenean nisi felis, maximus nec ante ut, sodales viverra nisl. Vivamus iaculis fermentum lorem, vel sagittis erat imperdiet ac. In hac habitasse platea dictumst. Vivamus congue augue eget mi mollis tristique.</p>
     <p>Cras non sem sed erat feugiat pellentesque. In in risus est. Praesent ut lectus sit amet leo viverra scelerisque. Nulla facilisi. Cras vel lectus tortor. In auctor dictum odio vitae mollis. Donec fringilla viverra suscipit. Curabitur cursus nibh a purus volutpat imperdiet. Integer mollis varius enim eu porttitor.</p>
 
   </div>
 
-  <footer class="post-footer pt-4">
+  <footer class="post-footer pt-4 container-grid">
 
     <div class="post-nav py-md-1">
 
