@@ -52,7 +52,19 @@ a:active {
 }
 */
 
-// Fix for existing pretty links on dark background
+// Fix for existing links with class '.link-pretty'
+
+.link-pretty.nav-link {
+  text-decoration: underline;
+  text-decoration-color: $link-hover-color;
+  text-decoration-thickness: 0.08em;
+  text-decoration-thickness: min(0.08em, 0.1rem);
+  text-underline-offset: 0.14em;
+  
+  @include hover-focus-active {
+    text-decoration-color: $link-color;
+  }
+}
 
 .bg-dark .link-pretty,
 .bg-gray-600 .link-pretty{

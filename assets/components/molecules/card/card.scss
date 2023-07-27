@@ -202,19 +202,6 @@ a.card-img-top {
   }
 }
 
-a.card-title,
-.card-title a {
-  transition: color 0.3s;
-
-  @include link-pretty($red, $body-bg, $body-color);
-
-  background-position: 0 90%;
-
-  .card-gray & {
-    @include link-pretty($red, gray('100'), $body-color);
-  }
-}
-
 // Whole card as a link
 a.card {
   text-decoration: none;
