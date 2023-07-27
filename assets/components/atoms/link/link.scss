@@ -25,6 +25,15 @@ a {
   }
 }
 
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration-thickness: 0.08em;
+  text-decoration-thickness: min(0.08em, 0.1rem);
+  text-underline-offset: 0.14em;
+}
+
 // Manage all the underline colors based on `text-` helper class.
 @each $color, $value in $theme-colors {
   @include text-emphasis-variant-decoration(".text-#{$color}", $value);
