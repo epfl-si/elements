@@ -34,10 +34,26 @@ a {
 @include text-emphasis-variant-decoration(".text-white", $white);
 
 // The link pretty allows you to have more cross-browser friendly link styles and the fancy focus box.
+// Removed in July 2023, text-decoration color is now well supported by all major broswers: https://caniuse.com/mdn-css_properties_text-decoration-color
+/*
 .link-pretty {
   @include link-pretty($red, $body-bg);
 
   @extend .focused;
+}
+*/
+
+// Fix for existing pretty links on dark background
+
+.bg-dark .link-pretty,
+.bg-gray-600 .link-pretty{
+  color: #fff;
+  
+  &:focus,
+  &:hover,
+  &:active {
+    text-decoration-color: #fff;
+  }
 }
 
 // Link collapse, see collapse component
