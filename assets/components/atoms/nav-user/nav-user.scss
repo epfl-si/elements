@@ -48,6 +48,7 @@
 @include media-breakpoint-down(lg) {
   .header .nav-user {
     margin-left: 1rem;
+    margin-right: 1rem;
   }
 }
 
@@ -73,6 +74,7 @@
   
   .header .nav-user {
     margin-left: 0.5rem;
+    margin-right: 0.5rem;
     
     & + .nav-lang-short > ul {
       padding-left: 0 !important;
