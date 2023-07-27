@@ -97,16 +97,16 @@
     
     &.show {
       position: fixed;
-      right: 0.9rem;
-      left: 0.9rem;
-      width: calc(100vw - 1.8rem);
+      right: 0.75rem;
+      left: 0.75rem;
+      top: 0.625rem;
+      //width: calc(100vw - 1.8rem);
       margin: 0;
       background: white;
       z-index: 1199;
       
       .btn {
-        width: calc(100% + 4px);
-        margin-left: -2px;
+        width: 100%;
         padding-left: $btn-padding-y;
         padding-right: $btn-padding-y;
         border: 2px solid $gray-600;
@@ -121,7 +121,7 @@
       .dropdown-menu {
         top: -2px !important;
         left: 0 !important;
-        width: calc(100% + 4px);
+        width: 100%;
         border: 2px solid $gray-600;
         border-top: 0;
         border-radius: 0 0 2px 2px;
