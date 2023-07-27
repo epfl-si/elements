@@ -5,8 +5,17 @@
   border: 0;
   
   .user-avatar {
-    flex-basis: 50px;
-    width: 50px;
+    --avatar-size: 2.5rem;
+    flex-basis: var(--avatar-size);
+    width: var(--avatar-size);
+    
+    @include media-breakpoint-up(sm) {
+      --avatar-size: 2.625rem;
+    }
+
+    @include media-breakpoint-up(md) {
+      --avatar-size: 2.875rem;
+    }
   }
   
   p {
@@ -71,10 +80,6 @@
     
     .btn {
       padding: $btn-padding-y-sm;
-    }
-    .user-avatar {
-      flex-basis: 40px;
-      width: 40px;
     }
     
     &:not(.show) {
