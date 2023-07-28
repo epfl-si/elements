@@ -1,14 +1,11 @@
 @charset 'utf-8';
 
 body {
-  font-size: $font-size-base * 1.125;
+  font-size: 1rem;
+  font-size: clamp( 1rem, calc(0.9375rem + 0.25vw), 1.125rem );
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-
-  @include media-breakpoint-down(sm) { font-size: $font-size-base; }
-
-  @include media-breakpoint-down(xs) { font-size: $font-size-base * 0.875; }
 }
 
 .h1,
@@ -67,11 +64,8 @@ h6,
 }
 
 .lead {
-  font-size: 1.375rem;
-  
-  @include media-breakpoint-down(md) { font-size: 1.25rem; }
-
-  @include media-breakpoint-down(xs) { font-size: 1rem; }
+  font-size: 1.125rem;
+  font-size: clamp( 1rem, calc(0.8125rem + 0.75vw) , 1.375rem );
 }
 
 small {
