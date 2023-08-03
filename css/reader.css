@@ -652,6 +652,14 @@ body {
   overflow: visible;
 }
 
+.tlbx-sidebar button.tlbx-sidebar-item:focus, .tlbx-sidebar button.tlbx-sidebar-item.focus-visible {
+  outline: revert !important;
+}
+
+.tlbx-sidebar button.tlbx-sidebar-item:focus, .tlbx-sidebar button.tlbx-sidebar-item:focus-visible {
+  outline: revert !important;
+}
+
 .tlbx-sidebar-item-list {
   margin-left: 0;
   padding: 0;
