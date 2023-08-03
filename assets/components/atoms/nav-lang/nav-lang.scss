@@ -220,12 +220,12 @@
     .dropdown-toggle,
     .dropdown-item {
       width: auto;
-      height: 2.125rem;
-      padding: ($spacer * 0.4) ($spacer * 1.5) ($spacer * 0.4) ($spacer * 0.5);
+      height: 2.5rem;
+      padding: ($spacer * 0.5) ($spacer * 1.5) ($spacer * 0.5) ($spacer * 0.625);
     }
 
     .icon {
-      transform: translateY($spacer * 0.1);
+      display: none;
     }
   }
 }

@@ -5,12 +5,16 @@
   flex-flow: row nowrap;
   align-items: baseline;
   margin: 0;
-  padding: (.8 * $spacer) (.9 * $spacer);
+  padding: (.8125 * $spacer) (.875 * $spacer);
   font-size: 1 * $font-size-base;
   font-weight: bold !important;
-
+  
   @include media-breakpoint-up(sm) {
-    padding: (.625 * $spacer) (.9 * $spacer);
+    padding: (.5 * $spacer) (.9375 * $spacer);
+  }
+
+  @include media-breakpoint-up(md) {
+    padding: (.625 * $spacer) (.9375 * $spacer);
   }
 
   .label {

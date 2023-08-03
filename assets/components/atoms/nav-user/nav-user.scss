@@ -1,0 +1,133 @@
+.user-dropdown .btn {
+  display: flex;
+  align-items: center;
+  padding: $btn-padding-y-sm $btn-padding-x-sm;
+  border: 0;
+  
+  .user-avatar {
+    --avatar-size: 2.5rem;
+    flex-basis: var(--avatar-size);
+    width: var(--avatar-size);
+    
+    @include media-breakpoint-up(sm) {
+      --avatar-size: 2.625rem;
+    }
+
+    @include media-breakpoint-up(md) {
+      --avatar-size: 2.875rem;
+    }
+  }
+  
+  p {
+    margin: 0 0.5rem 0 1rem;
+  }
+}
+
+.header .nav-user {
+  margin-left: auto;
+  
+  
+  & + .nav-lang {
+    margin-left: 0 !important;
+  }
+}
+
+.nav-user.user-login {
+  position: relative;
+  padding-left: 1.5rem;
+  
+  .icon {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    margin-right: 0.25rem;
+  }
+}
+
+
+@include media-breakpoint-down(lg) {
+  .header .nav-user {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  
+  .header .nav-user-login {
+    padding: 0;
+    
+    .user-login-link {
+      padding: 0.5em;
+    }
+    
+    .label {
+      @include sr-only;
+    }
+    .icon {
+      position: static;
+      width: 1.25rem;
+      height: 1.25rem;
+      margin: 0;
+    }
+  }
+  
+  .header .nav-user {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    
+    & + .nav-lang-short > ul {
+      padding-left: 0 !important;
+    }
+    
+    .btn {
+      padding: $btn-padding-y-sm;
+    }
+    
+    &:not(.show) {
+      .btn {
+        border-radius: 50%;
+        
+        &:after {
+          content: none;
+        }
+      }
+      .user-name {
+        @include sr-only;
+      }
+    }
+    
+    &.show {
+      position: fixed;
+      top: 0.625rem;
+      right: 0.75rem;
+      left: 0.75rem;
+      //width: calc(100vw - 1.8rem);
+      margin: 0;
+      background: white;
+      z-index: 1199;
+      
+      .btn {
+        width: 100%;
+        padding-left: $btn-padding-y;
+        padding-right: $btn-padding-y;
+        border: 2px solid $gray-600;
+        border-bottom: 0;
+        border-radius: 2px 2px 0 0;
+        
+        &:after {
+          margin-left: auto;
+        }
+      }
+      
+      .dropdown-menu {
+        top: -2px !important;
+        left: 0 !important;
+        width: 100%;
+        border: 2px solid $gray-600;
+        border-top: 0;
+        border-radius: 0 0 2px 2px;
+      }
+    }
+  }
+}

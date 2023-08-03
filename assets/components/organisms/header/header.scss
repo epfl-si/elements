@@ -187,13 +187,13 @@
     align-items: center;
 
     @include media-breakpoint-down(sm) {
-      .nav-toggle-mobile {
+      :not(.nav-lang.dropdown, .nav-user) + .nav-toggle-mobile {
         padding: .5rem 0.9rem;
       }
     }
 
     @include media-breakpoint-down(xs) {
-      .nav-toggle-mobile {
+      :not(.nav-lang.dropdown, .nav-user) + .nav-toggle-mobile {
         padding: .625rem 0.9rem;
       }
     }
