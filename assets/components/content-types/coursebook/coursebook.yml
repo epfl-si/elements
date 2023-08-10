@@ -1,6 +1,6 @@
 title: Coursebook
 name: coursebook
-wrapper: coursebook-reference-week col-md-5
+wrapper: coursebook-reference-week col-md-5 col-xl-4
 variants:
   - name: program
     title: Programme plan d'étude
