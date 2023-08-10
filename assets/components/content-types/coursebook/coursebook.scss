@@ -85,7 +85,6 @@
   // these are the items out of the table
   width: auto !important;
   margin-right: 0.9rem;
-  font-size: $font-size-sm * 1.07;
 }
 
 .semaineDeRef {
@@ -122,7 +121,7 @@
     tr {
 
       td {
-        padding: ($spacer * 0.15) ($spacer * 0.45);
+        padding: ($spacer * 0.5);
         transition: background-color .3s ease-in-out;
       }
 
@@ -195,6 +194,21 @@
       }
     }
   }
+
+  &.has-visual-indicators tbody td.taken {
+    &.exercice {
+      @supports( outline-offset: 0 ) {
+        outline: 1px solid white;
+        outline-offset: -5px;
+      }
+    }
+    &.projet {
+      @supports( outline-offset: 0 ) {
+        outline: 1px dashed white;
+        outline-offset: -5px;
+      }
+    }
+  }
 }
 
 .coursebook-week-caption {
@@ -236,6 +250,21 @@
       lighten($gray-600, 2%) 0.375rem,
       lighten($gray-600, 2%) 0.75rem
     );
+  }
+
+  &.has-visual-indicators {
+    .caption-exercice .caption-icon {
+      @supports( outline-offset: 0 ) {
+        outline: 1px solid white;
+        outline-offset: -5px;
+      }
+    }
+    .caption-projet .caption-icon {
+      @supports( outline-offset: 0 ) {
+        outline: 1px dashed white;
+        outline-offset: -5px;
+      }
+    }
   }
 }
 

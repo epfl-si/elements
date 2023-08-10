@@ -25,4 +25,13 @@ export default () => {
     link.attr('href', toggle.attr('href'));
     target.append(link);
   });
+
+  const showVisualIndicators = $('#coursebook-visual-indicator');
+  showVisualIndicators.click( function(){
+    if ( $(this).is(':checked') ) {
+      $('.semaineDeRef, .coursebook-week-caption').addClass("has-visual-indicators");
+    } else {
+      $('.semaineDeRef, .coursebook-week-caption').removeClass("has-visual-indicators");
+    }
+  });
 };
