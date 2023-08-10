@@ -145,10 +145,6 @@ a.card-gray:hover .card-body { background: $white; }
     color: $red;
     text-decoration: none;
 
-    @include hover {
-      @include link-pretty($red, $body-bg, $body-color);
-    }
-
     &.btn {
       &:hover,
       &.hover {
