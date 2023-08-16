@@ -444,7 +444,7 @@ hr {
 
 small,
 .small {
-  font-size: 0.83rem;
+  font-size: 0.875rem;
   font-weight: 400;
 }
 
@@ -483,7 +483,7 @@ mark,
 
 .blockquote-footer {
   display: block;
-  font-size: 0.83rem;
+  font-size: 0.875rem;
   color: #707070;
 }
 .blockquote-footer::before {
@@ -2256,7 +2256,7 @@ textarea.form-control, .selectize-control textarea.selectize-input {
   display: none;
   width: 100%;
   margin-top: 0.55rem;
-  font-size: 0.83rem;
+  font-size: 0.875rem;
   color: #7ed321;
 }
 
@@ -2356,7 +2356,7 @@ textarea.form-control, .selectize-control textarea.selectize-input {
   display: none;
   width: 100%;
   margin-top: 0.55rem;
-  font-size: 0.83rem;
+  font-size: 0.875rem;
   color: #ff0000;
 }
 
@@ -3087,9 +3087,9 @@ fieldset:disabled a.btn {
 }
 
 .btn-sm {
-  padding: 0.35rem 0.7rem;
-  font-size: 0.83rem;
-  line-height: 1.575;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
   border-radius: 2px;
 }
 
@@ -10786,20 +10786,11 @@ h3 {
   }
 }
 body {
-  font-size: 1.125rem;
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.9375rem + 0.25vw, 1.125rem);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-}
-@media (max-width: 767.98px) {
-  body {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 575.98px) {
-  body {
-    font-size: 0.875rem;
-  }
 }
 
 .h1,
@@ -10858,17 +10849,8 @@ h6,
 }
 
 .lead {
-  font-size: 1.375rem;
-}
-@media (max-width: 991.98px) {
-  .lead {
-    font-size: 1.25rem;
-  }
-}
-@media (max-width: 575.98px) {
-  .lead {
-    font-size: 1rem;
-  }
+  font-size: 1.125rem;
+  font-size: clamp(1rem, 0.8125rem + 0.75vw, 1.375rem);
 }
 
 small {
@@ -14086,7 +14068,7 @@ figcaption {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0.35rem 0.7rem;
+  padding: 0.375rem 0.75rem;
   border: 0;
 }
 .user-dropdown .btn .user-avatar {
@@ -14165,7 +14147,7 @@ figcaption {
     padding-left: 0 !important;
   }
   .header .nav-user .btn {
-    padding: 0.35rem;
+    padding: 0.375rem;
   }
   .header .nav-user:not(.show) .btn {
     border-radius: 50%;
