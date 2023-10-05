@@ -23,6 +23,27 @@ a {
       text-decoration-color: $body-color;
     }
   }
+
+  .text-white &,
+  &.text-white {
+    text-decoration-color: currentcolor;
+
+    @include hover-focus-active {
+      text-decoration-color: transparent;
+    }
+  }
+
+  // add styles for background color variants
+  @each $color, $value in $theme-colors {
+    .bg-#{$color} & {
+      color: color-yiq($value);
+      text-decoration-color: currentcolor;
+
+      @include hover-focus-active {
+        text-decoration-color: transparent;
+      }
+    }
+  }
 }
 
 a,
@@ -38,9 +59,6 @@ a:active {
 @each $color, $value in $theme-colors {
   @include text-emphasis-variant-decoration(".text-#{$color}", $value);
 }
-
-// Special case for white links.
-@include text-emphasis-variant-decoration(".text-white", $white);
 
 // The link pretty allows you to have more cross-browser friendly link styles and the fancy focus box.
 // Removed in July 2023, text-decoration color is now well supported by all major broswers: https://caniuse.com/mdn-css_properties_text-decoration-color

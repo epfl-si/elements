@@ -15,6 +15,9 @@ notes: >
   The `link-collapse` class sets the link to have a red triangle and special
   styles.
 variants:
+  - name: bg-variants
+    title: Background variants
+    notes:
   - name: icon
     title: Icon
     notes: |
