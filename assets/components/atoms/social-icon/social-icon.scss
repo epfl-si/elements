@@ -80,6 +80,18 @@ a.social-icon {
   background-color: $linkedin;
 }
 
+.social-icon-mastodon {
+  background-color: $mastodon;
+}
+
+.social-icon-tiktok {
+  background-color: $tiktok;
+}
+
+.social-icon-tiktok svg {
+  transform:scale(1.3);
+}
+
 .social-icon-youtube {
   background-color: $youtube;
 }

@@ -7,15 +7,25 @@
     {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on Facebook', icon: 'icon-facebook', round: round, discrete: discrete, negative: negative, url: 'https://www.facebook.com/epflcampus' } %}
   </li>
   <li>
-    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on X', icon: 'icon-x', round: round, discrete: discrete, negative: negative, url: 'https://x.com/epfl_en' } %}
-  </li>
-  <li>
     {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on Instagram', icon: 'icon-instagram', round: round, discrete: discrete, negative: negative, url: 'http://instagram.com/epflcampus' } %}
   </li>
   <li>
-    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on Youtube', icon: 'icon-youtube', round: round, discrete: discrete, negative: negative, url: 'https://www.youtube.com/user/epflnews' } %}
+    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on LinkedIn', icon: 'icon-linkedin', round: round, discrete: discrete, negative: negative, url: 'https://www.linkedin.com/school/epfl/' } %}
+  </li>
+  {%  if social_mastodon %}
+  <li>
+    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on Mastodon', icon: 'icon-mastodon', round: round, discrete: discrete, negative: negative, url: 'https://joinmastodon.org/' } %}
+  </li>
+  {% endif %}
+    {%  if social_tiktok %}
+  <li>
+    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on TikTok', icon: 'icon-tiktok', round: round, discrete: discrete, negative: negative, url: 'https://www.tiktok.com/@epflstudents' } %}
+  </li>
+  {% endif %}
+  <li>
+    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on X', icon: 'icon-x', round: round, discrete: discrete, negative: negative, url: 'https://x.com/epfl_en' } %}
   </li>
   <li>
-    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on LinkedIn', icon: 'icon-linkedin', round: round, discrete: discrete, negative: negative, url: 'https://www.linkedin.com/school/epfl/' } %}
+    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on Youtube', icon: 'icon-youtube', round: round, discrete: discrete, negative: negative, url: 'https://www.youtube.com/user/epflnews' } %}
   </li>
 </ul>
