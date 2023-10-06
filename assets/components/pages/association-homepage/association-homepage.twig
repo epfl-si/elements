@@ -3,7 +3,7 @@
 {% extends "@templates/base/base.twig" %}
 
 {% block header %}
-  {% include '@organisms/header/header-light.twig' with { site_title: 'Association title' } %}
+  {% include '@organisms/header/header-light.twig' with { site_title: 'Association title',  long_nav_lang: true, nav_user: true } %}
 {% endblock %}
 
 {% block content %}

@@ -7,4 +7,29 @@
     background: $primary;
     color: $white !important;
   }
+  
+  .icon {
+    margin-right: 0.25rem;
+    vertical-align: middle;
+  }
+  
+  .icon + * {
+    vertical-align: middle;
+  }
+}
+
+li.dropdown-item:before {
+  content: none;
+}
+
+.dropdown {
+  .dropdown-toggle:after {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  &.show {
+    .dropdown-toggle:after {
+      transform: rotate(180deg);
+    }
+  }
 }

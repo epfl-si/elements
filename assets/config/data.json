@@ -81,8 +81,10 @@
     "home",
     "info",
     "instagram",
+    "linkedin",
     "lock",
     "mail-plane",
+    "mastodon",
     "triangle",
     "search",
     "search-bold",
@@ -90,8 +92,9 @@
     "upload",
     "whatsapp",
     "planet",
+    "tiktok",
     "youtube",
-    "linkedin"
+    "x"
   ],
   "feathericons": [
     "activity",

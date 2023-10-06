@@ -1,0 +1,16 @@
+<div class="nav-user dropdown user-dropdown mr-lg-2">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <img class="user-avatar rounded-circle" src="https://randomuser.me/api/portraits/women/2.jpg" alt="">
+    <p class="user-name">Heidy Traill</p>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <li class="dropdown-item">
+      {% include '@atoms/icon/icon.twig' with {'icon': 'user', icon_classes: 'feather'} %}
+      <a href="#">Accéder à mon compte</a>
+    </li>
+    <li class="dropdown-item">
+      {% include '@atoms/icon/icon.twig' with {'icon': 'log-out', icon_classes: 'feather'} %}
+      <a href="#">Me déconnecter</a>
+    </li>
+  </ul>
+</div>
