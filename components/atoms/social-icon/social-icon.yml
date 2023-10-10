@@ -22,9 +22,12 @@ variants:
 notes: |
 
   Icons to accomodate social boxes. The available social networks are:
+  * `e-mail`
   * `facebook`
   * `instagram`
-  * `twitter`
-  * `e-mail`
-  * `whatsapp`
   * `linkedin`
+  * `mastodon`
+  * `tiktok`
+  * `whatsapp`
+  * `x`
+  * `youtube`
