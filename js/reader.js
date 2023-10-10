@@ -66627,7 +66627,7 @@ function SidebarDocs() {
   })));
 }
 ;// CONCATENATED MODULE: ./package.json
-var package_namespaceObject = {"i8":"4.5.0"};
+var package_namespaceObject = {"i8":"4.5.1"};
 ;// CONCATENATED MODULE: ./reader/components/Sidebar/Sidebar.jsx
 
 
