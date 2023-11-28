@@ -3,4 +3,4 @@ name: modal
 notes: |
   The **Bootstrap Modal component** is a dialog box/popup window that is displayed on top of the current page.
 
-  For usage, [see Bootstrap documentation](https://getbootstrap.com/docs/4.0/components/modal/).
+  For usage, [see Bootstrap documentation](https://getbootstrap.com/docs/4.6/components/modal/).
