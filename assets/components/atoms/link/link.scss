@@ -1,7 +1,11 @@
 @charset 'utf-8';
 
 // All links are underlined by default. Supported browsers will have the right color. https://caniuse.com/#feat=text-decoration
-a {
+a,
+a:visited {
+  color: $black;
+  text-decoration: underline;
+  background-color: transparent;
   text-decoration-color: $link-hover-color;
   transition:
     text-decoration-color 0.2s ease-in-out,
@@ -49,7 +53,8 @@ a {
 a,
 a:hover,
 a:focus,
-a:active {
+a:active,
+a:visited {
   text-decoration-thickness: 0.08em;
   text-decoration-thickness: min(0.08em, 0.1rem);
   text-underline-offset: 0.14em;
