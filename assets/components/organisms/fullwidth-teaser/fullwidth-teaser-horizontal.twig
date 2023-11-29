@@ -2,12 +2,16 @@
 
 <div class="fullwidth-teaser fullwidth-teaser-horizontal{% if thinner_teaser %} thinner-teaser{% endif %}">
 
+  {% if has_image_legend|default(false) %}
   <figure class="cover">
     {% include '@atoms/picture/picture-fullwidth-teaser.twig' %}
     <figcaption>
         {% include '@atoms/popover/popover.twig' %}
     </figcaption>
   </figure>
+  {% else %}
+  {% include '@atoms/picture/picture-fullwidth-teaser.twig' %}
+  {% endif %}
 
   <div class="fullwidth-teaser-text">
 

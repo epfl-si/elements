@@ -1,6 +1,12 @@
 title: Fullwidth teaser
 name: fullwidth-teaser
 variants:
+  - name: legend
+    title: Fullwidth teaser with image legend
+    notes:  |
+      The [popover](#/atoms/popover) component can be used on any Fullwidth teaser variant in order to add a legend to the image.
+
+      The markup structure is similar to the [cover](#/molecules/cover) component.
   - name: horizontal
     title: Horizontal
   - name: left
