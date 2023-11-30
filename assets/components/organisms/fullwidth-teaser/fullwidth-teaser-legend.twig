@@ -1,17 +1,11 @@
-{% set thinner_teaser = thinner_teaser|default(false) %}
+<div class="fullwidth-teaser">
 
-<div class="fullwidth-teaser fullwidth-teaser-horizontal{% if thinner_teaser %} thinner-teaser{% endif %}">
-
-  {% if has_image_legend|default(false) %}
   <figure class="cover">
     {% include '@atoms/picture/picture-fullwidth-teaser.twig' %}
     <figcaption>
-        {% include '@atoms/popover/popover.twig' %}
+      {% include '@atoms/popover/popover.twig' %}
     </figcaption>
   </figure>
-  {% else %}
-  {% include '@atoms/picture/picture-fullwidth-teaser.twig' %}
-  {% endif %}
 
   <div class="fullwidth-teaser-text">
 
@@ -21,14 +15,9 @@
           {% if not title %}{% set title %}Évaluer la durabilité dans le domaine spatial{% endset %}{% endif %}
           {{title}}
         </h3>
-        <ul class="list-inline mt-2">
-          <li class="list-inline-item">Actualités</li>
-          <li class="list-inline-item">Biologie</li>
-        </ul>
       </div>
-      <a href="#" aria-label="Link to read more of that page" class="btn btn-primary triangle-outer-top-right d-none d-xl-block">
-        Lire l'article
-        <span class="sr-only">sur Tech Transfer.</span>
+      <a href="#" aria-label="En savoir plus sur {{title}}" class="btn btn-primary triangle-outer-bottom-right d-none d-xl-block">
+        En savoir plus
         {% include '@atoms/icon/icon.twig' with {icon: 'icon-chevron-right'} %}
       </a>
     </div>
@@ -43,7 +32,7 @@
     </div>
 
     <div class="fullwidth-teaser-footer">
-      <a href="#" aria-label="Link to read more of that page" class="btn btn-primary btn-block d-xl-none">En savoir plus</a>
+      <a href="#" aria-label="En savoir plus sur Tech Transfer" class="btn btn-primary btn-block d-xl-none">En savoir plus</a>
     </div>
   </div>
 </div>

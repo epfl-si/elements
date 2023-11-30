@@ -27,8 +27,15 @@
     width: 100%;
     height: auto;
   }
-  figure{
+  figure,
+  figure picture,
+  figure img {
     margin-bottom: 0;
+  }
+
+  figure picture,
+  figure img {
+    height: 100%;
   }
 
   picture,
@@ -184,11 +191,11 @@
         border-top-color: color.adjust($red, $lightness: -15%);
       }
     }
-    
+
     &:active:after {
       border-top-color: color.adjust($red-dark, $lightness: -10%);
     }
-    
+
     &:focus {
       outline: 0 !important;
     }
