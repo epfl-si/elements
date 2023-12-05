@@ -19,7 +19,7 @@
       border-bottom: 1px solid $gray-200;
 
       @include media-breakpoint-down(sm) {
-        &:last-child() {
+        &:last-child {
           margin-bottom: 1.2rem;
         }
       }
