@@ -12,7 +12,7 @@ a.tag {
   }
 }
 
-.tag {
+a.tag, button.tag, span.tag, div.tag, p.tag {
   display: inline-block;
   margin: 0 0.1em 0.3em 0;
   padding: 0.4em 0.6em;
