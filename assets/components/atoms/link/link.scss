@@ -120,3 +120,14 @@ a:visited {
     opacity: 1;
   }
 }
+
+// Button link
+
+a.btn,
+a.btn-primary {
+  color: $white;
+}
+
+a.btn-secondary {
+  color: $black;
+}
