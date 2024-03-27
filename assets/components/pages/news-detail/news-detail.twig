@@ -16,7 +16,7 @@
 
 {% block content %}
   <div class="container mb-5" itemscope itemtype="http://schema.org/Article">
-    <h1 itemprop="name">Des connexions se créent pour dépasser la paralysie</h1>
+    <h1 itemprop="name headline">Des connexions se créent pour dépasser la paralysie</h1>
   </div>
 
   <div class="container">
@@ -25,12 +25,10 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 ts-news-content">
         <p class="bg-gray-100 px-4 py-5 lead mb-5">Des rats paraplégiques retrouvent l’usage de leurs pattes à la suite d’une rééducation neuroprosthétique qui provoque la création de nouvelles connexions cérébrales. Celles-ci transmettent les commandes motrices jusqu’aux centres d'exécution de la moelle épinière en aval de la blessure, permettant ainsi de marcher, nager et même monter des escaliers.</p>
 
-        <div="news-content-text">
-
-          <span itemprop="description">
+        <div id="news-content-text" itemprop="articleBody">
 
             <p>Par la combinaison de stimulations électrochimiques de la moelle épinière et d’une rééducation assistée par robot, des rats atteints d'une lésion médullaire clinique retrouvent le contrôle des membres paralysés. Mais comment ces commandes cérébrales (de marche, de natation, ou de montée d’escaliers) peuvent-elles contourner la lésion, atteindre la moelle épinière, et ainsi rendre possibles ces tâches complexes ? Des scientifiques de l'EPFL ont observé pour la première fois que le cerveau ré-achemine des commandes motrices spécifiques par des voies alternatives, soit des fibres neuronales poussant du tronc cérébral jusqu’à la moelle épinière. La thérapie provoque le développement de nouvelles connexions entre le cortex moteur et le tronc cérébral, et entre le tronc cérébral et la moelle épinière, reconnectant ainsi le cerveau avec la moelle épinière de l’autre côté de la lésion. Ces résultats paraissent le 19 mars dans la revue Nature Neuroscience.</p>
             <p>Grégoire Courtine, chef d’unité au Centre de neuroprothèses de l’EPFL, explique que « le cerveau développe de nouvelles connexions anatomiques à travers des régions du système nerveux restées intactes après la lésion. Le cerveau rebranche principalement les circuits du cortex cérébral, du tronc cérébral, et de la moelle épinière. Ce recâblage extensif, nous avons pu l’observer avec un niveau de détail jusqu’ici inégalé, grâce aux technologies dernier cri de microscopie du cerveau et de la moelle épinière. »</p>
@@ -46,14 +44,12 @@
             <p>En comparant les cerveaux de rats blessés puis réhabilités avec ceux de rats sains, les scientifiques ont pu identifier une région spécifique du tronc cérébral, la formation réticulée, comme acteur clé du rétablissement. Ce rôle, les scientifiques l’ont découvert à l’aide de techniques de pointe, l'optogénétique et la chimiogénétique, appliquées à des animaux transgéniques. Cet ensemble d'outils permet d’activer ou d’inhiber sélectivement certains circuits du cerveau et du tronc cérébral afin d’en étudier la fonction. Les chercheurs ont également utilisé, pour visualiser les voies nerveuses, un puissant microscope à « feuilles lumineuses » (light sheet microscope en anglais) nouvellement mis au point par le Wyss Center for Bio and Neuroengineering à Genève. Cette technologie permet de rendre transparent l'ensemble du système nerveux central, à l'exception de nerfs spécifiques où s’exprime une protéine fluorescente. En passant un feuillet de lumière à travers le cerveau et la moelle épinière intactes, les scientifiques ont obtenu des images 3D inédites qui illustrent l'organisation des voies nerveuses chez les animaux sains, et montrent comment la thérapie réorganise ces connexions. Les neurones blessés ne repoussent pas spontanément, mais une réorganisation des connections neurales se produit au-dessus de la lésion, activant de nouveaux canaux de communication.</p>
             <p>Reste encore à voir si la réhabilitation neuroprosthétique conduit aussi, chez l'homme, à un recâblage similaire du cerveau, du tronc cérébral et de la moelle épinière. Grégoire Courtine est optimiste: « Nous avons déjà montré que la plasticité du système nerveux, c’est-à-dire sa remarquable capacité à développer de nouvelles connexions après une lésion de la moelle épinière, est encore plus robuste chez l'homme que chez le rongeur. Nous sommes actuellement en train de tester notre thérapie sur des personnes atteintes d'une lésion de la moelle épinière au Centre hospitalier universitaire vaudois (CHUV). »</p>
 
-          </span>
-
         </div>
 
         <hr>
         <footer class="my-3">
           <p class="m-0 small text-muted">
-            <strong>Auteur: </strong> <a href="#">Lorem Ipsum</a>
+            <strong>Auteur: </strong> <small itemprop="author publisher" itemscope="" itemtype="https://schema.org/Person"><a href="#"><span itemprop="name">Lorem Ipsum</span></a></small>
           </p>
           <p class="small text-muted mb-0 mt-1">
             <strong>Source: </strong><a href="/search/mediacom/fr">EPFL</a>
