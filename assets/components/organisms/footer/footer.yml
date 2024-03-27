@@ -21,8 +21,6 @@ variants:
     title: Footer dark light
     notes: Add .bg-dark to the light container
     wrapper: bg-dark container
-  - name: light-news
-    title: Footer light for news
 notes: |
   ### Standard
   french
