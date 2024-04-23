@@ -60,6 +60,10 @@ a.social-icon {
   background-color: $twitter;
 }
 
+.social-icon-x {
+  background-color: $x;
+}
+
 .social-icon-whatsapp {
   background-color: $whatsappgreen;
 }
@@ -74,6 +78,18 @@ a.social-icon {
 
 .social-icon-linkedin {
   background-color: $linkedin;
+}
+
+.social-icon-mastodon {
+  background-color: $mastodon;
+}
+
+.social-icon-tiktok {
+  background-color: $tiktok;
+}
+
+.social-icon-tiktok svg {
+  transform:scale(1.3);
 }
 
 .social-icon-youtube {

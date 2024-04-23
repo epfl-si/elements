@@ -2,7 +2,7 @@
 
 ## Bootstrap based
 
-Elements is entirely **based on the [Bootstrap 4](https://getbootstrap.com/) framework**. It means that when you have to build a page, you can use all the **[grid](https://getbootstrap.com/docs/4.1/layout/grid/)** and **[spacing](https://getbootstrap.com/docs/4.1/utilities/spacing/) classes**.
+Elements is entirely **based on the [Bootstrap 4](https://getbootstrap.com/) framework**. It means that when you have to build a page, you can use all the **[grid](https://getbootstrap.com/docs/4.6/layout/grid/)** and **[spacing](https://getbootstrap.com/docs/4.6/utilities/spacing/) classes**.
 
 ### The grid
 
@@ -20,7 +20,7 @@ Based on **12 columns**, the grid is pretty easy to use. For example, **if you w
 ```
 See [the layout demo page](#/pages/layout-demo) to understand the usage we make of bootstrap grid.
 
-Read the [Bootstrap documentation](https://getbootstrap.com/docs/4.1/layout/grid/) to learn more about the grid.
+Read the [Bootstrap documentation](https://getbootstrap.com/docs/4.6/layout/grid/) to learn more about the grid.
 
 ### Spacing
 
@@ -32,7 +32,7 @@ Like with the grid, **Bootstrap provides some very useful classes to refine spac
 </div>
 ```
 
-Read the [documentation](https://getbootstrap.com/docs/4.1/utilities/spacing/) to learn more about the spacing classes.
+Read the [documentation](https://getbootstrap.com/docs/4.6/utilities/spacing/) to learn more about the spacing classes.
 
 ## Page types
 

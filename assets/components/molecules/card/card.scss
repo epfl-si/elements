@@ -145,10 +145,6 @@ a.card-gray:hover .card-body { background: $white; }
     color: $red;
     text-decoration: none;
 
-    @include hover {
-      @include link-pretty($red, $body-bg, $body-color);
-    }
-
     &.btn {
       &:hover,
       &.hover {
@@ -199,19 +195,6 @@ a.card-img-top {
 
   &:hover:before {
     opacity: 0.6;
-  }
-}
-
-a.card-title,
-.card-title a {
-  transition: color 0.3s;
-
-  @include link-pretty($red, $body-bg, $body-color);
-
-  background-position: 0 90%;
-
-  .card-gray & {
-    @include link-pretty($red, gray('100'), $body-color);
   }
 }
 

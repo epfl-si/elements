@@ -12,13 +12,13 @@ a.tag {
   }
 }
 
-.tag {
+a.tag, button.tag, span.tag, div.tag, p.tag {
   display: inline-block;
   margin: 0 0.1em 0.3em 0;
   padding: 0.4em 0.6em;
   text-decoration: none;
   background: $white;
-  border: 1px solid $gray-300;
+  border: 1px solid $gray-500;
   font-size: inherit;
   line-height: 1;
   font-weight: 400;

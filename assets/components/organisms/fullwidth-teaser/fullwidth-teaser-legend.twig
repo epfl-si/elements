@@ -1,0 +1,38 @@
+<div class="fullwidth-teaser">
+
+  <figure class="cover">
+    {% include '@atoms/picture/picture-fullwidth-teaser.twig' %}
+    <figcaption>
+      {% include '@atoms/popover/popover.twig' %}
+    </figcaption>
+  </figure>
+
+  <div class="fullwidth-teaser-text">
+
+    <div class="fullwidth-teaser-header">
+      <div class="fullwidth-teaser-title">
+        <h3>
+          {% if not title %}{% set title %}Évaluer la durabilité dans le domaine spatial{% endset %}{% endif %}
+          {{title}}
+        </h3>
+      </div>
+      <a href="#" aria-label="En savoir plus sur {{title}}" class="btn btn-primary triangle-outer-bottom-right d-none d-xl-block">
+        En savoir plus
+        {% include '@atoms/icon/icon.twig' with {icon: 'icon-chevron-right'} %}
+      </a>
+    </div>
+
+    <div class="fullwidth-teaser-content">
+      <p>
+        {% if not content %}
+        {% set content %}Le nouveau Space Sustainability Rating accueilli par eSpace, le centre spatial de l’EPFL, encourage le secteur de l’espace à concevoir et à mettre en œuvre des missions spatiales durables et responsables — montrant ainsi la voie pour assurer à long terme une approche durable de l’environnement spatial.{% endset %}
+        {% endif %}
+        {{content}}
+      </p>
+    </div>
+
+    <div class="fullwidth-teaser-footer">
+      <a href="#" aria-label="En savoir plus sur Tech Transfer" class="btn btn-primary btn-block d-xl-none">En savoir plus</a>
+    </div>
+  </div>
+</div>

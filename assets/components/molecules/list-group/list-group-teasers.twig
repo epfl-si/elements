@@ -1,5 +1,5 @@
 <div class="list-group">
-  {% for i in 1..4 %}
+  {% for i in 1..2 %}
 
       <div class="list-group-teaser list-group-item list-group-teaser-container">
         <div class="list-group-teaser-thumbnail">
@@ -17,6 +17,40 @@
         </div>
       </div>
   {% endfor %}
+
+  <div class="list-group-teaser list-group-item list-group-teaser-container">
+    <div class="list-group-teaser-thumbnail">
+      <a href="#" class="link-trapeze-horizontal">
+        {% include '@atoms/picture/picture-news-thumb.twig' %}
+        <div class="news-video-overlay"></div>
+      </a>
+    </div>
+    <div class="list-group-teaser-content">
+      <h3 class="h5"><a href="#">Physics: new e-books for the AIAA Education Series</a></h3>
+      <p>
+        <time datetime="2018-03-26"><span class="sr-only">Published:</span>26.03.2018</time>
+        <span class="text-muted">— Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si enim ad populum me vocas, eum. Quid enim me prohiberet
+          Epicureum esse, si probarem, quae ille diceret?</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="list-group-teaser list-group-item list-group-teaser-container">
+    <div class="list-group-teaser-thumbnail">
+      <a href="#" class="link-trapeze-horizontal">
+        {% include '@atoms/picture/picture-news-thumb.twig' with { light_image: true } %}
+        <div class="news-video-overlay"></div>
+      </a>
+    </div>
+    <div class="list-group-teaser-content">
+      <h3 class="h5"><a href="#">Physics: new e-books for the AIAA Education Series</a></h3>
+      <p>
+        <time datetime="2018-03-26"><span class="sr-only">Published:</span>26.03.2018</time>
+        <span class="text-muted">— Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si enim ad populum me vocas, eum. Quid enim me prohiberet
+          Epicureum esse, si probarem, quae ille diceret?</span>
+      </p>
+    </div>
+  </div>
 
   <div class="list-group-teaser list-group-item list-group-teaser-container teaser-img-right">
     <div class="list-group-teaser-thumbnail">

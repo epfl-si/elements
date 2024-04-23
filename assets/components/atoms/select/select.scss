@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+.custom-select {
+  border-color: $custom-select-border-color;
+}
+
 .ms-offscreen {
   clip: rect(0 0 0 0)!important;
   position: absolute!important;

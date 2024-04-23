@@ -12,11 +12,12 @@ notes: >
   browsers](https://caniuse.com/#feat=text-decoration). In other browsers, the underline
   uses text color.
 
-  The `link-pretty` class creates a better and more cross-browser style.
-
   The `link-collapse` class sets the link to have a red triangle and special
   styles.
 variants:
+  - name: bg-variants
+    title: Background variants
+    notes:
   - name: icon
     title: Icon
     notes: |
@@ -24,3 +25,9 @@ variants:
   - name: login
     title: Login link
     notes:
+  - name: button
+    title: Button link
+    notes: |
+      Use the classes `btn`, `btn-primary` or `btn-secondary` to create a link with the look of a button.
+
+      ⚠️ Button links should be used to target a page or section of a page – like a regular link. To trigger an action, use an [HTML button](#/atoms/button).

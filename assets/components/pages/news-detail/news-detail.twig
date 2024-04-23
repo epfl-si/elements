@@ -1,4 +1,5 @@
 {% set isSpecial = true %}
+{% set isNews = true %}
 
 {% extends "@templates/base/base.twig" %}
 
@@ -87,17 +88,17 @@
         <div class="mb-5">
           <h2 class="h6">Liens</h2>
           <ul class="list-bullet">
-            <li><a class="link-pretty" href="#">2012 Results</a></li>
-            <li><a class="link-pretty" href="#">Press kit</a></li>
-            <li><a class="link-pretty" href="#">Youtube</a></li>
+            <li><a href="#">2012 Results</a></li>
+            <li><a href="#">Press kit</a></li>
+            <li><a href="#">Youtube</a></li>
           </ul>
         </div>
 
         <div class="mb-5">
           <h2 class="h6">En relation</h2>
           <ul class="list-bullet mb-5">
-            <li><a class="link-pretty" href="#">Toutes les actualités Mediacom</a></li>
-            <li><a class="link-pretty" href="#">Toutes les actualités EPFL</a></li>
+            <li><a href="#">Toutes les actualités Mediacom</a></li>
+            <li><a href="#">Toutes les actualités EPFL</a></li>
           </ul>
         </div>
 
@@ -134,8 +135,8 @@
             <a href="#" class="social-icon social-icon-discrete social-icon-facebook">
               <svg class="icon"><use xlink:href="#icon-facebook"></use></svg>
             </a>
-            <a href="#" class="social-icon social-icon-discrete social-icon-twitter">
-              <svg class="icon"><use xlink:href="#icon-twitter"></use></svg>
+            <a href="#" class="social-icon social-icon-discrete social-icon-x">
+              <svg class="icon"><use xlink:href="#icon-x"></use></svg>
             </a>
             <a href="#" class="social-icon social-icon-discrete social-icon-instagram">
               <svg class="icon"><use xlink:href="#icon-instagram"></use></svg>
@@ -157,3 +158,15 @@
 
   </div>
 {% endblock %}
+
+{% block footer_container %}
+  <div class="bg-gray-100 pt-5">
+    <div class="container">
+      {% block footer %}
+        {% include '@organisms/footer/footer-light.twig' %}
+      {% endblock %}
+    </div>
+  </div>
+  {% endblock %}
+  </div>
+</div>

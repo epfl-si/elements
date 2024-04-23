@@ -22,7 +22,6 @@
   background: var(--card-bg);
 
   .card-title a {
-    @include link-pretty($red, var(--card-bg), $body-color);
     transition: color 0.3s, text-shadow 0.25s;
   }
 
@@ -191,5 +190,27 @@
       z-index: $zindex-1;
     }
 
+  }
+}
+
+.list-group-teaser-thumbnail .news-video-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+
+  &:before {
+    content: "";
+    width: 2.25rem;
+    height: 2.25rem;
+    background: url(../images/icons/icon-teaser-video.svg);
+    background-size: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.16);
   }
 }
