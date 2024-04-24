@@ -1,0 +1,36 @@
+<div class="card-slider-wrapper">
+  <div class="card-slider">
+  {% for i in 1..10 %}
+    <div class="card-slider-cell">
+      <a href="#" class="card card-gray link-trapeze-horizontal">
+        <div class="card-body">
+	        {% include '@atoms/picture/picture.twig' with {'variant':'news-thumb'} %}
+			<div itemscope itemtype="http://schema.org/Article">
+          		<h3 class="card-title h5 mt-3" itemprop="name">Physics: new e-books for the AIAA Education Series</h3>
+          		<p>
+		            <time datetime="2018-03-26" itemprop="datePublished"><span class="sr-only">Published:</span>26.03.2018</time>
+		            <span class="text-muted" itemprop="description">— Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si enim ad populum me vocas, eum. Quid enim me prohiberet
+		              Epicureum esse, si probarem, quae ille diceret?</span>
+	          </p>
+        	</div>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+  </div>
+
+  <div class="card-slider-footer">
+    <div>
+      <button role="button" id="card-slider-prev" class="card-slider-btn link-trapeze-horizontal disabled">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-chevron-left"></use>
+        </svg>
+      </button>
+      <button role="button" id="card-slider-next" class="card-slider-btn link-trapeze-horizontal">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-chevron-right"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
