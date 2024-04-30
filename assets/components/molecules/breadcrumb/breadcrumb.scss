@@ -134,7 +134,7 @@
       color: $black;
     }
   }
-  
+
   .tag {
     vertical-align: baseline;
   }
@@ -150,5 +150,6 @@
 
   &.active {
     color: $gray-700;
+    font-weight: bold;
   }
 }
