@@ -7,3 +7,5 @@ variants:
     title: Tagged
   - name: dropdown
     title: Dropdown
+    notes: |
+      Breadcrumb dropdowns are used to display same level pages.

@@ -33,13 +33,10 @@
 .breadcrumb-wrapper {
   max-width: 100%;
   width: 100%;
-  //min-height: 2.15rem;
   border-bottom: 1px solid gray('200');
 
   @include media-breakpoint-up(lg) {
-    overflow-x: auto;
     overflow-y: visible;
-    //white-space: nowrap;
     user-select: none;
   }
 }
@@ -82,7 +79,7 @@
 }
 
 .breadcrumb-item {
-  display: inline-block;
+  display: inline;
   position: relative;
   font-size: $font-size-sm;
   line-height: 1.5rem;
@@ -93,13 +90,7 @@
 
   @include media-breakpoint-down(sm) {
 
-    &:not(.breadcrumb-tags-wrapper) {
-      display: none;
-    }
 
-    &.breadcrumb-tags-wrapper:after {
-      display: none;
-    }
   }
 
   &:before {
@@ -120,9 +111,9 @@
   }
 
   &:after {
-    content: '\203A';
-    padding-left: 0.3rem;
-    color: $gray-700;
+    content: "/";
+    color: $gray-500;
+    padding-inline: 0.25rem;
   }
 
   a {
@@ -150,6 +141,80 @@
 
   &.active {
     color: $gray-700;
+    font-weight: bold;
+  }
+}
+
+// Dropdown
+
+.breadcrumb .dropdown {
+  display: inline;
+  position: static;
+}
+
+.breadcrumb .dropdown-toggle {
+  border: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  height: 1.25rem;
+  margin-left: 0;
+  width: 1.25rem;
+  top: -0.08em;
+
+  .icon {
+    color: currentColor;
+    font-size: 1rem;
+    top: 0;
+    transition: all 0.2s ease-in-out;
+    transform: rotate(0);
+  }
+
+  &:after {
+    content: none;
+  }
+
+  &:hover,
+  &:active {
+    background: $red !important;
+    color: $white !important;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline-offset: 0;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline-color: transparent !important;
+  }
+
+  &[aria-expanded="true"] .icon {
+    transform: rotate(180deg);
+  }
+}
+
+.breadcrumb .dropdown-menu {
+  &.show {
+    // dropdown position depends on the <li>, not the button
+    left: -0.625rem !important;
+    top: 2rem !important;
+    transform: none !important;
+  }
+}
+
+.breadcrumb .dropdown-item {
+  font-size: 0.83rem;
+  padding: 0.125em 0.625rem;
+
+  a {
+    display: block;
+  }
+
+  &.current-menu-item,
+  &.current-menu-item-parent {
     font-weight: bold;
   }
 }
