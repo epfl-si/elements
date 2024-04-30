@@ -181,23 +181,23 @@
 }
 
 .breadcrumb .dropdown-toggle {
-  border: 0;
-  border-radius: 50%;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
+  top: -0.08em;
+  width: 1.25rem;
   height: 1.25rem;
   margin-left: 0;
-  width: 1.25rem;
-  top: -0.08em;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
 
   .icon {
-    color: currentColor;
-    font-size: 1rem;
     top: 0;
-    transition: all 0.2s ease-in-out;
+    font-size: 1rem;
+    color: currentColor;
     transform: rotate(0);
+    transition: all 0.2s ease-in-out;
   }
 
   &:after {
@@ -227,15 +227,15 @@
 .breadcrumb .dropdown-menu {
   &.show {
     // dropdown position depends on the <li>, not the button
-    left: -0.625rem !important;
     top: 2rem !important;
+    left: -0.625rem !important;
     transform: none !important;
   }
 }
 
 .breadcrumb .dropdown-item {
-  font-size: 0.83rem;
   padding: 0.125em 0.625rem;
+  font-size: 0.83rem;
 
   a {
     display: block;
