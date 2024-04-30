@@ -79,7 +79,7 @@
 }
 
 .breadcrumb-item {
-  display: inline;
+  display: inline-block;
   position: relative;
   font-size: $font-size-sm;
   line-height: 1.5rem;
@@ -88,9 +88,8 @@
     display: inline;
   }
 
-  @include media-breakpoint-down(sm) {
-
-
+  @include media-breakpoint-down(md) {
+    display: inline;
   }
 
   &:before {
@@ -142,6 +141,35 @@
   &.active {
     color: $gray-700;
     font-weight: bold;
+  }
+
+  &.expand-links {
+    display: none;
+  }
+}
+
+// Expand links button
+
+.breadcrumb .btn-expand-links {
+  padding: 0;
+  font-size: inherit;
+  border: 0;
+  height: auto;
+  line-height: 1;
+}
+
+@include media-breakpoint-down(md) {
+  .breadcrumb .breadcrumb-item,
+  .breadcrumb.has-expanded-links .breadcrumb-item.expand-links {
+    display: none;
+  }
+
+  .breadcrumb .breadcrumb-item:first-of-type,
+  .breadcrumb .breadcrumb-item.expand-links,
+  .breadcrumb .breadcrumb-item:last-of-type,
+  .breadcrumb .breadcrumb-item.active,
+  .breadcrumb.has-expanded-links .breadcrumb-item {
+    display: inline;
   }
 }
 
@@ -216,5 +244,9 @@
   &.current-menu-item,
   &.current-menu-item-parent {
     font-weight: bold;
+  }
+
+  @include media-breakpoint-down(md) {
+    white-space: normal;
   }
 }

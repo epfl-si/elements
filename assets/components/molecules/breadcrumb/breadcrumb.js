@@ -1,8 +1,15 @@
 /* globals $ */
 
 export default () => {
-  const breadcrumb = $('#breadcrumb-wrapper');
+  //const breadcrumb = $('#breadcrumb-wrapper');
+  const expandBreadcrumb = $('.btn-expand-links');
 
+  expandBreadcrumb.click(function(){
+    $(".breadcrumb-wrapper .breadcrumb").addClass("has-expanded-links");
+  });
+
+
+  /*
   if ($(breadcrumb).length > 0) {  // don't expect to have the breadcrumb on every case
     const breadcrumbNode = breadcrumb[0];
     const breadcrumbComponent = breadcrumb.find('.breadcrumb');
@@ -48,4 +55,5 @@ export default () => {
       breadcrumb.find('*').on('dragstart', () => false);
     }
   }
+  */
 };

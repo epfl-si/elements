@@ -5,6 +5,12 @@
         {% include '@atoms/icon/icon.twig' with { icon: 'icon-home' } %}
       </a>
     </li>
+    <li class="breadcrumb-item expand-links">
+      <button class="btn btn-expand-links" aria-expanded="false" title="Display the complete path">
+        <span class="dots" aria-hidden="true">…</span>
+        <span class="sr-only">Display the complete path</span>
+      </button>
+    </li>
     <li class="breadcrumb-item"><a class="bread-link" href="#">Schools</a></li>
     <li class="breadcrumb-item active" aria-current="page">ENAC</li>
   </ol>
