@@ -139,8 +139,8 @@
   }
 
   &.active {
-    color: $gray-700;
     font-weight: bold;
+    color: $gray-700;
   }
 
   &.expand-links {
@@ -151,10 +151,10 @@
 // Expand links button
 
 .breadcrumb .btn-expand-links {
-  padding: 0;
-  font-size: inherit;
-  border: 0;
   height: auto;
+  padding: 0;
+  border: 0;
+  font-size: inherit;
   line-height: 1;
 }
 
