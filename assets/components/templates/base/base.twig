@@ -11,7 +11,11 @@
   {% block breadcrumb %}
     {% if not isSpecial %}
     <div class="breadcrumb-container">
-      {% include '@molecules/breadcrumb/breadcrumb-tagged.twig' %}
+      {% if hasTaggedBreadcrumb %}
+       {% include '@molecules/breadcrumb/breadcrumb-tagged.twig' %}
+      {% else %}
+       {% include '@molecules/breadcrumb/breadcrumb-dropdown.twig' %}
+      {% endif %}
     </div>
     {% endif %}
   {% endblock %}
