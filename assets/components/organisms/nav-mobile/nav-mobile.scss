@@ -1,16 +1,16 @@
 
 .nav-toggle-layout > .nav-container {
+  width: auto;
   margin: 0;
   padding: 0;
-  width: auto;
 
   @include media-breakpoint-down(lg) {
-    background: #fff;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     width: 100%;
+    background: #fff;
     border-top: 1px solid #c1c1c1;
     overflow-y: scroll;
     transform: translateX(-100%);
@@ -24,8 +24,8 @@
 }
 
 .nav-main-mobile {
-  border: 0;
   position: static;
+  border: 0;
   transform: none !important;
 
   @include media-breakpoint-up(xl) {
@@ -42,12 +42,12 @@
   }
 
   .nav-container .nav-menu {
-    border-bottom: 1px solid $gray-300;
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    padding-block: 1rem;
     position: static;
     width: 100%;
+    padding-block: 1rem;
+    border-bottom: 1px solid $gray-300;
 
     li {
       border: 0;
