@@ -25,6 +25,24 @@
 .nav-aside-layout .nav-aside-wrapper {
   display: block;
 
+  @include media-breakpoint-down(lg) {
+    padding: 1rem;
+
+    .nav-aside {
+      [class^="h"] {
+        padding: 0;
+      }
+      a {
+        padding-inline: 1rem;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    height: 100%;
+  }
+
   @include media-breakpoint-up(xxl){
     flex: 0 0 16.1%;
     max-width: 16.1%;

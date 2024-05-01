@@ -5,7 +5,7 @@
   aria-describedby="nav-aside-title"
 >
   <h2 class="h5 sr-only-xl" id="nav-aside-title">Dans la même section</h2>
-  <ul>
+  <ul class="nav-menu">
   {% if nav_aside_items %}
     {% for item in nav_aside_items %}
     {% if item.siblings_before and loop.index0 == nav_aside_active %}
