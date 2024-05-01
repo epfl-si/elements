@@ -3,9 +3,9 @@ name: breadcrumb
 notes: |
   The breadcrumb is your compass, on every page. It helps you to understand where you are, so you can decide where to go next.
 variants:
-  - name: tagged
-    title: Tagged
   - name: dropdown
     title: Dropdown
     notes: |
       Breadcrumb dropdowns are used to display same level pages.
+  - name: tagged
+    title: Tagged
