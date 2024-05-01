@@ -67,7 +67,7 @@
     }
 
     &.active:not(.menu-item-has-children)+li>a:before {
-      content: none;
+      //content: none;
     }
 
     @include media-breakpoint-down(lg) {

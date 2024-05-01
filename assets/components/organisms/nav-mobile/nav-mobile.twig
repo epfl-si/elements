@@ -13,4 +13,12 @@
       </div>
     </div>
   </nav>
+  <!-- Add side navigation here in order to display it in the mobile menu -->
+  {% if not isSpecial %}
+  <aside class="nav-aside-wrapper">
+    {% block sideNav %}
+      {% include '@organisms/nav-aside/nav-aside.twig' %}
+    {% endblock %}
+  </aside>
+  {% endif %}
 </div>
