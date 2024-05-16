@@ -218,8 +218,8 @@
     transform: none !important;
 
     &.open-left {
-      left: auto !important;
       right: -0.625rem !important;
+      left: auto !important;
     }
   }
 }
