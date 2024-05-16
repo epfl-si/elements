@@ -77,10 +77,6 @@
     display: inline;
   }
 
-  @include media-breakpoint-down(md) {
-    display: inline;
-  }
-
   &:before {
     content: ' ';
     display: block;
@@ -159,7 +155,7 @@
   .breadcrumb .breadcrumb-item.active,
   .breadcrumb .breadcrumb-item.breadcrumb-tags-wrapper,
   .breadcrumb.has-expanded-links .breadcrumb-item {
-    display: inline;
+    display: inline-block;
   }
 }
 
@@ -217,9 +213,14 @@
 .breadcrumb .dropdown-menu {
   &.show {
     // dropdown position depends on the <li>, not the button
-    top: 2rem !important;
+    top: 1.65rem !important;
     left: -0.625rem !important;
     transform: none !important;
+
+    &.open-left {
+      left: auto !important;
+      right: -0.625rem !important;
+    }
   }
 }
 
