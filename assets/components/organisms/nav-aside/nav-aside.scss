@@ -33,7 +33,7 @@
         padding: 0;
       }
       a {
-        padding-inline: 1rem;
+        padding-inline: 1.5rem;
         font-size: 1rem;
       }
     }
@@ -84,12 +84,10 @@
       &:before { content: none; }
     }
 
-    &.active:not(.menu-item-has-children)+li>a:before {
-      //content: none;
-    }
-
     @include media-breakpoint-down(lg) {
-      &.active > a { margin-right: $spacer * 2; }
+      &.active > a {
+        margin-inline: 0;
+      }
     }
   }
   & > ul > li:first-child > a:before { content: none; }
