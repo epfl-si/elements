@@ -2,24 +2,23 @@
 
 export default () => {
 
-  $('#search-mobile-toggle').click(function(event){
+  $('#search-mobile-toggle').on('click', () => {
 
-    var searchContainer = $('.search-mobile');
-    var searchField = searchContainer.find('.form-control');
+    const searchContainer = $('.search-mobile');
+    const searchField = searchContainer.find('.form-control');
 
     searchContainer.toggleClass('show');
     $('body').toggleClass('search-open');
 
-    if ( searchContainer.hasClass('show') ) {
-      searchField.focus();
+    if (searchContainer.hasClass('show')) {
+      searchField.trigger('focus');
     }
 
   });
 
-  $('#search-mobile-close').click(function(event){
+  $('#search-mobile-close').on('click', () => {
 
-    var searchContainer = $('.search-mobile');
-    var searchField = searchContainer.find('.form-control');
+    const searchContainer = $('.search-mobile');
 
     searchContainer.removeClass('show');
     $('body').removeClass('search-open');

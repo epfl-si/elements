@@ -5,3 +5,7 @@ variants:
   - name: large
     title: Large
     wrapper: 'bg-gray-100'
+  - name: hn
+    title: Highlighted number
+  - name: hn-link
+    title: Highlighted number with link
