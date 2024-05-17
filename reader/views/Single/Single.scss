@@ -6,12 +6,9 @@
 }
 
 .tlbx-single-full {
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
 
   .tlbx-item-preview {
-    flex-grow: 1;
     border: 0;
   }
 
