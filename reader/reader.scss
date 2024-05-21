@@ -41,9 +41,11 @@
   overflow: hidden;
 }
 
-/*  Dropdown needs `overflow: visible` to allow it to
+/*  Dropdown and multi select needs `overflow: visible` to allow it to
     escape its container. */
-.tlbx-item-preview.tlbx-component-dropdown {
+.tlbx-item-preview.tlbx-element-dropdown,
+.tlbx-item-preview.tlbx-element-select-multiple,
+.tlbx-item-preview.tlbx-element-breadcrumb-dropdown {
   overflow: visible;
 }
 
