@@ -1,2 +1,6 @@
 title: Nav aside
 name: nav-aside
+notes: |
+  **Mobile version**
+
+  On small devices, the side navigation can be displayed inside the mobile navigation, below the main menu. See [Nav Mobile](/#/organisms/nav-mobile)

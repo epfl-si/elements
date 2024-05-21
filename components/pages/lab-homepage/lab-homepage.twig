@@ -1,3 +1,5 @@
+{% set hasTaggedBreadcrumb = true %}
+
 {% extends "@templates/base/base.twig" %}
 
 {% block header %}
@@ -5,8 +7,10 @@
 {% endblock %}
 
 {% set nav_aside_items = [{
-  label: "Laboratory Full Name",
-  children: ["Projects", "Publications", "News", "Team", "Teaching"]
+  label: "ENAC Faculty",
+  siblings_before:  ["News"],
+  siblings_after:  ["Education", "Research", "Sustainability challenges", "Intranet ENAC"],
+  children: ["Organization", "Projects", "Publications", "Team", "Teaching"]
 }] %}
 {% set nav_aside_active = 0 %}
 

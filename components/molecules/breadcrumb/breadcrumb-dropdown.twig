@@ -1,14 +1,9 @@
-<nav aria-label="breadcrumb" class="breadcrumb-wrapper" id="breadcrumb-wrapper">
+<nav aria-label="breadcrumb" class="breadcrumb-wrapper">
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <a href="#">
+      <a class="bread-link bread-home" href="#">
         {% include '@atoms/icon/icon.twig' with { icon: 'icon-home' } %}
       </a>
-    </li>
-    <li class="breadcrumb-item breadcrumb-tags-wrapper">
-      <a href="#" class="tag tag-primary">School</a>
-      <a href="#" class="tag tag-primary">Innovation</a>
-      <a href="#" class="tag tag-primary">W3C</a>
     </li>
     <li class="breadcrumb-item expand-links">
       <button class="btn btn-expand-links" aria-expanded="false" title="Display the complete path">
@@ -52,20 +47,21 @@
         </ul>
       </div>
     </li>
+    <li class="breadcrumb-item">
+      <a class="bread-link" href="#">Sustainability challenges</a>
+    </li>
     <li class="breadcrumb-item active" aria-current="page">
-      <span class="bread-item">ENAC Faculty</span>
+      <span class="bread-item">FUSTIC association</span>
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-menu-3">
           {% include '@atoms/icon/icon.twig' with { icon: 'arrow-down-circle', icon_classes:'feather' } %}
-          <span class="sr-only">Display same level pages – ENAC Faculty</span>
+          <span class="sr-only">Display same level pages – FUSTIC association</span>
         </button>
         <ul class="dropdown-menu" id="dropdown-menu-3">
-          <li class="dropdown-item"><a href="#">News</a></li>
-          <li class="dropdown-item current-menu-item-parent"><a href="#">ENAC Faculty</a></li>
-          <li class="dropdown-item"><a href="#">Education</a></li>
-          <li class="dropdown-item"><a href="#">Research</a></li>
-          <li class="dropdown-item"><a href="#">Sustainability challenges</a></li>
-          <li class="dropdown-item"><a href="#">Intranet ENAC</a></li>
+          <li class="dropdown-item"><a href="#">ENAC Clusters</a></li>
+          <li class="dropdown-item"><a href="#">Interdisciplinary Centers</a></li>
+          <li class="dropdown-item current-menu-item-parent"><a href="#">FUSTIC association</a></li>
+          <li class="dropdown-item"><a href="#">Sustainability grants</a></li>
         </ul>
       </div>
     </li>
