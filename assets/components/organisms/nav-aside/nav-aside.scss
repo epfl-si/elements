@@ -25,6 +25,24 @@
 .nav-aside-layout .nav-aside-wrapper {
   display: block;
 
+  @include media-breakpoint-down(lg) {
+    padding: 1rem;
+
+    .nav-aside {
+      [class^="h"] {
+        padding: 0;
+      }
+      a {
+        padding-inline: 1.5rem;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    height: 100%;
+  }
+
   @include media-breakpoint-up(xxl){
     flex: 0 0 16.1%;
     max-width: 16.1%;
@@ -66,12 +84,10 @@
       &:before { content: none; }
     }
 
-    &.active:not(.menu-item-has-children)+li>a:before {
-      content: none;
-    }
-
     @include media-breakpoint-down(lg) {
-      &.active > a { margin-right: $spacer * 2; }
+      &.active > a {
+        margin-inline: 0;
+      }
     }
   }
   & > ul > li:first-child > a:before { content: none; }

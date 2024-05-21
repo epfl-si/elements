@@ -1,0 +1,5 @@
+title: Nav mobile
+name: nav-mobile
+wrapper: nav-toggle-layout
+notes: |
+  The mobile navigation is opened by clicking the [Nav Toggle Button](/#/atoms/nav-toggle-mobile).

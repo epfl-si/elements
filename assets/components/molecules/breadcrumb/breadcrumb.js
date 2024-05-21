@@ -1,51 +1,27 @@
 /* globals $ */
 
 export default () => {
-  const breadcrumb = $('#breadcrumb-wrapper');
+  const expandBreadcrumb = $('.btn-expand-links');
+  const breadcrumbDropToggle = $('.dropdown-toggle');
 
-  if ($(breadcrumb).length > 0) {  // don't expect to have the breadcrumb on every case
-    const breadcrumbNode = breadcrumb[0];
-    const breadcrumbComponent = breadcrumb.find('.breadcrumb');
+  // add class 'has-expanded-links'
+  expandBreadcrumb.on('click', () => {
+    $('.breadcrumb-wrapper .breadcrumb').addClass('has-expanded-links');
+  });
 
-    if ($(window).width() > 1199 &&
-        $(breadcrumbComponent).length > 0 &&  // don't expect to have the breadcrumbComponent on every case
-        breadcrumb.width() < breadcrumbComponent[0].scrollWidth) {
-      let isDown = false;
-      let startX;
-      let scrollLeft;
+  // improve dropdown position
+  breadcrumbDropToggle.on('click', (e) => {
+    const btnPos = $(e.currentTarget).offset().left;
+    const documentWitdh = $(document).width();
+    const dropdown = $(e.currentTarget).siblings('.dropdown-menu');
+    const dropdownWidth = dropdown.width();
+    const btnOffset = documentWitdh - btnPos;
 
-      breadcrumb.on('mousedown', (e) => {
-        isDown = true;
-        breadcrumb.addClass('moving');
-        startX = e.pageX - breadcrumbNode.offsetLeft;
-        // eslint-disable-next-line
-        scrollLeft = breadcrumbNode.scrollLeft;
-      });
-
-      breadcrumb.on('mouseleave', () => {
-        isDown = false;
-        breadcrumb.removeClass('moving');
-      });
-
-      breadcrumb.on('mouseup', () => {
-        isDown = false;
-        breadcrumb.removeClass('moving');
-      });
-
-      breadcrumb.on('mousemove', (e) => {
-        if (!isDown) return; // stop the fn from running
-        e.preventDefault();
-        const x = e.pageX - breadcrumbNode.offsetLeft;
-        const walk = (x - startX) * 3;
-        breadcrumbNode.scrollLeft = scrollLeft - walk;
-      });
-
-      breadcrumb.mousewheel((e, delta) => {
-        e.preventDefault();
-        breadcrumbNode.scrollLeft -= delta * 40;
-      });
-
-      breadcrumb.find('*').on('dragstart', () => false);
+    // remove class 'open-left' from all .dropdown-menu elements
+    $('.dropdown-menu').removeClass('open-left');
+    // add the class back if the dropdown is too close to the right side of the window
+    if (dropdownWidth > btnOffset) {
+      dropdown.addClass('open-left');
     }
-  }
+  });
 };

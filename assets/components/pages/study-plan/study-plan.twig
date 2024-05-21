@@ -23,12 +23,34 @@
   <nav aria-label="breadcrumb" class="breadcrumb-wrapper">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <a href="#">
+        <a class="bread-link bread-home" href="#">
           {% include '@atoms/icon/icon.twig' with { icon: 'icon-home' } %}
         </a>
       </li>
-      <li class="breadcrumb-item"><a href="#">Éducation</a></li>
-      <li class="breadcrumb-item"><a href="#">Plans d'études</a></li>
+      <li class="breadcrumb-item expand-links">
+        <button class="btn btn-expand-links" aria-expanded="false" title="Afficher le chemin complet">
+          <span class="dots" aria-hidden="true">…</span>
+          <span class="sr-only">Afficher le chemin complet</span>
+        </button>
+      </li>
+      <li class="breadcrumb-item">
+        <a class="bread-link" href="#">Éducation</a>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-menu-1">
+            {% include '@atoms/icon/icon.twig' with { icon: 'arrow-down-circle', icon_classes:'feather' } %}
+            <span class="sr-only">Afficher les pages de même niveau – Éducation</span>
+          </button>
+          <ul class="dropdown-menu" id="dropdown-menu-1">
+            <li class="dropdown-item"><a href="#">À propos</a></li>
+            <li class="dropdown-item current-menu-item-parent"><a href="#">Éducation</a></li>
+            <li class="dropdown-item"><a href="#">Recherche</a></li>
+            <li class="dropdown-item"><a href="#">Innovation</a></li>
+            <li class="dropdown-item"><a href="#">Facultés</a></li>
+            <li class="dropdown-item"><a href="#">Campus</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="breadcrumb-item"><a class="bread-link" href="#">Plans d'études</a></li>
       <li class="breadcrumb-item active" aria-current="page">Cycle Bachelor</li>
     </ol>
   </nav>

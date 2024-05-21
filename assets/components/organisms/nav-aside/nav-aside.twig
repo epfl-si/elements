@@ -4,10 +4,15 @@
   role="navigation"
   aria-describedby="nav-aside-title"
 >
-  <h2 class="h5 sr-only-xl">Dans la même section</h2>
-  <ul>
+  <h2 class="h5 sr-only-xl" id="nav-aside-title">Dans la même section</h2>
+  <ul class="nav-menu">
   {% if nav_aside_items %}
     {% for item in nav_aside_items %}
+    {% if item.siblings_before and loop.index0 == nav_aside_active %}
+      {% for child in item.siblings_before %}
+      <li><a href="#">{{child}}</a></li>
+      {% endfor %}
+    {% endif %}
     <li{% if loop.index0 == nav_aside_active %} class="active"{% endif %}>
       <a href="#">
         {{item.label}}
@@ -23,6 +28,11 @@
       </ul>
       {% endif %}
     </li>
+    {% if item.siblings_after and loop.index0 == nav_aside_active %}
+      {% for child in item.siblings_after %}
+      <li><a href="#">{{child}}</a></li>
+      {% endfor %}
+    {% endif %}
     {% endfor %}
   {% else %}
     <li><a href="#">S'inscrire au Master</a></li>
