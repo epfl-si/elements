@@ -28,3 +28,13 @@
   align-items: center;
   margin-right: 1rem;
 }
+
+.custom-control-input:focus ~ .custom-control-label:before {
+  box-shadow: none;
+  outline: 2px solid $gray-600;
+  outline-offset: 1px;
+}
+
+.custom-control-input:checked:focus ~ .custom-control-label:before {
+  outline-color: $red-dark;
+}

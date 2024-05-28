@@ -6,7 +6,6 @@
   transition:
     color 0.3s,
     border-color 0.3s,
-    outline 0.3s,
     box-shadow 0.3s;
 
   &:hover,
@@ -15,9 +14,12 @@
   }
 
   &:focus,
-  &.focus {
+  &.focus,
+  &:focus-visible {
     border-color: $input-focus-border-color !important;
-    box-shadow: $input-focus-box-shadow !important;
+    box-shadow: none !important;
+    outline: 2px solid $gray-600;
+    outline-offset: 2px;
   }
 
   &.is-invalid {
