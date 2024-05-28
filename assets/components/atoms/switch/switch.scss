@@ -1,0 +1,31 @@
+@charset 'utf-8';
+
+.custom-switch {
+  padding-left: 2.25rem;
+
+  .custom-control-label:after {
+    top: calc(0.25rem + 1px);
+    left: calc(-2.25rem + 2px);
+
+    @include media-breakpoint-up(sm){
+      top: calc(0.25rem + 2px);
+    }
+
+    @include media-breakpoint-up(lg){
+      top: calc(0.25rem + 3px);
+    }
+  }
+
+  .custom-control-label:before {
+    top: 3px;
+    left: -2.25rem;
+
+    @include media-breakpoint-up(sm){
+      top: 4px;
+    }
+
+    @include media-breakpoint-up(lg){
+      top: 5px;
+    }
+  }
+}
