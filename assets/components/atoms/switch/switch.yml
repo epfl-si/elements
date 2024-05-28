@@ -1,0 +1,10 @@
+title: Switch
+name: switch
+variants:
+  - name: states
+    title: Switch sample
+    notes: Switches also support the disabled attribute.
+  - name: inline
+    title: Inline switch
+notes: |
+  A switch has the markup of a custom [checkbox](#/atoms/checkbox) but uses the `.custom-switch` class to render a toggle switch.
