@@ -12289,6 +12289,17 @@ button.tag.tag-plain:focus .remove {
   margin-right: 1rem;
 }
 
+.custom-control-input:focus ~ .custom-control-label:before {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: 2px solid #707070;
+  outline-offset: 1px;
+}
+
+.custom-control-input:checked:focus ~ .custom-control-label:before {
+  outline-color: #b51f1f;
+}
+
 .collapse-title {
   position: relative;
   padding: 0;
@@ -12745,18 +12756,20 @@ header.collapse-title + .collapse-item:before {
 .form-control, .selectize-control .selectize-input {
   border-color: #8e8e8e;
   height: auto;
-  -webkit-transition: color 0.3s, border-color 0.3s, outline 0.3s, -webkit-box-shadow 0.3s;
-  transition: color 0.3s, border-color 0.3s, outline 0.3s, -webkit-box-shadow 0.3s;
-  transition: color 0.3s, border-color 0.3s, outline 0.3s, box-shadow 0.3s;
-  transition: color 0.3s, border-color 0.3s, outline 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
+  -webkit-transition: color 0.3s, border-color 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, border-color 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, border-color 0.3s, box-shadow 0.3s;
+  transition: color 0.3s, border-color 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
 }
 .form-control:hover, .selectize-control .selectize-input:hover, .form-control.hover, .selectize-control .hover.selectize-input {
   border-color: #707070;
 }
-.form-control:focus, .selectize-control .selectize-input:focus, .form-control.focus, .selectize-control .focus.selectize-input {
+.form-control:focus, .selectize-control .selectize-input:focus, .form-control.focus, .selectize-control .focus.selectize-input, .form-control:focus-visible, .selectize-control .selectize-input:focus-visible {
   border-color: #212121 !important;
-  -webkit-box-shadow: 0 0 0 1px #d5d5d5 !important;
-          box-shadow: 0 0 0 1px #d5d5d5 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  outline: 2px solid #707070;
+  outline-offset: 2px;
 }
 .form-control.is-invalid, .selectize-control .is-invalid.selectize-input {
   border-color: #ff0000 !important;
@@ -13702,6 +13715,38 @@ a.social-icon:hover, a.social-icon:focus {
 @media (min-width: 992px) {
   .social-icon-list li {
     margin-bottom: 0;
+  }
+}
+
+.custom-switch {
+  padding-left: 2.25rem;
+}
+.custom-switch .custom-control-label:after {
+  top: calc(0.25rem + 1px);
+  left: calc(-2.25rem + 2px);
+}
+@media (min-width: 576px) {
+  .custom-switch .custom-control-label:after {
+    top: calc(0.25rem + 2px);
+  }
+}
+@media (min-width: 992px) {
+  .custom-switch .custom-control-label:after {
+    top: calc(0.25rem + 3px);
+  }
+}
+.custom-switch .custom-control-label:before {
+  top: 3px;
+  left: -2.25rem;
+}
+@media (min-width: 576px) {
+  .custom-switch .custom-control-label:before {
+    top: 4px;
+  }
+}
+@media (min-width: 992px) {
+  .custom-switch .custom-control-label:before {
+    top: 5px;
   }
 }
 
@@ -18480,7 +18525,7 @@ a.nav-arrow:hover .icon-container {
   border-top: 1px solid #e6e6e6;
 }
 .footer-light-socials .social-icon-negative .icon {
-  font-size: 1.35rem;
+  font-size: 1.375rem;
 }
 
 .bg-dark .footer-light-socials,
@@ -19955,8 +20000,7 @@ a.cc-link {
   }
   .table-like .line .cep .label {
     clip: auto;
-    -webkit-clip-path: none;
-            clip-path: none;
+    clip-path: none;
     position: static;
     width: auto;
     height: auto;

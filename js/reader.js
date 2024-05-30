@@ -83,6 +83,9 @@ var map = {
 	"./atoms/social-icon/social-icon-single-link.twig": 15749,
 	"./atoms/social-icon/social-icon-single.twig": 47433,
 	"./atoms/social-icon/social-icon.twig": 81519,
+	"./atoms/switch/switch-inline.twig": 96727,
+	"./atoms/switch/switch-states.twig": 83925,
+	"./atoms/switch/switch.twig": 94601,
 	"./atoms/tag/tag-input.twig": 74534,
 	"./atoms/tag/tag.twig": 47672,
 	"./atoms/trapeze/trapeze-horizontal.twig": 71478,
@@ -334,6 +337,7 @@ var map = {
 	"./atoms/select/select.yml": 70034,
 	"./atoms/separator/separator.yml": 23649,
 	"./atoms/social-icon/social-icon.yml": 82459,
+	"./atoms/switch/switch.yml": 27588,
 	"./atoms/tag/tag.yml": 61782,
 	"./atoms/trapeze/trapeze.yml": 76380,
 	"./atoms/upload/upload.yml": 63366,
@@ -849,14 +853,6 @@ module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
-/***/ 87757:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-module.exports = __webpack_require__(35666);
-
-
-/***/ }),
-
 /***/ 65946:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
@@ -1034,7 +1030,7 @@ var Element = /*#__PURE__*/function () {
     value: function all() {
       var all = []; // eslint-disable-next-line no-undef
 
-      var manifest = [{"type":"atoms","components":["alert","button","checkbox","collapse","definition-list","drawer","dropdown","favicon","figure","icon","input","link","list","loader","nav-lang","nav-toggle-mobile","nav-toggle","nav-user","picture","popover","radio","range","select","separator","social-icon","tag","trapeze","upload","video"]},{"type":"molecules","components":["access-nav","avatar-teaser","breadcrumb","card-deck","card","carousel","collapse-group","cover","datepicker","filters","footnotes","form-group","gallery","key-number","links-group","list-group","map","metabox","pagination","question","quote","search","sidenotes","social-feed","social","sponsor","tables","tabs"]},{"type":"organisms","components":["card-slider","contact","cookie-consent","faq","footer","form","fullwidth-teaser","header","headlines","hero","introduction","key-number-group","modal","nav-aside","nav-main","nav-mobile","newsletter-sign-up","restauration","social-feed-group"]},{"type":"content-types","components":["association","bachelor-project","basic-page","coursebook","cursus","event","graph-search","institute","laboratory","news","press-review","program","project-list","project","publication","research-field","research-project","school","science-question","section","study-plan","training"]},{"type":"pages","components":["about","association-homepage","association-list","basic-page","blog-homepage","blog-single","campus","education","error-404","event-detail","event-homepage","event-list","facultes","homepage","innovation","lab-homepage","layout-demo","maintenance","news-detail","news-homepage","people-detail","people-list","programs","research","study-plan-course","study-plan"]}];
+      var manifest = [{"type":"atoms","components":["alert","button","checkbox","collapse","definition-list","drawer","dropdown","favicon","figure","icon","input","link","list","loader","nav-lang","nav-toggle-mobile","nav-toggle","nav-user","picture","popover","radio","range","select","separator","social-icon","switch","tag","trapeze","upload","video"]},{"type":"molecules","components":["access-nav","avatar-teaser","breadcrumb","card-deck","card","carousel","collapse-group","cover","datepicker","filters","footnotes","form-group","gallery","key-number","links-group","list-group","map","metabox","pagination","question","quote","search","sidenotes","social-feed","social","sponsor","tables","tabs"]},{"type":"organisms","components":["card-slider","contact","cookie-consent","faq","footer","form","fullwidth-teaser","header","headlines","hero","introduction","key-number-group","modal","nav-aside","nav-main","nav-mobile","newsletter-sign-up","restauration","social-feed-group"]},{"type":"content-types","components":["association","bachelor-project","basic-page","coursebook","cursus","event","graph-search","institute","laboratory","news","press-review","program","project-list","project","publication","research-field","research-project","school","science-question","section","study-plan","training"]},{"type":"pages","components":["about","association-homepage","association-list","basic-page","blog-homepage","blog-single","campus","education","error-404","event-detail","event-homepage","event-list","facultes","homepage","innovation","lab-homepage","layout-demo","maintenance","news-detail","news-homepage","people-detail","people-list","programs","research","study-plan-course","study-plan"]}];
 
       var _iterator = _createForOfIteratorHelper(manifest),
           _step;
@@ -11804,10 +11800,10 @@ function Options(options, merge_child_field) {
 
   this.indent_empty_lines = this._get_boolean('indent_empty_lines');
 
-  // valid templating languages ['django', 'erb', 'handlebars', 'php', 'smarty']
-  // For now, 'auto' = all off for javascript, all on for html (and inline javascript).
+  // valid templating languages ['django', 'erb', 'handlebars', 'php', 'smarty', 'angular']
+  // For now, 'auto' = all off for javascript, all except angular on for html (and inline javascript/css).
   // other values ignored
-  this.templating = this._get_selection_list('templating', ['auto', 'none', 'django', 'erb', 'handlebars', 'php', 'smarty'], ['auto']);
+  this.templating = this._get_selection_list('templating', ['auto', 'none', 'angular', 'django', 'erb', 'handlebars', 'php', 'smarty'], ['auto']);
 }
 
 Options.prototype._get_array = function(name, default_value) {
@@ -12204,7 +12200,7 @@ module.exports.Directives = Directives;
 /***/ }),
 /* 14 */,
 /* 15 */
-/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_30126__) {
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_30167__) {
 
 /*jshint node:true */
 /*
@@ -12236,8 +12232,8 @@ module.exports.Directives = Directives;
 
 
 
-var Beautifier = __nested_webpack_require_30126__(16).Beautifier,
-  Options = __nested_webpack_require_30126__(17).Options;
+var Beautifier = (__nested_webpack_require_30167__(16).Beautifier),
+  Options = (__nested_webpack_require_30167__(17).Options);
 
 function css_beautify(source_text, options) {
   var beautifier = new Beautifier(source_text, options);
@@ -12252,7 +12248,7 @@ module.exports.defaultOptions = function() {
 
 /***/ }),
 /* 16 */
-/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_31750__) {
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_31795__) {
 
 /*jshint node:true */
 /*
@@ -12284,10 +12280,10 @@ module.exports.defaultOptions = function() {
 
 
 
-var Options = __nested_webpack_require_31750__(17).Options;
-var Output = __nested_webpack_require_31750__(2).Output;
-var InputScanner = __nested_webpack_require_31750__(8).InputScanner;
-var Directives = __nested_webpack_require_31750__(13).Directives;
+var Options = (__nested_webpack_require_31795__(17).Options);
+var Output = (__nested_webpack_require_31795__(2).Output);
+var InputScanner = (__nested_webpack_require_31795__(8).InputScanner);
+var Directives = (__nested_webpack_require_31795__(13).Directives);
 
 var directives_core = new Directives(/\/\*/, /\*\//);
 
@@ -12310,19 +12306,23 @@ function Beautifier(source_text, options) {
 
   // https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule
   this.NESTED_AT_RULE = {
-    "@page": true,
-    "@font-face": true,
-    "@keyframes": true,
+    "page": true,
+    "font-face": true,
+    "keyframes": true,
     // also in CONDITIONAL_GROUP_RULE below
-    "@media": true,
-    "@supports": true,
-    "@document": true
+    "media": true,
+    "supports": true,
+    "document": true
   };
   this.CONDITIONAL_GROUP_RULE = {
-    "@media": true,
-    "@supports": true,
-    "@document": true
+    "media": true,
+    "supports": true,
+    "document": true
   };
+  this.NON_SEMICOLON_NEWLINE_PROPERTY = [
+    "grid-template-areas",
+    "grid-template"
+  ];
 
 }
 
@@ -12445,9 +12445,10 @@ Beautifier.prototype.beautify = function() {
   // label { content: blue }
   var insidePropertyValue = false;
   var enteringConditionalGroup = false;
-  var insideAtExtend = false;
-  var insideAtImport = false;
+  var insideNonNestedAtRule = false;
+  var insideScssMap = false;
   var topCharacter = this._ch;
+  var insideNonSemiColonValues = false;
   var whitespace;
   var isAfterSpace;
   var previous_ch;
@@ -12499,10 +12500,30 @@ Beautifier.prototype.beautify = function() {
 
       // Ensures any new lines following the comment are preserved
       this.eatWhitespace(true);
+    } else if (this._ch === '$') {
+      this.preserveSingleSpace(isAfterSpace);
+
+      this.print_string(this._ch);
+
+      // strip trailing space, if present, for hash property checks
+      var variable = this._input.peekUntilAfter(/[: ,;{}()[\]\/='"]/g);
+
+      if (variable.match(/[ :]$/)) {
+        // we have a variable or pseudo-class, add it and insert one space before continuing
+        variable = this.eatString(": ").replace(/\s+$/, '');
+        this.print_string(variable);
+        this._output.space_before_token = true;
+      }
+
+      // might be sass variable
+      if (parenLevel === 0 && variable.indexOf(':') !== -1) {
+        insidePropertyValue = true;
+        this.indent();
+      }
     } else if (this._ch === '@') {
       this.preserveSingleSpace(isAfterSpace);
 
-      // deal with less propery mixins @{...}
+      // deal with less property mixins @{...}
       if (this._input.peek() === '{') {
         this.print_string(this._ch + this.eatString('}'));
       } else {
@@ -12513,29 +12534,26 @@ Beautifier.prototype.beautify = function() {
 
         if (variableOrRule.match(/[ :]$/)) {
           // we have a variable or pseudo-class, add it and insert one space before continuing
-          variableOrRule = this.eatString(": ").replace(/\s$/, '');
+          variableOrRule = this.eatString(": ").replace(/\s+$/, '');
           this.print_string(variableOrRule);
           this._output.space_before_token = true;
         }
 
-        variableOrRule = variableOrRule.replace(/\s$/, '');
+        // might be less variable
+        if (parenLevel === 0 && variableOrRule.indexOf(':') !== -1) {
+          insidePropertyValue = true;
+          this.indent();
 
-        if (variableOrRule === 'extend') {
-          insideAtExtend = true;
-        } else if (variableOrRule === 'import') {
-          insideAtImport = true;
-        }
-
-        // might be a nesting at-rule
-        if (variableOrRule in this.NESTED_AT_RULE) {
+          // might be a nesting at-rule
+        } else if (variableOrRule in this.NESTED_AT_RULE) {
           this._nestedLevel += 1;
           if (variableOrRule in this.CONDITIONAL_GROUP_RULE) {
             enteringConditionalGroup = true;
           }
-          // might be less variable
-        } else if (!insideRule && parenLevel === 0 && variableOrRule.indexOf(':') !== -1) {
-          insidePropertyValue = true;
-          this.indent();
+
+          // might be a non-nested at-rule
+        } else if (parenLevel === 0 && !insidePropertyValue) {
+          insideNonNestedAtRule = true;
         }
       }
     } else if (this._ch === '#' && this._input.peek() === '{') {
@@ -12546,6 +12564,9 @@ Beautifier.prototype.beautify = function() {
         insidePropertyValue = false;
         this.outdent();
       }
+
+      // non nested at rule becomes nested
+      insideNonNestedAtRule = false;
 
       // when entering conditional groups, only rulesets are allowed
       if (enteringConditionalGroup) {
@@ -12570,7 +12591,12 @@ Beautifier.prototype.beautify = function() {
         this.indent();
         this._output.set_indent(this._indentLevel);
       } else {
-        this.indent();
+        // inside mixin and first param is object
+        if (previous_ch === '(') {
+          this._output.space_before_token = false;
+        } else if (previous_ch !== ',') {
+          this.indent();
+        }
         this.print_string(this._ch);
       }
 
@@ -12582,8 +12608,7 @@ Beautifier.prototype.beautify = function() {
       if (previous_ch === '{') {
         this._output.trim(true);
       }
-      insideAtImport = false;
-      insideAtExtend = false;
+
       if (insidePropertyValue) {
         this.outdent();
         insidePropertyValue = false;
@@ -12602,10 +12627,25 @@ Beautifier.prototype.beautify = function() {
           this._output.add_new_line(true);
         }
       }
+      if (this._input.peek() === ')') {
+        this._output.trim(true);
+        if (this._options.brace_style === "expand") {
+          this._output.add_new_line(true);
+        }
+      }
     } else if (this._ch === ":") {
-      if ((insideRule || enteringConditionalGroup) && !(this._input.lookBack("&") || this.foundNestedPseudoClass()) && !this._input.lookBack("(") && !insideAtExtend && parenLevel === 0) {
+
+      for (var i = 0; i < this.NON_SEMICOLON_NEWLINE_PROPERTY.length; i++) {
+        if (this._input.lookBack(this.NON_SEMICOLON_NEWLINE_PROPERTY[i])) {
+          insideNonSemiColonValues = true;
+          break;
+        }
+      }
+
+      if ((insideRule || enteringConditionalGroup) && !(this._input.lookBack("&") || this.foundNestedPseudoClass()) && !this._input.lookBack("(") && !insideNonNestedAtRule && parenLevel === 0) {
         // 'property: value' delimiter
         // which could be in a conditional group query
+
         this.print_string(':');
         if (!insidePropertyValue) {
           insidePropertyValue = true;
@@ -12631,17 +12671,18 @@ Beautifier.prototype.beautify = function() {
         }
       }
     } else if (this._ch === '"' || this._ch === '\'') {
-      this.preserveSingleSpace(isAfterSpace);
+      var preserveQuoteSpace = previous_ch === '"' || previous_ch === '\'';
+      this.preserveSingleSpace(preserveQuoteSpace || isAfterSpace);
       this.print_string(this._ch + this.eatString(this._ch));
       this.eatWhitespace(true);
     } else if (this._ch === ';') {
+      insideNonSemiColonValues = false;
       if (parenLevel === 0) {
         if (insidePropertyValue) {
           this.outdent();
           insidePropertyValue = false;
         }
-        insideAtExtend = false;
-        insideAtImport = false;
+        insideNonNestedAtRule = false;
         this.print_string(this._ch);
         this.eatWhitespace(true);
 
@@ -12674,22 +12715,39 @@ Beautifier.prototype.beautify = function() {
           }
         }
       } else {
-        this.preserveSingleSpace(isAfterSpace);
+        var space_needed = false;
+        if (this._input.lookBack("with")) {
+          // look back is not an accurate solution, we need tokens to confirm without whitespaces
+          space_needed = true;
+        }
+        this.preserveSingleSpace(isAfterSpace || space_needed);
         this.print_string(this._ch);
-        this.eatWhitespace();
-        parenLevel++;
-        this.indent();
+
+        // handle scss/sass map
+        if (insidePropertyValue && previous_ch === "$" && this._options.selector_separator_newline) {
+          this._output.add_new_line();
+          insideScssMap = true;
+        } else {
+          this.eatWhitespace();
+          parenLevel++;
+          this.indent();
+        }
       }
     } else if (this._ch === ')') {
       if (parenLevel) {
         parenLevel--;
         this.outdent();
       }
+      if (insideScssMap && this._input.peek() === ";" && this._options.selector_separator_newline) {
+        insideScssMap = false;
+        this.outdent();
+        this._output.add_new_line();
+      }
       this.print_string(this._ch);
     } else if (this._ch === ',') {
       this.print_string(this._ch);
       this.eatWhitespace(true);
-      if (this._options.selector_separator_newline && !insidePropertyValue && parenLevel === 0 && !insideAtImport && !insideAtExtend) {
+      if (this._options.selector_separator_newline && (!insidePropertyValue || insideScssMap) && parenLevel === 0 && !insideNonNestedAtRule) {
         this._output.add_new_line();
       } else {
         this._output.space_before_token = true;
@@ -12720,11 +12778,16 @@ Beautifier.prototype.beautify = function() {
         this._ch = '';
       }
     } else if (this._ch === '!' && !this._input.lookBack("\\")) { // !important
-      this.print_string(' ');
+      this._output.space_before_token = true;
       this.print_string(this._ch);
     } else {
-      this.preserveSingleSpace(isAfterSpace);
+      var preserveAfterSpace = previous_ch === '"' || previous_ch === '\'';
+      this.preserveSingleSpace(preserveAfterSpace || isAfterSpace);
       this.print_string(this._ch);
+
+      if (!this._output.just_added_newline() && this._input.peek() === '\n' && insideNonSemiColonValues) {
+        this._output.add_new_line();
+      }
     }
   }
 
@@ -12738,7 +12801,7 @@ module.exports.Beautifier = Beautifier;
 
 /***/ }),
 /* 17 */
-/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_47411__) {
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_49905__) {
 
 /*jshint node:true */
 /*
@@ -12770,7 +12833,7 @@ module.exports.Beautifier = Beautifier;
 
 
 
-var BaseOptions = __nested_webpack_require_47411__(6).Options;
+var BaseOptions = (__nested_webpack_require_49905__(6).Options);
 
 function Options(options) {
   BaseOptions.call(this, options, 'css');
@@ -12805,7 +12868,7 @@ module.exports.Options = Options;
 /******/ 	var __webpack_module_cache__ = {};
 /******/ 	
 /******/ 	// The require function
-/******/ 	function __nested_webpack_require_49889__(moduleId) {
+/******/ 	function __nested_webpack_require_52385__(moduleId) {
 /******/ 		// Check if module is in cache
 /******/ 		var cachedModule = __webpack_module_cache__[moduleId];
 /******/ 		if (cachedModule !== undefined) {
@@ -12819,7 +12882,7 @@ module.exports.Options = Options;
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __nested_webpack_require_49889__);
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __nested_webpack_require_52385__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -12830,7 +12893,7 @@ module.exports.Options = Options;
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __nested_webpack_require_49889__(15);
+/******/ 	var __webpack_exports__ = __nested_webpack_require_52385__(15);
 /******/ 	legacy_beautify_css = __webpack_exports__;
 /******/ 	
 /******/ })()
@@ -13497,10 +13560,10 @@ function Options(options, merge_child_field) {
 
   this.indent_empty_lines = this._get_boolean('indent_empty_lines');
 
-  // valid templating languages ['django', 'erb', 'handlebars', 'php', 'smarty']
-  // For now, 'auto' = all off for javascript, all on for html (and inline javascript).
+  // valid templating languages ['django', 'erb', 'handlebars', 'php', 'smarty', 'angular']
+  // For now, 'auto' = all off for javascript, all except angular on for html (and inline javascript/css).
   // other values ignored
-  this.templating = this._get_selection_list('templating', ['auto', 'none', 'django', 'erb', 'handlebars', 'php', 'smarty'], ['auto']);
+  this.templating = this._get_selection_list('templating', ['auto', 'none', 'angular', 'django', 'erb', 'handlebars', 'php', 'smarty'], ['auto']);
 }
 
 Options.prototype._get_array = function(name, default_value) {
@@ -13824,7 +13887,7 @@ module.exports.InputScanner = InputScanner;
 
 /***/ }),
 /* 9 */
-/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_30287__) {
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_30328__) {
 
 /*jshint node:true */
 /*
@@ -13856,10 +13919,10 @@ module.exports.InputScanner = InputScanner;
 
 
 
-var InputScanner = __nested_webpack_require_30287__(8).InputScanner;
-var Token = __nested_webpack_require_30287__(3).Token;
-var TokenStream = __nested_webpack_require_30287__(10).TokenStream;
-var WhitespacePattern = __nested_webpack_require_30287__(11).WhitespacePattern;
+var InputScanner = (__nested_webpack_require_30328__(8).InputScanner);
+var Token = (__nested_webpack_require_30328__(3).Token);
+var TokenStream = (__nested_webpack_require_30328__(10).TokenStream);
+var WhitespacePattern = (__nested_webpack_require_30328__(11).WhitespacePattern);
 
 var TOKEN = {
   START: 'TK_START',
@@ -14054,7 +14117,7 @@ module.exports.TokenStream = TokenStream;
 
 /***/ }),
 /* 11 */
-/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_36699__) {
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_36748__) {
 
 /*jshint node:true */
 /*
@@ -14086,7 +14149,7 @@ module.exports.TokenStream = TokenStream;
 
 
 
-var Pattern = __nested_webpack_require_36699__(12).Pattern;
+var Pattern = (__nested_webpack_require_36748__(12).Pattern);
 
 function WhitespacePattern(input_scanner, parent) {
   Pattern.call(this, input_scanner, parent);
@@ -14333,7 +14396,7 @@ module.exports.Directives = Directives;
 
 /***/ }),
 /* 14 */
-/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_45684__) {
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_45735__) {
 
 /*jshint node:true */
 /*
@@ -14365,7 +14428,7 @@ module.exports.Directives = Directives;
 
 
 
-var Pattern = __nested_webpack_require_45684__(12).Pattern;
+var Pattern = (__nested_webpack_require_45735__(12).Pattern);
 
 
 var template_names = {
@@ -14373,7 +14436,8 @@ var template_names = {
   erb: false,
   handlebars: false,
   php: false,
-  smarty: false
+  smarty: false,
+  angular: false
 };
 
 // This lets templates appear anywhere we would do a readUntil
@@ -14553,7 +14617,7 @@ module.exports.TemplatablePattern = TemplatablePattern;
 /* 16 */,
 /* 17 */,
 /* 18 */
-/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_53228__) {
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_53299__) {
 
 /*jshint node:true */
 /*
@@ -14585,8 +14649,8 @@ module.exports.TemplatablePattern = TemplatablePattern;
 
 
 
-var Beautifier = __nested_webpack_require_53228__(19).Beautifier,
-  Options = __nested_webpack_require_53228__(20).Options;
+var Beautifier = (__nested_webpack_require_53299__(19).Beautifier),
+  Options = (__nested_webpack_require_53299__(20).Options);
 
 function style_html(html_source, options, js_beautify, css_beautify) {
   var beautifier = new Beautifier(html_source, options, js_beautify, css_beautify);
@@ -14601,7 +14665,7 @@ module.exports.defaultOptions = function() {
 
 /***/ }),
 /* 19 */
-/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_54902__) {
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_54977__) {
 
 /*jshint node:true */
 /*
@@ -14633,10 +14697,10 @@ module.exports.defaultOptions = function() {
 
 
 
-var Options = __nested_webpack_require_54902__(20).Options;
-var Output = __nested_webpack_require_54902__(2).Output;
-var Tokenizer = __nested_webpack_require_54902__(21).Tokenizer;
-var TOKEN = __nested_webpack_require_54902__(21).TOKEN;
+var Options = (__nested_webpack_require_54977__(20).Options);
+var Output = (__nested_webpack_require_54977__(2).Output);
+var Tokenizer = (__nested_webpack_require_54977__(21).Tokenizer);
+var TOKEN = (__nested_webpack_require_54977__(21).TOKEN);
 
 var lineBreak = /\r\n|[\r\n]/;
 var allLineBreaks = /\r\n|[\r\n]/g;
@@ -14714,6 +14778,13 @@ Printer.prototype.print_token = function(token) {
 
 Printer.prototype.indent = function() {
   this.indent_level++;
+};
+
+Printer.prototype.deindent = function() {
+  if (this.indent_level > 0) {
+    this.indent_level--;
+    this._output.set_indent(this.indent_level, this.alignment_size);
+  }
 };
 
 Printer.prototype.get_full_indent = function(level) {
@@ -14901,15 +14972,19 @@ Beautifier.prototype.beautify = function() {
   while (raw_token.type !== TOKEN.EOF) {
 
     if (raw_token.type === TOKEN.TAG_OPEN || raw_token.type === TOKEN.COMMENT) {
-      parser_token = this._handle_tag_open(printer, raw_token, last_tag_token, last_token);
+      parser_token = this._handle_tag_open(printer, raw_token, last_tag_token, last_token, tokens);
       last_tag_token = parser_token;
     } else if ((raw_token.type === TOKEN.ATTRIBUTE || raw_token.type === TOKEN.EQUALS || raw_token.type === TOKEN.VALUE) ||
       (raw_token.type === TOKEN.TEXT && !last_tag_token.tag_complete)) {
-      parser_token = this._handle_inside_tag(printer, raw_token, last_tag_token, tokens);
+      parser_token = this._handle_inside_tag(printer, raw_token, last_tag_token, last_token);
     } else if (raw_token.type === TOKEN.TAG_CLOSE) {
       parser_token = this._handle_tag_close(printer, raw_token, last_tag_token);
     } else if (raw_token.type === TOKEN.TEXT) {
       parser_token = this._handle_text(printer, raw_token, last_tag_token);
+    } else if (raw_token.type === TOKEN.CONTROL_FLOW_OPEN) {
+      parser_token = this._handle_control_flow_open(printer, raw_token);
+    } else if (raw_token.type === TOKEN.CONTROL_FLOW_CLOSE) {
+      parser_token = this._handle_control_flow_close(printer, raw_token);
     } else {
       // This should never happen, but if it does. Print the raw token
       printer.add_raw_token(raw_token);
@@ -14922,6 +14997,38 @@ Beautifier.prototype.beautify = function() {
   var sweet_code = printer._output.get_code(eol);
 
   return sweet_code;
+};
+
+Beautifier.prototype._handle_control_flow_open = function(printer, raw_token) {
+  var parser_token = {
+    text: raw_token.text,
+    type: raw_token.type
+  };
+  printer.set_space_before_token(raw_token.newlines || raw_token.whitespace_before !== '', true);
+  if (raw_token.newlines) {
+    printer.print_preserved_newlines(raw_token);
+  } else {
+    printer.set_space_before_token(raw_token.newlines || raw_token.whitespace_before !== '', true);
+  }
+  printer.print_token(raw_token);
+  printer.indent();
+  return parser_token;
+};
+
+Beautifier.prototype._handle_control_flow_close = function(printer, raw_token) {
+  var parser_token = {
+    text: raw_token.text,
+    type: raw_token.type
+  };
+
+  printer.deindent();
+  if (raw_token.newlines) {
+    printer.print_preserved_newlines(raw_token);
+  } else {
+    printer.set_space_before_token(raw_token.newlines || raw_token.whitespace_before !== '', true);
+  }
+  printer.print_token(raw_token);
+  return parser_token;
 };
 
 Beautifier.prototype._handle_tag_close = function(printer, raw_token, last_tag_token) {
@@ -14962,7 +15069,7 @@ Beautifier.prototype._handle_tag_close = function(printer, raw_token, last_tag_t
   return parser_token;
 };
 
-Beautifier.prototype._handle_inside_tag = function(printer, raw_token, last_tag_token, tokens) {
+Beautifier.prototype._handle_inside_tag = function(printer, raw_token, last_tag_token, last_token) {
   var wrapped = last_tag_token.has_wrapped_attrs;
   var parser_token = {
     text: raw_token.text,
@@ -14983,7 +15090,6 @@ Beautifier.prototype._handle_inside_tag = function(printer, raw_token, last_tag_
   } else {
     if (raw_token.type === TOKEN.ATTRIBUTE) {
       printer.set_space_before_token(true);
-      last_tag_token.attr_count += 1;
     } else if (raw_token.type === TOKEN.EQUALS) { //no space before =
       printer.set_space_before_token(false);
     } else if (raw_token.type === TOKEN.VALUE && raw_token.previous.type === TOKEN.EQUALS) { //no space before value
@@ -14996,29 +15102,15 @@ Beautifier.prototype._handle_inside_tag = function(printer, raw_token, last_tag_
         wrapped = wrapped || raw_token.newlines !== 0;
       }
 
-
-      if (this._is_wrap_attributes_force) {
-        var force_attr_wrap = last_tag_token.attr_count > 1;
-        if (this._is_wrap_attributes_force_expand_multiline && last_tag_token.attr_count === 1) {
-          var is_only_attribute = true;
-          var peek_index = 0;
-          var peek_token;
-          do {
-            peek_token = tokens.peek(peek_index);
-            if (peek_token.type === TOKEN.ATTRIBUTE) {
-              is_only_attribute = false;
-              break;
-            }
-            peek_index += 1;
-          } while (peek_index < 4 && peek_token.type !== TOKEN.EOF && peek_token.type !== TOKEN.TAG_CLOSE);
-
-          force_attr_wrap = !is_only_attribute;
-        }
-
-        if (force_attr_wrap) {
-          printer.print_newline(false);
-          wrapped = true;
-        }
+      // Wrap for 'force' options, and if the number of attributes is at least that specified in 'wrap_attributes_min_attrs':
+      // 1. always wrap the second and beyond attributes
+      // 2. wrap the first attribute only if 'force-expand-multiline' is specified
+      if (this._is_wrap_attributes_force &&
+        last_tag_token.attr_count >= this._options.wrap_attributes_min_attrs &&
+        (last_token.type !== TOKEN.TAG_OPEN || // ie. second attribute and beyond
+          this._is_wrap_attributes_force_expand_multiline)) {
+        printer.print_newline(false);
+        wrapped = true;
       }
     }
     printer.print_token(raw_token);
@@ -15147,12 +15239,12 @@ Beautifier.prototype._print_custom_beatifier_text = function(printer, raw_token,
   }
 };
 
-Beautifier.prototype._handle_tag_open = function(printer, raw_token, last_tag_token, last_token) {
+Beautifier.prototype._handle_tag_open = function(printer, raw_token, last_tag_token, last_token, tokens) {
   var parser_token = this._get_tag_open_token(raw_token);
 
   if ((last_tag_token.is_unformatted || last_tag_token.is_content_unformatted) &&
     !last_tag_token.is_empty_element &&
-    raw_token.type === TOKEN.TAG_OPEN && raw_token.text.indexOf('</') === 0) {
+    raw_token.type === TOKEN.TAG_OPEN && !parser_token.is_start_tag) {
     // End element tags for unformatted or content_unformatted elements
     // are printed raw to keep any newlines inside them exactly the same.
     printer.add_raw_token(raw_token);
@@ -15164,6 +15256,19 @@ Beautifier.prototype._handle_tag_open = function(printer, raw_token, last_tag_to
       printer.set_wrap_point();
     }
     printer.print_token(raw_token);
+  }
+
+  // count the number of attributes
+  if (parser_token.is_start_tag && this._is_wrap_attributes_force) {
+    var peek_index = 0;
+    var peek_token;
+    do {
+      peek_token = tokens.peek(peek_index);
+      if (peek_token.type === TOKEN.ATTRIBUTE) {
+        parser_token.attr_count += 1;
+      }
+      peek_index += 1;
+    } while (peek_token.type !== TOKEN.EOF && peek_token.type !== TOKEN.TAG_CLOSE);
   }
 
   //indent attributes an auto, forced, aligned or forced-align line-wrap
@@ -15212,14 +15317,19 @@ var TagOpenParserToken = function(parent, raw_token) {
       tag_check_match = raw_token.text.match(/^<([^\s>]*)/);
       this.tag_check = tag_check_match ? tag_check_match[1] : '';
     } else {
-      tag_check_match = raw_token.text.match(/^{{(?:[\^]|#\*?)?([^\s}]+)/);
+      tag_check_match = raw_token.text.match(/^{{~?(?:[\^]|#\*?)?([^\s}]+)/);
       this.tag_check = tag_check_match ? tag_check_match[1] : '';
 
-      // handle "{{#> myPartial}}
-      if (raw_token.text === '{{#>' && this.tag_check === '>' && raw_token.next !== null) {
-        this.tag_check = raw_token.next.text;
+      // handle "{{#> myPartial}}" or "{{~#> myPartial}}"
+      if ((raw_token.text.startsWith('{{#>') || raw_token.text.startsWith('{{~#>')) && this.tag_check[0] === '>') {
+        if (this.tag_check === '>' && raw_token.next !== null) {
+          this.tag_check = raw_token.next.text.split(' ')[0];
+        } else {
+          this.tag_check = raw_token.text.split('>')[1];
+        }
       }
     }
+
     this.tag_check = this.tag_check.toLowerCase();
 
     if (raw_token.type === TOKEN.COMMENT) {
@@ -15231,9 +15341,17 @@ var TagOpenParserToken = function(parent, raw_token) {
     this.is_end_tag = !this.is_start_tag ||
       (raw_token.closed && raw_token.closed.text === '/>');
 
+    // if whitespace handler ~ included (i.e. {{~#if true}}), handlebars tags start at pos 3 not pos 2
+    var handlebar_starts = 2;
+    if (this.tag_start_char === '{' && this.text.length >= 3) {
+      if (this.text.charAt(2) === '~') {
+        handlebar_starts = 3;
+      }
+    }
+
     // handlebars tags that don't start with # or ^ are single_tags, and so also start and end.
     this.is_end_tag = this.is_end_tag ||
-      (this.tag_start_char === '{' && (this.text.length < 3 || (/[^#\^]/.test(this.text.charAt(2)))));
+      (this.tag_start_char === '{' && (this.text.length < 3 || (/[^#\^]/.test(this.text.charAt(handlebar_starts)))));
   }
 };
 
@@ -15250,7 +15368,7 @@ Beautifier.prototype._get_tag_open_token = function(raw_token) { //function to g
 
   parser_token.is_unformatted = !parser_token.tag_complete && in_array(parser_token.tag_check, this._options.unformatted);
   parser_token.is_content_unformatted = !parser_token.is_empty_element && in_array(parser_token.tag_check, this._options.content_unformatted);
-  parser_token.is_inline_element = in_array(parser_token.tag_name, this._options.inline) || parser_token.tag_start_char === '{';
+  parser_token.is_inline_element = in_array(parser_token.tag_name, this._options.inline) || (this._options.inline_custom_elements && parser_token.tag_name.includes("-")) || parser_token.tag_start_char === '{';
 
   return parser_token;
 };
@@ -15357,7 +15475,7 @@ Beautifier.prototype._calcluate_parent_multiline = function(printer, parser_toke
 };
 
 //To be used for <p> tag special case:
-var p_closers = ['address', 'article', 'aside', 'blockquote', 'details', 'div', 'dl', 'fieldset', 'figcaption', 'figure', 'footer', 'form', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'header', 'hr', 'main', 'nav', 'ol', 'p', 'pre', 'section', 'table', 'ul'];
+var p_closers = ['address', 'article', 'aside', 'blockquote', 'details', 'div', 'dl', 'fieldset', 'figcaption', 'figure', 'footer', 'form', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'header', 'hr', 'main', 'menu', 'nav', 'ol', 'p', 'pre', 'section', 'table', 'ul'];
 var p_parent_excludes = ['a', 'audio', 'del', 'ins', 'map', 'noscript', 'video'];
 
 Beautifier.prototype._do_optional_end_element = function(parser_token) {
@@ -15380,7 +15498,7 @@ Beautifier.prototype._do_optional_end_element = function(parser_token) {
 
   } else if (parser_token.tag_name === 'li') {
     // An li element’s end tag may be omitted if the li element is immediately followed by another li element or if there is no more content in the parent element.
-    result = result || this._tag_stack.try_pop('li', ['ol', 'ul']);
+    result = result || this._tag_stack.try_pop('li', ['ol', 'ul', 'menu']);
 
   } else if (parser_token.tag_name === 'dd' || parser_token.tag_name === 'dt') {
     // A dd element’s end tag may be omitted if the dd element is immediately followed by another dd element or a dt element, or if there is no more content in the parent element.
@@ -15472,7 +15590,7 @@ module.exports.Beautifier = Beautifier;
 
 /***/ }),
 /* 20 */
-/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_90244__) {
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_92532__) {
 
 /*jshint node:true */
 /*
@@ -15504,7 +15622,7 @@ module.exports.Beautifier = Beautifier;
 
 
 
-var BaseOptions = __nested_webpack_require_90244__(6).Options;
+var BaseOptions = (__nested_webpack_require_92532__(6).Options);
 
 function Options(options) {
   BaseOptions.call(this, options, 'html');
@@ -15519,6 +15637,7 @@ function Options(options) {
   this.indent_handlebars = this._get_boolean('indent_handlebars', true);
   this.wrap_attributes = this._get_selection('wrap_attributes',
     ['auto', 'force', 'force-aligned', 'force-expand-multiline', 'aligned-multiple', 'preserve', 'preserve-aligned']);
+  this.wrap_attributes_min_attrs = this._get_number('wrap_attributes_min_attrs', 2);
   this.wrap_attributes_indent_size = this._get_number('wrap_attributes_indent_size', this.indent_size);
   this.extra_liners = this._get_array('extra_liners', ['head', 'body', '/html']);
 
@@ -15536,6 +15655,7 @@ function Options(options) {
     // obsolete inline tags
     'acronym', 'big', 'strike', 'tt'
   ]);
+  this.inline_custom_elements = this._get_boolean('inline_custom_elements', true);
   this.void_elements = this._get_array('void_elements', [
     // HTLM void elements - aka self-closing tags - aka singletons
     // https://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements
@@ -15569,7 +15689,7 @@ module.exports.Options = Options;
 
 /***/ }),
 /* 21 */
-/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_94441__) {
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_96899__) {
 
 /*jshint node:true */
 /*
@@ -15601,15 +15721,17 @@ module.exports.Options = Options;
 
 
 
-var BaseTokenizer = __nested_webpack_require_94441__(9).Tokenizer;
-var BASETOKEN = __nested_webpack_require_94441__(9).TOKEN;
-var Directives = __nested_webpack_require_94441__(13).Directives;
-var TemplatablePattern = __nested_webpack_require_94441__(14).TemplatablePattern;
-var Pattern = __nested_webpack_require_94441__(12).Pattern;
+var BaseTokenizer = (__nested_webpack_require_96899__(9).Tokenizer);
+var BASETOKEN = (__nested_webpack_require_96899__(9).TOKEN);
+var Directives = (__nested_webpack_require_96899__(13).Directives);
+var TemplatablePattern = (__nested_webpack_require_96899__(14).TemplatablePattern);
+var Pattern = (__nested_webpack_require_96899__(12).Pattern);
 
 var TOKEN = {
   TAG_OPEN: 'TK_TAG_OPEN',
   TAG_CLOSE: 'TK_TAG_CLOSE',
+  CONTROL_FLOW_OPEN: 'TK_CONTROL_FLOW_OPEN',
+  CONTROL_FLOW_CLOSE: 'TK_CONTROL_FLOW_CLOSE',
   ATTRIBUTE: 'TK_ATTRIBUTE',
   EQUALS: 'TK_EQUALS',
   VALUE: 'TK_VALUE',
@@ -15634,11 +15756,13 @@ var Tokenizer = function(input_string, options) {
 
   this.__patterns = {
     word: templatable_reader.until(/[\n\r\t <]/),
+    word_control_flow_close_excluded: templatable_reader.until(/[\n\r\t <}]/),
     single_quote: templatable_reader.until_after(/'/),
     double_quote: templatable_reader.until_after(/"/),
     attribute: templatable_reader.until(/[\n\r\t =>]|\/>/),
     element_name: templatable_reader.until(/[\n\r\t >\/]/),
 
+    angular_control_flow_start: pattern_reader.matching(/\@[a-zA-Z]+[^({]*[({]/),
     handlebars_comment: pattern_reader.starting_with(/{{!--/).until_after(/--}}/),
     handlebars: pattern_reader.starting_with(/{{/).until_after(/}}/),
     handlebars_open: pattern_reader.until(/[\n\r\t }]/),
@@ -15652,6 +15776,7 @@ var Tokenizer = function(input_string, options) {
 
   if (this._options.indent_handlebars) {
     this.__patterns.word = this.__patterns.word.exclude('handlebars');
+    this.__patterns.word_control_flow_close_excluded = this.__patterns.word_control_flow_close_excluded.exclude('handlebars');
   }
 
   this._unformatted_content_delimiter = null;
@@ -15670,14 +15795,16 @@ Tokenizer.prototype._is_comment = function(current_token) { // jshint unused:fal
 };
 
 Tokenizer.prototype._is_opening = function(current_token) {
-  return current_token.type === TOKEN.TAG_OPEN;
+  return current_token.type === TOKEN.TAG_OPEN || current_token.type === TOKEN.CONTROL_FLOW_OPEN;
 };
 
 Tokenizer.prototype._is_closing = function(current_token, open_token) {
-  return current_token.type === TOKEN.TAG_CLOSE &&
+  return (current_token.type === TOKEN.TAG_CLOSE &&
     (open_token && (
       ((current_token.text === '>' || current_token.text === '/>') && open_token.text[0] === '<') ||
-      (current_token.text === '}}' && open_token.text[0] === '{' && open_token.text[1] === '{')));
+      (current_token.text === '}}' && open_token.text[0] === '{' && open_token.text[1] === '{')))
+  ) || (current_token.type === TOKEN.CONTROL_FLOW_CLOSE &&
+    (current_token.text === '}' && open_token.text.endsWith('{')));
 };
 
 Tokenizer.prototype._reset = function() {
@@ -15696,8 +15823,9 @@ Tokenizer.prototype._get_next_token = function(previous_token, open_token) { // 
   token = token || this._read_open_handlebars(c, open_token);
   token = token || this._read_attribute(c, previous_token, open_token);
   token = token || this._read_close(c, open_token);
+  token = token || this._read_control_flows(c, open_token);
   token = token || this._read_raw_content(c, previous_token, open_token);
-  token = token || this._read_content_word(c);
+  token = token || this._read_content_word(c, open_token);
   token = token || this._read_comment_or_cdata(c);
   token = token || this._read_processing(c);
   token = token || this._read_open(c, open_token);
@@ -15762,7 +15890,7 @@ Tokenizer.prototype._read_processing = function(c) { // jshint unused:false
 Tokenizer.prototype._read_open = function(c, open_token) {
   var resulting_string = null;
   var token = null;
-  if (!open_token) {
+  if (!open_token || open_token.type === TOKEN.CONTROL_FLOW_OPEN) {
     if (c === '<') {
 
       resulting_string = this._input.next();
@@ -15779,7 +15907,7 @@ Tokenizer.prototype._read_open = function(c, open_token) {
 Tokenizer.prototype._read_open_handlebars = function(c, open_token) {
   var resulting_string = null;
   var token = null;
-  if (!open_token) {
+  if (!open_token || open_token.type === TOKEN.CONTROL_FLOW_OPEN) {
     if (this._options.indent_handlebars && c === '{' && this._input.peek(1) === '{') {
       if (this._input.peek(2) === '!') {
         resulting_string = this.__patterns.handlebars_comment.read();
@@ -15794,11 +15922,48 @@ Tokenizer.prototype._read_open_handlebars = function(c, open_token) {
   return token;
 };
 
+Tokenizer.prototype._read_control_flows = function(c, open_token) {
+  var resulting_string = '';
+  var token = null;
+  // Only check for control flows if angular templating is set AND indenting is set
+  if (!this._options.templating.includes('angular') || !this._options.indent_handlebars) {
+    return token;
+  }
+
+  if (c === '@') {
+    resulting_string = this.__patterns.angular_control_flow_start.read();
+    if (resulting_string === '') {
+      return token;
+    }
+
+    var opening_parentheses_count = resulting_string.endsWith('(') ? 1 : 0;
+    var closing_parentheses_count = 0;
+    // The opening brace of the control flow is where the number of opening and closing parentheses equal
+    // e.g. @if({value: true} !== null) { 
+    while (!(resulting_string.endsWith('{') && opening_parentheses_count === closing_parentheses_count)) {
+      var next_char = this._input.next();
+      if (next_char === null) {
+        break;
+      } else if (next_char === '(') {
+        opening_parentheses_count++;
+      } else if (next_char === ')') {
+        closing_parentheses_count++;
+      }
+      resulting_string += next_char;
+    }
+    token = this._create_token(TOKEN.CONTROL_FLOW_OPEN, resulting_string);
+  } else if (c === '}' && open_token && open_token.type === TOKEN.CONTROL_FLOW_OPEN) {
+    resulting_string = this._input.next();
+    token = this._create_token(TOKEN.CONTROL_FLOW_CLOSE, resulting_string);
+  }
+  return token;
+};
+
 
 Tokenizer.prototype._read_close = function(c, open_token) {
   var resulting_string = null;
   var token = null;
-  if (open_token) {
+  if (open_token && open_token.type === TOKEN.TAG_OPEN) {
     if (open_token.text[0] === '<' && (c === '>' || (c === '/' && this._input.peek(1) === '>'))) {
       resulting_string = this._input.next();
       if (c === '/') { //  for close tag "/>"
@@ -15885,7 +16050,7 @@ Tokenizer.prototype._read_raw_content = function(c, previous_token, open_token) 
   return null;
 };
 
-Tokenizer.prototype._read_content_word = function(c) {
+Tokenizer.prototype._read_content_word = function(c, open_token) {
   var resulting_string = '';
   if (this._options.unformatted_content_delimiter) {
     if (c === this._options.unformatted_content_delimiter[0]) {
@@ -15894,7 +16059,7 @@ Tokenizer.prototype._read_content_word = function(c) {
   }
 
   if (!resulting_string) {
-    resulting_string = this.__patterns.word.read();
+    resulting_string = (open_token && open_token.type === TOKEN.CONTROL_FLOW_OPEN) ? this.__patterns.word_control_flow_close_excluded.read() : this.__patterns.word.read();
   }
   if (resulting_string) {
     return this._create_token(TOKEN.TEXT, resulting_string);
@@ -15912,7 +16077,7 @@ module.exports.TOKEN = TOKEN;
 /******/ 	var __webpack_module_cache__ = {};
 /******/ 	
 /******/ 	// The require function
-/******/ 	function __nested_webpack_require_106325__(moduleId) {
+/******/ 	function __nested_webpack_require_111122__(moduleId) {
 /******/ 		// Check if module is in cache
 /******/ 		var cachedModule = __webpack_module_cache__[moduleId];
 /******/ 		if (cachedModule !== undefined) {
@@ -15926,7 +16091,7 @@ module.exports.TOKEN = TOKEN;
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __nested_webpack_require_106325__);
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __nested_webpack_require_111122__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -15937,7 +16102,7 @@ module.exports.TOKEN = TOKEN;
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __nested_webpack_require_106325__(18);
+/******/ 	var __webpack_exports__ = __nested_webpack_require_111122__(18);
 /******/ 	legacy_beautify_html = __webpack_exports__;
 /******/ 	
 /******/ })()
@@ -16028,7 +16193,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* AUTO-GENERATE
             }                   }
 
     space_after_anon_function (default false) - should the space before an anonymous function's parens be added, "function()" vs "function ()",
-          NOTE: This option is overriden by jslint_happy (i.e. if jslint_happy is true, space_after_anon_function is true by design)
+          NOTE: This option is overridden by jslint_happy (i.e. if jslint_happy is true, space_after_anon_function is true by design)
 
     brace_style (default "collapse") - "collapse" | "expand" | "end-expand" | "none" | any of the former + ",preserve-inline"
             put braces on the same line as control statements (default), or put braces on own line (Allman / ANSI style), or just put end braces on own line, or attempt to keep them where they are.
@@ -16062,7 +16227,7 @@ var legacy_beautify_js;
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ([
 /* 0 */
-/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_3999__) {
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_4000__) {
 
 /*jshint node:true */
 /*
@@ -16094,8 +16259,8 @@ var legacy_beautify_js;
 
 
 
-var Beautifier = __nested_webpack_require_3999__(1).Beautifier,
-  Options = __nested_webpack_require_3999__(5).Options;
+var Beautifier = (__nested_webpack_require_4000__(1).Beautifier),
+  Options = (__nested_webpack_require_4000__(5).Options);
 
 function js_beautify(js_source_text, options) {
   var beautifier = new Beautifier(js_source_text, options);
@@ -16110,7 +16275,7 @@ module.exports.defaultOptions = function() {
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_5624__) {
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_5629__) {
 
 /*jshint node:true */
 /*
@@ -16142,14 +16307,14 @@ module.exports.defaultOptions = function() {
 
 
 
-var Output = __nested_webpack_require_5624__(2).Output;
-var Token = __nested_webpack_require_5624__(3).Token;
-var acorn = __nested_webpack_require_5624__(4);
-var Options = __nested_webpack_require_5624__(5).Options;
-var Tokenizer = __nested_webpack_require_5624__(7).Tokenizer;
-var line_starters = __nested_webpack_require_5624__(7).line_starters;
-var positionable_operators = __nested_webpack_require_5624__(7).positionable_operators;
-var TOKEN = __nested_webpack_require_5624__(7).TOKEN;
+var Output = (__nested_webpack_require_5629__(2).Output);
+var Token = (__nested_webpack_require_5629__(3).Token);
+var acorn = __nested_webpack_require_5629__(4);
+var Options = (__nested_webpack_require_5629__(5).Options);
+var Tokenizer = (__nested_webpack_require_5629__(7).Tokenizer);
+var line_starters = (__nested_webpack_require_5629__(7).line_starters);
+var positionable_operators = (__nested_webpack_require_5629__(7).positionable_operators);
+var TOKEN = (__nested_webpack_require_5629__(7).TOKEN);
 
 
 function in_array(what, arr) {
@@ -16299,12 +16464,14 @@ Beautifier.prototype.create_flags = function(flags_base, mode) {
     inline_frame: false,
     if_block: false,
     else_block: false,
+    class_start_block: false, // class A { INSIDE HERE } or class B extends C { INSIDE HERE }
     do_block: false,
     do_while: false,
     import_block: false,
     in_case_statement: false, // switch(..){ INSIDE HERE }
     in_case: false, // we're on the exact line with "case 0:"
     case_body: false, // the indented case-action block
+    case_block: false, // the indented case-action block is wrapped with {}
     indentation_level: next_indent_level,
     alignment: 0,
     line_indent_level: flags_base ? flags_base.line_indent_level : next_indent_level,
@@ -16710,6 +16877,8 @@ Beautifier.prototype.handle_start_expr = function(current_token) {
             (peek_back_two.text === '*' && (peek_back_three.text === '{' || peek_back_three.text === ','))) {
             this._output.space_before_token = true;
           }
+        } else if (this._flags.parent && this._flags.parent.class_start_block) {
+          this._output.space_before_token = true;
         }
       }
     } else {
@@ -16804,10 +16973,10 @@ Beautifier.prototype.handle_start_block = function(current_token) {
     )) {
     // We don't support TypeScript,but we didn't break it for a very long time.
     // We'll try to keep not breaking it.
-    if (!in_array(this._last_last_text, ['class', 'interface'])) {
-      this.set_mode(MODE.ObjectLiteral);
-    } else {
+    if (in_array(this._last_last_text, ['class', 'interface']) && !in_array(second_token.text, [':', ','])) {
       this.set_mode(MODE.BlockStatement);
+    } else {
+      this.set_mode(MODE.ObjectLiteral);
     }
   } else if (this._flags.last_token.type === TOKEN.OPERATOR && this._flags.last_token.text === '=>') {
     // arrow function: (param1, paramN) => { statements }
@@ -16822,6 +16991,12 @@ Beautifier.prototype.handle_start_block = function(current_token) {
     this.set_mode(MODE.ObjectLiteral);
   } else {
     this.set_mode(MODE.BlockStatement);
+  }
+
+  if (this._flags.last_token) {
+    if (reserved_array(this._flags.last_token.previous, ['class', 'extends'])) {
+      this._flags.class_start_block = true;
+    }
   }
 
   var empty_braces = !next_token.comments_before && next_token.text === '}';
@@ -16869,7 +17044,7 @@ Beautifier.prototype.handle_start_block = function(current_token) {
       }
     }
     if (this._flags.last_token.type !== TOKEN.OPERATOR && this._flags.last_token.type !== TOKEN.START_EXPR) {
-      if (this._flags.last_token.type === TOKEN.START_BLOCK && !this._flags.inline_frame) {
+      if (in_array(this._flags.last_token.type, [TOKEN.START_BLOCK, TOKEN.SEMICOLON]) && !this._flags.inline_frame) {
         this.print_newline();
       } else {
         this._output.space_before_token = true;
@@ -16923,7 +17098,7 @@ Beautifier.prototype.handle_word = function(current_token) {
   if (current_token.type === TOKEN.RESERVED) {
     if (in_array(current_token.text, ['set', 'get']) && this._flags.mode !== MODE.ObjectLiteral) {
       current_token.type = TOKEN.WORD;
-    } else if (current_token.text === 'import' && this._tokens.peek().text === '(') {
+    } else if (current_token.text === 'import' && in_array(this._tokens.peek().text, ['(', '.'])) {
       current_token.type = TOKEN.WORD;
     } else if (in_array(current_token.text, ['as', 'from']) && !this._flags.import_block) {
       current_token.type = TOKEN.WORD;
@@ -16983,7 +17158,7 @@ Beautifier.prototype.handle_word = function(current_token) {
 
   if (this._flags.in_case_statement && reserved_array(current_token, ['case', 'default'])) {
     this.print_newline();
-    if (this._flags.last_token.type !== TOKEN.END_BLOCK && (this._flags.case_body || this._options.jslint_happy)) {
+    if (!this._flags.case_block && (this._flags.case_body || this._options.jslint_happy)) {
       // switch cases following one another
       this.deindent();
     }
@@ -16995,7 +17170,9 @@ Beautifier.prototype.handle_word = function(current_token) {
   }
 
   if (this._flags.last_token.type === TOKEN.COMMA || this._flags.last_token.type === TOKEN.START_EXPR || this._flags.last_token.type === TOKEN.EQUALS || this._flags.last_token.type === TOKEN.OPERATOR) {
-    if (!this.start_of_object_property()) {
+    if (!this.start_of_object_property() && !(
+        // start of object property is different for numeric values with +/- prefix operators
+        in_array(this._flags.last_token.text, ['+', '-']) && this._last_last_text === ':' && this._flags.parent.mode === MODE.ObjectLiteral)) {
       this.allow_wrap_or_preserved_newline(current_token);
     }
   }
@@ -17264,13 +17441,6 @@ Beautifier.prototype.handle_operator = function(current_token) {
     this.handle_whitespace_and_comments(current_token, preserve_statement_flags);
   }
 
-  if (reserved_array(this._flags.last_token, special_words)) {
-    // "return" had a special handling in TK_WORD. Now we need to return the favor
-    this._output.space_before_token = true;
-    this.print_token(current_token);
-    return;
-  }
-
   // hack for actionscript's import .*;
   if (current_token.text === '*' && this._flags.last_token.type === TOKEN.DOT) {
     this.print_token(current_token);
@@ -17279,6 +17449,12 @@ Beautifier.prototype.handle_operator = function(current_token) {
 
   if (current_token.text === '::') {
     // no spaces around exotic namespacing syntax operator
+    this.print_token(current_token);
+    return;
+  }
+
+  if (in_array(current_token.text, ['-', '+']) && this.start_of_object_property()) {
+    // numeric value with +/- symbol in front as a property
     this.print_token(current_token);
     return;
   }
@@ -17297,7 +17473,9 @@ Beautifier.prototype.handle_operator = function(current_token) {
     if (this._tokens.peek().type !== TOKEN.START_BLOCK) {
       this.indent();
       this.print_newline();
+      this._flags.case_block = false;
     } else {
+      this._flags.case_block = true;
       this._output.space_before_token = true;
     }
     return;
@@ -17395,8 +17573,12 @@ Beautifier.prototype.handle_operator = function(current_token) {
 
     // http://www.ecma-international.org/ecma-262/5.1/#sec-7.9.1
     // if there is a newline between -- or ++ and anything else we should preserve it.
-    if (current_token.newlines && (current_token.text === '--' || current_token.text === '++')) {
-      this.print_newline(false, true);
+    if (current_token.newlines && (current_token.text === '--' || current_token.text === '++' || current_token.text === '~')) {
+      var new_line_needed = reserved_array(this._flags.last_token, special_words) && current_token.newlines;
+      if (new_line_needed && (this._previous_flags.if_block || this._previous_flags.else_block)) {
+        this.restore_mode();
+      }
+      this.print_newline(new_line_needed, true);
     }
 
     if (this._flags.last_token.text === ';' && is_expression(this._flags.mode)) {
@@ -17534,6 +17716,10 @@ Beautifier.prototype.handle_dot = function(current_token) {
     // The conditional starts the statement if appropriate.
   } else {
     this.handle_whitespace_and_comments(current_token, true);
+  }
+
+  if (this._flags.last_token.text.match('^[0-9]+$')) {
+    this._output.space_before_token = true;
   }
 
   if (reserved_array(this._flags.last_token, special_words)) {
@@ -18099,12 +18285,13 @@ var nonASCIIidentifierChars = "\\u0300-\\u036f\\u0483-\\u0487\\u0591-\\u05bd\\u0
 //var nonASCIIidentifierStart = new RegExp("[" + nonASCIIidentifierStartChars + "]");
 //var nonASCIIidentifier = new RegExp("[" + nonASCIIidentifierStartChars + nonASCIIidentifierChars + "]");
 
-var identifierStart = "(?:\\\\u[0-9a-fA-F]{4}|[" + baseASCIIidentifierStartChars + nonASCIIidentifierStartChars + "])";
-var identifierChars = "(?:\\\\u[0-9a-fA-F]{4}|[" + baseASCIIidentifierChars + nonASCIIidentifierStartChars + nonASCIIidentifierChars + "])*";
+var unicodeEscapeOrCodePoint = "\\\\u[0-9a-fA-F]{4}|\\\\u\\{[0-9a-fA-F]+\\}";
+var identifierStart = "(?:" + unicodeEscapeOrCodePoint + "|[" + baseASCIIidentifierStartChars + nonASCIIidentifierStartChars + "])";
+var identifierChars = "(?:" + unicodeEscapeOrCodePoint + "|[" + baseASCIIidentifierChars + nonASCIIidentifierStartChars + nonASCIIidentifierChars + "])*";
 
 exports.identifier = new RegExp(identifierStart + identifierChars, 'g');
 exports.identifierStart = new RegExp(identifierStart);
-exports.identifierMatch = new RegExp("(?:\\\\u[0-9a-fA-F]{4}|[" + baseASCIIidentifierChars + nonASCIIidentifierStartChars + nonASCIIidentifierChars + "])+");
+exports.identifierMatch = new RegExp("(?:" + unicodeEscapeOrCodePoint + "|[" + baseASCIIidentifierChars + nonASCIIidentifierStartChars + nonASCIIidentifierChars + "])+");
 
 var nonASCIIwhitespace = /[\u1680\u180e\u2000-\u200a\u202f\u205f\u3000\ufeff]/; // jshint ignore:line
 
@@ -18123,7 +18310,7 @@ exports.allLineBreaks = new RegExp(exports.lineBreak.source, 'g');
 
 /***/ }),
 /* 5 */
-/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_86494__) {
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_87818__) {
 
 /*jshint node:true */
 /*
@@ -18155,7 +18342,7 @@ exports.allLineBreaks = new RegExp(exports.lineBreak.source, 'g');
 
 
 
-var BaseOptions = __nested_webpack_require_86494__(6).Options;
+var BaseOptions = (__nested_webpack_require_87818__(6).Options);
 
 var validPositionValues = ['before-newline', 'after-newline', 'preserve-newline'];
 
@@ -18293,10 +18480,10 @@ function Options(options, merge_child_field) {
 
   this.indent_empty_lines = this._get_boolean('indent_empty_lines');
 
-  // valid templating languages ['django', 'erb', 'handlebars', 'php', 'smarty']
-  // For now, 'auto' = all off for javascript, all on for html (and inline javascript).
+  // valid templating languages ['django', 'erb', 'handlebars', 'php', 'smarty', 'angular']
+  // For now, 'auto' = all off for javascript, all except angular on for html (and inline javascript/css).
   // other values ignored
-  this.templating = this._get_selection_list('templating', ['auto', 'none', 'django', 'erb', 'handlebars', 'php', 'smarty'], ['auto']);
+  this.templating = this._get_selection_list('templating', ['auto', 'none', 'angular', 'django', 'erb', 'handlebars', 'php', 'smarty'], ['auto']);
 }
 
 Options.prototype._get_array = function(name, default_value) {
@@ -18421,7 +18608,7 @@ module.exports.mergeOpts = _mergeOpts;
 
 /***/ }),
 /* 7 */
-/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_97388__) {
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_98755__) {
 
 /*jshint node:true */
 /*
@@ -18453,13 +18640,13 @@ module.exports.mergeOpts = _mergeOpts;
 
 
 
-var InputScanner = __nested_webpack_require_97388__(8).InputScanner;
-var BaseTokenizer = __nested_webpack_require_97388__(9).Tokenizer;
-var BASETOKEN = __nested_webpack_require_97388__(9).TOKEN;
-var Directives = __nested_webpack_require_97388__(13).Directives;
-var acorn = __nested_webpack_require_97388__(4);
-var Pattern = __nested_webpack_require_97388__(12).Pattern;
-var TemplatablePattern = __nested_webpack_require_97388__(14).TemplatablePattern;
+var InputScanner = (__nested_webpack_require_98755__(8).InputScanner);
+var BaseTokenizer = (__nested_webpack_require_98755__(9).Tokenizer);
+var BASETOKEN = (__nested_webpack_require_98755__(9).TOKEN);
+var Directives = (__nested_webpack_require_98755__(13).Directives);
+var acorn = __nested_webpack_require_98755__(4);
+var Pattern = (__nested_webpack_require_98755__(12).Pattern);
+var TemplatablePattern = (__nested_webpack_require_98755__(14).TemplatablePattern);
 
 
 function in_array(what, arr) {
@@ -18499,7 +18686,7 @@ var digit = /[0-9]/;
 var dot_pattern = /[^\d\.]/;
 
 var positionable_operators = (
-  ">>> === !== " +
+  ">>> === !== &&= ??= ||= " +
   "<< && >= ** != == <= >> || ?? |> " +
   "< / - + > : & % ? ^ | *").split(' ');
 
@@ -18507,7 +18694,7 @@ var positionable_operators = (
 // Also, you must update possitionable operators separately from punct
 var punct =
   ">>>= " +
-  "... >>= <<= === >>> !== **= " +
+  "... >>= <<= === >>> !== **= &&= ??= ||= " +
   "=> ^= :: /= << <= == && -= >= >> != -- += ** || ?? ++ %= &= *= |= |> " +
   "= ! ? > < : / ^ - + * & % ~ |";
 
@@ -18520,7 +18707,7 @@ var punct_pattern = new RegExp(punct);
 
 // words which should always start on new line.
 var line_starters = 'continue,try,throw,return,var,let,const,if,switch,case,default,for,while,break,function,import,export'.split(',');
-var reserved_words = line_starters.concat(['do', 'in', 'of', 'else', 'get', 'set', 'new', 'catch', 'finally', 'typeof', 'yield', 'async', 'await', 'from', 'as']);
+var reserved_words = line_starters.concat(['do', 'in', 'of', 'else', 'get', 'set', 'new', 'catch', 'finally', 'typeof', 'yield', 'async', 'await', 'from', 'as', 'class', 'extends']);
 var reserved_word_pattern = new RegExp('^(?:' + reserved_words.join('|') + ')$');
 
 // var template_pattern = /(?:(?:<\?php|<\?=)[\s\S]*?\?>)|(?:<%[\s\S]*?%>)/g;
@@ -18551,7 +18738,7 @@ var Tokenizer = function(input_string, options) {
     html_comment_end: pattern_reader.matching(/-->/),
     include: pattern_reader.starting_with(/#include/).until_after(acorn.lineBreak),
     shebang: pattern_reader.starting_with(/#!/).until_after(acorn.lineBreak),
-    xml: pattern_reader.matching(/[\s\S]*?<(\/?)([-a-zA-Z:0-9_.]+|{[\s\S]+?}|!\[CDATA\[[\s\S]*?\]\]|)(\s+{[\s\S]+?}|\s+[-a-zA-Z:0-9_.]+|\s+[-a-zA-Z:0-9_.]+\s*=\s*('[^']*'|"[^"]*"|{[\s\S]+?}))*\s*(\/?)\s*>/),
+    xml: pattern_reader.matching(/[\s\S]*?<(\/?)([-a-zA-Z:0-9_.]+|{[^}]+?}|!\[CDATA\[[^\]]*?\]\]|)(\s*{[^}]+?}|\s+[-a-zA-Z:0-9_.]+|\s+[-a-zA-Z:0-9_.]+\s*=\s*('[^']*'|"[^"]*"|{([^{}]|{[^}]+?})+?}))*\s*(\/?)\s*>/),
     single_quote: templatable.until(/['\\\n\r\u2028\u2029]/),
     double_quote: templatable.until(/["\\\n\r\u2028\u2029]/),
     template_text: templatable.until(/[`\\$]/),
@@ -18592,6 +18779,7 @@ Tokenizer.prototype._get_next_token = function(previous_token, open_token) { // 
 
   token = token || this._read_non_javascript(c);
   token = token || this._read_string(c);
+  token = token || this._read_pair(c, this._input.peek(1)); // Issue #2062 hack for record type '#{'
   token = token || this._read_word(previous_token);
   token = token || this._read_singles(c);
   token = token || this._read_comment(c);
@@ -18611,7 +18799,8 @@ Tokenizer.prototype._read_word = function(previous_token) {
     if (!(previous_token.type === TOKEN.DOT ||
         (previous_token.type === TOKEN.RESERVED && (previous_token.text === 'set' || previous_token.text === 'get'))) &&
       reserved_word_pattern.test(resulting_string)) {
-      if (resulting_string === 'in' || resulting_string === 'of') { // hack for 'in' and 'of' operators
+      if ((resulting_string === 'in' || resulting_string === 'of') &&
+        (previous_token.type === TOKEN.WORD || previous_token.type === TOKEN.STRING)) { // hack for 'in' and 'of' operators
         return this._create_token(TOKEN.OPERATOR, resulting_string);
       }
       return this._create_token(TOKEN.RESERVED, resulting_string);
@@ -18644,6 +18833,19 @@ Tokenizer.prototype._read_singles = function(c) {
   }
 
   if (token) {
+    this._input.next();
+  }
+  return token;
+};
+
+Tokenizer.prototype._read_pair = function(c, d) {
+  var token = null;
+  if (c === '#' && d === '{') {
+    token = this._create_token(TOKEN.START_BLOCK, c + d);
+  }
+
+  if (token) {
+    this._input.next();
     this._input.next();
   }
   return token;
@@ -18894,6 +19096,9 @@ function unescape_string(s) {
         matched = input_scan.match(/x([0-9A-Fa-f]{2})/g);
       } else if (input_scan.peek() === 'u') {
         matched = input_scan.match(/u([0-9A-Fa-f]{4})/g);
+        if (!matched) {
+          matched = input_scan.match(/u\{([0-9A-Fa-f]+)\}/g);
+        }
       } else {
         out += '\\';
         if (input_scan.hasNext()) {
@@ -18917,7 +19122,9 @@ function unescape_string(s) {
       } else if (escaped >= 0x00 && escaped < 0x20) {
         // leave 0x00...0x1f escaped
         out += '\\' + matched[0];
-        continue;
+      } else if (escaped > 0x10FFFF) {
+        // If the escape sequence is out of bounds, keep the original sequence and continue conversion
+        out += '\\' + matched[0];
       } else if (escaped === 0x22 || escaped === 0x27 || escaped === 0x5c) {
         // single-quote, apostrophe, backslash - escape these
         out += '\\' + String.fromCharCode(escaped);
@@ -19191,7 +19398,7 @@ module.exports.InputScanner = InputScanner;
 
 /***/ }),
 /* 9 */
-/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_122492__) {
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_124617__) {
 
 /*jshint node:true */
 /*
@@ -19223,10 +19430,10 @@ module.exports.InputScanner = InputScanner;
 
 
 
-var InputScanner = __nested_webpack_require_122492__(8).InputScanner;
-var Token = __nested_webpack_require_122492__(3).Token;
-var TokenStream = __nested_webpack_require_122492__(10).TokenStream;
-var WhitespacePattern = __nested_webpack_require_122492__(11).WhitespacePattern;
+var InputScanner = (__nested_webpack_require_124617__(8).InputScanner);
+var Token = (__nested_webpack_require_124617__(3).Token);
+var TokenStream = (__nested_webpack_require_124617__(10).TokenStream);
+var WhitespacePattern = (__nested_webpack_require_124617__(11).WhitespacePattern);
 
 var TOKEN = {
   START: 'TK_START',
@@ -19421,7 +19628,7 @@ module.exports.TokenStream = TokenStream;
 
 /***/ }),
 /* 11 */
-/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_128904__) {
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_131037__) {
 
 /*jshint node:true */
 /*
@@ -19453,7 +19660,7 @@ module.exports.TokenStream = TokenStream;
 
 
 
-var Pattern = __nested_webpack_require_128904__(12).Pattern;
+var Pattern = (__nested_webpack_require_131037__(12).Pattern);
 
 function WhitespacePattern(input_scanner, parent) {
   Pattern.call(this, input_scanner, parent);
@@ -19700,7 +19907,7 @@ module.exports.Directives = Directives;
 
 /***/ }),
 /* 14 */
-/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_137889__) {
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_140024__) {
 
 /*jshint node:true */
 /*
@@ -19732,7 +19939,7 @@ module.exports.Directives = Directives;
 
 
 
-var Pattern = __nested_webpack_require_137889__(12).Pattern;
+var Pattern = (__nested_webpack_require_140024__(12).Pattern);
 
 
 var template_names = {
@@ -19740,7 +19947,8 @@ var template_names = {
   erb: false,
   handlebars: false,
   php: false,
-  smarty: false
+  smarty: false,
+  angular: false
 };
 
 // This lets templates appear anywhere we would do a readUntil
@@ -19922,7 +20130,7 @@ module.exports.TemplatablePattern = TemplatablePattern;
 /******/ 	var __webpack_module_cache__ = {};
 /******/ 	
 /******/ 	// The require function
-/******/ 	function __nested_webpack_require_145562__(moduleId) {
+/******/ 	function __nested_webpack_require_147717__(moduleId) {
 /******/ 		// Check if module is in cache
 /******/ 		var cachedModule = __webpack_module_cache__[moduleId];
 /******/ 		if (cachedModule !== undefined) {
@@ -19936,7 +20144,7 @@ module.exports.TemplatablePattern = TemplatablePattern;
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __nested_webpack_require_145562__);
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __nested_webpack_require_147717__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -19947,7 +20155,7 @@ module.exports.TemplatablePattern = TemplatablePattern;
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __nested_webpack_require_145562__(0);
+/******/ 	var __webpack_exports__ = __nested_webpack_require_147717__(0);
 /******/ 	legacy_beautify_js = __webpack_exports__;
 /******/ 	
 /******/ })()
@@ -47472,7 +47680,7 @@ module.exports = merge([xml, xlink, xmlns, aria, svg])
 
 /***/ }),
 
-/***/ 51162:
+/***/ 84756:
 /***/ (function(__unused_webpack_module, exports) {
 
 "use strict";
@@ -47490,8 +47698,44 @@ var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):601
 Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
 function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}__webpack_unused_export__=l;__webpack_unused_export__=m;__webpack_unused_export__=k;__webpack_unused_export__=h;__webpack_unused_export__=c;__webpack_unused_export__=n;__webpack_unused_export__=e;__webpack_unused_export__=t;__webpack_unused_export__=r;__webpack_unused_export__=d;
 __webpack_unused_export__=g;__webpack_unused_export__=f;__webpack_unused_export__=p;__webpack_unused_export__=function(a){return A(a)||z(a)===l};__webpack_unused_export__=A;__webpack_unused_export__=function(a){return z(a)===k};__webpack_unused_export__=function(a){return z(a)===h};__webpack_unused_export__=function(a){return"object"===typeof a&&null!==a&&a.$$typeof===c};__webpack_unused_export__=function(a){return z(a)===n};__webpack_unused_export__=function(a){return z(a)===e};__webpack_unused_export__=function(a){return z(a)===t};
-exports.isMemo=function(a){return z(a)===r};__webpack_unused_export__=function(a){return z(a)===d};__webpack_unused_export__=function(a){return z(a)===g};__webpack_unused_export__=function(a){return z(a)===f};__webpack_unused_export__=function(a){return z(a)===p};
+__webpack_unused_export__=function(a){return z(a)===r};__webpack_unused_export__=function(a){return z(a)===d};__webpack_unused_export__=function(a){return z(a)===g};__webpack_unused_export__=function(a){return z(a)===f};__webpack_unused_export__=function(a){return z(a)===p};
 __webpack_unused_export__=function(a){return"string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v)};__webpack_unused_export__=z;
+
+
+/***/ }),
+
+/***/ 19154:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+
+if (true) {
+  /* unused reexport */ __webpack_require__(84756);
+} else {}
+
+
+/***/ }),
+
+/***/ 51162:
+/***/ (function(__unused_webpack_module, exports) {
+
+"use strict";
+var __webpack_unused_export__;
+/**
+ * @license React
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+var b=Symbol.for("react.element"),c=Symbol.for("react.portal"),d=Symbol.for("react.fragment"),e=Symbol.for("react.strict_mode"),f=Symbol.for("react.profiler"),g=Symbol.for("react.provider"),h=Symbol.for("react.context"),k=Symbol.for("react.server_context"),l=Symbol.for("react.forward_ref"),m=Symbol.for("react.suspense"),n=Symbol.for("react.suspense_list"),p=Symbol.for("react.memo"),q=Symbol.for("react.lazy"),t=Symbol.for("react.offscreen"),u;u=Symbol.for("react.module.reference");
+function v(a){if("object"===typeof a&&null!==a){var r=a.$$typeof;switch(r){case b:switch(a=a.type,a){case d:case f:case e:case m:case n:return a;default:switch(a=a&&a.$$typeof,a){case k:case h:case l:case q:case p:case g:return a;default:return r}}case c:return r}}}__webpack_unused_export__=h;__webpack_unused_export__=g;__webpack_unused_export__=b;exports.ForwardRef=l;__webpack_unused_export__=d;__webpack_unused_export__=q;__webpack_unused_export__=p;__webpack_unused_export__=c;__webpack_unused_export__=f;__webpack_unused_export__=e;__webpack_unused_export__=m;
+__webpack_unused_export__=n;__webpack_unused_export__=function(){return!1};__webpack_unused_export__=function(){return!1};__webpack_unused_export__=function(a){return v(a)===h};__webpack_unused_export__=function(a){return v(a)===g};__webpack_unused_export__=function(a){return"object"===typeof a&&null!==a&&a.$$typeof===b};__webpack_unused_export__=function(a){return v(a)===l};exports.isFragment=function(a){return v(a)===d};__webpack_unused_export__=function(a){return v(a)===q};exports.isMemo=function(a){return v(a)===p};
+__webpack_unused_export__=function(a){return v(a)===c};__webpack_unused_export__=function(a){return v(a)===f};__webpack_unused_export__=function(a){return v(a)===e};__webpack_unused_export__=function(a){return v(a)===m};__webpack_unused_export__=function(a){return v(a)===n};
+__webpack_unused_export__=function(a){return"string"===typeof a||"function"===typeof a||a===d||a===f||a===e||a===m||a===n||a===t||"object"===typeof a&&null!==a&&(a.$$typeof===q||a.$$typeof===p||a.$$typeof===g||a.$$typeof===h||a.$$typeof===l||a.$$typeof===u||void 0!==a.getModuleId)?!0:!1};__webpack_unused_export__=v;
 
 
 /***/ }),
@@ -49183,761 +49427,6 @@ exports.useLayoutEffect=function(a,b){return S().useLayoutEffect(a,b)};exports.u
 if (true) {
   module.exports = __webpack_require__(72408);
 } else {}
-
-
-/***/ }),
-
-/***/ 35666:
-/***/ (function(module) {
-
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-var runtime = (function (exports) {
-  "use strict";
-
-  var Op = Object.prototype;
-  var hasOwn = Op.hasOwnProperty;
-  var undefined; // More compressible than void 0.
-  var $Symbol = typeof Symbol === "function" ? Symbol : {};
-  var iteratorSymbol = $Symbol.iterator || "@@iterator";
-  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
-  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
-
-  function define(obj, key, value) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-    return obj[key];
-  }
-  try {
-    // IE 8 has a broken Object.defineProperty that only works on DOM objects.
-    define({}, "");
-  } catch (err) {
-    define = function(obj, key, value) {
-      return obj[key] = value;
-    };
-  }
-
-  function wrap(innerFn, outerFn, self, tryLocsList) {
-    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
-    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
-    var generator = Object.create(protoGenerator.prototype);
-    var context = new Context(tryLocsList || []);
-
-    // The ._invoke method unifies the implementations of the .next,
-    // .throw, and .return methods.
-    generator._invoke = makeInvokeMethod(innerFn, self, context);
-
-    return generator;
-  }
-  exports.wrap = wrap;
-
-  // Try/catch helper to minimize deoptimizations. Returns a completion
-  // record like context.tryEntries[i].completion. This interface could
-  // have been (and was previously) designed to take a closure to be
-  // invoked without arguments, but in all the cases we care about we
-  // already have an existing method we want to call, so there's no need
-  // to create a new function object. We can even get away with assuming
-  // the method takes exactly one argument, since that happens to be true
-  // in every case, so we don't have to touch the arguments object. The
-  // only additional allocation required is the completion record, which
-  // has a stable shape and so hopefully should be cheap to allocate.
-  function tryCatch(fn, obj, arg) {
-    try {
-      return { type: "normal", arg: fn.call(obj, arg) };
-    } catch (err) {
-      return { type: "throw", arg: err };
-    }
-  }
-
-  var GenStateSuspendedStart = "suspendedStart";
-  var GenStateSuspendedYield = "suspendedYield";
-  var GenStateExecuting = "executing";
-  var GenStateCompleted = "completed";
-
-  // Returning this object from the innerFn has the same effect as
-  // breaking out of the dispatch switch statement.
-  var ContinueSentinel = {};
-
-  // Dummy constructor functions that we use as the .constructor and
-  // .constructor.prototype properties for functions that return Generator
-  // objects. For full spec compliance, you may wish to configure your
-  // minifier not to mangle the names of these two functions.
-  function Generator() {}
-  function GeneratorFunction() {}
-  function GeneratorFunctionPrototype() {}
-
-  // This is a polyfill for %IteratorPrototype% for environments that
-  // don't natively support it.
-  var IteratorPrototype = {};
-  IteratorPrototype[iteratorSymbol] = function () {
-    return this;
-  };
-
-  var getProto = Object.getPrototypeOf;
-  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
-  if (NativeIteratorPrototype &&
-      NativeIteratorPrototype !== Op &&
-      hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
-    // This environment has a native %IteratorPrototype%; use it instead
-    // of the polyfill.
-    IteratorPrototype = NativeIteratorPrototype;
-  }
-
-  var Gp = GeneratorFunctionPrototype.prototype =
-    Generator.prototype = Object.create(IteratorPrototype);
-  GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
-  GeneratorFunctionPrototype.constructor = GeneratorFunction;
-  GeneratorFunction.displayName = define(
-    GeneratorFunctionPrototype,
-    toStringTagSymbol,
-    "GeneratorFunction"
-  );
-
-  // Helper for defining the .next, .throw, and .return methods of the
-  // Iterator interface in terms of a single ._invoke method.
-  function defineIteratorMethods(prototype) {
-    ["next", "throw", "return"].forEach(function(method) {
-      define(prototype, method, function(arg) {
-        return this._invoke(method, arg);
-      });
-    });
-  }
-
-  exports.isGeneratorFunction = function(genFun) {
-    var ctor = typeof genFun === "function" && genFun.constructor;
-    return ctor
-      ? ctor === GeneratorFunction ||
-        // For the native GeneratorFunction constructor, the best we can
-        // do is to check its .name property.
-        (ctor.displayName || ctor.name) === "GeneratorFunction"
-      : false;
-  };
-
-  exports.mark = function(genFun) {
-    if (Object.setPrototypeOf) {
-      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
-    } else {
-      genFun.__proto__ = GeneratorFunctionPrototype;
-      define(genFun, toStringTagSymbol, "GeneratorFunction");
-    }
-    genFun.prototype = Object.create(Gp);
-    return genFun;
-  };
-
-  // Within the body of any async function, `await x` is transformed to
-  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
-  // `hasOwn.call(value, "__await")` to determine if the yielded value is
-  // meant to be awaited.
-  exports.awrap = function(arg) {
-    return { __await: arg };
-  };
-
-  function AsyncIterator(generator, PromiseImpl) {
-    function invoke(method, arg, resolve, reject) {
-      var record = tryCatch(generator[method], generator, arg);
-      if (record.type === "throw") {
-        reject(record.arg);
-      } else {
-        var result = record.arg;
-        var value = result.value;
-        if (value &&
-            typeof value === "object" &&
-            hasOwn.call(value, "__await")) {
-          return PromiseImpl.resolve(value.__await).then(function(value) {
-            invoke("next", value, resolve, reject);
-          }, function(err) {
-            invoke("throw", err, resolve, reject);
-          });
-        }
-
-        return PromiseImpl.resolve(value).then(function(unwrapped) {
-          // When a yielded Promise is resolved, its final value becomes
-          // the .value of the Promise<{value,done}> result for the
-          // current iteration.
-          result.value = unwrapped;
-          resolve(result);
-        }, function(error) {
-          // If a rejected Promise was yielded, throw the rejection back
-          // into the async generator function so it can be handled there.
-          return invoke("throw", error, resolve, reject);
-        });
-      }
-    }
-
-    var previousPromise;
-
-    function enqueue(method, arg) {
-      function callInvokeWithMethodAndArg() {
-        return new PromiseImpl(function(resolve, reject) {
-          invoke(method, arg, resolve, reject);
-        });
-      }
-
-      return previousPromise =
-        // If enqueue has been called before, then we want to wait until
-        // all previous Promises have been resolved before calling invoke,
-        // so that results are always delivered in the correct order. If
-        // enqueue has not been called before, then it is important to
-        // call invoke immediately, without waiting on a callback to fire,
-        // so that the async generator function has the opportunity to do
-        // any necessary setup in a predictable way. This predictability
-        // is why the Promise constructor synchronously invokes its
-        // executor callback, and why async functions synchronously
-        // execute code before the first await. Since we implement simple
-        // async functions in terms of async generators, it is especially
-        // important to get this right, even though it requires care.
-        previousPromise ? previousPromise.then(
-          callInvokeWithMethodAndArg,
-          // Avoid propagating failures to Promises returned by later
-          // invocations of the iterator.
-          callInvokeWithMethodAndArg
-        ) : callInvokeWithMethodAndArg();
-    }
-
-    // Define the unified helper method that is used to implement .next,
-    // .throw, and .return (see defineIteratorMethods).
-    this._invoke = enqueue;
-  }
-
-  defineIteratorMethods(AsyncIterator.prototype);
-  AsyncIterator.prototype[asyncIteratorSymbol] = function () {
-    return this;
-  };
-  exports.AsyncIterator = AsyncIterator;
-
-  // Note that simple async functions are implemented on top of
-  // AsyncIterator objects; they just return a Promise for the value of
-  // the final result produced by the iterator.
-  exports.async = function(innerFn, outerFn, self, tryLocsList, PromiseImpl) {
-    if (PromiseImpl === void 0) PromiseImpl = Promise;
-
-    var iter = new AsyncIterator(
-      wrap(innerFn, outerFn, self, tryLocsList),
-      PromiseImpl
-    );
-
-    return exports.isGeneratorFunction(outerFn)
-      ? iter // If outerFn is a generator, return the full iterator.
-      : iter.next().then(function(result) {
-          return result.done ? result.value : iter.next();
-        });
-  };
-
-  function makeInvokeMethod(innerFn, self, context) {
-    var state = GenStateSuspendedStart;
-
-    return function invoke(method, arg) {
-      if (state === GenStateExecuting) {
-        throw new Error("Generator is already running");
-      }
-
-      if (state === GenStateCompleted) {
-        if (method === "throw") {
-          throw arg;
-        }
-
-        // Be forgiving, per 25.3.3.3.3 of the spec:
-        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
-        return doneResult();
-      }
-
-      context.method = method;
-      context.arg = arg;
-
-      while (true) {
-        var delegate = context.delegate;
-        if (delegate) {
-          var delegateResult = maybeInvokeDelegate(delegate, context);
-          if (delegateResult) {
-            if (delegateResult === ContinueSentinel) continue;
-            return delegateResult;
-          }
-        }
-
-        if (context.method === "next") {
-          // Setting context._sent for legacy support of Babel's
-          // function.sent implementation.
-          context.sent = context._sent = context.arg;
-
-        } else if (context.method === "throw") {
-          if (state === GenStateSuspendedStart) {
-            state = GenStateCompleted;
-            throw context.arg;
-          }
-
-          context.dispatchException(context.arg);
-
-        } else if (context.method === "return") {
-          context.abrupt("return", context.arg);
-        }
-
-        state = GenStateExecuting;
-
-        var record = tryCatch(innerFn, self, context);
-        if (record.type === "normal") {
-          // If an exception is thrown from innerFn, we leave state ===
-          // GenStateExecuting and loop back for another invocation.
-          state = context.done
-            ? GenStateCompleted
-            : GenStateSuspendedYield;
-
-          if (record.arg === ContinueSentinel) {
-            continue;
-          }
-
-          return {
-            value: record.arg,
-            done: context.done
-          };
-
-        } else if (record.type === "throw") {
-          state = GenStateCompleted;
-          // Dispatch the exception by looping back around to the
-          // context.dispatchException(context.arg) call above.
-          context.method = "throw";
-          context.arg = record.arg;
-        }
-      }
-    };
-  }
-
-  // Call delegate.iterator[context.method](context.arg) and handle the
-  // result, either by returning a { value, done } result from the
-  // delegate iterator, or by modifying context.method and context.arg,
-  // setting context.delegate to null, and returning the ContinueSentinel.
-  function maybeInvokeDelegate(delegate, context) {
-    var method = delegate.iterator[context.method];
-    if (method === undefined) {
-      // A .throw or .return when the delegate iterator has no .throw
-      // method always terminates the yield* loop.
-      context.delegate = null;
-
-      if (context.method === "throw") {
-        // Note: ["return"] must be used for ES3 parsing compatibility.
-        if (delegate.iterator["return"]) {
-          // If the delegate iterator has a return method, give it a
-          // chance to clean up.
-          context.method = "return";
-          context.arg = undefined;
-          maybeInvokeDelegate(delegate, context);
-
-          if (context.method === "throw") {
-            // If maybeInvokeDelegate(context) changed context.method from
-            // "return" to "throw", let that override the TypeError below.
-            return ContinueSentinel;
-          }
-        }
-
-        context.method = "throw";
-        context.arg = new TypeError(
-          "The iterator does not provide a 'throw' method");
-      }
-
-      return ContinueSentinel;
-    }
-
-    var record = tryCatch(method, delegate.iterator, context.arg);
-
-    if (record.type === "throw") {
-      context.method = "throw";
-      context.arg = record.arg;
-      context.delegate = null;
-      return ContinueSentinel;
-    }
-
-    var info = record.arg;
-
-    if (! info) {
-      context.method = "throw";
-      context.arg = new TypeError("iterator result is not an object");
-      context.delegate = null;
-      return ContinueSentinel;
-    }
-
-    if (info.done) {
-      // Assign the result of the finished delegate to the temporary
-      // variable specified by delegate.resultName (see delegateYield).
-      context[delegate.resultName] = info.value;
-
-      // Resume execution at the desired location (see delegateYield).
-      context.next = delegate.nextLoc;
-
-      // If context.method was "throw" but the delegate handled the
-      // exception, let the outer generator proceed normally. If
-      // context.method was "next", forget context.arg since it has been
-      // "consumed" by the delegate iterator. If context.method was
-      // "return", allow the original .return call to continue in the
-      // outer generator.
-      if (context.method !== "return") {
-        context.method = "next";
-        context.arg = undefined;
-      }
-
-    } else {
-      // Re-yield the result returned by the delegate method.
-      return info;
-    }
-
-    // The delegate iterator is finished, so forget it and continue with
-    // the outer generator.
-    context.delegate = null;
-    return ContinueSentinel;
-  }
-
-  // Define Generator.prototype.{next,throw,return} in terms of the
-  // unified ._invoke helper method.
-  defineIteratorMethods(Gp);
-
-  define(Gp, toStringTagSymbol, "Generator");
-
-  // A Generator should always return itself as the iterator object when the
-  // @@iterator function is called on it. Some browsers' implementations of the
-  // iterator prototype chain incorrectly implement this, causing the Generator
-  // object to not be returned from this call. This ensures that doesn't happen.
-  // See https://github.com/facebook/regenerator/issues/274 for more details.
-  Gp[iteratorSymbol] = function() {
-    return this;
-  };
-
-  Gp.toString = function() {
-    return "[object Generator]";
-  };
-
-  function pushTryEntry(locs) {
-    var entry = { tryLoc: locs[0] };
-
-    if (1 in locs) {
-      entry.catchLoc = locs[1];
-    }
-
-    if (2 in locs) {
-      entry.finallyLoc = locs[2];
-      entry.afterLoc = locs[3];
-    }
-
-    this.tryEntries.push(entry);
-  }
-
-  function resetTryEntry(entry) {
-    var record = entry.completion || {};
-    record.type = "normal";
-    delete record.arg;
-    entry.completion = record;
-  }
-
-  function Context(tryLocsList) {
-    // The root entry object (effectively a try statement without a catch
-    // or a finally block) gives us a place to store values thrown from
-    // locations where there is no enclosing try statement.
-    this.tryEntries = [{ tryLoc: "root" }];
-    tryLocsList.forEach(pushTryEntry, this);
-    this.reset(true);
-  }
-
-  exports.keys = function(object) {
-    var keys = [];
-    for (var key in object) {
-      keys.push(key);
-    }
-    keys.reverse();
-
-    // Rather than returning an object with a next method, we keep
-    // things simple and return the next function itself.
-    return function next() {
-      while (keys.length) {
-        var key = keys.pop();
-        if (key in object) {
-          next.value = key;
-          next.done = false;
-          return next;
-        }
-      }
-
-      // To avoid creating an additional object, we just hang the .value
-      // and .done properties off the next function object itself. This
-      // also ensures that the minifier will not anonymize the function.
-      next.done = true;
-      return next;
-    };
-  };
-
-  function values(iterable) {
-    if (iterable) {
-      var iteratorMethod = iterable[iteratorSymbol];
-      if (iteratorMethod) {
-        return iteratorMethod.call(iterable);
-      }
-
-      if (typeof iterable.next === "function") {
-        return iterable;
-      }
-
-      if (!isNaN(iterable.length)) {
-        var i = -1, next = function next() {
-          while (++i < iterable.length) {
-            if (hasOwn.call(iterable, i)) {
-              next.value = iterable[i];
-              next.done = false;
-              return next;
-            }
-          }
-
-          next.value = undefined;
-          next.done = true;
-
-          return next;
-        };
-
-        return next.next = next;
-      }
-    }
-
-    // Return an iterator with no values.
-    return { next: doneResult };
-  }
-  exports.values = values;
-
-  function doneResult() {
-    return { value: undefined, done: true };
-  }
-
-  Context.prototype = {
-    constructor: Context,
-
-    reset: function(skipTempReset) {
-      this.prev = 0;
-      this.next = 0;
-      // Resetting context._sent for legacy support of Babel's
-      // function.sent implementation.
-      this.sent = this._sent = undefined;
-      this.done = false;
-      this.delegate = null;
-
-      this.method = "next";
-      this.arg = undefined;
-
-      this.tryEntries.forEach(resetTryEntry);
-
-      if (!skipTempReset) {
-        for (var name in this) {
-          // Not sure about the optimal order of these conditions:
-          if (name.charAt(0) === "t" &&
-              hasOwn.call(this, name) &&
-              !isNaN(+name.slice(1))) {
-            this[name] = undefined;
-          }
-        }
-      }
-    },
-
-    stop: function() {
-      this.done = true;
-
-      var rootEntry = this.tryEntries[0];
-      var rootRecord = rootEntry.completion;
-      if (rootRecord.type === "throw") {
-        throw rootRecord.arg;
-      }
-
-      return this.rval;
-    },
-
-    dispatchException: function(exception) {
-      if (this.done) {
-        throw exception;
-      }
-
-      var context = this;
-      function handle(loc, caught) {
-        record.type = "throw";
-        record.arg = exception;
-        context.next = loc;
-
-        if (caught) {
-          // If the dispatched exception was caught by a catch block,
-          // then let that catch block handle the exception normally.
-          context.method = "next";
-          context.arg = undefined;
-        }
-
-        return !! caught;
-      }
-
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        var record = entry.completion;
-
-        if (entry.tryLoc === "root") {
-          // Exception thrown outside of any try block that could handle
-          // it, so set the completion value of the entire function to
-          // throw the exception.
-          return handle("end");
-        }
-
-        if (entry.tryLoc <= this.prev) {
-          var hasCatch = hasOwn.call(entry, "catchLoc");
-          var hasFinally = hasOwn.call(entry, "finallyLoc");
-
-          if (hasCatch && hasFinally) {
-            if (this.prev < entry.catchLoc) {
-              return handle(entry.catchLoc, true);
-            } else if (this.prev < entry.finallyLoc) {
-              return handle(entry.finallyLoc);
-            }
-
-          } else if (hasCatch) {
-            if (this.prev < entry.catchLoc) {
-              return handle(entry.catchLoc, true);
-            }
-
-          } else if (hasFinally) {
-            if (this.prev < entry.finallyLoc) {
-              return handle(entry.finallyLoc);
-            }
-
-          } else {
-            throw new Error("try statement without catch or finally");
-          }
-        }
-      }
-    },
-
-    abrupt: function(type, arg) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        if (entry.tryLoc <= this.prev &&
-            hasOwn.call(entry, "finallyLoc") &&
-            this.prev < entry.finallyLoc) {
-          var finallyEntry = entry;
-          break;
-        }
-      }
-
-      if (finallyEntry &&
-          (type === "break" ||
-           type === "continue") &&
-          finallyEntry.tryLoc <= arg &&
-          arg <= finallyEntry.finallyLoc) {
-        // Ignore the finally entry if control is not jumping to a
-        // location outside the try/catch block.
-        finallyEntry = null;
-      }
-
-      var record = finallyEntry ? finallyEntry.completion : {};
-      record.type = type;
-      record.arg = arg;
-
-      if (finallyEntry) {
-        this.method = "next";
-        this.next = finallyEntry.finallyLoc;
-        return ContinueSentinel;
-      }
-
-      return this.complete(record);
-    },
-
-    complete: function(record, afterLoc) {
-      if (record.type === "throw") {
-        throw record.arg;
-      }
-
-      if (record.type === "break" ||
-          record.type === "continue") {
-        this.next = record.arg;
-      } else if (record.type === "return") {
-        this.rval = this.arg = record.arg;
-        this.method = "return";
-        this.next = "end";
-      } else if (record.type === "normal" && afterLoc) {
-        this.next = afterLoc;
-      }
-
-      return ContinueSentinel;
-    },
-
-    finish: function(finallyLoc) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        if (entry.finallyLoc === finallyLoc) {
-          this.complete(entry.completion, entry.afterLoc);
-          resetTryEntry(entry);
-          return ContinueSentinel;
-        }
-      }
-    },
-
-    "catch": function(tryLoc) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        if (entry.tryLoc === tryLoc) {
-          var record = entry.completion;
-          if (record.type === "throw") {
-            var thrown = record.arg;
-            resetTryEntry(entry);
-          }
-          return thrown;
-        }
-      }
-
-      // The context.catch method must only be called with a location
-      // argument that corresponds to a known catch block.
-      throw new Error("illegal catch attempt");
-    },
-
-    delegateYield: function(iterable, resultName, nextLoc) {
-      this.delegate = {
-        iterator: values(iterable),
-        resultName: resultName,
-        nextLoc: nextLoc
-      };
-
-      if (this.method === "next") {
-        // Deliberately forget the last sent value so that we don't
-        // accidentally pass it on to the delegate.
-        this.arg = undefined;
-      }
-
-      return ContinueSentinel;
-    }
-  };
-
-  // Regardless of whether this script is executing as a CommonJS module
-  // or not, return the runtime object so that we can declare the variable
-  // regeneratorRuntime in the outer scope, which allows this module to be
-  // injected easily by `bin/regenerator --include-runtime script.js`.
-  return exports;
-
-}(
-  // If this script is executing as a CommonJS module, use module.exports
-  // as the regeneratorRuntime namespace. Otherwise create a new empty
-  // object. Either way, the resulting object will be used to initialize
-  // the regeneratorRuntime variable at the top of this file.
-   true ? module.exports : 0
-));
-
-try {
-  regeneratorRuntime = runtime;
-} catch (accidentalStrictMode) {
-  // This module should not be running in strict mode, so the above
-  // assignment should always work unless something is misconfigured. Just
-  // in case runtime.js accidentally runs in strict mode, we can escape
-  // strict mode using a global Function call. This could conceivably fail
-  // if a Content Security Policy forbids using Function, but in that case
-  // the proper solution is to fix the accidental strict mode problem. If
-  // you've misconfigured your bundler to force strict mode and applied a
-  // CSP to forbid Function, and you're not willing to fix either of those
-  // problems, please detail your unique predicament in a GitHub issue.
-  Function("r", "regeneratorRuntime = r")(runtime);
-}
 
 
 /***/ }),
@@ -52948,6 +52437,30 @@ module.exports = "<span class=\"social-icon social-icon-x\">\n  <svg class=\"ico
 
 /***/ }),
 
+/***/ 96727:
+/***/ (function(module) {
+
+"use strict";
+module.exports = "<div class=\"custom-controls-inline\">\n  <div class=\"custom-control custom-switch\">\n  <input type=\"checkbox\" class=\"custom-control-input\" id=\"custom-switch22\" checked>\n  <label class=\"custom-control-label\" for=\"custom-switch22\">Cellular data</label>\n</div>\n  <div class=\"custom-control custom-switch\">\n  <input type=\"checkbox\" class=\"custom-control-input\" id=\"custom-switch23\" >\n  <label class=\"custom-control-label\" for=\"custom-switch23\">Airplane mode</label>\n</div>\n  <div class=\"custom-control custom-switch\">\n  <input type=\"checkbox\" class=\"custom-control-input\" id=\"custom-switch24\" >\n  <label class=\"custom-control-label\" for=\"custom-switch24\">Turn off notifications</label>\n</div>\n</div>\n";
+
+/***/ }),
+
+/***/ 83925:
+/***/ (function(module) {
+
+"use strict";
+module.exports = "<div class=\"custom-control custom-switch\">\n  <input type=\"checkbox\" class=\"custom-control-input\" id=\"custom-switch12\" checked>\n  <label class=\"custom-control-label\" for=\"custom-switch12\">Wi-Fi</label>\n</div>\n<div class=\"custom-control custom-switch\">\n  <input type=\"checkbox\" class=\"custom-control-input\" id=\"custom-switch13\" >\n  <label class=\"custom-control-label\" for=\"custom-switch13\">Bluetooth</label>\n</div>\n<div class=\"custom-control custom-switch\">\n  <input type=\"checkbox\" class=\"custom-control-input\" id=\"custom-switch14\" disabled>\n  <label class=\"custom-control-label\" for=\"custom-switch14\">VPN</label>\n</div>\n";
+
+/***/ }),
+
+/***/ 94601:
+/***/ (function(module) {
+
+"use strict";
+module.exports = "<div class=\"custom-control custom-switch\">\n  <input type=\"checkbox\" class=\"custom-control-input\" id=\"custom-switch\" >\n  <label class=\"custom-control-label\" for=\"custom-switch\">Toggle</label>\n</div>\n";
+
+/***/ }),
+
 /***/ 74534:
 /***/ (function(module) {
 
@@ -54532,6 +54045,172 @@ module.exports = "<div class=\"site\">\n<nav class=\"access-nav\" aria-label=\"R
 
 /***/ }),
 
+/***/ 68387:
+/***/ (function(module, exports) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames () {
+		var classes = '';
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (arg) {
+				classes = appendClass(classes, parseValue(arg));
+			}
+		}
+
+		return classes;
+	}
+
+	function parseValue (arg) {
+		if (typeof arg === 'string' || typeof arg === 'number') {
+			return arg;
+		}
+
+		if (typeof arg !== 'object') {
+			return '';
+		}
+
+		if (Array.isArray(arg)) {
+			return classNames.apply(null, arg);
+		}
+
+		if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
+			return arg.toString();
+		}
+
+		var classes = '';
+
+		for (var key in arg) {
+			if (hasOwn.call(arg, key) && arg[key]) {
+				classes = appendClass(classes, key);
+			}
+		}
+
+		return classes;
+	}
+
+	function appendClass (value, newClass) {
+		if (!newClass) {
+			return value;
+		}
+	
+		if (value) {
+			return value + ' ' + newClass;
+		}
+	
+		return value + newClass;
+	}
+
+	if ( true && module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else if (true) {
+		// register as 'classnames', consistent with npm package name
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+			return classNames;
+		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {}
+}());
+
+
+/***/ }),
+
+/***/ 44319:
+/***/ (function(module, exports) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames () {
+		var classes = '';
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (arg) {
+				classes = appendClass(classes, parseValue(arg));
+			}
+		}
+
+		return classes;
+	}
+
+	function parseValue (arg) {
+		if (typeof arg === 'string' || typeof arg === 'number') {
+			return arg;
+		}
+
+		if (typeof arg !== 'object') {
+			return '';
+		}
+
+		if (Array.isArray(arg)) {
+			return classNames.apply(null, arg);
+		}
+
+		if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
+			return arg.toString();
+		}
+
+		var classes = '';
+
+		for (var key in arg) {
+			if (hasOwn.call(arg, key) && arg[key]) {
+				classes = appendClass(classes, key);
+			}
+		}
+
+		return classes;
+	}
+
+	function appendClass (value, newClass) {
+		if (!newClass) {
+			return value;
+		}
+	
+		if (value) {
+			return value + ' ' + newClass;
+		}
+	
+		return value + newClass;
+	}
+
+	if ( true && module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else if (true) {
+		// register as 'classnames', consistent with npm package name
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+			return classNames;
+		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {}
+}());
+
+
+/***/ }),
+
 /***/ 50603:
 /***/ (function(module) {
 
@@ -54745,6 +54424,14 @@ module.exports = JSON.parse('{"title":"Separator","name":"separator","notes":"Us
 
 "use strict";
 module.exports = JSON.parse('{"title":"Social icon","name":"social-icon","variants":[{"name":"link","title":"Link"},{"name":"group","title":"Group"},{"name":"link-group","title":"Link Group"},{"name":"negative","title":"Negative"},{"name":"round","title":"Round"},{"name":"discrete-link","title":"Discrete Link"},{"name":"round-link","title":"Round Link"},{"name":"round-discrete-link","title":"Round Discrete Link"},{"name":"negative-link","title":"Negative Link"}],"notes":"\\nIcons to accomodate social boxes. The available social networks are:\\n* `e-mail`\\n* `facebook`\\n* `instagram`\\n* `linkedin`\\n* `mastodon`\\n* `tiktok`\\n* `whatsapp`\\n* `x`\\n* `youtube`\\n"}');
+
+/***/ }),
+
+/***/ 27588:
+/***/ (function(module) {
+
+"use strict";
+module.exports = JSON.parse('{"title":"Switch","name":"switch","variants":[{"name":"states","title":"Switch sample","notes":"Switches also support the disabled attribute."},{"name":"inline","title":"Inline switch"}],"notes":"A switch has the markup of a custom [checkbox](#/atoms/checkbox) but uses the `.custom-switch` class to render a toggle switch.\\n"}');
 
 /***/ }),
 
@@ -55590,6 +55277,36 @@ module.exports = JSON.parse('{"title":"Base","name":"base"}');
 /******/ 		};
 /******/ 	}();
 /******/ 	
+/******/ 	/* webpack/runtime/create fake namespace object */
+/******/ 	!function() {
+/******/ 		var getProto = Object.getPrototypeOf ? function(obj) { return Object.getPrototypeOf(obj); } : function(obj) { return obj.__proto__; };
+/******/ 		var leafPrototypes;
+/******/ 		// create a fake namespace object
+/******/ 		// mode & 1: value is a module id, require it
+/******/ 		// mode & 2: merge all properties of value into the ns
+/******/ 		// mode & 4: return value when already ns object
+/******/ 		// mode & 16: return value when it's Promise-like
+/******/ 		// mode & 8|1: behave like require
+/******/ 		__webpack_require__.t = function(value, mode) {
+/******/ 			if(mode & 1) value = this(value);
+/******/ 			if(mode & 8) return value;
+/******/ 			if(typeof value === 'object' && value) {
+/******/ 				if((mode & 4) && value.__esModule) return value;
+/******/ 				if((mode & 16) && typeof value.then === 'function') return value;
+/******/ 			}
+/******/ 			var ns = Object.create(null);
+/******/ 			__webpack_require__.r(ns);
+/******/ 			var def = {};
+/******/ 			leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
+/******/ 			for(var current = mode & 2 && value; typeof current == 'object' && !~leafPrototypes.indexOf(current); current = getProto(current)) {
+/******/ 				Object.getOwnPropertyNames(current).forEach(function(key) { def[key] = function() { return value[key]; }; });
+/******/ 			}
+/******/ 			def['default'] = function() { return value; };
+/******/ 			__webpack_require__.d(ns, def);
+/******/ 			return ns;
+/******/ 		};
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	!function() {
 /******/ 		// define getter functions for harmony exports
@@ -55619,6 +55336,17 @@ module.exports = JSON.parse('{"title":"Base","name":"base"}');
 /******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
 /******/ 	}();
 /******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	!function() {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = function(exports) {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/node module decorator */
 /******/ 	!function() {
 /******/ 		__webpack_require__.nmd = function(module) {
@@ -55641,6 +55369,7 @@ var __webpack_exports__ = {};
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(67294);
+var react_namespaceObject = /*#__PURE__*/__webpack_require__.t(react, 2);
 // EXTERNAL MODULE: ./node_modules/react-dom/index.js
 var react_dom = __webpack_require__(73935);
 // EXTERNAL MODULE: ./node_modules/prop-types/index.js
@@ -60618,21 +60347,28 @@ var es_object_set_prototype_of = __webpack_require__(68304);
 var es_object_get_prototype_of = __webpack_require__(30489);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.reflect.construct.js
 var es_reflect_construct = __webpack_require__(12419);
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/typeof.js
-function _typeof(obj) {
-  "@babel/helpers - typeof";
+// EXTERNAL MODULE: ./node_modules/rc-tooltip/node_modules/classnames/index.js
+var classnames = __webpack_require__(44319);
+var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
+;// CONCATENATED MODULE: ./node_modules/rc-tooltip/es/Popup.js
 
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    _typeof = function _typeof(obj) {
-      return typeof obj;
-    };
-  } else {
-    _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-  }
 
-  return _typeof(obj);
+function Popup(props) {
+  var children = props.children,
+    prefixCls = props.prefixCls,
+    id = props.id,
+    overlayInnerStyle = props.overlayInnerStyle,
+    className = props.className,
+    style = props.style;
+  return /*#__PURE__*/react.createElement("div", {
+    className: classnames_default()("".concat(prefixCls, "-content"), className),
+    style: style
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "".concat(prefixCls, "-inner"),
+    id: id,
+    role: "tooltip",
+    style: overlayInnerStyle
+  }, typeof children === 'function' ? children() : children));
 }
 ;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
 function defineProperty_defineProperty(obj, key, value) {
@@ -60709,1445 +60445,39 @@ function _objectWithoutProperties(source, excluded) {
 
   return target;
 }
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/createClass.js
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js
-function _assertThisInitialized(self) {
-  if (self === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return self;
-}
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/inherits.js
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function");
-  }
-
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      writable: true,
-      configurable: true
-    }
-  });
-  if (superClass) _setPrototypeOf(subClass, superClass);
-}
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js
-function _getPrototypeOf(o) {
-  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
-    return o.__proto__ || Object.getPrototypeOf(o);
-  };
-  return _getPrototypeOf(o);
-}
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/isNativeReflectConstruct.js
-function _isNativeReflectConstruct() {
-  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-  if (Reflect.construct.sham) return false;
-  if (typeof Proxy === "function") return true;
-
-  try {
-    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js
-
-
-function _possibleConstructorReturn(self, call) {
-  if (call && (_typeof(call) === "object" || typeof call === "function")) {
-    return call;
-  }
-
-  return _assertThisInitialized(self);
-}
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/createSuper.js
-
-
-
-function _createSuper(Derived) {
-  var hasNativeReflectConstruct = _isNativeReflectConstruct();
-  return function _createSuperInternal() {
-    var Super = _getPrototypeOf(Derived),
-        result;
-
-    if (hasNativeReflectConstruct) {
-      var NewTarget = _getPrototypeOf(this).constructor;
-      result = Reflect.construct(Super, arguments, NewTarget);
-    } else {
-      result = Super.apply(this, arguments);
-    }
-
-    return _possibleConstructorReturn(this, result);
-  };
-}
-;// CONCATENATED MODULE: ./node_modules/rc-util/es/raf.js
-var raf = function raf(callback) {
-  return +setTimeout(callback, 16);
-};
-
-var caf = function caf(num) {
-  return clearTimeout(num);
-};
-
-if (typeof window !== 'undefined' && 'requestAnimationFrame' in window) {
-  raf = function raf(callback) {
-    return window.requestAnimationFrame(callback);
-  };
-
-  caf = function caf(handle) {
-    return window.cancelAnimationFrame(handle);
-  };
-}
-
-var rafUUID = 0;
-var rafIds = new Map();
-
-function cleanup(id) {
-  rafIds.delete(id);
-}
-
-function wrapperRaf(callback) {
-  var times = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-  rafUUID += 1;
-  var id = rafUUID;
-
-  function callRef(leftTimes) {
-    if (leftTimes === 0) {
-      // Clean up
-      cleanup(id); // Trigger
-
-      callback();
-    } else {
-      // Next raf
-      var realId = raf(function () {
-        callRef(leftTimes - 1);
-      }); // Bind real raf id
-
-      rafIds.set(id, realId);
-    }
-  }
-
-  callRef(times);
-  return id;
-}
-
-wrapperRaf.cancel = function (id) {
-  var realId = rafIds.get(id);
-  cleanup(realId);
-  return caf(realId);
-};
-;// CONCATENATED MODULE: ./node_modules/rc-util/es/Dom/contains.js
-function contains(root, n) {
-  if (!root) {
-    return false;
-  }
-
-  return root.contains(n);
-}
-;// CONCATENATED MODULE: ./node_modules/rc-util/es/Dom/findDOMNode.js
-
-/**
- * Return if a node is a DOM node. Else will return by `findDOMNode`
- */
-
-function findDOMNode(node) {
-  if (node instanceof HTMLElement) {
-    return node;
-  }
-
-  return react_dom.findDOMNode(node);
-}
-// EXTERNAL MODULE: ./node_modules/rc-util/node_modules/react-is/index.js
-var rc_util_node_modules_react_is = __webpack_require__(11805);
-;// CONCATENATED MODULE: ./node_modules/rc-util/es/ref.js
-
-
-function fillRef(ref, node) {
-  if (typeof ref === 'function') {
-    ref(node);
-  } else if (_typeof(ref) === 'object' && ref && 'current' in ref) {
-    ref.current = node;
-  }
-}
-/**
- * Merge refs into one ref function to support ref passing.
- */
-
-function composeRef() {
-  for (var _len = arguments.length, refs = new Array(_len), _key = 0; _key < _len; _key++) {
-    refs[_key] = arguments[_key];
-  }
-
-  return function (node) {
-    refs.forEach(function (ref) {
-      fillRef(ref, node);
-    });
-  };
-}
-function supportRef(nodeOrComponent) {
-  var _type$prototype, _nodeOrComponent$prot;
-
-  var type = (0,rc_util_node_modules_react_is.isMemo)(nodeOrComponent) ? nodeOrComponent.type.type : nodeOrComponent.type; // Function component node
-
-  if (typeof type === 'function' && !((_type$prototype = type.prototype) === null || _type$prototype === void 0 ? void 0 : _type$prototype.render)) {
-    return false;
-  } // Class component
-
-
-  if (typeof nodeOrComponent === 'function' && !((_nodeOrComponent$prot = nodeOrComponent.prototype) === null || _nodeOrComponent$prot === void 0 ? void 0 : _nodeOrComponent$prot.render)) {
-    return false;
-  }
-
-  return true;
-}
-/* eslint-enable */
-;// CONCATENATED MODULE: ./node_modules/rc-util/es/Dom/addEventListener.js
-
-function addEventListenerWrap(target, eventType, cb, option) {
-  /* eslint camelcase: 2 */
-  var callback = react_dom.unstable_batchedUpdates ? function run(e) {
-    react_dom.unstable_batchedUpdates(cb, e);
-  } : cb;
-
-  if (target.addEventListener) {
-    target.addEventListener(eventType, callback, option);
-  }
-
-  return {
-    remove: function remove() {
-      if (target.removeEventListener) {
-        target.removeEventListener(eventType, callback);
-      }
-    }
-  };
-}
-;// CONCATENATED MODULE: ./node_modules/rc-util/es/Dom/canUseDom.js
-function canUseDom() {
-  return !!(typeof window !== 'undefined' && window.document && window.document.createElement);
-}
-;// CONCATENATED MODULE: ./node_modules/rc-util/es/Portal.js
-
-
-
-var Portal = (0,react.forwardRef)(function (props, ref) {
-  var didUpdate = props.didUpdate,
-      getContainer = props.getContainer,
-      children = props.children;
-  var containerRef = (0,react.useRef)(); // Ref return nothing, only for wrapper check exist
-
-  (0,react.useImperativeHandle)(ref, function () {
-    return {};
-  }); // Create container in client side with sync to avoid useEffect not get ref
-
-  var initRef = (0,react.useRef)(false);
-
-  if (!initRef.current && canUseDom()) {
-    containerRef.current = getContainer();
-    initRef.current = true;
-  } // [Legacy] Used by `rc-trigger`
-
-
-  (0,react.useEffect)(function () {
-    didUpdate === null || didUpdate === void 0 ? void 0 : didUpdate(props);
-  });
-  (0,react.useEffect)(function () {
-    return function () {
-      var _containerRef$current, _containerRef$current2;
-
-      // [Legacy] This should not be handle by Portal but parent PortalWrapper instead.
-      // Since some component use `Portal` directly, we have to keep the logic here.
-      (_containerRef$current = containerRef.current) === null || _containerRef$current === void 0 ? void 0 : (_containerRef$current2 = _containerRef$current.parentNode) === null || _containerRef$current2 === void 0 ? void 0 : _containerRef$current2.removeChild(containerRef.current);
-    };
-  }, []);
-  return containerRef.current ? react_dom.createPortal(children, containerRef.current) : null;
-});
-/* harmony default export */ var es_Portal = (Portal);
-// EXTERNAL MODULE: ./node_modules/classnames/index.js
-var classnames = __webpack_require__(94184);
-var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
-;// CONCATENATED MODULE: ./node_modules/rc-trigger/es/utils/alignUtil.js
-
-
-function isPointsEq(a1, a2, isAlignPoint) {
-  if (isAlignPoint) {
-    return a1[0] === a2[0];
-  }
-
-  return a1[0] === a2[0] && a1[1] === a2[1];
-}
-
-function getAlignFromPlacement(builtinPlacements, placementStr, align) {
-  var baseAlign = builtinPlacements[placementStr] || {};
-  return _objectSpread2(_objectSpread2({}, baseAlign), align);
-}
-function getAlignPopupClassName(builtinPlacements, prefixCls, align, isAlignPoint) {
-  var points = align.points;
-  var placements = Object.keys(builtinPlacements);
-
-  for (var i = 0; i < placements.length; i += 1) {
-    var placement = placements[i];
-
-    if (isPointsEq(builtinPlacements[placement].points, points, isAlignPoint)) {
-      return "".concat(prefixCls, "-placement-").concat(placement);
-    }
-  }
-
-  return '';
-}
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js
-function arrayWithHoles_arrayWithHoles(arr) {
-  if (Array.isArray(arr)) return arr;
-}
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js
-function iterableToArrayLimit_iterableToArrayLimit(arr, i) {
-  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
-
-  if (_i == null) return;
-  var _arr = [];
-  var _n = true;
-  var _d = false;
-
-  var _s, _e;
-
-  try {
-    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
-      _arr.push(_s.value);
-
-      if (i && _arr.length === i) break;
-    }
-  } catch (err) {
-    _d = true;
-    _e = err;
-  } finally {
-    try {
-      if (!_n && _i["return"] != null) _i["return"]();
-    } finally {
-      if (_d) throw _e;
-    }
-  }
-
-  return _arr;
-}
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
-function arrayLikeToArray_arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-
-  for (var i = 0, arr2 = new Array(len); i < len; i++) {
-    arr2[i] = arr[i];
-  }
-
-  return arr2;
-}
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
-
-function unsupportedIterableToArray_unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return arrayLikeToArray_arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray_arrayLikeToArray(o, minLen);
-}
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js
-function nonIterableRest_nonIterableRest() {
-  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js
-
-
-
-
-function slicedToArray_slicedToArray(arr, i) {
-  return arrayWithHoles_arrayWithHoles(arr) || iterableToArrayLimit_iterableToArrayLimit(arr, i) || unsupportedIterableToArray_unsupportedIterableToArray(arr, i) || nonIterableRest_nonIterableRest();
-}
-;// CONCATENATED MODULE: ./node_modules/rc-util/es/isMobile.js
-/* harmony default export */ var isMobile = (function () {
-  if (typeof navigator === 'undefined' || typeof window === 'undefined') {
-    return false;
-  }
-
-  var agent = navigator.userAgent || navigator.vendor || window.opera;
-
-  if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(agent) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw-(n|u)|c55\/|capi|ccwa|cdm-|cell|chtm|cldc|cmd-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc-s|devi|dica|dmob|do(c|p)o|ds(12|-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(-|_)|g1 u|g560|gene|gf-5|g-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd-(m|p|t)|hei-|hi(pt|ta)|hp( i|ip)|hs-c|ht(c(-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i-(20|go|ma)|i230|iac( |-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|-[a-w])|libw|lynx|m1-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|-([1-8]|c))|phil|pire|pl(ay|uc)|pn-2|po(ck|rt|se)|prox|psio|pt-g|qa-a|qc(07|12|21|32|60|-[2-7]|i-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h-|oo|p-)|sdk\/|se(c(-|0|1)|47|mc|nd|ri)|sgh-|shar|sie(-|m)|sk-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h-|v-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl-|tdg-|tel(i|m)|tim-|t-mo|to(pl|sh)|ts(70|m-|m3|m5)|tx-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas-|your|zeto|zte-/i.test(agent === null || agent === void 0 ? void 0 : agent.substr(0, 4))) {
-    return true;
-  }
-
-  return false;
-});
-;// CONCATENATED MODULE: ./node_modules/rc-motion/es/util/motion.js
-
- // ================= Transition =================
-// Event wrapper. Copy from react source code
-
-function makePrefixMap(styleProp, eventName) {
-  var prefixes = {};
-  prefixes[styleProp.toLowerCase()] = eventName.toLowerCase();
-  prefixes["Webkit".concat(styleProp)] = "webkit".concat(eventName);
-  prefixes["Moz".concat(styleProp)] = "moz".concat(eventName);
-  prefixes["ms".concat(styleProp)] = "MS".concat(eventName);
-  prefixes["O".concat(styleProp)] = "o".concat(eventName.toLowerCase());
-  return prefixes;
-}
-
-function getVendorPrefixes(domSupport, win) {
-  var prefixes = {
-    animationend: makePrefixMap('Animation', 'AnimationEnd'),
-    transitionend: makePrefixMap('Transition', 'TransitionEnd')
-  };
-
-  if (domSupport) {
-    if (!('AnimationEvent' in win)) {
-      delete prefixes.animationend.animation;
-    }
-
-    if (!('TransitionEvent' in win)) {
-      delete prefixes.transitionend.transition;
-    }
-  }
-
-  return prefixes;
-}
-var vendorPrefixes = getVendorPrefixes(canUseDom(), typeof window !== 'undefined' ? window : {});
-var style = {};
-
-if (canUseDom()) {
-  var _document$createEleme = document.createElement('div');
-
-  style = _document$createEleme.style;
-}
-
-var prefixedEventNames = {};
-function getVendorPrefixedEventName(eventName) {
-  if (prefixedEventNames[eventName]) {
-    return prefixedEventNames[eventName];
-  }
-
-  var prefixMap = vendorPrefixes[eventName];
-
-  if (prefixMap) {
-    var stylePropList = Object.keys(prefixMap);
-    var len = stylePropList.length;
-
-    for (var i = 0; i < len; i += 1) {
-      var styleProp = stylePropList[i];
-
-      if (Object.prototype.hasOwnProperty.call(prefixMap, styleProp) && styleProp in style) {
-        prefixedEventNames[eventName] = prefixMap[styleProp];
-        return prefixedEventNames[eventName];
-      }
-    }
-  }
-
-  return '';
-}
-var internalAnimationEndName = getVendorPrefixedEventName('animationend');
-var internalTransitionEndName = getVendorPrefixedEventName('transitionend');
-var supportTransition = !!(internalAnimationEndName && internalTransitionEndName);
-var animationEndName = internalAnimationEndName || 'animationend';
-var transitionEndName = internalTransitionEndName || 'transitionend';
-function getTransitionName(transitionName, transitionType) {
-  if (!transitionName) return null;
-
-  if (_typeof(transitionName) === 'object') {
-    var type = transitionType.replace(/-\w/g, function (match) {
-      return match[1].toUpperCase();
-    });
-    return transitionName[type];
-  }
-
-  return "".concat(transitionName, "-").concat(transitionType);
-}
-;// CONCATENATED MODULE: ./node_modules/rc-motion/es/interface.js
-var STATUS_NONE = 'none';
-var STATUS_APPEAR = 'appear';
-var STATUS_ENTER = 'enter';
-var STATUS_LEAVE = 'leave';
-var STEP_NONE = 'none';
-var STEP_PREPARE = 'prepare';
-var STEP_START = 'start';
-var STEP_ACTIVE = 'active';
-var STEP_ACTIVATED = 'end';
-;// CONCATENATED MODULE: ./node_modules/rc-motion/es/hooks/useState.js
-
-
-function useMountStatus(defaultValue) {
-  var destroyRef = (0,react.useRef)(false);
-
-  var _useState = (0,react.useState)(defaultValue),
-      _useState2 = slicedToArray_slicedToArray(_useState, 2),
-      val = _useState2[0],
-      setVal = _useState2[1];
-
-  function setValue(next) {
-    if (!destroyRef.current) {
-      setVal(next);
-    }
-  }
-
-  (0,react.useEffect)(function () {
-    return function () {
-      destroyRef.current = true;
-    };
-  }, []);
-  return [val, setValue];
-}
-;// CONCATENATED MODULE: ./node_modules/rc-motion/es/hooks/useIsomorphicLayoutEffect.js
-
- // It's safe to use `useLayoutEffect` but the warning is annoying
-
-var hooks_useIsomorphicLayoutEffect_useIsomorphicLayoutEffect = canUseDom() ? react.useLayoutEffect : react.useEffect;
-/* harmony default export */ var hooks_useIsomorphicLayoutEffect = (hooks_useIsomorphicLayoutEffect_useIsomorphicLayoutEffect);
-;// CONCATENATED MODULE: ./node_modules/rc-motion/es/hooks/useNextFrame.js
-
-
-/* harmony default export */ var useNextFrame = (function () {
-  var nextFrameRef = react.useRef(null);
-
-  function cancelNextFrame() {
-    wrapperRaf.cancel(nextFrameRef.current);
-  }
-
-  function nextFrame(callback) {
-    var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
-    cancelNextFrame();
-    var nextFrameId = wrapperRaf(function () {
-      if (delay <= 1) {
-        callback({
-          isCanceled: function isCanceled() {
-            return nextFrameId !== nextFrameRef.current;
-          }
-        });
-      } else {
-        nextFrame(callback, delay - 1);
-      }
-    });
-    nextFrameRef.current = nextFrameId;
-  }
-
-  react.useEffect(function () {
-    return function () {
-      cancelNextFrame();
-    };
-  }, []);
-  return [nextFrame, cancelNextFrame];
-});
-;// CONCATENATED MODULE: ./node_modules/rc-motion/es/hooks/useStepQueue.js
-
-
-
-
-
-var STEP_QUEUE = [STEP_PREPARE, STEP_START, STEP_ACTIVE, STEP_ACTIVATED];
-/** Skip current step */
-
-var SkipStep = false;
-/** Current step should be update in */
-
-var DoStep = true;
-function isActive(step) {
-  return step === STEP_ACTIVE || step === STEP_ACTIVATED;
-}
-/* harmony default export */ var useStepQueue = (function (status, callback) {
-  var _React$useState = react.useState(STEP_NONE),
-      _React$useState2 = slicedToArray_slicedToArray(_React$useState, 2),
-      step = _React$useState2[0],
-      setStep = _React$useState2[1];
-
-  var _useNextFrame = useNextFrame(),
-      _useNextFrame2 = slicedToArray_slicedToArray(_useNextFrame, 2),
-      nextFrame = _useNextFrame2[0],
-      cancelNextFrame = _useNextFrame2[1];
-
-  function startQueue() {
-    setStep(STEP_PREPARE);
-  }
-
-  hooks_useIsomorphicLayoutEffect(function () {
-    if (step !== STEP_NONE && step !== STEP_ACTIVATED) {
-      var index = STEP_QUEUE.indexOf(step);
-      var nextStep = STEP_QUEUE[index + 1];
-      var result = callback(step);
-
-      if (result === SkipStep) {
-        // Skip when no needed
-        setStep(nextStep);
-      } else {
-        // Do as frame for step update
-        nextFrame(function (info) {
-          function doNext() {
-            // Skip since current queue is ood
-            if (info.isCanceled()) return;
-            setStep(nextStep);
-          }
-
-          if (result === true) {
-            doNext();
-          } else {
-            // Only promise should be async
-            Promise.resolve(result).then(doNext);
-          }
-        });
-      }
-    }
-  }, [status, step]);
-  react.useEffect(function () {
-    return function () {
-      cancelNextFrame();
-    };
-  }, []);
-  return [startQueue, step];
-});
-;// CONCATENATED MODULE: ./node_modules/rc-motion/es/hooks/useDomMotionEvents.js
-
-
-
-/* harmony default export */ var useDomMotionEvents = (function (callback) {
-  var cacheElementRef = (0,react.useRef)(); // Cache callback
-
-  var callbackRef = (0,react.useRef)(callback);
-  callbackRef.current = callback; // Internal motion event handler
-
-  var onInternalMotionEnd = react.useCallback(function (event) {
-    callbackRef.current(event);
-  }, []); // Remove events
-
-  function removeMotionEvents(element) {
-    if (element) {
-      element.removeEventListener(transitionEndName, onInternalMotionEnd);
-      element.removeEventListener(animationEndName, onInternalMotionEnd);
-    }
-  } // Patch events
-
-
-  function patchMotionEvents(element) {
-    if (cacheElementRef.current && cacheElementRef.current !== element) {
-      removeMotionEvents(cacheElementRef.current);
-    }
-
-    if (element && element !== cacheElementRef.current) {
-      element.addEventListener(transitionEndName, onInternalMotionEnd);
-      element.addEventListener(animationEndName, onInternalMotionEnd); // Save as cache in case dom removed trigger by `motionDeadline`
-
-      cacheElementRef.current = element;
-    }
-  } // Clean up when removed
-
-
-  react.useEffect(function () {
-    return function () {
-      removeMotionEvents(cacheElementRef.current);
-    };
-  }, []);
-  return [patchMotionEvents, removeMotionEvents];
-});
-;// CONCATENATED MODULE: ./node_modules/rc-motion/es/hooks/useStatus.js
-
-
-
-
-
-
-
-
-
-
-function useStatus(supportMotion, visible, getElement, _ref) {
-  var _ref$motionEnter = _ref.motionEnter,
-      motionEnter = _ref$motionEnter === void 0 ? true : _ref$motionEnter,
-      _ref$motionAppear = _ref.motionAppear,
-      motionAppear = _ref$motionAppear === void 0 ? true : _ref$motionAppear,
-      _ref$motionLeave = _ref.motionLeave,
-      motionLeave = _ref$motionLeave === void 0 ? true : _ref$motionLeave,
-      motionDeadline = _ref.motionDeadline,
-      motionLeaveImmediately = _ref.motionLeaveImmediately,
-      onAppearPrepare = _ref.onAppearPrepare,
-      onEnterPrepare = _ref.onEnterPrepare,
-      onLeavePrepare = _ref.onLeavePrepare,
-      onAppearStart = _ref.onAppearStart,
-      onEnterStart = _ref.onEnterStart,
-      onLeaveStart = _ref.onLeaveStart,
-      onAppearActive = _ref.onAppearActive,
-      onEnterActive = _ref.onEnterActive,
-      onLeaveActive = _ref.onLeaveActive,
-      onAppearEnd = _ref.onAppearEnd,
-      onEnterEnd = _ref.onEnterEnd,
-      onLeaveEnd = _ref.onLeaveEnd,
-      onVisibleChanged = _ref.onVisibleChanged;
-
-  // Used for outer render usage to avoid `visible: false & status: none` to render nothing
-  var _useState = useMountStatus(),
-      _useState2 = slicedToArray_slicedToArray(_useState, 2),
-      asyncVisible = _useState2[0],
-      setAsyncVisible = _useState2[1];
-
-  var _useState3 = useMountStatus(STATUS_NONE),
-      _useState4 = slicedToArray_slicedToArray(_useState3, 2),
-      status = _useState4[0],
-      setStatus = _useState4[1];
-
-  var _useState5 = useMountStatus(null),
-      _useState6 = slicedToArray_slicedToArray(_useState5, 2),
-      style = _useState6[0],
-      setStyle = _useState6[1];
-
-  var mountedRef = (0,react.useRef)(false);
-  var deadlineRef = (0,react.useRef)(null);
-  var destroyedRef = (0,react.useRef)(false); // =========================== Dom Node ===========================
-
-  var cacheElementRef = (0,react.useRef)(null);
-
-  function getDomElement() {
-    var element = getElement();
-    return element || cacheElementRef.current;
-  } // ========================== Motion End ==========================
-
-
-  var activeRef = (0,react.useRef)(false);
-
-  function onInternalMotionEnd(event) {
-    var element = getDomElement();
-
-    if (event && !event.deadline && event.target !== element) {
-      // event exists
-      // not initiated by deadline
-      // transitionEnd not fired by inner elements
-      return;
-    }
-
-    var canEnd;
-
-    if (status === STATUS_APPEAR && activeRef.current) {
-      canEnd = onAppearEnd === null || onAppearEnd === void 0 ? void 0 : onAppearEnd(element, event);
-    } else if (status === STATUS_ENTER && activeRef.current) {
-      canEnd = onEnterEnd === null || onEnterEnd === void 0 ? void 0 : onEnterEnd(element, event);
-    } else if (status === STATUS_LEAVE && activeRef.current) {
-      canEnd = onLeaveEnd === null || onLeaveEnd === void 0 ? void 0 : onLeaveEnd(element, event);
-    } // Only update status when `canEnd` and not destroyed
-
-
-    if (canEnd !== false && !destroyedRef.current) {
-      setStatus(STATUS_NONE);
-      setStyle(null);
-    }
-  }
-
-  var _useDomMotionEvents = useDomMotionEvents(onInternalMotionEnd),
-      _useDomMotionEvents2 = slicedToArray_slicedToArray(_useDomMotionEvents, 1),
-      patchMotionEvents = _useDomMotionEvents2[0]; // ============================= Step =============================
-
-
-  var eventHandlers = react.useMemo(function () {
-    var _ref2, _ref3, _ref4;
-
-    switch (status) {
-      case 'appear':
-        return _ref2 = {}, defineProperty_defineProperty(_ref2, STEP_PREPARE, onAppearPrepare), defineProperty_defineProperty(_ref2, STEP_START, onAppearStart), defineProperty_defineProperty(_ref2, STEP_ACTIVE, onAppearActive), _ref2;
-
-      case 'enter':
-        return _ref3 = {}, defineProperty_defineProperty(_ref3, STEP_PREPARE, onEnterPrepare), defineProperty_defineProperty(_ref3, STEP_START, onEnterStart), defineProperty_defineProperty(_ref3, STEP_ACTIVE, onEnterActive), _ref3;
-
-      case 'leave':
-        return _ref4 = {}, defineProperty_defineProperty(_ref4, STEP_PREPARE, onLeavePrepare), defineProperty_defineProperty(_ref4, STEP_START, onLeaveStart), defineProperty_defineProperty(_ref4, STEP_ACTIVE, onLeaveActive), _ref4;
-
-      default:
-        return {};
-    }
-  }, [status]);
-
-  var _useStepQueue = useStepQueue(status, function (newStep) {
-    // Only prepare step can be skip
-    if (newStep === STEP_PREPARE) {
-      var onPrepare = eventHandlers[STEP_PREPARE];
-
-      if (!onPrepare) {
-        return SkipStep;
-      }
-
-      return onPrepare(getDomElement());
-    } // Rest step is sync update
-
-
-    // Rest step is sync update
-    if (step in eventHandlers) {
-      var _eventHandlers$step;
-
-      setStyle(((_eventHandlers$step = eventHandlers[step]) === null || _eventHandlers$step === void 0 ? void 0 : _eventHandlers$step.call(eventHandlers, getDomElement(), null)) || null);
-    }
-
-    if (step === STEP_ACTIVE) {
-      // Patch events when motion needed
-      patchMotionEvents(getDomElement());
-
-      if (motionDeadline > 0) {
-        clearTimeout(deadlineRef.current);
-        deadlineRef.current = setTimeout(function () {
-          onInternalMotionEnd({
-            deadline: true
-          });
-        }, motionDeadline);
-      }
-    }
-
-    return DoStep;
-  }),
-      _useStepQueue2 = slicedToArray_slicedToArray(_useStepQueue, 2),
-      startStep = _useStepQueue2[0],
-      step = _useStepQueue2[1];
-
-  var active = isActive(step);
-  activeRef.current = active; // ============================ Status ============================
-  // Update with new status
-
-  hooks_useIsomorphicLayoutEffect(function () {
-    setAsyncVisible(visible);
-    var isMounted = mountedRef.current;
-    mountedRef.current = true;
-
-    if (!supportMotion) {
-      return;
-    }
-
-    var nextStatus; // Appear
-
-    if (!isMounted && visible && motionAppear) {
-      nextStatus = STATUS_APPEAR;
-    } // Enter
-
-
-    if (isMounted && visible && motionEnter) {
-      nextStatus = STATUS_ENTER;
-    } // Leave
-
-
-    if (isMounted && !visible && motionLeave || !isMounted && motionLeaveImmediately && !visible && motionLeave) {
-      nextStatus = STATUS_LEAVE;
-    } // Update to next status
-
-
-    if (nextStatus) {
-      setStatus(nextStatus);
-      startStep();
-    }
-  }, [visible]); // ============================ Effect ============================
-  // Reset when motion changed
-
-  (0,react.useEffect)(function () {
-    if ( // Cancel appear
-    status === STATUS_APPEAR && !motionAppear || // Cancel enter
-    status === STATUS_ENTER && !motionEnter || // Cancel leave
-    status === STATUS_LEAVE && !motionLeave) {
-      setStatus(STATUS_NONE);
-    }
-  }, [motionAppear, motionEnter, motionLeave]);
-  (0,react.useEffect)(function () {
-    return function () {
-      clearTimeout(deadlineRef.current);
-      destroyedRef.current = true;
-    };
-  }, []); // Trigger `onVisibleChanged`
-
-  (0,react.useEffect)(function () {
-    if (asyncVisible !== undefined && status === STATUS_NONE) {
-      onVisibleChanged === null || onVisibleChanged === void 0 ? void 0 : onVisibleChanged(asyncVisible);
-    }
-  }, [asyncVisible, status]); // ============================ Styles ============================
-
-  var mergedStyle = style;
-
-  if (eventHandlers[STEP_PREPARE] && step === STEP_START) {
-    mergedStyle = _objectSpread2({
-      transition: 'none'
-    }, mergedStyle);
-  }
-
-  return [status, step, mergedStyle, asyncVisible !== null && asyncVisible !== void 0 ? asyncVisible : visible];
-}
-;// CONCATENATED MODULE: ./node_modules/rc-motion/es/DomWrapper.js
-
-
-
-
-
-
-var DomWrapper = /*#__PURE__*/function (_React$Component) {
-  _inherits(DomWrapper, _React$Component);
-
-  var _super = _createSuper(DomWrapper);
-
-  function DomWrapper() {
-    _classCallCheck(this, DomWrapper);
-
-    return _super.apply(this, arguments);
-  }
-
-  _createClass(DomWrapper, [{
-    key: "render",
-    value: function render() {
-      return this.props.children;
-    }
-  }]);
-
-  return DomWrapper;
-}(react.Component);
-
-/* harmony default export */ var es_DomWrapper = (DomWrapper);
-;// CONCATENATED MODULE: ./node_modules/rc-motion/es/CSSMotion.js
-
-
-
-
-
-/* eslint-disable react/default-props-match-prop-types, react/no-multi-comp, react/prop-types */
-
-
-
-
-
-
-
-
-
-
-/**
- * `transitionSupport` is used for none transition test case.
- * Default we use browser transition event support check.
- */
-
-function genCSSMotion(config) {
-  var transitionSupport = config;
-
-  if (_typeof(config) === 'object') {
-    transitionSupport = config.transitionSupport;
-  }
-
-  function isSupportTransition(props) {
-    return !!(props.motionName && transitionSupport);
-  }
-
-  var CSSMotion = /*#__PURE__*/react.forwardRef(function (props, ref) {
-    var _props$visible = props.visible,
-        visible = _props$visible === void 0 ? true : _props$visible,
-        _props$removeOnLeave = props.removeOnLeave,
-        removeOnLeave = _props$removeOnLeave === void 0 ? true : _props$removeOnLeave,
-        forceRender = props.forceRender,
-        children = props.children,
-        motionName = props.motionName,
-        leavedClassName = props.leavedClassName,
-        eventProps = props.eventProps;
-    var supportMotion = isSupportTransition(props); // Ref to the react node, it may be a HTMLElement
-
-    var nodeRef = (0,react.useRef)(); // Ref to the dom wrapper in case ref can not pass to HTMLElement
-
-    var wrapperNodeRef = (0,react.useRef)();
-
-    function getDomElement() {
-      try {
-        return findDOMNode(nodeRef.current || wrapperNodeRef.current);
-      } catch (e) {
-        // Only happen when `motionDeadline` trigger but element removed.
-        return null;
-      }
-    }
-
-    var _useStatus = useStatus(supportMotion, visible, getDomElement, props),
-        _useStatus2 = slicedToArray_slicedToArray(_useStatus, 4),
-        status = _useStatus2[0],
-        statusStep = _useStatus2[1],
-        statusStyle = _useStatus2[2],
-        mergedVisible = _useStatus2[3]; // Record whether content has rended
-    // Will return null for un-rendered even when `removeOnLeave={false}`
-
-
-    var renderedRef = react.useRef(mergedVisible);
-
-    if (mergedVisible) {
-      renderedRef.current = true;
-    } // ====================== Refs ======================
-
-
-    var originRef = (0,react.useRef)(ref);
-    originRef.current = ref;
-    var setNodeRef = react.useCallback(function (node) {
-      nodeRef.current = node;
-      fillRef(originRef.current, node);
-    }, []); // ===================== Render =====================
-
-    var motionChildren;
-
-    var mergedProps = _objectSpread2(_objectSpread2({}, eventProps), {}, {
-      visible: visible
-    });
-
-    if (!children) {
-      // No children
-      motionChildren = null;
-    } else if (status === STATUS_NONE || !isSupportTransition(props)) {
-      // Stable children
-      if (mergedVisible) {
-        motionChildren = children(_objectSpread2({}, mergedProps), setNodeRef);
-      } else if (!removeOnLeave && renderedRef.current) {
-        motionChildren = children(_objectSpread2(_objectSpread2({}, mergedProps), {}, {
-          className: leavedClassName
-        }), setNodeRef);
-      } else if (forceRender) {
-        motionChildren = children(_objectSpread2(_objectSpread2({}, mergedProps), {}, {
-          style: {
-            display: 'none'
-          }
-        }), setNodeRef);
-      } else {
-        motionChildren = null;
-      }
-    } else {
-      var _classNames;
-
-      // In motion
-      var statusSuffix;
-
-      if (statusStep === STEP_PREPARE) {
-        statusSuffix = 'prepare';
-      } else if (isActive(statusStep)) {
-        statusSuffix = 'active';
-      } else if (statusStep === STEP_START) {
-        statusSuffix = 'start';
-      }
-
-      motionChildren = children(_objectSpread2(_objectSpread2({}, mergedProps), {}, {
-        className: classnames_default()(getTransitionName(motionName, status), (_classNames = {}, defineProperty_defineProperty(_classNames, getTransitionName(motionName, "".concat(status, "-").concat(statusSuffix)), statusSuffix), defineProperty_defineProperty(_classNames, motionName, typeof motionName === 'string'), _classNames)),
-        style: statusStyle
-      }), setNodeRef);
-    }
-
-    return /*#__PURE__*/react.createElement(es_DomWrapper, {
-      ref: wrapperNodeRef
-    }, motionChildren);
-  });
-  CSSMotion.displayName = 'CSSMotion';
-  return CSSMotion;
-}
-/* harmony default export */ var es_CSSMotion = (genCSSMotion(supportTransition));
-;// CONCATENATED MODULE: ./node_modules/rc-motion/es/util/diff.js
-
-
-var STATUS_ADD = 'add';
-var STATUS_KEEP = 'keep';
-var STATUS_REMOVE = 'remove';
-var STATUS_REMOVED = 'removed';
-function wrapKeyToObject(key) {
-  var keyObj;
-
-  if (key && _typeof(key) === 'object' && 'key' in key) {
-    keyObj = key;
-  } else {
-    keyObj = {
-      key: key
-    };
-  }
-
-  return _objectSpread2(_objectSpread2({}, keyObj), {}, {
-    key: String(keyObj.key)
-  });
-}
-function parseKeys() {
-  var keys = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  return keys.map(wrapKeyToObject);
-}
-function diffKeys() {
-  var prevKeys = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  var currentKeys = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-  var list = [];
-  var currentIndex = 0;
-  var currentLen = currentKeys.length;
-  var prevKeyObjects = parseKeys(prevKeys);
-  var currentKeyObjects = parseKeys(currentKeys); // Check prev keys to insert or keep
-
-  prevKeyObjects.forEach(function (keyObj) {
-    var hit = false;
-
-    for (var i = currentIndex; i < currentLen; i += 1) {
-      var currentKeyObj = currentKeyObjects[i];
-
-      if (currentKeyObj.key === keyObj.key) {
-        // New added keys should add before current key
-        if (currentIndex < i) {
-          list = list.concat(currentKeyObjects.slice(currentIndex, i).map(function (obj) {
-            return _objectSpread2(_objectSpread2({}, obj), {}, {
-              status: STATUS_ADD
-            });
-          }));
-          currentIndex = i;
-        }
-
-        list.push(_objectSpread2(_objectSpread2({}, currentKeyObj), {}, {
-          status: STATUS_KEEP
-        }));
-        currentIndex += 1;
-        hit = true;
-        break;
-      }
-    } // If not hit, it means key is removed
-
-
-    if (!hit) {
-      list.push(_objectSpread2(_objectSpread2({}, keyObj), {}, {
-        status: STATUS_REMOVE
-      }));
-    }
-  }); // Add rest to the list
-
-  if (currentIndex < currentLen) {
-    list = list.concat(currentKeyObjects.slice(currentIndex).map(function (obj) {
-      return _objectSpread2(_objectSpread2({}, obj), {}, {
-        status: STATUS_ADD
-      });
-    }));
-  }
-  /**
-   * Merge same key when it remove and add again:
-   *    [1 - add, 2 - keep, 1 - remove] -> [1 - keep, 2 - keep]
-   */
-
-
-  var keys = {};
-  list.forEach(function (_ref) {
-    var key = _ref.key;
-    keys[key] = (keys[key] || 0) + 1;
-  });
-  var duplicatedKeys = Object.keys(keys).filter(function (key) {
-    return keys[key] > 1;
-  });
-  duplicatedKeys.forEach(function (matchKey) {
-    // Remove `STATUS_REMOVE` node.
-    list = list.filter(function (_ref2) {
-      var key = _ref2.key,
-          status = _ref2.status;
-      return key !== matchKey || status !== STATUS_REMOVE;
-    }); // Update `STATUS_ADD` to `STATUS_KEEP`
-
-    list.forEach(function (node) {
-      if (node.key === matchKey) {
-        // eslint-disable-next-line no-param-reassign
-        node.status = STATUS_KEEP;
-      }
-    });
-  });
-  return list;
-}
-;// CONCATENATED MODULE: ./node_modules/rc-motion/es/CSSMotionList.js
-
-
-
-
-
-
-
-
-/* eslint react/prop-types: 0 */
-
-
-
-
-var MOTION_PROP_NAMES = ['eventProps', 'visible', 'children', 'motionName', 'motionAppear', 'motionEnter', 'motionLeave', 'motionLeaveImmediately', 'motionDeadline', 'removeOnLeave', 'leavedClassName', 'onAppearStart', 'onAppearActive', 'onAppearEnd', 'onEnterStart', 'onEnterActive', 'onEnterEnd', 'onLeaveStart', 'onLeaveActive', 'onLeaveEnd'];
-/**
- * Generate a CSSMotionList component with config
- * @param transitionSupport No need since CSSMotionList no longer depends on transition support
- * @param CSSMotion CSSMotion component
- */
-
-function genCSSMotionList(transitionSupport) {
-  var CSSMotion = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : es_CSSMotion;
-
-  var CSSMotionList = /*#__PURE__*/function (_React$Component) {
-    _inherits(CSSMotionList, _React$Component);
-
-    var _super = _createSuper(CSSMotionList);
-
-    function CSSMotionList() {
-      var _this;
-
-      _classCallCheck(this, CSSMotionList);
-
-      _this = _super.apply(this, arguments);
-      _this.state = {
-        keyEntities: []
-      };
-
-      _this.removeKey = function (removeKey) {
-        _this.setState(function (_ref) {
-          var keyEntities = _ref.keyEntities;
-          return {
-            keyEntities: keyEntities.map(function (entity) {
-              if (entity.key !== removeKey) return entity;
-              return _objectSpread2(_objectSpread2({}, entity), {}, {
-                status: STATUS_REMOVED
-              });
-            })
-          };
-        });
-      };
-
-      return _this;
-    }
-
-    _createClass(CSSMotionList, [{
-      key: "render",
-      value: function render() {
-        var _this2 = this;
-
-        var keyEntities = this.state.keyEntities;
-
-        var _this$props = this.props,
-            component = _this$props.component,
-            children = _this$props.children,
-            _onVisibleChanged = _this$props.onVisibleChanged,
-            restProps = _objectWithoutProperties(_this$props, ["component", "children", "onVisibleChanged"]);
-
-        var Component = component || react.Fragment;
-        var motionProps = {};
-        MOTION_PROP_NAMES.forEach(function (prop) {
-          motionProps[prop] = restProps[prop];
-          delete restProps[prop];
-        });
-        delete restProps.keys;
-        return /*#__PURE__*/react.createElement(Component, restProps, keyEntities.map(function (_ref2) {
-          var status = _ref2.status,
-              eventProps = _objectWithoutProperties(_ref2, ["status"]);
-
-          var visible = status === STATUS_ADD || status === STATUS_KEEP;
-          return /*#__PURE__*/react.createElement(CSSMotion, extends_extends({}, motionProps, {
-            key: eventProps.key,
-            visible: visible,
-            eventProps: eventProps,
-            onVisibleChanged: function onVisibleChanged(changedVisible) {
-              _onVisibleChanged === null || _onVisibleChanged === void 0 ? void 0 : _onVisibleChanged(changedVisible, {
-                key: eventProps.key
-              });
-
-              if (!changedVisible) {
-                _this2.removeKey(eventProps.key);
-              }
-            }
-          }), children);
-        }));
-      }
-    }], [{
-      key: "getDerivedStateFromProps",
-      value: function getDerivedStateFromProps(_ref3, _ref4) {
-        var keys = _ref3.keys;
-        var keyEntities = _ref4.keyEntities;
-        var parsedKeyObjects = parseKeys(keys);
-        var mixedKeyEntities = diffKeys(keyEntities, parsedKeyObjects);
-        return {
-          keyEntities: mixedKeyEntities.filter(function (entity) {
-            var prevEntity = keyEntities.find(function (_ref5) {
-              var key = _ref5.key;
-              return entity.key === key;
-            }); // Remove if already mark as removed
-
-            if (prevEntity && prevEntity.status === STATUS_REMOVED && entity.status === STATUS_REMOVE) {
-              return false;
-            }
-
-            return true;
-          })
-        };
-      }
-    }]);
-
-    return CSSMotionList;
-  }(react.Component);
-
-  CSSMotionList.defaultProps = {
-    component: 'div'
-  };
-  return CSSMotionList;
-}
-/* harmony default export */ var CSSMotionList = (genCSSMotionList(supportTransition));
-;// CONCATENATED MODULE: ./node_modules/rc-motion/es/index.js
-
-
-
-/* harmony default export */ var es = (es_CSSMotion);
-;// CONCATENATED MODULE: ./node_modules/rc-trigger/es/utils/legacyUtil.js
-function getMotion(_ref) {
-  var prefixCls = _ref.prefixCls,
-      motion = _ref.motion,
-      animation = _ref.animation,
-      transitionName = _ref.transitionName;
-
-  if (motion) {
-    return motion;
-  }
-
-  if (animation) {
-    return {
-      motionName: "".concat(prefixCls, "-").concat(animation)
-    };
-  }
-
-  if (transitionName) {
-    return {
-      motionName: transitionName
-    };
-  }
-
-  return null;
-}
-;// CONCATENATED MODULE: ./node_modules/rc-trigger/es/Popup/Mask.js
-
-
-
-
-
-
-function Mask(props) {
-  var prefixCls = props.prefixCls,
-      visible = props.visible,
-      zIndex = props.zIndex,
-      mask = props.mask,
-      maskMotion = props.maskMotion,
-      maskAnimation = props.maskAnimation,
-      maskTransitionName = props.maskTransitionName;
-
-  if (!mask) {
-    return null;
-  }
-
-  var motion = {};
-
-  if (maskMotion || maskTransitionName || maskAnimation) {
-    motion = _objectSpread2({
-      motionAppear: true
-    }, getMotion({
-      motion: maskMotion,
-      prefixCls: prefixCls,
-      transitionName: maskTransitionName,
-      animation: maskAnimation
-    }));
-  }
-
-  return /*#__PURE__*/react.createElement(es, extends_extends({}, motion, {
-    visible: visible,
-    removeOnLeave: true
-  }), function (_ref) {
-    var className = _ref.className;
-    return /*#__PURE__*/react.createElement("div", {
-      style: {
-        zIndex: zIndex
-      },
-      className: classnames_default()("".concat(prefixCls, "-mask"), className)
-    });
-  });
-}
-;// CONCATENATED MODULE: ./node_modules/rc-util/es/Dom/isVisible.js
-/* harmony default export */ var isVisible = (function (element) {
-  if (!element) {
-    return false;
-  }
-
-  if (element.offsetParent) {
-    return true;
-  }
-
-  if (element.getBBox) {
-    var box = element.getBBox();
-
-    if (box.width || box.height) {
-      return true;
-    }
-  }
-
-  if (element.getBoundingClientRect) {
-    var _box = element.getBoundingClientRect();
-
-    if (_box.width || _box.height) {
-      return true;
-    }
-  }
-
-  return false;
-});
-;// CONCATENATED MODULE: ./node_modules/dom-align/dist-web/index.js
-function dist_web_ownKeys(object, enumerableOnly) {
-  var keys = Object.keys(object);
-
-  if (Object.getOwnPropertySymbols) {
-    var symbols = Object.getOwnPropertySymbols(object);
-
-    if (enumerableOnly) {
-      symbols = symbols.filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      });
-    }
-
-    keys.push.apply(keys, symbols);
-  }
-
-  return keys;
-}
-
-function dist_web_objectSpread2(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-
-    if (i % 2) {
-      dist_web_ownKeys(Object(source), true).forEach(function (key) {
-        dist_web_defineProperty(target, key, source[key]);
-      });
-    } else if (Object.getOwnPropertyDescriptors) {
-      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-    } else {
-      dist_web_ownKeys(Object(source)).forEach(function (key) {
-        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-      });
-    }
-  }
-
-  return target;
-}
-
-function dist_web_typeof(obj) {
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/node_modules/@babel/runtime/helpers/esm/typeof.js
+function _typeof(o) {
   "@babel/helpers - typeof";
 
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    dist_web_typeof = function (obj) {
-      return typeof obj;
-    };
-  } else {
-    dist_web_typeof = function (obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-  }
-
-  return dist_web_typeof(obj);
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, _typeof(o);
 }
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/node_modules/@babel/runtime/helpers/esm/toPrimitive.js
 
-function dist_web_defineProperty(obj, key, value) {
+function toPrimitive(t, r) {
+  if ("object" != _typeof(t) || !t) return t;
+  var e = t[Symbol.toPrimitive];
+  if (void 0 !== e) {
+    var i = e.call(t, r || "default");
+    if ("object" != _typeof(i)) return i;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return ("string" === r ? String : Number)(t);
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/node_modules/@babel/runtime/helpers/esm/toPropertyKey.js
+
+
+function toPropertyKey(t) {
+  var i = toPrimitive(t, "string");
+  return "symbol" == _typeof(i) ? i : i + "";
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/node_modules/@babel/runtime/helpers/esm/defineProperty.js
+
+function esm_defineProperty_defineProperty(obj, key, value) {
+  key = toPropertyKey(key);
   if (key in obj) {
     Object.defineProperty(obj, key, {
       value: value,
@@ -62158,1284 +60488,1088 @@ function dist_web_defineProperty(obj, key, value) {
   } else {
     obj[key] = value;
   }
-
   return obj;
 }
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/node_modules/@babel/runtime/helpers/esm/objectSpread2.js
 
-var vendorPrefix;
-var jsCssMap = {
-  Webkit: '-webkit-',
-  Moz: '-moz-',
-  // IE did it wrong again ...
-  ms: '-ms-',
-  O: '-o-'
-};
-
-function getVendorPrefix() {
-  if (vendorPrefix !== undefined) {
-    return vendorPrefix;
+function esm_objectSpread2_ownKeys(e, r) {
+  var t = Object.keys(e);
+  if (Object.getOwnPropertySymbols) {
+    var o = Object.getOwnPropertySymbols(e);
+    r && (o = o.filter(function (r) {
+      return Object.getOwnPropertyDescriptor(e, r).enumerable;
+    })), t.push.apply(t, o);
   }
-
-  vendorPrefix = '';
-  var style = document.createElement('p').style;
-  var testProp = 'Transform';
-
-  for (var key in jsCssMap) {
-    if (key + testProp in style) {
-      vendorPrefix = key;
-    }
-  }
-
-  return vendorPrefix;
+  return t;
 }
-
-function dist_web_getTransitionName() {
-  return getVendorPrefix() ? "".concat(getVendorPrefix(), "TransitionProperty") : 'transitionProperty';
-}
-
-function getTransformName() {
-  return getVendorPrefix() ? "".concat(getVendorPrefix(), "Transform") : 'transform';
-}
-function setTransitionProperty(node, value) {
-  var name = dist_web_getTransitionName();
-
-  if (name) {
-    node.style[name] = value;
-
-    if (name !== 'transitionProperty') {
-      node.style.transitionProperty = value;
-    }
-  }
-}
-
-function setTransform(node, value) {
-  var name = getTransformName();
-
-  if (name) {
-    node.style[name] = value;
-
-    if (name !== 'transform') {
-      node.style.transform = value;
-    }
-  }
-}
-
-function getTransitionProperty(node) {
-  return node.style.transitionProperty || node.style[dist_web_getTransitionName()];
-}
-function getTransformXY(node) {
-  var style = window.getComputedStyle(node, null);
-  var transform = style.getPropertyValue('transform') || style.getPropertyValue(getTransformName());
-
-  if (transform && transform !== 'none') {
-    var matrix = transform.replace(/[^0-9\-.,]/g, '').split(',');
-    return {
-      x: parseFloat(matrix[12] || matrix[4], 0),
-      y: parseFloat(matrix[13] || matrix[5], 0)
-    };
-  }
-
-  return {
-    x: 0,
-    y: 0
-  };
-}
-var matrix2d = /matrix\((.*)\)/;
-var matrix3d = /matrix3d\((.*)\)/;
-function setTransformXY(node, xy) {
-  var style = window.getComputedStyle(node, null);
-  var transform = style.getPropertyValue('transform') || style.getPropertyValue(getTransformName());
-
-  if (transform && transform !== 'none') {
-    var arr;
-    var match2d = transform.match(matrix2d);
-
-    if (match2d) {
-      match2d = match2d[1];
-      arr = match2d.split(',').map(function (item) {
-        return parseFloat(item, 10);
-      });
-      arr[4] = xy.x;
-      arr[5] = xy.y;
-      setTransform(node, "matrix(".concat(arr.join(','), ")"));
-    } else {
-      var match3d = transform.match(matrix3d)[1];
-      arr = match3d.split(',').map(function (item) {
-        return parseFloat(item, 10);
-      });
-      arr[12] = xy.x;
-      arr[13] = xy.y;
-      setTransform(node, "matrix3d(".concat(arr.join(','), ")"));
-    }
-  } else {
-    setTransform(node, "translateX(".concat(xy.x, "px) translateY(").concat(xy.y, "px) translateZ(0)"));
-  }
-}
-
-var RE_NUM = /[\-+]?(?:\d*\.|)\d+(?:[eE][\-+]?\d+|)/.source;
-var getComputedStyleX; // https://stackoverflow.com/a/3485654/3040605
-
-function forceRelayout(elem) {
-  var originalStyle = elem.style.display;
-  elem.style.display = 'none';
-  elem.offsetHeight; // eslint-disable-line
-
-  elem.style.display = originalStyle;
-}
-
-function css(el, name, v) {
-  var value = v;
-
-  if (dist_web_typeof(name) === 'object') {
-    for (var i in name) {
-      if (name.hasOwnProperty(i)) {
-        css(el, i, name[i]);
-      }
-    }
-
-    return undefined;
-  }
-
-  if (typeof value !== 'undefined') {
-    if (typeof value === 'number') {
-      value = "".concat(value, "px");
-    }
-
-    el.style[name] = value;
-    return undefined;
-  }
-
-  return getComputedStyleX(el, name);
-}
-
-function getClientPosition(elem) {
-  var box;
-  var x;
-  var y;
-  var doc = elem.ownerDocument;
-  var body = doc.body;
-  var docElem = doc && doc.documentElement; // 根据 GBS 最新数据，A-Grade Browsers 都已支持 getBoundingClientRect 方法，不用再考虑传统的实现方式
-
-  box = elem.getBoundingClientRect(); // 注：jQuery 还考虑减去 docElem.clientLeft/clientTop
-  // 但测试发现，这样反而会导致当 html 和 body 有边距/边框样式时，获取的值不正确
-  // 此外，ie6 会忽略 html 的 margin 值，幸运地是没有谁会去设置 html 的 margin
-
-  x = box.left;
-  y = box.top; // In IE, most of the time, 2 extra pixels are added to the top and left
-  // due to the implicit 2-pixel inset border.  In IE6/7 quirks mode and
-  // IE6 standards mode, this border can be overridden by setting the
-  // document element's border to zero -- thus, we cannot rely on the
-  // offset always being 2 pixels.
-  // In quirks mode, the offset can be determined by querying the body's
-  // clientLeft/clientTop, but in standards mode, it is found by querying
-  // the document element's clientLeft/clientTop.  Since we already called
-  // getClientBoundingRect we have already forced a reflow, so it is not
-  // too expensive just to query them all.
-  // ie 下应该减去窗口的边框吧，毕竟默认 absolute 都是相对窗口定位的
-  // 窗口边框标准是设 documentElement ,quirks 时设置 body
-  // 最好禁止在 body 和 html 上边框 ，但 ie < 9 html 默认有 2px ，减去
-  // 但是非 ie 不可能设置窗口边框，body html 也不是窗口 ,ie 可以通过 html,body 设置
-  // 标准 ie 下 docElem.clientTop 就是 border-top
-  // ie7 html 即窗口边框改变不了。永远为 2
-  // 但标准 firefox/chrome/ie9 下 docElem.clientTop 是窗口边框，即使设了 border-top 也为 0
-
-  x -= docElem.clientLeft || body.clientLeft || 0;
-  y -= docElem.clientTop || body.clientTop || 0;
-  return {
-    left: x,
-    top: y
-  };
-}
-
-function getScroll(w, top) {
-  var ret = w["page".concat(top ? 'Y' : 'X', "Offset")];
-  var method = "scroll".concat(top ? 'Top' : 'Left');
-
-  if (typeof ret !== 'number') {
-    var d = w.document; // ie6,7,8 standard mode
-
-    ret = d.documentElement[method];
-
-    if (typeof ret !== 'number') {
-      // quirks mode
-      ret = d.body[method];
-    }
-  }
-
-  return ret;
-}
-
-function getScrollLeft(w) {
-  return getScroll(w);
-}
-
-function getScrollTop(w) {
-  return getScroll(w, true);
-}
-
-function getOffset(el) {
-  var pos = getClientPosition(el);
-  var doc = el.ownerDocument;
-  var w = doc.defaultView || doc.parentWindow;
-  pos.left += getScrollLeft(w);
-  pos.top += getScrollTop(w);
-  return pos;
-}
-/**
- * A crude way of determining if an object is a window
- * @member util
- */
-
-
-function isWindow(obj) {
-  // must use == for ie8
-
-  /* eslint eqeqeq:0 */
-  return obj !== null && obj !== undefined && obj == obj.window;
-}
-
-function getDocument(node) {
-  if (isWindow(node)) {
-    return node.document;
-  }
-
-  if (node.nodeType === 9) {
-    return node;
-  }
-
-  return node.ownerDocument;
-}
-
-function _getComputedStyle(elem, name, cs) {
-  var computedStyle = cs;
-  var val = '';
-  var d = getDocument(elem);
-  computedStyle = computedStyle || d.defaultView.getComputedStyle(elem, null); // https://github.com/kissyteam/kissy/issues/61
-
-  if (computedStyle) {
-    val = computedStyle.getPropertyValue(name) || computedStyle[name];
-  }
-
-  return val;
-}
-
-var _RE_NUM_NO_PX = new RegExp("^(".concat(RE_NUM, ")(?!px)[a-z%]+$"), 'i');
-
-var RE_POS = /^(top|right|bottom|left)$/;
-var CURRENT_STYLE = 'currentStyle';
-var RUNTIME_STYLE = 'runtimeStyle';
-var LEFT = 'left';
-var PX = 'px';
-
-function _getComputedStyleIE(elem, name) {
-  // currentStyle maybe null
-  // http://msdn.microsoft.com/en-us/library/ms535231.aspx
-  var ret = elem[CURRENT_STYLE] && elem[CURRENT_STYLE][name]; // 当 width/height 设置为百分比时，通过 pixelLeft 方式转换的 width/height 值
-  // 一开始就处理了! CUSTOM_STYLE.height,CUSTOM_STYLE.width ,cssHook 解决@2011-08-19
-  // 在 ie 下不对，需要直接用 offset 方式
-  // borderWidth 等值也有问题，但考虑到 borderWidth 设为百分比的概率很小，这里就不考虑了
-  // From the awesome hack by Dean Edwards
-  // http://erik.eae.net/archives/2007/07/27/18.54.15/#comment-102291
-  // If we're not dealing with a regular pixel number
-  // but a number that has a weird ending, we need to convert it to pixels
-  // exclude left right for relativity
-
-  if (_RE_NUM_NO_PX.test(ret) && !RE_POS.test(name)) {
-    // Remember the original values
-    var style = elem.style;
-    var left = style[LEFT];
-    var rsLeft = elem[RUNTIME_STYLE][LEFT]; // prevent flashing of content
-
-    elem[RUNTIME_STYLE][LEFT] = elem[CURRENT_STYLE][LEFT]; // Put in the new values to get a computed value out
-
-    style[LEFT] = name === 'fontSize' ? '1em' : ret || 0;
-    ret = style.pixelLeft + PX; // Revert the changed values
-
-    style[LEFT] = left;
-    elem[RUNTIME_STYLE][LEFT] = rsLeft;
-  }
-
-  return ret === '' ? 'auto' : ret;
-}
-
-if (typeof window !== 'undefined') {
-  getComputedStyleX = window.getComputedStyle ? _getComputedStyle : _getComputedStyleIE;
-}
-
-function getOffsetDirection(dir, option) {
-  if (dir === 'left') {
-    return option.useCssRight ? 'right' : dir;
-  }
-
-  return option.useCssBottom ? 'bottom' : dir;
-}
-
-function oppositeOffsetDirection(dir) {
-  if (dir === 'left') {
-    return 'right';
-  } else if (dir === 'right') {
-    return 'left';
-  } else if (dir === 'top') {
-    return 'bottom';
-  } else if (dir === 'bottom') {
-    return 'top';
-  }
-} // 设置 elem 相对 elem.ownerDocument 的坐标
-
-
-function setLeftTop(elem, offset, option) {
-  // set position first, in-case top/left are set even on static elem
-  if (css(elem, 'position') === 'static') {
-    elem.style.position = 'relative';
-  }
-
-  var presetH = -999;
-  var presetV = -999;
-  var horizontalProperty = getOffsetDirection('left', option);
-  var verticalProperty = getOffsetDirection('top', option);
-  var oppositeHorizontalProperty = oppositeOffsetDirection(horizontalProperty);
-  var oppositeVerticalProperty = oppositeOffsetDirection(verticalProperty);
-
-  if (horizontalProperty !== 'left') {
-    presetH = 999;
-  }
-
-  if (verticalProperty !== 'top') {
-    presetV = 999;
-  }
-
-  var originalTransition = '';
-  var originalOffset = getOffset(elem);
-
-  if ('left' in offset || 'top' in offset) {
-    originalTransition = getTransitionProperty(elem) || '';
-    setTransitionProperty(elem, 'none');
-  }
-
-  if ('left' in offset) {
-    elem.style[oppositeHorizontalProperty] = '';
-    elem.style[horizontalProperty] = "".concat(presetH, "px");
-  }
-
-  if ('top' in offset) {
-    elem.style[oppositeVerticalProperty] = '';
-    elem.style[verticalProperty] = "".concat(presetV, "px");
-  } // force relayout
-
-
-  forceRelayout(elem);
-  var old = getOffset(elem);
-  var originalStyle = {};
-
-  for (var key in offset) {
-    if (offset.hasOwnProperty(key)) {
-      var dir = getOffsetDirection(key, option);
-      var preset = key === 'left' ? presetH : presetV;
-      var off = originalOffset[key] - old[key];
-
-      if (dir === key) {
-        originalStyle[dir] = preset + off;
-      } else {
-        originalStyle[dir] = preset - off;
-      }
-    }
-  }
-
-  css(elem, originalStyle); // force relayout
-
-  forceRelayout(elem);
-
-  if ('left' in offset || 'top' in offset) {
-    setTransitionProperty(elem, originalTransition);
-  }
-
-  var ret = {};
-
-  for (var _key in offset) {
-    if (offset.hasOwnProperty(_key)) {
-      var _dir = getOffsetDirection(_key, option);
-
-      var _off = offset[_key] - originalOffset[_key];
-
-      if (_key === _dir) {
-        ret[_dir] = originalStyle[_dir] + _off;
-      } else {
-        ret[_dir] = originalStyle[_dir] - _off;
-      }
-    }
-  }
-
-  css(elem, ret);
-}
-
-function setTransform$1(elem, offset) {
-  var originalOffset = getOffset(elem);
-  var originalXY = getTransformXY(elem);
-  var resultXY = {
-    x: originalXY.x,
-    y: originalXY.y
-  };
-
-  if ('left' in offset) {
-    resultXY.x = originalXY.x + offset.left - originalOffset.left;
-  }
-
-  if ('top' in offset) {
-    resultXY.y = originalXY.y + offset.top - originalOffset.top;
-  }
-
-  setTransformXY(elem, resultXY);
-}
-
-function setOffset(elem, offset, option) {
-  if (option.ignoreShake) {
-    var oriOffset = getOffset(elem);
-    var oLeft = oriOffset.left.toFixed(0);
-    var oTop = oriOffset.top.toFixed(0);
-    var tLeft = offset.left.toFixed(0);
-    var tTop = offset.top.toFixed(0);
-
-    if (oLeft === tLeft && oTop === tTop) {
-      return;
-    }
-  }
-
-  if (option.useCssRight || option.useCssBottom) {
-    setLeftTop(elem, offset, option);
-  } else if (option.useCssTransform && getTransformName() in document.body.style) {
-    setTransform$1(elem, offset);
-  } else {
-    setLeftTop(elem, offset, option);
-  }
-}
-
-function each(arr, fn) {
-  for (var i = 0; i < arr.length; i++) {
-    fn(arr[i]);
-  }
-}
-
-function isBorderBoxFn(elem) {
-  return getComputedStyleX(elem, 'boxSizing') === 'border-box';
-}
-
-var BOX_MODELS = ['margin', 'border', 'padding'];
-var CONTENT_INDEX = -1;
-var PADDING_INDEX = 2;
-var BORDER_INDEX = 1;
-var MARGIN_INDEX = 0;
-
-function swap(elem, options, callback) {
-  var old = {};
-  var style = elem.style;
-  var name; // Remember the old values, and insert the new ones
-
-  for (name in options) {
-    if (options.hasOwnProperty(name)) {
-      old[name] = style[name];
-      style[name] = options[name];
-    }
-  }
-
-  callback.call(elem); // Revert the old values
-
-  for (name in options) {
-    if (options.hasOwnProperty(name)) {
-      style[name] = old[name];
-    }
-  }
-}
-
-function getPBMWidth(elem, props, which) {
-  var value = 0;
-  var prop;
-  var j;
-  var i;
-
-  for (j = 0; j < props.length; j++) {
-    prop = props[j];
-
-    if (prop) {
-      for (i = 0; i < which.length; i++) {
-        var cssProp = void 0;
-
-        if (prop === 'border') {
-          cssProp = "".concat(prop).concat(which[i], "Width");
-        } else {
-          cssProp = prop + which[i];
-        }
-
-        value += parseFloat(getComputedStyleX(elem, cssProp)) || 0;
-      }
-    }
-  }
-
-  return value;
-}
-
-var domUtils = {
-  getParent: function getParent(element) {
-    var parent = element;
-
-    do {
-      if (parent.nodeType === 11 && parent.host) {
-        parent = parent.host;
-      } else {
-        parent = parent.parentNode;
-      }
-    } while (parent && parent.nodeType !== 1 && parent.nodeType !== 9);
-
-    return parent;
-  }
-};
-each(['Width', 'Height'], function (name) {
-  domUtils["doc".concat(name)] = function (refWin) {
-    var d = refWin.document;
-    return Math.max( // firefox chrome documentElement.scrollHeight< body.scrollHeight
-    // ie standard mode : documentElement.scrollHeight> body.scrollHeight
-    d.documentElement["scroll".concat(name)], // quirks : documentElement.scrollHeight 最大等于可视窗口多一点？
-    d.body["scroll".concat(name)], domUtils["viewport".concat(name)](d));
-  };
-
-  domUtils["viewport".concat(name)] = function (win) {
-    // pc browser includes scrollbar in window.innerWidth
-    var prop = "client".concat(name);
-    var doc = win.document;
-    var body = doc.body;
-    var documentElement = doc.documentElement;
-    var documentElementProp = documentElement[prop]; // 标准模式取 documentElement
-    // backcompat 取 body
-
-    return doc.compatMode === 'CSS1Compat' && documentElementProp || body && body[prop] || documentElementProp;
-  };
-});
-/*
- 得到元素的大小信息
- @param elem
- @param name
- @param {String} [extra]  'padding' : (css width) + padding
- 'border' : (css width) + padding + border
- 'margin' : (css width) + padding + border + margin
- */
-
-function getWH(elem, name, ex) {
-  var extra = ex;
-
-  if (isWindow(elem)) {
-    return name === 'width' ? domUtils.viewportWidth(elem) : domUtils.viewportHeight(elem);
-  } else if (elem.nodeType === 9) {
-    return name === 'width' ? domUtils.docWidth(elem) : domUtils.docHeight(elem);
-  }
-
-  var which = name === 'width' ? ['Left', 'Right'] : ['Top', 'Bottom'];
-  var borderBoxValue = name === 'width' ? elem.getBoundingClientRect().width : elem.getBoundingClientRect().height;
-  var isBorderBox = isBorderBoxFn(elem);
-  var cssBoxValue = 0;
-
-  if (borderBoxValue === null || borderBoxValue === undefined || borderBoxValue <= 0) {
-    borderBoxValue = undefined; // Fall back to computed then un computed css if necessary
-
-    cssBoxValue = getComputedStyleX(elem, name);
-
-    if (cssBoxValue === null || cssBoxValue === undefined || Number(cssBoxValue) < 0) {
-      cssBoxValue = elem.style[name] || 0;
-    } // Normalize '', auto, and prepare for extra
-
-
-    cssBoxValue = parseFloat(cssBoxValue) || 0;
-  }
-
-  if (extra === undefined) {
-    extra = isBorderBox ? BORDER_INDEX : CONTENT_INDEX;
-  }
-
-  var borderBoxValueOrIsBorderBox = borderBoxValue !== undefined || isBorderBox;
-  var val = borderBoxValue || cssBoxValue;
-
-  if (extra === CONTENT_INDEX) {
-    if (borderBoxValueOrIsBorderBox) {
-      return val - getPBMWidth(elem, ['border', 'padding'], which);
-    }
-
-    return cssBoxValue;
-  } else if (borderBoxValueOrIsBorderBox) {
-    if (extra === BORDER_INDEX) {
-      return val;
-    }
-
-    return val + (extra === PADDING_INDEX ? -getPBMWidth(elem, ['border'], which) : getPBMWidth(elem, ['margin'], which));
-  }
-
-  return cssBoxValue + getPBMWidth(elem, BOX_MODELS.slice(extra), which);
-}
-
-var cssShow = {
-  position: 'absolute',
-  visibility: 'hidden',
-  display: 'block'
-}; // fix #119 : https://github.com/kissyteam/kissy/issues/119
-
-function getWHIgnoreDisplay() {
-  for (var _len = arguments.length, args = new Array(_len), _key2 = 0; _key2 < _len; _key2++) {
-    args[_key2] = arguments[_key2];
-  }
-
-  var val;
-  var elem = args[0]; // in case elem is window
-  // elem.offsetWidth === undefined
-
-  if (elem.offsetWidth !== 0) {
-    val = getWH.apply(undefined, args);
-  } else {
-    swap(elem, cssShow, function () {
-      val = getWH.apply(undefined, args);
+function objectSpread2_objectSpread2(e) {
+  for (var r = 1; r < arguments.length; r++) {
+    var t = null != arguments[r] ? arguments[r] : {};
+    r % 2 ? esm_objectSpread2_ownKeys(Object(t), !0).forEach(function (r) {
+      esm_defineProperty_defineProperty(e, r, t[r]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : esm_objectSpread2_ownKeys(Object(t)).forEach(function (r) {
+      Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
     });
   }
-
-  return val;
+  return e;
 }
-
-each(['width', 'height'], function (name) {
-  var first = name.charAt(0).toUpperCase() + name.slice(1);
-
-  domUtils["outer".concat(first)] = function (el, includeMargin) {
-    return el && getWHIgnoreDisplay(el, name, includeMargin ? MARGIN_INDEX : BORDER_INDEX);
-  };
-
-  var which = name === 'width' ? ['Left', 'Right'] : ['Top', 'Bottom'];
-
-  domUtils[name] = function (elem, v) {
-    var val = v;
-
-    if (val !== undefined) {
-      if (elem) {
-        var isBorderBox = isBorderBoxFn(elem);
-
-        if (isBorderBox) {
-          val += getPBMWidth(elem, ['padding', 'border'], which);
-        }
-
-        return css(elem, name, val);
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js
+function arrayWithHoles_arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js
+function iterableToArrayLimit_iterableToArrayLimit(r, l) {
+  var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+  if (null != t) {
+    var e,
+      n,
+      i,
+      u,
+      a = [],
+      f = !0,
+      o = !1;
+    try {
+      if (i = (t = t.call(r)).next, 0 === l) {
+        if (Object(t) !== t) return;
+        f = !1;
+      } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0);
+    } catch (r) {
+      o = !0, n = r;
+    } finally {
+      try {
+        if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return;
+      } finally {
+        if (o) throw n;
       }
-
-      return undefined;
     }
+    return a;
+  }
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
+function arrayLikeToArray_arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+  return arr2;
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
 
-    return elem && getWHIgnoreDisplay(elem, name, CONTENT_INDEX);
-  };
-});
+function unsupportedIterableToArray_unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return arrayLikeToArray_arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray_arrayLikeToArray(o, minLen);
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/node_modules/@babel/runtime/helpers/esm/nonIterableRest.js
+function nonIterableRest_nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/node_modules/@babel/runtime/helpers/esm/slicedToArray.js
 
-function mix(to, from) {
-  for (var i in from) {
-    if (from.hasOwnProperty(i)) {
-      to[i] = from[i];
+
+
+
+function slicedToArray_slicedToArray(arr, i) {
+  return arrayWithHoles_arrayWithHoles(arr) || iterableToArrayLimit_iterableToArrayLimit(arr, i) || unsupportedIterableToArray_unsupportedIterableToArray(arr, i) || nonIterableRest_nonIterableRest();
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+function esm_objectWithoutPropertiesLoose_objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  for (var key in source) {
+    if (Object.prototype.hasOwnProperty.call(source, key)) {
+      if (excluded.indexOf(key) >= 0) continue;
+      target[key] = source[key];
     }
   }
-
-  return to;
+  return target;
 }
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js
 
-var utils = {
-  getWindow: function getWindow(node) {
-    if (node && node.document && node.setTimeout) {
-      return node;
+function objectWithoutProperties_objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = esm_objectWithoutPropertiesLoose_objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
     }
-
-    var doc = node.ownerDocument || node;
-    return doc.defaultView || doc.parentWindow;
-  },
-  getDocument: getDocument,
-  offset: function offset(el, value, option) {
-    if (typeof value !== 'undefined') {
-      setOffset(el, value, option || {});
-    } else {
-      return getOffset(el);
-    }
-  },
-  isWindow: isWindow,
-  each: each,
-  css: css,
-  clone: function clone(obj) {
-    var i;
-    var ret = {};
-
-    for (i in obj) {
-      if (obj.hasOwnProperty(i)) {
-        ret[i] = obj[i];
+  }
+  return target;
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/portal/node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js
+function esm_arrayWithHoles_arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/portal/node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js
+function esm_iterableToArrayLimit_iterableToArrayLimit(r, l) {
+  var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+  if (null != t) {
+    var e,
+      n,
+      i,
+      u,
+      a = [],
+      f = !0,
+      o = !1;
+    try {
+      if (i = (t = t.call(r)).next, 0 === l) {
+        if (Object(t) !== t) return;
+        f = !1;
+      } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0);
+    } catch (r) {
+      o = !0, n = r;
+    } finally {
+      try {
+        if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return;
+      } finally {
+        if (o) throw n;
       }
     }
+    return a;
+  }
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/portal/node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
+function esm_arrayLikeToArray_arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+  return arr2;
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/portal/node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
 
-    var overflow = obj.overflow;
+function esm_unsupportedIterableToArray_unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return esm_arrayLikeToArray_arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return esm_arrayLikeToArray_arrayLikeToArray(o, minLen);
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/portal/node_modules/@babel/runtime/helpers/esm/nonIterableRest.js
+function esm_nonIterableRest_nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/portal/node_modules/@babel/runtime/helpers/esm/slicedToArray.js
 
-    if (overflow) {
-      for (i in obj) {
-        if (obj.hasOwnProperty(i)) {
-          ret.overflow[i] = obj.overflow[i];
-        }
-      }
-    }
 
-    return ret;
-  },
-  mix: mix,
-  getWindowScrollLeft: function getWindowScrollLeft(w) {
-    return getScrollLeft(w);
-  },
-  getWindowScrollTop: function getWindowScrollTop(w) {
-    return getScrollTop(w);
-  },
-  merge: function merge() {
-    var ret = {};
 
-    for (var i = 0; i < arguments.length; i++) {
-      utils.mix(ret, i < 0 || arguments.length <= i ? undefined : arguments[i]);
-    }
 
-    return ret;
-  },
-  viewportWidth: 0,
-  viewportHeight: 0
-};
-mix(utils, domUtils);
+function esm_slicedToArray_slicedToArray(arr, i) {
+  return esm_arrayWithHoles_arrayWithHoles(arr) || esm_iterableToArrayLimit_iterableToArrayLimit(arr, i) || esm_unsupportedIterableToArray_unsupportedIterableToArray(arr, i) || esm_nonIterableRest_nonIterableRest();
+}
+;// CONCATENATED MODULE: ./node_modules/rc-util/es/Dom/canUseDom.js
+function canUseDom() {
+  return !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+}
+;// CONCATENATED MODULE: ./node_modules/rc-util/es/warning.js
+/* eslint-disable no-console */
+var warned = {};
+var preWarningFns = [];
 
 /**
- * 得到会导致元素显示不全的祖先元素
+ * Pre warning enable you to parse content before console.error.
+ * Modify to null will prevent warning.
  */
+var preMessage = function preMessage(fn) {
+  preWarningFns.push(fn);
+};
 
-var getParent = utils.getParent;
-
-function getOffsetParent(element) {
-  if (utils.isWindow(element) || element.nodeType === 9) {
-    return null;
-  } // ie 这个也不是完全可行
-
-  /*
-   <div style="width: 50px;height: 100px;overflow: hidden">
-   <div style="width: 50px;height: 100px;position: relative;" id="d6">
-   元素 6 高 100px 宽 50px<br/>
-   </div>
-   </div>
-   */
-  // element.offsetParent does the right thing in ie7 and below. Return parent with layout!
-  //  In other browsers it only includes elements with position absolute, relative or
-  // fixed, not elements with overflow set to auto or scroll.
-  //        if (UA.ie && ieMode < 8) {
-  //            return element.offsetParent;
-  //        }
-  // 统一的 offsetParent 方法
-
-
-  var doc = utils.getDocument(element);
-  var body = doc.body;
-  var parent;
-  var positionStyle = utils.css(element, 'position');
-  var skipStatic = positionStyle === 'fixed' || positionStyle === 'absolute';
-
-  if (!skipStatic) {
-    return element.nodeName.toLowerCase() === 'html' ? null : getParent(element);
-  }
-
-  for (parent = getParent(element); parent && parent !== body && parent.nodeType !== 9; parent = getParent(parent)) {
-    positionStyle = utils.css(parent, 'position');
-
-    if (positionStyle !== 'static') {
-      return parent;
-    }
-  }
-
-  return null;
+/**
+ * Warning if condition not match.
+ * @param valid Condition
+ * @param message Warning message
+ * @example
+ * ```js
+ * warning(false, 'some error'); // print some error
+ * warning(true, 'some error'); // print nothing
+ * warning(1 === 2, 'some error'); // print some error
+ * ```
+ */
+function warning_warning(valid, message) {
+  if (false) { var finalMessage; }
 }
 
-var getParent$1 = utils.getParent;
-function isAncestorFixed(element) {
-  if (utils.isWindow(element) || element.nodeType === 9) {
+/** @see Similar to {@link warning} */
+function note(valid, message) {
+  if (false) { var finalMessage; }
+}
+function resetWarned() {
+  warned = {};
+}
+function call(method, valid, message) {
+  if (!valid && !warned[message]) {
+    method(false, message);
+    warned[message] = true;
+  }
+}
+
+/** @see Same as {@link warning}, but only warn once for the same message */
+function warningOnce(valid, message) {
+  call(warning_warning, valid, message);
+}
+
+/** @see Same as {@link warning}, but only warn once for the same message */
+function noteOnce(valid, message) {
+  call(note, valid, message);
+}
+warningOnce.preMessage = preMessage;
+warningOnce.resetWarned = resetWarned;
+warningOnce.noteOnce = noteOnce;
+/* harmony default export */ var es_warning = ((/* unused pure expression or super */ null && (warningOnce)));
+;// CONCATENATED MODULE: ./node_modules/rc-util/node_modules/@babel/runtime/helpers/esm/typeof.js
+function typeof_typeof(o) {
+  "@babel/helpers - typeof";
+
+  return typeof_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, typeof_typeof(o);
+}
+// EXTERNAL MODULE: ./node_modules/rc-util/node_modules/react-is/index.js
+var rc_util_node_modules_react_is = __webpack_require__(11805);
+;// CONCATENATED MODULE: ./node_modules/rc-util/es/hooks/useMemo.js
+
+function useMemo_useMemo(getValue, condition, shouldUpdate) {
+  var cacheRef = react.useRef({});
+  if (!('value' in cacheRef.current) || shouldUpdate(cacheRef.current.condition, condition)) {
+    cacheRef.current.value = getValue();
+    cacheRef.current.condition = condition;
+  }
+  return cacheRef.current.value;
+}
+;// CONCATENATED MODULE: ./node_modules/rc-util/es/ref.js
+
+
+
+
+var fillRef = function fillRef(ref, node) {
+  if (typeof ref === 'function') {
+    ref(node);
+  } else if (typeof_typeof(ref) === 'object' && ref && 'current' in ref) {
+    ref.current = node;
+  }
+};
+
+/**
+ * Merge refs into one ref function to support ref passing.
+ */
+var composeRef = function composeRef() {
+  for (var _len = arguments.length, refs = new Array(_len), _key = 0; _key < _len; _key++) {
+    refs[_key] = arguments[_key];
+  }
+  var refList = refs.filter(Boolean);
+  if (refList.length <= 1) {
+    return refList[0];
+  }
+  return function (node) {
+    refs.forEach(function (ref) {
+      fillRef(ref, node);
+    });
+  };
+};
+var useComposeRef = function useComposeRef() {
+  for (var _len2 = arguments.length, refs = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+    refs[_key2] = arguments[_key2];
+  }
+  return useMemo_useMemo(function () {
+    return composeRef.apply(void 0, refs);
+  }, refs, function (prev, next) {
+    return prev.length !== next.length || prev.every(function (ref, i) {
+      return ref !== next[i];
+    });
+  });
+};
+var supportRef = function supportRef(nodeOrComponent) {
+  var _type$prototype, _nodeOrComponent$prot;
+  var type = (0,rc_util_node_modules_react_is.isMemo)(nodeOrComponent) ? nodeOrComponent.type.type : nodeOrComponent.type;
+
+  // Function component node
+  if (typeof type === 'function' && !((_type$prototype = type.prototype) !== null && _type$prototype !== void 0 && _type$prototype.render) && type.$$typeof !== rc_util_node_modules_react_is.ForwardRef) {
     return false;
   }
 
-  var doc = utils.getDocument(element);
-  var body = doc.body;
-  var parent = null;
+  // Class component
+  if (typeof nodeOrComponent === 'function' && !((_nodeOrComponent$prot = nodeOrComponent.prototype) !== null && _nodeOrComponent$prot !== void 0 && _nodeOrComponent$prot.render) && nodeOrComponent.$$typeof !== rc_util_node_modules_react_is.ForwardRef) {
+    return false;
+  }
+  return true;
+};
+var supportNodeRef = function supportNodeRef(node) {
+  if (! /*#__PURE__*/isValidElement(node)) {
+    return false;
+  }
+  if (isFragment(node)) {
+    return false;
+  }
+  return supportRef(node);
+};
+;// CONCATENATED MODULE: ./node_modules/@rc-component/portal/es/Context.js
 
-  for (parent = getParent$1(element); // 修复元素位于 document.documentElement 下导致崩溃问题
-  parent && parent !== body && parent !== doc; parent = getParent$1(parent)) {
-    var positionStyle = utils.css(parent, 'position');
+var OrderContext = /*#__PURE__*/react.createContext(null);
+/* harmony default export */ var es_Context = (OrderContext);
+;// CONCATENATED MODULE: ./node_modules/@rc-component/portal/node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js
 
-    if (positionStyle === 'fixed') {
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return esm_arrayLikeToArray_arrayLikeToArray(arr);
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/portal/node_modules/@babel/runtime/helpers/esm/iterableToArray.js
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/portal/node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/portal/node_modules/@babel/runtime/helpers/esm/toConsumableArray.js
+
+
+
+
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || esm_unsupportedIterableToArray_unsupportedIterableToArray(arr) || _nonIterableSpread();
+}
+;// CONCATENATED MODULE: ./node_modules/rc-util/es/hooks/useLayoutEffect.js
+
+
+
+/**
+ * Wrap `React.useLayoutEffect` which will not throw warning message in test env
+ */
+var useInternalLayoutEffect =  true && canUseDom() ? react.useLayoutEffect : react.useEffect;
+var useLayoutEffect = function useLayoutEffect(callback, deps) {
+  var firstMountRef = react.useRef(true);
+  useInternalLayoutEffect(function () {
+    return callback(firstMountRef.current);
+  }, deps);
+
+  // We tell react that first mount has passed
+  useInternalLayoutEffect(function () {
+    firstMountRef.current = false;
+    return function () {
+      firstMountRef.current = true;
+    };
+  }, []);
+};
+var useLayoutUpdateEffect = function useLayoutUpdateEffect(callback, deps) {
+  useLayoutEffect(function (firstMount) {
+    if (!firstMount) {
+      return callback();
+    }
+  }, deps);
+};
+/* harmony default export */ var hooks_useLayoutEffect = (useLayoutEffect);
+;// CONCATENATED MODULE: ./node_modules/@rc-component/portal/es/useDom.js
+
+
+
+
+
+
+var EMPTY_LIST = [];
+
+/**
+ * Will add `div` to document. Nest call will keep order
+ * @param render Render DOM in document
+ */
+function useDom(render, debug) {
+  var _React$useState = react.useState(function () {
+      if (!canUseDom()) {
+        return null;
+      }
+      var defaultEle = document.createElement('div');
+      if (false) {}
+      return defaultEle;
+    }),
+    _React$useState2 = esm_slicedToArray_slicedToArray(_React$useState, 1),
+    ele = _React$useState2[0];
+
+  // ========================== Order ==========================
+  var appendedRef = react.useRef(false);
+  var queueCreate = react.useContext(es_Context);
+  var _React$useState3 = react.useState(EMPTY_LIST),
+    _React$useState4 = esm_slicedToArray_slicedToArray(_React$useState3, 2),
+    queue = _React$useState4[0],
+    setQueue = _React$useState4[1];
+  var mergedQueueCreate = queueCreate || (appendedRef.current ? undefined : function (appendFn) {
+    setQueue(function (origin) {
+      var newQueue = [appendFn].concat(_toConsumableArray(origin));
+      return newQueue;
+    });
+  });
+
+  // =========================== DOM ===========================
+  function append() {
+    if (!ele.parentElement) {
+      document.body.appendChild(ele);
+    }
+    appendedRef.current = true;
+  }
+  function cleanup() {
+    var _ele$parentElement;
+    (_ele$parentElement = ele.parentElement) === null || _ele$parentElement === void 0 ? void 0 : _ele$parentElement.removeChild(ele);
+    appendedRef.current = false;
+  }
+  hooks_useLayoutEffect(function () {
+    if (render) {
+      if (queueCreate) {
+        queueCreate(append);
+      } else {
+        append();
+      }
+    } else {
+      cleanup();
+    }
+    return cleanup;
+  }, [render]);
+  hooks_useLayoutEffect(function () {
+    if (queue.length) {
+      queue.forEach(function (appendFn) {
+        return appendFn();
+      });
+      setQueue(EMPTY_LIST);
+    }
+  }, [queue]);
+  return [ele, mergedQueueCreate];
+}
+;// CONCATENATED MODULE: ./node_modules/rc-util/node_modules/@babel/runtime/helpers/esm/toPrimitive.js
+
+function toPrimitive_toPrimitive(t, r) {
+  if ("object" != typeof_typeof(t) || !t) return t;
+  var e = t[Symbol.toPrimitive];
+  if (void 0 !== e) {
+    var i = e.call(t, r || "default");
+    if ("object" != typeof_typeof(i)) return i;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return ("string" === r ? String : Number)(t);
+}
+;// CONCATENATED MODULE: ./node_modules/rc-util/node_modules/@babel/runtime/helpers/esm/toPropertyKey.js
+
+
+function toPropertyKey_toPropertyKey(t) {
+  var i = toPrimitive_toPrimitive(t, "string");
+  return "symbol" == typeof_typeof(i) ? i : i + "";
+}
+;// CONCATENATED MODULE: ./node_modules/rc-util/node_modules/@babel/runtime/helpers/esm/defineProperty.js
+
+function helpers_esm_defineProperty_defineProperty(obj, key, value) {
+  key = toPropertyKey_toPropertyKey(key);
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+;// CONCATENATED MODULE: ./node_modules/rc-util/node_modules/@babel/runtime/helpers/esm/objectSpread2.js
+
+function helpers_esm_objectSpread2_ownKeys(e, r) {
+  var t = Object.keys(e);
+  if (Object.getOwnPropertySymbols) {
+    var o = Object.getOwnPropertySymbols(e);
+    r && (o = o.filter(function (r) {
+      return Object.getOwnPropertyDescriptor(e, r).enumerable;
+    })), t.push.apply(t, o);
+  }
+  return t;
+}
+function esm_objectSpread2_objectSpread2(e) {
+  for (var r = 1; r < arguments.length; r++) {
+    var t = null != arguments[r] ? arguments[r] : {};
+    r % 2 ? helpers_esm_objectSpread2_ownKeys(Object(t), !0).forEach(function (r) {
+      helpers_esm_defineProperty_defineProperty(e, r, t[r]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : helpers_esm_objectSpread2_ownKeys(Object(t)).forEach(function (r) {
+      Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
+    });
+  }
+  return e;
+}
+;// CONCATENATED MODULE: ./node_modules/rc-util/es/Dom/contains.js
+function contains(root, n) {
+  if (!root) {
+    return false;
+  }
+
+  // Use native if support
+  if (root.contains) {
+    return root.contains(n);
+  }
+
+  // `document.contains` not support with IE11
+  var node = n;
+  while (node) {
+    if (node === root) {
       return true;
     }
+    node = node.parentNode;
   }
-
   return false;
 }
+;// CONCATENATED MODULE: ./node_modules/rc-util/es/Dom/dynamicCSS.js
+
+
+
+var APPEND_ORDER = 'data-rc-order';
+var APPEND_PRIORITY = 'data-rc-priority';
+var MARK_KEY = "rc-util-key";
+var containerCache = new Map();
+function getMark() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+    mark = _ref.mark;
+  if (mark) {
+    return mark.startsWith('data-') ? mark : "data-".concat(mark);
+  }
+  return MARK_KEY;
+}
+function getContainer(option) {
+  if (option.attachTo) {
+    return option.attachTo;
+  }
+  var head = document.querySelector('head');
+  return head || document.body;
+}
+function getOrder(prepend) {
+  if (prepend === 'queue') {
+    return 'prependQueue';
+  }
+  return prepend ? 'prepend' : 'append';
+}
 
 /**
- * 获得元素的显示部分的区域
+ * Find style which inject by rc-util
  */
+function findStyles(container) {
+  return Array.from((containerCache.get(container) || container).children).filter(function (node) {
+    return node.tagName === 'STYLE';
+  });
+}
+function injectCSS(css) {
+  var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  if (!canUseDom()) {
+    return null;
+  }
+  var csp = option.csp,
+    prepend = option.prepend,
+    _option$priority = option.priority,
+    priority = _option$priority === void 0 ? 0 : _option$priority;
+  var mergedOrder = getOrder(prepend);
+  var isPrependQueue = mergedOrder === 'prependQueue';
+  var styleNode = document.createElement('style');
+  styleNode.setAttribute(APPEND_ORDER, mergedOrder);
+  if (isPrependQueue && priority) {
+    styleNode.setAttribute(APPEND_PRIORITY, "".concat(priority));
+  }
+  if (csp !== null && csp !== void 0 && csp.nonce) {
+    styleNode.nonce = csp === null || csp === void 0 ? void 0 : csp.nonce;
+  }
+  styleNode.innerHTML = css;
+  var container = getContainer(option);
+  var firstChild = container.firstChild;
+  if (prepend) {
+    // If is queue `prepend`, it will prepend first style and then append rest style
+    if (isPrependQueue) {
+      var existStyle = (option.styles || findStyles(container)).filter(function (node) {
+        // Ignore style which not injected by rc-util with prepend
+        if (!['prepend', 'prependQueue'].includes(node.getAttribute(APPEND_ORDER))) {
+          return false;
+        }
 
-function getVisibleRectForElement(element, alwaysByViewport) {
-  var visibleRect = {
-    left: 0,
-    right: Infinity,
-    top: 0,
-    bottom: Infinity
-  };
-  var el = getOffsetParent(element);
-  var doc = utils.getDocument(element);
-  var win = doc.defaultView || doc.parentWindow;
-  var body = doc.body;
-  var documentElement = doc.documentElement; // Determine the size of the visible rect by climbing the dom accounting for
-  // all scrollable containers.
-
-  while (el) {
-    // clientWidth is zero for inline block elements in ie.
-    if ((navigator.userAgent.indexOf('MSIE') === -1 || el.clientWidth !== 0) && // body may have overflow set on it, yet we still get the entire
-    // viewport. In some browsers, el.offsetParent may be
-    // document.documentElement, so check for that too.
-    el !== body && el !== documentElement && utils.css(el, 'overflow') !== 'visible') {
-      var pos = utils.offset(el); // add border
-
-      pos.left += el.clientLeft;
-      pos.top += el.clientTop;
-      visibleRect.top = Math.max(visibleRect.top, pos.top);
-      visibleRect.right = Math.min(visibleRect.right, // consider area without scrollBar
-      pos.left + el.clientWidth);
-      visibleRect.bottom = Math.min(visibleRect.bottom, pos.top + el.clientHeight);
-      visibleRect.left = Math.max(visibleRect.left, pos.left);
-    } else if (el === body || el === documentElement) {
-      break;
+        // Ignore style which priority less then new style
+        var nodePriority = Number(node.getAttribute(APPEND_PRIORITY) || 0);
+        return priority >= nodePriority;
+      });
+      if (existStyle.length) {
+        container.insertBefore(styleNode, existStyle[existStyle.length - 1].nextSibling);
+        return styleNode;
+      }
     }
 
-    el = getOffsetParent(el);
-  } // Set element position to fixed
-  // make sure absolute element itself don't affect it's visible area
-  // https://github.com/ant-design/ant-design/issues/7601
+    // Use `insertBefore` as `prepend`
+    container.insertBefore(styleNode, firstChild);
+  } else {
+    container.appendChild(styleNode);
+  }
+  return styleNode;
+}
+function findExistNode(key) {
+  var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var container = getContainer(option);
+  return (option.styles || findStyles(container)).find(function (node) {
+    return node.getAttribute(getMark(option)) === key;
+  });
+}
+function removeCSS(key) {
+  var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var existNode = findExistNode(key, option);
+  if (existNode) {
+    var container = getContainer(option);
+    container.removeChild(existNode);
+  }
+}
 
+/**
+ * qiankun will inject `appendChild` to insert into other
+ */
+function syncRealContainer(container, option) {
+  var cachedRealContainer = containerCache.get(container);
 
-  var originalPosition = null;
+  // Find real container when not cached or cached container removed
+  if (!cachedRealContainer || !contains(document, cachedRealContainer)) {
+    var placeholderStyle = injectCSS('', option);
+    var parentNode = placeholderStyle.parentNode;
+    containerCache.set(container, parentNode);
+    container.removeChild(placeholderStyle);
+  }
+}
 
-  if (!utils.isWindow(element) && element.nodeType !== 9) {
-    originalPosition = element.style.position;
-    var position = utils.css(element, 'position');
+/**
+ * manually clear container cache to avoid global cache in unit testes
+ */
+function clearContainerCache() {
+  containerCache.clear();
+}
+function updateCSS(css, key) {
+  var originOption = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+  var container = getContainer(originOption);
+  var styles = findStyles(container);
+  var option = esm_objectSpread2_objectSpread2(esm_objectSpread2_objectSpread2({}, originOption), {}, {
+    styles: styles
+  });
 
-    if (position === 'absolute') {
-      element.style.position = 'fixed';
+  // Sync real parent
+  syncRealContainer(container, option);
+  var existNode = findExistNode(key, option);
+  if (existNode) {
+    var _option$csp, _option$csp2;
+    if ((_option$csp = option.csp) !== null && _option$csp !== void 0 && _option$csp.nonce && existNode.nonce !== ((_option$csp2 = option.csp) === null || _option$csp2 === void 0 ? void 0 : _option$csp2.nonce)) {
+      var _option$csp3;
+      existNode.nonce = (_option$csp3 = option.csp) === null || _option$csp3 === void 0 ? void 0 : _option$csp3.nonce;
+    }
+    if (existNode.innerHTML !== css) {
+      existNode.innerHTML = css;
+    }
+    return existNode;
+  }
+  var newNode = injectCSS(css, option);
+  newNode.setAttribute(getMark(option), key);
+  return newNode;
+}
+;// CONCATENATED MODULE: ./node_modules/rc-util/es/getScrollBarSize.js
+/* eslint-disable no-param-reassign */
+
+var cached;
+function measureScrollbarSize(ele) {
+  var randomId = "rc-scrollbar-measure-".concat(Math.random().toString(36).substring(7));
+  var measureEle = document.createElement('div');
+  measureEle.id = randomId;
+
+  // Create Style
+  var measureStyle = measureEle.style;
+  measureStyle.position = 'absolute';
+  measureStyle.left = '0';
+  measureStyle.top = '0';
+  measureStyle.width = '100px';
+  measureStyle.height = '100px';
+  measureStyle.overflow = 'scroll';
+
+  // Clone Style if needed
+  var fallbackWidth;
+  var fallbackHeight;
+  if (ele) {
+    var targetStyle = getComputedStyle(ele);
+    measureStyle.scrollbarColor = targetStyle.scrollbarColor;
+    measureStyle.scrollbarWidth = targetStyle.scrollbarWidth;
+
+    // Set Webkit style
+    var webkitScrollbarStyle = getComputedStyle(ele, '::-webkit-scrollbar');
+    var width = parseInt(webkitScrollbarStyle.width, 10);
+    var height = parseInt(webkitScrollbarStyle.height, 10);
+
+    // Try wrap to handle CSP case
+    try {
+      var widthStyle = width ? "width: ".concat(webkitScrollbarStyle.width, ";") : '';
+      var heightStyle = height ? "height: ".concat(webkitScrollbarStyle.height, ";") : '';
+      updateCSS("\n#".concat(randomId, "::-webkit-scrollbar {\n").concat(widthStyle, "\n").concat(heightStyle, "\n}"), randomId);
+    } catch (e) {
+      // Can't wrap, just log error
+      console.error(e);
+
+      // Get from style directly
+      fallbackWidth = width;
+      fallbackHeight = height;
     }
   }
+  document.body.appendChild(measureEle);
 
-  var scrollX = utils.getWindowScrollLeft(win);
-  var scrollY = utils.getWindowScrollTop(win);
-  var viewportWidth = utils.viewportWidth(win);
-  var viewportHeight = utils.viewportHeight(win);
-  var documentWidth = documentElement.scrollWidth;
-  var documentHeight = documentElement.scrollHeight; // scrollXXX on html is sync with body which means overflow: hidden on body gets wrong scrollXXX.
-  // We should cut this ourself.
+  // Measure. Get fallback style if provided
+  var scrollWidth = ele && fallbackWidth && !isNaN(fallbackWidth) ? fallbackWidth : measureEle.offsetWidth - measureEle.clientWidth;
+  var scrollHeight = ele && fallbackHeight && !isNaN(fallbackHeight) ? fallbackHeight : measureEle.offsetHeight - measureEle.clientHeight;
 
-  var bodyStyle = window.getComputedStyle(body);
-
-  if (bodyStyle.overflowX === 'hidden') {
-    documentWidth = win.innerWidth;
-  }
-
-  if (bodyStyle.overflowY === 'hidden') {
-    documentHeight = win.innerHeight;
-  } // Reset element position after calculate the visible area
-
-
-  if (element.style) {
-    element.style.position = originalPosition;
-  }
-
-  if (alwaysByViewport || isAncestorFixed(element)) {
-    // Clip by viewport's size.
-    visibleRect.left = Math.max(visibleRect.left, scrollX);
-    visibleRect.top = Math.max(visibleRect.top, scrollY);
-    visibleRect.right = Math.min(visibleRect.right, scrollX + viewportWidth);
-    visibleRect.bottom = Math.min(visibleRect.bottom, scrollY + viewportHeight);
-  } else {
-    // Clip by document's size.
-    var maxVisibleWidth = Math.max(documentWidth, scrollX + viewportWidth);
-    visibleRect.right = Math.min(visibleRect.right, maxVisibleWidth);
-    var maxVisibleHeight = Math.max(documentHeight, scrollY + viewportHeight);
-    visibleRect.bottom = Math.min(visibleRect.bottom, maxVisibleHeight);
-  }
-
-  return visibleRect.top >= 0 && visibleRect.left >= 0 && visibleRect.bottom > visibleRect.top && visibleRect.right > visibleRect.left ? visibleRect : null;
-}
-
-function adjustForViewport(elFuturePos, elRegion, visibleRect, overflow) {
-  var pos = utils.clone(elFuturePos);
-  var size = {
-    width: elRegion.width,
-    height: elRegion.height
+  // Clean up
+  document.body.removeChild(measureEle);
+  removeCSS(randomId);
+  return {
+    width: scrollWidth,
+    height: scrollHeight
   };
-
-  if (overflow.adjustX && pos.left < visibleRect.left) {
-    pos.left = visibleRect.left;
-  } // Left edge inside and right edge outside viewport, try to resize it.
-
-
-  if (overflow.resizeWidth && pos.left >= visibleRect.left && pos.left + size.width > visibleRect.right) {
-    size.width -= pos.left + size.width - visibleRect.right;
-  } // Right edge outside viewport, try to move it.
-
-
-  if (overflow.adjustX && pos.left + size.width > visibleRect.right) {
-    // 保证左边界和可视区域左边界对齐
-    pos.left = Math.max(visibleRect.right - size.width, visibleRect.left);
-  } // Top edge outside viewport, try to move it.
-
-
-  if (overflow.adjustY && pos.top < visibleRect.top) {
-    pos.top = visibleRect.top;
-  } // Top edge inside and bottom edge outside viewport, try to resize it.
-
-
-  if (overflow.resizeHeight && pos.top >= visibleRect.top && pos.top + size.height > visibleRect.bottom) {
-    size.height -= pos.top + size.height - visibleRect.bottom;
-  } // Bottom edge outside viewport, try to move it.
-
-
-  if (overflow.adjustY && pos.top + size.height > visibleRect.bottom) {
-    // 保证上边界和可视区域上边界对齐
-    pos.top = Math.max(visibleRect.bottom - size.height, visibleRect.top);
-  }
-
-  return utils.mix(pos, size);
 }
-
-function getRegion(node) {
-  var offset;
-  var w;
-  var h;
-
-  if (!utils.isWindow(node) && node.nodeType !== 9) {
-    offset = utils.offset(node);
-    w = utils.outerWidth(node);
-    h = utils.outerHeight(node);
-  } else {
-    var win = utils.getWindow(node);
-    offset = {
-      left: utils.getWindowScrollLeft(win),
-      top: utils.getWindowScrollTop(win)
+function getScrollBarSize(fresh) {
+  if (typeof document === 'undefined') {
+    return 0;
+  }
+  if (fresh || cached === undefined) {
+    cached = measureScrollbarSize();
+  }
+  return cached.width;
+}
+function getTargetScrollBarSize(target) {
+  if (typeof document === 'undefined' || !target || !(target instanceof Element)) {
+    return {
+      width: 0,
+      height: 0
     };
-    w = utils.viewportWidth(win);
-    h = utils.viewportHeight(win);
   }
-
-  offset.width = w;
-  offset.height = h;
-  return offset;
+  return measureScrollbarSize(target);
 }
-
+;// CONCATENATED MODULE: ./node_modules/@rc-component/portal/es/util.js
 /**
- * 获取 node 上的 align 对齐点 相对于页面的坐标
+ * Test usage export. Do not use in your production
  */
-function getAlignOffset(region, align) {
-  var V = align.charAt(0);
-  var H = align.charAt(1);
-  var w = region.width;
-  var h = region.height;
-  var x = region.left;
-  var y = region.top;
+function isBodyOverflowing() {
+  return document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight) && window.innerWidth > document.body.offsetWidth;
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/portal/es/useScrollLocker.js
 
-  if (V === 'c') {
-    y += h / 2;
-  } else if (V === 'b') {
-    y += h;
+
+
+
+
+
+var UNIQUE_ID = "rc-util-locker-".concat(Date.now());
+var uuid = 0;
+function useScrollLocker(lock) {
+  var mergedLock = !!lock;
+  var _React$useState = react.useState(function () {
+      uuid += 1;
+      return "".concat(UNIQUE_ID, "_").concat(uuid);
+    }),
+    _React$useState2 = esm_slicedToArray_slicedToArray(_React$useState, 1),
+    id = _React$useState2[0];
+  hooks_useLayoutEffect(function () {
+    if (mergedLock) {
+      var scrollbarSize = getTargetScrollBarSize(document.body).width;
+      var isOverflow = isBodyOverflowing();
+      updateCSS("\nhtml body {\n  overflow-y: hidden;\n  ".concat(isOverflow ? "width: calc(100% - ".concat(scrollbarSize, "px);") : '', "\n}"), id);
+    } else {
+      removeCSS(id);
+    }
+    return function () {
+      removeCSS(id);
+    };
+  }, [mergedLock, id]);
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/portal/es/mock.js
+var inline = false;
+function inlineMock(nextInline) {
+  if (typeof nextInline === 'boolean') {
+    inline = nextInline;
+  }
+  return inline;
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/portal/es/Portal.js
+
+
+
+
+
+
+
+
+
+
+var getPortalContainer = function getPortalContainer(getContainer) {
+  if (getContainer === false) {
+    return false;
+  }
+  if (!canUseDom() || !getContainer) {
+    return null;
+  }
+  if (typeof getContainer === 'string') {
+    return document.querySelector(getContainer);
+  }
+  if (typeof getContainer === 'function') {
+    return getContainer();
+  }
+  return getContainer;
+};
+var Portal = /*#__PURE__*/react.forwardRef(function (props, ref) {
+  var open = props.open,
+    autoLock = props.autoLock,
+    getContainer = props.getContainer,
+    debug = props.debug,
+    _props$autoDestroy = props.autoDestroy,
+    autoDestroy = _props$autoDestroy === void 0 ? true : _props$autoDestroy,
+    children = props.children;
+  var _React$useState = react.useState(open),
+    _React$useState2 = esm_slicedToArray_slicedToArray(_React$useState, 2),
+    shouldRender = _React$useState2[0],
+    setShouldRender = _React$useState2[1];
+  var mergedRender = shouldRender || open;
+
+  // ========================= Warning =========================
+  if (false) {}
+
+  // ====================== Should Render ======================
+  react.useEffect(function () {
+    if (autoDestroy || open) {
+      setShouldRender(open);
+    }
+  }, [open, autoDestroy]);
+
+  // ======================== Container ========================
+  var _React$useState3 = react.useState(function () {
+      return getPortalContainer(getContainer);
+    }),
+    _React$useState4 = esm_slicedToArray_slicedToArray(_React$useState3, 2),
+    innerContainer = _React$useState4[0],
+    setInnerContainer = _React$useState4[1];
+  react.useEffect(function () {
+    var customizeContainer = getPortalContainer(getContainer);
+
+    // Tell component that we check this in effect which is safe to be `null`
+    setInnerContainer(customizeContainer !== null && customizeContainer !== void 0 ? customizeContainer : null);
+  });
+  var _useDom = useDom(mergedRender && !innerContainer, debug),
+    _useDom2 = esm_slicedToArray_slicedToArray(_useDom, 2),
+    defaultContainer = _useDom2[0],
+    queueCreate = _useDom2[1];
+  var mergedContainer = innerContainer !== null && innerContainer !== void 0 ? innerContainer : defaultContainer;
+
+  // ========================= Locker ==========================
+  useScrollLocker(autoLock && open && canUseDom() && (mergedContainer === defaultContainer || mergedContainer === document.body));
+
+  // =========================== Ref ===========================
+  var childRef = null;
+  if (children && supportRef(children) && ref) {
+    var _ref = children;
+    childRef = _ref.ref;
+  }
+  var mergedRef = useComposeRef(childRef, ref);
+
+  // ========================= Render ==========================
+  // Do not render when nothing need render
+  // When innerContainer is `undefined`, it may not ready since user use ref in the same render
+  if (!mergedRender || !canUseDom() || innerContainer === undefined) {
+    return null;
   }
 
-  if (H === 'c') {
-    x += w / 2;
-  } else if (H === 'r') {
-    x += w;
+  // Render inline
+  var renderInline = mergedContainer === false || inlineMock();
+  var reffedChildren = children;
+  if (ref) {
+    reffedChildren = /*#__PURE__*/react.cloneElement(children, {
+      ref: mergedRef
+    });
   }
+  return /*#__PURE__*/react.createElement(es_Context.Provider, {
+    value: queueCreate
+  }, renderInline ? reffedChildren : /*#__PURE__*/(0,react_dom.createPortal)(reffedChildren, mergedContainer));
+});
+if (false) {}
+/* harmony default export */ var es_Portal = (Portal);
+;// CONCATENATED MODULE: ./node_modules/@rc-component/portal/es/index.js
 
-  return {
-    left: x,
-    top: y
+
+
+/* harmony default export */ var es = (es_Portal);
+// EXTERNAL MODULE: ./node_modules/@rc-component/trigger/node_modules/classnames/index.js
+var node_modules_classnames = __webpack_require__(68387);
+var node_modules_classnames_default = /*#__PURE__*/__webpack_require__.n(node_modules_classnames);
+;// CONCATENATED MODULE: ./node_modules/rc-resize-observer/node_modules/@babel/runtime/helpers/esm/extends.js
+function esm_extends_extends() {
+  esm_extends_extends = Object.assign ? Object.assign.bind() : function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
   };
+  return esm_extends_extends.apply(this, arguments);
 }
+;// CONCATENATED MODULE: ./node_modules/rc-util/es/Children/toArray.js
 
-function getElFuturePos(elRegion, refNodeRegion, points, offset, targetOffset) {
-  var p1 = getAlignOffset(refNodeRegion, points[1]);
-  var p2 = getAlignOffset(elRegion, points[0]);
-  var diff = [p2.left - p1.left, p2.top - p1.top];
-  return {
-    left: Math.round(elRegion.left - diff[0] + offset[0] - targetOffset[0]),
-    top: Math.round(elRegion.top - diff[1] + offset[1] - targetOffset[1])
-  };
-}
 
-/**
- * align dom node flexibly
- * @author yiminghe@gmail.com
- */
-
-function isFailX(elFuturePos, elRegion, visibleRect) {
-  return elFuturePos.left < visibleRect.left || elFuturePos.left + elRegion.width > visibleRect.right;
-}
-
-function isFailY(elFuturePos, elRegion, visibleRect) {
-  return elFuturePos.top < visibleRect.top || elFuturePos.top + elRegion.height > visibleRect.bottom;
-}
-
-function isCompleteFailX(elFuturePos, elRegion, visibleRect) {
-  return elFuturePos.left > visibleRect.right || elFuturePos.left + elRegion.width < visibleRect.left;
-}
-
-function isCompleteFailY(elFuturePos, elRegion, visibleRect) {
-  return elFuturePos.top > visibleRect.bottom || elFuturePos.top + elRegion.height < visibleRect.top;
-}
-
-function flip(points, reg, map) {
+function toArray(children) {
+  var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   var ret = [];
-  utils.each(points, function (p) {
-    ret.push(p.replace(reg, function (m) {
-      return map[m];
-    }));
+  react.Children.forEach(children, function (child) {
+    if ((child === undefined || child === null) && !option.keepEmpty) {
+      return;
+    }
+    if (Array.isArray(child)) {
+      ret = ret.concat(toArray(child));
+    } else if ((0,rc_util_node_modules_react_is.isFragment)(child) && child.props) {
+      ret = ret.concat(toArray(child.props.children, option));
+    } else {
+      ret.push(child);
+    }
   });
   return ret;
 }
+;// CONCATENATED MODULE: ./node_modules/rc-resize-observer/node_modules/@babel/runtime/helpers/esm/typeof.js
+function esm_typeof_typeof(obj) {
+  "@babel/helpers - typeof";
 
-function flipOffset(offset, index) {
-  offset[index] = -offset[index];
-  return offset;
+  return esm_typeof_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  }, esm_typeof_typeof(obj);
 }
+;// CONCATENATED MODULE: ./node_modules/rc-resize-observer/node_modules/@babel/runtime/helpers/esm/toPrimitive.js
 
-function convertOffset(str, offsetLen) {
-  var n;
-
-  if (/%$/.test(str)) {
-    n = parseInt(str.substring(0, str.length - 1), 10) / 100 * offsetLen;
-  } else {
-    n = parseInt(str, 10);
+function _toPrimitive(input, hint) {
+  if (esm_typeof_typeof(input) !== "object" || input === null) return input;
+  var prim = input[Symbol.toPrimitive];
+  if (prim !== undefined) {
+    var res = prim.call(input, hint || "default");
+    if (esm_typeof_typeof(res) !== "object") return res;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
   }
+  return (hint === "string" ? String : Number)(input);
+}
+;// CONCATENATED MODULE: ./node_modules/rc-resize-observer/node_modules/@babel/runtime/helpers/esm/toPropertyKey.js
 
-  return n || 0;
+
+function _toPropertyKey(arg) {
+  var key = _toPrimitive(arg, "string");
+  return esm_typeof_typeof(key) === "symbol" ? key : String(key);
+}
+;// CONCATENATED MODULE: ./node_modules/rc-resize-observer/node_modules/@babel/runtime/helpers/esm/defineProperty.js
+
+function runtime_helpers_esm_defineProperty_defineProperty(obj, key, value) {
+  key = _toPropertyKey(key);
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+;// CONCATENATED MODULE: ./node_modules/rc-resize-observer/node_modules/@babel/runtime/helpers/esm/objectSpread2.js
+
+function runtime_helpers_esm_objectSpread2_ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    enumerableOnly && (symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    })), keys.push.apply(keys, symbols);
+  }
+  return keys;
+}
+function helpers_esm_objectSpread2_objectSpread2(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = null != arguments[i] ? arguments[i] : {};
+    i % 2 ? runtime_helpers_esm_objectSpread2_ownKeys(Object(source), !0).forEach(function (key) {
+      runtime_helpers_esm_defineProperty_defineProperty(target, key, source[key]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : runtime_helpers_esm_objectSpread2_ownKeys(Object(source)).forEach(function (key) {
+      Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+    });
+  }
+  return target;
+}
+;// CONCATENATED MODULE: ./node_modules/rc-util/es/Dom/findDOMNode.js
+
+
+
+function isDOM(node) {
+  // https://developer.mozilla.org/en-US/docs/Web/API/Element
+  // Since XULElement is also subclass of Element, we only need HTMLElement and SVGElement
+  return node instanceof HTMLElement || node instanceof SVGElement;
 }
 
-function normalizeOffset(offset, el) {
-  offset[0] = convertOffset(offset[0], el.width);
-  offset[1] = convertOffset(offset[1], el.height);
-}
 /**
- * @param el
- * @param tgtRegion 参照节点所占的区域: { left, top, width, height }
- * @param align
+ * Retrieves a DOM node via a ref, and does not invoke `findDOMNode`.
  */
-
-
-function doAlign(el, tgtRegion, align, isTgtRegionVisible) {
-  var points = align.points;
-  var offset = align.offset || [0, 0];
-  var targetOffset = align.targetOffset || [0, 0];
-  var overflow = align.overflow;
-  var source = align.source || el;
-  offset = [].concat(offset);
-  targetOffset = [].concat(targetOffset);
-  overflow = overflow || {};
-  var newOverflowCfg = {};
-  var fail = 0;
-  var alwaysByViewport = !!(overflow && overflow.alwaysByViewport); // 当前节点可以被放置的显示区域
-
-  var visibleRect = getVisibleRectForElement(source, alwaysByViewport); // 当前节点所占的区域, left/top/width/height
-
-  var elRegion = getRegion(source); // 将 offset 转换成数值，支持百分比
-
-  normalizeOffset(offset, elRegion);
-  normalizeOffset(targetOffset, tgtRegion); // 当前节点将要被放置的位置
-
-  var elFuturePos = getElFuturePos(elRegion, tgtRegion, points, offset, targetOffset); // 当前节点将要所处的区域
-
-  var newElRegion = utils.merge(elRegion, elFuturePos); // 如果可视区域不能完全放置当前节点时允许调整
-
-  if (visibleRect && (overflow.adjustX || overflow.adjustY) && isTgtRegionVisible) {
-    if (overflow.adjustX) {
-      // 如果横向不能放下
-      if (isFailX(elFuturePos, elRegion, visibleRect)) {
-        // 对齐位置反下
-        var newPoints = flip(points, /[lr]/gi, {
-          l: 'r',
-          r: 'l'
-        }); // 偏移量也反下
-
-        var newOffset = flipOffset(offset, 0);
-        var newTargetOffset = flipOffset(targetOffset, 0);
-        var newElFuturePos = getElFuturePos(elRegion, tgtRegion, newPoints, newOffset, newTargetOffset);
-
-        if (!isCompleteFailX(newElFuturePos, elRegion, visibleRect)) {
-          fail = 1;
-          points = newPoints;
-          offset = newOffset;
-          targetOffset = newTargetOffset;
-        }
-      }
-    }
-
-    if (overflow.adjustY) {
-      // 如果纵向不能放下
-      if (isFailY(elFuturePos, elRegion, visibleRect)) {
-        // 对齐位置反下
-        var _newPoints = flip(points, /[tb]/gi, {
-          t: 'b',
-          b: 't'
-        }); // 偏移量也反下
-
-
-        var _newOffset = flipOffset(offset, 1);
-
-        var _newTargetOffset = flipOffset(targetOffset, 1);
-
-        var _newElFuturePos = getElFuturePos(elRegion, tgtRegion, _newPoints, _newOffset, _newTargetOffset);
-
-        if (!isCompleteFailY(_newElFuturePos, elRegion, visibleRect)) {
-          fail = 1;
-          points = _newPoints;
-          offset = _newOffset;
-          targetOffset = _newTargetOffset;
-        }
-      }
-    } // 如果失败，重新计算当前节点将要被放置的位置
-
-
-    if (fail) {
-      elFuturePos = getElFuturePos(elRegion, tgtRegion, points, offset, targetOffset);
-      utils.mix(newElRegion, elFuturePos);
-    }
-
-    var isStillFailX = isFailX(elFuturePos, elRegion, visibleRect);
-    var isStillFailY = isFailY(elFuturePos, elRegion, visibleRect); // 检查反下后的位置是否可以放下了，如果仍然放不下：
-    // 1. 复原修改过的定位参数
-
-    if (isStillFailX || isStillFailY) {
-      var _newPoints2 = points; // 重置对应部分的翻转逻辑
-
-      if (isStillFailX) {
-        _newPoints2 = flip(points, /[lr]/gi, {
-          l: 'r',
-          r: 'l'
-        });
-      }
-
-      if (isStillFailY) {
-        _newPoints2 = flip(points, /[tb]/gi, {
-          t: 'b',
-          b: 't'
-        });
-      }
-
-      points = _newPoints2;
-      offset = align.offset || [0, 0];
-      targetOffset = align.targetOffset || [0, 0];
-    } // 2. 只有指定了可以调整当前方向才调整
-
-
-    newOverflowCfg.adjustX = overflow.adjustX && isStillFailX;
-    newOverflowCfg.adjustY = overflow.adjustY && isStillFailY; // 确实要调整，甚至可能会调整高度宽度
-
-    if (newOverflowCfg.adjustX || newOverflowCfg.adjustY) {
-      newElRegion = adjustForViewport(elFuturePos, elRegion, visibleRect, newOverflowCfg);
-    }
-  } // need judge to in case set fixed with in css on height auto element
-
-
-  if (newElRegion.width !== elRegion.width) {
-    utils.css(source, 'width', utils.width(source) + newElRegion.width - elRegion.width);
+function getDOM(node) {
+  if (node && typeof_typeof(node) === 'object' && isDOM(node.nativeElement)) {
+    return node.nativeElement;
   }
-
-  if (newElRegion.height !== elRegion.height) {
-    utils.css(source, 'height', utils.height(source) + newElRegion.height - elRegion.height);
-  } // https://github.com/kissyteam/kissy/issues/190
-  // 相对于屏幕位置没变，而 left/top 变了
-  // 例如 <div 'relative'><el absolute></div>
-
-
-  utils.offset(source, {
-    left: newElRegion.left,
-    top: newElRegion.top
-  }, {
-    useCssRight: align.useCssRight,
-    useCssBottom: align.useCssBottom,
-    useCssTransform: align.useCssTransform,
-    ignoreShake: align.ignoreShake
-  });
-  return {
-    points: points,
-    offset: offset,
-    targetOffset: targetOffset,
-    overflow: newOverflowCfg
-  };
+  if (isDOM(node)) {
+    return node;
+  }
+  return null;
 }
-/**
- *  2012-04-26 yiminghe@gmail.com
- *   - 优化智能对齐算法
- *   - 慎用 resizeXX
- *
- *  2011-07-13 yiminghe@gmail.com note:
- *   - 增加智能对齐，以及大小调整选项
- **/
-
-function isOutOfVisibleRect(target, alwaysByViewport) {
-  var visibleRect = getVisibleRectForElement(target, alwaysByViewport);
-  var targetRegion = getRegion(target);
-  return !visibleRect || targetRegion.left + targetRegion.width <= visibleRect.left || targetRegion.top + targetRegion.height <= visibleRect.top || targetRegion.left >= visibleRect.right || targetRegion.top >= visibleRect.bottom;
-}
-
-function alignElement(el, refNode, align) {
-  var target = align.target || refNode;
-  var refNodeRegion = getRegion(target);
-  var isTargetNotOutOfVisible = !isOutOfVisibleRect(target, align.overflow && align.overflow.alwaysByViewport);
-  return doAlign(el, refNodeRegion, align, isTargetNotOutOfVisible);
-}
-
-alignElement.__getOffsetParent = getOffsetParent;
-alignElement.__getVisibleRectForElement = getVisibleRectForElement;
 
 /**
- * `tgtPoint`: { pageX, pageY } or { clientX, clientY }.
- * If client position provided, will internal convert to page position.
+ * Return if a node is a DOM node. Else will return by `findDOMNode`
  */
-
-function alignPoint(el, tgtPoint, align) {
-  var pageX;
-  var pageY;
-  var doc = utils.getDocument(el);
-  var win = doc.defaultView || doc.parentWindow;
-  var scrollX = utils.getWindowScrollLeft(win);
-  var scrollY = utils.getWindowScrollTop(win);
-  var viewportWidth = utils.viewportWidth(win);
-  var viewportHeight = utils.viewportHeight(win);
-
-  if ('pageX' in tgtPoint) {
-    pageX = tgtPoint.pageX;
-  } else {
-    pageX = scrollX + tgtPoint.clientX;
+function findDOMNode(node) {
+  var domNode = getDOM(node);
+  if (domNode) {
+    return domNode;
   }
-
-  if ('pageY' in tgtPoint) {
-    pageY = tgtPoint.pageY;
-  } else {
-    pageY = scrollY + tgtPoint.clientY;
+  if (node instanceof react.Component) {
+    var _ReactDOM$findDOMNode;
+    return (_ReactDOM$findDOMNode = react_dom.findDOMNode) === null || _ReactDOM$findDOMNode === void 0 ? void 0 : _ReactDOM$findDOMNode.call(react_dom, node);
   }
-
-  var tgtRegion = {
-    left: pageX,
-    top: pageY,
-    width: 0,
-    height: 0
-  };
-  var pointInView = pageX >= 0 && pageX <= scrollX + viewportWidth && pageY >= 0 && pageY <= scrollY + viewportHeight; // Provide default target point
-
-  var points = [align.points[0], 'cc'];
-  return doAlign(el, tgtRegion, dist_web_objectSpread2(dist_web_objectSpread2({}, align), {}, {
-    points: points
-  }), pointInView);
+  return null;
 }
+;// CONCATENATED MODULE: ./node_modules/rc-resize-observer/es/Collection.js
 
-/* harmony default export */ var dist_web = ((/* unused pure expression or super */ null && (alignElement)));
+var CollectionContext = /*#__PURE__*/react.createContext(null);
+/**
+ * Collect all the resize event from children ResizeObserver
+ */
+function Collection(_ref) {
+  var children = _ref.children,
+    onBatchResize = _ref.onBatchResize;
+  var resizeIdRef = react.useRef(0);
+  var resizeInfosRef = react.useRef([]);
+  var onCollectionResize = react.useContext(CollectionContext);
+  var onResize = react.useCallback(function (size, element, data) {
+    resizeIdRef.current += 1;
+    var currentId = resizeIdRef.current;
+    resizeInfosRef.current.push({
+      size: size,
+      element: element,
+      data: data
+    });
+    Promise.resolve().then(function () {
+      if (currentId === resizeIdRef.current) {
+        onBatchResize === null || onBatchResize === void 0 || onBatchResize(resizeInfosRef.current);
+        resizeInfosRef.current = [];
+      }
+    });
 
-//# sourceMappingURL=index.js.map
-
+    // Continue bubbling if parent exist
+    onCollectionResize === null || onCollectionResize === void 0 || onCollectionResize(size, element, data);
+  }, [onBatchResize, onCollectionResize]);
+  return /*#__PURE__*/react.createElement(CollectionContext.Provider, {
+    value: onResize
+  }, children);
+}
 ;// CONCATENATED MODULE: ./node_modules/resize-observer-polyfill/dist/ResizeObserver.es.js
 /**
  * A collection of shims that provide minimal functionality of the ES6 collections.
@@ -64366,1650 +62500,3429 @@ var ResizeObserver_es_index = (function () {
 
 /* harmony default export */ var ResizeObserver_es = (ResizeObserver_es_index);
 
-;// CONCATENATED MODULE: ./node_modules/rc-align/es/util.js
+;// CONCATENATED MODULE: ./node_modules/rc-resize-observer/es/utils/observerUtil.js
 
-
-
-function isSamePoint(prev, next) {
-  if (prev === next) return true;
-  if (!prev || !next) return false;
-
-  if ('pageX' in next && 'pageY' in next) {
-    return prev.pageX === next.pageX && prev.pageY === next.pageY;
-  }
-
-  if ('clientX' in next && 'clientY' in next) {
-    return prev.clientX === next.clientX && prev.clientY === next.clientY;
-  }
-
-  return false;
+// =============================== Const ===============================
+var elementListeners = new Map();
+function onResize(entities) {
+  entities.forEach(function (entity) {
+    var _elementListeners$get;
+    var target = entity.target;
+    (_elementListeners$get = elementListeners.get(target)) === null || _elementListeners$get === void 0 || _elementListeners$get.forEach(function (listener) {
+      return listener(target);
+    });
+  });
 }
-function restoreFocus(activeElement, container) {
-  // Focus back if is in the container
-  if (activeElement !== document.activeElement && contains(container, activeElement) && typeof activeElement.focus === 'function') {
-    activeElement.focus();
-  }
-}
-function monitorResize(element, callback) {
-  var prevWidth = null;
-  var prevHeight = null;
 
-  function onResize(_ref) {
-    var _ref2 = slicedToArray_slicedToArray(_ref, 1),
-        target = _ref2[0].target;
+// Note: ResizeObserver polyfill not support option to measure border-box resize
+var resizeObserver = new ResizeObserver_es(onResize);
 
-    if (!document.documentElement.contains(target)) return;
+// Dev env only
+var _el = (/* unused pure expression or super */ null && ( false ? 0 : null)); // eslint-disable-line
+var _rs = (/* unused pure expression or super */ null && ( false ? 0 : null)); // eslint-disable-line
 
-    var _target$getBoundingCl = target.getBoundingClientRect(),
-        width = _target$getBoundingCl.width,
-        height = _target$getBoundingCl.height;
-
-    var fixedWidth = Math.floor(width);
-    var fixedHeight = Math.floor(height);
-
-    if (prevWidth !== fixedWidth || prevHeight !== fixedHeight) {
-      // https://webkit.org/blog/9997/resizeobserver-in-webkit/
-      Promise.resolve().then(function () {
-        callback({
-          width: fixedWidth,
-          height: fixedHeight
-        });
-      });
-    }
-
-    prevWidth = fixedWidth;
-    prevHeight = fixedHeight;
-  }
-
-  var resizeObserver = new ResizeObserver_es(onResize);
-
-  if (element) {
+// ============================== Observe ==============================
+function observe(element, callback) {
+  if (!elementListeners.has(element)) {
+    elementListeners.set(element, new Set());
     resizeObserver.observe(element);
   }
-
-  return function () {
-    resizeObserver.disconnect();
-  };
+  elementListeners.get(element).add(callback);
 }
-;// CONCATENATED MODULE: ./node_modules/rc-align/es/hooks/useBuffer.js
-
-/* harmony default export */ var useBuffer = (function (callback, buffer) {
-  var calledRef = react.useRef(false);
-  var timeoutRef = react.useRef(null);
-
-  function cancelTrigger() {
-    window.clearTimeout(timeoutRef.current);
-  }
-
-  function trigger(force) {
-    if (!calledRef.current || force === true) {
-      if (callback() === false) {
-        // Not delay since callback cancelled self
-        return;
-      }
-
-      calledRef.current = true;
-      cancelTrigger();
-      timeoutRef.current = window.setTimeout(function () {
-        calledRef.current = false;
-      }, buffer);
-    } else {
-      cancelTrigger();
-      timeoutRef.current = window.setTimeout(function () {
-        calledRef.current = false;
-        trigger();
-      }, buffer);
+function unobserve(element, callback) {
+  if (elementListeners.has(element)) {
+    elementListeners.get(element).delete(callback);
+    if (!elementListeners.get(element).size) {
+      resizeObserver.unobserve(element);
+      elementListeners.delete(element);
     }
   }
+}
+;// CONCATENATED MODULE: ./node_modules/rc-resize-observer/node_modules/@babel/runtime/helpers/esm/classCallCheck.js
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+;// CONCATENATED MODULE: ./node_modules/rc-resize-observer/node_modules/@babel/runtime/helpers/esm/createClass.js
 
-  return [trigger, function () {
-    calledRef.current = false;
-    cancelTrigger();
-  }];
-});
-;// CONCATENATED MODULE: ./node_modules/rc-align/es/Align.js
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor);
+  }
+}
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  Object.defineProperty(Constructor, "prototype", {
+    writable: false
+  });
+  return Constructor;
+}
+;// CONCATENATED MODULE: ./node_modules/rc-resize-observer/node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js
+function setPrototypeOf_setPrototypeOf(o, p) {
+  setPrototypeOf_setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+  return setPrototypeOf_setPrototypeOf(o, p);
+}
+;// CONCATENATED MODULE: ./node_modules/rc-resize-observer/node_modules/@babel/runtime/helpers/esm/inherits.js
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  Object.defineProperty(subClass, "prototype", {
+    writable: false
+  });
+  if (superClass) setPrototypeOf_setPrototypeOf(subClass, superClass);
+}
+;// CONCATENATED MODULE: ./node_modules/rc-resize-observer/node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+;// CONCATENATED MODULE: ./node_modules/rc-resize-observer/node_modules/@babel/runtime/helpers/esm/isNativeReflectConstruct.js
+function _isNativeReflectConstruct() {
+  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+  if (Reflect.construct.sham) return false;
+  if (typeof Proxy === "function") return true;
+  try {
+    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+;// CONCATENATED MODULE: ./node_modules/rc-resize-observer/node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+  return self;
+}
+;// CONCATENATED MODULE: ./node_modules/rc-resize-observer/node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js
+
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (esm_typeof_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  } else if (call !== void 0) {
+    throw new TypeError("Derived constructors may only return object or undefined");
+  }
+  return _assertThisInitialized(self);
+}
+;// CONCATENATED MODULE: ./node_modules/rc-resize-observer/node_modules/@babel/runtime/helpers/esm/createSuper.js
+
+
+
+function _createSuper(Derived) {
+  var hasNativeReflectConstruct = _isNativeReflectConstruct();
+  return function _createSuperInternal() {
+    var Super = _getPrototypeOf(Derived),
+      result;
+    if (hasNativeReflectConstruct) {
+      var NewTarget = _getPrototypeOf(this).constructor;
+      result = Reflect.construct(Super, arguments, NewTarget);
+    } else {
+      result = Super.apply(this, arguments);
+    }
+    return _possibleConstructorReturn(this, result);
+  };
+}
+;// CONCATENATED MODULE: ./node_modules/rc-resize-observer/es/SingleObserver/DomWrapper.js
+
+
 
 
 
 /**
- * Removed props:
- *  - childrenProps
+ * Fallback to findDOMNode if origin ref do not provide any dom element
+ */
+var DomWrapper = /*#__PURE__*/function (_React$Component) {
+  _inherits(DomWrapper, _React$Component);
+  var _super = _createSuper(DomWrapper);
+  function DomWrapper() {
+    _classCallCheck(this, DomWrapper);
+    return _super.apply(this, arguments);
+  }
+  _createClass(DomWrapper, [{
+    key: "render",
+    value: function render() {
+      return this.props.children;
+    }
+  }]);
+  return DomWrapper;
+}(react.Component);
+
+;// CONCATENATED MODULE: ./node_modules/rc-resize-observer/es/SingleObserver/index.js
+
+
+
+
+
+
+
+
+function SingleObserver(props, ref) {
+  var children = props.children,
+    disabled = props.disabled;
+  var elementRef = react.useRef(null);
+  var wrapperRef = react.useRef(null);
+  var onCollectionResize = react.useContext(CollectionContext);
+
+  // =========================== Children ===========================
+  var isRenderProps = typeof children === 'function';
+  var mergedChildren = isRenderProps ? children(elementRef) : children;
+
+  // ============================= Size =============================
+  var sizeRef = react.useRef({
+    width: -1,
+    height: -1,
+    offsetWidth: -1,
+    offsetHeight: -1
+  });
+
+  // ============================= Ref ==============================
+  var canRef = !isRenderProps && /*#__PURE__*/react.isValidElement(mergedChildren) && supportRef(mergedChildren);
+  var originRef = canRef ? mergedChildren.ref : null;
+  var mergedRef = useComposeRef(originRef, elementRef);
+  var getDom = function getDom() {
+    var _elementRef$current;
+    return findDOMNode(elementRef.current) || (
+    // Support `nativeElement` format
+    elementRef.current && esm_typeof_typeof(elementRef.current) === 'object' ? findDOMNode((_elementRef$current = elementRef.current) === null || _elementRef$current === void 0 ? void 0 : _elementRef$current.nativeElement) : null) || findDOMNode(wrapperRef.current);
+  };
+  react.useImperativeHandle(ref, function () {
+    return getDom();
+  });
+
+  // =========================== Observe ============================
+  var propsRef = react.useRef(props);
+  propsRef.current = props;
+
+  // Handler
+  var onInternalResize = react.useCallback(function (target) {
+    var _propsRef$current = propsRef.current,
+      onResize = _propsRef$current.onResize,
+      data = _propsRef$current.data;
+    var _target$getBoundingCl = target.getBoundingClientRect(),
+      width = _target$getBoundingCl.width,
+      height = _target$getBoundingCl.height;
+    var offsetWidth = target.offsetWidth,
+      offsetHeight = target.offsetHeight;
+
+    /**
+     * Resize observer trigger when content size changed.
+     * In most case we just care about element size,
+     * let's use `boundary` instead of `contentRect` here to avoid shaking.
+     */
+    var fixedWidth = Math.floor(width);
+    var fixedHeight = Math.floor(height);
+    if (sizeRef.current.width !== fixedWidth || sizeRef.current.height !== fixedHeight || sizeRef.current.offsetWidth !== offsetWidth || sizeRef.current.offsetHeight !== offsetHeight) {
+      var size = {
+        width: fixedWidth,
+        height: fixedHeight,
+        offsetWidth: offsetWidth,
+        offsetHeight: offsetHeight
+      };
+      sizeRef.current = size;
+
+      // IE is strange, right?
+      var mergedOffsetWidth = offsetWidth === Math.round(width) ? width : offsetWidth;
+      var mergedOffsetHeight = offsetHeight === Math.round(height) ? height : offsetHeight;
+      var sizeInfo = helpers_esm_objectSpread2_objectSpread2(helpers_esm_objectSpread2_objectSpread2({}, size), {}, {
+        offsetWidth: mergedOffsetWidth,
+        offsetHeight: mergedOffsetHeight
+      });
+
+      // Let collection know what happened
+      onCollectionResize === null || onCollectionResize === void 0 || onCollectionResize(sizeInfo, target, data);
+      if (onResize) {
+        // defer the callback but not defer to next frame
+        Promise.resolve().then(function () {
+          onResize(sizeInfo, target);
+        });
+      }
+    }
+  }, []);
+
+  // Dynamic observe
+  react.useEffect(function () {
+    var currentElement = getDom();
+    if (currentElement && !disabled) {
+      observe(currentElement, onInternalResize);
+    }
+    return function () {
+      return unobserve(currentElement, onInternalResize);
+    };
+  }, [elementRef.current, disabled]);
+
+  // ============================ Render ============================
+  return /*#__PURE__*/react.createElement(DomWrapper, {
+    ref: wrapperRef
+  }, canRef ? /*#__PURE__*/react.cloneElement(mergedChildren, {
+    ref: mergedRef
+  }) : mergedChildren);
+}
+var RefSingleObserver = /*#__PURE__*/react.forwardRef(SingleObserver);
+if (false) {}
+/* harmony default export */ var es_SingleObserver = (RefSingleObserver);
+;// CONCATENATED MODULE: ./node_modules/rc-resize-observer/es/index.js
+
+
+
+
+
+
+var INTERNAL_PREFIX_KEY = 'rc-observer-key';
+
+
+function es_ResizeObserver(props, ref) {
+  var children = props.children;
+  var childNodes = typeof children === 'function' ? [children] : toArray(children);
+  if (false) {}
+  return childNodes.map(function (child, index) {
+    var key = (child === null || child === void 0 ? void 0 : child.key) || "".concat(INTERNAL_PREFIX_KEY, "-").concat(index);
+    return /*#__PURE__*/react.createElement(es_SingleObserver, esm_extends_extends({}, props, {
+      key: key,
+      ref: index === 0 ? ref : undefined
+    }), child);
+  });
+}
+var RefResizeObserver = /*#__PURE__*/react.forwardRef(es_ResizeObserver);
+if (false) {}
+RefResizeObserver.Collection = Collection;
+/* harmony default export */ var rc_resize_observer_es = (RefResizeObserver);
+;// CONCATENATED MODULE: ./node_modules/rc-util/es/Dom/shadow.js
+function getRoot(ele) {
+  var _ele$getRootNode;
+  return ele === null || ele === void 0 || (_ele$getRootNode = ele.getRootNode) === null || _ele$getRootNode === void 0 ? void 0 : _ele$getRootNode.call(ele);
+}
+
+/**
+ * Check if is in shadowRoot
+ */
+function inShadow(ele) {
+  return getRoot(ele) instanceof ShadowRoot;
+}
+
+/**
+ * Return shadowRoot if possible
+ */
+function getShadowRoot(ele) {
+  return inShadow(ele) ? getRoot(ele) : null;
+}
+;// CONCATENATED MODULE: ./node_modules/rc-util/es/hooks/useEvent.js
+
+function useEvent(callback) {
+  var fnRef = react.useRef();
+  fnRef.current = callback;
+  var memoFn = react.useCallback(function () {
+    var _fnRef$current;
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+    return (_fnRef$current = fnRef.current) === null || _fnRef$current === void 0 ? void 0 : _fnRef$current.call.apply(_fnRef$current, [fnRef].concat(args));
+  }, []);
+  return memoFn;
+}
+;// CONCATENATED MODULE: ./node_modules/rc-util/node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js
+function helpers_esm_arrayWithHoles_arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+;// CONCATENATED MODULE: ./node_modules/rc-util/node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js
+function helpers_esm_iterableToArrayLimit_iterableToArrayLimit(r, l) {
+  var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+  if (null != t) {
+    var e,
+      n,
+      i,
+      u,
+      a = [],
+      f = !0,
+      o = !1;
+    try {
+      if (i = (t = t.call(r)).next, 0 === l) {
+        if (Object(t) !== t) return;
+        f = !1;
+      } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0);
+    } catch (r) {
+      o = !0, n = r;
+    } finally {
+      try {
+        if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return;
+      } finally {
+        if (o) throw n;
+      }
+    }
+    return a;
+  }
+}
+;// CONCATENATED MODULE: ./node_modules/rc-util/node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
+function helpers_esm_arrayLikeToArray_arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+  return arr2;
+}
+;// CONCATENATED MODULE: ./node_modules/rc-util/node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
+
+function helpers_esm_unsupportedIterableToArray_unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return helpers_esm_arrayLikeToArray_arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return helpers_esm_arrayLikeToArray_arrayLikeToArray(o, minLen);
+}
+;// CONCATENATED MODULE: ./node_modules/rc-util/node_modules/@babel/runtime/helpers/esm/nonIterableRest.js
+function helpers_esm_nonIterableRest_nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+;// CONCATENATED MODULE: ./node_modules/rc-util/node_modules/@babel/runtime/helpers/esm/slicedToArray.js
+
+
+
+
+function helpers_esm_slicedToArray_slicedToArray(arr, i) {
+  return helpers_esm_arrayWithHoles_arrayWithHoles(arr) || helpers_esm_iterableToArrayLimit_iterableToArrayLimit(arr, i) || helpers_esm_unsupportedIterableToArray_unsupportedIterableToArray(arr, i) || helpers_esm_nonIterableRest_nonIterableRest();
+}
+;// CONCATENATED MODULE: ./node_modules/rc-util/es/hooks/useId.js
+
+
+
+function getUseId() {
+  // We need fully clone React function here to avoid webpack warning React 17 do not export `useId`
+  var fullClone = esm_objectSpread2_objectSpread2({}, react_namespaceObject);
+  return fullClone.useId;
+}
+var useId_uuid = 0;
+
+/** @private Note only worked in develop env. Not work in production. */
+function resetUuid() {
+  if (false) {}
+}
+var useOriginId = getUseId();
+/* harmony default export */ var useId = (useOriginId ?
+// Use React `useId`
+function useId(id) {
+  var reactId = useOriginId();
+
+  // Developer passed id is single source of truth
+  if (id) {
+    return id;
+  }
+
+  // Test env always return mock id
+  if (false) {}
+  return reactId;
+} :
+// Use compatible of `useId`
+function useCompatId(id) {
+  // Inner id for accessibility usage. Only work in client side
+  var _React$useState = react.useState('ssr-id'),
+    _React$useState2 = helpers_esm_slicedToArray_slicedToArray(_React$useState, 2),
+    innerId = _React$useState2[0],
+    setInnerId = _React$useState2[1];
+  react.useEffect(function () {
+    var nextId = useId_uuid;
+    useId_uuid += 1;
+    setInnerId("rc_unique_".concat(nextId));
+  }, []);
+
+  // Developer passed id is single source of truth
+  if (id) {
+    return id;
+  }
+
+  // Test env always return mock id
+  if (false) {}
+
+  // Return react native id or inner id
+  return innerId;
+});
+;// CONCATENATED MODULE: ./node_modules/rc-util/es/isMobile.js
+/* harmony default export */ var isMobile = (function () {
+  if (typeof navigator === 'undefined' || typeof window === 'undefined') {
+    return false;
+  }
+  var agent = navigator.userAgent || navigator.vendor || window.opera;
+  return /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(agent) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw-(n|u)|c55\/|capi|ccwa|cdm-|cell|chtm|cldc|cmd-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc-s|devi|dica|dmob|do(c|p)o|ds(12|-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(-|_)|g1 u|g560|gene|gf-5|g-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd-(m|p|t)|hei-|hi(pt|ta)|hp( i|ip)|hs-c|ht(c(-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i-(20|go|ma)|i230|iac( |-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|-[a-w])|libw|lynx|m1-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|-([1-8]|c))|phil|pire|pl(ay|uc)|pn-2|po(ck|rt|se)|prox|psio|pt-g|qa-a|qc(07|12|21|32|60|-[2-7]|i-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h-|oo|p-)|sdk\/|se(c(-|0|1)|47|mc|nd|ri)|sgh-|shar|sie(-|m)|sk-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h-|v-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl-|tdg-|tel(i|m)|tim-|t-mo|to(pl|sh)|ts(70|m-|m3|m5)|tx-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas-|your|zeto|zte-/i.test(agent === null || agent === void 0 ? void 0 : agent.substr(0, 4));
+});
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/node_modules/@babel/runtime/helpers/esm/extends.js
+function helpers_esm_extends_extends() {
+  helpers_esm_extends_extends = Object.assign ? Object.assign.bind() : function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return helpers_esm_extends_extends.apply(this, arguments);
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js
+function runtime_helpers_esm_arrayWithHoles_arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js
+function runtime_helpers_esm_iterableToArrayLimit_iterableToArrayLimit(arr, i) {
+  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+
+  if (_i == null) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+
+  var _s, _e;
+
+  try {
+    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
+function runtime_helpers_esm_arrayLikeToArray_arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
+
+function runtime_helpers_esm_unsupportedIterableToArray_unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return runtime_helpers_esm_arrayLikeToArray_arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return runtime_helpers_esm_arrayLikeToArray_arrayLikeToArray(o, minLen);
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js
+function runtime_helpers_esm_nonIterableRest_nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js
+
+
+
+
+function runtime_helpers_esm_slicedToArray_slicedToArray(arr, i) {
+  return runtime_helpers_esm_arrayWithHoles_arrayWithHoles(arr) || runtime_helpers_esm_iterableToArrayLimit_iterableToArrayLimit(arr, i) || runtime_helpers_esm_unsupportedIterableToArray_unsupportedIterableToArray(arr, i) || runtime_helpers_esm_nonIterableRest_nonIterableRest();
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/typeof.js
+function helpers_esm_typeof_typeof(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    helpers_esm_typeof_typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    helpers_esm_typeof_typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return helpers_esm_typeof_typeof(obj);
+}
+;// CONCATENATED MODULE: ./node_modules/rc-motion/node_modules/rc-util/es/Dom/findDOMNode.js
+
+/**
+ * Return if a node is a DOM node. Else will return by `findDOMNode`
  */
 
-
-
-
-
-
-
-
-function getElement(func) {
-  if (typeof func !== 'function') return null;
-  return func();
-}
-
-function getPoint(point) {
-  if (_typeof(point) !== 'object' || !point) return null;
-  return point;
-}
-
-var Align = function Align(_ref, ref) {
-  var children = _ref.children,
-      disabled = _ref.disabled,
-      target = _ref.target,
-      align = _ref.align,
-      onAlign = _ref.onAlign,
-      monitorWindowResize = _ref.monitorWindowResize,
-      _ref$monitorBufferTim = _ref.monitorBufferTime,
-      monitorBufferTime = _ref$monitorBufferTim === void 0 ? 0 : _ref$monitorBufferTim;
-  var cacheRef = react.useRef({});
-  var nodeRef = react.useRef();
-  var childNode = react.Children.only(children); // ===================== Align ======================
-  // We save the props here to avoid closure makes props ood
-
-  var forceAlignPropsRef = react.useRef({});
-  forceAlignPropsRef.current.disabled = disabled;
-  forceAlignPropsRef.current.target = target;
-  forceAlignPropsRef.current.onAlign = onAlign;
-
-  var _useBuffer = useBuffer(function () {
-    var _forceAlignPropsRef$c = forceAlignPropsRef.current,
-        latestDisabled = _forceAlignPropsRef$c.disabled,
-        latestTarget = _forceAlignPropsRef$c.target,
-        latestOnAlign = _forceAlignPropsRef$c.onAlign;
-
-    if (!latestDisabled && latestTarget) {
-      var source = nodeRef.current;
-      var result;
-      var element = getElement(latestTarget);
-      var point = getPoint(latestTarget);
-      cacheRef.current.element = element;
-      cacheRef.current.point = point; // IE lose focus after element realign
-      // We should record activeElement and restore later
-
-      var _document = document,
-          activeElement = _document.activeElement; // We only align when element is visible
-
-      if (element && isVisible(element)) {
-        result = alignElement(source, element, align);
-      } else if (point) {
-        result = alignPoint(source, point, align);
-      }
-
-      restoreFocus(activeElement, source);
-
-      if (latestOnAlign && result) {
-        latestOnAlign(source, result);
-      }
-
-      return true;
-    }
-
-    return false;
-  }, monitorBufferTime),
-      _useBuffer2 = slicedToArray_slicedToArray(_useBuffer, 2),
-      _forceAlign = _useBuffer2[0],
-      cancelForceAlign = _useBuffer2[1]; // ===================== Effect =====================
-  // Listen for target updated
-
-
-  var resizeMonitor = react.useRef({
-    cancel: function cancel() {}
-  }); // Listen for source updated
-
-  var sourceResizeMonitor = react.useRef({
-    cancel: function cancel() {}
-  });
-  react.useEffect(function () {
-    var element = getElement(target);
-    var point = getPoint(target);
-
-    if (nodeRef.current !== sourceResizeMonitor.current.element) {
-      sourceResizeMonitor.current.cancel();
-      sourceResizeMonitor.current.element = nodeRef.current;
-      sourceResizeMonitor.current.cancel = monitorResize(nodeRef.current, _forceAlign);
-    }
-
-    if (cacheRef.current.element !== element || !isSamePoint(cacheRef.current.point, point)) {
-      _forceAlign(); // Add resize observer
-
-
-      if (resizeMonitor.current.element !== element) {
-        resizeMonitor.current.cancel();
-        resizeMonitor.current.element = element;
-        resizeMonitor.current.cancel = monitorResize(element, _forceAlign);
-      }
-    }
-  }); // Listen for disabled change
-
-  react.useEffect(function () {
-    if (!disabled) {
-      _forceAlign();
-    } else {
-      cancelForceAlign();
-    }
-  }, [disabled]); // Listen for window resize
-
-  var winResizeRef = react.useRef(null);
-  react.useEffect(function () {
-    if (monitorWindowResize) {
-      if (!winResizeRef.current) {
-        winResizeRef.current = addEventListenerWrap(window, 'resize', _forceAlign);
-      }
-    } else if (winResizeRef.current) {
-      winResizeRef.current.remove();
-      winResizeRef.current = null;
-    }
-  }, [monitorWindowResize]); // Clear all if unmount
-
-  react.useEffect(function () {
-    return function () {
-      resizeMonitor.current.cancel();
-      sourceResizeMonitor.current.cancel();
-      if (winResizeRef.current) winResizeRef.current.remove();
-      cancelForceAlign();
-    };
-  }, []); // ====================== Ref =======================
-
-  react.useImperativeHandle(ref, function () {
-    return {
-      forceAlign: function forceAlign() {
-        return _forceAlign(true);
-      }
-    };
-  }); // ===================== Render =====================
-
-  if (react.isValidElement(childNode)) {
-    childNode = react.cloneElement(childNode, {
-      ref: composeRef(childNode.ref, nodeRef)
-    });
+function findDOMNode_findDOMNode(node) {
+  if (node instanceof HTMLElement) {
+    return node;
   }
 
-  return childNode;
-};
+  return react_dom.findDOMNode(node);
+}
+// EXTERNAL MODULE: ./node_modules/rc-motion/node_modules/react-is/index.js
+var rc_motion_node_modules_react_is = __webpack_require__(19154);
+;// CONCATENATED MODULE: ./node_modules/rc-motion/node_modules/rc-util/es/ref.js
 
-var RefAlign = react.forwardRef(Align);
-RefAlign.displayName = 'Align';
-/* harmony default export */ var es_Align = (RefAlign);
-;// CONCATENATED MODULE: ./node_modules/rc-align/es/index.js
-// export this package's api
 
-/* harmony default export */ var rc_align_es = (es_Align);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/regenerator/index.js
-var regenerator = __webpack_require__(87757);
-var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
-  try {
-    var info = gen[key](arg);
-    var value = info.value;
-  } catch (error) {
-    reject(error);
-    return;
-  }
-
-  if (info.done) {
-    resolve(value);
-  } else {
-    Promise.resolve(value).then(_next, _throw);
+function ref_fillRef(ref, node) {
+  if (typeof ref === 'function') {
+    ref(node);
+  } else if (helpers_esm_typeof_typeof(ref) === 'object' && ref && 'current' in ref) {
+    ref.current = node;
   }
 }
+/**
+ * Merge refs into one ref function to support ref passing.
+ */
 
-function _asyncToGenerator(fn) {
-  return function () {
-    var self = this,
-        args = arguments;
-    return new Promise(function (resolve, reject) {
-      var gen = fn.apply(self, args);
+function ref_composeRef() {
+  for (var _len = arguments.length, refs = new Array(_len), _key = 0; _key < _len; _key++) {
+    refs[_key] = arguments[_key];
+  }
 
-      function _next(value) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
-      }
-
-      function _throw(err) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
-      }
-
-      _next(undefined);
+  return function (node) {
+    refs.forEach(function (ref) {
+      ref_fillRef(ref, node);
     });
   };
 }
-;// CONCATENATED MODULE: ./node_modules/rc-trigger/es/Popup/useVisibleStatus.js
+function ref_supportRef(nodeOrComponent) {
+  var _type$prototype, _nodeOrComponent$prot;
+
+  var type = isMemo(nodeOrComponent) ? nodeOrComponent.type.type : nodeOrComponent.type; // Function component node
+
+  if (typeof type === 'function' && !((_type$prototype = type.prototype) === null || _type$prototype === void 0 ? void 0 : _type$prototype.render)) {
+    return false;
+  } // Class component
 
 
+  if (typeof nodeOrComponent === 'function' && !((_nodeOrComponent$prot = nodeOrComponent.prototype) === null || _nodeOrComponent$prot === void 0 ? void 0 : _nodeOrComponent$prot.render)) {
+    return false;
+  }
+
+  return true;
+}
+/* eslint-enable */
+// EXTERNAL MODULE: ./node_modules/classnames/index.js
+var node_modules_classnames_0 = __webpack_require__(94184);
+var node_modules_classnames_default_0 = /*#__PURE__*/__webpack_require__.n(node_modules_classnames_0);
+;// CONCATENATED MODULE: ./node_modules/rc-motion/node_modules/rc-util/es/Dom/canUseDom.js
+function canUseDom_canUseDom() {
+  return !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+}
+;// CONCATENATED MODULE: ./node_modules/rc-motion/es/util/motion.js
+
+ // ================= Transition =================
+// Event wrapper. Copy from react source code
+
+function makePrefixMap(styleProp, eventName) {
+  var prefixes = {};
+  prefixes[styleProp.toLowerCase()] = eventName.toLowerCase();
+  prefixes["Webkit".concat(styleProp)] = "webkit".concat(eventName);
+  prefixes["Moz".concat(styleProp)] = "moz".concat(eventName);
+  prefixes["ms".concat(styleProp)] = "MS".concat(eventName);
+  prefixes["O".concat(styleProp)] = "o".concat(eventName.toLowerCase());
+  return prefixes;
+}
+
+function getVendorPrefixes(domSupport, win) {
+  var prefixes = {
+    animationend: makePrefixMap('Animation', 'AnimationEnd'),
+    transitionend: makePrefixMap('Transition', 'TransitionEnd')
+  };
+
+  if (domSupport) {
+    if (!('AnimationEvent' in win)) {
+      delete prefixes.animationend.animation;
+    }
+
+    if (!('TransitionEvent' in win)) {
+      delete prefixes.transitionend.transition;
+    }
+  }
+
+  return prefixes;
+}
+var vendorPrefixes = getVendorPrefixes(canUseDom_canUseDom(), typeof window !== 'undefined' ? window : {});
+var style = {};
+
+if (canUseDom_canUseDom()) {
+  var _document$createEleme = document.createElement('div');
+
+  style = _document$createEleme.style;
+}
+
+var prefixedEventNames = {};
+function getVendorPrefixedEventName(eventName) {
+  if (prefixedEventNames[eventName]) {
+    return prefixedEventNames[eventName];
+  }
+
+  var prefixMap = vendorPrefixes[eventName];
+
+  if (prefixMap) {
+    var stylePropList = Object.keys(prefixMap);
+    var len = stylePropList.length;
+
+    for (var i = 0; i < len; i += 1) {
+      var styleProp = stylePropList[i];
+
+      if (Object.prototype.hasOwnProperty.call(prefixMap, styleProp) && styleProp in style) {
+        prefixedEventNames[eventName] = prefixMap[styleProp];
+        return prefixedEventNames[eventName];
+      }
+    }
+  }
+
+  return '';
+}
+var internalAnimationEndName = getVendorPrefixedEventName('animationend');
+var internalTransitionEndName = getVendorPrefixedEventName('transitionend');
+var supportTransition = !!(internalAnimationEndName && internalTransitionEndName);
+var animationEndName = internalAnimationEndName || 'animationend';
+var transitionEndName = internalTransitionEndName || 'transitionend';
+function getTransitionName(transitionName, transitionType) {
+  if (!transitionName) return null;
+
+  if (helpers_esm_typeof_typeof(transitionName) === 'object') {
+    var type = transitionType.replace(/-\w/g, function (match) {
+      return match[1].toUpperCase();
+    });
+    return transitionName[type];
+  }
+
+  return "".concat(transitionName, "-").concat(transitionType);
+}
+;// CONCATENATED MODULE: ./node_modules/rc-motion/es/interface.js
+var STATUS_NONE = 'none';
+var STATUS_APPEAR = 'appear';
+var STATUS_ENTER = 'enter';
+var STATUS_LEAVE = 'leave';
+var STEP_NONE = 'none';
+var STEP_PREPARE = 'prepare';
+var STEP_START = 'start';
+var STEP_ACTIVE = 'active';
+var STEP_ACTIVATED = 'end';
+;// CONCATENATED MODULE: ./node_modules/rc-motion/es/hooks/useState.js
 
 
-
-var StatusQueue = ['measure', 'align', null, 'motion'];
-/* harmony default export */ var useVisibleStatus = (function (visible, doMeasure) {
-  var _useState = (0,react.useState)(null),
-      _useState2 = slicedToArray_slicedToArray(_useState, 2),
-      status = _useState2[0],
-      setInternalStatus = _useState2[1];
-
-  var rafRef = (0,react.useRef)();
+function useMountStatus(defaultValue) {
   var destroyRef = (0,react.useRef)(false);
 
-  function setStatus(nextStatus) {
+  var _useState = (0,react.useState)(defaultValue),
+      _useState2 = runtime_helpers_esm_slicedToArray_slicedToArray(_useState, 2),
+      val = _useState2[0],
+      setVal = _useState2[1];
+
+  function setValue(next) {
     if (!destroyRef.current) {
-      setInternalStatus(nextStatus);
+      setVal(next);
     }
   }
 
-  function cancelRaf() {
-    wrapperRaf.cancel(rafRef.current);
-  }
-
-  function goNextStatus(callback) {
-    cancelRaf();
-    rafRef.current = wrapperRaf(function () {
-      // Only align should be manually trigger
-      setStatus(function (prev) {
-        switch (status) {
-          case 'align':
-            return 'motion';
-
-          case 'motion':
-            return 'stable';
-
-          default:
-        }
-
-        return prev;
-      });
-      callback === null || callback === void 0 ? void 0 : callback();
-    });
-  } // Init status
-
-
-  (0,react.useEffect)(function () {
-    setStatus('measure');
-  }, [visible]); // Go next status
-
-  (0,react.useEffect)(function () {
-    switch (status) {
-      case 'measure':
-        doMeasure();
-        break;
-
-      default:
-    }
-
-    if (status) {
-      rafRef.current = wrapperRaf( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regenerator_default().mark(function _callee() {
-        var index, nextStatus;
-        return regenerator_default().wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                index = StatusQueue.indexOf(status);
-                nextStatus = StatusQueue[index + 1];
-
-                if (nextStatus && index !== -1) {
-                  setStatus(nextStatus);
-                }
-
-              case 3:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee);
-      })));
-    }
-  }, [status]);
   (0,react.useEffect)(function () {
     return function () {
       destroyRef.current = true;
-      cancelRaf();
     };
   }, []);
-  return [status, goNextStatus];
-});
-;// CONCATENATED MODULE: ./node_modules/rc-trigger/es/Popup/useStretchStyle.js
+  return [val, setValue];
+}
+;// CONCATENATED MODULE: ./node_modules/rc-motion/es/hooks/useIsomorphicLayoutEffect.js
 
+ // It's safe to use `useLayoutEffect` but the warning is annoying
 
-/* harmony default export */ var useStretchStyle = (function (stretch) {
-  var _React$useState = react.useState({
-    width: 0,
-    height: 0
-  }),
-      _React$useState2 = slicedToArray_slicedToArray(_React$useState, 2),
-      targetSize = _React$useState2[0],
-      setTargetSize = _React$useState2[1];
+var hooks_useIsomorphicLayoutEffect_useIsomorphicLayoutEffect = canUseDom_canUseDom() ? react.useLayoutEffect : react.useEffect;
+/* harmony default export */ var hooks_useIsomorphicLayoutEffect = (hooks_useIsomorphicLayoutEffect_useIsomorphicLayoutEffect);
+;// CONCATENATED MODULE: ./node_modules/rc-motion/node_modules/rc-util/es/raf.js
+var raf = function raf(callback) {
+  return +setTimeout(callback, 16);
+};
 
-  function measureStretch(element) {
-    setTargetSize({
-      width: element.offsetWidth,
-      height: element.offsetHeight
-    });
-  } // Merge stretch style
+var caf = function caf(num) {
+  return clearTimeout(num);
+};
 
+if (typeof window !== 'undefined' && 'requestAnimationFrame' in window) {
+  raf = function raf(callback) {
+    return window.requestAnimationFrame(callback);
+  };
 
-  var style = react.useMemo(function () {
-    var sizeStyle = {};
+  caf = function caf(handle) {
+    return window.cancelAnimationFrame(handle);
+  };
+}
 
-    if (stretch) {
-      var width = targetSize.width,
-          height = targetSize.height; // Stretch with target
+var rafUUID = 0;
+var rafIds = new Map();
 
-      if (stretch.indexOf('height') !== -1 && height) {
-        sizeStyle.height = height;
-      } else if (stretch.indexOf('minHeight') !== -1 && height) {
-        sizeStyle.minHeight = height;
-      }
+function cleanup(id) {
+  rafIds.delete(id);
+}
 
-      if (stretch.indexOf('width') !== -1 && width) {
-        sizeStyle.width = width;
-      } else if (stretch.indexOf('minWidth') !== -1 && width) {
-        sizeStyle.minWidth = width;
-      }
+function wrapperRaf(callback) {
+  var times = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  rafUUID += 1;
+  var id = rafUUID;
+
+  function callRef(leftTimes) {
+    if (leftTimes === 0) {
+      // Clean up
+      cleanup(id); // Trigger
+
+      callback();
+    } else {
+      // Next raf
+      var realId = raf(function () {
+        callRef(leftTimes - 1);
+      }); // Bind real raf id
+
+      rafIds.set(id, realId);
     }
-
-    return sizeStyle;
-  }, [stretch, targetSize]);
-  return [style, measureStretch];
-});
-;// CONCATENATED MODULE: ./node_modules/rc-trigger/es/Popup/PopupInner.js
-
-
-
-
-
-
-
-
-
-
-
-var PopupInner = /*#__PURE__*/react.forwardRef(function (props, ref) {
-  var visible = props.visible,
-      prefixCls = props.prefixCls,
-      className = props.className,
-      style = props.style,
-      children = props.children,
-      zIndex = props.zIndex,
-      stretch = props.stretch,
-      destroyPopupOnHide = props.destroyPopupOnHide,
-      forceRender = props.forceRender,
-      align = props.align,
-      point = props.point,
-      getRootDomNode = props.getRootDomNode,
-      getClassNameFromAlign = props.getClassNameFromAlign,
-      onAlign = props.onAlign,
-      onMouseEnter = props.onMouseEnter,
-      onMouseLeave = props.onMouseLeave,
-      onMouseDown = props.onMouseDown,
-      onTouchStart = props.onTouchStart;
-  var alignRef = (0,react.useRef)();
-  var elementRef = (0,react.useRef)();
-
-  var _useState = (0,react.useState)(),
-      _useState2 = slicedToArray_slicedToArray(_useState, 2),
-      alignedClassName = _useState2[0],
-      setAlignedClassName = _useState2[1]; // ======================= Measure ========================
-
-
-  var _useStretchStyle = useStretchStyle(stretch),
-      _useStretchStyle2 = slicedToArray_slicedToArray(_useStretchStyle, 2),
-      stretchStyle = _useStretchStyle2[0],
-      measureStretchStyle = _useStretchStyle2[1];
-
-  function doMeasure() {
-    if (stretch) {
-      measureStretchStyle(getRootDomNode());
-    }
-  } // ======================== Status ========================
-
-
-  var _useVisibleStatus = useVisibleStatus(visible, doMeasure),
-      _useVisibleStatus2 = slicedToArray_slicedToArray(_useVisibleStatus, 2),
-      status = _useVisibleStatus2[0],
-      goNextStatus = _useVisibleStatus2[1]; // ======================== Aligns ========================
-
-
-  var prepareResolveRef = (0,react.useRef)(); // `target` on `rc-align` can accept as a function to get the bind element or a point.
-  // ref: https://www.npmjs.com/package/rc-align
-
-  function getAlignTarget() {
-    if (point) {
-      return point;
-    }
-
-    return getRootDomNode;
   }
 
-  function forceAlign() {
-    var _alignRef$current;
+  callRef(times);
+  return id;
+}
 
-    (_alignRef$current = alignRef.current) === null || _alignRef$current === void 0 ? void 0 : _alignRef$current.forceAlign();
+wrapperRaf.cancel = function (id) {
+  var realId = rafIds.get(id);
+  cleanup(realId);
+  return caf(realId);
+};
+;// CONCATENATED MODULE: ./node_modules/rc-motion/es/hooks/useNextFrame.js
+
+
+/* harmony default export */ var useNextFrame = (function () {
+  var nextFrameRef = react.useRef(null);
+
+  function cancelNextFrame() {
+    wrapperRaf.cancel(nextFrameRef.current);
   }
 
-  function onInternalAlign(popupDomNode, matchAlign) {
-    if (status === 'align') {
-      var nextAlignedClassName = getClassNameFromAlign(matchAlign);
-      setAlignedClassName(nextAlignedClassName); // Repeat until not more align needed
-
-      if (alignedClassName !== nextAlignedClassName) {
-        Promise.resolve().then(function () {
-          forceAlign();
+  function nextFrame(callback) {
+    var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
+    cancelNextFrame();
+    var nextFrameId = wrapperRaf(function () {
+      if (delay <= 1) {
+        callback({
+          isCanceled: function isCanceled() {
+            return nextFrameId !== nextFrameRef.current;
+          }
         });
       } else {
-        goNextStatus(function () {
-          var _prepareResolveRef$cu;
+        nextFrame(callback, delay - 1);
+      }
+    });
+    nextFrameRef.current = nextFrameId;
+  }
 
-          (_prepareResolveRef$cu = prepareResolveRef.current) === null || _prepareResolveRef$cu === void 0 ? void 0 : _prepareResolveRef$cu.call(prepareResolveRef);
+  react.useEffect(function () {
+    return function () {
+      cancelNextFrame();
+    };
+  }, []);
+  return [nextFrame, cancelNextFrame];
+});
+;// CONCATENATED MODULE: ./node_modules/rc-motion/es/hooks/useStepQueue.js
+
+
+
+
+
+var STEP_QUEUE = [STEP_PREPARE, STEP_START, STEP_ACTIVE, STEP_ACTIVATED];
+/** Skip current step */
+
+var SkipStep = false;
+/** Current step should be update in */
+
+var DoStep = true;
+function isActive(step) {
+  return step === STEP_ACTIVE || step === STEP_ACTIVATED;
+}
+/* harmony default export */ var useStepQueue = (function (status, callback) {
+  var _React$useState = react.useState(STEP_NONE),
+      _React$useState2 = runtime_helpers_esm_slicedToArray_slicedToArray(_React$useState, 2),
+      step = _React$useState2[0],
+      setStep = _React$useState2[1];
+
+  var _useNextFrame = useNextFrame(),
+      _useNextFrame2 = runtime_helpers_esm_slicedToArray_slicedToArray(_useNextFrame, 2),
+      nextFrame = _useNextFrame2[0],
+      cancelNextFrame = _useNextFrame2[1];
+
+  function startQueue() {
+    setStep(STEP_PREPARE);
+  }
+
+  hooks_useIsomorphicLayoutEffect(function () {
+    if (step !== STEP_NONE && step !== STEP_ACTIVATED) {
+      var index = STEP_QUEUE.indexOf(step);
+      var nextStep = STEP_QUEUE[index + 1];
+      var result = callback(step);
+
+      if (result === SkipStep) {
+        // Skip when no needed
+        setStep(nextStep);
+      } else {
+        // Do as frame for step update
+        nextFrame(function (info) {
+          function doNext() {
+            // Skip since current queue is ood
+            if (info.isCanceled()) return;
+            setStep(nextStep);
+          }
+
+          if (result === true) {
+            doNext();
+          } else {
+            // Only promise should be async
+            Promise.resolve(result).then(doNext);
+          }
         });
       }
-
-      onAlign === null || onAlign === void 0 ? void 0 : onAlign(popupDomNode, matchAlign);
     }
-  } // ======================== Motion ========================
-
-
-  var motion = _objectSpread2({}, getMotion(props));
-
-  ['onAppearEnd', 'onEnterEnd', 'onLeaveEnd'].forEach(function (eventName) {
-    var originHandler = motion[eventName];
-
-    motion[eventName] = function (element, event) {
-      goNextStatus();
-      return originHandler === null || originHandler === void 0 ? void 0 : originHandler(element, event);
+  }, [status, step]);
+  react.useEffect(function () {
+    return function () {
+      cancelNextFrame();
     };
-  });
+  }, []);
+  return [startQueue, step];
+});
+;// CONCATENATED MODULE: ./node_modules/rc-motion/es/hooks/useDomMotionEvents.js
 
-  function onShowPrepare() {
-    return new Promise(function (resolve) {
-      prepareResolveRef.current = resolve;
-    });
-  } // Go to stable directly when motion not provided
+
+
+/* harmony default export */ var useDomMotionEvents = (function (callback) {
+  var cacheElementRef = (0,react.useRef)(); // Cache callback
+
+  var callbackRef = (0,react.useRef)(callback);
+  callbackRef.current = callback; // Internal motion event handler
+
+  var onInternalMotionEnd = react.useCallback(function (event) {
+    callbackRef.current(event);
+  }, []); // Remove events
+
+  function removeMotionEvents(element) {
+    if (element) {
+      element.removeEventListener(transitionEndName, onInternalMotionEnd);
+      element.removeEventListener(animationEndName, onInternalMotionEnd);
+    }
+  } // Patch events
+
+
+  function patchMotionEvents(element) {
+    if (cacheElementRef.current && cacheElementRef.current !== element) {
+      removeMotionEvents(cacheElementRef.current);
+    }
+
+    if (element && element !== cacheElementRef.current) {
+      element.addEventListener(transitionEndName, onInternalMotionEnd);
+      element.addEventListener(animationEndName, onInternalMotionEnd); // Save as cache in case dom removed trigger by `motionDeadline`
+
+      cacheElementRef.current = element;
+    }
+  } // Clean up when removed
 
 
   react.useEffect(function () {
-    if (!motion.motionName && status === 'motion') {
-      goNextStatus();
+    return function () {
+      removeMotionEvents(cacheElementRef.current);
+    };
+  }, []);
+  return [patchMotionEvents, removeMotionEvents];
+});
+;// CONCATENATED MODULE: ./node_modules/rc-motion/es/hooks/useStatus.js
+
+
+
+
+
+
+
+
+
+
+function useStatus(supportMotion, visible, getElement, _ref) {
+  var _ref$motionEnter = _ref.motionEnter,
+      motionEnter = _ref$motionEnter === void 0 ? true : _ref$motionEnter,
+      _ref$motionAppear = _ref.motionAppear,
+      motionAppear = _ref$motionAppear === void 0 ? true : _ref$motionAppear,
+      _ref$motionLeave = _ref.motionLeave,
+      motionLeave = _ref$motionLeave === void 0 ? true : _ref$motionLeave,
+      motionDeadline = _ref.motionDeadline,
+      motionLeaveImmediately = _ref.motionLeaveImmediately,
+      onAppearPrepare = _ref.onAppearPrepare,
+      onEnterPrepare = _ref.onEnterPrepare,
+      onLeavePrepare = _ref.onLeavePrepare,
+      onAppearStart = _ref.onAppearStart,
+      onEnterStart = _ref.onEnterStart,
+      onLeaveStart = _ref.onLeaveStart,
+      onAppearActive = _ref.onAppearActive,
+      onEnterActive = _ref.onEnterActive,
+      onLeaveActive = _ref.onLeaveActive,
+      onAppearEnd = _ref.onAppearEnd,
+      onEnterEnd = _ref.onEnterEnd,
+      onLeaveEnd = _ref.onLeaveEnd,
+      onVisibleChanged = _ref.onVisibleChanged;
+
+  // Used for outer render usage to avoid `visible: false & status: none` to render nothing
+  var _useState = useMountStatus(),
+      _useState2 = runtime_helpers_esm_slicedToArray_slicedToArray(_useState, 2),
+      asyncVisible = _useState2[0],
+      setAsyncVisible = _useState2[1];
+
+  var _useState3 = useMountStatus(STATUS_NONE),
+      _useState4 = runtime_helpers_esm_slicedToArray_slicedToArray(_useState3, 2),
+      status = _useState4[0],
+      setStatus = _useState4[1];
+
+  var _useState5 = useMountStatus(null),
+      _useState6 = runtime_helpers_esm_slicedToArray_slicedToArray(_useState5, 2),
+      style = _useState6[0],
+      setStyle = _useState6[1];
+
+  var mountedRef = (0,react.useRef)(false);
+  var deadlineRef = (0,react.useRef)(null);
+  var destroyedRef = (0,react.useRef)(false); // =========================== Dom Node ===========================
+
+  var cacheElementRef = (0,react.useRef)(null);
+
+  function getDomElement() {
+    var element = getElement();
+    return element || cacheElementRef.current;
+  } // ========================== Motion End ==========================
+
+
+  var activeRef = (0,react.useRef)(false);
+
+  function onInternalMotionEnd(event) {
+    var element = getDomElement();
+
+    if (event && !event.deadline && event.target !== element) {
+      // event exists
+      // not initiated by deadline
+      // transitionEnd not fired by inner elements
+      return;
     }
-  }, [motion.motionName, status]); // ========================= Refs =========================
 
-  react.useImperativeHandle(ref, function () {
-    return {
-      forceAlign: forceAlign,
-      getElement: function getElement() {
-        return elementRef.current;
+    var canEnd;
+
+    if (status === STATUS_APPEAR && activeRef.current) {
+      canEnd = onAppearEnd === null || onAppearEnd === void 0 ? void 0 : onAppearEnd(element, event);
+    } else if (status === STATUS_ENTER && activeRef.current) {
+      canEnd = onEnterEnd === null || onEnterEnd === void 0 ? void 0 : onEnterEnd(element, event);
+    } else if (status === STATUS_LEAVE && activeRef.current) {
+      canEnd = onLeaveEnd === null || onLeaveEnd === void 0 ? void 0 : onLeaveEnd(element, event);
+    } // Only update status when `canEnd` and not destroyed
+
+
+    if (canEnd !== false && !destroyedRef.current) {
+      setStatus(STATUS_NONE);
+      setStyle(null);
+    }
+  }
+
+  var _useDomMotionEvents = useDomMotionEvents(onInternalMotionEnd),
+      _useDomMotionEvents2 = runtime_helpers_esm_slicedToArray_slicedToArray(_useDomMotionEvents, 1),
+      patchMotionEvents = _useDomMotionEvents2[0]; // ============================= Step =============================
+
+
+  var eventHandlers = react.useMemo(function () {
+    var _ref2, _ref3, _ref4;
+
+    switch (status) {
+      case 'appear':
+        return _ref2 = {}, defineProperty_defineProperty(_ref2, STEP_PREPARE, onAppearPrepare), defineProperty_defineProperty(_ref2, STEP_START, onAppearStart), defineProperty_defineProperty(_ref2, STEP_ACTIVE, onAppearActive), _ref2;
+
+      case 'enter':
+        return _ref3 = {}, defineProperty_defineProperty(_ref3, STEP_PREPARE, onEnterPrepare), defineProperty_defineProperty(_ref3, STEP_START, onEnterStart), defineProperty_defineProperty(_ref3, STEP_ACTIVE, onEnterActive), _ref3;
+
+      case 'leave':
+        return _ref4 = {}, defineProperty_defineProperty(_ref4, STEP_PREPARE, onLeavePrepare), defineProperty_defineProperty(_ref4, STEP_START, onLeaveStart), defineProperty_defineProperty(_ref4, STEP_ACTIVE, onLeaveActive), _ref4;
+
+      default:
+        return {};
+    }
+  }, [status]);
+
+  var _useStepQueue = useStepQueue(status, function (newStep) {
+    // Only prepare step can be skip
+    if (newStep === STEP_PREPARE) {
+      var onPrepare = eventHandlers[STEP_PREPARE];
+
+      if (!onPrepare) {
+        return SkipStep;
       }
-    };
-  }); // ======================== Render ========================
 
-  var mergedStyle = _objectSpread2(_objectSpread2({}, stretchStyle), {}, {
-    zIndex: zIndex,
-    opacity: status === 'motion' || status === 'stable' || !visible ? undefined : 0,
-    pointerEvents: status === 'stable' ? undefined : 'none'
-  }, style); // Align status
+      return onPrepare(getDomElement());
+    } // Rest step is sync update
 
 
-  var alignDisabled = true;
+    // Rest step is sync update
+    if (step in eventHandlers) {
+      var _eventHandlers$step;
 
-  if ((align === null || align === void 0 ? void 0 : align.points) && (status === 'align' || status === 'stable')) {
-    alignDisabled = false;
-  }
+      setStyle(((_eventHandlers$step = eventHandlers[step]) === null || _eventHandlers$step === void 0 ? void 0 : _eventHandlers$step.call(eventHandlers, getDomElement(), null)) || null);
+    }
 
-  var childNode = children; // Wrapper when multiple children
+    if (step === STEP_ACTIVE) {
+      // Patch events when motion needed
+      patchMotionEvents(getDomElement());
 
-  if (react.Children.count(children) > 1) {
-    childNode = /*#__PURE__*/react.createElement("div", {
-      className: "".concat(prefixCls, "-content")
-    }, children);
-  }
-
-  return /*#__PURE__*/react.createElement(es, extends_extends({
-    visible: visible,
-    ref: elementRef,
-    leavedClassName: "".concat(prefixCls, "-hidden")
-  }, motion, {
-    onAppearPrepare: onShowPrepare,
-    onEnterPrepare: onShowPrepare,
-    removeOnLeave: destroyPopupOnHide,
-    forceRender: forceRender
-  }), function (_ref, motionRef) {
-    var motionClassName = _ref.className,
-        motionStyle = _ref.style;
-    var mergedClassName = classnames_default()(prefixCls, className, alignedClassName, motionClassName);
-    return /*#__PURE__*/react.createElement(rc_align_es, {
-      target: getAlignTarget(),
-      key: "popup",
-      ref: alignRef,
-      monitorWindowResize: true,
-      disabled: alignDisabled,
-      align: align,
-      onAlign: onInternalAlign
-    }, /*#__PURE__*/react.createElement("div", {
-      ref: motionRef,
-      className: mergedClassName,
-      onMouseEnter: onMouseEnter,
-      onMouseLeave: onMouseLeave,
-      onMouseDownCapture: onMouseDown,
-      onTouchStartCapture: onTouchStart,
-      style: _objectSpread2(_objectSpread2({}, motionStyle), mergedStyle)
-    }, childNode));
-  });
-});
-PopupInner.displayName = 'PopupInner';
-/* harmony default export */ var Popup_PopupInner = (PopupInner);
-;// CONCATENATED MODULE: ./node_modules/rc-trigger/es/Popup/MobilePopupInner.js
-
-
-
-
-
-var MobilePopupInner = /*#__PURE__*/react.forwardRef(function (props, ref) {
-  var prefixCls = props.prefixCls,
-      visible = props.visible,
-      zIndex = props.zIndex,
-      children = props.children,
-      _props$mobile = props.mobile;
-  _props$mobile = _props$mobile === void 0 ? {} : _props$mobile;
-  var popupClassName = _props$mobile.popupClassName,
-      popupStyle = _props$mobile.popupStyle,
-      _props$mobile$popupMo = _props$mobile.popupMotion,
-      popupMotion = _props$mobile$popupMo === void 0 ? {} : _props$mobile$popupMo,
-      popupRender = _props$mobile.popupRender;
-  var elementRef = react.useRef(); // ========================= Refs =========================
-
-  react.useImperativeHandle(ref, function () {
-    return {
-      forceAlign: function forceAlign() {},
-      getElement: function getElement() {
-        return elementRef.current;
+      if (motionDeadline > 0) {
+        clearTimeout(deadlineRef.current);
+        deadlineRef.current = setTimeout(function () {
+          onInternalMotionEnd({
+            deadline: true
+          });
+        }, motionDeadline);
       }
-    };
-  }); // ======================== Render ========================
+    }
 
-  var mergedStyle = _objectSpread2({
-    zIndex: zIndex
-  }, popupStyle);
+    return DoStep;
+  }),
+      _useStepQueue2 = runtime_helpers_esm_slicedToArray_slicedToArray(_useStepQueue, 2),
+      startStep = _useStepQueue2[0],
+      step = _useStepQueue2[1];
 
-  var childNode = children; // Wrapper when multiple children
+  var active = isActive(step);
+  activeRef.current = active; // ============================ Status ============================
+  // Update with new status
 
-  if (react.Children.count(children) > 1) {
-    childNode = /*#__PURE__*/react.createElement("div", {
-      className: "".concat(prefixCls, "-content")
-    }, children);
-  } // Mobile support additional render
+  hooks_useIsomorphicLayoutEffect(function () {
+    setAsyncVisible(visible);
+    var isMounted = mountedRef.current;
+    mountedRef.current = true;
 
+    if (!supportMotion) {
+      return;
+    }
 
-  if (popupRender) {
-    childNode = popupRender(childNode);
-  }
+    var nextStatus; // Appear
 
-  return /*#__PURE__*/react.createElement(es, extends_extends({
-    visible: visible,
-    ref: elementRef,
-    removeOnLeave: true
-  }, popupMotion), function (_ref, motionRef) {
-    var motionClassName = _ref.className,
-        motionStyle = _ref.style;
-    var mergedClassName = classnames_default()(prefixCls, popupClassName, motionClassName);
-    return /*#__PURE__*/react.createElement("div", {
-      ref: motionRef,
-      className: mergedClassName,
-      style: _objectSpread2(_objectSpread2({}, motionStyle), mergedStyle)
-    }, childNode);
-  });
-});
-MobilePopupInner.displayName = 'MobilePopupInner';
-/* harmony default export */ var Popup_MobilePopupInner = (MobilePopupInner);
-;// CONCATENATED MODULE: ./node_modules/rc-trigger/es/Popup/index.js
+    if (!isMounted && visible && motionAppear) {
+      nextStatus = STATUS_APPEAR;
+    } // Enter
 
 
+    if (isMounted && visible && motionEnter) {
+      nextStatus = STATUS_ENTER;
+    } // Leave
 
 
+    if (isMounted && !visible && motionLeave || !isMounted && motionLeaveImmediately && !visible && motionLeave) {
+      nextStatus = STATUS_LEAVE;
+    } // Update to next status
 
 
-
-
-
-
-var Popup = /*#__PURE__*/react.forwardRef(function (_ref, ref) {
-  var visible = _ref.visible,
-      mobile = _ref.mobile,
-      props = _objectWithoutProperties(_ref, ["visible", "mobile"]);
-
-  var _useState = (0,react.useState)(visible),
-      _useState2 = slicedToArray_slicedToArray(_useState, 2),
-      innerVisible = _useState2[0],
-      serInnerVisible = _useState2[1];
-
-  var _useState3 = (0,react.useState)(false),
-      _useState4 = slicedToArray_slicedToArray(_useState3, 2),
-      inMobile = _useState4[0],
-      setInMobile = _useState4[1];
-
-  var cloneProps = _objectSpread2(_objectSpread2({}, props), {}, {
-    visible: innerVisible
-  }); // We check mobile in visible changed here.
-  // And this also delay set `innerVisible` to avoid popup component render flash
-
+    if (nextStatus) {
+      setStatus(nextStatus);
+      startStep();
+    }
+  }, [visible]); // ============================ Effect ============================
+  // Reset when motion changed
 
   (0,react.useEffect)(function () {
-    serInnerVisible(visible);
-
-    if (visible && mobile) {
-      setInMobile(isMobile());
+    if ( // Cancel appear
+    status === STATUS_APPEAR && !motionAppear || // Cancel enter
+    status === STATUS_ENTER && !motionEnter || // Cancel leave
+    status === STATUS_LEAVE && !motionLeave) {
+      setStatus(STATUS_NONE);
     }
-  }, [visible, mobile]);
-  var popupNode = inMobile ? /*#__PURE__*/react.createElement(Popup_MobilePopupInner, extends_extends({}, cloneProps, {
-    mobile: mobile,
-    ref: ref
-  })) : /*#__PURE__*/react.createElement(Popup_PopupInner, extends_extends({}, cloneProps, {
-    ref: ref
-  })); // We can use fragment directly but this may failed some selector usage. Keep as origin logic
+  }, [motionAppear, motionEnter, motionLeave]);
+  (0,react.useEffect)(function () {
+    return function () {
+      clearTimeout(deadlineRef.current);
+      destroyedRef.current = true;
+    };
+  }, []); // Trigger `onVisibleChanged`
 
-  return /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement(Mask, cloneProps), popupNode);
-});
-Popup.displayName = 'Popup';
-/* harmony default export */ var es_Popup = (Popup);
-;// CONCATENATED MODULE: ./node_modules/rc-trigger/es/context.js
+  (0,react.useEffect)(function () {
+    if (asyncVisible !== undefined && status === STATUS_NONE) {
+      onVisibleChanged === null || onVisibleChanged === void 0 ? void 0 : onVisibleChanged(asyncVisible);
+    }
+  }, [asyncVisible, status]); // ============================ Styles ============================
 
-var TriggerContext = /*#__PURE__*/react.createContext(null);
-/* harmony default export */ var es_context = (TriggerContext);
-;// CONCATENATED MODULE: ./node_modules/rc-trigger/es/index.js
+  var mergedStyle = style;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function es_noop() {}
-
-function returnEmptyString() {
-  return '';
-}
-
-function returnDocument(element) {
-  if (element) {
-    return element.ownerDocument;
+  if (eventHandlers[STEP_PREPARE] && step === STEP_START) {
+    mergedStyle = _objectSpread2({
+      transition: 'none'
+    }, mergedStyle);
   }
 
-  return window.document;
+  return [status, step, mergedStyle, asyncVisible !== null && asyncVisible !== void 0 ? asyncVisible : visible];
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js
+function classCallCheck_classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/createClass.js
+function createClass_defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
 }
 
-var ALL_HANDLERS = ['onClick', 'onMouseDown', 'onTouchStart', 'onMouseEnter', 'onMouseLeave', 'onFocus', 'onBlur', 'onContextMenu'];
+function createClass_createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) createClass_defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) createClass_defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/inherits.js
+
+function inherits_inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf(subClass, superClass);
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js
+function getPrototypeOf_getPrototypeOf(o) {
+  getPrototypeOf_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return getPrototypeOf_getPrototypeOf(o);
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/isNativeReflectConstruct.js
+function isNativeReflectConstruct_isNativeReflectConstruct() {
+  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+  if (Reflect.construct.sham) return false;
+  if (typeof Proxy === "function") return true;
+
+  try {
+    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js
+function assertThisInitialized_assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js
+
+
+function possibleConstructorReturn_possibleConstructorReturn(self, call) {
+  if (call && (helpers_esm_typeof_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return assertThisInitialized_assertThisInitialized(self);
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/createSuper.js
+
+
+
+function createSuper_createSuper(Derived) {
+  var hasNativeReflectConstruct = isNativeReflectConstruct_isNativeReflectConstruct();
+  return function _createSuperInternal() {
+    var Super = getPrototypeOf_getPrototypeOf(Derived),
+        result;
+
+    if (hasNativeReflectConstruct) {
+      var NewTarget = getPrototypeOf_getPrototypeOf(this).constructor;
+      result = Reflect.construct(Super, arguments, NewTarget);
+    } else {
+      result = Super.apply(this, arguments);
+    }
+
+    return possibleConstructorReturn_possibleConstructorReturn(this, result);
+  };
+}
+;// CONCATENATED MODULE: ./node_modules/rc-motion/es/DomWrapper.js
+
+
+
+
+
+
+var DomWrapper_DomWrapper = /*#__PURE__*/function (_React$Component) {
+  inherits_inherits(DomWrapper, _React$Component);
+
+  var _super = createSuper_createSuper(DomWrapper);
+
+  function DomWrapper() {
+    classCallCheck_classCallCheck(this, DomWrapper);
+
+    return _super.apply(this, arguments);
+  }
+
+  createClass_createClass(DomWrapper, [{
+    key: "render",
+    value: function render() {
+      return this.props.children;
+    }
+  }]);
+
+  return DomWrapper;
+}(react.Component);
+
+/* harmony default export */ var es_DomWrapper = (DomWrapper_DomWrapper);
+;// CONCATENATED MODULE: ./node_modules/rc-motion/es/CSSMotion.js
+
+
+
+
+
+/* eslint-disable react/default-props-match-prop-types, react/no-multi-comp, react/prop-types */
+
+
+
+
+
+
+
+
+
+
 /**
- * Internal usage. Do not use in your code since this will be removed.
+ * `transitionSupport` is used for none transition test case.
+ * Default we use browser transition event support check.
  */
 
-function generateTrigger(PortalComponent) {
-  var Trigger = /*#__PURE__*/function (_React$Component) {
-    _inherits(Trigger, _React$Component);
+function genCSSMotion(config) {
+  var transitionSupport = config;
 
-    var _super = _createSuper(Trigger);
+  if (helpers_esm_typeof_typeof(config) === 'object') {
+    transitionSupport = config.transitionSupport;
+  }
 
-    function Trigger(props) {
+  function isSupportTransition(props) {
+    return !!(props.motionName && transitionSupport);
+  }
+
+  var CSSMotion = /*#__PURE__*/react.forwardRef(function (props, ref) {
+    var _props$visible = props.visible,
+        visible = _props$visible === void 0 ? true : _props$visible,
+        _props$removeOnLeave = props.removeOnLeave,
+        removeOnLeave = _props$removeOnLeave === void 0 ? true : _props$removeOnLeave,
+        forceRender = props.forceRender,
+        children = props.children,
+        motionName = props.motionName,
+        leavedClassName = props.leavedClassName,
+        eventProps = props.eventProps;
+    var supportMotion = isSupportTransition(props); // Ref to the react node, it may be a HTMLElement
+
+    var nodeRef = (0,react.useRef)(); // Ref to the dom wrapper in case ref can not pass to HTMLElement
+
+    var wrapperNodeRef = (0,react.useRef)();
+
+    function getDomElement() {
+      try {
+        return findDOMNode_findDOMNode(nodeRef.current || wrapperNodeRef.current);
+      } catch (e) {
+        // Only happen when `motionDeadline` trigger but element removed.
+        return null;
+      }
+    }
+
+    var _useStatus = useStatus(supportMotion, visible, getDomElement, props),
+        _useStatus2 = runtime_helpers_esm_slicedToArray_slicedToArray(_useStatus, 4),
+        status = _useStatus2[0],
+        statusStep = _useStatus2[1],
+        statusStyle = _useStatus2[2],
+        mergedVisible = _useStatus2[3]; // Record whether content has rended
+    // Will return null for un-rendered even when `removeOnLeave={false}`
+
+
+    var renderedRef = react.useRef(mergedVisible);
+
+    if (mergedVisible) {
+      renderedRef.current = true;
+    } // ====================== Refs ======================
+
+
+    var originRef = (0,react.useRef)(ref);
+    originRef.current = ref;
+    var setNodeRef = react.useCallback(function (node) {
+      nodeRef.current = node;
+      ref_fillRef(originRef.current, node);
+    }, []); // ===================== Render =====================
+
+    var motionChildren;
+
+    var mergedProps = _objectSpread2(_objectSpread2({}, eventProps), {}, {
+      visible: visible
+    });
+
+    if (!children) {
+      // No children
+      motionChildren = null;
+    } else if (status === STATUS_NONE || !isSupportTransition(props)) {
+      // Stable children
+      if (mergedVisible) {
+        motionChildren = children(_objectSpread2({}, mergedProps), setNodeRef);
+      } else if (!removeOnLeave && renderedRef.current) {
+        motionChildren = children(_objectSpread2(_objectSpread2({}, mergedProps), {}, {
+          className: leavedClassName
+        }), setNodeRef);
+      } else if (forceRender) {
+        motionChildren = children(_objectSpread2(_objectSpread2({}, mergedProps), {}, {
+          style: {
+            display: 'none'
+          }
+        }), setNodeRef);
+      } else {
+        motionChildren = null;
+      }
+    } else {
+      var _classNames;
+
+      // In motion
+      var statusSuffix;
+
+      if (statusStep === STEP_PREPARE) {
+        statusSuffix = 'prepare';
+      } else if (isActive(statusStep)) {
+        statusSuffix = 'active';
+      } else if (statusStep === STEP_START) {
+        statusSuffix = 'start';
+      }
+
+      motionChildren = children(_objectSpread2(_objectSpread2({}, mergedProps), {}, {
+        className: node_modules_classnames_default_0()(getTransitionName(motionName, status), (_classNames = {}, defineProperty_defineProperty(_classNames, getTransitionName(motionName, "".concat(status, "-").concat(statusSuffix)), statusSuffix), defineProperty_defineProperty(_classNames, motionName, typeof motionName === 'string'), _classNames)),
+        style: statusStyle
+      }), setNodeRef);
+    }
+
+    return /*#__PURE__*/react.createElement(es_DomWrapper, {
+      ref: wrapperNodeRef
+    }, motionChildren);
+  });
+  CSSMotion.displayName = 'CSSMotion';
+  return CSSMotion;
+}
+/* harmony default export */ var es_CSSMotion = (genCSSMotion(supportTransition));
+;// CONCATENATED MODULE: ./node_modules/rc-motion/es/util/diff.js
+
+
+var STATUS_ADD = 'add';
+var STATUS_KEEP = 'keep';
+var STATUS_REMOVE = 'remove';
+var STATUS_REMOVED = 'removed';
+function wrapKeyToObject(key) {
+  var keyObj;
+
+  if (key && helpers_esm_typeof_typeof(key) === 'object' && 'key' in key) {
+    keyObj = key;
+  } else {
+    keyObj = {
+      key: key
+    };
+  }
+
+  return _objectSpread2(_objectSpread2({}, keyObj), {}, {
+    key: String(keyObj.key)
+  });
+}
+function parseKeys() {
+  var keys = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  return keys.map(wrapKeyToObject);
+}
+function diffKeys() {
+  var prevKeys = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var currentKeys = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+  var list = [];
+  var currentIndex = 0;
+  var currentLen = currentKeys.length;
+  var prevKeyObjects = parseKeys(prevKeys);
+  var currentKeyObjects = parseKeys(currentKeys); // Check prev keys to insert or keep
+
+  prevKeyObjects.forEach(function (keyObj) {
+    var hit = false;
+
+    for (var i = currentIndex; i < currentLen; i += 1) {
+      var currentKeyObj = currentKeyObjects[i];
+
+      if (currentKeyObj.key === keyObj.key) {
+        // New added keys should add before current key
+        if (currentIndex < i) {
+          list = list.concat(currentKeyObjects.slice(currentIndex, i).map(function (obj) {
+            return _objectSpread2(_objectSpread2({}, obj), {}, {
+              status: STATUS_ADD
+            });
+          }));
+          currentIndex = i;
+        }
+
+        list.push(_objectSpread2(_objectSpread2({}, currentKeyObj), {}, {
+          status: STATUS_KEEP
+        }));
+        currentIndex += 1;
+        hit = true;
+        break;
+      }
+    } // If not hit, it means key is removed
+
+
+    if (!hit) {
+      list.push(_objectSpread2(_objectSpread2({}, keyObj), {}, {
+        status: STATUS_REMOVE
+      }));
+    }
+  }); // Add rest to the list
+
+  if (currentIndex < currentLen) {
+    list = list.concat(currentKeyObjects.slice(currentIndex).map(function (obj) {
+      return _objectSpread2(_objectSpread2({}, obj), {}, {
+        status: STATUS_ADD
+      });
+    }));
+  }
+  /**
+   * Merge same key when it remove and add again:
+   *    [1 - add, 2 - keep, 1 - remove] -> [1 - keep, 2 - keep]
+   */
+
+
+  var keys = {};
+  list.forEach(function (_ref) {
+    var key = _ref.key;
+    keys[key] = (keys[key] || 0) + 1;
+  });
+  var duplicatedKeys = Object.keys(keys).filter(function (key) {
+    return keys[key] > 1;
+  });
+  duplicatedKeys.forEach(function (matchKey) {
+    // Remove `STATUS_REMOVE` node.
+    list = list.filter(function (_ref2) {
+      var key = _ref2.key,
+          status = _ref2.status;
+      return key !== matchKey || status !== STATUS_REMOVE;
+    }); // Update `STATUS_ADD` to `STATUS_KEEP`
+
+    list.forEach(function (node) {
+      if (node.key === matchKey) {
+        // eslint-disable-next-line no-param-reassign
+        node.status = STATUS_KEEP;
+      }
+    });
+  });
+  return list;
+}
+;// CONCATENATED MODULE: ./node_modules/rc-motion/es/CSSMotionList.js
+
+
+
+
+
+
+
+
+/* eslint react/prop-types: 0 */
+
+
+
+
+var MOTION_PROP_NAMES = ['eventProps', 'visible', 'children', 'motionName', 'motionAppear', 'motionEnter', 'motionLeave', 'motionLeaveImmediately', 'motionDeadline', 'removeOnLeave', 'leavedClassName', 'onAppearStart', 'onAppearActive', 'onAppearEnd', 'onEnterStart', 'onEnterActive', 'onEnterEnd', 'onLeaveStart', 'onLeaveActive', 'onLeaveEnd'];
+/**
+ * Generate a CSSMotionList component with config
+ * @param transitionSupport No need since CSSMotionList no longer depends on transition support
+ * @param CSSMotion CSSMotion component
+ */
+
+function genCSSMotionList(transitionSupport) {
+  var CSSMotion = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : es_CSSMotion;
+
+  var CSSMotionList = /*#__PURE__*/function (_React$Component) {
+    inherits_inherits(CSSMotionList, _React$Component);
+
+    var _super = createSuper_createSuper(CSSMotionList);
+
+    function CSSMotionList() {
       var _this;
 
-      _classCallCheck(this, Trigger);
+      classCallCheck_classCallCheck(this, CSSMotionList);
 
-      _this = _super.call(this, props);
-      _this.popupRef = /*#__PURE__*/react.createRef();
-      _this.triggerRef = /*#__PURE__*/react.createRef();
-
-      _this.onMouseEnter = function (e) {
-        var mouseEnterDelay = _this.props.mouseEnterDelay;
-
-        _this.fireEvents('onMouseEnter', e);
-
-        _this.delaySetPopupVisible(true, mouseEnterDelay, mouseEnterDelay ? null : e);
+      _this = _super.apply(this, arguments);
+      _this.state = {
+        keyEntities: []
       };
 
-      _this.onMouseMove = function (e) {
-        _this.fireEvents('onMouseMove', e);
-
-        _this.setPoint(e);
-      };
-
-      _this.onMouseLeave = function (e) {
-        _this.fireEvents('onMouseLeave', e);
-
-        _this.delaySetPopupVisible(false, _this.props.mouseLeaveDelay);
-      };
-
-      _this.onPopupMouseEnter = function () {
-        _this.clearDelayTimer();
-      };
-
-      _this.onPopupMouseLeave = function (e) {
-        var _this$popupRef$curren;
-
-        // https://github.com/react-component/trigger/pull/13
-        // react bug?
-        if (e.relatedTarget && !e.relatedTarget.setTimeout && contains((_this$popupRef$curren = _this.popupRef.current) === null || _this$popupRef$curren === void 0 ? void 0 : _this$popupRef$curren.getElement(), e.relatedTarget)) {
-          return;
-        }
-
-        _this.delaySetPopupVisible(false, _this.props.mouseLeaveDelay);
-      };
-
-      _this.onFocus = function (e) {
-        _this.fireEvents('onFocus', e); // incase focusin and focusout
-
-
-        _this.clearDelayTimer();
-
-        if (_this.isFocusToShow()) {
-          _this.focusTime = Date.now();
-
-          _this.delaySetPopupVisible(true, _this.props.focusDelay);
-        }
-      };
-
-      _this.onMouseDown = function (e) {
-        _this.fireEvents('onMouseDown', e);
-
-        _this.preClickTime = Date.now();
-      };
-
-      _this.onTouchStart = function (e) {
-        _this.fireEvents('onTouchStart', e);
-
-        _this.preTouchTime = Date.now();
-      };
-
-      _this.onBlur = function (e) {
-        _this.fireEvents('onBlur', e);
-
-        _this.clearDelayTimer();
-
-        if (_this.isBlurToHide()) {
-          _this.delaySetPopupVisible(false, _this.props.blurDelay);
-        }
-      };
-
-      _this.onContextMenu = function (e) {
-        e.preventDefault();
-
-        _this.fireEvents('onContextMenu', e);
-
-        _this.setPopupVisible(true, e);
-      };
-
-      _this.onContextMenuClose = function () {
-        if (_this.isContextMenuToShow()) {
-          _this.close();
-        }
-      };
-
-      _this.onClick = function (event) {
-        _this.fireEvents('onClick', event); // focus will trigger click
-
-
-        if (_this.focusTime) {
-          var preTime;
-
-          if (_this.preClickTime && _this.preTouchTime) {
-            preTime = Math.min(_this.preClickTime, _this.preTouchTime);
-          } else if (_this.preClickTime) {
-            preTime = _this.preClickTime;
-          } else if (_this.preTouchTime) {
-            preTime = _this.preTouchTime;
-          }
-
-          if (Math.abs(preTime - _this.focusTime) < 20) {
-            return;
-          }
-
-          _this.focusTime = 0;
-        }
-
-        _this.preClickTime = 0;
-        _this.preTouchTime = 0; // Only prevent default when all the action is click.
-        // https://github.com/ant-design/ant-design/issues/17043
-        // https://github.com/ant-design/ant-design/issues/17291
-
-        if (_this.isClickToShow() && (_this.isClickToHide() || _this.isBlurToHide()) && event && event.preventDefault) {
-          event.preventDefault();
-        }
-
-        var nextVisible = !_this.state.popupVisible;
-
-        if (_this.isClickToHide() && !nextVisible || nextVisible && _this.isClickToShow()) {
-          _this.setPopupVisible(!_this.state.popupVisible, event);
-        }
-      };
-
-      _this.onPopupMouseDown = function () {
-        _this.hasPopupMouseDown = true;
-        clearTimeout(_this.mouseDownTimeout);
-        _this.mouseDownTimeout = window.setTimeout(function () {
-          _this.hasPopupMouseDown = false;
-        }, 0);
-
-        if (_this.context) {
-          var _this$context;
-
-          (_this$context = _this.context).onPopupMouseDown.apply(_this$context, arguments);
-        }
-      };
-
-      _this.onDocumentClick = function (event) {
-        if (_this.props.mask && !_this.props.maskClosable) {
-          return;
-        }
-
-        var target = event.target;
-
-        var root = _this.getRootDomNode();
-
-        var popupNode = _this.getPopupDomNode();
-
-        if ( // mousedown on the target should also close popup when action is contextMenu.
-        // https://github.com/ant-design/ant-design/issues/29853
-        (!contains(root, target) || _this.isContextMenuOnly()) && !contains(popupNode, target) && !_this.hasPopupMouseDown) {
-          _this.close();
-        }
-      };
-
-      _this.getRootDomNode = function () {
-        var getTriggerDOMNode = _this.props.getTriggerDOMNode;
-
-        if (getTriggerDOMNode) {
-          return getTriggerDOMNode(_this.triggerRef.current);
-        }
-
-        try {
-          var domNode = findDOMNode(_this.triggerRef.current);
-
-          if (domNode) {
-            return domNode;
-          }
-        } catch (err) {// Do nothing
-        }
-
-        return react_dom.findDOMNode(_assertThisInitialized(_this));
-      };
-
-      _this.getPopupClassNameFromAlign = function (align) {
-        var className = [];
-        var _this$props = _this.props,
-            popupPlacement = _this$props.popupPlacement,
-            builtinPlacements = _this$props.builtinPlacements,
-            prefixCls = _this$props.prefixCls,
-            alignPoint = _this$props.alignPoint,
-            getPopupClassNameFromAlign = _this$props.getPopupClassNameFromAlign;
-
-        if (popupPlacement && builtinPlacements) {
-          className.push(getAlignPopupClassName(builtinPlacements, prefixCls, align, alignPoint));
-        }
-
-        if (getPopupClassNameFromAlign) {
-          className.push(getPopupClassNameFromAlign(align));
-        }
-
-        return className.join(' ');
-      };
-
-      _this.getComponent = function () {
-        var _this$props2 = _this.props,
-            prefixCls = _this$props2.prefixCls,
-            destroyPopupOnHide = _this$props2.destroyPopupOnHide,
-            popupClassName = _this$props2.popupClassName,
-            onPopupAlign = _this$props2.onPopupAlign,
-            popupMotion = _this$props2.popupMotion,
-            popupAnimation = _this$props2.popupAnimation,
-            popupTransitionName = _this$props2.popupTransitionName,
-            popupStyle = _this$props2.popupStyle,
-            mask = _this$props2.mask,
-            maskAnimation = _this$props2.maskAnimation,
-            maskTransitionName = _this$props2.maskTransitionName,
-            maskMotion = _this$props2.maskMotion,
-            zIndex = _this$props2.zIndex,
-            popup = _this$props2.popup,
-            stretch = _this$props2.stretch,
-            alignPoint = _this$props2.alignPoint,
-            mobile = _this$props2.mobile,
-            forceRender = _this$props2.forceRender;
-        var _this$state = _this.state,
-            popupVisible = _this$state.popupVisible,
-            point = _this$state.point;
-
-        var align = _this.getPopupAlign();
-
-        var mouseProps = {};
-
-        if (_this.isMouseEnterToShow()) {
-          mouseProps.onMouseEnter = _this.onPopupMouseEnter;
-        }
-
-        if (_this.isMouseLeaveToHide()) {
-          mouseProps.onMouseLeave = _this.onPopupMouseLeave;
-        }
-
-        mouseProps.onMouseDown = _this.onPopupMouseDown;
-        mouseProps.onTouchStart = _this.onPopupMouseDown;
-        return /*#__PURE__*/react.createElement(es_Popup, extends_extends({
-          prefixCls: prefixCls,
-          destroyPopupOnHide: destroyPopupOnHide,
-          visible: popupVisible,
-          point: alignPoint && point,
-          className: popupClassName,
-          align: align,
-          onAlign: onPopupAlign,
-          animation: popupAnimation,
-          getClassNameFromAlign: _this.getPopupClassNameFromAlign
-        }, mouseProps, {
-          stretch: stretch,
-          getRootDomNode: _this.getRootDomNode,
-          style: popupStyle,
-          mask: mask,
-          zIndex: zIndex,
-          transitionName: popupTransitionName,
-          maskAnimation: maskAnimation,
-          maskTransitionName: maskTransitionName,
-          maskMotion: maskMotion,
-          ref: _this.popupRef,
-          motion: popupMotion,
-          mobile: mobile,
-          forceRender: forceRender
-        }), typeof popup === 'function' ? popup() : popup);
-      };
-
-      _this.attachParent = function (popupContainer) {
-        wrapperRaf.cancel(_this.attachId);
-        var _this$props3 = _this.props,
-            getPopupContainer = _this$props3.getPopupContainer,
-            getDocument = _this$props3.getDocument;
-
-        var domNode = _this.getRootDomNode();
-
-        var mountNode;
-
-        if (!getPopupContainer) {
-          mountNode = getDocument(_this.getRootDomNode()).body;
-        } else if (domNode || getPopupContainer.length === 0) {
-          // Compatible for legacy getPopupContainer with domNode argument.
-          // If no need `domNode` argument, will call directly.
-          // https://codesandbox.io/s/eloquent-mclean-ss93m?file=/src/App.js
-          mountNode = getPopupContainer(domNode);
-        }
-
-        if (mountNode) {
-          mountNode.appendChild(popupContainer);
-        } else {
-          // Retry after frame render in case parent not ready
-          _this.attachId = wrapperRaf(function () {
-            _this.attachParent(popupContainer);
-          });
-        }
-      };
-
-      _this.getContainer = function () {
-        var getDocument = _this.props.getDocument;
-        var popupContainer = getDocument(_this.getRootDomNode()).createElement('div'); // Make sure default popup container will never cause scrollbar appearing
-        // https://github.com/react-component/trigger/issues/41
-
-        popupContainer.style.position = 'absolute';
-        popupContainer.style.top = '0';
-        popupContainer.style.left = '0';
-        popupContainer.style.width = '100%';
-
-        _this.attachParent(popupContainer);
-
-        return popupContainer;
-      };
-
-      _this.setPoint = function (point) {
-        var alignPoint = _this.props.alignPoint;
-        if (!alignPoint || !point) return;
-
-        _this.setState({
-          point: {
-            pageX: point.pageX,
-            pageY: point.pageY
-          }
+      _this.removeKey = function (removeKey) {
+        _this.setState(function (_ref) {
+          var keyEntities = _ref.keyEntities;
+          return {
+            keyEntities: keyEntities.map(function (entity) {
+              if (entity.key !== removeKey) return entity;
+              return _objectSpread2(_objectSpread2({}, entity), {}, {
+                status: STATUS_REMOVED
+              });
+            })
+          };
         });
       };
 
-      _this.handlePortalUpdate = function () {
-        if (_this.state.prevPopupVisible !== _this.state.popupVisible) {
-          _this.props.afterPopupVisibleChange(_this.state.popupVisible);
-        }
-      };
-
-      _this.triggerContextValue = {
-        onPopupMouseDown: _this.onPopupMouseDown
-      };
-      var popupVisible;
-
-      if ('popupVisible' in props) {
-        popupVisible = !!props.popupVisible;
-      } else {
-        popupVisible = !!props.defaultPopupVisible;
-      }
-
-      _this.state = {
-        prevPopupVisible: popupVisible,
-        popupVisible: popupVisible
-      };
-      ALL_HANDLERS.forEach(function (h) {
-        _this["fire".concat(h)] = function (e) {
-          _this.fireEvents(h, e);
-        };
-      });
       return _this;
     }
 
-    _createClass(Trigger, [{
-      key: "componentDidMount",
-      value: function componentDidMount() {
-        this.componentDidUpdate();
-      }
-    }, {
-      key: "componentDidUpdate",
-      value: function componentDidUpdate() {
-        var props = this.props;
-        var state = this.state; // We must listen to `mousedown` or `touchstart`, edge case:
-        // https://github.com/ant-design/ant-design/issues/5804
-        // https://github.com/react-component/calendar/issues/250
-        // https://github.com/react-component/trigger/issues/50
-
-        if (state.popupVisible) {
-          var currentDocument;
-
-          if (!this.clickOutsideHandler && (this.isClickToHide() || this.isContextMenuToShow())) {
-            currentDocument = props.getDocument(this.getRootDomNode());
-            this.clickOutsideHandler = addEventListenerWrap(currentDocument, 'mousedown', this.onDocumentClick);
-          } // always hide on mobile
-
-
-          if (!this.touchOutsideHandler) {
-            currentDocument = currentDocument || props.getDocument(this.getRootDomNode());
-            this.touchOutsideHandler = addEventListenerWrap(currentDocument, 'touchstart', this.onDocumentClick);
-          } // close popup when trigger type contains 'onContextMenu' and document is scrolling.
-
-
-          if (!this.contextMenuOutsideHandler1 && this.isContextMenuToShow()) {
-            currentDocument = currentDocument || props.getDocument(this.getRootDomNode());
-            this.contextMenuOutsideHandler1 = addEventListenerWrap(currentDocument, 'scroll', this.onContextMenuClose);
-          } // close popup when trigger type contains 'onContextMenu' and window is blur.
-
-
-          if (!this.contextMenuOutsideHandler2 && this.isContextMenuToShow()) {
-            this.contextMenuOutsideHandler2 = addEventListenerWrap(window, 'blur', this.onContextMenuClose);
-          }
-
-          return;
-        }
-
-        this.clearOutsideHandler();
-      }
-    }, {
-      key: "componentWillUnmount",
-      value: function componentWillUnmount() {
-        this.clearDelayTimer();
-        this.clearOutsideHandler();
-        clearTimeout(this.mouseDownTimeout);
-        wrapperRaf.cancel(this.attachId);
-      }
-    }, {
-      key: "getPopupDomNode",
-      value: function getPopupDomNode() {
-        var _this$popupRef$curren2;
-
-        // for test
-        return ((_this$popupRef$curren2 = this.popupRef.current) === null || _this$popupRef$curren2 === void 0 ? void 0 : _this$popupRef$curren2.getElement()) || null;
-      }
-    }, {
-      key: "getPopupAlign",
-      value: function getPopupAlign() {
-        var props = this.props;
-        var popupPlacement = props.popupPlacement,
-            popupAlign = props.popupAlign,
-            builtinPlacements = props.builtinPlacements;
-
-        if (popupPlacement && builtinPlacements) {
-          return getAlignFromPlacement(builtinPlacements, popupPlacement, popupAlign);
-        }
-
-        return popupAlign;
-      }
-      /**
-       * @param popupVisible    Show or not the popup element
-       * @param event           SyntheticEvent, used for `pointAlign`
-       */
-
-    }, {
-      key: "setPopupVisible",
-      value: function setPopupVisible(popupVisible, event) {
-        var alignPoint = this.props.alignPoint;
-        var prevPopupVisible = this.state.popupVisible;
-        this.clearDelayTimer();
-
-        if (prevPopupVisible !== popupVisible) {
-          if (!('popupVisible' in this.props)) {
-            this.setState({
-              popupVisible: popupVisible,
-              prevPopupVisible: prevPopupVisible
-            });
-          }
-
-          this.props.onPopupVisibleChange(popupVisible);
-        } // Always record the point position since mouseEnterDelay will delay the show
-
-
-        if (alignPoint && event && popupVisible) {
-          this.setPoint(event);
-        }
-      }
-    }, {
-      key: "delaySetPopupVisible",
-      value: function delaySetPopupVisible(visible, delayS, event) {
-        var _this2 = this;
-
-        var delay = delayS * 1000;
-        this.clearDelayTimer();
-
-        if (delay) {
-          var point = event ? {
-            pageX: event.pageX,
-            pageY: event.pageY
-          } : null;
-          this.delayTimer = window.setTimeout(function () {
-            _this2.setPopupVisible(visible, point);
-
-            _this2.clearDelayTimer();
-          }, delay);
-        } else {
-          this.setPopupVisible(visible, event);
-        }
-      }
-    }, {
-      key: "clearDelayTimer",
-      value: function clearDelayTimer() {
-        if (this.delayTimer) {
-          clearTimeout(this.delayTimer);
-          this.delayTimer = null;
-        }
-      }
-    }, {
-      key: "clearOutsideHandler",
-      value: function clearOutsideHandler() {
-        if (this.clickOutsideHandler) {
-          this.clickOutsideHandler.remove();
-          this.clickOutsideHandler = null;
-        }
-
-        if (this.contextMenuOutsideHandler1) {
-          this.contextMenuOutsideHandler1.remove();
-          this.contextMenuOutsideHandler1 = null;
-        }
-
-        if (this.contextMenuOutsideHandler2) {
-          this.contextMenuOutsideHandler2.remove();
-          this.contextMenuOutsideHandler2 = null;
-        }
-
-        if (this.touchOutsideHandler) {
-          this.touchOutsideHandler.remove();
-          this.touchOutsideHandler = null;
-        }
-      }
-    }, {
-      key: "createTwoChains",
-      value: function createTwoChains(event) {
-        var childPros = this.props.children.props;
-        var props = this.props;
-
-        if (childPros[event] && props[event]) {
-          return this["fire".concat(event)];
-        }
-
-        return childPros[event] || props[event];
-      }
-    }, {
-      key: "isClickToShow",
-      value: function isClickToShow() {
-        var _this$props4 = this.props,
-            action = _this$props4.action,
-            showAction = _this$props4.showAction;
-        return action.indexOf('click') !== -1 || showAction.indexOf('click') !== -1;
-      }
-    }, {
-      key: "isContextMenuOnly",
-      value: function isContextMenuOnly() {
-        var action = this.props.action;
-        return action === 'contextMenu' || action.length === 1 && action[0] === 'contextMenu';
-      }
-    }, {
-      key: "isContextMenuToShow",
-      value: function isContextMenuToShow() {
-        var _this$props5 = this.props,
-            action = _this$props5.action,
-            showAction = _this$props5.showAction;
-        return action.indexOf('contextMenu') !== -1 || showAction.indexOf('contextMenu') !== -1;
-      }
-    }, {
-      key: "isClickToHide",
-      value: function isClickToHide() {
-        var _this$props6 = this.props,
-            action = _this$props6.action,
-            hideAction = _this$props6.hideAction;
-        return action.indexOf('click') !== -1 || hideAction.indexOf('click') !== -1;
-      }
-    }, {
-      key: "isMouseEnterToShow",
-      value: function isMouseEnterToShow() {
-        var _this$props7 = this.props,
-            action = _this$props7.action,
-            showAction = _this$props7.showAction;
-        return action.indexOf('hover') !== -1 || showAction.indexOf('mouseEnter') !== -1;
-      }
-    }, {
-      key: "isMouseLeaveToHide",
-      value: function isMouseLeaveToHide() {
-        var _this$props8 = this.props,
-            action = _this$props8.action,
-            hideAction = _this$props8.hideAction;
-        return action.indexOf('hover') !== -1 || hideAction.indexOf('mouseLeave') !== -1;
-      }
-    }, {
-      key: "isFocusToShow",
-      value: function isFocusToShow() {
-        var _this$props9 = this.props,
-            action = _this$props9.action,
-            showAction = _this$props9.showAction;
-        return action.indexOf('focus') !== -1 || showAction.indexOf('focus') !== -1;
-      }
-    }, {
-      key: "isBlurToHide",
-      value: function isBlurToHide() {
-        var _this$props10 = this.props,
-            action = _this$props10.action,
-            hideAction = _this$props10.hideAction;
-        return action.indexOf('focus') !== -1 || hideAction.indexOf('blur') !== -1;
-      }
-    }, {
-      key: "forcePopupAlign",
-      value: function forcePopupAlign() {
-        if (this.state.popupVisible) {
-          var _this$popupRef$curren3;
-
-          (_this$popupRef$curren3 = this.popupRef.current) === null || _this$popupRef$curren3 === void 0 ? void 0 : _this$popupRef$curren3.forceAlign();
-        }
-      }
-    }, {
-      key: "fireEvents",
-      value: function fireEvents(type, e) {
-        var childCallback = this.props.children.props[type];
-
-        if (childCallback) {
-          childCallback(e);
-        }
-
-        var callback = this.props[type];
-
-        if (callback) {
-          callback(e);
-        }
-      }
-    }, {
-      key: "close",
-      value: function close() {
-        this.setPopupVisible(false);
-      }
-    }, {
+    createClass_createClass(CSSMotionList, [{
       key: "render",
       value: function render() {
-        var popupVisible = this.state.popupVisible;
-        var _this$props11 = this.props,
-            children = _this$props11.children,
-            forceRender = _this$props11.forceRender,
-            alignPoint = _this$props11.alignPoint,
-            className = _this$props11.className,
-            autoDestroy = _this$props11.autoDestroy;
-        var child = react.Children.only(children);
-        var newChildProps = {
-          key: 'trigger'
-        }; // ============================== Visible Handlers ==============================
-        // >>> ContextMenu
+        var _this2 = this;
 
-        if (this.isContextMenuToShow()) {
-          newChildProps.onContextMenu = this.onContextMenu;
-        } else {
-          newChildProps.onContextMenu = this.createTwoChains('onContextMenu');
-        } // >>> Click
+        var keyEntities = this.state.keyEntities;
 
+        var _this$props = this.props,
+            component = _this$props.component,
+            children = _this$props.children,
+            _onVisibleChanged = _this$props.onVisibleChanged,
+            restProps = _objectWithoutProperties(_this$props, ["component", "children", "onVisibleChanged"]);
 
-        if (this.isClickToHide() || this.isClickToShow()) {
-          newChildProps.onClick = this.onClick;
-          newChildProps.onMouseDown = this.onMouseDown;
-          newChildProps.onTouchStart = this.onTouchStart;
-        } else {
-          newChildProps.onClick = this.createTwoChains('onClick');
-          newChildProps.onMouseDown = this.createTwoChains('onMouseDown');
-          newChildProps.onTouchStart = this.createTwoChains('onTouchStart');
-        } // >>> Hover(enter)
+        var Component = component || react.Fragment;
+        var motionProps = {};
+        MOTION_PROP_NAMES.forEach(function (prop) {
+          motionProps[prop] = restProps[prop];
+          delete restProps[prop];
+        });
+        delete restProps.keys;
+        return /*#__PURE__*/react.createElement(Component, restProps, keyEntities.map(function (_ref2) {
+          var status = _ref2.status,
+              eventProps = _objectWithoutProperties(_ref2, ["status"]);
 
+          var visible = status === STATUS_ADD || status === STATUS_KEEP;
+          return /*#__PURE__*/react.createElement(CSSMotion, extends_extends({}, motionProps, {
+            key: eventProps.key,
+            visible: visible,
+            eventProps: eventProps,
+            onVisibleChanged: function onVisibleChanged(changedVisible) {
+              _onVisibleChanged === null || _onVisibleChanged === void 0 ? void 0 : _onVisibleChanged(changedVisible, {
+                key: eventProps.key
+              });
 
-        if (this.isMouseEnterToShow()) {
-          newChildProps.onMouseEnter = this.onMouseEnter; // Point align
-
-          if (alignPoint) {
-            newChildProps.onMouseMove = this.onMouseMove;
-          }
-        } else {
-          newChildProps.onMouseEnter = this.createTwoChains('onMouseEnter');
-        } // >>> Hover(leave)
-
-
-        if (this.isMouseLeaveToHide()) {
-          newChildProps.onMouseLeave = this.onMouseLeave;
-        } else {
-          newChildProps.onMouseLeave = this.createTwoChains('onMouseLeave');
-        } // >>> Focus
-
-
-        if (this.isFocusToShow() || this.isBlurToHide()) {
-          newChildProps.onFocus = this.onFocus;
-          newChildProps.onBlur = this.onBlur;
-        } else {
-          newChildProps.onFocus = this.createTwoChains('onFocus');
-          newChildProps.onBlur = this.createTwoChains('onBlur');
-        } // =================================== Render ===================================
-
-
-        var childrenClassName = classnames_default()(child && child.props && child.props.className, className);
-
-        if (childrenClassName) {
-          newChildProps.className = childrenClassName;
-        }
-
-        var cloneProps = _objectSpread2({}, newChildProps);
-
-        if (supportRef(child)) {
-          cloneProps.ref = composeRef(this.triggerRef, child.ref);
-        }
-
-        var trigger = /*#__PURE__*/react.cloneElement(child, cloneProps);
-        var portal; // prevent unmounting after it's rendered
-
-        if (popupVisible || this.popupRef.current || forceRender) {
-          portal = /*#__PURE__*/react.createElement(PortalComponent, {
-            key: "portal",
-            getContainer: this.getContainer,
-            didUpdate: this.handlePortalUpdate
-          }, this.getComponent());
-        }
-
-        if (!popupVisible && autoDestroy) {
-          portal = null;
-        }
-
-        return /*#__PURE__*/react.createElement(es_context.Provider, {
-          value: this.triggerContextValue
-        }, trigger, portal);
+              if (!changedVisible) {
+                _this2.removeKey(eventProps.key);
+              }
+            }
+          }), children);
+        }));
       }
     }], [{
       key: "getDerivedStateFromProps",
-      value: function getDerivedStateFromProps(_ref, prevState) {
-        var popupVisible = _ref.popupVisible;
-        var newState = {};
+      value: function getDerivedStateFromProps(_ref3, _ref4) {
+        var keys = _ref3.keys;
+        var keyEntities = _ref4.keyEntities;
+        var parsedKeyObjects = parseKeys(keys);
+        var mixedKeyEntities = diffKeys(keyEntities, parsedKeyObjects);
+        return {
+          keyEntities: mixedKeyEntities.filter(function (entity) {
+            var prevEntity = keyEntities.find(function (_ref5) {
+              var key = _ref5.key;
+              return entity.key === key;
+            }); // Remove if already mark as removed
 
-        if (popupVisible !== undefined && prevState.popupVisible !== popupVisible) {
-          newState.popupVisible = popupVisible;
-          newState.prevPopupVisible = prevState.popupVisible;
-        }
+            if (prevEntity && prevEntity.status === STATUS_REMOVED && entity.status === STATUS_REMOVE) {
+              return false;
+            }
 
-        return newState;
+            return true;
+          })
+        };
       }
     }]);
 
-    return Trigger;
+    return CSSMotionList;
   }(react.Component);
 
-  Trigger.contextType = es_context;
-  Trigger.defaultProps = {
-    prefixCls: 'rc-trigger-popup',
-    getPopupClassNameFromAlign: returnEmptyString,
-    getDocument: returnDocument,
-    onPopupVisibleChange: es_noop,
-    afterPopupVisibleChange: es_noop,
-    onPopupAlign: es_noop,
-    popupClassName: '',
-    mouseEnterDelay: 0,
-    mouseLeaveDelay: 0.1,
-    focusDelay: 0,
-    blurDelay: 0.15,
-    popupStyle: {},
-    destroyPopupOnHide: false,
-    popupAlign: {},
-    defaultPopupVisible: false,
-    mask: false,
-    maskClosable: true,
-    action: [],
-    showAction: [],
-    hideAction: [],
-    autoDestroy: false
+  CSSMotionList.defaultProps = {
+    component: 'div'
   };
+  return CSSMotionList;
+}
+/* harmony default export */ var CSSMotionList = (genCSSMotionList(supportTransition));
+;// CONCATENATED MODULE: ./node_modules/rc-motion/es/index.js
+
+
+
+/* harmony default export */ var rc_motion_es = (es_CSSMotion);
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/es/Popup/Arrow.js
+
+
+function Arrow(props) {
+  var prefixCls = props.prefixCls,
+    align = props.align,
+    arrow = props.arrow,
+    arrowPos = props.arrowPos;
+  var _ref = arrow || {},
+    className = _ref.className,
+    content = _ref.content;
+  var _arrowPos$x = arrowPos.x,
+    x = _arrowPos$x === void 0 ? 0 : _arrowPos$x,
+    _arrowPos$y = arrowPos.y,
+    y = _arrowPos$y === void 0 ? 0 : _arrowPos$y;
+  var arrowRef = react.useRef();
+
+  // Skip if no align
+  if (!align || !align.points) {
+    return null;
+  }
+  var alignStyle = {
+    position: 'absolute'
+  };
+
+  // Skip if no need to align
+  if (align.autoArrow !== false) {
+    var popupPoints = align.points[0];
+    var targetPoints = align.points[1];
+    var popupTB = popupPoints[0];
+    var popupLR = popupPoints[1];
+    var targetTB = targetPoints[0];
+    var targetLR = targetPoints[1];
+
+    // Top & Bottom
+    if (popupTB === targetTB || !['t', 'b'].includes(popupTB)) {
+      alignStyle.top = y;
+    } else if (popupTB === 't') {
+      alignStyle.top = 0;
+    } else {
+      alignStyle.bottom = 0;
+    }
+
+    // Left & Right
+    if (popupLR === targetLR || !['l', 'r'].includes(popupLR)) {
+      alignStyle.left = x;
+    } else if (popupLR === 'l') {
+      alignStyle.left = 0;
+    } else {
+      alignStyle.right = 0;
+    }
+  }
+  return /*#__PURE__*/react.createElement("div", {
+    ref: arrowRef,
+    className: node_modules_classnames_default()("".concat(prefixCls, "-arrow"), className),
+    style: alignStyle
+  }, content);
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/es/Popup/Mask.js
+
+
+
+
+function Mask(props) {
+  var prefixCls = props.prefixCls,
+    open = props.open,
+    zIndex = props.zIndex,
+    mask = props.mask,
+    motion = props.motion;
+  if (!mask) {
+    return null;
+  }
+  return /*#__PURE__*/react.createElement(rc_motion_es, helpers_esm_extends_extends({}, motion, {
+    motionAppear: true,
+    visible: open,
+    removeOnLeave: true
+  }), function (_ref) {
+    var className = _ref.className;
+    return /*#__PURE__*/react.createElement("div", {
+      style: {
+        zIndex: zIndex
+      },
+      className: node_modules_classnames_default()("".concat(prefixCls, "-mask"), className)
+    });
+  });
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/es/Popup/PopupContent.js
+
+var PopupContent = /*#__PURE__*/react.memo(function (_ref) {
+  var children = _ref.children;
+  return children;
+}, function (_, next) {
+  return next.cache;
+});
+if (false) {}
+/* harmony default export */ var Popup_PopupContent = (PopupContent);
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/es/Popup/index.js
+
+
+
+
+
+
+
+
+
+
+
+
+var Popup_Popup = /*#__PURE__*/react.forwardRef(function (props, ref) {
+  var popup = props.popup,
+    className = props.className,
+    prefixCls = props.prefixCls,
+    style = props.style,
+    target = props.target,
+    _onVisibleChanged = props.onVisibleChanged,
+    open = props.open,
+    keepDom = props.keepDom,
+    fresh = props.fresh,
+    onClick = props.onClick,
+    mask = props.mask,
+    arrow = props.arrow,
+    arrowPos = props.arrowPos,
+    align = props.align,
+    motion = props.motion,
+    maskMotion = props.maskMotion,
+    forceRender = props.forceRender,
+    getPopupContainer = props.getPopupContainer,
+    autoDestroy = props.autoDestroy,
+    Portal = props.portal,
+    zIndex = props.zIndex,
+    onMouseEnter = props.onMouseEnter,
+    onMouseLeave = props.onMouseLeave,
+    onPointerEnter = props.onPointerEnter,
+    ready = props.ready,
+    offsetX = props.offsetX,
+    offsetY = props.offsetY,
+    offsetR = props.offsetR,
+    offsetB = props.offsetB,
+    onAlign = props.onAlign,
+    onPrepare = props.onPrepare,
+    stretch = props.stretch,
+    targetWidth = props.targetWidth,
+    targetHeight = props.targetHeight;
+  var childNode = typeof popup === 'function' ? popup() : popup;
+
+  // We can not remove holder only when motion finished.
+  var isNodeVisible = open || keepDom;
+
+  // ======================= Container ========================
+  var getPopupContainerNeedParams = (getPopupContainer === null || getPopupContainer === void 0 ? void 0 : getPopupContainer.length) > 0;
+  var _React$useState = react.useState(!getPopupContainer || !getPopupContainerNeedParams),
+    _React$useState2 = slicedToArray_slicedToArray(_React$useState, 2),
+    show = _React$useState2[0],
+    setShow = _React$useState2[1];
+
+  // Delay to show since `getPopupContainer` need target element
+  hooks_useLayoutEffect(function () {
+    if (!show && getPopupContainerNeedParams && target) {
+      setShow(true);
+    }
+  }, [show, getPopupContainerNeedParams, target]);
+
+  // ========================= Render =========================
+  if (!show) {
+    return null;
+  }
+
+  // >>>>> Offset
+  var AUTO = 'auto';
+  var offsetStyle = {
+    left: '-1000vw',
+    top: '-1000vh',
+    right: AUTO,
+    bottom: AUTO
+  };
+
+  // Set align style
+  if (ready || !open) {
+    var _experimental;
+    var points = align.points;
+    var dynamicInset = align.dynamicInset || ((_experimental = align._experimental) === null || _experimental === void 0 ? void 0 : _experimental.dynamicInset);
+    var alignRight = dynamicInset && points[0][1] === 'r';
+    var alignBottom = dynamicInset && points[0][0] === 'b';
+    if (alignRight) {
+      offsetStyle.right = offsetR;
+      offsetStyle.left = AUTO;
+    } else {
+      offsetStyle.left = offsetX;
+      offsetStyle.right = AUTO;
+    }
+    if (alignBottom) {
+      offsetStyle.bottom = offsetB;
+      offsetStyle.top = AUTO;
+    } else {
+      offsetStyle.top = offsetY;
+      offsetStyle.bottom = AUTO;
+    }
+  }
+
+  // >>>>> Misc
+  var miscStyle = {};
+  if (stretch) {
+    if (stretch.includes('height') && targetHeight) {
+      miscStyle.height = targetHeight;
+    } else if (stretch.includes('minHeight') && targetHeight) {
+      miscStyle.minHeight = targetHeight;
+    }
+    if (stretch.includes('width') && targetWidth) {
+      miscStyle.width = targetWidth;
+    } else if (stretch.includes('minWidth') && targetWidth) {
+      miscStyle.minWidth = targetWidth;
+    }
+  }
+  if (!open) {
+    miscStyle.pointerEvents = 'none';
+  }
+  return /*#__PURE__*/react.createElement(Portal, {
+    open: forceRender || isNodeVisible,
+    getContainer: getPopupContainer && function () {
+      return getPopupContainer(target);
+    },
+    autoDestroy: autoDestroy
+  }, /*#__PURE__*/react.createElement(Mask, {
+    prefixCls: prefixCls,
+    open: open,
+    zIndex: zIndex,
+    mask: mask,
+    motion: maskMotion
+  }), /*#__PURE__*/react.createElement(rc_resize_observer_es, {
+    onResize: onAlign,
+    disabled: !open
+  }, function (resizeObserverRef) {
+    return /*#__PURE__*/react.createElement(rc_motion_es, helpers_esm_extends_extends({
+      motionAppear: true,
+      motionEnter: true,
+      motionLeave: true,
+      removeOnLeave: false,
+      forceRender: forceRender,
+      leavedClassName: "".concat(prefixCls, "-hidden")
+    }, motion, {
+      onAppearPrepare: onPrepare,
+      onEnterPrepare: onPrepare,
+      visible: open,
+      onVisibleChanged: function onVisibleChanged(nextVisible) {
+        var _motion$onVisibleChan;
+        motion === null || motion === void 0 || (_motion$onVisibleChan = motion.onVisibleChanged) === null || _motion$onVisibleChan === void 0 || _motion$onVisibleChan.call(motion, nextVisible);
+        _onVisibleChanged(nextVisible);
+      }
+    }), function (_ref, motionRef) {
+      var motionClassName = _ref.className,
+        motionStyle = _ref.style;
+      var cls = node_modules_classnames_default()(prefixCls, motionClassName, className);
+      return /*#__PURE__*/react.createElement("div", {
+        ref: composeRef(resizeObserverRef, ref, motionRef),
+        className: cls,
+        style: objectSpread2_objectSpread2(objectSpread2_objectSpread2(objectSpread2_objectSpread2(objectSpread2_objectSpread2({
+          '--arrow-x': "".concat(arrowPos.x || 0, "px"),
+          '--arrow-y': "".concat(arrowPos.y || 0, "px")
+        }, offsetStyle), miscStyle), motionStyle), {}, {
+          boxSizing: 'border-box',
+          zIndex: zIndex
+        }, style),
+        onMouseEnter: onMouseEnter,
+        onMouseLeave: onMouseLeave,
+        onPointerEnter: onPointerEnter,
+        onClick: onClick
+      }, arrow && /*#__PURE__*/react.createElement(Arrow, {
+        prefixCls: prefixCls,
+        arrow: arrow,
+        arrowPos: arrowPos,
+        align: align
+      }), /*#__PURE__*/react.createElement(Popup_PopupContent, {
+        cache: !open && !fresh
+      }, childNode));
+    });
+  }));
+});
+if (false) {}
+/* harmony default export */ var es_Popup = (Popup_Popup);
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/es/TriggerWrapper.js
+
+
+var TriggerWrapper = /*#__PURE__*/react.forwardRef(function (props, ref) {
+  var children = props.children,
+    getTriggerDOMNode = props.getTriggerDOMNode;
+  var canUseRef = supportRef(children);
+
+  // When use `getTriggerDOMNode`, we should do additional work to get the real dom
+  var setRef = react.useCallback(function (node) {
+    fillRef(ref, getTriggerDOMNode ? getTriggerDOMNode(node) : node);
+  }, [getTriggerDOMNode]);
+  var mergedRef = useComposeRef(setRef, children.ref);
+  return canUseRef ? /*#__PURE__*/react.cloneElement(children, {
+    ref: mergedRef
+  }) : children;
+});
+if (false) {}
+/* harmony default export */ var es_TriggerWrapper = (TriggerWrapper);
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/es/context.js
+
+var TriggerContext = /*#__PURE__*/react.createContext(null);
+/* harmony default export */ var es_context = (TriggerContext);
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/es/hooks/useAction.js
+
+function useAction_toArray(val) {
+  return val ? Array.isArray(val) ? val : [val] : [];
+}
+function useAction(mobile, action, showAction, hideAction) {
+  return react.useMemo(function () {
+    var mergedShowAction = useAction_toArray(showAction !== null && showAction !== void 0 ? showAction : action);
+    var mergedHideAction = useAction_toArray(hideAction !== null && hideAction !== void 0 ? hideAction : action);
+    var showActionSet = new Set(mergedShowAction);
+    var hideActionSet = new Set(mergedHideAction);
+    if (mobile) {
+      if (showActionSet.has('hover')) {
+        showActionSet.delete('hover');
+        showActionSet.add('click');
+      }
+      if (hideActionSet.has('hover')) {
+        hideActionSet.delete('hover');
+        hideActionSet.add('click');
+      }
+    }
+    return [showActionSet, hideActionSet];
+  }, [mobile, action, showAction, hideAction]);
+}
+;// CONCATENATED MODULE: ./node_modules/rc-util/es/Dom/isVisible.js
+/* harmony default export */ var isVisible = (function (element) {
+  if (!element) {
+    return false;
+  }
+  if (element instanceof Element) {
+    if (element.offsetParent) {
+      return true;
+    }
+    if (element.getBBox) {
+      var _getBBox = element.getBBox(),
+        width = _getBBox.width,
+        height = _getBBox.height;
+      if (width || height) {
+        return true;
+      }
+    }
+    if (element.getBoundingClientRect) {
+      var _element$getBoundingC = element.getBoundingClientRect(),
+        _width = _element$getBoundingC.width,
+        _height = _element$getBoundingC.height;
+      if (_width || _height) {
+        return true;
+      }
+    }
+  }
+  return false;
+});
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/es/util.js
+
+function isPointsEq() {
+  var a1 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var a2 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+  var isAlignPoint = arguments.length > 2 ? arguments[2] : undefined;
+  if (isAlignPoint) {
+    return a1[0] === a2[0];
+  }
+  return a1[0] === a2[0] && a1[1] === a2[1];
+}
+function getAlignPopupClassName(builtinPlacements, prefixCls, align, isAlignPoint) {
+  var points = align.points;
+  var placements = Object.keys(builtinPlacements);
+  for (var i = 0; i < placements.length; i += 1) {
+    var _builtinPlacements$pl;
+    var placement = placements[i];
+    if (isPointsEq((_builtinPlacements$pl = builtinPlacements[placement]) === null || _builtinPlacements$pl === void 0 ? void 0 : _builtinPlacements$pl.points, points, isAlignPoint)) {
+      return "".concat(prefixCls, "-placement-").concat(placement);
+    }
+  }
+  return '';
+}
+
+/** @deprecated We should not use this if we can refactor all deps */
+function getMotion(prefixCls, motion, animation, transitionName) {
+  if (motion) {
+    return motion;
+  }
+  if (animation) {
+    return {
+      motionName: "".concat(prefixCls, "-").concat(animation)
+    };
+  }
+  if (transitionName) {
+    return {
+      motionName: transitionName
+    };
+  }
+  return null;
+}
+function getWin(ele) {
+  return ele.ownerDocument.defaultView;
+}
+
+/**
+ * Get all the scrollable parent elements of the element
+ * @param ele       The element to be detected
+ * @param areaOnly  Only return the parent which will cut visible area
+ */
+function collectScroller(ele) {
+  var scrollerList = [];
+  var current = ele === null || ele === void 0 ? void 0 : ele.parentElement;
+  var scrollStyle = ['hidden', 'scroll', 'clip', 'auto'];
+  while (current) {
+    var _getWin$getComputedSt = getWin(current).getComputedStyle(current),
+      overflowX = _getWin$getComputedSt.overflowX,
+      overflowY = _getWin$getComputedSt.overflowY,
+      overflow = _getWin$getComputedSt.overflow;
+    if ([overflowX, overflowY, overflow].some(function (o) {
+      return scrollStyle.includes(o);
+    })) {
+      scrollerList.push(current);
+    }
+    current = current.parentElement;
+  }
+  return scrollerList;
+}
+function toNum(num) {
+  var defaultValue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  return Number.isNaN(num) ? defaultValue : num;
+}
+function getPxValue(val) {
+  return toNum(parseFloat(val), 0);
+}
+/**
+ *
+ *
+ *  **************************************
+ *  *              Border                *
+ *  *     **************************     *
+ *  *     *                  *     *     *
+ *  *  B  *                  *  S  *  B  *
+ *  *  o  *                  *  c  *  o  *
+ *  *  r  *      Content     *  r  *  r  *
+ *  *  d  *                  *  o  *  d  *
+ *  *  e  *                  *  l  *  e  *
+ *  *  r  ********************  l  *  r  *
+ *  *     *        Scroll          *     *
+ *  *     **************************     *
+ *  *              Border                *
+ *  **************************************
+ *
+ */
+/**
+ * Get visible area of element
+ */
+function getVisibleArea(initArea, scrollerList) {
+  var visibleArea = objectSpread2_objectSpread2({}, initArea);
+  (scrollerList || []).forEach(function (ele) {
+    if (ele instanceof HTMLBodyElement || ele instanceof HTMLHtmlElement) {
+      return;
+    }
+
+    // Skip if static position which will not affect visible area
+    var _getWin$getComputedSt2 = getWin(ele).getComputedStyle(ele),
+      overflow = _getWin$getComputedSt2.overflow,
+      overflowClipMargin = _getWin$getComputedSt2.overflowClipMargin,
+      borderTopWidth = _getWin$getComputedSt2.borderTopWidth,
+      borderBottomWidth = _getWin$getComputedSt2.borderBottomWidth,
+      borderLeftWidth = _getWin$getComputedSt2.borderLeftWidth,
+      borderRightWidth = _getWin$getComputedSt2.borderRightWidth;
+    var eleRect = ele.getBoundingClientRect();
+    var eleOutHeight = ele.offsetHeight,
+      eleInnerHeight = ele.clientHeight,
+      eleOutWidth = ele.offsetWidth,
+      eleInnerWidth = ele.clientWidth;
+    var borderTopNum = getPxValue(borderTopWidth);
+    var borderBottomNum = getPxValue(borderBottomWidth);
+    var borderLeftNum = getPxValue(borderLeftWidth);
+    var borderRightNum = getPxValue(borderRightWidth);
+    var scaleX = toNum(Math.round(eleRect.width / eleOutWidth * 1000) / 1000);
+    var scaleY = toNum(Math.round(eleRect.height / eleOutHeight * 1000) / 1000);
+
+    // Original visible area
+    var eleScrollWidth = (eleOutWidth - eleInnerWidth - borderLeftNum - borderRightNum) * scaleX;
+    var eleScrollHeight = (eleOutHeight - eleInnerHeight - borderTopNum - borderBottomNum) * scaleY;
+
+    // Cut border size
+    var scaledBorderTopWidth = borderTopNum * scaleY;
+    var scaledBorderBottomWidth = borderBottomNum * scaleY;
+    var scaledBorderLeftWidth = borderLeftNum * scaleX;
+    var scaledBorderRightWidth = borderRightNum * scaleX;
+
+    // Clip margin
+    var clipMarginWidth = 0;
+    var clipMarginHeight = 0;
+    if (overflow === 'clip') {
+      var clipNum = getPxValue(overflowClipMargin);
+      clipMarginWidth = clipNum * scaleX;
+      clipMarginHeight = clipNum * scaleY;
+    }
+
+    // Region
+    var eleLeft = eleRect.x + scaledBorderLeftWidth - clipMarginWidth;
+    var eleTop = eleRect.y + scaledBorderTopWidth - clipMarginHeight;
+    var eleRight = eleLeft + eleRect.width + 2 * clipMarginWidth - scaledBorderLeftWidth - scaledBorderRightWidth - eleScrollWidth;
+    var eleBottom = eleTop + eleRect.height + 2 * clipMarginHeight - scaledBorderTopWidth - scaledBorderBottomWidth - eleScrollHeight;
+    visibleArea.left = Math.max(visibleArea.left, eleLeft);
+    visibleArea.top = Math.max(visibleArea.top, eleTop);
+    visibleArea.right = Math.min(visibleArea.right, eleRight);
+    visibleArea.bottom = Math.min(visibleArea.bottom, eleBottom);
+  });
+  return visibleArea;
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/es/hooks/useAlign.js
+
+
+
+
+
+
+
+
+function getUnitOffset(size) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+  var offsetStr = "".concat(offset);
+  var cells = offsetStr.match(/^(.*)\%$/);
+  if (cells) {
+    return size * (parseFloat(cells[1]) / 100);
+  }
+  return parseFloat(offsetStr);
+}
+function getNumberOffset(rect, offset) {
+  var _ref = offset || [],
+    _ref2 = slicedToArray_slicedToArray(_ref, 2),
+    offsetX = _ref2[0],
+    offsetY = _ref2[1];
+  return [getUnitOffset(rect.width, offsetX), getUnitOffset(rect.height, offsetY)];
+}
+function splitPoints() {
+  var points = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  return [points[0], points[1]];
+}
+function getAlignPoint(rect, points) {
+  var topBottom = points[0];
+  var leftRight = points[1];
+  var x;
+  var y;
+
+  // Top & Bottom
+  if (topBottom === 't') {
+    y = rect.y;
+  } else if (topBottom === 'b') {
+    y = rect.y + rect.height;
+  } else {
+    y = rect.y + rect.height / 2;
+  }
+
+  // Left & Right
+  if (leftRight === 'l') {
+    x = rect.x;
+  } else if (leftRight === 'r') {
+    x = rect.x + rect.width;
+  } else {
+    x = rect.x + rect.width / 2;
+  }
+  return {
+    x: x,
+    y: y
+  };
+}
+function reversePoints(points, index) {
+  var reverseMap = {
+    t: 'b',
+    b: 't',
+    l: 'r',
+    r: 'l'
+  };
+  return points.map(function (point, i) {
+    if (i === index) {
+      return reverseMap[point] || 'c';
+    }
+    return point;
+  }).join('');
+}
+function useAlign(open, popupEle, target, placement, builtinPlacements, popupAlign, onPopupAlign) {
+  var _React$useState = react.useState({
+      ready: false,
+      offsetX: 0,
+      offsetY: 0,
+      offsetR: 0,
+      offsetB: 0,
+      arrowX: 0,
+      arrowY: 0,
+      scaleX: 1,
+      scaleY: 1,
+      align: builtinPlacements[placement] || {}
+    }),
+    _React$useState2 = slicedToArray_slicedToArray(_React$useState, 2),
+    offsetInfo = _React$useState2[0],
+    setOffsetInfo = _React$useState2[1];
+  var alignCountRef = react.useRef(0);
+  var scrollerList = react.useMemo(function () {
+    if (!popupEle) {
+      return [];
+    }
+    return collectScroller(popupEle);
+  }, [popupEle]);
+
+  // ========================= Flip ==========================
+  // We will memo flip info.
+  // If size change to make flip, it will memo the flip info and use it in next align.
+  var prevFlipRef = react.useRef({});
+  var resetFlipCache = function resetFlipCache() {
+    prevFlipRef.current = {};
+  };
+  if (!open) {
+    resetFlipCache();
+  }
+
+  // ========================= Align =========================
+  var onAlign = useEvent(function () {
+    if (popupEle && target && open) {
+      var _popupElement$parentE, _popupElement$parentE2;
+      var popupElement = popupEle;
+      var doc = popupElement.ownerDocument;
+      var win = getWin(popupElement);
+      var _win$getComputedStyle = win.getComputedStyle(popupElement),
+        width = _win$getComputedStyle.width,
+        height = _win$getComputedStyle.height,
+        popupPosition = _win$getComputedStyle.position;
+      var originLeft = popupElement.style.left;
+      var originTop = popupElement.style.top;
+      var originRight = popupElement.style.right;
+      var originBottom = popupElement.style.bottom;
+      var originOverflow = popupElement.style.overflow;
+
+      // Placement
+      var placementInfo = objectSpread2_objectSpread2(objectSpread2_objectSpread2({}, builtinPlacements[placement]), popupAlign);
+
+      // placeholder element
+      var placeholderElement = doc.createElement('div');
+      (_popupElement$parentE = popupElement.parentElement) === null || _popupElement$parentE === void 0 || _popupElement$parentE.appendChild(placeholderElement);
+      placeholderElement.style.left = "".concat(popupElement.offsetLeft, "px");
+      placeholderElement.style.top = "".concat(popupElement.offsetTop, "px");
+      placeholderElement.style.position = popupPosition;
+      placeholderElement.style.height = "".concat(popupElement.offsetHeight, "px");
+      placeholderElement.style.width = "".concat(popupElement.offsetWidth, "px");
+
+      // Reset first
+      popupElement.style.left = '0';
+      popupElement.style.top = '0';
+      popupElement.style.right = 'auto';
+      popupElement.style.bottom = 'auto';
+      popupElement.style.overflow = 'hidden';
+
+      // Calculate align style, we should consider `transform` case
+      var targetRect;
+      if (Array.isArray(target)) {
+        targetRect = {
+          x: target[0],
+          y: target[1],
+          width: 0,
+          height: 0
+        };
+      } else {
+        var rect = target.getBoundingClientRect();
+        targetRect = {
+          x: rect.x,
+          y: rect.y,
+          width: rect.width,
+          height: rect.height
+        };
+      }
+      var popupRect = popupElement.getBoundingClientRect();
+      var _doc$documentElement = doc.documentElement,
+        clientWidth = _doc$documentElement.clientWidth,
+        clientHeight = _doc$documentElement.clientHeight,
+        scrollWidth = _doc$documentElement.scrollWidth,
+        scrollHeight = _doc$documentElement.scrollHeight,
+        scrollTop = _doc$documentElement.scrollTop,
+        scrollLeft = _doc$documentElement.scrollLeft;
+      var popupHeight = popupRect.height;
+      var popupWidth = popupRect.width;
+      var targetHeight = targetRect.height;
+      var targetWidth = targetRect.width;
+
+      // Get bounding of visible area
+      var visibleRegion = {
+        left: 0,
+        top: 0,
+        right: clientWidth,
+        bottom: clientHeight
+      };
+      var scrollRegion = {
+        left: -scrollLeft,
+        top: -scrollTop,
+        right: scrollWidth - scrollLeft,
+        bottom: scrollHeight - scrollTop
+      };
+      var htmlRegion = placementInfo.htmlRegion;
+      var VISIBLE = 'visible';
+      var VISIBLE_FIRST = 'visibleFirst';
+      if (htmlRegion !== 'scroll' && htmlRegion !== VISIBLE_FIRST) {
+        htmlRegion = VISIBLE;
+      }
+      var isVisibleFirst = htmlRegion === VISIBLE_FIRST;
+      var scrollRegionArea = getVisibleArea(scrollRegion, scrollerList);
+      var visibleRegionArea = getVisibleArea(visibleRegion, scrollerList);
+      var visibleArea = htmlRegion === VISIBLE ? visibleRegionArea : scrollRegionArea;
+
+      // When set to `visibleFirst`,
+      // the check `adjust` logic will use `visibleRegion` for check first.
+      var adjustCheckVisibleArea = isVisibleFirst ? visibleRegionArea : visibleArea;
+
+      // Record right & bottom align data
+      popupElement.style.left = 'auto';
+      popupElement.style.top = 'auto';
+      popupElement.style.right = '0';
+      popupElement.style.bottom = '0';
+      var popupMirrorRect = popupElement.getBoundingClientRect();
+
+      // Reset back
+      popupElement.style.left = originLeft;
+      popupElement.style.top = originTop;
+      popupElement.style.right = originRight;
+      popupElement.style.bottom = originBottom;
+      popupElement.style.overflow = originOverflow;
+      (_popupElement$parentE2 = popupElement.parentElement) === null || _popupElement$parentE2 === void 0 || _popupElement$parentE2.removeChild(placeholderElement);
+
+      // Calculate scale
+      var _scaleX = toNum(Math.round(popupWidth / parseFloat(width) * 1000) / 1000);
+      var _scaleY = toNum(Math.round(popupHeight / parseFloat(height) * 1000) / 1000);
+
+      // No need to align since it's not visible in view
+      if (_scaleX === 0 || _scaleY === 0 || isDOM(target) && !isVisible(target)) {
+        return;
+      }
+
+      // Offset
+      var offset = placementInfo.offset,
+        targetOffset = placementInfo.targetOffset;
+      var _getNumberOffset = getNumberOffset(popupRect, offset),
+        _getNumberOffset2 = slicedToArray_slicedToArray(_getNumberOffset, 2),
+        popupOffsetX = _getNumberOffset2[0],
+        popupOffsetY = _getNumberOffset2[1];
+      var _getNumberOffset3 = getNumberOffset(targetRect, targetOffset),
+        _getNumberOffset4 = slicedToArray_slicedToArray(_getNumberOffset3, 2),
+        targetOffsetX = _getNumberOffset4[0],
+        targetOffsetY = _getNumberOffset4[1];
+      targetRect.x -= targetOffsetX;
+      targetRect.y -= targetOffsetY;
+
+      // Points
+      var _ref3 = placementInfo.points || [],
+        _ref4 = slicedToArray_slicedToArray(_ref3, 2),
+        popupPoint = _ref4[0],
+        targetPoint = _ref4[1];
+      var targetPoints = splitPoints(targetPoint);
+      var popupPoints = splitPoints(popupPoint);
+      var targetAlignPoint = getAlignPoint(targetRect, targetPoints);
+      var popupAlignPoint = getAlignPoint(popupRect, popupPoints);
+
+      // Real align info may not same as origin one
+      var nextAlignInfo = objectSpread2_objectSpread2({}, placementInfo);
+
+      // Next Offset
+      var nextOffsetX = targetAlignPoint.x - popupAlignPoint.x + popupOffsetX;
+      var nextOffsetY = targetAlignPoint.y - popupAlignPoint.y + popupOffsetY;
+
+      // ============== Intersection ===============
+      // Get area by position. Used for check if flip area is better
+      function getIntersectionVisibleArea(offsetX, offsetY) {
+        var area = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : visibleArea;
+        var l = popupRect.x + offsetX;
+        var t = popupRect.y + offsetY;
+        var r = l + popupWidth;
+        var b = t + popupHeight;
+        var visibleL = Math.max(l, area.left);
+        var visibleT = Math.max(t, area.top);
+        var visibleR = Math.min(r, area.right);
+        var visibleB = Math.min(b, area.bottom);
+        return Math.max(0, (visibleR - visibleL) * (visibleB - visibleT));
+      }
+      var originIntersectionVisibleArea = getIntersectionVisibleArea(nextOffsetX, nextOffsetY);
+
+      // As `visibleFirst`, we prepare this for check
+      var originIntersectionRecommendArea = getIntersectionVisibleArea(nextOffsetX, nextOffsetY, visibleRegionArea);
+
+      // ========================== Overflow ===========================
+      var targetAlignPointTL = getAlignPoint(targetRect, ['t', 'l']);
+      var popupAlignPointTL = getAlignPoint(popupRect, ['t', 'l']);
+      var targetAlignPointBR = getAlignPoint(targetRect, ['b', 'r']);
+      var popupAlignPointBR = getAlignPoint(popupRect, ['b', 'r']);
+      var overflow = placementInfo.overflow || {};
+      var adjustX = overflow.adjustX,
+        adjustY = overflow.adjustY,
+        shiftX = overflow.shiftX,
+        shiftY = overflow.shiftY;
+      var supportAdjust = function supportAdjust(val) {
+        if (typeof val === 'boolean') {
+          return val;
+        }
+        return val >= 0;
+      };
+
+      // Prepare position
+      var nextPopupY;
+      var nextPopupBottom;
+      var nextPopupX;
+      var nextPopupRight;
+      function syncNextPopupPosition() {
+        nextPopupY = popupRect.y + nextOffsetY;
+        nextPopupBottom = nextPopupY + popupHeight;
+        nextPopupX = popupRect.x + nextOffsetX;
+        nextPopupRight = nextPopupX + popupWidth;
+      }
+      syncNextPopupPosition();
+
+      // >>>>>>>>>> Top & Bottom
+      var needAdjustY = supportAdjust(adjustY);
+      var sameTB = popupPoints[0] === targetPoints[0];
+
+      // Bottom to Top
+      if (needAdjustY && popupPoints[0] === 't' && (nextPopupBottom > adjustCheckVisibleArea.bottom || prevFlipRef.current.bt)) {
+        var tmpNextOffsetY = nextOffsetY;
+        if (sameTB) {
+          tmpNextOffsetY -= popupHeight - targetHeight;
+        } else {
+          tmpNextOffsetY = targetAlignPointTL.y - popupAlignPointBR.y - popupOffsetY;
+        }
+        var newVisibleArea = getIntersectionVisibleArea(nextOffsetX, tmpNextOffsetY);
+        var newVisibleRecommendArea = getIntersectionVisibleArea(nextOffsetX, tmpNextOffsetY, visibleRegionArea);
+        if (
+        // Of course use larger one
+        newVisibleArea > originIntersectionVisibleArea || newVisibleArea === originIntersectionVisibleArea && (!isVisibleFirst ||
+        // Choose recommend one
+        newVisibleRecommendArea >= originIntersectionRecommendArea)) {
+          prevFlipRef.current.bt = true;
+          nextOffsetY = tmpNextOffsetY;
+          popupOffsetY = -popupOffsetY;
+          nextAlignInfo.points = [reversePoints(popupPoints, 0), reversePoints(targetPoints, 0)];
+        } else {
+          prevFlipRef.current.bt = false;
+        }
+      }
+
+      // Top to Bottom
+      if (needAdjustY && popupPoints[0] === 'b' && (nextPopupY < adjustCheckVisibleArea.top || prevFlipRef.current.tb)) {
+        var _tmpNextOffsetY = nextOffsetY;
+        if (sameTB) {
+          _tmpNextOffsetY += popupHeight - targetHeight;
+        } else {
+          _tmpNextOffsetY = targetAlignPointBR.y - popupAlignPointTL.y - popupOffsetY;
+        }
+        var _newVisibleArea = getIntersectionVisibleArea(nextOffsetX, _tmpNextOffsetY);
+        var _newVisibleRecommendArea = getIntersectionVisibleArea(nextOffsetX, _tmpNextOffsetY, visibleRegionArea);
+        if (
+        // Of course use larger one
+        _newVisibleArea > originIntersectionVisibleArea || _newVisibleArea === originIntersectionVisibleArea && (!isVisibleFirst ||
+        // Choose recommend one
+        _newVisibleRecommendArea >= originIntersectionRecommendArea)) {
+          prevFlipRef.current.tb = true;
+          nextOffsetY = _tmpNextOffsetY;
+          popupOffsetY = -popupOffsetY;
+          nextAlignInfo.points = [reversePoints(popupPoints, 0), reversePoints(targetPoints, 0)];
+        } else {
+          prevFlipRef.current.tb = false;
+        }
+      }
+
+      // >>>>>>>>>> Left & Right
+      var needAdjustX = supportAdjust(adjustX);
+
+      // >>>>> Flip
+      var sameLR = popupPoints[1] === targetPoints[1];
+
+      // Right to Left
+      if (needAdjustX && popupPoints[1] === 'l' && (nextPopupRight > adjustCheckVisibleArea.right || prevFlipRef.current.rl)) {
+        var tmpNextOffsetX = nextOffsetX;
+        if (sameLR) {
+          tmpNextOffsetX -= popupWidth - targetWidth;
+        } else {
+          tmpNextOffsetX = targetAlignPointTL.x - popupAlignPointBR.x - popupOffsetX;
+        }
+        var _newVisibleArea2 = getIntersectionVisibleArea(tmpNextOffsetX, nextOffsetY);
+        var _newVisibleRecommendArea2 = getIntersectionVisibleArea(tmpNextOffsetX, nextOffsetY, visibleRegionArea);
+        if (
+        // Of course use larger one
+        _newVisibleArea2 > originIntersectionVisibleArea || _newVisibleArea2 === originIntersectionVisibleArea && (!isVisibleFirst ||
+        // Choose recommend one
+        _newVisibleRecommendArea2 >= originIntersectionRecommendArea)) {
+          prevFlipRef.current.rl = true;
+          nextOffsetX = tmpNextOffsetX;
+          popupOffsetX = -popupOffsetX;
+          nextAlignInfo.points = [reversePoints(popupPoints, 1), reversePoints(targetPoints, 1)];
+        } else {
+          prevFlipRef.current.rl = false;
+        }
+      }
+
+      // Left to Right
+      if (needAdjustX && popupPoints[1] === 'r' && (nextPopupX < adjustCheckVisibleArea.left || prevFlipRef.current.lr)) {
+        var _tmpNextOffsetX = nextOffsetX;
+        if (sameLR) {
+          _tmpNextOffsetX += popupWidth - targetWidth;
+        } else {
+          _tmpNextOffsetX = targetAlignPointBR.x - popupAlignPointTL.x - popupOffsetX;
+        }
+        var _newVisibleArea3 = getIntersectionVisibleArea(_tmpNextOffsetX, nextOffsetY);
+        var _newVisibleRecommendArea3 = getIntersectionVisibleArea(_tmpNextOffsetX, nextOffsetY, visibleRegionArea);
+        if (
+        // Of course use larger one
+        _newVisibleArea3 > originIntersectionVisibleArea || _newVisibleArea3 === originIntersectionVisibleArea && (!isVisibleFirst ||
+        // Choose recommend one
+        _newVisibleRecommendArea3 >= originIntersectionRecommendArea)) {
+          prevFlipRef.current.lr = true;
+          nextOffsetX = _tmpNextOffsetX;
+          popupOffsetX = -popupOffsetX;
+          nextAlignInfo.points = [reversePoints(popupPoints, 1), reversePoints(targetPoints, 1)];
+        } else {
+          prevFlipRef.current.lr = false;
+        }
+      }
+
+      // ============================ Shift ============================
+      syncNextPopupPosition();
+      var numShiftX = shiftX === true ? 0 : shiftX;
+      if (typeof numShiftX === 'number') {
+        // Left
+        if (nextPopupX < visibleRegionArea.left) {
+          nextOffsetX -= nextPopupX - visibleRegionArea.left - popupOffsetX;
+          if (targetRect.x + targetWidth < visibleRegionArea.left + numShiftX) {
+            nextOffsetX += targetRect.x - visibleRegionArea.left + targetWidth - numShiftX;
+          }
+        }
+
+        // Right
+        if (nextPopupRight > visibleRegionArea.right) {
+          nextOffsetX -= nextPopupRight - visibleRegionArea.right - popupOffsetX;
+          if (targetRect.x > visibleRegionArea.right - numShiftX) {
+            nextOffsetX += targetRect.x - visibleRegionArea.right + numShiftX;
+          }
+        }
+      }
+      var numShiftY = shiftY === true ? 0 : shiftY;
+      if (typeof numShiftY === 'number') {
+        // Top
+        if (nextPopupY < visibleRegionArea.top) {
+          nextOffsetY -= nextPopupY - visibleRegionArea.top - popupOffsetY;
+
+          // When target if far away from visible area
+          // Stop shift
+          if (targetRect.y + targetHeight < visibleRegionArea.top + numShiftY) {
+            nextOffsetY += targetRect.y - visibleRegionArea.top + targetHeight - numShiftY;
+          }
+        }
+
+        // Bottom
+        if (nextPopupBottom > visibleRegionArea.bottom) {
+          nextOffsetY -= nextPopupBottom - visibleRegionArea.bottom - popupOffsetY;
+          if (targetRect.y > visibleRegionArea.bottom - numShiftY) {
+            nextOffsetY += targetRect.y - visibleRegionArea.bottom + numShiftY;
+          }
+        }
+      }
+
+      // ============================ Arrow ============================
+      // Arrow center align
+      var popupLeft = popupRect.x + nextOffsetX;
+      var popupRight = popupLeft + popupWidth;
+      var popupTop = popupRect.y + nextOffsetY;
+      var popupBottom = popupTop + popupHeight;
+      var targetLeft = targetRect.x;
+      var targetRight = targetLeft + targetWidth;
+      var targetTop = targetRect.y;
+      var targetBottom = targetTop + targetHeight;
+      var maxLeft = Math.max(popupLeft, targetLeft);
+      var minRight = Math.min(popupRight, targetRight);
+      var xCenter = (maxLeft + minRight) / 2;
+      var nextArrowX = xCenter - popupLeft;
+      var maxTop = Math.max(popupTop, targetTop);
+      var minBottom = Math.min(popupBottom, targetBottom);
+      var yCenter = (maxTop + minBottom) / 2;
+      var nextArrowY = yCenter - popupTop;
+      onPopupAlign === null || onPopupAlign === void 0 || onPopupAlign(popupEle, nextAlignInfo);
+
+      // Additional calculate right & bottom position
+      var offsetX4Right = popupMirrorRect.right - popupRect.x - (nextOffsetX + popupRect.width);
+      var offsetY4Bottom = popupMirrorRect.bottom - popupRect.y - (nextOffsetY + popupRect.height);
+      setOffsetInfo({
+        ready: true,
+        offsetX: nextOffsetX / _scaleX,
+        offsetY: nextOffsetY / _scaleY,
+        offsetR: offsetX4Right / _scaleX,
+        offsetB: offsetY4Bottom / _scaleY,
+        arrowX: nextArrowX / _scaleX,
+        arrowY: nextArrowY / _scaleY,
+        scaleX: _scaleX,
+        scaleY: _scaleY,
+        align: nextAlignInfo
+      });
+    }
+  });
+  var triggerAlign = function triggerAlign() {
+    alignCountRef.current += 1;
+    var id = alignCountRef.current;
+
+    // Merge all align requirement into one frame
+    Promise.resolve().then(function () {
+      if (alignCountRef.current === id) {
+        onAlign();
+      }
+    });
+  };
+
+  // Reset ready status when placement & open changed
+  var resetReady = function resetReady() {
+    setOffsetInfo(function (ori) {
+      return objectSpread2_objectSpread2(objectSpread2_objectSpread2({}, ori), {}, {
+        ready: false
+      });
+    });
+  };
+  hooks_useLayoutEffect(resetReady, [placement]);
+  hooks_useLayoutEffect(function () {
+    if (!open) {
+      resetReady();
+    }
+  }, [open]);
+  return [offsetInfo.ready, offsetInfo.offsetX, offsetInfo.offsetY, offsetInfo.offsetR, offsetInfo.offsetB, offsetInfo.arrowX, offsetInfo.arrowY, offsetInfo.scaleX, offsetInfo.scaleY, offsetInfo.align, triggerAlign];
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js
+
+function arrayWithoutHoles_arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return arrayLikeToArray_arrayLikeToArray(arr);
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/node_modules/@babel/runtime/helpers/esm/iterableToArray.js
+function iterableToArray_iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js
+function nonIterableSpread_nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/node_modules/@babel/runtime/helpers/esm/toConsumableArray.js
+
+
+
+
+function toConsumableArray_toConsumableArray(arr) {
+  return arrayWithoutHoles_arrayWithoutHoles(arr) || iterableToArray_iterableToArray(arr) || unsupportedIterableToArray_unsupportedIterableToArray(arr) || nonIterableSpread_nonIterableSpread();
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/es/hooks/useWatch.js
+
+
+
+function useWatch(open, target, popup, onAlign, onScroll) {
+  hooks_useLayoutEffect(function () {
+    if (open && target && popup) {
+      var targetElement = target;
+      var popupElement = popup;
+      var targetScrollList = collectScroller(targetElement);
+      var popupScrollList = collectScroller(popupElement);
+      var win = getWin(popupElement);
+      var mergedList = new Set([win].concat(toConsumableArray_toConsumableArray(targetScrollList), toConsumableArray_toConsumableArray(popupScrollList)));
+      function notifyScroll() {
+        onAlign();
+        onScroll();
+      }
+      mergedList.forEach(function (scroller) {
+        scroller.addEventListener('scroll', notifyScroll, {
+          passive: true
+        });
+      });
+      win.addEventListener('resize', notifyScroll, {
+        passive: true
+      });
+
+      // First time always do align
+      onAlign();
+      return function () {
+        mergedList.forEach(function (scroller) {
+          scroller.removeEventListener('scroll', notifyScroll);
+          win.removeEventListener('resize', notifyScroll);
+        });
+      };
+    }
+  }, [open, target, popup]);
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/es/hooks/useWinClick.js
+
+
+
+
+function useWinClick(open, clickToHide, targetEle, popupEle, mask, maskClosable, inPopupOrChild, triggerOpen) {
+  var openRef = react.useRef(open);
+  openRef.current = open;
+
+  // Click to hide is special action since click popup element should not hide
+  react.useEffect(function () {
+    if (clickToHide && popupEle && (!mask || maskClosable)) {
+      var onTriggerClose = function onTriggerClose(_ref) {
+        var target = _ref.target;
+        if (openRef.current && !inPopupOrChild(target)) {
+          triggerOpen(false);
+        }
+      };
+      var win = getWin(popupEle);
+      win.addEventListener('mousedown', onTriggerClose, true);
+      win.addEventListener('contextmenu', onTriggerClose, true);
+
+      // shadow root
+      var targetShadowRoot = getShadowRoot(targetEle);
+      if (targetShadowRoot) {
+        targetShadowRoot.addEventListener('mousedown', onTriggerClose, true);
+        targetShadowRoot.addEventListener('contextmenu', onTriggerClose, true);
+      }
+
+      // Warning if target and popup not in same root
+      if (false) { var popupRoot, targetRoot, _targetEle$getRootNod, _popupEle$getRootNode; }
+      return function () {
+        win.removeEventListener('mousedown', onTriggerClose, true);
+        win.removeEventListener('contextmenu', onTriggerClose, true);
+        if (targetShadowRoot) {
+          targetShadowRoot.removeEventListener('mousedown', onTriggerClose, true);
+          targetShadowRoot.removeEventListener('contextmenu', onTriggerClose, true);
+        }
+      };
+    }
+  }, [clickToHide, targetEle, popupEle, mask, maskClosable]);
+}
+;// CONCATENATED MODULE: ./node_modules/@rc-component/trigger/es/index.js
+
+
+
+var _excluded = ["prefixCls", "children", "action", "showAction", "hideAction", "popupVisible", "defaultPopupVisible", "onPopupVisibleChange", "afterPopupVisibleChange", "mouseEnterDelay", "mouseLeaveDelay", "focusDelay", "blurDelay", "mask", "maskClosable", "getPopupContainer", "forceRender", "autoDestroy", "destroyPopupOnHide", "popup", "popupClassName", "popupStyle", "popupPlacement", "builtinPlacements", "popupAlign", "zIndex", "stretch", "getPopupClassNameFromAlign", "fresh", "alignPoint", "onPopupClick", "onPopupAlign", "arrow", "popupMotion", "maskMotion", "popupTransitionName", "popupAnimation", "maskTransitionName", "maskAnimation", "className", "getTriggerDOMNode"];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Removed Props List
+// Seems this can be auto
+// getDocument?: (element?: HTMLElement) => Document;
+
+// New version will not wrap popup with `rc-trigger-popup-content` when multiple children
+
+function generateTrigger() {
+  var PortalComponent = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : es;
+  var Trigger = /*#__PURE__*/react.forwardRef(function (props, ref) {
+    var _props$prefixCls = props.prefixCls,
+      prefixCls = _props$prefixCls === void 0 ? 'rc-trigger-popup' : _props$prefixCls,
+      children = props.children,
+      _props$action = props.action,
+      action = _props$action === void 0 ? 'hover' : _props$action,
+      showAction = props.showAction,
+      hideAction = props.hideAction,
+      popupVisible = props.popupVisible,
+      defaultPopupVisible = props.defaultPopupVisible,
+      onPopupVisibleChange = props.onPopupVisibleChange,
+      afterPopupVisibleChange = props.afterPopupVisibleChange,
+      mouseEnterDelay = props.mouseEnterDelay,
+      _props$mouseLeaveDela = props.mouseLeaveDelay,
+      mouseLeaveDelay = _props$mouseLeaveDela === void 0 ? 0.1 : _props$mouseLeaveDela,
+      focusDelay = props.focusDelay,
+      blurDelay = props.blurDelay,
+      mask = props.mask,
+      _props$maskClosable = props.maskClosable,
+      maskClosable = _props$maskClosable === void 0 ? true : _props$maskClosable,
+      getPopupContainer = props.getPopupContainer,
+      forceRender = props.forceRender,
+      autoDestroy = props.autoDestroy,
+      destroyPopupOnHide = props.destroyPopupOnHide,
+      popup = props.popup,
+      popupClassName = props.popupClassName,
+      popupStyle = props.popupStyle,
+      popupPlacement = props.popupPlacement,
+      _props$builtinPlaceme = props.builtinPlacements,
+      builtinPlacements = _props$builtinPlaceme === void 0 ? {} : _props$builtinPlaceme,
+      popupAlign = props.popupAlign,
+      zIndex = props.zIndex,
+      stretch = props.stretch,
+      getPopupClassNameFromAlign = props.getPopupClassNameFromAlign,
+      fresh = props.fresh,
+      alignPoint = props.alignPoint,
+      onPopupClick = props.onPopupClick,
+      onPopupAlign = props.onPopupAlign,
+      arrow = props.arrow,
+      popupMotion = props.popupMotion,
+      maskMotion = props.maskMotion,
+      popupTransitionName = props.popupTransitionName,
+      popupAnimation = props.popupAnimation,
+      maskTransitionName = props.maskTransitionName,
+      maskAnimation = props.maskAnimation,
+      className = props.className,
+      getTriggerDOMNode = props.getTriggerDOMNode,
+      restProps = objectWithoutProperties_objectWithoutProperties(props, _excluded);
+    var mergedAutoDestroy = autoDestroy || destroyPopupOnHide || false;
+
+    // =========================== Mobile ===========================
+    var _React$useState = react.useState(false),
+      _React$useState2 = slicedToArray_slicedToArray(_React$useState, 2),
+      mobile = _React$useState2[0],
+      setMobile = _React$useState2[1];
+    hooks_useLayoutEffect(function () {
+      setMobile(isMobile());
+    }, []);
+
+    // ========================== Context ===========================
+    var subPopupElements = react.useRef({});
+    var parentContext = react.useContext(es_context);
+    var context = react.useMemo(function () {
+      return {
+        registerSubPopup: function registerSubPopup(id, subPopupEle) {
+          subPopupElements.current[id] = subPopupEle;
+          parentContext === null || parentContext === void 0 || parentContext.registerSubPopup(id, subPopupEle);
+        }
+      };
+    }, [parentContext]);
+
+    // =========================== Popup ============================
+    var id = useId();
+    var _React$useState3 = react.useState(null),
+      _React$useState4 = slicedToArray_slicedToArray(_React$useState3, 2),
+      popupEle = _React$useState4[0],
+      setPopupEle = _React$useState4[1];
+
+    // Used for forwardRef popup. Not use internal
+    var externalPopupRef = react.useRef(null);
+    var setPopupRef = useEvent(function (node) {
+      externalPopupRef.current = node;
+      if (isDOM(node) && popupEle !== node) {
+        setPopupEle(node);
+      }
+      parentContext === null || parentContext === void 0 || parentContext.registerSubPopup(id, node);
+    });
+
+    // =========================== Target ===========================
+    // Use state to control here since `useRef` update not trigger render
+    var _React$useState5 = react.useState(null),
+      _React$useState6 = slicedToArray_slicedToArray(_React$useState5, 2),
+      targetEle = _React$useState6[0],
+      setTargetEle = _React$useState6[1];
+
+    // Used for forwardRef target. Not use internal
+    var externalForwardRef = react.useRef(null);
+    var setTargetRef = useEvent(function (node) {
+      if (isDOM(node) && targetEle !== node) {
+        setTargetEle(node);
+        externalForwardRef.current = node;
+      }
+    });
+
+    // ========================== Children ==========================
+    var child = react.Children.only(children);
+    var originChildProps = (child === null || child === void 0 ? void 0 : child.props) || {};
+    var cloneProps = {};
+    var inPopupOrChild = useEvent(function (ele) {
+      var _getShadowRoot, _getShadowRoot2;
+      var childDOM = targetEle;
+      return (childDOM === null || childDOM === void 0 ? void 0 : childDOM.contains(ele)) || ((_getShadowRoot = getShadowRoot(childDOM)) === null || _getShadowRoot === void 0 ? void 0 : _getShadowRoot.host) === ele || ele === childDOM || (popupEle === null || popupEle === void 0 ? void 0 : popupEle.contains(ele)) || ((_getShadowRoot2 = getShadowRoot(popupEle)) === null || _getShadowRoot2 === void 0 ? void 0 : _getShadowRoot2.host) === ele || ele === popupEle || Object.values(subPopupElements.current).some(function (subPopupEle) {
+        return (subPopupEle === null || subPopupEle === void 0 ? void 0 : subPopupEle.contains(ele)) || ele === subPopupEle;
+      });
+    });
+
+    // =========================== Motion ===========================
+    var mergePopupMotion = getMotion(prefixCls, popupMotion, popupAnimation, popupTransitionName);
+    var mergeMaskMotion = getMotion(prefixCls, maskMotion, maskAnimation, maskTransitionName);
+
+    // ============================ Open ============================
+    var _React$useState7 = react.useState(defaultPopupVisible || false),
+      _React$useState8 = slicedToArray_slicedToArray(_React$useState7, 2),
+      internalOpen = _React$useState8[0],
+      setInternalOpen = _React$useState8[1];
+
+    // Render still use props as first priority
+    var mergedOpen = popupVisible !== null && popupVisible !== void 0 ? popupVisible : internalOpen;
+
+    // We use effect sync here in case `popupVisible` back to `undefined`
+    var setMergedOpen = useEvent(function (nextOpen) {
+      if (popupVisible === undefined) {
+        setInternalOpen(nextOpen);
+      }
+    });
+    hooks_useLayoutEffect(function () {
+      setInternalOpen(popupVisible || false);
+    }, [popupVisible]);
+    var openRef = react.useRef(mergedOpen);
+    openRef.current = mergedOpen;
+    var lastTriggerRef = react.useRef([]);
+    lastTriggerRef.current = [];
+    var internalTriggerOpen = useEvent(function (nextOpen) {
+      var _lastTriggerRef$curre;
+      setMergedOpen(nextOpen);
+
+      // Enter or Pointer will both trigger open state change
+      // We only need take one to avoid duplicated change event trigger
+      // Use `lastTriggerRef` to record last open type
+      if (((_lastTriggerRef$curre = lastTriggerRef.current[lastTriggerRef.current.length - 1]) !== null && _lastTriggerRef$curre !== void 0 ? _lastTriggerRef$curre : mergedOpen) !== nextOpen) {
+        lastTriggerRef.current.push(nextOpen);
+        onPopupVisibleChange === null || onPopupVisibleChange === void 0 || onPopupVisibleChange(nextOpen);
+      }
+    });
+
+    // Trigger for delay
+    var delayRef = react.useRef();
+    var clearDelay = function clearDelay() {
+      clearTimeout(delayRef.current);
+    };
+    var triggerOpen = function triggerOpen(nextOpen) {
+      var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+      clearDelay();
+      if (delay === 0) {
+        internalTriggerOpen(nextOpen);
+      } else {
+        delayRef.current = setTimeout(function () {
+          internalTriggerOpen(nextOpen);
+        }, delay * 1000);
+      }
+    };
+    react.useEffect(function () {
+      return clearDelay;
+    }, []);
+
+    // ========================== Motion ============================
+    var _React$useState9 = react.useState(false),
+      _React$useState10 = slicedToArray_slicedToArray(_React$useState9, 2),
+      inMotion = _React$useState10[0],
+      setInMotion = _React$useState10[1];
+    hooks_useLayoutEffect(function (firstMount) {
+      if (!firstMount || mergedOpen) {
+        setInMotion(true);
+      }
+    }, [mergedOpen]);
+    var _React$useState11 = react.useState(null),
+      _React$useState12 = slicedToArray_slicedToArray(_React$useState11, 2),
+      motionPrepareResolve = _React$useState12[0],
+      setMotionPrepareResolve = _React$useState12[1];
+
+    // =========================== Align ============================
+    var _React$useState13 = react.useState([0, 0]),
+      _React$useState14 = slicedToArray_slicedToArray(_React$useState13, 2),
+      mousePos = _React$useState14[0],
+      setMousePos = _React$useState14[1];
+    var setMousePosByEvent = function setMousePosByEvent(event) {
+      setMousePos([event.clientX, event.clientY]);
+    };
+    var _useAlign = useAlign(mergedOpen, popupEle, alignPoint ? mousePos : targetEle, popupPlacement, builtinPlacements, popupAlign, onPopupAlign),
+      _useAlign2 = slicedToArray_slicedToArray(_useAlign, 11),
+      ready = _useAlign2[0],
+      offsetX = _useAlign2[1],
+      offsetY = _useAlign2[2],
+      offsetR = _useAlign2[3],
+      offsetB = _useAlign2[4],
+      arrowX = _useAlign2[5],
+      arrowY = _useAlign2[6],
+      scaleX = _useAlign2[7],
+      scaleY = _useAlign2[8],
+      alignInfo = _useAlign2[9],
+      onAlign = _useAlign2[10];
+    var _useAction = useAction(mobile, action, showAction, hideAction),
+      _useAction2 = slicedToArray_slicedToArray(_useAction, 2),
+      showActions = _useAction2[0],
+      hideActions = _useAction2[1];
+    var clickToShow = showActions.has('click');
+    var clickToHide = hideActions.has('click') || hideActions.has('contextMenu');
+    var triggerAlign = useEvent(function () {
+      if (!inMotion) {
+        onAlign();
+      }
+    });
+    var onScroll = function onScroll() {
+      if (openRef.current && alignPoint && clickToHide) {
+        triggerOpen(false);
+      }
+    };
+    useWatch(mergedOpen, targetEle, popupEle, triggerAlign, onScroll);
+    hooks_useLayoutEffect(function () {
+      triggerAlign();
+    }, [mousePos, popupPlacement]);
+
+    // When no builtinPlacements and popupAlign changed
+    hooks_useLayoutEffect(function () {
+      if (mergedOpen && !(builtinPlacements !== null && builtinPlacements !== void 0 && builtinPlacements[popupPlacement])) {
+        triggerAlign();
+      }
+    }, [JSON.stringify(popupAlign)]);
+    var alignedClassName = react.useMemo(function () {
+      var baseClassName = getAlignPopupClassName(builtinPlacements, prefixCls, alignInfo, alignPoint);
+      return node_modules_classnames_default()(baseClassName, getPopupClassNameFromAlign === null || getPopupClassNameFromAlign === void 0 ? void 0 : getPopupClassNameFromAlign(alignInfo));
+    }, [alignInfo, getPopupClassNameFromAlign, builtinPlacements, prefixCls, alignPoint]);
+
+    // ============================ Refs ============================
+    react.useImperativeHandle(ref, function () {
+      return {
+        nativeElement: externalForwardRef.current,
+        popupElement: externalPopupRef.current,
+        forceAlign: triggerAlign
+      };
+    });
+
+    // ========================== Stretch ===========================
+    var _React$useState15 = react.useState(0),
+      _React$useState16 = slicedToArray_slicedToArray(_React$useState15, 2),
+      targetWidth = _React$useState16[0],
+      setTargetWidth = _React$useState16[1];
+    var _React$useState17 = react.useState(0),
+      _React$useState18 = slicedToArray_slicedToArray(_React$useState17, 2),
+      targetHeight = _React$useState18[0],
+      setTargetHeight = _React$useState18[1];
+    var syncTargetSize = function syncTargetSize() {
+      if (stretch && targetEle) {
+        var rect = targetEle.getBoundingClientRect();
+        setTargetWidth(rect.width);
+        setTargetHeight(rect.height);
+      }
+    };
+    var onTargetResize = function onTargetResize() {
+      syncTargetSize();
+      triggerAlign();
+    };
+
+    // ========================== Motion ============================
+    var onVisibleChanged = function onVisibleChanged(visible) {
+      setInMotion(false);
+      onAlign();
+      afterPopupVisibleChange === null || afterPopupVisibleChange === void 0 || afterPopupVisibleChange(visible);
+    };
+
+    // We will trigger align when motion is in prepare
+    var onPrepare = function onPrepare() {
+      return new Promise(function (resolve) {
+        syncTargetSize();
+        setMotionPrepareResolve(function () {
+          return resolve;
+        });
+      });
+    };
+    hooks_useLayoutEffect(function () {
+      if (motionPrepareResolve) {
+        onAlign();
+        motionPrepareResolve();
+        setMotionPrepareResolve(null);
+      }
+    }, [motionPrepareResolve]);
+
+    // =========================== Action ===========================
+    /**
+     * Util wrapper for trigger action
+     */
+    function wrapperAction(eventName, nextOpen, delay, preEvent) {
+      cloneProps[eventName] = function (event) {
+        var _originChildProps$eve;
+        preEvent === null || preEvent === void 0 || preEvent(event);
+        triggerOpen(nextOpen, delay);
+
+        // Pass to origin
+        for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+          args[_key - 1] = arguments[_key];
+        }
+        (_originChildProps$eve = originChildProps[eventName]) === null || _originChildProps$eve === void 0 || _originChildProps$eve.call.apply(_originChildProps$eve, [originChildProps, event].concat(args));
+      };
+    }
+
+    // ======================= Action: Click ========================
+    if (clickToShow || clickToHide) {
+      cloneProps.onClick = function (event) {
+        var _originChildProps$onC;
+        if (openRef.current && clickToHide) {
+          triggerOpen(false);
+        } else if (!openRef.current && clickToShow) {
+          setMousePosByEvent(event);
+          triggerOpen(true);
+        }
+
+        // Pass to origin
+        for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+          args[_key2 - 1] = arguments[_key2];
+        }
+        (_originChildProps$onC = originChildProps.onClick) === null || _originChildProps$onC === void 0 || _originChildProps$onC.call.apply(_originChildProps$onC, [originChildProps, event].concat(args));
+      };
+    }
+
+    // Click to hide is special action since click popup element should not hide
+    useWinClick(mergedOpen, clickToHide, targetEle, popupEle, mask, maskClosable, inPopupOrChild, triggerOpen);
+
+    // ======================= Action: Hover ========================
+    var hoverToShow = showActions.has('hover');
+    var hoverToHide = hideActions.has('hover');
+    var onPopupMouseEnter;
+    var onPopupMouseLeave;
+    if (hoverToShow) {
+      // Compatible with old browser which not support pointer event
+      wrapperAction('onMouseEnter', true, mouseEnterDelay, function (event) {
+        setMousePosByEvent(event);
+      });
+      wrapperAction('onPointerEnter', true, mouseEnterDelay, function (event) {
+        setMousePosByEvent(event);
+      });
+      onPopupMouseEnter = function onPopupMouseEnter(event) {
+        // Only trigger re-open when popup is visible
+        if ((mergedOpen || inMotion) && popupEle !== null && popupEle !== void 0 && popupEle.contains(event.target)) {
+          triggerOpen(true, mouseEnterDelay);
+        }
+      };
+
+      // Align Point
+      if (alignPoint) {
+        cloneProps.onMouseMove = function (event) {
+          var _originChildProps$onM;
+          // setMousePosByEvent(event);
+          (_originChildProps$onM = originChildProps.onMouseMove) === null || _originChildProps$onM === void 0 || _originChildProps$onM.call(originChildProps, event);
+        };
+      }
+    }
+    if (hoverToHide) {
+      wrapperAction('onMouseLeave', false, mouseLeaveDelay);
+      wrapperAction('onPointerLeave', false, mouseLeaveDelay);
+      onPopupMouseLeave = function onPopupMouseLeave() {
+        triggerOpen(false, mouseLeaveDelay);
+      };
+    }
+
+    // ======================= Action: Focus ========================
+    if (showActions.has('focus')) {
+      wrapperAction('onFocus', true, focusDelay);
+    }
+    if (hideActions.has('focus')) {
+      wrapperAction('onBlur', false, blurDelay);
+    }
+
+    // ==================== Action: ContextMenu =====================
+    if (showActions.has('contextMenu')) {
+      cloneProps.onContextMenu = function (event) {
+        var _originChildProps$onC2;
+        if (openRef.current && hideActions.has('contextMenu')) {
+          triggerOpen(false);
+        } else {
+          setMousePosByEvent(event);
+          triggerOpen(true);
+        }
+        event.preventDefault();
+
+        // Pass to origin
+        for (var _len3 = arguments.length, args = new Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
+          args[_key3 - 1] = arguments[_key3];
+        }
+        (_originChildProps$onC2 = originChildProps.onContextMenu) === null || _originChildProps$onC2 === void 0 || _originChildProps$onC2.call.apply(_originChildProps$onC2, [originChildProps, event].concat(args));
+      };
+    }
+
+    // ========================= ClassName ==========================
+    if (className) {
+      cloneProps.className = node_modules_classnames_default()(originChildProps.className, className);
+    }
+
+    // =========================== Render ===========================
+    var mergedChildrenProps = objectSpread2_objectSpread2(objectSpread2_objectSpread2({}, originChildProps), cloneProps);
+
+    // Pass props into cloneProps for nest usage
+    var passedProps = {};
+    var passedEventList = ['onContextMenu', 'onClick', 'onMouseDown', 'onTouchStart', 'onMouseEnter', 'onMouseLeave', 'onFocus', 'onBlur'];
+    passedEventList.forEach(function (eventName) {
+      if (restProps[eventName]) {
+        passedProps[eventName] = function () {
+          var _mergedChildrenProps$;
+          for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+            args[_key4] = arguments[_key4];
+          }
+          (_mergedChildrenProps$ = mergedChildrenProps[eventName]) === null || _mergedChildrenProps$ === void 0 || _mergedChildrenProps$.call.apply(_mergedChildrenProps$, [mergedChildrenProps].concat(args));
+          restProps[eventName].apply(restProps, args);
+        };
+      }
+    });
+
+    // Child Node
+    var triggerNode = /*#__PURE__*/react.cloneElement(child, objectSpread2_objectSpread2(objectSpread2_objectSpread2({}, mergedChildrenProps), passedProps));
+    var arrowPos = {
+      x: arrowX,
+      y: arrowY
+    };
+    var innerArrow = arrow ? objectSpread2_objectSpread2({}, arrow !== true ? arrow : {}) : null;
+
+    // Render
+    return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement(rc_resize_observer_es, {
+      disabled: !mergedOpen,
+      ref: setTargetRef,
+      onResize: onTargetResize
+    }, /*#__PURE__*/react.createElement(es_TriggerWrapper, {
+      getTriggerDOMNode: getTriggerDOMNode
+    }, triggerNode)), /*#__PURE__*/react.createElement(es_context.Provider, {
+      value: context
+    }, /*#__PURE__*/react.createElement(es_Popup, {
+      portal: PortalComponent,
+      ref: setPopupRef,
+      prefixCls: prefixCls,
+      popup: popup,
+      className: node_modules_classnames_default()(popupClassName, alignedClassName),
+      style: popupStyle,
+      target: targetEle,
+      onMouseEnter: onPopupMouseEnter,
+      onMouseLeave: onPopupMouseLeave
+      // https://github.com/ant-design/ant-design/issues/43924
+      ,
+      onPointerEnter: onPopupMouseEnter,
+      zIndex: zIndex
+      // Open
+      ,
+      open: mergedOpen,
+      keepDom: inMotion,
+      fresh: fresh
+      // Click
+      ,
+      onClick: onPopupClick
+      // Mask
+      ,
+      mask: mask
+      // Motion
+      ,
+      motion: mergePopupMotion,
+      maskMotion: mergeMaskMotion,
+      onVisibleChanged: onVisibleChanged,
+      onPrepare: onPrepare
+      // Portal
+      ,
+      forceRender: forceRender,
+      autoDestroy: mergedAutoDestroy,
+      getPopupContainer: getPopupContainer
+      // Arrow
+      ,
+      align: alignInfo,
+      arrow: innerArrow,
+      arrowPos: arrowPos
+      // Align
+      ,
+      ready: ready,
+      offsetX: offsetX,
+      offsetY: offsetY,
+      offsetR: offsetR,
+      offsetB: offsetB,
+      onAlign: triggerAlign
+      // Stretch
+      ,
+      stretch: stretch,
+      targetWidth: targetWidth / scaleX,
+      targetHeight: targetHeight / scaleY
+    })));
+  });
+  if (false) {}
   return Trigger;
 }
-/* harmony default export */ var rc_trigger_es = (generateTrigger(es_Portal));
+/* harmony default export */ var trigger_es = (generateTrigger(es));
 ;// CONCATENATED MODULE: ./node_modules/rc-tooltip/es/placements.js
-var autoAdjustOverflow = {
-  adjustX: 1,
+var autoAdjustOverflowTopBottom = {
+  shiftX: 64,
   adjustY: 1
+};
+var autoAdjustOverflowLeftRight = {
+  adjustX: 1,
+  shiftY: true
 };
 var targetOffset = [0, 0];
 var placements = {
   left: {
     points: ['cr', 'cl'],
-    overflow: autoAdjustOverflow,
+    overflow: autoAdjustOverflowLeftRight,
     offset: [-4, 0],
     targetOffset: targetOffset
   },
   right: {
     points: ['cl', 'cr'],
-    overflow: autoAdjustOverflow,
+    overflow: autoAdjustOverflowLeftRight,
     offset: [4, 0],
     targetOffset: targetOffset
   },
   top: {
     points: ['bc', 'tc'],
-    overflow: autoAdjustOverflow,
+    overflow: autoAdjustOverflowTopBottom,
     offset: [0, -4],
     targetOffset: targetOffset
   },
   bottom: {
     points: ['tc', 'bc'],
-    overflow: autoAdjustOverflow,
+    overflow: autoAdjustOverflowTopBottom,
     offset: [0, 4],
     targetOffset: targetOffset
   },
   topLeft: {
     points: ['bl', 'tl'],
-    overflow: autoAdjustOverflow,
+    overflow: autoAdjustOverflowTopBottom,
     offset: [0, -4],
     targetOffset: targetOffset
   },
   leftTop: {
     points: ['tr', 'tl'],
-    overflow: autoAdjustOverflow,
+    overflow: autoAdjustOverflowLeftRight,
     offset: [-4, 0],
     targetOffset: targetOffset
   },
   topRight: {
     points: ['br', 'tr'],
-    overflow: autoAdjustOverflow,
+    overflow: autoAdjustOverflowTopBottom,
     offset: [0, -4],
     targetOffset: targetOffset
   },
   rightTop: {
     points: ['tl', 'tr'],
-    overflow: autoAdjustOverflow,
+    overflow: autoAdjustOverflowLeftRight,
     offset: [4, 0],
     targetOffset: targetOffset
   },
   bottomRight: {
     points: ['tr', 'br'],
-    overflow: autoAdjustOverflow,
+    overflow: autoAdjustOverflowTopBottom,
     offset: [0, 4],
     targetOffset: targetOffset
   },
   rightBottom: {
     points: ['bl', 'br'],
-    overflow: autoAdjustOverflow,
+    overflow: autoAdjustOverflowLeftRight,
     offset: [4, 0],
     targetOffset: targetOffset
   },
   bottomLeft: {
     points: ['tl', 'bl'],
-    overflow: autoAdjustOverflow,
+    overflow: autoAdjustOverflowTopBottom,
     offset: [0, 4],
     targetOffset: targetOffset
   },
   leftBottom: {
     points: ['br', 'bl'],
-    overflow: autoAdjustOverflow,
+    overflow: autoAdjustOverflowLeftRight,
     offset: [-4, 0],
     targetOffset: targetOffset
   }
 };
 /* harmony default export */ var es_placements = ((/* unused pure expression or super */ null && (placements)));
-;// CONCATENATED MODULE: ./node_modules/rc-tooltip/es/Content.js
-
-
-var Content = function Content(props) {
-  var overlay = props.overlay,
-      prefixCls = props.prefixCls,
-      id = props.id,
-      overlayInnerStyle = props.overlayInnerStyle;
-  return /*#__PURE__*/react.createElement("div", {
-    className: "".concat(prefixCls, "-inner"),
-    id: id,
-    role: "tooltip",
-    style: overlayInnerStyle
-  }, typeof overlay === 'function' ? overlay() : overlay);
-};
-
-/* harmony default export */ var es_Content = (Content);
 ;// CONCATENATED MODULE: ./node_modules/rc-tooltip/es/Tooltip.js
 
 
 
-
-
+var Tooltip_excluded = ["overlayClassName", "trigger", "mouseEnterDelay", "mouseLeaveDelay", "overlayStyle", "prefixCls", "children", "onVisibleChange", "afterVisibleChange", "transitionName", "animation", "motion", "placement", "align", "destroyTooltipOnHide", "defaultVisible", "getTooltipContainer", "overlayInnerStyle", "arrowContent", "overlay", "id", "showArrow"];
 
 
 
@@ -66017,79 +65930,60 @@ var Content = function Content(props) {
 
 var Tooltip = function Tooltip(props, ref) {
   var overlayClassName = props.overlayClassName,
-      _props$trigger = props.trigger,
-      trigger = _props$trigger === void 0 ? ['hover'] : _props$trigger,
-      _props$mouseEnterDela = props.mouseEnterDelay,
-      mouseEnterDelay = _props$mouseEnterDela === void 0 ? 0 : _props$mouseEnterDela,
-      _props$mouseLeaveDela = props.mouseLeaveDelay,
-      mouseLeaveDelay = _props$mouseLeaveDela === void 0 ? 0.1 : _props$mouseLeaveDela,
-      overlayStyle = props.overlayStyle,
-      _props$prefixCls = props.prefixCls,
-      prefixCls = _props$prefixCls === void 0 ? 'rc-tooltip' : _props$prefixCls,
-      children = props.children,
-      onVisibleChange = props.onVisibleChange,
-      afterVisibleChange = props.afterVisibleChange,
-      transitionName = props.transitionName,
-      animation = props.animation,
-      motion = props.motion,
-      _props$placement = props.placement,
-      placement = _props$placement === void 0 ? 'right' : _props$placement,
-      _props$align = props.align,
-      align = _props$align === void 0 ? {} : _props$align,
-      _props$destroyTooltip = props.destroyTooltipOnHide,
-      destroyTooltipOnHide = _props$destroyTooltip === void 0 ? false : _props$destroyTooltip,
-      defaultVisible = props.defaultVisible,
-      getTooltipContainer = props.getTooltipContainer,
-      overlayInnerStyle = props.overlayInnerStyle,
-      restProps = _objectWithoutProperties(props, ["overlayClassName", "trigger", "mouseEnterDelay", "mouseLeaveDelay", "overlayStyle", "prefixCls", "children", "onVisibleChange", "afterVisibleChange", "transitionName", "animation", "motion", "placement", "align", "destroyTooltipOnHide", "defaultVisible", "getTooltipContainer", "overlayInnerStyle"]);
-
-  var domRef = (0,react.useRef)(null);
+    _props$trigger = props.trigger,
+    trigger = _props$trigger === void 0 ? ['hover'] : _props$trigger,
+    _props$mouseEnterDela = props.mouseEnterDelay,
+    mouseEnterDelay = _props$mouseEnterDela === void 0 ? 0 : _props$mouseEnterDela,
+    _props$mouseLeaveDela = props.mouseLeaveDelay,
+    mouseLeaveDelay = _props$mouseLeaveDela === void 0 ? 0.1 : _props$mouseLeaveDela,
+    overlayStyle = props.overlayStyle,
+    _props$prefixCls = props.prefixCls,
+    prefixCls = _props$prefixCls === void 0 ? 'rc-tooltip' : _props$prefixCls,
+    children = props.children,
+    onVisibleChange = props.onVisibleChange,
+    afterVisibleChange = props.afterVisibleChange,
+    transitionName = props.transitionName,
+    animation = props.animation,
+    motion = props.motion,
+    _props$placement = props.placement,
+    placement = _props$placement === void 0 ? 'right' : _props$placement,
+    _props$align = props.align,
+    align = _props$align === void 0 ? {} : _props$align,
+    _props$destroyTooltip = props.destroyTooltipOnHide,
+    destroyTooltipOnHide = _props$destroyTooltip === void 0 ? false : _props$destroyTooltip,
+    defaultVisible = props.defaultVisible,
+    getTooltipContainer = props.getTooltipContainer,
+    overlayInnerStyle = props.overlayInnerStyle,
+    arrowContent = props.arrowContent,
+    overlay = props.overlay,
+    id = props.id,
+    _props$showArrow = props.showArrow,
+    showArrow = _props$showArrow === void 0 ? true : _props$showArrow,
+    restProps = _objectWithoutProperties(props, Tooltip_excluded);
+  var triggerRef = (0,react.useRef)(null);
   (0,react.useImperativeHandle)(ref, function () {
-    return domRef.current;
+    return triggerRef.current;
   });
-
   var extraProps = _objectSpread2({}, restProps);
-
   if ('visible' in props) {
     extraProps.popupVisible = props.visible;
   }
-
   var getPopupElement = function getPopupElement() {
-    var _props$arrowContent = props.arrowContent,
-        arrowContent = _props$arrowContent === void 0 ? null : _props$arrowContent,
-        overlay = props.overlay,
-        id = props.id;
-    return [/*#__PURE__*/react.createElement("div", {
-      className: "".concat(prefixCls, "-arrow"),
-      key: "arrow"
-    }, arrowContent), /*#__PURE__*/react.createElement(es_Content, {
+    return /*#__PURE__*/react.createElement(Popup, {
       key: "content",
       prefixCls: prefixCls,
       id: id,
-      overlay: overlay,
       overlayInnerStyle: overlayInnerStyle
-    })];
+    }, overlay);
   };
-
-  var destroyTooltip = false;
-  var autoDestroy = false;
-
-  if (typeof destroyTooltipOnHide === 'boolean') {
-    destroyTooltip = destroyTooltipOnHide;
-  } else if (destroyTooltipOnHide && _typeof(destroyTooltipOnHide) === 'object') {
-    var keepParent = destroyTooltipOnHide.keepParent;
-    destroyTooltip = keepParent === true;
-    autoDestroy = keepParent === false;
-  }
-
-  return /*#__PURE__*/react.createElement(rc_trigger_es, extends_extends({
+  return /*#__PURE__*/react.createElement(trigger_es, extends_extends({
     popupClassName: overlayClassName,
     prefixCls: prefixCls,
     popup: getPopupElement,
     action: trigger,
     builtinPlacements: placements,
     popupPlacement: placement,
-    ref: domRef,
+    ref: triggerRef,
     popupAlign: align,
     getPopupContainer: getTooltipContainer,
     onPopupVisibleChange: onVisibleChange,
@@ -66098,16 +65992,17 @@ var Tooltip = function Tooltip(props, ref) {
     popupAnimation: animation,
     popupMotion: motion,
     defaultPopupVisible: defaultVisible,
-    destroyPopupOnHide: destroyTooltip,
-    autoDestroy: autoDestroy,
+    autoDestroy: destroyTooltipOnHide,
     mouseLeaveDelay: mouseLeaveDelay,
     popupStyle: overlayStyle,
-    mouseEnterDelay: mouseEnterDelay
+    mouseEnterDelay: mouseEnterDelay,
+    arrow: showArrow
   }, extraProps), children);
 };
-
 /* harmony default export */ var es_Tooltip = (/*#__PURE__*/(0,react.forwardRef)(Tooltip));
 ;// CONCATENATED MODULE: ./node_modules/rc-tooltip/es/index.js
+
+
 
 /* harmony default export */ var rc_tooltip_es = (es_Tooltip);
 // EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
@@ -66726,7 +66621,7 @@ function SidebarDocs() {
   })));
 }
 ;// CONCATENATED MODULE: ./package.json
-var package_namespaceObject = {"i8":"4.8.0"};
+var package_namespaceObject = {"i8":"4.9.0"};
 ;// CONCATENATED MODULE: ./reader/components/Sidebar/Sidebar.jsx
 
 
@@ -67070,15 +66965,15 @@ var js = __webpack_require__(84204);
 });
 ;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js
 
-function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr)) return arrayLikeToArray_arrayLikeToArray(arr);
+function esm_arrayWithoutHoles_arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return runtime_helpers_esm_arrayLikeToArray_arrayLikeToArray(arr);
 }
 ;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/iterableToArray.js
-function _iterableToArray(iter) {
+function esm_iterableToArray_iterableToArray(iter) {
   if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
 }
 ;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js
-function _nonIterableSpread() {
+function esm_nonIterableSpread_nonIterableSpread() {
   throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 ;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js
@@ -67086,8 +66981,8 @@ function _nonIterableSpread() {
 
 
 
-function _toConsumableArray(arr) {
-  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || unsupportedIterableToArray_unsupportedIterableToArray(arr) || _nonIterableSpread();
+function esm_toConsumableArray_toConsumableArray(arr) {
+  return esm_arrayWithoutHoles_arrayWithoutHoles(arr) || esm_iterableToArray_iterableToArray(arr) || runtime_helpers_esm_unsupportedIterableToArray_unsupportedIterableToArray(arr) || esm_nonIterableSpread_nonIterableSpread();
 }
 ;// CONCATENATED MODULE: ./node_modules/react-syntax-highlighter/dist/esm/create-element.js
 
@@ -67218,7 +67113,7 @@ function createElement(_ref) {
 
 
 
-var _excluded = ["language", "children", "style", "customStyle", "codeTagProps", "useInlineStyles", "showLineNumbers", "showInlineLineNumbers", "startingLineNumber", "lineNumberContainerStyle", "lineNumberStyle", "wrapLines", "wrapLongLines", "lineProps", "renderer", "PreTag", "CodeTag", "code", "astGenerator"];
+var highlight_excluded = ["language", "children", "style", "customStyle", "codeTagProps", "useInlineStyles", "showLineNumbers", "showInlineLineNumbers", "startingLineNumber", "lineNumberContainerStyle", "lineNumberStyle", "wrapLines", "wrapLongLines", "lineProps", "renderer", "PreTag", "CodeTag", "code", "astGenerator"];
 
 function highlight_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
@@ -67348,7 +67243,7 @@ function flattenCodeTree(tree) {
     if (node.type === 'text') {
       newTree.push(createLineElement({
         children: [node],
-        className: _toConsumableArray(new Set(className))
+        className: esm_toConsumableArray_toConsumableArray(new Set(className))
       }));
     } else if (node.children) {
       var classNames = className.concat(node.properties.className);
@@ -67567,7 +67462,7 @@ function getCodeTree(_ref6) {
         _ref7$code = _ref7.code,
         code = _ref7$code === void 0 ? (Array.isArray(children) ? children[0] : children) || '' : _ref7$code,
         astGenerator = _ref7.astGenerator,
-        rest = _objectWithoutProperties(_ref7, _excluded);
+        rest = _objectWithoutProperties(_ref7, highlight_excluded);
 
     astGenerator = astGenerator || defaultAstGenerator;
     var allLineNumbers = showLineNumbers ? /*#__PURE__*/react.createElement(AllLineNumbers, {
