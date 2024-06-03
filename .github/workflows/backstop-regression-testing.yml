@@ -35,7 +35,7 @@ jobs:
           current_ref: ${{ matrix.ref }}
           base_ref: ${{ github.base_ref }}
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           cache: yarn
           node-version: 16
