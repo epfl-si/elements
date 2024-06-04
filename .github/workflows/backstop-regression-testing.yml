@@ -65,7 +65,7 @@ jobs:
           overwrite: true
 
       - if: ${{ env.backstop_verb == 'test' }}
-        uses: EnricoMi/publish-unit-test-result-action@v1
+        uses: EnricoMi/publish-unit-test-result-action@v2
         with:
           fail_on: nothing
           files: tests/backstop/ci_report/xunit.xml
