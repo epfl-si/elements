@@ -47,7 +47,7 @@ jobs:
           (cd dist; tar --exclude package.json -clf - .) | \
             (cd gh-pages; tar xpvf -)
 
-      - uses: peaceiris/actions-gh-pages@v3
+      - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./gh-pages
@@ -61,7 +61,7 @@ jobs:
             (cd frontend; tar xpvf -)
 
       - name: Deploy to “dist/frontend” branch
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./frontend
