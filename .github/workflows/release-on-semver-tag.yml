@@ -30,7 +30,7 @@ jobs:
           else
             echo is_uptodate=false
           fi
-      - uses: andymckay/cancel-action@0.2
+      - uses: andymckay/cancel-action@0.4
         if: ${{ env.is_uptodate == 'false' }}
 
       - name: Setup Node
