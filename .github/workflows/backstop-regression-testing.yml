@@ -58,10 +58,11 @@ jobs:
           node scripts/make_backstop_json.js
           npx backstop ${{ env.backstop_verb }} --config=build/backstop.json || true
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: backstop-report
           path: tests/backstop
+          overwrite: true
 
       - if: ${{ env.backstop_verb == 'test' }}
         uses: EnricoMi/publish-unit-test-result-action@v1
