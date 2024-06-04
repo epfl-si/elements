@@ -66,29 +66,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./frontend
           publish_branch: ${{ env.dist_branch }}
-
-      - name: Pluck release/ out of dist/
-        # The placement scheme is that of https://www.npmjs.com/package/epfl-theme-elements
-        run: |
-          set -e -x
-          mkdir -p release/dist/icons release/dist/css release/dist/js
-          cp $(find dist/ -name icons -prune -false -o -name "*.svg") \
-             dist/icons/* \
-             dist/favicons/*.png dist/favicons/*.ico \
-             release/dist/icons/
-          cp dist/package.json         release/
-          cp dist/css/elements.min.css release/dist/css/elements.min.css
-          cp dist/js/elements.min.js   release/dist/js/elements.min.js
-
-      - name: Create release package
-        # The placement scheme is that of https://www.npmjs.com/package/epfl-theme-elements
-        run: |
-          set -e -x
-          tar -Crelease -zcf $release_tar_name .
-
-      - uses: "marvinpinto/action-automatic-releases@v1.2.1"
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false
-          files: |
-            ${{ env.release_tar_name }}
