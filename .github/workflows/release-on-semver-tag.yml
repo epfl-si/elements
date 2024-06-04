@@ -9,7 +9,6 @@ jobs:
     env:
       tag: ${{ github.ref_name }}
       tag_ref: ${{ github.ref }}
-      release_tar_name: elements-${{ github.ref_name }}.tar.gz
       base_branch: "dev"
       base_branch_ref: "origin/dev"
       dist_branch: dist/frontend
