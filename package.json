@@ -181,7 +181,7 @@
     "babel-loader": "^9.1.3",
     "backstopjs": "^6.1.3",
     "browser-sync": "^3.0.2",
-    "browser-sync-webpack-plugin": "^2.3.0",
+    "browser-sync-v3-webpack-plugin": "^0.1.0",
     "colorable": "https://github.com/epfl-si/colorable",
     "copy-webpack-plugin": "^11.0.0",
     "core-js": "3",

@@ -1,5 +1,5 @@
 const path                      = require('path')
-const BrowserSyncPlugin         = require('browser-sync-webpack-plugin')
+const BrowserSyncPlugin         = require('browser-sync-v3-webpack-plugin')
 const NodePolyfillPlugin        = require("node-polyfill-webpack-plugin")
 const CopyPlugin                = require('copy-webpack-plugin')
 const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally')
