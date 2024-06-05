@@ -212,7 +212,7 @@
     "react-router-dom": "^5.2.0",
     "react-syntax-highlighter": "^15.5.0",
     "redux": "4",
-    "release-it": "^15.5.0",
+    "release-it": "^17.3.0",
     "sass": "^1.55.0",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.0.0",
