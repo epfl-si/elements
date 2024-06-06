@@ -185,7 +185,7 @@
     "colorable": "https://github.com/epfl-si/colorable",
     "copy-webpack-plugin": "^11.0.0",
     "core-js": "3",
-    "css-loader": "^5.2.6",
+    "css-loader": "^7.1.2",
     "css-minimizer-webpack-plugin": "^3.3.1",
     "eslint": "^8.36.0",
     "eslint-config-airbnb": "^19.0.4",
