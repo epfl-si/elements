@@ -195,7 +195,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "js-beautify": "^1.15.1",
     "mini-css-extract-plugin": "^2.1.0",
-    "node-polyfill-webpack-plugin": "^2.0.1",
+    "node-polyfill-webpack-plugin": "^4.0.0",
     "postcss": "^8.4.31",
     "postcss-loader": "^7.3.0",
     "postcss-preset-env": "^9.3.0",
