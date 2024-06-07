@@ -54,25 +54,3 @@
     grid-column: 1 / span 2;
   }
 }
-
-@include ie11('.definition-list-grid') {
-  display: block;
-}
-
-@include ie11('.definition-list-grid dt') {
-  float: left;
-  margin: 0;
-  border: none;
-}
-
-@include ie11('.definition-list-grid dd') {
-  @include clearfix;
-}
-
-@include ie11('.definition-list-grid .definition-list-item-full') {
-  float: none;
-  width: 100%;
-
-  @include clearfix;
-}
-

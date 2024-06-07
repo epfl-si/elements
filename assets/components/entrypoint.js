@@ -1,6 +1,5 @@
 /* globals jQuery, Tablesaw */
 
-import objectFitImages from 'object-fit-images';
 import upload from './atoms/upload/upload';
 import breadcrumb from './molecules/breadcrumb/breadcrumb';
 import datepicker from './molecules/datepicker/datepicker';
@@ -53,14 +52,6 @@ jQuery.fn.extend({
 
     guide();
     anchors();
-
-    // Init polyfill for Object Fit on IE11
-    const isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
-    if (isIE11) {
-      objectFitImages();
-      jQuery('body').addClass('ie');
-    }
-
   }
 });
 

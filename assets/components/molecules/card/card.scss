@@ -240,13 +240,6 @@ a.card {
   }
 }
 
-// Fix for IE not handling image height correctly
-// https://github.com/philipwalton/flexbugs/issues/75
-.card-img-top,
-.card-overlay .card-img {
-  min-height: 1px;
-}
-
 // Grayscale look, see event finished
 .card-grayscale {
   &:hover {

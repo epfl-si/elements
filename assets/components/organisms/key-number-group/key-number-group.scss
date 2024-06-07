@@ -26,6 +26,3 @@
     }
   }
 }
-
-@include ie11('.key-number-group .key-number') { flex: 0 0 20%; }
-@include ie11('.key-number-group .key-large') { flex: 0 0 45%; }
