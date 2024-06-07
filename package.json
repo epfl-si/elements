@@ -40,7 +40,8 @@
   "main": "dist/js/elements.min.js",
   "browserslist": [
     "> 1% in CH",
-    "last 2 versions"
+    "last 2 versions",
+    "not dead"
   ],
   "eslintConfig": {
     "parser": "@babel/eslint-parser",
