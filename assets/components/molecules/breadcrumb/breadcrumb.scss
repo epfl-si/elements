@@ -211,6 +211,8 @@
 }
 
 .breadcrumb .dropdown-menu {
+  min-width: 11.5rem;
+
   &.show {
     // dropdown position depends on the <li>, not the button
     top: 1.65rem !important;
