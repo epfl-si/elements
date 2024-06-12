@@ -227,9 +227,14 @@
 .breadcrumb .dropdown-item {
   padding: 0.125em 0.625rem;
   font-size: 0.83rem;
+  line-height: 1.3em;
 
   a {
     display: block;
+  }
+
+  & + .dropdown-item {
+    margin-top: 0.5rem;
   }
 
   &.current-menu-item,
