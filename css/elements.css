@@ -15963,7 +15963,7 @@ ol.flickity-page-dots li:before {
     color: #c1c1c1;
   }
   .breadcrumb li:last-child {
-    padding-right: 5rem;
+    margin-right: 5rem;
   }
 }
 
@@ -16097,6 +16097,9 @@ ol.flickity-page-dots li:before {
           transform: rotate(180deg);
 }
 
+.breadcrumb .dropdown-menu {
+  min-width: 11.5rem;
+}
 .breadcrumb .dropdown-menu.show {
   top: 1.65rem !important;
   left: -0.625rem !important;
@@ -16111,9 +16114,13 @@ ol.flickity-page-dots li:before {
 .breadcrumb .dropdown-item {
   padding: 0.125em 0.625rem;
   font-size: 0.83rem;
+  line-height: 1.3em;
 }
 .breadcrumb .dropdown-item a {
   display: block;
+}
+.breadcrumb .dropdown-item + .dropdown-item {
+  margin-top: 0.5rem;
 }
 .breadcrumb .dropdown-item.current-menu-item, .breadcrumb .dropdown-item.current-menu-item-parent {
   font-weight: bold;
