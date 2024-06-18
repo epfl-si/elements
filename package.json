@@ -40,7 +40,8 @@
   "main": "dist/js/elements.min.js",
   "browserslist": [
     "> 1% in CH",
-    "last 2 versions"
+    "last 2 versions",
+    "not dead"
   ],
   "eslintConfig": {
     "parser": "@babel/eslint-parser",
@@ -168,7 +169,6 @@
     "jquery": "^3.7.1",
     "jquery-mousewheel": "^3.1.13",
     "multiple-select": "^1.5.2",
-    "object-fit-images": "^3.2.4",
     "pickadate": "^3.6.4",
     "popper.js": "^1.16.1",
     "tablesaw": "^3.1.2"

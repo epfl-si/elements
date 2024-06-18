@@ -213,13 +213,3 @@
   border-right: $trapeze-height solid transparent;
   transition: border $trapeze-animation-duration;
 }
-
-
-// IE 11 mixin
-// WARNING: Autoprefixer is off inside this.
-@mixin ie11($selector) {
-  :-ms-fullscreen, :root #{$selector} {
-    /* autoprefixer: off */
-    @content;
-  }
-}
