@@ -6217,21 +6217,6 @@ $({ target: 'Object', stat: true, forced: FAILS_ON_PRIMITIVES }, {
 
 /***/ }),
 
-/***/ 68304:
-/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
-
-var $ = __webpack_require__(82109);
-var setPrototypeOf = __webpack_require__(27674);
-
-// `Object.setPrototypeOf` method
-// https://tc39.es/ecma262/#sec-object.setprototypeof
-$({ target: 'Object', stat: true }, {
-  setPrototypeOf: setPrototypeOf
-});
-
-
-/***/ }),
-
 /***/ 41539:
 /***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
 
@@ -7447,14 +7432,14 @@ for (var COLLECTION_NAME in DOMIterables) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(94015);
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(87537);
+/* harmony import */ var _css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(23645);
 /* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
-var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".rc-tooltip.rc-tooltip-zoom-appear,\n.rc-tooltip.rc-tooltip-zoom-enter {\n  opacity: 0;\n}\n.rc-tooltip.rc-tooltip-zoom-enter,\n.rc-tooltip.rc-tooltip-zoom-leave {\n  display: block;\n}\n.rc-tooltip-zoom-enter,\n.rc-tooltip-zoom-appear {\n  opacity: 0;\n  animation-duration: 0.3s;\n  animation-fill-mode: both;\n  animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);\n  animation-play-state: paused;\n}\n.rc-tooltip-zoom-leave {\n  animation-duration: 0.3s;\n  animation-fill-mode: both;\n  animation-timing-function: cubic-bezier(0.6, -0.3, 0.74, 0.05);\n  animation-play-state: paused;\n}\n.rc-tooltip-zoom-enter.rc-tooltip-zoom-enter-active,\n.rc-tooltip-zoom-appear.rc-tooltip-zoom-appear-active {\n  animation-name: rcToolTipZoomIn;\n  animation-play-state: running;\n}\n.rc-tooltip-zoom-leave.rc-tooltip-zoom-leave-active {\n  animation-name: rcToolTipZoomOut;\n  animation-play-state: running;\n}\n@keyframes rcToolTipZoomIn {\n  0% {\n    opacity: 0;\n    transform-origin: 50% 50%;\n    transform: scale(0, 0);\n  }\n  100% {\n    opacity: 1;\n    transform-origin: 50% 50%;\n    transform: scale(1, 1);\n  }\n}\n@keyframes rcToolTipZoomOut {\n  0% {\n    opacity: 1;\n    transform-origin: 50% 50%;\n    transform: scale(1, 1);\n  }\n  100% {\n    opacity: 0;\n    transform-origin: 50% 50%;\n    transform: scale(0, 0);\n  }\n}\n.rc-tooltip {\n  position: absolute;\n  z-index: 1070;\n  display: block;\n  visibility: visible;\n  font-size: 12px;\n  line-height: 1.5;\n  opacity: 0.9;\n}\n.rc-tooltip-hidden {\n  display: none;\n}\n.rc-tooltip-placement-top,\n.rc-tooltip-placement-topLeft,\n.rc-tooltip-placement-topRight {\n  padding: 5px 0 9px 0;\n}\n.rc-tooltip-placement-right,\n.rc-tooltip-placement-rightTop,\n.rc-tooltip-placement-rightBottom {\n  padding: 0 5px 0 9px;\n}\n.rc-tooltip-placement-bottom,\n.rc-tooltip-placement-bottomLeft,\n.rc-tooltip-placement-bottomRight {\n  padding: 9px 0 5px 0;\n}\n.rc-tooltip-placement-left,\n.rc-tooltip-placement-leftTop,\n.rc-tooltip-placement-leftBottom {\n  padding: 0 9px 0 5px;\n}\n.rc-tooltip-inner {\n  padding: 8px 10px;\n  color: #fff;\n  text-align: left;\n  text-decoration: none;\n  background-color: #373737;\n  border-radius: 6px;\n  box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);\n  min-height: 34px;\n}\n.rc-tooltip-arrow {\n  position: absolute;\n  width: 0;\n  height: 0;\n  border-color: transparent;\n  border-style: solid;\n}\n.rc-tooltip-placement-top .rc-tooltip-arrow,\n.rc-tooltip-placement-topLeft .rc-tooltip-arrow,\n.rc-tooltip-placement-topRight .rc-tooltip-arrow {\n  bottom: 4px;\n  margin-left: -5px;\n  border-width: 5px 5px 0;\n  border-top-color: #373737;\n}\n.rc-tooltip-placement-top .rc-tooltip-arrow {\n  left: 50%;\n}\n.rc-tooltip-placement-topLeft .rc-tooltip-arrow {\n  left: 15%;\n}\n.rc-tooltip-placement-topRight .rc-tooltip-arrow {\n  right: 15%;\n}\n.rc-tooltip-placement-right .rc-tooltip-arrow,\n.rc-tooltip-placement-rightTop .rc-tooltip-arrow,\n.rc-tooltip-placement-rightBottom .rc-tooltip-arrow {\n  left: 4px;\n  margin-top: -5px;\n  border-width: 5px 5px 5px 0;\n  border-right-color: #373737;\n}\n.rc-tooltip-placement-right .rc-tooltip-arrow {\n  top: 50%;\n}\n.rc-tooltip-placement-rightTop .rc-tooltip-arrow {\n  top: 15%;\n  margin-top: 0;\n}\n.rc-tooltip-placement-rightBottom .rc-tooltip-arrow {\n  bottom: 15%;\n}\n.rc-tooltip-placement-left .rc-tooltip-arrow,\n.rc-tooltip-placement-leftTop .rc-tooltip-arrow,\n.rc-tooltip-placement-leftBottom .rc-tooltip-arrow {\n  right: 4px;\n  margin-top: -5px;\n  border-width: 5px 0 5px 5px;\n  border-left-color: #373737;\n}\n.rc-tooltip-placement-left .rc-tooltip-arrow {\n  top: 50%;\n}\n.rc-tooltip-placement-leftTop .rc-tooltip-arrow {\n  top: 15%;\n  margin-top: 0;\n}\n.rc-tooltip-placement-leftBottom .rc-tooltip-arrow {\n  bottom: 15%;\n}\n.rc-tooltip-placement-bottom .rc-tooltip-arrow,\n.rc-tooltip-placement-bottomLeft .rc-tooltip-arrow,\n.rc-tooltip-placement-bottomRight .rc-tooltip-arrow {\n  top: 4px;\n  margin-left: -5px;\n  border-width: 0 5px 5px;\n  border-bottom-color: #373737;\n}\n.rc-tooltip-placement-bottom .rc-tooltip-arrow {\n  left: 50%;\n}\n.rc-tooltip-placement-bottomLeft .rc-tooltip-arrow {\n  left: 15%;\n}\n.rc-tooltip-placement-bottomRight .rc-tooltip-arrow {\n  right: 15%;\n}\n", "",{"version":3,"sources":["webpack://./node_modules/rc-tooltip/assets/bootstrap.css"],"names":[],"mappings":"AAAA;;EAEE,UAAU;AACZ;AACA;;EAEE,cAAc;AAChB;AACA;;EAEE,UAAU;EACV,wBAAwB;EACxB,yBAAyB;EACzB,+DAA+D;EAC/D,4BAA4B;AAC9B;AACA;EACE,wBAAwB;EACxB,yBAAyB;EACzB,8DAA8D;EAC9D,4BAA4B;AAC9B;AACA;;EAEE,+BAA+B;EAC/B,6BAA6B;AAC/B;AACA;EACE,gCAAgC;EAChC,6BAA6B;AAC/B;AACA;EACE;IACE,UAAU;IACV,yBAAyB;IACzB,sBAAsB;EACxB;EACA;IACE,UAAU;IACV,yBAAyB;IACzB,sBAAsB;EACxB;AACF;AACA;EACE;IACE,UAAU;IACV,yBAAyB;IACzB,sBAAsB;EACxB;EACA;IACE,UAAU;IACV,yBAAyB;IACzB,sBAAsB;EACxB;AACF;AACA;EACE,kBAAkB;EAClB,aAAa;EACb,cAAc;EACd,mBAAmB;EACnB,eAAe;EACf,gBAAgB;EAChB,YAAY;AACd;AACA;EACE,aAAa;AACf;AACA;;;EAGE,oBAAoB;AACtB;AACA;;;EAGE,oBAAoB;AACtB;AACA;;;EAGE,oBAAoB;AACtB;AACA;;;EAGE,oBAAoB;AACtB;AACA;EACE,iBAAiB;EACjB,WAAW;EACX,gBAAgB;EAChB,qBAAqB;EACrB,yBAAyB;EACzB,kBAAkB;EAClB,uCAAuC;EACvC,gBAAgB;AAClB;AACA;EACE,kBAAkB;EAClB,QAAQ;EACR,SAAS;EACT,yBAAyB;EACzB,mBAAmB;AACrB;AACA;;;EAGE,WAAW;EACX,iBAAiB;EACjB,uBAAuB;EACvB,yBAAyB;AAC3B;AACA;EACE,SAAS;AACX;AACA;EACE,SAAS;AACX;AACA;EACE,UAAU;AACZ;AACA;;;EAGE,SAAS;EACT,gBAAgB;EAChB,2BAA2B;EAC3B,2BAA2B;AAC7B;AACA;EACE,QAAQ;AACV;AACA;EACE,QAAQ;EACR,aAAa;AACf;AACA;EACE,WAAW;AACb;AACA;;;EAGE,UAAU;EACV,gBAAgB;EAChB,2BAA2B;EAC3B,0BAA0B;AAC5B;AACA;EACE,QAAQ;AACV;AACA;EACE,QAAQ;EACR,aAAa;AACf;AACA;EACE,WAAW;AACb;AACA;;;EAGE,QAAQ;EACR,iBAAiB;EACjB,uBAAuB;EACvB,4BAA4B;AAC9B;AACA;EACE,SAAS;AACX;AACA;EACE,SAAS;AACX;AACA;EACE,UAAU;AACZ","sourcesContent":[".rc-tooltip.rc-tooltip-zoom-appear,\n.rc-tooltip.rc-tooltip-zoom-enter {\n  opacity: 0;\n}\n.rc-tooltip.rc-tooltip-zoom-enter,\n.rc-tooltip.rc-tooltip-zoom-leave {\n  display: block;\n}\n.rc-tooltip-zoom-enter,\n.rc-tooltip-zoom-appear {\n  opacity: 0;\n  animation-duration: 0.3s;\n  animation-fill-mode: both;\n  animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);\n  animation-play-state: paused;\n}\n.rc-tooltip-zoom-leave {\n  animation-duration: 0.3s;\n  animation-fill-mode: both;\n  animation-timing-function: cubic-bezier(0.6, -0.3, 0.74, 0.05);\n  animation-play-state: paused;\n}\n.rc-tooltip-zoom-enter.rc-tooltip-zoom-enter-active,\n.rc-tooltip-zoom-appear.rc-tooltip-zoom-appear-active {\n  animation-name: rcToolTipZoomIn;\n  animation-play-state: running;\n}\n.rc-tooltip-zoom-leave.rc-tooltip-zoom-leave-active {\n  animation-name: rcToolTipZoomOut;\n  animation-play-state: running;\n}\n@keyframes rcToolTipZoomIn {\n  0% {\n    opacity: 0;\n    transform-origin: 50% 50%;\n    transform: scale(0, 0);\n  }\n  100% {\n    opacity: 1;\n    transform-origin: 50% 50%;\n    transform: scale(1, 1);\n  }\n}\n@keyframes rcToolTipZoomOut {\n  0% {\n    opacity: 1;\n    transform-origin: 50% 50%;\n    transform: scale(1, 1);\n  }\n  100% {\n    opacity: 0;\n    transform-origin: 50% 50%;\n    transform: scale(0, 0);\n  }\n}\n.rc-tooltip {\n  position: absolute;\n  z-index: 1070;\n  display: block;\n  visibility: visible;\n  font-size: 12px;\n  line-height: 1.5;\n  opacity: 0.9;\n}\n.rc-tooltip-hidden {\n  display: none;\n}\n.rc-tooltip-placement-top,\n.rc-tooltip-placement-topLeft,\n.rc-tooltip-placement-topRight {\n  padding: 5px 0 9px 0;\n}\n.rc-tooltip-placement-right,\n.rc-tooltip-placement-rightTop,\n.rc-tooltip-placement-rightBottom {\n  padding: 0 5px 0 9px;\n}\n.rc-tooltip-placement-bottom,\n.rc-tooltip-placement-bottomLeft,\n.rc-tooltip-placement-bottomRight {\n  padding: 9px 0 5px 0;\n}\n.rc-tooltip-placement-left,\n.rc-tooltip-placement-leftTop,\n.rc-tooltip-placement-leftBottom {\n  padding: 0 9px 0 5px;\n}\n.rc-tooltip-inner {\n  padding: 8px 10px;\n  color: #fff;\n  text-align: left;\n  text-decoration: none;\n  background-color: #373737;\n  border-radius: 6px;\n  box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);\n  min-height: 34px;\n}\n.rc-tooltip-arrow {\n  position: absolute;\n  width: 0;\n  height: 0;\n  border-color: transparent;\n  border-style: solid;\n}\n.rc-tooltip-placement-top .rc-tooltip-arrow,\n.rc-tooltip-placement-topLeft .rc-tooltip-arrow,\n.rc-tooltip-placement-topRight .rc-tooltip-arrow {\n  bottom: 4px;\n  margin-left: -5px;\n  border-width: 5px 5px 0;\n  border-top-color: #373737;\n}\n.rc-tooltip-placement-top .rc-tooltip-arrow {\n  left: 50%;\n}\n.rc-tooltip-placement-topLeft .rc-tooltip-arrow {\n  left: 15%;\n}\n.rc-tooltip-placement-topRight .rc-tooltip-arrow {\n  right: 15%;\n}\n.rc-tooltip-placement-right .rc-tooltip-arrow,\n.rc-tooltip-placement-rightTop .rc-tooltip-arrow,\n.rc-tooltip-placement-rightBottom .rc-tooltip-arrow {\n  left: 4px;\n  margin-top: -5px;\n  border-width: 5px 5px 5px 0;\n  border-right-color: #373737;\n}\n.rc-tooltip-placement-right .rc-tooltip-arrow {\n  top: 50%;\n}\n.rc-tooltip-placement-rightTop .rc-tooltip-arrow {\n  top: 15%;\n  margin-top: 0;\n}\n.rc-tooltip-placement-rightBottom .rc-tooltip-arrow {\n  bottom: 15%;\n}\n.rc-tooltip-placement-left .rc-tooltip-arrow,\n.rc-tooltip-placement-leftTop .rc-tooltip-arrow,\n.rc-tooltip-placement-leftBottom .rc-tooltip-arrow {\n  right: 4px;\n  margin-top: -5px;\n  border-width: 5px 0 5px 5px;\n  border-left-color: #373737;\n}\n.rc-tooltip-placement-left .rc-tooltip-arrow {\n  top: 50%;\n}\n.rc-tooltip-placement-leftTop .rc-tooltip-arrow {\n  top: 15%;\n  margin-top: 0;\n}\n.rc-tooltip-placement-leftBottom .rc-tooltip-arrow {\n  bottom: 15%;\n}\n.rc-tooltip-placement-bottom .rc-tooltip-arrow,\n.rc-tooltip-placement-bottomLeft .rc-tooltip-arrow,\n.rc-tooltip-placement-bottomRight .rc-tooltip-arrow {\n  top: 4px;\n  margin-left: -5px;\n  border-width: 0 5px 5px;\n  border-bottom-color: #373737;\n}\n.rc-tooltip-placement-bottom .rc-tooltip-arrow {\n  left: 50%;\n}\n.rc-tooltip-placement-bottomLeft .rc-tooltip-arrow {\n  left: 15%;\n}\n.rc-tooltip-placement-bottomRight .rc-tooltip-arrow {\n  right: 15%;\n}\n"],"sourceRoot":""}]);
 // Exports
@@ -7473,103 +7458,106 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".rc-tooltip.rc-tooltip-zoom-appear,\n.
   MIT License http://www.opensource.org/licenses/mit-license.php
   Author Tobias Koppers @sokra
 */
-// css base code, injected by the css-loader
-// eslint-disable-next-line func-names
 module.exports = function (cssWithMappingToString) {
-  var list = []; // return the list of modules as css string
+  var list = [];
 
+  // return the list of modules as css string
   list.toString = function toString() {
     return this.map(function (item) {
-      var content = cssWithMappingToString(item);
-
-      if (item[2]) {
-        return "@media ".concat(item[2], " {").concat(content, "}");
+      var content = "";
+      var needLayer = typeof item[5] !== "undefined";
+      if (item[4]) {
+        content += "@supports (".concat(item[4], ") {");
       }
-
+      if (item[2]) {
+        content += "@media ".concat(item[2], " {");
+      }
+      if (needLayer) {
+        content += "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {");
+      }
+      content += cssWithMappingToString(item);
+      if (needLayer) {
+        content += "}";
+      }
+      if (item[2]) {
+        content += "}";
+      }
+      if (item[4]) {
+        content += "}";
+      }
       return content;
     }).join("");
-  }; // import a list of modules into the list
-  // eslint-disable-next-line func-names
+  };
 
-
-  list.i = function (modules, mediaQuery, dedupe) {
+  // import a list of modules into the list
+  list.i = function i(modules, media, dedupe, supports, layer) {
     if (typeof modules === "string") {
-      // eslint-disable-next-line no-param-reassign
-      modules = [[null, modules, ""]];
+      modules = [[null, modules, undefined]];
     }
-
     var alreadyImportedModules = {};
-
     if (dedupe) {
-      for (var i = 0; i < this.length; i++) {
-        // eslint-disable-next-line prefer-destructuring
-        var id = this[i][0];
-
+      for (var k = 0; k < this.length; k++) {
+        var id = this[k][0];
         if (id != null) {
           alreadyImportedModules[id] = true;
         }
       }
     }
-
-    for (var _i = 0; _i < modules.length; _i++) {
-      var item = [].concat(modules[_i]);
-
+    for (var _k = 0; _k < modules.length; _k++) {
+      var item = [].concat(modules[_k]);
       if (dedupe && alreadyImportedModules[item[0]]) {
-        // eslint-disable-next-line no-continue
         continue;
       }
-
-      if (mediaQuery) {
-        if (!item[2]) {
-          item[2] = mediaQuery;
+      if (typeof layer !== "undefined") {
+        if (typeof item[5] === "undefined") {
+          item[5] = layer;
         } else {
-          item[2] = "".concat(mediaQuery, " and ").concat(item[2]);
+          item[1] = "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {").concat(item[1], "}");
+          item[5] = layer;
         }
       }
-
+      if (media) {
+        if (!item[2]) {
+          item[2] = media;
+        } else {
+          item[1] = "@media ".concat(item[2], " {").concat(item[1], "}");
+          item[2] = media;
+        }
+      }
+      if (supports) {
+        if (!item[4]) {
+          item[4] = "".concat(supports);
+        } else {
+          item[1] = "@supports (".concat(item[4], ") {").concat(item[1], "}");
+          item[4] = supports;
+        }
+      }
       list.push(item);
     }
   };
-
   return list;
 };
 
 /***/ }),
 
-/***/ 94015:
+/***/ 87537:
 /***/ (function(module) {
 
 "use strict";
 
 
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-module.exports = function cssWithMappingToString(item) {
-  var _item = _slicedToArray(item, 4),
-      content = _item[1],
-      cssMapping = _item[3];
-
+module.exports = function (item) {
+  var content = item[1];
+  var cssMapping = item[3];
+  if (!cssMapping) {
+    return content;
+  }
   if (typeof btoa === "function") {
-    // eslint-disable-next-line no-undef
     var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(cssMapping))));
     var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
     var sourceMapping = "/*# ".concat(data, " */");
-    var sourceURLs = cssMapping.sources.map(function (source) {
-      return "/*# sourceURL=".concat(cssMapping.sourceRoot || "").concat(source, " */");
-    });
-    return [content].concat(sourceURLs).concat([sourceMapping]).join("\n");
+    return [content].concat([sourceMapping]).join("\n");
   }
-
   return [content].join("\n");
 };
 
@@ -49633,19 +49621,111 @@ function stringify(values) {
 
 /***/ }),
 
-/***/ 20695:
+/***/ 93379:
+/***/ (function(module) {
+
+"use strict";
+
+
+var stylesInDOM = [];
+function getIndexByIdentifier(identifier) {
+  var result = -1;
+  for (var i = 0; i < stylesInDOM.length; i++) {
+    if (stylesInDOM[i].identifier === identifier) {
+      result = i;
+      break;
+    }
+  }
+  return result;
+}
+function modulesToDom(list, options) {
+  var idCountMap = {};
+  var identifiers = [];
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i];
+    var id = options.base ? item[0] + options.base : item[0];
+    var count = idCountMap[id] || 0;
+    var identifier = "".concat(id, " ").concat(count);
+    idCountMap[id] = count + 1;
+    var indexByIdentifier = getIndexByIdentifier(identifier);
+    var obj = {
+      css: item[1],
+      media: item[2],
+      sourceMap: item[3],
+      supports: item[4],
+      layer: item[5]
+    };
+    if (indexByIdentifier !== -1) {
+      stylesInDOM[indexByIdentifier].references++;
+      stylesInDOM[indexByIdentifier].updater(obj);
+    } else {
+      var updater = addElementStyle(obj, options);
+      options.byIndex = i;
+      stylesInDOM.splice(i, 0, {
+        identifier: identifier,
+        updater: updater,
+        references: 1
+      });
+    }
+    identifiers.push(identifier);
+  }
+  return identifiers;
+}
+function addElementStyle(obj, options) {
+  var api = options.domAPI(options);
+  api.update(obj);
+  var updater = function updater(newObj) {
+    if (newObj) {
+      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap && newObj.supports === obj.supports && newObj.layer === obj.layer) {
+        return;
+      }
+      api.update(obj = newObj);
+    } else {
+      api.remove();
+    }
+  };
+  return updater;
+}
+module.exports = function (list, options) {
+  options = options || {};
+  list = list || [];
+  var lastIdentifiers = modulesToDom(list, options);
+  return function update(newList) {
+    newList = newList || [];
+    for (var i = 0; i < lastIdentifiers.length; i++) {
+      var identifier = lastIdentifiers[i];
+      var index = getIndexByIdentifier(identifier);
+      stylesInDOM[index].references--;
+    }
+    var newLastIdentifiers = modulesToDom(newList, options);
+    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
+      var _identifier = lastIdentifiers[_i];
+      var _index = getIndexByIdentifier(_identifier);
+      if (stylesInDOM[_index].references === 0) {
+        stylesInDOM[_index].updater();
+        stylesInDOM.splice(_index, 1);
+      }
+    }
+    lastIdentifiers = newLastIdentifiers;
+  };
+};
+
+/***/ }),
+
+/***/ 90569:
 /***/ (function(module) {
 
 "use strict";
 
 
 var memo = {};
-/* istanbul ignore next  */
 
+/* istanbul ignore next  */
 function getTarget(target) {
   if (typeof memo[target] === "undefined") {
-    var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself
+    var styleTarget = document.querySelector(target);
 
+    // Special case to return head of iframe instead of iframe itself
     if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
       try {
         // This will throw an exception if access to iframe is blocked
@@ -49656,118 +49736,20 @@ function getTarget(target) {
         styleTarget = null;
       }
     }
-
     memo[target] = styleTarget;
   }
-
   return memo[target];
 }
 
-module.exports = getTarget;
-
-/***/ }),
-
-/***/ 93379:
-/***/ (function(module) {
-
-"use strict";
-
-
-var stylesInDom = [];
-
-function getIndexByIdentifier(identifier) {
-  var result = -1;
-
-  for (var i = 0; i < stylesInDom.length; i++) {
-    if (stylesInDom[i].identifier === identifier) {
-      result = i;
-      break;
-    }
+/* istanbul ignore next  */
+function insertBySelector(insert, style) {
+  var target = getTarget(insert);
+  if (!target) {
+    throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
   }
-
-  return result;
+  target.appendChild(style);
 }
-
-function modulesToDom(list, options) {
-  var idCountMap = {};
-  var identifiers = [];
-
-  for (var i = 0; i < list.length; i++) {
-    var item = list[i];
-    var id = options.base ? item[0] + options.base : item[0];
-    var count = idCountMap[id] || 0;
-    var identifier = "".concat(id, " ").concat(count);
-    idCountMap[id] = count + 1;
-    var index = getIndexByIdentifier(identifier);
-    var obj = {
-      css: item[1],
-      media: item[2],
-      sourceMap: item[3]
-    };
-
-    if (index !== -1) {
-      stylesInDom[index].references++;
-      stylesInDom[index].updater(obj);
-    } else {
-      stylesInDom.push({
-        identifier: identifier,
-        updater: addStyle(obj, options),
-        references: 1
-      });
-    }
-
-    identifiers.push(identifier);
-  }
-
-  return identifiers;
-}
-
-function addStyle(obj, options) {
-  var api = options.domAPI(options);
-  api.update(obj);
-  return function updateStyle(newObj) {
-    if (newObj) {
-      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) {
-        return;
-      }
-
-      api.update(obj = newObj);
-    } else {
-      api.remove();
-    }
-  };
-}
-
-module.exports = function (list, options) {
-  options = options || {};
-  list = list || [];
-  var lastIdentifiers = modulesToDom(list, options);
-  return function update(newList) {
-    newList = newList || [];
-
-    for (var i = 0; i < lastIdentifiers.length; i++) {
-      var identifier = lastIdentifiers[i];
-      var index = getIndexByIdentifier(identifier);
-      stylesInDom[index].references--;
-    }
-
-    var newLastIdentifiers = modulesToDom(newList, options);
-
-    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
-      var _identifier = lastIdentifiers[_i];
-
-      var _index = getIndexByIdentifier(_identifier);
-
-      if (stylesInDom[_index].references === 0) {
-        stylesInDom[_index].updater();
-
-        stylesInDom.splice(_index, 1);
-      }
-    }
-
-    lastIdentifiers = newLastIdentifiers;
-  };
-};
+module.exports = insertBySelector;
 
 /***/ }),
 
@@ -49779,13 +49761,29 @@ module.exports = function (list, options) {
 
 /* istanbul ignore next  */
 function insertStyleElement(options) {
-  var style = document.createElement("style");
-  options.setAttributes(style, options.attributes);
-  options.insert(style);
-  return style;
+  var element = document.createElement("style");
+  options.setAttributes(element, options.attributes);
+  options.insert(element, options.options);
+  return element;
 }
-
 module.exports = insertStyleElement;
+
+/***/ }),
+
+/***/ 3565:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+
+/* istanbul ignore next  */
+function setAttributesWithoutAttributes(styleElement) {
+  var nonce =  true ? __webpack_require__.nc : 0;
+  if (nonce) {
+    styleElement.setAttribute("nonce", nonce);
+  }
+}
+module.exports = setAttributesWithoutAttributes;
 
 /***/ }),
 
@@ -49796,51 +49794,85 @@ module.exports = insertStyleElement;
 
 
 /* istanbul ignore next  */
-function apply(style, options, obj) {
-  var css = obj.css;
-  var media = obj.media;
-  var sourceMap = obj.sourceMap;
-
-  if (media) {
-    style.setAttribute("media", media);
-  } else {
-    style.removeAttribute("media");
+function apply(styleElement, options, obj) {
+  var css = "";
+  if (obj.supports) {
+    css += "@supports (".concat(obj.supports, ") {");
   }
-
+  if (obj.media) {
+    css += "@media ".concat(obj.media, " {");
+  }
+  var needLayer = typeof obj.layer !== "undefined";
+  if (needLayer) {
+    css += "@layer".concat(obj.layer.length > 0 ? " ".concat(obj.layer) : "", " {");
+  }
+  css += obj.css;
+  if (needLayer) {
+    css += "}";
+  }
+  if (obj.media) {
+    css += "}";
+  }
+  if (obj.supports) {
+    css += "}";
+  }
+  var sourceMap = obj.sourceMap;
   if (sourceMap && typeof btoa !== "undefined") {
     css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
-  } // For old IE
-
-  /* istanbul ignore if  */
-
-
-  options.styleTagTransform(css, style);
-}
-
-function removeStyleElement(style) {
-  // istanbul ignore if
-  if (style.parentNode === null) {
-    return false;
   }
 
-  style.parentNode.removeChild(style);
+  // For old IE
+  /* istanbul ignore if  */
+  options.styleTagTransform(css, styleElement, options.options);
 }
+function removeStyleElement(styleElement) {
+  // istanbul ignore if
+  if (styleElement.parentNode === null) {
+    return false;
+  }
+  styleElement.parentNode.removeChild(styleElement);
+}
+
 /* istanbul ignore next  */
-
-
 function domAPI(options) {
-  var style = options.insertStyleElement(options);
+  if (typeof document === "undefined") {
+    return {
+      update: function update() {},
+      remove: function remove() {}
+    };
+  }
+  var styleElement = options.insertStyleElement(options);
   return {
     update: function update(obj) {
-      apply(style, options, obj);
+      apply(styleElement, options, obj);
     },
     remove: function remove() {
-      removeStyleElement(style);
+      removeStyleElement(styleElement);
     }
   };
 }
-
 module.exports = domAPI;
+
+/***/ }),
+
+/***/ 44589:
+/***/ (function(module) {
+
+"use strict";
+
+
+/* istanbul ignore next  */
+function styleTagTransform(css, styleElement) {
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css;
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild);
+    }
+    styleElement.appendChild(document.createTextNode(css));
+  }
+}
+module.exports = styleTagTransform;
 
 /***/ }),
 
@@ -51737,7 +51769,7 @@ module.exports = "# Contribute to Elements\n\n## How to install\nRefer to our re
 /***/ (function(module) {
 
 "use strict";
-module.exports = "<div class=\"container-grid\">\n\n  <h1 class=\"mt-3\">Support & request</h1>\n\n  <p class=\"mt-3\">\n    The EPFL’s styleguide team is committed to maintaining quality documentation of its design system. We are welcoming any feedback given on bugs, designs issues or new ideas. You can find all the <a href=\"#/doc/contribute--index.md\" alt=\"Link to learn about contributing to this styleguide\">information about contribution</a> in the dedicated page.\n    <br>\n    <br>\n    Elements is maintained by <a href=\"https://mediacom.epfl.ch/\"><b>Mediacom</b></a>. All requests are sent there, then dispatched to the appropriate people.\n  </p>\n\n  <div class=\"mt-3\">\n    <div class=\"introduction bg-gray-100\">\n      <div class=\"container\">\n        <div class=\"row\">\n          <div class=\"col-md-10 offset-md-1 text-center\">\n            <h2>Requests</h2>\n            <p>\n              You have questions about Elements?\n              <br/>Please contact <strong><a href=\"https://support.epfl.ch/epfl\" alt=\"Link to send an email to the support team\">Support</a></strong> or <strong><a href=\"https://github.com/epfl-si/elements/issues/new\" alt=\"Link to GitHub for opening an issue\">open an issue</a></strong> in GitHub.\n            </p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <h1 class=\"mt-5\">FAQ</h1>\n  <p>\n    We regrouped here the most common questions we get about Elements. If you have some more, please reach out!\n  </p>\n  <button\n    class=\"collapse-title collapse-title-desktop collapsed\"\n    type=\"button\"\n    data-toggle=\"collapse\"\n    data-target=\"#collapse-1\"\n    aria-expanded=\"false\"\n    aria-controls=\"collapse-1\"\n    >\n    How can I contribute or suggest new components/ideas?\n  </button>\n  <div class=\"collapse collapse-item collapse-item-desktop\" id=\"collapse-1\">\n    <p>\n      First of all, <b>thank you very much</b> for reading these lines. We really appreciate your interest into contributing to elements!\n    </p>\n    <p>\n      For all specific informations concerning contributions, please visit the <a href=\"#/doc/contribute--index.md\">dedicated page</a> we built about this topic, just for you.\n    </p>\n  </div>\n  <button\n    class=\"collapse-title collapse-title-desktop collapsed\"\n    type=\"button\"\n    data-toggle=\"collapse\"\n    data-target=\"#collapse-2\"\n    aria-expanded=\"false\"\n    aria-controls=\"collapse-2\"\n    >\n    Which browser versions are supported?\n  </button>\n  <div class=\"collapse collapse-item collapse-item-desktop\" id=\"collapse-2\">\n    <p>\n      Elements is supporting the following browsers and versions:\n      <ul>\n        <li>Chrome  63, 64+</li>\n        <li>Chrome for Android  64+</li>\n        <li>Firefox 57, 58+</li>\n        <li>Safari  10.1, 11+</li>\n        <li>Safari iOS  10.3, 11+</li>\n        <li>Internet Explorer 11</li>\n        <li>Edge  15, 16+</li>\n        <li>Opera 49, 50+</li>\n      </ul>\n    </p>\n  </div>\n  <button\n    class=\"collapse-title collapse-title-desktop collapsed\"\n    type=\"button\"\n    data-toggle=\"collapse\"\n    data-target=\"#collapse-3\"\n    aria-expanded=\"false\"\n    aria-controls=\"collapse-3\"\n    >\n    Why hasn't my bug been fixed yet?\n  </button>\n  <div class=\"collapse collapse-item collapse-item-desktop\" id=\"collapse-3\">\n    <p>\n      If you have a pressing bug, it is best to make a Pull Request (PR) on <a href=\"https://github.com/epfl-si/elements\">the github repository</a> containing your suggestion of resolution for this bug. Our team will try to address your bug as soon as possible. Issues that are out of scope will be commented and closed until it becomes a higher priority. Thank you for your understanding.\n    </p>\n  </div>\n  <button\n    class=\"collapse-title collapse-title-desktop collapsed\"\n    type=\"button\"\n    data-toggle=\"collapse\"\n    data-target=\"#collapse-4\"\n    aria-expanded=\"false\"\n    aria-controls=\"collapse-4\"\n    >\n    Why is it only HTML/CSS/JS?\n  </button>\n  <div class=\"collapse collapse-item collapse-item-desktop\" id=\"collapse-4\">\n    <p>\n      The styleguide is Web first. We provide a CMS-agnostic or technology-agnostic design documentation. That's why you will only find components that match web standards. That doesn't mean you can't document your own project. We'll be happy to reference your work from other platforms here! Reach out to us.</p>\n  </div>\n  <button\n    class=\"collapse-title collapse-title-desktop collapsed\"\n    type=\"button\"\n    data-toggle=\"collapse\"\n    data-target=\"#collapse-5\"\n    aria-expanded=\"false\"\n    aria-controls=\"collapse-5\"\n    >\n    What is the meaning of 42?\n  </button>\n  <div class=\"collapse collapse-item collapse-item-desktop\" id=\"collapse-5\">\n    <p>\n      The number 42 is, in The Hitchhiker's Guide to the Galaxy by Douglas Adams, the \"Answer to the Ultimate Question of Life, the Universe, and Everything\", calculated by an enormous supercomputer named Deep Thought over a period of 7.5 million years. Unfortunately, no one knows what the question is.\n      <br>\n      <strong>More information on <a href=\"https://en.wikipedia.org/wiki/42_(number)#The_Hitchhiker's_Guide_to_the_Galaxy\" target=\"_blank\">Wikipedia</a></strong></p>\n  </div>\n\n  <hr>\n\n  <figcaption>© EPFL 2018-2022 — Mediacom</figcaption>\n\n</div>\n";
+module.exports = "<div class=\"container-grid\">\n\n  <h1 class=\"mt-3\">Support & request</h1>\n\n  <p class=\"mt-3\">\n    The EPFL’s styleguide team is committed to maintaining quality documentation of its design system. We are welcoming any feedback given on bugs, designs issues or new ideas. You can find all the <a href=\"#/doc/contribute--index.md\" alt=\"Link to learn about contributing to this styleguide\">information about contribution</a> in the dedicated page.\n    <br>\n    <br>\n    Elements is maintained by <a href=\"https://mediacom.epfl.ch/\"><b>Mediacom</b></a>. All requests are sent there, then dispatched to the appropriate people.\n  </p>\n\n  <div class=\"mt-3\">\n    <div class=\"introduction bg-gray-100\">\n      <div class=\"container\">\n        <div class=\"row\">\n          <div class=\"col-md-10 offset-md-1 text-center\">\n            <h2>Requests</h2>\n            <p>\n              You have questions about Elements?\n              <br/>Please contact <strong><a href=\"https://support.epfl.ch/epfl\" alt=\"Link to send an email to the support team\">Support</a></strong> or <strong><a href=\"https://github.com/epfl-si/elements/issues/new\" alt=\"Link to GitHub for opening an issue\">open an issue</a></strong> in GitHub.\n            </p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <h1 class=\"mt-5\">FAQ</h1>\n  <p>\n    We regrouped here the most common questions we get about Elements. If you have some more, please reach out!\n  </p>\n  <button\n    class=\"collapse-title collapse-title-desktop collapsed\"\n    type=\"button\"\n    data-toggle=\"collapse\"\n    data-target=\"#collapse-1\"\n    aria-expanded=\"false\"\n    aria-controls=\"collapse-1\"\n    >\n    How can I contribute or suggest new components/ideas?\n  </button>\n  <div class=\"collapse collapse-item collapse-item-desktop\" id=\"collapse-1\">\n    <p>\n      First of all, <b>thank you very much</b> for reading these lines. We really appreciate your interest into contributing to elements!\n    </p>\n    <p>\n      For all specific informations concerning contributions, please visit the <a href=\"#/doc/contribute--index.md\">dedicated page</a> we built about this topic, just for you.\n    </p>\n  </div>\n  <button\n    class=\"collapse-title collapse-title-desktop collapsed\"\n    type=\"button\"\n    data-toggle=\"collapse\"\n    data-target=\"#collapse-2\"\n    aria-expanded=\"false\"\n    aria-controls=\"collapse-2\"\n    >\n    Which browser versions are supported?\n  </button>\n  <div class=\"collapse collapse-item collapse-item-desktop\" id=\"collapse-2\">\n    <p>\n      Elements is supporting the following browsers and versions:\n      <ul>\n        <li>Chrome 123, 124+</li>\n        <li>Chrome for Android 123, 124+</li>\n        <li>Firefox 125, 126+</li>\n        <li>Safari 17.4, 17.5+</li>\n        <li>Safari iOS 16.6, 16.7+</li>\n        <li>Edge 124, 125+</li>\n        <li>Opera 109, 110+</li>\n      </ul>\n    </p>\n  </div>\n  <button\n    class=\"collapse-title collapse-title-desktop collapsed\"\n    type=\"button\"\n    data-toggle=\"collapse\"\n    data-target=\"#collapse-3\"\n    aria-expanded=\"false\"\n    aria-controls=\"collapse-3\"\n    >\n    Why hasn't my bug been fixed yet?\n  </button>\n  <div class=\"collapse collapse-item collapse-item-desktop\" id=\"collapse-3\">\n    <p>\n      If you have a pressing bug, it is best to make a Pull Request (PR) on <a href=\"https://github.com/epfl-si/elements\">the github repository</a> containing your suggestion of resolution for this bug. Our team will try to address your bug as soon as possible. Issues that are out of scope will be commented and closed until it becomes a higher priority. Thank you for your understanding.\n    </p>\n  </div>\n  <button\n    class=\"collapse-title collapse-title-desktop collapsed\"\n    type=\"button\"\n    data-toggle=\"collapse\"\n    data-target=\"#collapse-4\"\n    aria-expanded=\"false\"\n    aria-controls=\"collapse-4\"\n    >\n    Why is it only HTML/CSS/JS?\n  </button>\n  <div class=\"collapse collapse-item collapse-item-desktop\" id=\"collapse-4\">\n    <p>\n      The styleguide is Web first. We provide a CMS-agnostic or technology-agnostic design documentation. That's why you will only find components that match web standards. That doesn't mean you can't document your own project. We'll be happy to reference your work from other platforms here! Reach out to us.</p>\n  </div>\n  <button\n    class=\"collapse-title collapse-title-desktop collapsed\"\n    type=\"button\"\n    data-toggle=\"collapse\"\n    data-target=\"#collapse-5\"\n    aria-expanded=\"false\"\n    aria-controls=\"collapse-5\"\n    >\n    What is the meaning of 42?\n  </button>\n  <div class=\"collapse collapse-item collapse-item-desktop\" id=\"collapse-5\">\n    <p>\n      The number 42 is, in The Hitchhiker's Guide to the Galaxy by Douglas Adams, the \"Answer to the Ultimate Question of Life, the Universe, and Everything\", calculated by an enormous supercomputer named Deep Thought over a period of 7.5 million years. Unfortunately, no one knows what the question is.\n      <br>\n      <strong>More information on <a href=\"https://en.wikipedia.org/wiki/42_(number)#The_Hitchhiker's_Guide_to_the_Galaxy\" target=\"_blank\">Wikipedia</a></strong></p>\n  </div>\n\n  <hr>\n\n  <figcaption>© EPFL 2018-2022 — Mediacom</figcaption>\n\n</div>\n";
 
 /***/ }),
 
@@ -51985,7 +52017,7 @@ module.exports = "<table class=\"table\">\n  <tbody>\n          <tr>\n        <t
 /***/ (function(module) {
 
 "use strict";
-module.exports = "<table class=\"table\">\n  <tbody>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-accessibility\"></use></svg>\n</td>\n        <td><code>#icon-accessibility</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-arrow-left\"></use></svg>\n</td>\n        <td><code>#icon-arrow-left</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-arrow-right\"></use></svg>\n</td>\n        <td><code>#icon-arrow-right</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-browse\"></use></svg>\n</td>\n        <td><code>#icon-browse</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-chevron-last-left\"></use></svg>\n</td>\n        <td><code>#icon-chevron-last-left</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-chevron-last-right\"></use></svg>\n</td>\n        <td><code>#icon-chevron-last-right</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-chevron-left\"></use></svg>\n</td>\n        <td><code>#icon-chevron-left</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-chevron-right\"></use></svg>\n</td>\n        <td><code>#icon-chevron-right</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-elements\"></use></svg>\n</td>\n        <td><code>#icon-elements</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-alumni\"></use></svg>\n</td>\n        <td><code>#icon-epfl-alumni</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-anti-gaspillage\"></use></svg>\n</td>\n        <td><code>#icon-epfl-anti-gaspillage</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-apprendre\"></use></svg>\n</td>\n        <td><code>#icon-epfl-apprendre</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-artlab\"></use></svg>\n</td>\n        <td><code>#icon-epfl-artlab</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-bancomat\"></use></svg>\n</td>\n        <td><code>#icon-epfl-bancomat</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-cafe\"></use></svg>\n</td>\n        <td><code>#icon-epfl-cafe</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-cdh\"></use></svg>\n</td>\n        <td><code>#icon-epfl-cdh</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-cdm\"></use></svg>\n</td>\n        <td><code>#icon-epfl-cdm</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-centre-medical\"></use></svg>\n</td>\n        <td><code>#icon-epfl-centre-medical</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-chercheur\"></use></svg>\n</td>\n        <td><code>#icon-epfl-chercheur</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-coiffeur\"></use></svg>\n</td>\n        <td><code>#icon-epfl-coiffeur</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-collaboration\"></use></svg>\n</td>\n        <td><code>#icon-epfl-collaboration</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-community\"></use></svg>\n</td>\n        <td><code>#icon-epfl-community</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-corona-distance\"></use></svg>\n</td>\n        <td><code>#icon-epfl-corona-distance</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-corona-lavermain\"></use></svg>\n</td>\n        <td><code>#icon-epfl-corona-lavermain</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-corona-maison\"></use></svg>\n</td>\n        <td><code>#icon-epfl-corona-maison</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-corona-masque\"></use></svg>\n</td>\n        <td><code>#icon-epfl-corona-masque</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-corona-poignee\"></use></svg>\n</td>\n        <td><code>#icon-epfl-corona-poignee</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-corona-tousser\"></use></svg>\n</td>\n        <td><code>#icon-epfl-corona-tousser</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-corona\"></use></svg>\n</td>\n        <td><code>#icon-epfl-corona</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-culture1\"></use></svg>\n</td>\n        <td><code>#icon-epfl-culture1</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-culture2\"></use></svg>\n</td>\n        <td><code>#icon-epfl-culture2</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-desaison\"></use></svg>\n</td>\n        <td><code>#icon-epfl-desaison</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-digital-trust\"></use></svg>\n</td>\n        <td><code>#icon-epfl-digital-trust</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-durabilite\"></use></svg>\n</td>\n        <td><code>#icon-epfl-durabilite</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-egalitechance-rouge\"></use></svg>\n</td>\n        <td><code>#icon-epfl-egalitechance-rouge</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-einstein\"></use></svg>\n</td>\n        <td><code>#icon-epfl-einstein</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-enac\"></use></svg>\n</td>\n        <td><code>#icon-epfl-enac</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-finance\"></use></svg>\n</td>\n        <td><code>#icon-epfl-finance</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-graph-search\"></use></svg>\n</td>\n        <td><code>#icon-epfl-graph-search</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-grants\"></use></svg>\n</td>\n        <td><code>#icon-epfl-grants</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-hotel\"></use></svg>\n</td>\n        <td><code>#icon-epfl-hotel</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-ic\"></use></svg>\n</td>\n        <td><code>#icon-epfl-ic</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-innovation-1\"></use></svg>\n</td>\n        <td><code>#icon-epfl-innovation-1</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-innovation-2\"></use></svg>\n</td>\n        <td><code>#icon-epfl-innovation-2</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-innovation-park\"></use></svg>\n</td>\n        <td><code>#icon-epfl-innovation-park</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-laboratoire-1\"></use></svg>\n</td>\n        <td><code>#icon-epfl-laboratoire-1</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-laboratoire-2\"></use></svg>\n</td>\n        <td><code>#icon-epfl-laboratoire-2</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-local\"></use></svg>\n</td>\n        <td><code>#icon-epfl-local</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-metro\"></use></svg>\n</td>\n        <td><code>#icon-epfl-metro</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-offre-vegetarienne\"></use></svg>\n</td>\n        <td><code>#icon-epfl-offre-vegetarienne</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-parking\"></use></svg>\n</td>\n        <td><code>#icon-epfl-parking</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-pharmacie\"></use></svg>\n</td>\n        <td><code>#icon-epfl-pharmacie</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-recherche\"></use></svg>\n</td>\n        <td><code>#icon-epfl-recherche</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-responsable-nutrition\"></use></svg>\n</td>\n        <td><code>#icon-epfl-responsable-nutrition</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-restaurant\"></use></svg>\n</td>\n        <td><code>#icon-epfl-restaurant</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-rlc\"></use></svg>\n</td>\n        <td><code>#icon-epfl-rlc</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-sain\"></use></svg>\n</td>\n        <td><code>#icon-epfl-sain</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-saison-automne\"></use></svg>\n</td>\n        <td><code>#icon-epfl-saison-automne</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-saison-ete\"></use></svg>\n</td>\n        <td><code>#icon-epfl-saison-ete</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-saison-hiver\"></use></svg>\n</td>\n        <td><code>#icon-epfl-saison-hiver</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-saison-printemps\"></use></svg>\n</td>\n        <td><code>#icon-epfl-saison-printemps</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-satellite-1\"></use></svg>\n</td>\n        <td><code>#icon-epfl-satellite-1</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-satellite-2\"></use></svg>\n</td>\n        <td><code>#icon-epfl-satellite-2</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-sb\"></use></svg>\n</td>\n        <td><code>#icon-epfl-sb</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-securite-sante\"></use></svg>\n</td>\n        <td><code>#icon-epfl-securite-sante</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-self-service\"></use></svg>\n</td>\n        <td><code>#icon-epfl-self-service</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-services\"></use></svg>\n</td>\n        <td><code>#icon-epfl-services</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-shopping\"></use></svg>\n</td>\n        <td><code>#icon-epfl-shopping</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-startup\"></use></svg>\n</td>\n        <td><code>#icon-epfl-startup</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-stcc\"></use></svg>\n</td>\n        <td><code>#icon-epfl-stcc</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-sti\"></use></svg>\n</td>\n        <td><code>#icon-epfl-sti</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-supermarche\"></use></svg>\n</td>\n        <td><code>#icon-epfl-supermarche</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-sv\"></use></svg>\n</td>\n        <td><code>#icon-epfl-sv</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-teletravail\"></use></svg>\n</td>\n        <td><code>#icon-epfl-teletravail</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-train\"></use></svg>\n</td>\n        <td><code>#icon-epfl-train</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-venture-capital-1\"></use></svg>\n</td>\n        <td><code>#icon-epfl-venture-capital-1</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-venture-capital-2\"></use></svg>\n</td>\n        <td><code>#icon-epfl-venture-capital-2</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-facebook\"></use></svg>\n</td>\n        <td><code>#icon-facebook</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-googleplus\"></use></svg>\n</td>\n        <td><code>#icon-googleplus</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-home\"></use></svg>\n</td>\n        <td><code>#icon-home</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-info\"></use></svg>\n</td>\n        <td><code>#icon-info</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-instagram\"></use></svg>\n</td>\n        <td><code>#icon-instagram</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-linkedin\"></use></svg>\n</td>\n        <td><code>#icon-linkedin</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-lock\"></use></svg>\n</td>\n        <td><code>#icon-lock</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-mail-plane\"></use></svg>\n</td>\n        <td><code>#icon-mail-plane</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-mastodon\"></use></svg>\n</td>\n        <td><code>#icon-mastodon</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-triangle\"></use></svg>\n</td>\n        <td><code>#icon-triangle</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-search\"></use></svg>\n</td>\n        <td><code>#icon-search</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-search-bold\"></use></svg>\n</td>\n        <td><code>#icon-search-bold</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-twitter\"></use></svg>\n</td>\n        <td><code>#icon-twitter</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-upload\"></use></svg>\n</td>\n        <td><code>#icon-upload</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-whatsapp\"></use></svg>\n</td>\n        <td><code>#icon-whatsapp</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-planet\"></use></svg>\n</td>\n        <td><code>#icon-planet</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-tiktok\"></use></svg>\n</td>\n        <td><code>#icon-tiktok</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-youtube\"></use></svg>\n</td>\n        <td><code>#icon-youtube</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-x\"></use></svg>\n</td>\n        <td><code>#icon-x</code></td>\n      </tr>\n      </tbody>\n</table>\n";
+module.exports = "<table class=\"table\">\n  <tbody>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-accessibility\"></use></svg>\n</td>\n        <td><code>#icon-accessibility</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-arrow-left\"></use></svg>\n</td>\n        <td><code>#icon-arrow-left</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-arrow-right\"></use></svg>\n</td>\n        <td><code>#icon-arrow-right</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-browse\"></use></svg>\n</td>\n        <td><code>#icon-browse</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-chevron-last-left\"></use></svg>\n</td>\n        <td><code>#icon-chevron-last-left</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-chevron-last-right\"></use></svg>\n</td>\n        <td><code>#icon-chevron-last-right</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-chevron-left\"></use></svg>\n</td>\n        <td><code>#icon-chevron-left</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-chevron-right\"></use></svg>\n</td>\n        <td><code>#icon-chevron-right</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-elements\"></use></svg>\n</td>\n        <td><code>#icon-elements</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-animals-chicken-farm-love\"></use></svg>\n</td>\n        <td><code>#icon-epfl-animals-chicken-farm-love</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-animals-cow-farm-love\"></use></svg>\n</td>\n        <td><code>#icon-epfl-animals-cow-farm-love</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-animals-fish-water-1\"></use></svg>\n</td>\n        <td><code>#icon-epfl-animals-fish-water-1</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-animals-fish-water\"></use></svg>\n</td>\n        <td><code>#icon-epfl-animals-fish-water</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-animals-pig-love\"></use></svg>\n</td>\n        <td><code>#icon-epfl-animals-pig-love</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-animals-sheep-farm-love\"></use></svg>\n</td>\n        <td><code>#icon-epfl-animals-sheep-farm-love</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-architecture-building-campus-innovation-park-1\"></use></svg>\n</td>\n        <td><code>#icon-epfl-architecture-building-campus-innovation-park-1</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-architecture-building-campus-innovation-park\"></use></svg>\n</td>\n        <td><code>#icon-epfl-architecture-building-campus-innovation-park</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-architecture-building-campus-pavillon\"></use></svg>\n</td>\n        <td><code>#icon-epfl-architecture-building-campus-pavillon</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-architecture-building-campus-stcc-1\"></use></svg>\n</td>\n        <td><code>#icon-epfl-architecture-building-campus-stcc-1</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-architecture-building-campus-stcc\"></use></svg>\n</td>\n        <td><code>#icon-epfl-architecture-building-campus-stcc</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-architecture-stone-rolex\"></use></svg>\n</td>\n        <td><code>#icon-epfl-architecture-stone-rolex</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-character-aggrieved-unhappy\"></use></svg>\n</td>\n        <td><code>#icon-epfl-character-aggrieved-unhappy</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-character-amazed-surprised\"></use></svg>\n</td>\n        <td><code>#icon-epfl-character-amazed-surprised</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-character-angry-disappointed\"></use></svg>\n</td>\n        <td><code>#icon-epfl-character-angry-disappointed</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-character-bored-double\"></use></svg>\n</td>\n        <td><code>#icon-epfl-character-bored-double</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-character-bored-emotion\"></use></svg>\n</td>\n        <td><code>#icon-epfl-character-bored-emotion</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-character-person-dialog\"></use></svg>\n</td>\n        <td><code>#icon-epfl-character-person-dialog</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-character-person-group\"></use></svg>\n</td>\n        <td><code>#icon-epfl-character-person-group</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-character-person-management\"></use></svg>\n</td>\n        <td><code>#icon-epfl-character-person-management</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-character-person-relationship\"></use></svg>\n</td>\n        <td><code>#icon-epfl-character-person-relationship</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-character-person-scientist\"></use></svg>\n</td>\n        <td><code>#icon-epfl-character-person-scientist</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-character-smiley-happy\"></use></svg>\n</td>\n        <td><code>#icon-epfl-character-smiley-happy</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-character-uncomfortable-not\"></use></svg>\n</td>\n        <td><code>#icon-epfl-character-uncomfortable-not</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-character-uncomfortable-uneasy\"></use></svg>\n</td>\n        <td><code>#icon-epfl-character-uncomfortable-uneasy</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-corporate-cdh\"></use></svg>\n</td>\n        <td><code>#icon-epfl-corporate-cdh</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-corporate-cdm\"></use></svg>\n</td>\n        <td><code>#icon-epfl-corporate-cdm</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-corporate-enac\"></use></svg>\n</td>\n        <td><code>#icon-epfl-corporate-enac</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-corporate-ic\"></use></svg>\n</td>\n        <td><code>#icon-epfl-corporate-ic</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-corporate-logo\"></use></svg>\n</td>\n        <td><code>#icon-epfl-corporate-logo</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-corporate-sb\"></use></svg>\n</td>\n        <td><code>#icon-epfl-corporate-sb</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-corporate-sti\"></use></svg>\n</td>\n        <td><code>#icon-epfl-corporate-sti</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-corporate-sv\"></use></svg>\n</td>\n        <td><code>#icon-epfl-corporate-sv</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-culture-basketball-ball-sport\"></use></svg>\n</td>\n        <td><code>#icon-epfl-culture-basketball-ball-sport</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-culture-photo-painting-satellite\"></use></svg>\n</td>\n        <td><code>#icon-epfl-culture-photo-painting-satellite</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-culture-theater-mask-drama\"></use></svg>\n</td>\n        <td><code>#icon-epfl-culture-theater-mask-drama</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-finance-coins\"></use></svg>\n</td>\n        <td><code>#icon-epfl-finance-coins</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-finance-money-bill\"></use></svg>\n</td>\n        <td><code>#icon-epfl-finance-money-bill</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-finance-money-card\"></use></svg>\n</td>\n        <td><code>#icon-epfl-finance-money-card</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-finance-money-medal\"></use></svg>\n</td>\n        <td><code>#icon-epfl-finance-money-medal</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-finance-money-pay\"></use></svg>\n</td>\n        <td><code>#icon-epfl-finance-money-pay</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-food-beer-tankard\"></use></svg>\n</td>\n        <td><code>#icon-epfl-food-beer-tankard</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-food-coffee-drink\"></use></svg>\n</td>\n        <td><code>#icon-epfl-food-coffee-drink</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-food-compost-recycle\"></use></svg>\n</td>\n        <td><code>#icon-epfl-food-compost-recycle</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-food-dishes-restaurant\"></use></svg>\n</td>\n        <td><code>#icon-epfl-food-dishes-restaurant</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-food-drink-undrinkable\"></use></svg>\n</td>\n        <td><code>#icon-epfl-food-drink-undrinkable</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-food-menu-restaurant\"></use></svg>\n</td>\n        <td><code>#icon-epfl-food-menu-restaurant</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-food-party-beer-apero\"></use></svg>\n</td>\n        <td><code>#icon-epfl-food-party-beer-apero</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-food-vegetarian-menu\"></use></svg>\n</td>\n        <td><code>#icon-epfl-food-vegetarian-menu</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-food-vegetarian-vegan\"></use></svg>\n</td>\n        <td><code>#icon-epfl-food-vegetarian-vegan</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-health-covid-bacteria-1\"></use></svg>\n</td>\n        <td><code>#icon-epfl-health-covid-bacteria-1</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-health-covid-bacteria\"></use></svg>\n</td>\n        <td><code>#icon-epfl-health-covid-bacteria</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-health-covid-elbow\"></use></svg>\n</td>\n        <td><code>#icon-epfl-health-covid-elbow</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-health-covid-mask\"></use></svg>\n</td>\n        <td><code>#icon-epfl-health-covid-mask</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-health-gender-equality\"></use></svg>\n</td>\n        <td><code>#icon-epfl-health-gender-equality</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-health-gender-girl-power\"></use></svg>\n</td>\n        <td><code>#icon-epfl-health-gender-girl-power</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-health-gender-woman-power\"></use></svg>\n</td>\n        <td><code>#icon-epfl-health-gender-woman-power</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-health-heart-apple\"></use></svg>\n</td>\n        <td><code>#icon-epfl-health-heart-apple</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-health-heart-eye\"></use></svg>\n</td>\n        <td><code>#icon-epfl-health-heart-eye</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-health-heart-love\"></use></svg>\n</td>\n        <td><code>#icon-epfl-health-heart-love</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-health-hopital-red-science-light-bulb\"></use></svg>\n</td>\n        <td><code>#icon-epfl-health-hopital-red-science-light-bulb</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-health-medical-center\"></use></svg>\n</td>\n        <td><code>#icon-epfl-health-medical-center</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-health-pharmacy\"></use></svg>\n</td>\n        <td><code>#icon-epfl-health-pharmacy</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-health-transgender-lgbt-1\"></use></svg>\n</td>\n        <td><code>#icon-epfl-health-transgender-lgbt-1</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-health-transgender-lgbt\"></use></svg>\n</td>\n        <td><code>#icon-epfl-health-transgender-lgbt</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-home-bed-house\"></use></svg>\n</td>\n        <td><code>#icon-epfl-home-bed-house</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-home-cut-scissor\"></use></svg>\n</td>\n        <td><code>#icon-epfl-home-cut-scissor</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-home-glasses-eyes\"></use></svg>\n</td>\n        <td><code>#icon-epfl-home-glasses-eyes</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-home-shopping-bag\"></use></svg>\n</td>\n        <td><code>#icon-epfl-home-shopping-bag</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-home-shopping-stores-cart\"></use></svg>\n</td>\n        <td><code>#icon-epfl-home-shopping-stores-cart</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-management-balloon-instruction\"></use></svg>\n</td>\n        <td><code>#icon-epfl-management-balloon-instruction</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-management-collaboration\"></use></svg>\n</td>\n        <td><code>#icon-epfl-management-collaboration</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-management-isea-square\"></use></svg>\n</td>\n        <td><code>#icon-epfl-management-isea-square</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-management-money-save\"></use></svg>\n</td>\n        <td><code>#icon-epfl-management-money-save</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-management-search-zoom\"></use></svg>\n</td>\n        <td><code>#icon-epfl-management-search-zoom</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-management-settings-volume\"></use></svg>\n</td>\n        <td><code>#icon-epfl-management-settings-volume</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-nature-cold-winter\"></use></svg>\n</td>\n        <td><code>#icon-epfl-nature-cold-winter</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-nature-flower-natural\"></use></svg>\n</td>\n        <td><code>#icon-epfl-nature-flower-natural</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-nature-planet-space\"></use></svg>\n</td>\n        <td><code>#icon-epfl-nature-planet-space</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-nature-plant-growing\"></use></svg>\n</td>\n        <td><code>#icon-epfl-nature-plant-growing</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-nature-plant-label\"></use></svg>\n</td>\n        <td><code>#icon-epfl-nature-plant-label</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-nature-seasons\"></use></svg>\n</td>\n        <td><code>#icon-epfl-nature-seasons</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-nature-star-snow\"></use></svg>\n</td>\n        <td><code>#icon-epfl-nature-star-snow</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-nature-sun-sunny\"></use></svg>\n</td>\n        <td><code>#icon-epfl-nature-sun-sunny</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-nature-sun-winter\"></use></svg>\n</td>\n        <td><code>#icon-epfl-nature-sun-winter</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-nature-wind-leaf\"></use></svg>\n</td>\n        <td><code>#icon-epfl-nature-wind-leaf</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-politics-fight-fist-1\"></use></svg>\n</td>\n        <td><code>#icon-epfl-politics-fight-fist-1</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-politics-fight-fist-feminism\"></use></svg>\n</td>\n        <td><code>#icon-epfl-politics-fight-fist-feminism</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-politics-fight-fist\"></use></svg>\n</td>\n        <td><code>#icon-epfl-politics-fight-fist</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-politics-flag-emblem\"></use></svg>\n</td>\n        <td><code>#icon-epfl-politics-flag-emblem</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-politics-hand-clap\"></use></svg>\n</td>\n        <td><code>#icon-epfl-politics-hand-clap</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-politics-hand-handshake\"></use></svg>\n</td>\n        <td><code>#icon-epfl-politics-hand-handshake</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-politics-student-school\"></use></svg>\n</td>\n        <td><code>#icon-epfl-politics-student-school</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-agriculture-nutrition\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-agriculture-nutrition</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-animals-mouse-rat-1\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-animals-mouse-rat-1</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-animals-mouse-rat\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-animals-mouse-rat</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-atom-neutron\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-atom-neutron</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-axes-physics\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-axes-physics</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-Bertarelli-foundation\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-Bertarelli-foundation</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-bio-bioinformatic\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-bio-bioinformatic</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-bioengineering-technology\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-bioengineering-technology</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-biological-electron\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-biological-electron</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-biological-optic\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-biological-optic</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-biomolecular-screening\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-biomolecular-screening</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-brain-think\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-brain-think</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-brain-tought\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-brain-tought</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-cell-virus\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-cell-virus</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-einstein-invent\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-einstein-invent</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-experiment-biology\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-experiment-biology</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-experiment-buoy\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-experiment-buoy</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-experiment-choc\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-experiment-choc</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-explosion-experiment\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-explosion-experiment</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-flow-cytometry\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-flow-cytometry</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-gene-expression\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-gene-expression</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-genome-helix\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-genome-helix</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-glasses-corbusier\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-glasses-corbusier</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-graph-search\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-graph-search</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-histology-core\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-histology-core</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-idea-learn\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-idea-learn</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-laboratory-chemistry-1\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-laboratory-chemistry-1</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-laboratory-chemistry-2\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-laboratory-chemistry-2</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-laboratory-chemistry\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-laboratory-chemistry</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-laboratory-research\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-laboratory-research</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-laboratory-researcher\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-laboratory-researcher</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-light-bulb-1\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-light-bulb-1</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-light-bulb\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-light-bulb</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-mathematics-cube-1\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-mathematics-cube-1</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-mathematics-cube-2\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-mathematics-cube-2</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-mathematics-cube\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-mathematics-cube</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-microscope-research\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-microscope-research</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-pollution-power-plant\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-pollution-power-plant</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-protein-production\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-protein-production</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-proteomics-core\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-proteomics-core</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-read-education\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-read-education</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-research-atom\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-research-atom</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-rocket-space-1\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-rocket-space-1</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-rocket-space-2\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-rocket-space-2</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-rocket-space\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-rocket-space</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-technology-solar-panels\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-technology-solar-panels</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-science-toxic-pollution-radiate\"></use></svg>\n</td>\n        <td><code>#icon-epfl-science-toxic-pollution-radiate</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-technology-computer-laptop-1\"></use></svg>\n</td>\n        <td><code>#icon-epfl-technology-computer-laptop-1</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-technology-computer-laptop\"></use></svg>\n</td>\n        <td><code>#icon-epfl-technology-computer-laptop</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-technology-dislike-unlike\"></use></svg>\n</td>\n        <td><code>#icon-epfl-technology-dislike-unlike</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-technology-drone-fly-1\"></use></svg>\n</td>\n        <td><code>#icon-epfl-technology-drone-fly-1</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-technology-drone-fly\"></use></svg>\n</td>\n        <td><code>#icon-epfl-technology-drone-fly</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-technology-home-wifi\"></use></svg>\n</td>\n        <td><code>#icon-epfl-technology-home-wifi</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-technology-like-social\"></use></svg>\n</td>\n        <td><code>#icon-epfl-technology-like-social</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-technology-phone-smartphone\"></use></svg>\n</td>\n        <td><code>#icon-epfl-technology-phone-smartphone</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-technology-power-button\"></use></svg>\n</td>\n        <td><code>#icon-epfl-technology-power-button</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-technology-power-light\"></use></svg>\n</td>\n        <td><code>#icon-epfl-technology-power-light</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-technology-power-on\"></use></svg>\n</td>\n        <td><code>#icon-epfl-technology-power-on</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-technology-power-shutdown\"></use></svg>\n</td>\n        <td><code>#icon-epfl-technology-power-shutdown</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-transport-archeology-P-pottery-alphabet-parking\"></use></svg>\n</td>\n        <td><code>#icon-epfl-transport-archeology-P-pottery-alphabet-parking</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-transport-bike-bicycle\"></use></svg>\n</td>\n        <td><code>#icon-epfl-transport-bike-bicycle</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-transport-bike-pump\"></use></svg>\n</td>\n        <td><code>#icon-epfl-transport-bike-pump</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-transport-foodtruck-food\"></use></svg>\n</td>\n        <td><code>#icon-epfl-transport-foodtruck-food</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-transport-metro\"></use></svg>\n</td>\n        <td><code>#icon-epfl-transport-metro</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-transport-pump-bike\"></use></svg>\n</td>\n        <td><code>#icon-epfl-transport-pump-bike</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-transport-race-sport-1\"></use></svg>\n</td>\n        <td><code>#icon-epfl-transport-race-sport-1</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-transport-race-sport\"></use></svg>\n</td>\n        <td><code>#icon-epfl-transport-race-sport</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-epfl-transport-train\"></use></svg>\n</td>\n        <td><code>#icon-epfl-transport-train</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-facebook\"></use></svg>\n</td>\n        <td><code>#icon-facebook</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-googleplus\"></use></svg>\n</td>\n        <td><code>#icon-googleplus</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-home\"></use></svg>\n</td>\n        <td><code>#icon-home</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-info\"></use></svg>\n</td>\n        <td><code>#icon-info</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-instagram\"></use></svg>\n</td>\n        <td><code>#icon-instagram</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-linkedin\"></use></svg>\n</td>\n        <td><code>#icon-linkedin</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-lock\"></use></svg>\n</td>\n        <td><code>#icon-lock</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-mail-plane\"></use></svg>\n</td>\n        <td><code>#icon-mail-plane</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-mastodon\"></use></svg>\n</td>\n        <td><code>#icon-mastodon</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-triangle\"></use></svg>\n</td>\n        <td><code>#icon-triangle</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-search\"></use></svg>\n</td>\n        <td><code>#icon-search</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-search-bold\"></use></svg>\n</td>\n        <td><code>#icon-search-bold</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-twitter\"></use></svg>\n</td>\n        <td><code>#icon-twitter</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-upload\"></use></svg>\n</td>\n        <td><code>#icon-upload</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-whatsapp\"></use></svg>\n</td>\n        <td><code>#icon-whatsapp</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-planet\"></use></svg>\n</td>\n        <td><code>#icon-planet</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-tiktok\"></use></svg>\n</td>\n        <td><code>#icon-tiktok</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-youtube\"></use></svg>\n</td>\n        <td><code>#icon-youtube</code></td>\n      </tr>\n          <tr>\n        <td><svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-x\"></use></svg>\n</td>\n        <td><code>#icon-x</code></td>\n      </tr>\n      </tbody>\n</table>\n";
 
 /***/ }),
 
@@ -52417,7 +52449,7 @@ module.exports = "<a href=\"true\" class=\"social-icon social-icon-details socia
 /***/ (function(module) {
 
 "use strict";
-module.exports = "<a href=\"#\" class=\"social-icon social-icon-x\" target=\"_blank\" rel=\"nofollow noopener\">\n  <svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-x\"></use></svg>\n  <span class=\"sr-only\">X</span>\n</a>\n";
+module.exports = "<a href=\"true\" class=\"social-icon social-icon-x\" target=\"_blank\" rel=\"nofollow noopener\">\n  <svg class=\"icon\" aria-hidden=\"true\"><use xlink:href=\"#icon-x\"></use></svg>\n  <span class=\"sr-only\">X</span>\n</a>\n";
 
 /***/ }),
 
@@ -53169,7 +53201,7 @@ module.exports = "<div class=\"form-group\">\n  <label for=\"awesome-input\">Inp
 /***/ (function(module) {
 
 "use strict";
-module.exports = "<div class=\"gallery-container\">\n\n  <div id=\"my-gallery-carouselNews\" class=\"gallery gallery-main\">\n          <figure class=\"gallery-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <div class=\"gallery-item-inner\">\n          <div class=\"img-wrapper\">\n            <img src=\"./images/styleguide/gallery/gallery_01.jpg\" alt=\"Picture of an amazing science topic\" class=\"img-fluid\">\n          </div>\n        </div>\n        <figcaption>\n          <span>Picture of an amazing science topic</span>\n        </figcaption>\n      </figure>\n          <figure class=\"gallery-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <div class=\"gallery-item-inner\">\n          <div class=\"img-wrapper\">\n            <img src=\"./images/styleguide/gallery/gallery_02.jpg\" alt=\"Picture of an amazing science topic\" class=\"img-fluid\">\n          </div>\n        </div>\n        <figcaption>\n          <span>Picture of an amazing science topic</span>\n        </figcaption>\n      </figure>\n          <figure class=\"gallery-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <div class=\"gallery-item-inner\">\n          <div class=\"img-wrapper\">\n            <img src=\"./images/styleguide/gallery/gallery_03.jpg\" alt=\"Picture of an amazing science topic\" class=\"img-fluid\">\n          </div>\n        </div>\n        <figcaption>\n          <span>Picture of an amazing science topic</span>\n        </figcaption>\n      </figure>\n          <figure class=\"gallery-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <div class=\"gallery-item-inner\">\n          <div class=\"img-wrapper\">\n            <img src=\"./images/styleguide/gallery/gallery_04.jpg\" alt=\"Picture of an amazing science topic\" class=\"img-fluid\">\n          </div>\n        </div>\n        <figcaption>\n          <span>Picture of an amazing science topic</span>\n        </figcaption>\n      </figure>\n          <figure class=\"gallery-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <div class=\"gallery-item-inner\">\n          <div class=\"img-wrapper\">\n            <img src=\"./images/styleguide/gallery/gallery_05.jpg\" alt=\"Picture of an amazing science topic\" class=\"img-fluid\">\n          </div>\n        </div>\n        <figcaption>\n          <span>Picture of an amazing science topic</span>\n        </figcaption>\n      </figure>\n          <figure class=\"gallery-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <div class=\"gallery-item-inner\">\n          <div class=\"img-wrapper\">\n            <img src=\"./images/styleguide/gallery/gallery_06.jpg\" alt=\"Picture of an amazing science topic\" class=\"img-fluid\">\n          </div>\n        </div>\n        <figcaption>\n          <span>Picture of an amazing science topic</span>\n        </figcaption>\n      </figure>\n          <figure class=\"gallery-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <div class=\"gallery-item-inner\">\n          <div class=\"img-wrapper\">\n            <img src=\"./images/styleguide/gallery/gallery_07.jpg\" alt=\"Picture of an amazing science topic\" class=\"img-fluid\">\n          </div>\n        </div>\n        <figcaption>\n          <span>Picture of an amazing science topic</span>\n        </figcaption>\n      </figure>\n          <figure class=\"gallery-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <div class=\"gallery-item-inner\">\n          <div class=\"img-wrapper\">\n            <img src=\"./images/styleguide/gallery/gallery_08.jpg\" alt=\"Picture of an amazing science topic\" class=\"img-fluid\">\n          </div>\n        </div>\n        <figcaption>\n          <span>Picture of an amazing science topic</span>\n        </figcaption>\n      </figure>\n      </div>\n\n  <div class=\"gallery-nav\" data-gallery=\"my-gallery-carouselNews\" aria-hidden=\"true\">\n          <figure class=\"gallery-nav-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <img src=\"./images/styleguide/gallery/thumb_01.jpg\" alt=\"Thumbnail of an amazing science topic\" class=\"img-fluid\">\n        <figcaption>Picture of an amazing science topic</figcaption>\n      </figure>\n          <figure class=\"gallery-nav-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <img src=\"./images/styleguide/gallery/thumb_02.jpg\" alt=\"Thumbnail of an amazing science topic\" class=\"img-fluid\">\n        <figcaption>Picture of an amazing science topic</figcaption>\n      </figure>\n          <figure class=\"gallery-nav-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <img src=\"./images/styleguide/gallery/thumb_03.jpg\" alt=\"Thumbnail of an amazing science topic\" class=\"img-fluid\">\n        <figcaption>Picture of an amazing science topic</figcaption>\n      </figure>\n          <figure class=\"gallery-nav-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <img src=\"./images/styleguide/gallery/thumb_04.jpg\" alt=\"Thumbnail of an amazing science topic\" class=\"img-fluid\">\n        <figcaption>Picture of an amazing science topic</figcaption>\n      </figure>\n          <figure class=\"gallery-nav-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <img src=\"./images/styleguide/gallery/thumb_05.jpg\" alt=\"Thumbnail of an amazing science topic\" class=\"img-fluid\">\n        <figcaption>Picture of an amazing science topic</figcaption>\n      </figure>\n          <figure class=\"gallery-nav-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <img src=\"./images/styleguide/gallery/thumb_06.jpg\" alt=\"Thumbnail of an amazing science topic\" class=\"img-fluid\">\n        <figcaption>Picture of an amazing science topic</figcaption>\n      </figure>\n          <figure class=\"gallery-nav-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <img src=\"./images/styleguide/gallery/thumb_07.jpg\" alt=\"Thumbnail of an amazing science topic\" class=\"img-fluid\">\n        <figcaption>Picture of an amazing science topic</figcaption>\n      </figure>\n          <figure class=\"gallery-nav-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <img src=\"./images/styleguide/gallery/thumb_08.jpg\" alt=\"Thumbnail of an amazing science topic\" class=\"img-fluid\">\n        <figcaption>Picture of an amazing science topic</figcaption>\n      </figure>\n      </div>\n\n</div>\n";
+module.exports = "<div class=\"gallery-container\">\n\n  <div id=\"my-gallery-1\" class=\"gallery gallery-main\">\n          <figure class=\"gallery-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <div class=\"gallery-item-inner\">\n          <div class=\"img-wrapper\">\n            <img src=\"./images/styleguide/gallery/gallery_01.jpg\" alt=\"Picture of an amazing science topic\" class=\"img-fluid\">\n          </div>\n        </div>\n        <figcaption>\n          <span>Picture of an amazing science topic</span>\n        </figcaption>\n      </figure>\n          <figure class=\"gallery-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <div class=\"gallery-item-inner\">\n          <div class=\"img-wrapper\">\n            <img src=\"./images/styleguide/gallery/gallery_02.jpg\" alt=\"Picture of an amazing science topic\" class=\"img-fluid\">\n          </div>\n        </div>\n        <figcaption>\n          <span>Picture of an amazing science topic</span>\n        </figcaption>\n      </figure>\n          <figure class=\"gallery-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <div class=\"gallery-item-inner\">\n          <div class=\"img-wrapper\">\n            <img src=\"./images/styleguide/gallery/gallery_03.jpg\" alt=\"Picture of an amazing science topic\" class=\"img-fluid\">\n          </div>\n        </div>\n        <figcaption>\n          <span>Picture of an amazing science topic</span>\n        </figcaption>\n      </figure>\n          <figure class=\"gallery-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <div class=\"gallery-item-inner\">\n          <div class=\"img-wrapper\">\n            <img src=\"./images/styleguide/gallery/gallery_04.jpg\" alt=\"Picture of an amazing science topic\" class=\"img-fluid\">\n          </div>\n        </div>\n        <figcaption>\n          <span>Picture of an amazing science topic</span>\n        </figcaption>\n      </figure>\n          <figure class=\"gallery-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <div class=\"gallery-item-inner\">\n          <div class=\"img-wrapper\">\n            <img src=\"./images/styleguide/gallery/gallery_05.jpg\" alt=\"Picture of an amazing science topic\" class=\"img-fluid\">\n          </div>\n        </div>\n        <figcaption>\n          <span>Picture of an amazing science topic</span>\n        </figcaption>\n      </figure>\n          <figure class=\"gallery-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <div class=\"gallery-item-inner\">\n          <div class=\"img-wrapper\">\n            <img src=\"./images/styleguide/gallery/gallery_06.jpg\" alt=\"Picture of an amazing science topic\" class=\"img-fluid\">\n          </div>\n        </div>\n        <figcaption>\n          <span>Picture of an amazing science topic</span>\n        </figcaption>\n      </figure>\n          <figure class=\"gallery-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <div class=\"gallery-item-inner\">\n          <div class=\"img-wrapper\">\n            <img src=\"./images/styleguide/gallery/gallery_07.jpg\" alt=\"Picture of an amazing science topic\" class=\"img-fluid\">\n          </div>\n        </div>\n        <figcaption>\n          <span>Picture of an amazing science topic</span>\n        </figcaption>\n      </figure>\n          <figure class=\"gallery-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <div class=\"gallery-item-inner\">\n          <div class=\"img-wrapper\">\n            <img src=\"./images/styleguide/gallery/gallery_08.jpg\" alt=\"Picture of an amazing science topic\" class=\"img-fluid\">\n          </div>\n        </div>\n        <figcaption>\n          <span>Picture of an amazing science topic</span>\n        </figcaption>\n      </figure>\n      </div>\n\n  <div class=\"gallery-nav\" data-gallery=\"my-gallery-1\" aria-hidden=\"true\">\n          <figure class=\"gallery-nav-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <img src=\"./images/styleguide/gallery/thumb_01.jpg\" alt=\"Thumbnail of an amazing science topic\" class=\"img-fluid\">\n        <figcaption>Picture of an amazing science topic</figcaption>\n      </figure>\n          <figure class=\"gallery-nav-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <img src=\"./images/styleguide/gallery/thumb_02.jpg\" alt=\"Thumbnail of an amazing science topic\" class=\"img-fluid\">\n        <figcaption>Picture of an amazing science topic</figcaption>\n      </figure>\n          <figure class=\"gallery-nav-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <img src=\"./images/styleguide/gallery/thumb_03.jpg\" alt=\"Thumbnail of an amazing science topic\" class=\"img-fluid\">\n        <figcaption>Picture of an amazing science topic</figcaption>\n      </figure>\n          <figure class=\"gallery-nav-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <img src=\"./images/styleguide/gallery/thumb_04.jpg\" alt=\"Thumbnail of an amazing science topic\" class=\"img-fluid\">\n        <figcaption>Picture of an amazing science topic</figcaption>\n      </figure>\n          <figure class=\"gallery-nav-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <img src=\"./images/styleguide/gallery/thumb_05.jpg\" alt=\"Thumbnail of an amazing science topic\" class=\"img-fluid\">\n        <figcaption>Picture of an amazing science topic</figcaption>\n      </figure>\n          <figure class=\"gallery-nav-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <img src=\"./images/styleguide/gallery/thumb_06.jpg\" alt=\"Thumbnail of an amazing science topic\" class=\"img-fluid\">\n        <figcaption>Picture of an amazing science topic</figcaption>\n      </figure>\n          <figure class=\"gallery-nav-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <img src=\"./images/styleguide/gallery/thumb_07.jpg\" alt=\"Thumbnail of an amazing science topic\" class=\"img-fluid\">\n        <figcaption>Picture of an amazing science topic</figcaption>\n      </figure>\n          <figure class=\"gallery-nav-item\" itemprop=\"associatedMedia\" itemscope itemtype=\"http://schema.org/ImageObject\">\n        <img src=\"./images/styleguide/gallery/thumb_08.jpg\" alt=\"Thumbnail of an amazing science topic\" class=\"img-fluid\">\n        <figcaption>Picture of an amazing science topic</figcaption>\n      </figure>\n      </div>\n\n</div>\n";
 
 /***/ }),
 
@@ -54631,7 +54663,7 @@ module.exports = JSON.parse('{"title":"Section","name":"section","wrapper":"col-
 /***/ (function(module) {
 
 "use strict";
-module.exports = JSON.parse('{"title":"Study plan","name":"study-plan","notes":"The study plan is a special case of table. The markup cannot be changed and we put in place a CSS Grid layout to display the content.\\n\\nPlease override the columns width (if they do not fit your needs) by using a CSS variable: `<div class=\\"study-plan table-like\\" style=\\"--table-columns: 1fr minmax(200px, 3fr) minmax(auto, 1fr) minmax(200px, 3fr) 3fr 1fr\\">`.\\n\\nThe default behaviour is kept on IE, the content stays readable (the table might be a bit wonky when some columns are missing though).\\n\\nOn mobile, the tables are scrollable horizontally.\\n"}');
+module.exports = JSON.parse('{"title":"Study plan","name":"study-plan","notes":"The study plan is a special case of table. The markup cannot be changed and we put in place a CSS Grid layout to display the content.\\n\\nPlease override the columns width (if they do not fit your needs) by using a CSS variable: `<div class=\\"study-plan table-like\\" style=\\"--table-columns: 1fr minmax(200px, 3fr) minmax(auto, 1fr) minmax(200px, 3fr) 3fr 1fr\\">`.\\n\\nOn mobile, the tables are scrollable horizontally.\\n"}');
 
 /***/ }),
 
@@ -60341,8 +60373,6 @@ ColorSwatch.propTypes = {
 var es_array_find = __webpack_require__(69826);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.concat.js
 var es_array_concat = __webpack_require__(92222);
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.set-prototype-of.js
-var es_object_set_prototype_of = __webpack_require__(68304);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.get-prototype-of.js
 var es_object_get_prototype_of = __webpack_require__(30489);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.reflect.construct.js
@@ -66011,12 +66041,18 @@ var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(inject
 // EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/styleDomAPI.js
 var styleDomAPI = __webpack_require__(7795);
 var styleDomAPI_default = /*#__PURE__*/__webpack_require__.n(styleDomAPI);
-// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/getTarget.js
-var getTarget = __webpack_require__(20695);
-var getTarget_default = /*#__PURE__*/__webpack_require__.n(getTarget);
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/insertBySelector.js
+var insertBySelector = __webpack_require__(90569);
+var insertBySelector_default = /*#__PURE__*/__webpack_require__.n(insertBySelector);
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js
+var setAttributesWithoutAttributes = __webpack_require__(3565);
+var setAttributesWithoutAttributes_default = /*#__PURE__*/__webpack_require__.n(setAttributesWithoutAttributes);
 // EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/insertStyleElement.js
 var insertStyleElement = __webpack_require__(19216);
 var insertStyleElement_default = /*#__PURE__*/__webpack_require__.n(insertStyleElement);
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/styleTagTransform.js
+var styleTagTransform = __webpack_require__(44589);
+var styleTagTransform_default = /*#__PURE__*/__webpack_require__.n(styleTagTransform);
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./node_modules/rc-tooltip/assets/bootstrap.css
 var bootstrap = __webpack_require__(30467);
 ;// CONCATENATED MODULE: ./node_modules/rc-tooltip/assets/bootstrap.css
@@ -66028,39 +66064,14 @@ var bootstrap = __webpack_require__(30467);
       
       
       
+      
+      
 
 var options = {};
 
-options.styleTagTransform = function(css, style){
-      if (style.styleSheet) {
-        style.styleSheet.cssText = css;
-      } else {
-      while (style.firstChild) {
-        style.removeChild(style.firstChild);
-      }
-
-      style.appendChild(document.createTextNode(css));
-    }
-  };
-options.setAttributes = function(style) {
-        var nonce =
-           true ? __webpack_require__.nc : 0;
-
-        if (nonce) {
-          style.setAttribute("nonce", nonce);
-        }
-      };
-options.insert = function(style){
-    var target = getTarget_default()("head");
-
-    if (!target) {
-      throw new Error(
-        "Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid."
-      );
-    }
-
-    target.appendChild(style);
-  };
+options.styleTagTransform = (styleTagTransform_default());
+options.setAttributes = (setAttributesWithoutAttributes_default());
+options.insert = insertBySelector_default().bind(null, "head");
 options.domAPI = (styleDomAPI_default());
 options.insertStyleElement = (insertStyleElement_default());
 
@@ -66075,7 +66086,6 @@ var update = injectStylesIntoStyleTag_default()(bootstrap/* default */.Z, option
 var colors_namespaceObject = JSON.parse('{"$red":"#ff0000","$red-dark":"#b51f1f","$white":"#fff","$gray-100":"#e6e6e6","$gray-200":"#d5d5d5","$gray-300":"#c1c1c1","$gray-500":"#8e8e8e","$gray-600":"#707070","$black":"#212121","$leman":"#00A79F","$canard":"#007480"}');
 ;// CONCATENATED MODULE: ./reader/components/ColorTable/ColorTable.jsx
 function ColorTable_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { ColorTable_typeof = function _typeof(obj) { return typeof obj; }; } else { ColorTable_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return ColorTable_typeof(obj); }
-
 
 
 
@@ -66621,7 +66631,7 @@ function SidebarDocs() {
   })));
 }
 ;// CONCATENATED MODULE: ./package.json
-var package_namespaceObject = {"i8":"4.9.2"};
+var package_namespaceObject = {"i8":"5.0.0"};
 ;// CONCATENATED MODULE: ./reader/components/Sidebar/Sidebar.jsx
 
 
