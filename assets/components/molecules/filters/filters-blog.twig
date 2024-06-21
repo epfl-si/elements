@@ -14,44 +14,14 @@
     </button>
   </div>
   <div class="collapse collapse-lg-show collapse-drop" id="form-filters">
+
     <form class="p-3 p-lg-0 mt-md-3">
 
-      <div class="form-group">
-        <form class="border-0 p-0" method="get" name="?s+s">
-          <div class="search-form mt-1 input-group">
-            <label for="search" class="sr-only">Rechercher</label>
-            <input type="text" class="form-control" name="s" placeholder="Rechercher">
-            <button type="submit" class="d-none d-xl-block btn btn-primary input-group-append">Valider</button>
-          </div>
-        </form>
-      </div>
+      {% include "@molecules/form-group/form-group-search.twig" %}
 
-      <div class="form-group">
-        <div class="form-group">
-          <label>Catégories</label>
-          <select id="select-input" class="custom-select">
-            <option selected>Toutes les catégories</option>
-            <option value="1">Catégorie 1</option>
-            <option value="2">Catégorie 2</option>
-            <option value="3">Catégorie 3</option>
-            <option value="4">The fourth choice</option>
-            <option value="5">42</option>
-          </select>
-        </div>
-      </div>
+      {% include "@molecules/form-group/form-group-select.twig" with {'label': 'Catégories'} %}
 
-      <div class="form-group">
-        <div class="form-group">
-          <label>Archives</label>
-          <select id="select-input" class="custom-select">
-            <option selected>Toutes les années</option>
-            <option value="2020">2020</option>
-            <option value="2019">2019</option>
-            <option value="2018">2018</option>
-            <option value="2017">2017</option>
-          </select>
-        </div>
-      </div>
+      {% include "@molecules/form-group/form-group-select.twig" with {'label': 'Archives'} %}
 
     </form>
   </div>

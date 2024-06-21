@@ -1,5 +1,5 @@
 <div class="form-group">
-<label>Choose wisely</label>
+<label>{% if label %} {{~ label}} {% else %}Choose wisely{% endif %}</label>
 <select id="select-input" class="custom-select">
   <option selected>Make a choice...</option>
   <option value="1">Legolas</option>
