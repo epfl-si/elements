@@ -1,5 +1,5 @@
 <div class="form-group">
-  <label for="custom-check1">Checkboxes (multiple choice)</label>
+  <label for="custom-check1">{% if label %} {{~ label}} {% else %}Checkboxes (multiple choice){% endif %}</label>
 
   {% for i in [1,2,3] %}
   {% include "@atoms/checkbox/checkbox.twig" with {

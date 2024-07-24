@@ -1,5 +1,5 @@
 <div class="form-group form-group-search">
-  <label for="search-field" class="sr-only">Search</label>
+  <label for="search-field" class="sr-only">{% if label %} {{~ label}} {% else %}Search{% endif %}</label>
   <p class="search-container icon-right">
     <input
       type="search"
@@ -8,6 +8,6 @@
       placeholder="Keywords..."
       aria-describedby="search-field-help"
     >
-    {% include '@atoms/icon/icon.twig' with { icon:  'icon-search' } %}
+    {% include '@atoms/icon/icon.twig' with { icon: 'icon-search' } %}
   </p>
 </div>
