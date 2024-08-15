@@ -8,6 +8,8 @@
     --avatar-size: 2.5rem;
     flex-basis: var(--avatar-size);
     width: var(--avatar-size);
+    object-fit: cover;
+    height: var(--avatar-size);
     
     @include media-breakpoint-up(sm) {
       --avatar-size: 2.625rem;
