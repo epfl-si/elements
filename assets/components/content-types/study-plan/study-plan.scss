@@ -265,7 +265,6 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
   .specialisation {
 
     p {
-      display: inline-block;
       font-size: .875rem;
       margin-right: .6rem;
     }
@@ -277,12 +276,15 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
       text-align: left;
 
       li {
-        display: inline;
         font-size: .875rem;
         margin-bottom: 0;
 
         &:after {
           content: ";";
+        }
+
+        &:before {
+          top: .38em;
         }
       }
 
@@ -290,12 +292,6 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
         margin-left: 0;
 
         li {
-          display: inline-block;
-          //white-space: nowrap;
-
-          &:before {
-            top: .38em;
-          }
 
           &:after {
             display: none;
