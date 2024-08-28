@@ -1,5 +1,5 @@
 <div class="form-group">
-  <label for="error-input" class="invalid-label">Input's label</label>
+  <label for="error-input" class="invalid-label">{% if label %} {{~ label}} {% else %}Input's label{% endif %}</label>
   <input
     type="text"
     id="error-input"

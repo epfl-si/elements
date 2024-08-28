@@ -1,5 +1,5 @@
 <div class="form-group">
-  <label for="custom-radio1">Radio button (single choice)</label>
+  <label for="custom-radio1">{% if label %} {{~ label}} {% else %}Radio button (single choice){% endif %}</label>
 
   {% for i in [1,2,3] %}
   {% include "@atoms/radio/radio.twig" with {

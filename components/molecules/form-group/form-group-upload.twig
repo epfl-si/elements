@@ -1,4 +1,4 @@
 <div class="form-group">
-  <label for="upload-input">File upload</label>
+  <label for="upload-input">{% if label %} {{~ label}} {% else %}File upload{% endif %}</label>
   {% include "@atoms/upload/upload.twig" %}
 </div>
