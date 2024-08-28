@@ -12241,6 +12241,10 @@ picture .img-fluid {
 .ms-drop ul > li.group {
   clear: both;
 }
+.ms-drop ul > li.option-divider {
+  padding: 0;
+  border-top: 1px solid #c1c1c1;
+}
 .ms-drop label {
   display: block;
   margin-bottom: 0;
@@ -12821,6 +12825,10 @@ figcaption {
   flex-basis: var(--avatar-size);
   width: 2.5rem;
   width: var(--avatar-size);
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 2.5rem;
+  height: var(--avatar-size);
 }
 @media (min-width: 576px) {
   .user-dropdown .btn .user-avatar {
@@ -17685,6 +17693,7 @@ a.cc-link {
   padding-bottom: 0.6rem !important;
 }
 .table-like .line .cours .cours-name i {
+  display: block;
   font-weight: normal;
 }
 .table-like .line .cours .cours-code {
@@ -17710,7 +17719,6 @@ a.cc-link {
   color: #707070;
 }
 .table-like .specialisation p {
-  display: inline-block;
   font-size: 0.875rem;
   margin-right: 0.6rem;
 }
@@ -17721,21 +17729,17 @@ a.cc-link {
   text-align: left;
 }
 .table-like .specialisation ul.spec li {
-  display: inline;
   font-size: 0.875rem;
   margin-bottom: 0;
 }
 .table-like .specialisation ul.spec li:after {
   content: ";";
 }
+.table-like .specialisation ul.spec li:before {
+  top: 0.38em;
+}
 .table-like .specialisation ul.spec.list-bullet {
   margin-left: 0;
-}
-.table-like .specialisation ul.spec.list-bullet li {
-  display: inline-block;
-}
-.table-like .specialisation ul.spec.list-bullet li:before {
-  top: 0.38em;
 }
 .table-like .specialisation ul.spec.list-bullet li:after {
   display: none;

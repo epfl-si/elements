@@ -1,13 +1,13 @@
-(self["webpackChunkepfl_elements"] = self["webpackChunkepfl_elements"] || []).push([[355],{
+(self["webpackChunkepfl_elements"] = self["webpackChunkepfl_elements"] || []).push([[654],{
 
-/***/ 81256:
+/***/ 27874:
 /***/ (function() {
 
 
 
 /***/ }),
 
-/***/ 35925:
+/***/ 5493:
 /***/ (function() {
 
 
