@@ -158,23 +158,35 @@
       padding-left: 0;
     }
 
-    td.taken {
+    tr td.taken {
+      background: $red-dark;
+      background-repeat: no-repeat;
+      background-position: 0.25rem 0.25rem;
       color: #fff;
 
       a {
         color: #fff;
-      }
-
-      &.cours {
-        background: $red;
+        font-weight: bold;
       }
 
       &.exercice {
-        background: $red-dark url(../images/icons/icon-course-exercise.svg) no-repeat 4px 4px;
+        background-image: url(../images/icons/icon-course-exercise.svg);
       }
 
-      &.projet {
-        background: #8e0000 url(../images/icons/icon-course-project.svg) no-repeat 4px 4px;
+      &.tp {
+        background-image: url(../images/icons/icon-course-tp.svg);
+      }
+
+      &.labo {
+        background-image: url(../images/icons/icon-course-lab.svg);
+      }
+
+      &.course-based-project {
+        background-image: url(../images/icons/icon-course-based-project.svg);
+      }
+
+      &.individual-project {
+        background-image: url(../images/icons/icon-course-individual-project.svg);
       }
     }
   }
@@ -186,24 +198,35 @@
     margin-bottom: .5rem;
 
     .caption-icon {
+      background: $red-dark;
+      background-repeat: no-repeat;
+      background-position: .5rem .5rem;
       display: inline-block;
-      width: 2rem;
-      height: 2rem;
+      width: 1.75rem;
+      height: 1.75rem;
       margin-right: .25rem;
       vertical-align: middle;
     }
   }
 
-  .caption-cours .caption-icon {
-    background: $red;
-  }
-
   .caption-exercice .caption-icon {
-    background: $red-dark url(../images/icons/icon-course-exercise.svg) no-repeat .5rem .5rem;
+    background-image: url(../images/icons/icon-course-exercise.svg);
   }
 
-  .caption-projet .caption-icon {
-    background: #8e0000 url(../images/icons/icon-course-project.svg) no-repeat .5rem .5rem;
+  .caption-tp .caption-icon {
+    background-image: url(../images/icons/icon-course-tp.svg);
+  }
+
+  .caption-labo .caption-icon {
+    background-image: url(../images/icons/icon-course-lab.svg);
+  }
+
+  .caption-course-based-project .caption-icon {
+    background-image: url(../images/icons/icon-course-based-project.svg);
+  }
+
+  .caption-course-individual-project .caption-icon {
+    background-image: url(../images/icons/icon-course-individual-project.svg);
   }
 }
 
