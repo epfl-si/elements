@@ -14,10 +14,10 @@
   </li>
   {%  if social_mastodon %}
   <li>
-    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on Mastodon', icon: 'icon-mastodon', round: round, discrete: discrete, negative: negative, url: 'https://joinmastodon.org/' } %}
+    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on Mastodon', icon: 'icon-mastodon', round: round, discrete: discrete, negative: negative, url: 'https://joinmastodon.org' } %}
   </li>
   {% endif %}
-    {%  if social_tiktok %}
+  {%  if social_tiktok %}
   <li>
     {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on TikTok', icon: 'icon-tiktok', round: round, discrete: discrete, negative: negative, url: 'https://www.tiktok.com/@epflstudents' } %}
   </li>
@@ -28,4 +28,14 @@
   <li>
     {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on Youtube', icon: 'icon-youtube', round: round, discrete: discrete, negative: negative, url: 'https://www.youtube.com/user/epflnews' } %}
   </li>
+  {%  if social_github %}
+  <li>
+    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on GitHub', icon: 'github', round: round, discrete: discrete, negative: negative, url: 'https://github.com/epfl-si' } %}
+  </li>
+  {% endif %}
+  {%  if social_gitlab %}
+  <li>
+    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on GitLab', icon: 'gitlab', round: round, discrete: discrete, negative: negative, url: 'https://gitlab.epfl.ch' } %}
+  </li>
+  {% endif %}
 </ul>
