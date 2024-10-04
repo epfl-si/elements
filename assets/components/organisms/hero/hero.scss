@@ -75,6 +75,14 @@
     height: 100%;
   }
 
+  img.top-center {
+    object-position: top center;
+  }
+
+  img.bottom-center {
+    object-position: bottom center;
+  }
+
   @include media-breakpoint-up(xxl) {
     picture {
       height: 80vh;
