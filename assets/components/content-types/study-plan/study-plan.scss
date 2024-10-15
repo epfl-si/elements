@@ -189,11 +189,11 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
   }
 
   .schedule-text.no-course {
-    color: $gray-500;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
+    color: $gray-500;
   }
 
   // Stripes
