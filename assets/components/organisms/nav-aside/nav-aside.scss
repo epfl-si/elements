@@ -7,7 +7,8 @@
     flex-wrap: nowrap;
     margin-top: $spacer;
 
-    .nav-aside-wrapper {
+    & > .nav-container,
+    & > .nav-aside-wrapper {
       flex: 0 0 22%;
       order: -1;
       max-width: 22%;
@@ -15,10 +16,24 @@
       border-right: 1px solid gray('200');
     }
 
+    & > .nav-container:not( :has( .nav-aside-wrapper ) ) {
+      border: 0;
+      min-width: 0;
+      flex-basis: 0;
+    }
+
     .content {
       flex: 1 1 auto;
       .container { width: 90%; }
     }
+  }
+}
+
+.nav-aside-layout > .nav-container,
+.nav-aside-layout > .nav-aside-wrapper {
+  @include media-breakpoint-up(xxl){
+    flex: 0 0 16.1%;
+    max-width: 16.1%;
   }
 }
 
@@ -41,11 +56,6 @@
 
   @include media-breakpoint-up(xl) {
     height: 100%;
-  }
-
-  @include media-breakpoint-up(xxl){
-    flex: 0 0 16.1%;
-    max-width: 16.1%;
   }
 }
 
