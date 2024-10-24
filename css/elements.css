@@ -16929,6 +16929,14 @@ a.nav-arrow:hover .icon-container {
   width: 100%;
   height: 100%;
 }
+.hero-img img.top-center {
+  -o-object-position: top center;
+     object-position: top center;
+}
+.hero-img img.bottom-center {
+  -o-object-position: bottom center;
+     object-position: bottom center;
+}
 @media (min-width: 1600px) {
   .hero-img picture {
     height: 80vh;
@@ -17545,6 +17553,19 @@ a.cc-link {
   font-size: 1rem;
   font-weight: 700;
 }
+.table-like ul {
+  margin: 0;
+  padding: 0;
+}
+.table-like ul li {
+  line-height: 1.3;
+}
+.table-like ul li:before {
+  top: 0.45em;
+}
+.table-like ul li + li {
+  margin-top: 0.25em;
+}
 .table-like .line,
 .table-like .first-line {
   display: grid;
@@ -17654,6 +17675,13 @@ a.cc-link {
 }
 .table-like .line-down .bachlor {
   padding: 0 !important;
+}
+.table-like .schedule-text.no-course {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #8e8e8e;
 }
 .table-like .bachlor-text {
   height: 100%;
