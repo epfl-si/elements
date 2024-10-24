@@ -1,10 +1,10 @@
 /* global $ */
 
 const drawer = () => {
-  $('.drawer-toggle').click(function () {
-    const $drawer = $(this).parent('.drawer');
+  $('.drawer-toggle').on('click', (event) => {
+    const $drawer = $(event.currentTarget).parent('.drawer');
     const $drawerLink = $drawer.find('.drawer-link');
-    const $drawerToggle = $(this);
+    const $drawerToggle = $(event.currentTarget);
     const breakpoint = 992;
 
     if ($drawer.hasClass('open')) {
