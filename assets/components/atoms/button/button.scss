@@ -123,6 +123,47 @@ input[type="button"] {
   }
 }
 
+.btn-tertiary {
+  background: $leman;
+  font-weight: $font-weight-bold;
+  color: $white;
+
+  &:hover,
+  &.hover {
+    background: $canard;
+    border-color: $canard;
+    color: $white;
+  }
+  
+  &:focus,
+  &:focus-visible,
+  &.focus {
+    outline-color: $canard !important;
+    color: $white;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    // ugly ↓
+    // background: linear-gradient(to bottom, $canard 0%, $red 100%);
+    background: color.adjust($canard, $lightness: -10%);
+    border-color: color.adjust($canard, $lightness: -10%);
+  }
+
+  &:disabled,
+  &.disabled {
+    background: $gray-100;
+    border-color: $gray-300;
+    color: $gray-300;
+
+    .bg-dark & {
+      background: $black;
+      border-color: $gray-600;
+      color: $gray-600;
+    }
+  }
+}
+
 .btn-light {
   &,
   &:hover {
