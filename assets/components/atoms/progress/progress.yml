@@ -1,0 +1,8 @@
+title: Progress
+name: progress
+variants:
+  - name: height
+    title: Height
+  - name: indeterminate
+    title: Indeterminate
+    notes: Omit the `value` property completely, set it to `undefined` or leave blank
