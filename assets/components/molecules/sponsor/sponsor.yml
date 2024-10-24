@@ -1,2 +1,5 @@
 title: Sponsor
 name: sponsor
+variants:
+  - name: link
+    title: Sponsor with link
