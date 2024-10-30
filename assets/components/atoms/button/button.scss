@@ -124,30 +124,30 @@ input[type="button"] {
 }
 
 .btn-tertiary {
-  background: $leman;
+  background: $canard;
   font-weight: $font-weight-bold;
   color: $white;
 
   &:hover,
   &.hover {
-    background: $canard;
-    border-color: $canard;
+    background: $canard-dark;
+    border-color: $canard-dark;
     color: $white;
   }
   
   &:focus,
   &:focus-visible,
   &.focus {
-    outline-color: $canard !important;
+    outline-color: $canard-dark !important;
     color: $white;
   }
 
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled).active {
     // ugly ↓
-    // background: linear-gradient(to bottom, $canard 0%, $red 100%);
-    background: color.adjust($canard, $lightness: -10%);
-    border-color: color.adjust($canard, $lightness: -10%);
+    // background: linear-gradient(to bottom, $canard-dark 0%, $red 100%);
+    background: color.adjust($canard-dark, $lightness: -10%);
+    border-color: color.adjust($canard-dark, $lightness: -10%);
   }
 
   &:disabled,
