@@ -10,13 +10,16 @@
 //
 
 // stylelint-disable
-$white:    #fff !default;
-$gray-100: #e6e6e6 !default;
-$gray-200: #d5d5d5 !default;
-$gray-300: #c1c1c1 !default;
-$gray-500: #8e8e8e !default;
-$gray-600: #707070 !default;
-$black:    #212121 !default;
+$white:       #fff !default;
+$gray-100:    #e6e6e6 !default;
+$gray-200:    #d5d5d5 !default;
+$gray-300:    #c1c1c1 !default;
+$gray-500:    #8e8e8e !default;
+$gray-600:    #707070 !default;
+$black:       #212121 !default;
+$leman:       #00A79F !default;
+$canard:      #007480 !default;
+$canard-dark: #004248 !default;
 
 $grays: () !default;
 $grays: map-merge((

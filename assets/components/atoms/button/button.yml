@@ -22,6 +22,14 @@ variants:
     title: Secondary states preview
     notes: |
       *For previewing purposes only. **Do not use in production!***
+  - name: tertiary
+    title: Button tertiary
+    notes: |
+      For less aggressive buttons that are still in line with the EPFL graphic charter.
+  - name: tertiary-states
+    title: Tertiary states preview
+    notes: |
+      *For previewing purposes only. **Do not use in production!***
 notes: |
   Button is your interaction friend when you want people to complete an action. By clicking a button, people expect to trigger an event, confirm a form or load a new page. Don't put many buttons on one single page. The primary action should be obvious for people.
 
