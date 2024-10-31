@@ -1,19 +1,19 @@
-{% set img_path = img_path|default("./images/styleguide/teaser/news-teaser-") %}
+{% set cover_path = cover_path|default("./images/styleguide/teaser/news-teaser-") %}
 <picture>
   <source
     media="(min-width: 1140px)"
-    srcset="{{img_path}}1920x1080.jpg 1x,{{img_path}}2240x1260.jpg 2x">
+    srcset="{{cover_path}}1920x1080.jpg 1x,{{cover_path}}2240x1260.jpg 2x">
   <source
     media="(min-width: 960px)"
-    srcset="{{img_path}}1140x641.jpg 1x,{{img_path}}2240x1260.jpg 2x">
+    srcset="{{cover_path}}1140x641.jpg 1x,{{cover_path}}2240x1260.jpg 2x">
   <source
     media="(min-width: 720px)"
-    srcset="{{img_path}}928x520.jpg 1x,{{img_path}}1920x1080.jpg 2x">
+    srcset="{{cover_path}}928x520.jpg 1x,{{cover_path}}1920x1080.jpg 2x">
   <source
     media="(min-width: 541px)"
-    srcset="{{img_path}}768x432.jpg 1x,{{img_path}}1440x810.jpg 2x">
+    srcset="{{cover_path}}768x432.jpg 1x,{{cover_path}}1440x810.jpg 2x">
   <source
     media="(max-width: 540px)"
-    srcset="{{img_path}}576x324.jpg 1x,{{img_path}}1080x608.jpg 2x">
-  <img src="{{img_path}}1920x1080.jpg" class="img-fluid" alt="Cover description">
+    srcset="{{cover_path}}576x324.jpg 1x,{{cover_path}}1080x608.jpg 2x">
+  <img src="{{cover_path}}1920x1080.jpg" class="img-fluid" alt="Cover description">
 </picture>

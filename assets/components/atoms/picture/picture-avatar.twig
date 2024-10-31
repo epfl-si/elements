@@ -1,19 +1,19 @@
-{% set img_path = img_path|default("./images/styleguide/people/avatar-") %}
+{% set avatar_path = avatar_path|default("./images/styleguide/people/avatar-") %}
 <picture>
   <source
     media="(min-width: 1140px)"
-    srcset="{{img_path}}120x120.jpg 1x, {{img_path}}256x256.jpg 2x">
+    srcset="{{avatar_path}}120x120.jpg 1x, {{avatar_path}}256x256.jpg 2x">
   <source
     media="(min-width: 960px)"
-    srcset="{{img_path}}95x95.jpg 1x, {{img_path}}180x180.jpg 2x">
+    srcset="{{avatar_path}}95x95.jpg 1x, {{avatar_path}}180x180.jpg 2x">
   <source
     media="(min-width: 720px)"
-    srcset="{{img_path}}80x80.jpg 1x, {{img_path}}160x160.jpg 2x">
+    srcset="{{avatar_path}}80x80.jpg 1x, {{avatar_path}}160x160.jpg 2x">
   <source
     media="(min-width: 541px)"
-    srcset="{{img_path}}60x60.jpg 1x, {{img_path}}120x120.jpg 2x">
+    srcset="{{avatar_path}}60x60.jpg 1x, {{avatar_path}}120x120.jpg 2x">
   <source
     media="(max-width: 540px)"
-    srcset="{{img_path}}95x95.jpg 1x, {{img_path}}180x180.jpg 2x">
-  <img src="{{img_path}}120x120.jpg" class="img-fluid rounded-circle" alt="ALT">
+    srcset="{{avatar_path}}95x95.jpg 1x, {{avatar_path}}180x180.jpg 2x">
+  <img src="{{avatar_path}}120x120.jpg" class="img-fluid rounded-circle" alt="ALT">
 </picture>

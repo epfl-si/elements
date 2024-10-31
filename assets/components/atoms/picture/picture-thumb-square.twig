@@ -1,19 +1,19 @@
-{% set img_path = img_path|default("./images/styleguide/news-thumbs/news_thumb-") %}
+{% set thumb_path = thumb_path|default("./images/styleguide/news-thumbs/news_thumb-") %}
 <picture>
   <source
     media="(min-width: 1140px)"
-    srcset="{{img_path}}95x95.jpg 1x, {{img_path}}240x240.jpg 2x">
+    srcset="{{thumb_path}}95x95.jpg 1x, {{thumb_path}}240x240.jpg 2x">
   <source
     media="(min-width: 960px)"
-    srcset="{{img_path}}120x120.jpg 1x, {{img_path}}240x240.jpg 2x">
+    srcset="{{thumb_path}}120x120.jpg 1x, {{thumb_path}}240x240.jpg 2x">
   <source
     media="(min-width: 720px)"
-    srcset="{{img_path}}80x80.jpg 1x, {{img_path}}160x160.jpg 2x">
+    srcset="{{thumb_path}}80x80.jpg 1x, {{thumb_path}}160x160.jpg 2x">
   <source
     media="(min-width: 541px)"
-    srcset="{{img_path}}120x120.jpg 1x, {{img_path}}240x240.jpg 2x">
+    srcset="{{thumb_path}}120x120.jpg 1x, {{thumb_path}}240x240.jpg 2x">
   <source
     media="(max-width: 540px)"
-    srcset="{{img_path}}540x540.jpg 1x, {{img_path}}1080x1080.jpg 2x">
-  <img src="{{img_path}}120x120.jpg" class="img-fluid" alt="ALT">
+    srcset="{{thumb_path}}540x540.jpg 1x, {{thumb_path}}1080x1080.jpg 2x">
+  <img src="{{thumb_path}}120x120.jpg" class="img-fluid" alt="ALT">
 </picture>
