@@ -1,18 +1,19 @@
+{% set portrait_path = portrait_path|default("./images/styleguide/people/portrait-") %}
 <picture>
   <source
     media="(min-width: 1140px)"
-    srcset="https://via.placeholder.com/253x360.jpg 1x,https://via.placeholder.com/506x720.jpg 2x">
+    srcset="{{portrait_path}}253x360.jpg 1x, {{portrait_path}}506x720.jpg 2x">
   <source
     media="(min-width: 960px)"
-    srcset="https://via.placeholder.com/211x300.jpg 1x,https://via.placeholder.com/422x600.jpg 2x">
+    srcset="{{portrait_path}}211x300.jpg 1x, {{portrait_path}}422x600.jpg 2x">
   <source
     media="(min-width: 720px)"
-    srcset="https://via.placeholder.com/253x360.jpg 1x,https://via.placeholder.com/506x720.jpg 2x">
+    srcset="{{portrait_path}}253x360.jpg 1x, {{portrait_path}}506x720.jpg 2x">
   <source
     media="(min-width: 541px)"
-    srcset="https://via.placeholder.com/253x360.jpg 1x,https://via.placeholder.com/506x720.jpg 2x">
+    srcset="{{portrait_path}}253x360.jpg 1x, {{portrait_path}}506x720.jpg 2x">
   <source
     media="(max-width: 540px)"
-    srcset="https://via.placeholder.com/211x300.jpg 1x,https://via.placeholder.com/422x600.jpg 2x">
-  <img src="https://via.placeholder.com/506x720.jpg" class="img-fluid" alt="ALT">
+    srcset="{{portrait_path}}211x300.jpg 1x, {{portrait_path}}422x600.jpg 2x">
+  <img src="{{portrait_path}}506x720.jpg" class="img-fluid" alt="ALT">
 </picture>
