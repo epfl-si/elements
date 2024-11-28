@@ -12,7 +12,7 @@ variants:
       Picture used in 'Organism > Fullwidth teaser' and 'News > Highlighted'.
   - name: avatar
     title: Avatar
-    wrapper: col-sm-4 col-md-2 col-lg-1
+    wrapper: col-sm-4 col-md-2
     notes: |
       Avatar picture need an equal height and width in order to be displayed as a circle
   - name: portrait
@@ -25,6 +25,7 @@ variants:
     wrapper: col-md-4
   - name: one-third-square
     title: One third Square picture
+    wrapper: col-md-4
   - name: news-thumb
     title: News Listing Thumbnail
     wrapper: col-3 col-md-2

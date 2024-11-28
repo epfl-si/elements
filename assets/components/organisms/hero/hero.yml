@@ -3,6 +3,8 @@ title: Hero
 notes: |
   The hero component is used as intro to basic pages.
 
+  You can add the `.top-center` class to the `<img>` tag if you want the background picture to be centred from the top of the image, or the `bottom-center` class to the `<img>` tag if you want the background picture to be centred from the bottom of the image.
+
 variants:
   - name: legend
     title: Hero with image legend

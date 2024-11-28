@@ -34,6 +34,23 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
     font-weight: $font-weight-bold;
   }
 
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      line-height: 1.3;
+
+      &:before {
+        top: 0.45em;
+      }
+    }
+
+    li + li {
+      margin-top: 0.25em;
+    }
+  }
+
   // Lines
   // Grid properties are overridden on browsers supporting "display: contents".
   .line,
@@ -169,6 +186,14 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
 
   .line-down .bachlor {
     padding: 0 !important;
+  }
+
+  .schedule-text.no-course {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: $gray-500;
   }
 
   // Stripes
@@ -512,6 +537,8 @@ $study-plan-master-pdm: minmax(250px, 3fr) 1fr 2fr 2fr 2fr 2fr minmax(140px, 3fr
         height: auto;
       }
     }
+
+
   }
 
 }
