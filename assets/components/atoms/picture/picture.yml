@@ -39,6 +39,6 @@ notes: |
 
   We are using `<picture>` in Elements instead of a simple `<img>` to **ensure that every user and device will receive the right image format, size and weight**.
 
-  This page presents all image formats defined in Element and all their related sizes. **This implies implemening a lot of image sizes**, but CMS like Wordpress can easily manage [that logic](https://developer.wordpress.org/reference/functions/add_image_size/).
+  This page presents all image formats defined in Element and all their related sizes. **This implies implementing a lot of image sizes**, but CMS like Wordpress can easily manage [that logic](https://developer.wordpress.org/reference/functions/add_image_size/).
 
   ### Half desktop picture
