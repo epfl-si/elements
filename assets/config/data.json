@@ -173,6 +173,7 @@
     "epfl-transport-train",
     "facebook",
     "googleplus",
+    "googlescholar",
     "home",
     "info",
     "instagram",
@@ -180,9 +181,11 @@
     "lock",
     "mail-plane",
     "mastodon",
+    "orcid",
     "triangle",
     "search",
     "search-bold",
+    "stackoverflow",
     "twitter",
     "translate",
     "upload",
@@ -190,6 +193,7 @@
     "planet",
     "tiktok",
     "youtube",
+    "wos",
     "x"
   ],
   "feathericons": [
