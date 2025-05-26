@@ -1,0 +1,48 @@
+name: Sync css and js files from elements to wp-theme-2018
+on:
+  release:
+    types: [created]
+  workflow_dispatch:  # 👈 manual trigger
+
+jobs:
+  sync-to-wp-theme-2018:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout elements
+        uses: actions/checkout@v4
+        with:
+          ref: dist/frontend
+          path: elements
+
+      - name: Checkout wp-theme-2018
+        uses: actions/checkout@v4
+        with:
+          repository: git@github.com:epfl-si/wp-theme-2018.git
+          ref: master
+          ssh-key: ${{ secrets.ELEMENTS }}
+          path: theme
+
+      - name: Create new branch in wp-theme-2018
+        run: |
+          cd theme
+          git checkout -b feature/update-from-elements-$(date +%s)
+
+      - name: Copy css and js files to wp-theme-2018
+        run: |
+          cd theme
+          rm -rf wp-theme-2018/assets
+          mkdir -p wp-theme-2018/assets
+          rsync -a --exclude='node_modules' --exclude='.git' --exclude='package.json' --exclude='.nojekyll' --exclude='*.map' elements/ theme/wp-theme-2018/assets/
+
+      - name: Commit and Push to wp-theme-2018
+        run: |
+          cd theme
+          git add .
+          # Check if there are changes to commit
+          if git diff --cached --quiet; then
+            echo "No changes to commit, skipping push."
+          else
+            git commit -m "New element version ${{ github.event.release.tag_name }}"
+            git push
+          fi
