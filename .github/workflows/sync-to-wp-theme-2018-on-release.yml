@@ -39,7 +39,14 @@ jobs:
 
       - name: Copy css and js files to wp-theme-2018
         run: |
-          rsync -a --exclude='node_modules' --exclude='.git' --exclude='package.json' --exclude='.nojekyll' --exclude='*.map' elements/ theme/wp-theme-2018/assets/
+          rsync -a \
+            --exclude='node_modules' \
+            --exclude='.git' \
+            --exclude='package.json' \
+            --exclude='.nojekyll' \
+            --exclude='spritemap.js' \
+            --exclude='*.map' \
+            elements/ theme/wp-theme-2018/assets/
 
       - name: Commit and Push to wp-theme-2018
         run: |
