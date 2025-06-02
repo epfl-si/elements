@@ -5,11 +5,12 @@ on:
       tag_name:
         required: true
         type: string
+    secrets:
+      ELEMENTS_PRIVATE_KEY:
+        required: true
 
 jobs:
   sync-to-wp-theme-2018:
-    env:
-      tag: ${{ inputs.tag_name }}
 
     runs-on: ubuntu-latest
 
@@ -17,11 +18,9 @@ jobs:
       - name: Setup SSH Key for wp-theme-2018
         run: |
           mkdir -p ~/.ssh
-          echo "$ELEMENTS_PRIVATE_KEY" > ~/.ssh/id_rsa
+          echo "${{ secrets.ELEMENTS_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
-        env: # Or as an environment variable
-          ELEMENTS_PRIVATE_KEY: ${{ secrets.ELEMENTS }}
 
       - name: Checkout elements
         uses: actions/checkout@v4
@@ -37,7 +36,7 @@ jobs:
       - name: Create new branch in wp-theme-2018
         run: |
           cd theme
-          git checkout -b feature/update-from-elements-$tag
+          git checkout -b feature/update-from-elements-${{ inputs.tag_name }}
 
       - name: Copy CSS and JS files to wp-theme-2018
         run: |
@@ -61,5 +60,5 @@ jobs:
             echo "No changes to commit, skipping push."
           else
             git commit -m "New element version ${{ github.event.release.tag_name }}"
-            git push --set-upstream origin feature/update-from-elements-$tag
+            git push --set-upstream origin feature/update-from-elements-${{ inputs.tag_name }}
           fi

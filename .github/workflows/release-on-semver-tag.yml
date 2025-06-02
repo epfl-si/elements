@@ -76,3 +76,5 @@ jobs:
     uses: ./.github/workflows/sync-to-wp-theme-2018-on-release.yml
     with:
       tag_name: ${{ github.event.inputs.tag_name }}
+    secrets:
+      ELEMENTS_PRIVATE_KEY: ${{ secrets.ELEMENTS }}
