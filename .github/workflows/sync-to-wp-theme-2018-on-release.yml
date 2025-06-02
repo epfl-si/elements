@@ -37,7 +37,7 @@ jobs:
           cd theme
           git checkout -b feature/update-from-elements-$tag
 
-      - name: Copy css and js files to wp-theme-2018
+      - name: Copy CSS and JS files to wp-theme-2018
         run: |
           rsync -a \
             --exclude='node_modules' \
