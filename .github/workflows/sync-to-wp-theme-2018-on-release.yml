@@ -1,8 +1,7 @@
 name: Sync css and js files from elements to wp-theme-2018
 on:
   release:
-    types: [created]
-  workflow_dispatch:  # 👈 manual trigger
+    types: [published]
 
 jobs:
   sync-to-wp-theme-2018:
