@@ -6,43 +6,51 @@ on:
 
 jobs:
   sync-to-wp-theme-2018:
+    env:
+      tag: ${{ github.event.release.tag_name }}
+
     runs-on: ubuntu-latest
 
     steps:
+      - name: Setup SSH Key for wp-theme-2018
+        run: |
+          mkdir -p ~/.ssh
+          echo "$ELEMENTS_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+        env: # Or as an environment variable
+          ELEMENTS_PRIVATE_KEY: ${{ secrets.ELEMENTS }}
+
       - name: Checkout elements
         uses: actions/checkout@v4
         with:
+          repository: epfl-si/elements
           ref: dist/frontend
           path: elements
 
       - name: Checkout wp-theme-2018
-        uses: actions/checkout@v4
-        with:
-          repository: git@github.com:epfl-si/wp-theme-2018.git
-          ref: master
-          ssh-key: ${{ secrets.ELEMENTS }}
-          path: theme
+        run: |
+          git clone git@github.com:epfl-si/wp-theme-2018.git theme
 
       - name: Create new branch in wp-theme-2018
         run: |
           cd theme
-          git checkout -b feature/update-from-elements-$(date +%s)
+          git checkout -b feature/update-from-elements-$tag
 
       - name: Copy css and js files to wp-theme-2018
         run: |
-          cd theme
-          rm -rf wp-theme-2018/assets
-          mkdir -p wp-theme-2018/assets
           rsync -a --exclude='node_modules' --exclude='.git' --exclude='package.json' --exclude='.nojekyll' --exclude='*.map' elements/ theme/wp-theme-2018/assets/
 
       - name: Commit and Push to wp-theme-2018
         run: |
           cd theme
+          git config user.name "github-actions-elements[bot]"
+          git config user.email "github-actions-elements[bot]@users.noreply.github.com"
           git add .
           # Check if there are changes to commit
           if git diff --cached --quiet; then
             echo "No changes to commit, skipping push."
           else
             git commit -m "New element version ${{ github.event.release.tag_name }}"
-            git push
+            git push --set-upstream origin feature/update-from-elements-$tag
           fi
