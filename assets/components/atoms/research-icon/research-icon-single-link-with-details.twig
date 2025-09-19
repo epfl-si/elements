@@ -1,0 +1,11 @@
+{% set pretty_name = pretty_name ?: 'Scopus' %}
+{% set user_id = user_id ?: 'firstname.name' %}
+{% set icon = icon ?: 'icon-scopus' %}
+{% set round = round ? ' research-icon-round' : '' %}
+{% set discrete = discrete ? ' research-icon-discrete' : '' %}
+{% set negative = negative ? ' research-icon-negative' : '' %}
+{% set url = url or '#' %}
+<a href="{{ url }}" class="{{ 'research-icon research-icon-details research-' ~ icon ~ round ~ negative ~ discrete }}" rel="nofollow" title="{{ pretty_name }}">
+  {% include '@atoms/icon/icon.twig' with { icon: icon } %}
+  <span class="user">{{ user_id }}</span>
+</a>

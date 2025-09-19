@@ -1,0 +1,21 @@
+{% set round = round ? round : false %}
+{% set discrete = discrete ? discrete : false %}
+{% set negative = negative ? negative : false %}
+
+<ul class="research-icon-list list-inline">
+  <li>
+    {% include '@atoms/research-icon/research-icon-single-link.twig' with { pretty_name: 'OrcID', icon: 'icon-orcid', round: round, discrete: discrete, negative: negative, url: 'https://orcid.org/' } %}
+  </li>
+  <li>
+    {% include '@atoms/research-icon/research-icon-single-link.twig' with { pretty_name: 'Google Scholar', icon: 'icon-googlescholar', round: round, discrete: discrete, negative: negative, url: 'https://scholar.google.com/' } %}
+  </li>
+  <li>
+    {% include '@atoms/research-icon/research-icon-single-link.twig' with { pretty_name: 'Scopus', icon: 'icon-scopus', round: round, discrete: discrete, negative: negative, url: 'https://www.scopus.com/' } %}
+  </li>
+  <li>
+    {% include '@atoms/research-icon/research-icon-single-link.twig' with { pretty_name: 'Stack Overflow', icon: 'icon-stackoverflow', round: round, discrete: discrete, negative: negative, url: 'https://stackoverflow.com/' } %}
+  </li>
+  <li>
+    {% include '@atoms/research-icon/research-icon-single-link.twig' with { pretty_name: 'Publons - Web of Science', icon: 'icon-wos', round: round, discrete: discrete, negative: negative, url: 'https://www.webofscience.com' } %}
+  </li>
+</ul>

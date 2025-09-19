@@ -1,0 +1,9 @@
+{% set pretty_name = pretty_name ?: 'scopus' %}
+{% set icon = icon ?: 'icon-scopus' %}
+{% set round = round ? ' research-icon-round' : '' %}
+{% set discrete = discrete ? ' research-icon-discrete' : '' %}
+{% set negative = negative ? ' research-icon-negative' : '' %}
+<span class="{{ 'research-icon research-' ~ icon ~ round ~ negative }}">
+  {% include '@atoms/icon/icon.twig' with { icon: icon } %}
+  <span class="sr-only">{{ pretty_name }}</span>
+</span>
