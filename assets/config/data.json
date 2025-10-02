@@ -779,11 +779,11 @@
           "url_de": "https://www.epfl.ch/about/campus/de/"
         },
         {
-          "name_fr": "Facts",
+          "name_fr": "Data",
           "url_fr": "https://www.epfl.ch/about/facts/fr/",
-          "name_en": "Facts",
+          "name_en": "Data",
           "url_en": "https://www.epfl.ch/about/facts/",
-          "name_de": "Facts",
+          "name_de": "Data",
           "url_de": "https://www.epfl.ch/about/facts/"
         },
         {
@@ -880,6 +880,30 @@
       "heading_de": "Bildung",
       "items": [
         {
+          "name_fr": "Admission",
+          "url_fr": "https://www.epfl.ch/education/admission/fr/",
+          "name_en": "Admission",
+          "url_en": "https://www.epfl.ch/education/admission/",
+          "name_de": "Zulassungsvoraussetzungen",
+          "url_de": "https://www.epfl.ch/education/admission/de/"
+        },
+        {
+          "name_fr": "Calendrier académique",
+          "url_fr": "https://www.epfl.ch/education/studies/reglement-et-procedure/calendrier-academique/",
+          "name_en": "Academic Calendar",
+          "url_en": "https://www.epfl.ch/education/studies/en/rules-and-procedures/academic-calendar/",
+          "name_de": "Akademischer Kalender",
+          "url_de": "https://www.epfl.ch/education/studies/en/rules-and-procedures/academic-calendar/"
+        },
+        {
+          "name_fr": "Cours de mathématiques spéciales CMS",
+          "url_fr": "https://www.epfl.ch/education/fr/cms/",
+          "name_en": "Preparatory Year (CMS)",
+          "url_en": "https://www.epfl.ch/education/cms-preparatory-year/",
+          "name_de": "Vorbereitungsjahr (CMS)",
+          "url_de": "https://www.epfl.ch/education/cms-preparatory-year/"
+        },
+        {
           "name_fr": "Bachelor",
           "url_fr": "https://www.epfl.ch/education/bachelor/fr/",
           "name_en": "Bachelor",
@@ -904,12 +928,20 @@
           "url_de": "https://www.epfl.ch/education/phd/de/"
         },
         {
-          "name_fr": "Formation continue",
+          "name_fr": "Formation continue - Extension School",
           "url_fr": "https://www.epfl.ch/education/continuing-education/fr/",
-          "name_en": "Continuing Education",
+          "name_en": "Continuing Education - Extension School",
           "url_en": "https://www.epfl.ch/education/continuing-education/",
-          "name_de": "Weiterbildung",
+          "name_de": "Weiterbildung - Extension School",
           "url_de": "https://www.epfl.ch/education/continuing-education/"
+        },
+        {
+          "name_fr": "Gestion des études",
+          "url_fr": "https://www.epfl.ch/education/studies/",
+          "name_en": "Study Management",
+          "url_en": "https://www.epfl.ch/education/studies/en/",
+          "name_de": "Studienverwaltung",
+          "url_de": "https://www.epfl.ch/education/studies/de/"
         },
         {
           "name_fr": "International",
@@ -928,22 +960,6 @@
           "url_de": "https://www.epfl.ch/education/teaching/"
         },
         {
-          "name_fr": "Admission",
-          "url_fr": "https://www.epfl.ch/education/admission/fr/",
-          "name_en": "Admission",
-          "url_en": "https://www.epfl.ch/education/admission/",
-          "name_de": "Zulassung",
-          "url_de": "https://www.epfl.ch/education/admission/de/"
-        },
-        {
-          "name_fr": "Gestion des études",
-          "url_fr": "https://www.epfl.ch/education/studies/",
-          "name_en": "Study Management",
-          "url_en": "https://www.epfl.ch/education/studies/en/",
-          "name_de": "Studienverwaltung",
-          "url_de": "https://www.epfl.ch/education/studies/de/"
-        },
-        {
           "name_fr": "Initiatives pédagogiques",
           "url_fr": "https://www.epfl.ch/education/educational-initiatives/fr/",
           "name_en": "Educational Initiatives",
@@ -958,6 +974,22 @@
           "url_en": "https://www.epfl.ch/education/education-and-science-outreach/",
           "name_de": "Bildungs- und Wissenschaftsförderung",
           "url_de": "https://www.epfl.ch/education/education-and-science-outreach/de/"
+        },
+        {
+          "name_fr": "Infrastructures en développement",
+          "url_fr": "https://www.epfl.ch/education/fr/infrastructures-en-developpement/",
+          "name_en": "Infrastructures Under Development",
+          "url_en": "https://www.epfl.ch/education/infrastructures-under-development/",
+          "name_de": "Infrastrukturen in Entwicklung",
+          "url_de": "https://www.epfl.ch/education/infrastructures-under-development/"
+        },
+        {
+          "name_fr": "Engagement envers la société",
+          "url_fr": "https://www.epfl.ch/education/fr/engagement-envers-la-societe/",
+          "name_en": "Engaging with Society",
+          "url_en": "https://www.epfl.ch/education/engagement-with-society/",
+          "name_de": "Engagement mit der Gesellschaft",
+          "url_de": "https://www.epfl.ch/education/engagement-with-society/"
         }
       ]
     },
@@ -967,39 +999,23 @@
       "heading_de": "Forschung",
       "items": [
         {
+          "name_fr": "Mission et stratégie",
+          "url_fr": "https://www.epfl.ch/research/fr/mission-et-strategie/",
+          "name_en": "Mission and Policy",
+          "url_en": "https://www.epfl.ch/research/mission-and-policy/",
+          "name_de": "Forschungsbereiche",
+          "url_de": "https://www.epfl.ch/research/mission-and-policy/"
+        },
+        {
           "name_fr": "Domaines de recherche",
           "url_fr": "https://www.epfl.ch/research/domains/fr/",
           "name_en": "Research Domains",
           "url_en": "https://www.epfl.ch/research/domains/",
           "name_de": "Forschungsbereiche",
-          "url_de": "https://www.epfl.ch/research/domains/de/"
+          "url_de": "https://www.epfl.ch/research/domains/"
         },
         {
-          "name_fr": "Professeur·es de l’EPFL",
-          "url_fr": "https://www.epfl.ch/research/faculty-members/fr/",
-          "name_en": "Faculty Members",
-          "url_en": "https://www.epfl.ch/research/faculty-members/",
-          "name_de": "Lehrkörper",
-          "url_de": "https://www.epfl.ch/research/faculty-members/de/"
-        },
-        {
-          "name_fr": "Prix et distinctions",
-          "url_fr": "https://www.epfl.ch/research/awards/fr/",
-          "name_en": "Awards & Prizes",
-          "url_en": "https://www.epfl.ch/research/awards/",
-          "name_de": "Auszeichnungen und Preise",
-          "url_de": "https://www.epfl.ch/research/awards/de/"
-        },
-        {
-          "name_fr": "Collaborer avec nos chercheuses et chercheurs",
-          "url_fr": "https://www.epfl.ch/research/collaborate/fr/",
-          "name_en": "Collaborate With Our Researchers",
-          "url_en": "https://www.epfl.ch/research/collaborate/",
-          "name_de": "Mit unseren Forscher*innen zusammenarbeiten",
-          "url_de": "https://www.epfl.ch/research/collaborate/de/"
-        },
-        {
-          "name_fr": "Les plateformes de recherche de l'EPFL",
+          "name_fr": "Les plateformes de recherche",
           "url_fr": "https://www.epfl.ch/research/facilities/fr/",
           "name_en": "EPFL Research Facilities",
           "url_en": "https://www.epfl.ch/research/facilities/",
@@ -1007,15 +1023,55 @@
           "url_de": "https://www.epfl.ch/research/facilities/de/"
         },
         {
-          "name_fr": "Accéder à nos technologies",
-          "url_fr": "https://www.epfl.ch/research/access-technology/fr/",
-          "name_en": "Access Our Technologies",
-          "url_en": "https://www.epfl.ch/research/access-technology/",
-          "name_de": "Auf unsere Technologien zugreifen",
-          "url_de": "https://www.epfl.ch/research/access-technology/de/"
+          "name_fr": "Professeur·es EPFL",
+          "url_fr": "https://www.epfl.ch/research/faculty-members/fr/",
+          "name_en": "Faculty Members",
+          "url_en": "https://www.epfl.ch/research/faculty-members/",
+          "name_de": "Lehrkörper",
+          "url_de": "https://www.epfl.ch/research/faculty-members/de/"
         },
         {
-          "name_fr": "Déontologie et éthique",
+          "name_fr": "Solutions pour la durabilité - S4S",
+          "url_fr": "https://www.epfl.ch/research/fr/solutions-pour-la-durabilite/",
+          "name_en": "Solutions 5 Sustainability - S4S",
+          "url_en": "https://www.epfl.ch/research/solutions-for-sustainability-initiative-s4s/",
+          "name_de": "Lösungen für Nachhaltigkeit - S4S",
+          "url_de": "https://www.epfl.ch/research/solutions-for-sustainability-initiative-s4s/"
+        },
+        {
+          "name_fr": "Prix et distinctions",
+          "url_fr": "https://www.epfl.ch/research/awards/fr/",
+          "name_en": "Awards and Prizes",
+          "url_en": "https://www.epfl.ch/research/awards/",
+          "name_de": "Auszeichnungen und Preise",
+          "url_de": "https://www.epfl.ch/research/awards/de/"
+        },
+        {
+          "name_fr": "Sources de financement",
+          "url_fr": "https://www.epfl.ch/research/funding/fr/",
+          "name_en": "Funding Opportunities",
+          "url_en": "https://www.epfl.ch/research/funding/",
+          "name_de": "Fördermöglichkeiten",
+          "url_de": "https://www.epfl.ch/research/funding/"
+        },
+        {
+          "name_fr": "Soutien en gestion de recherche",
+          "url_fr": "https://www.epfl.ch/research/management-support/fr/",
+          "name_en": "Research Management Support",
+          "url_en": "https://www.epfl.ch/research/management-support/",
+          "name_de": "Unterstützung im Forschungsmanagement",
+          "url_de": "https://www.epfl.ch/research/management-support/"
+        },
+        {
+          "name_fr": "Du labo au marché",
+          "url_fr": "https://www.epfl.ch/research/technology-transfer/fr/",
+          "name_en": "From Lab to Market",
+          "url_en": "https://www.epfl.ch/research/technology-transfer/",
+          "name_de": "Vom Labor zum Markt",
+          "url_de": "https://www.epfl.ch/research/technology-transfer/"
+        },
+        {
+          "name_fr": "Ethique de la recherche",
           "url_fr": "https://www.epfl.ch/research/ethic-statement/fr/",
           "name_en": "Research Ethics",
           "url_en": "https://www.epfl.ch/research/ethic-statement/",
@@ -1025,34 +1081,18 @@
         {
           "name_fr": "La recherche avec les animaux",
           "url_fr": "https://www.epfl.ch/research/fr/recherche-avec-les-animaux-experimentation-animale/",
-          "name_en": "Research With Animals",
+          "name_en": "Research with Animals",
           "url_en": "https://www.epfl.ch/research/experimentation-research-with-animals/",
           "name_de": "Forschung mit Tieren",
           "url_de": "https://www.epfl.ch/research/de/forschung-mit-tieren-tierversuche/"
         },
         {
-          "name_fr": "Rencontrer les unités de soutien à la recherche",
-          "url_fr": "https://www.epfl.ch/research/fr/rencontrer-les-unites-de-soutien-a-la-recherche/",
-          "name_en": "Meet the Support Units For Research",
-          "url_en": "https://www.epfl.ch/research/meet-the-support-units-for-research/",
-          "name_de": "Unterstützungsstellen für Forschung treffen",
-          "url_de": "https://www.epfl.ch/research/de/unterstutzungsstellen-fur-forschung-treffen/"
-        },
-        {
-          "name_fr": "Services aux laboratoires",
-          "url_fr": "https://www.epfl.ch/research/services/fr/",
-          "name_en": "Services to EPFL Laboratories",
-          "url_en": "https://www.epfl.ch/research/services/",
-          "name_de": "Dienste für EPFL-Labore",
-          "url_de": "https://www.epfl.ch/research/services/de/"
-        },
-        {
-          "name_fr": "Open Science",
+          "name_fr": "La science ouverte",
           "url_fr": "https://www.epfl.ch/research/open-science/fr/",
           "name_en": "Open Science",
           "url_en": "https://www.epfl.ch/research/open-science/",
           "name_de": "Open Science",
-          "url_de": "https://www.epfl.ch/research/open-science/de/"
+          "url_de": "https://www.epfl.ch/research/open-science/"
         }
       ]
     },
@@ -1062,20 +1102,20 @@
       "heading_de": "Innovation",
       "items": [
         {
-          "name_fr": "Domaines d'innovation",
-          "url_fr": "https://www.epfl.ch/innovation/domains/fr/",
-          "name_en": "Innovation Initiatives",
-          "url_en": "https://www.epfl.ch/innovation/domains/",
-          "name_de": "Innovationsbereiche",
-          "url_de": "https://www.epfl.ch/innovation/domains/de/"
-        },
-        {
           "name_fr": "Collaboration avec l'industrie",
           "url_fr": "https://www.epfl.ch/innovation/industry/fr/",
           "name_en": "Industry Collaboration",
           "url_en": "https://www.epfl.ch/innovation/industry/",
           "name_de": "Zusammenarbeit mit der Industrie",
           "url_de": "https://www.epfl.ch/innovation/industry/de/"
+        },
+        {
+          "name_fr": "Domaines d'innovation",
+          "url_fr": "https://www.epfl.ch/innovation/domains/fr/",
+          "name_en": "Innovation Initiatives",
+          "url_en": "https://www.epfl.ch/innovation/domains/",
+          "name_de": "Innovationsbereiche",
+          "url_de": "https://www.epfl.ch/innovation/domains/de/"
         },
         {
           "name_fr": "Startup launchpad",
