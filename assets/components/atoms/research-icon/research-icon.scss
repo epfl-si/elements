@@ -1,0 +1,136 @@
+@charset 'utf-8';
+
+.research-icon {
+  display: inline-block;
+  padding: 0.7rem;
+  background: gray('100');
+  border-radius: 0.17rem;
+  line-height: 0;
+
+  .icon {
+    top: 0;
+    font-size: 24px;
+    color: $white;
+  }
+}
+
+.research-icon-details {
+  min-height: 2.6em;
+  text-decoration: none !important;
+  vertical-align: bottom;
+
+  &:hover {
+    background: $gray-600;
+    color: white;
+  }
+
+  .user {
+    position: relative;
+    top: 2px;
+    line-height: 24px;
+    vertical-align: bottom;
+  }
+
+  .icon + .user {
+    margin-left: .25em;
+    top: -1px;
+    line-height: 1em;
+  }
+}
+
+a.research-icon {
+  margin-bottom: $spacer * 0.3;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    background-image 0.2s ease;
+
+  &:hover,
+  &:focus {
+    transform: translateY(-0.2rem);
+    box-shadow: 0;
+  }
+}
+
+.research-icon-orcid {
+  background-color: $orcid;
+}
+
+.research-icon-googlescholar {
+  background-color: $googlescholar;
+}
+
+.research-icon-scopus {
+  background-color: $scopus;
+}
+
+.research-icon-stackoverflow {
+  background-color: $stackoverflow;
+}
+
+.research-icon-wos {
+  background-color: $wos;
+}
+
+.research-icon-round {
+  border-radius: 100% !important;
+  padding: 0.8rem;
+  &:before { border-radius: 100% !important; }
+}
+
+.research-icon-negative {
+  padding: 0.5rem;
+  background: transparent;
+  transition: background 0.2s;
+
+  .icon {
+    font-size: 1.5rem;
+    color: $body-color;
+    transition: fill 0.2s;
+  }
+
+  &:hover {
+    background: $red !important;
+
+    .icon {
+      color: $white !important;
+    }
+  }
+}
+
+.research-icon-discrete {
+  .icon {
+    transition: fill 0.2s ease;
+  }
+
+  &:not(:hover) {
+    background: gray('100');
+
+    .icon {
+      color: gray('600');
+    }
+  }
+}
+
+.research-icon-list {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin: 0;
+
+  li {
+    margin-bottom: 0.25rem;
+
+    .research-icon {
+      margin: 0;
+    }
+
+    &:not(:last-child) {
+      margin-right: 0.25rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+    }
+  }
+}

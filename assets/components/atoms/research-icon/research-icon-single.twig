@@ -1,0 +1,9 @@
+{% set pretty_name_ri = pretty_name_ri ?: 'scopus' %}
+{% set icon_ri = icon_ri ?: 'icon-scopus' %}
+{% set round_ri = round_ri ? ' research-icon-round' : '' %}
+{% set discrete_ri = discrete_ri ? ' research-icon-discrete' : '' %}
+{% set negative_ri = negative_ri ? ' research-icon-negative' : '' %}
+<span class="{{ 'research-icon research-' ~ icon_ri ~ round_ri ~ negative_ri }}">
+  {% include '@atoms/icon/icon.twig' with { icon: icon_ri } %}
+  <span class="sr-only">{{ pretty_name }}</span>
+</span>

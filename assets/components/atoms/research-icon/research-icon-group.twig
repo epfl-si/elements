@@ -1,0 +1,21 @@
+{% set round_ri = round_ri ? round_ri : false %}
+{% set discrete_ri = discrete_ri ? discrete_ri : false %}
+{% set negative_ri = negative_ri ? negative_ri : false %}
+
+<ul class="research-icon-list list-inline">
+  <li>
+    {% include '@atoms/research-icon/research-icon-single.twig' with { pretty_name_ri: 'OrcID', icon_ri: 'icon-orcid', round_ri: round_ri, discrete_ri: discrete_ri, negative_ri: negative_ri, url: 'https://orcid.org/' } %}
+  </li>
+  <li>
+    {% include '@atoms/research-icon/research-icon-single.twig' with { pretty_name_ri: 'Google Scholar', icon_ri: 'icon-googlescholar', round_ri: round_ri, discrete_ri: discrete_ri, negative_ri: negative_ri, url: 'https://scholar.google.com/' } %}
+  </li>
+  <li>
+    {% include '@atoms/research-icon/research-icon-single.twig' with { pretty_name_ri: 'Scopus', icon_ri: 'icon-scopus', round_ri: round_ri, discrete_ri: discrete_ri, negative_ri: negative_ri, url: 'https://www.scopus.com/' } %}
+  </li>
+  <li>
+    {% include '@atoms/research-icon/research-icon-single.twig' with { pretty_name_ri: 'Stack Overflow', icon_ri: 'icon-stackoverflow', round_ri: round_ri, discrete_ri: discrete_ri, negative_ri: negative_ri, url: 'https://stackoverflow.com/' } %}
+  </li>
+  <li>
+    {% include '@atoms/research-icon/research-icon-single.twig' with { pretty_name_ri: 'Publons - Web of Science', icon_ri: 'icon-wos', round_ri: round_ri, discrete_ri: discrete_ri, negative_ri: negative_ri, url: 'https://www.webofscience.com/' } %}
+  </li>
+</ul>

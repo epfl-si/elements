@@ -1,5 +1,5 @@
-title: Social icon
-name: social-icon
+title: Research icon
+name: research-icon
 variants:
   - name: link
     title: Link
@@ -21,17 +21,9 @@ variants:
     title: Negative Link
 notes: |
 
-  Icons to accomodate social boxes. The available social networks are:
-  * `e-mail`
-  * `facebook`
-  * `instagram`
-  * `linkedin`
-  * `mastodon`
-  * `matrix`
-  * `tiktok`
-  * `whatsapp`
-  * `x`
-  * `bluesky`
-  * `youtube`
-  * `github`
-  * `gitlab`
+  Icons to accomodate research boxes. The available research ids are:
+  * `orcid`
+  * `googlescholar`
+  * `scopus`
+  * `stackoverflow`
+  * `wos`
