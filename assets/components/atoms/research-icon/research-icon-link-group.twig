@@ -1,21 +1,21 @@
-{% set round = round ? round : false %}
-{% set discrete = discrete ? discrete : false %}
-{% set negative = negative ? negative : false %}
+{% set round_ri = round_ri ? round_ri : false %}
+{% set discrete_ri = discrete_ri ? discrete_ri : false %}
+{% set negative_ri = negative_ri ? negative_ri : false %}
 
 <ul class="research-icon-list list-inline">
   <li>
-    {% include '@atoms/research-icon/research-icon-single-link.twig' with { pretty_name: 'OrcID', icon: 'icon-orcid', round: round, discrete: discrete, negative: negative, url: 'https://orcid.org/' } %}
+    {% include '@atoms/research-icon/research-icon-single-link.twig' with { pretty_name_ri: 'OrcID', icon: 'icon-orcid', round_ri: round_ri, discrete_ri: discrete_ri, negative_ri: negative_ri, url: 'https://orcid.org/' } %}
   </li>
   <li>
-    {% include '@atoms/research-icon/research-icon-single-link.twig' with { pretty_name: 'Google Scholar', icon: 'icon-googlescholar', round: round, discrete: discrete, negative: negative, url: 'https://scholar.google.com/' } %}
+    {% include '@atoms/research-icon/research-icon-single-link.twig' with { pretty_name_ri: 'Google Scholar', icon: 'icon-googlescholar', round_ri: round_ri, discrete_ri: discrete_ri, negative_ri: negative_ri, url: 'https://scholar.google.com/' } %}
   </li>
   <li>
-    {% include '@atoms/research-icon/research-icon-single-link.twig' with { pretty_name: 'Scopus', icon: 'icon-scopus', round: round, discrete: discrete, negative: negative, url: 'https://www.scopus.com/' } %}
+    {% include '@atoms/research-icon/research-icon-single-link.twig' with { pretty_name_ri: 'Scopus', icon: 'icon-scopus', round_ri: round_ri, discrete_ri: discrete_ri, negative_ri: negative_ri, url: 'https://www.scopus.com/' } %}
   </li>
   <li>
-    {% include '@atoms/research-icon/research-icon-single-link.twig' with { pretty_name: 'Stack Overflow', icon: 'icon-stackoverflow', round: round, discrete: discrete, negative: negative, url: 'https://stackoverflow.com/' } %}
+    {% include '@atoms/research-icon/research-icon-single-link.twig' with { pretty_name_ri: 'Stack Overflow', icon: 'icon-stackoverflow', round_ri: round_ri, discrete_ri: discrete_ri, negative_ri: negative_ri, url: 'https://stackoverflow.com/' } %}
   </li>
   <li>
-    {% include '@atoms/research-icon/research-icon-single-link.twig' with { pretty_name: 'Publons - Web of Science', icon: 'icon-wos', round: round, discrete: discrete, negative: negative, url: 'https://www.webofscience.com' } %}
+    {% include '@atoms/research-icon/research-icon-single-link.twig' with { pretty_name_ri: 'Publons - Web of Science', icon: 'icon-wos', round_ri: round_ri, discrete_ri: discrete_ri, negative_ri: negative_ri, url: 'https://www.webofscience.com' } %}
   </li>
 </ul>
