@@ -15,6 +15,11 @@
   <li>
     {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on Mastodon', icon: 'icon-mastodon', round: round, discrete: discrete, negative: negative, url: 'https://social.epfl.ch/@epfl/' } %}
   </li>
+    {%  if social_matrix %}
+  <li>
+    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Get in touch on Matrix', icon: 'icon-matrix', round: round, discrete: discrete, negative: negative, url: 'https://matrix.to/#/@username:epfl.ch' } %}
+  </li>
+  {% endif %}
   {%  if social_tiktok %}
   <li>
     {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on TikTok', icon: 'icon-tiktok', round: round, discrete: discrete, negative: negative, url: 'https://www.tiktok.com/@epflstudents' } %}
