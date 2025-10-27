@@ -15,6 +15,7 @@
   max-width: 60% !important;
 }
 .introjs-helperNumberLayer { background: theme-color('primary') !important; }
+.introjs-bullets ul li:before { content: none; }
 
 .focused {
   position: relative;
