@@ -10193,6 +10193,10 @@ table {
   background: #ff0000 !important;
 }
 
+.introjs-bullets ul li:before {
+  content: none;
+}
+
 .focused, .btn {
   position: relative;
 }
@@ -12490,6 +12494,35 @@ a.research-icon:hover, a.research-icon:focus {
   height: 25px;
 }
 
+.ms-search {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  min-height: 30px;
+  padding: 0.5em 1em;
+  white-space: nowrap;
+  z-index: 10000;
+  box-sizing: border-box;
+}
+.ms-search input {
+  width: 100%;
+  height: auto !important;
+  margin: 0;
+  min-height: 28px;
+  padding: 0 5px;
+  outline: 0;
+  border: 1px solid #8e8e8e;
+  border-radius: 2px;
+  box-shadow: none;
+}
+.ms-search input:focus, .ms-search input.focus, .ms-search input:focus-visible {
+  border-color: #212121 !important;
+  box-shadow: none !important;
+  outline: 2px solid #707070;
+  outline-offset: 2px;
+}
+
 .ms-drop {
   display: none;
   position: absolute;
@@ -12537,6 +12570,9 @@ a.research-icon:hover, a.research-icon:focus {
 .ms-drop ul > li.group {
   clear: both;
 }
+.ms-drop ul > li.group ~ li.option-level-1:not(.hide-radio) > label {
+  padding-left: 3em;
+}
 .ms-drop ul > li.option-divider {
   padding: 0;
   border-top: 1px solid #c1c1c1;
@@ -12556,13 +12592,17 @@ a.research-icon:hover, a.research-icon:focus {
 .ms-drop label.optgroup {
   font-weight: 700;
 }
+.ms-drop label.optgroup input[type=checkbox] {
+  margin-right: 0.6em;
+}
 .ms-drop input[type=checkbox] {
   vertical-align: middle;
-  margin-right: 0.5em;
+  margin-right: 0.3em;
   margin-bottom: 0.25em;
 }
 .ms-drop .ms-no-results {
   display: none;
+  padding: 0 1em;
 }
 
 hr {
