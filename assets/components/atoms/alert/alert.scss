@@ -32,7 +32,10 @@ $alert-icons: (
   .alert-#{$color} {
     border-color: $value;
     hr { border-top-color: color.adjust($value, $lightness: -5%); }
-    .alert-link { font-weight: 400; color: $body-color; text-decoration: underline; text-decoration-color: $value; }
+    .alert-link { font-weight: 400; color: $body-color; text-decoration: underline; text-decoration-color: $value;
+      &:hover, &:focus, &:active, &:visited {color: $value; text-decoration-color: $body-color; }
+    }
+
   }
 }
 
