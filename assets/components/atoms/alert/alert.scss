@@ -32,7 +32,8 @@ $alert-icons: (
   .alert-#{$color} {
     border-color: $value;
     hr { border-top-color: color.adjust($value, $lightness: -5%); }
-    .alert-link { color: color.adjust($value, $lightness: -10%); }
+    .alert-link {font-weight: 400; color: $body-color; }
+    .alert-link { text-decoration: underline; text-decoration-color: $value;}
   }
 }
 
