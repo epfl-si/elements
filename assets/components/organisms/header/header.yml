@@ -23,10 +23,13 @@ variants:
       * EPFL logo should link to the main EPFL website (https://www.epfl.ch);
       * Sub site name should link to the sub site homepage (e.g. https://actu.epfl.ch, https://people.epfl.ch, etc );
       * Use `<p class="site-title">` for the sub site title rather than a `<h1>` tag – `<h1>` title should be placed in the page content instead.
-      * **Be very careful with the use of ARIA for the submenu component** (remember: no ARIA is better than bad ARIA). The following attributes should be used:
-        * `aria-haspopup="true"`, `aria-expanded="false"` and `aria-controls="dropdownSubMenuID"` on the submenu toggle button (`.dropdown-toggle`)
-        * when the submenu is open, `aria-expanded` will automatically be set to `true`
-        * `aria-labelledby="dropdownMenuButton"` on `.dropdown-menu`
+
+      ⚠️ **Be very careful with the use of ARIA for the submenu component** (remember: no ARIA is better than bad ARIA). The following attributes should be used:
+        * `aria-haspopup="true"`, `aria-expanded="false"` and `aria-controls="dropdownSubMenuID"` **on the submenu toggle button** (`.dropdown-toggle`).
+          * When the submenu is open, `aria-expanded` will automatically be set to `true`.
+          * `dropdownSubMenuID` must match the ID of `.dropdown-menu`.
+        * `aria-labelledby="dropdownMenuButton"` **on the submenu `<ul>` wrapper** (`.dropdown-menu`).
+          *`dropdownMenuButton` must match the ID of the submenu toggle button (`.dropdown-toggle`).
 notes: |
   **Current item highlight**
 
