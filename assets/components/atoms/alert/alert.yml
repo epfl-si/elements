@@ -11,3 +11,10 @@ variants:
       * `alert-info` — used to display an interesting yet non-critical information.
       * `alert-warning` — used for unexpected events, that people must pay attention.
       * `alert-danger` — used for critical information: an error or the unavailability of a service.
+
+  - name: unclosable
+    title: Unclosable Alert
+    notes: |
+      This variant cannot be closed by the user.
+
+      It can be combined with the variants of the alert component `alert-success`, `alert-info`, `alert-warning` and `alert-danger`.
