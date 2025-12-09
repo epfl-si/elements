@@ -17,4 +17,4 @@ variants:
     notes: |
       This variant cannot be closed by the user.
 
-      It can be combined with the variants of the alert component `alert-success`, `alert-info`, `alert-warning` and `alert-danger`
+      It can be combined with the variants of the alert component `alert-success`, `alert-info`, `alert-warning` and `alert-danger`.
