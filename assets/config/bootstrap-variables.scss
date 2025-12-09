@@ -776,7 +776,8 @@ $alert-padding-y:                   0.4rem !default;
 $alert-padding-x:                   0.6rem !default;
 $alert-margin-bottom:               1rem !default;
 $alert-border-radius:               0 !default;
-$alert-link-font-weight:            $font-weight-bold !default;
+$alert-link-text-decoration:        underline;
+$alert-link-font-weight:            $font-weight-normal !default;
 $alert-border-width:                $border-width !default;
 
 $alert-bg-level:                    -10 !default;
