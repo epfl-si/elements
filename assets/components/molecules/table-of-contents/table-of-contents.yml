@@ -7,3 +7,7 @@ notes: |
 variants:
   - name: inline
     title: Inline
+  - name: multi-level
+    title: Multiple title levels
+    notes: |
+      You can use nested lists to reflect the document hierarchy.
