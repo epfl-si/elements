@@ -1,0 +1,18 @@
+.table-of-contents {
+  ul:not(.list-inline) {
+    li:before {
+      content: "";
+    }
+  }
+  ol,ul {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .list-inline {
+
+    li {
+      font-size: 1rem;
+    }
+  }
+}
