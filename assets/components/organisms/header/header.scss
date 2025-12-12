@@ -109,27 +109,25 @@
       }
     }
 
-    .dropdown-item {
-      & > a {
-        width: 100%;
-        padding: 0.25rem 1.25rem;
-        font-weight: $font-weight-normal;
+    .dropdown-item > a,
+    a.dropdown-item {
+      width: 100%;
+      padding: 0.25rem 1.25rem;
+      font-weight: $font-weight-normal;
 
-        &:after { content: none; }
-        &:hover { color: $black; }
+      &:after { content: none; }
+      &:hover { color: $black; }
 
-        &:focus,
-        &:hover {
-          background: $gray-100;
-        }
+      &:focus,
+      &:hover {
+        background: $gray-100;
       }
-      &.current-menu-item {
+    }
 
-        a {
-          background: $gray-600;
-          color: $white;
-        }
-      }
+    .dropdown-item.current-menu-item > a,
+    a.dropdown-item.active {
+      background: $gray-600;
+      color: $white;
     }
 
     .icon { font-size: 0.9em; }
