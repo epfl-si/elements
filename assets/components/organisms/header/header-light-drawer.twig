@@ -9,17 +9,17 @@
     <p class="site-title">
       <a href="#">{{site_title}}</a>
     </p>
-    <ul aria-hidden="true" class="nav-header d-none d-xl-flex">
+    <ul class="nav-header d-none d-xl-flex">
       {% if dropdown %}
       <li class="dropdown">
-        <button class="btn btn-link dropdown-toggle nav-item" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-link dropdown-toggle nav-item" type="button" id="dropdownMenuButton-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="dropdownSubMenu-1">
           Liste des options
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Option 1</a>
-          <a class="dropdown-item active" href="#">Option 2</a>
-          <a class="dropdown-item" href="#">Option 3</a>
-        </div>
+        <ul id="dropdownSubMenu-1" class="dropdown-menu" aria-labelledby="dropdownMenuButton-1">
+          <li class="dropdown-item"><a href="#">Option 1</a></li>
+          <li class="dropdown-item current-menu-item"><a href="#">Option 2</a></li>
+          <li class="dropdown-item"><a href="#">Option 3</a></li>
+        </ul>
       </li>
       {% else %}
         {% for i in 1..5 %}
