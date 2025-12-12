@@ -4074,7 +4074,7 @@ a.badge-tertiary:focus, a.badge-tertiary.focus {
 }
 
 .alert-link {
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .alert-dismissible {
@@ -11121,7 +11121,12 @@ button.tag.tag-plain:focus .remove {
   border-top-color: #e60000;
 }
 .alert-primary .alert-link {
-  color: #cc0000;
+  color: #212121;
+  text-decoration-color: #ff0000;
+}
+.alert-primary .alert-link:hover, .alert-primary .alert-link:focus, .alert-primary .alert-link:active, .alert-primary .alert-link:visited {
+  color: #ff0000;
+  text-decoration-color: #212121;
 }
 
 .alert-secondary {
@@ -11131,7 +11136,12 @@ button.tag.tag-plain:focus .remove {
   border-top-color: #f2f2f2;
 }
 .alert-secondary .alert-link {
-  color: #e6e6e6;
+  color: #212121;
+  text-decoration-color: #fff;
+}
+.alert-secondary .alert-link:hover, .alert-secondary .alert-link:focus, .alert-secondary .alert-link:active, .alert-secondary .alert-link:visited {
+  color: #fff;
+  text-decoration-color: #212121;
 }
 
 .alert-success {
@@ -11141,7 +11151,12 @@ button.tag.tag-plain:focus .remove {
   border-top-color: #71bd1e;
 }
 .alert-success .alert-link {
-  color: #64a71a;
+  color: #212121;
+  text-decoration-color: #7ed321;
+}
+.alert-success .alert-link:hover, .alert-success .alert-link:focus, .alert-success .alert-link:active, .alert-success .alert-link:visited {
+  color: #7ed321;
+  text-decoration-color: #212121;
 }
 
 .alert-info {
@@ -11151,7 +11166,12 @@ button.tag.tag-plain:focus .remove {
   border-top-color: #3483de;
 }
 .alert-info .alert-link {
-  color: #2275d7;
+  color: #212121;
+  text-decoration-color: #4a90e2;
+}
+.alert-info .alert-link:hover, .alert-info .alert-link:focus, .alert-info .alert-link:active, .alert-info .alert-link:visited {
+  color: #4a90e2;
+  text-decoration-color: #212121;
 }
 
 .alert-warning {
@@ -11161,7 +11181,12 @@ button.tag.tag-plain:focus .remove {
   border-top-color: #f39c0b;
 }
 .alert-warning .alert-link {
-  color: #db8c0a;
+  color: #212121;
+  text-decoration-color: #f5a623;
+}
+.alert-warning .alert-link:hover, .alert-warning .alert-link:focus, .alert-warning .alert-link:active, .alert-warning .alert-link:visited {
+  color: #f5a623;
+  text-decoration-color: #212121;
 }
 
 .alert-danger {
@@ -11171,7 +11196,12 @@ button.tag.tag-plain:focus .remove {
   border-top-color: #e60000;
 }
 .alert-danger .alert-link {
-  color: #cc0000;
+  color: #212121;
+  text-decoration-color: #ff0000;
+}
+.alert-danger .alert-link:hover, .alert-danger .alert-link:focus, .alert-danger .alert-link:active, .alert-danger .alert-link:visited {
+  color: #ff0000;
+  text-decoration-color: #212121;
 }
 
 .alert-light {
@@ -11181,7 +11211,12 @@ button.tag.tag-plain:focus .remove {
   border-top-color: #d9d9d9;
 }
 .alert-light .alert-link {
-  color: #cdcdcd;
+  color: #212121;
+  text-decoration-color: #e6e6e6;
+}
+.alert-light .alert-link:hover, .alert-light .alert-link:focus, .alert-light .alert-link:active, .alert-light .alert-link:visited {
+  color: #e6e6e6;
+  text-decoration-color: #212121;
 }
 
 .alert-dark {
@@ -11191,7 +11226,12 @@ button.tag.tag-plain:focus .remove {
   border-top-color: #141414;
 }
 .alert-dark .alert-link {
-  color: #080808;
+  color: #212121;
+  text-decoration-color: #212121;
+}
+.alert-dark .alert-link:hover, .alert-dark .alert-link:focus, .alert-dark .alert-link:active, .alert-dark .alert-link:visited {
+  color: #212121;
+  text-decoration-color: #212121;
 }
 
 .alert-tertiary {
@@ -11201,7 +11241,12 @@ button.tag.tag-plain:focus .remove {
   border-top-color: #005d67;
 }
 .alert-tertiary .alert-link {
-  color: #00464d;
+  color: #212121;
+  text-decoration-color: #007480;
+}
+.alert-tertiary .alert-link:hover, .alert-tertiary .alert-link:focus, .alert-tertiary .alert-link:active, .alert-tertiary .alert-link:visited {
+  color: #007480;
+  text-decoration-color: #212121;
 }
 
 .alert-success:before {
@@ -11901,9 +11946,6 @@ header.collapse-title + .collapse-item:before {
     width: auto;
     height: 2.5rem;
     padding: 0.5rem 1.5rem 0.5rem 0.625rem;
-  }
-  .nav-lang .icon {
-    display: none;
   }
 }
 .nav-toggle-mobile {
