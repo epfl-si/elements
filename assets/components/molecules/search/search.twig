@@ -1,9 +1,9 @@
 {% if language is not defined %}{% set language = 'fr' %}{% endif %}
 
 <div class="dropdown dropright search d-none d-xl-block">
-  <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+  <button class="dropdown-toggle" href="#" data-toggle="dropdown">
     {% include "@atoms/icon/icon.twig" with { icon: 'icon-search' } %}
-  </a>
+  </button>
   <form action="#" class="dropdown-menu border-0 p-0">
     <div class="search-form mt-1 input-group">
       {% if language == 'fr' %}
