@@ -15,6 +15,11 @@ const nav = () => {
     }
 
     $('body').toggleClass('mobile-menu-open');
+
+    // update aria-expanded attribute
+    $('.nav-toggle-mobile').attr('aria-expanded',
+      $('.nav-toggle-mobile').attr('aria-expanded') == 'false' ? 'true' : 'false'
+    );
   };
 
   // Open or close desktop toggle navigation, keeping its actual position.
