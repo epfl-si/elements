@@ -3,6 +3,12 @@
 <div class="dropdown dropright search d-none d-xl-block">
   <button class="dropdown-toggle" href="#" data-toggle="dropdown">
     {% include "@atoms/icon/icon.twig" with { icon: 'icon-search' } %}
+    {% if language == 'fr' %}
+    <span class="sr-only">Afficher le formulaire de recherche</span>
+    {% endif %}
+    {% if language == 'en' %}
+    <span class="sr-only">Show search form</span>
+    {% endif %}
   </button>
   <form action="#" class="dropdown-menu border-0 p-0">
     <div class="search-form mt-1 input-group">
