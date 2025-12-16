@@ -22,8 +22,8 @@ variants:
         * `aria-haspopup="true"`, `aria-expanded="false"` and `aria-controls="dropdownSubMenuID"` **on the submenu toggle button** (`.dropdown-toggle`).
           * When the submenu is open, `aria-expanded` will automatically be set to `true`.
           * `dropdownSubMenuID` must match the ID of `.dropdown-menu`.
-        * `aria-labelledby="dropdownMenuButton"` **on the submenu `<ul>` wrapper** (`.dropdown-menu`).
-          *`dropdownMenuButton` must match the ID of the submenu toggle button (`.dropdown-toggle`).
+          * `aria-labelledby="dropdownMenuButton"` **on the submenu `<ul>` wrapper** (`.dropdown-menu`).
+          * `dropdownMenuButton` must match the ID of the submenu toggle button (`.dropdown-toggle`).
   - name: light-drawer
     title: Header light with drawer
     notes: |
