@@ -1,0 +1,13 @@
+title: Table of contents
+name: table-of-contents
+notes: |
+  To create an anchor, the target ID must be located directly on the section title. **Avoid using an empty `<a>` tag.**
+
+  The `href` of the link must match the ID of the target title.
+variants:
+  - name: inline
+    title: Inline
+  - name: multi-level
+    title: Multiple title levels
+    notes: |
+      You can use nested lists to reflect the document hierarchy.
