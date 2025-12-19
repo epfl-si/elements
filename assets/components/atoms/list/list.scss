@@ -108,7 +108,7 @@ ol {
 .list-inline,
 .nav,
 .nav-lang,
-nav {
+nav:not(.table-of-contents) {
 
   li {
     padding-left: 0;
