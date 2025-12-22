@@ -70,7 +70,6 @@
       a.open,
       a.active,
       &.active a,
-      a:focus,
       &.current-menu-item a {
         color: $red;
 
@@ -110,11 +109,25 @@
       }
     }
 
-    .dropdown-item {
+    .dropdown-item > a,
+    a.dropdown-item {
+      width: 100%;
       padding: 0.25rem 1.25rem;
       font-weight: $font-weight-normal;
+
       &:after { content: none; }
       &:hover { color: $black; }
+
+      &:focus,
+      &:hover {
+        background: $gray-100;
+      }
+    }
+
+    .dropdown-item.current-menu-item > a,
+    a.dropdown-item.active {
+      background: $gray-600;
+      color: $white;
     }
 
     .icon { font-size: 0.9em; }
