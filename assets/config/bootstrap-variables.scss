@@ -31,11 +31,12 @@ $grays: map-merge((
 
 $blue:    #4a90e2!default;
 $red:     #ff0000 !default;
+$red-text: #c73333;
 $red-dark:#b51f1f !default;
 $orange:  #f5a623 !default;
 $green:   #7ed321 !default;
-
-$green-text: #699b32;
+$green-dark: #699b32;
+$green-text: #487915;
 
 $colors: () !default;
 $colors: map-merge((

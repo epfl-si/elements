@@ -56,9 +56,15 @@
       color: $white;
       box-shadow: none !important;
       border-radius: 0;
+      margin-block: 0.25rem;
 
       &::placeholder {
         color: gray('300');
+      }
+
+      &:focus-visible {
+        outline-color: white !important;
+        outline-offset: 0;
       }
     }
 

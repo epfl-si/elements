@@ -1,7 +1,15 @@
 @charset "utf-8";
 
-.custom-select {
+.custom-select,
+.ms-choice {
   border-color: $custom-select-border-color;
+
+  &:focus {
+    border-color: $custom-select-focus-border-color;
+    box-shadow: none !important;
+    outline: 2px solid $gray-600;
+    outline-offset: 2px;
+  }
 }
 
 .ms-offscreen {
@@ -38,12 +46,6 @@
   text-decoration: none;
   line-height: $custom-select-line-height;
   color: $custom-select-color;
-
-  &:focus {
-    border-color: $custom-select-focus-border-color;
-    box-shadow: $custom-select-focus-box-shadow;
-    outline: none;
-  }
 
   &.disabled {
     background-color: $custom-select-disabled-bg;

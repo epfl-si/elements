@@ -1,0 +1,13 @@
+<div class="form-group">
+  <label for="valid-input" class="valid-label">{% if label %} {{~ label}} {% else %}Input's label{% endif %}</label>
+  <input
+    type="text"
+    id="valid-input"
+    class="form-control is-valid"
+    value="Right value"
+    aria-describedby="valid-input-help"
+  >
+  <small id="valid-input-help" class="form-text valid-feedback">
+    Looks good!
+  </small>
+</div>
