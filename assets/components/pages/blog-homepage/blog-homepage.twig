@@ -1,3 +1,5 @@
+{& set isSpecial = false %}
+
 {% extends "@templates/base/base.twig" %}
 
 {% block header %}
@@ -7,7 +9,7 @@
 {% block content %}
 
 <div class="container-full px-5 px-xxl-6 mt-5">
-  <h1>Titre du blog</h1>
+  <h1 class="page-title entry-title">Titre du blog</h1>
 </div>
 
 <div class="container-full px-5 px-xxl-6 mt-5">
@@ -17,8 +19,8 @@
     </div>
     <div class="col-lg-9">
       <div class="card-deck">
-        {% for 1 in 1..9 %}
-          {% include '@content-types/news/news-basic-teaser.twig' %}
+        {% for 1 in 1..2 %}
+          {% include '@content-types/blog-post/blog-post.twig' %}
         {% endfor %}
       </div>
       <div class="mt-3">

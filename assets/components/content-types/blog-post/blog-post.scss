@@ -1,0 +1,21 @@
+@charset 'utf-8';
+
+.post-info {
+  font-size: $font-size-sm;
+  margin-bottom: $paragraph-margin-bottom;
+  &:last-of-type { margin-bottom: 0; }
+
+  // Add the separator between the elements
+  > :not(:last-of-type) {
+    &:after {
+      content: '\002C ';
+      margin: 0 0.25em 0 0.15em;
+    }
+  }
+
+  .post-info-date:not(:last-child):after { content: ' \2013 '; }
+}
+
+.list-group-teaser-content {
+  .post-info > span { color: $text-muted; } 
+}
