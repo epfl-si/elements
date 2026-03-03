@@ -759,11 +759,11 @@
       "heading_de": "Über uns",
       "items": [
         {
-          "name_fr": "Qui sommes-nous",
+          "name_fr": "Organisation et identité",
           "url_fr": "https://www.epfl.ch/about/overview/fr/",
-          "name_en": "Who we are",
+          "name_en": "Organization and identity",
           "url_en": "https://www.epfl.ch/about/overview/",
-          "name_de": "Wer wir sind",
+          "name_de": "Organisation und Identität",
           "url_de": "https://www.epfl.ch/about/overview/de/"
         },
         {
@@ -815,12 +815,20 @@
           "url_de": "https://www.epfl.ch/about/recruiting/"
         },
         {
-          "name_fr": "News & médias",
-          "url_fr": "https://www.epfl.ch/about/news-and-media/fr/",
-          "name_en": "News & Media",
-          "url_en": "https://www.epfl.ch/about/news-and-media/",
-          "name_de": "News & Medien",
-          "url_de": "https://www.epfl.ch/about/news-and-media/de/"
+          "name_fr": "Égalité, Diversité, Inclusion",
+          "url_fr": "https://www.epfl.ch/about/equality/fr/",
+          "name_en": "Equality, Diversity, Inclusion",
+          "url_en": "https://www.epfl.ch/about/equality/",
+          "name_de": "Gleichstellung, Diversität, Inklusion",
+          "url_de": "https://www.epfl.ch/about/equality/"
+        },
+        {
+          "name_fr": "Respect",
+          "url_fr": "https://www.epfl.ch/about/respect/fr/",
+          "name_en": "Respect",
+          "url_en": "https://www.epfl.ch/about/respect/",
+          "name_de": "Respekt",
+          "url_de": "https://www.epfl.ch/about/respect/"
         },
         {
           "name_fr": "Durabilité",
@@ -831,20 +839,12 @@
           "url_de": "https://www.epfl.ch/about/sustainability/"
         },
         {
-          "name_fr": "Égalité et Diversité",
-          "url_fr": "https://www.epfl.ch/about/equality/fr/",
-          "name_en": "Equality & Diversity",
-          "url_en": "https://www.epfl.ch/about/equality/",
-          "name_de": "Chancengleichheit",
-          "url_de": "https://www.epfl.ch/about/equality/"
-        },
-        {
-          "name_fr": "Respect",
-          "url_fr": "https://www.epfl.ch/about/respect/fr/",
-          "name_en": "Respect",
-          "url_en": "https://www.epfl.ch/about/respect/",
-          "name_de": "Respekt",
-          "url_de": "https://www.epfl.ch/about/respect/"
+          "name_fr": "News & médias",
+          "url_fr": "https://www.epfl.ch/about/news-and-media/fr/",
+          "name_en": "News & Media",
+          "url_en": "https://www.epfl.ch/about/news-and-media/",
+          "name_de": "News & Medien",
+          "url_de": "https://www.epfl.ch/about/news-and-media/de/"
         },
         {
           "name_fr": "Philanthropie",
@@ -922,6 +922,14 @@
           "url_en": "https://www.epfl.ch/education/phd/",
           "name_de": "Doktorat",
           "url_de": "https://www.epfl.ch/education/phd/de/"
+        },
+        {
+          "name_fr": "Programme SHS",
+          "url_fr": "https://www.epfl.ch/education/programme-shs/fr/",
+          "name_en": "SHS Program",
+          "url_en": "https://www.epfl.ch/education/programme-shs/",
+          "name_de": "SHS-Programm",
+          "url_de": "https://www.epfl.ch/education/programme-shs/"
         },
         {
           "name_fr": "Formation continue - Extension School",
@@ -1029,7 +1037,7 @@
         {
           "name_fr": "Solutions pour la durabilité - S4S",
           "url_fr": "https://www.epfl.ch/research/fr/solutions-pour-la-durabilite/",
-          "name_en": "Solutions 5 Sustainability - S4S",
+          "name_en": "Solutions 4 Sustainability - S4S",
           "url_en": "https://www.epfl.ch/research/solutions-for-sustainability-initiative-s4s/",
           "name_de": "Lösungen für Nachhaltigkeit - S4S",
           "url_de": "https://www.epfl.ch/research/solutions-for-sustainability-initiative-s4s/"
