@@ -75,7 +75,8 @@
       }
     }
 
-    a:not(.active) {
+    a:not(.active),
+    button:not(.active) {
       background: white;
       border: 1px solid gray('500');
 
@@ -128,6 +129,18 @@
   li{
     position: relative;
     font-weight: bold;
+
+    .btn-nav-lang {
+      padding: 0;
+      border: none;
+      background-color: $white;
+      font-weight: bold;
+      color: #8e8e8e;
+
+      &:hover {
+        color: $body-color;
+      }
+    }
 
     & + li {
 
@@ -194,16 +207,10 @@
             padding: 0 0.4 * $spacer;
             line-height: $mm-lang-height;
             text-align: center;
-            //color: gray('300');
-
-            &.active{
-              //color: $white;
-            }
           }
           & + li {
             &:before {
-              //display: none;
-              top: 1.1 * $spacer
+              top: 1 * $spacer
             }
           }
         }
