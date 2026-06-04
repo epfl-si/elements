@@ -24,3 +24,8 @@ variants:
     wrapper: bg-gray-100
     notes: |
       List group variant to display a list of news item teasers
+  - name: news-briefs
+    title: News briefs
+    wrapper: bg-gray-100
+    notes: |
+      List of news brief items

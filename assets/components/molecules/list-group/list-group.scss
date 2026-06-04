@@ -219,10 +219,16 @@
 
   .list-group-teaser-excerpt {
     font-size: 1rem;
+  }
 
-    & + time {
+  .list-group-teaser-content {
+    & > time {
       font-weight: $font-weight-bold;
       color: $gray-500;
+    }
+
+    &:first-child > h3 {
+      font-size: $font-size-base;
     }
   }
 
@@ -246,5 +252,7 @@
       border: none !important;
     }
   }
+
+
 
 }
