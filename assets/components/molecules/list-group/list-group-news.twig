@@ -1,0 +1,26 @@
+{% if tite|default(true) %}
+<h3>Santé</h3>
+{% endif %}
+<div class="list-group">
+  {% for i in 1..4 %}
+      <a href="#" class="list-group-teaser list-group-news-teaser list-group-item list-group-teaser-container link-trapeze-vertical">
+        <div class="list-group-teaser-thumbnail">
+            {% include '@atoms/picture/picture-one-third.twig' %}
+        </div>
+        <div class="list-group-teaser-content">
+          <h3 class="h5 mb-1">Un endoscope à rigidité variable pour atteindre les zones difficiles</h3>
+          <div class="list-group-teaser-excerpt">
+            Naviguer dans les zones difficiles d’accès du corps humain tout en conservant une précision extrême : c’est le défi que relève...
+          </div>
+          <time datetime="2018-03-26" class="small mb-0"><span class="sr-only">Publié: </span>Aujourd'hui</time>
+        </div>
+      </a>
+  {% endfor %}
+
+  {% if bottomlink|default(true) %}
+  <a href="#" class="list-group-teaser-more">
+    Tout sur la santé
+  </a>
+  {% endif %}
+
+</div>
