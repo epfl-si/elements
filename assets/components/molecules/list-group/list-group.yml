@@ -19,3 +19,13 @@ variants:
     title: Teasers
     notes: |
       List group variant that can be used to display a teasers listing
+  - name: news
+    title: News
+    wrapper: bg-gray-100
+    notes: |
+      List group variant to display a list of news item teasers
+  - name: news-briefs
+    title: News briefs
+    wrapper: bg-gray-100
+    notes: |
+      List of news brief items
