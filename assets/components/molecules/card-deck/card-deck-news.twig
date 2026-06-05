@@ -1,0 +1,6 @@
+<h3>En ce moment</h3>
+<div class="card-deck">
+  {% include '@molecules/card/card-news.twig' %}
+  {% include '@molecules/card/card-news.twig' with { 'image_uri': "news-card-2.jpg", "media_type": "Infographie", "media_icon": "#pie-chart", "media_duration": " ", "title": "Une IA repousse la limite temporelle des vidéos génératives", "body": "Une équipe de l’EPFL a montré théoriquement que, dans des matériaux très ordonnés..." } %}
+  {% include '@molecules/card/card-news.twig' with { 'image_uri': "news-card-3.jpg", "media_type": "Vidéo", "media_icon": "#play-circle", "media_duration": "1:30", "title": "L'IA permet de dresser un «&nbsp;Who's Who&nbsp;» des ours bruns en Alaska", "body": "Une équipe de l’EPFL a montré théoriquement que, dans des matériaux très ordonnés...", "pubdate": "05.06.2026"  } %}
+</div>

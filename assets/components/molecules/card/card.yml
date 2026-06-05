@@ -6,6 +6,9 @@ variants:
     title: Full Link
   - name: inside-links
     title: Inside Links
+  - name: news
+    title: News card
+    wrapper: bg-gray-100 col-md-6
 notes: |
   The card component is the component to use for all the card-looking elements. Classes can extend it to adapt its look and feel based on the needs.
 
