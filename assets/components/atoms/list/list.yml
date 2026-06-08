@@ -9,5 +9,9 @@ variants:
     title: Inline list
   - name: unstyled
     title: Unstyled list
+  - name: ranked
+    title: Ranked list
+    wrapper: bg-gray-100
+
 notes: |
   The classic way to display a group of elements, with or without hierarchy (see the variants lower on this page). Use lists in content areas.
