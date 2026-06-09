@@ -1,0 +1,30 @@
+<div class="card-slider-wrapper">
+  <div class="card-slider">
+  {% for i in 1..10 %}
+    <div class="card-slider-cell">
+    {% include '@molecules/card/card-news-simple.twig' with { 'image_uri': "news-card-2.jpg", "title": "Une IA repousse la limite temporelle des vidéos génératives" } %}
+    </div>
+    <div class="card-slider-cell">
+    {% include '@molecules/card/card-news-simple.twig' %}
+    </div>
+    <div class="card-slider-cell">
+    {% include '@molecules/card/card-news-simple.twig' with { 'image_uri': "news-card-3.jpg", "title": "L'IA permet de dresser un «&nbsp;Who's Who&nbsp;» des ours bruns en Alaska", "pubdate": "05.06.2026"  } %}
+    </div>
+  {% endfor %}
+  </div>
+
+  <div class="card-slider-footer">
+    <div>
+      <button role="button" id="card-slider-prev" class="card-slider-btn link-trapeze-horizontal disabled">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-chevron-left"></use>
+        </svg>
+      </button>
+      <button role="button" id="card-slider-next" class="card-slider-btn link-trapeze-horizontal">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-chevron-right"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>

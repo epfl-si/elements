@@ -16,7 +16,7 @@
   {% block card_body %}
   <div class="card-body">
     {% block content %}
-    <h3 class="h5 card-title">{{ title|default("L'illusion de neutralité occulte les biais de l'IA générative") }}</h3>
+    <h3 class="h5 card-title mb-1">{{ title|default("L'illusion de neutralité occulte les biais de l'IA générative") }}</h3>
     <p>{{ body|default("Une équipe de l’EPFL a montré théoriquement que, dans des matériaux très ordonnés...") }}</p>
     <time datetime="2018-03-26" class="small mb-0"><span class="sr-only">Publié: </span>{{ pubdate|default('Il y a 2 jours') }}</time>
     {% endblock %}
