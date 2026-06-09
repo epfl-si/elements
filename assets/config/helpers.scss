@@ -108,6 +108,21 @@
     transition: opacity 0.2s;
   }
 
+  &.spaced-after {
+    gap: ($spacer * .5);
+  }
+
+  &.red-arrow:after {
+    content: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='#{$primary}' d='M11.586 7L6.293 1.707 7.707.293 15.414 8l-7.707 7.707-1.414-1.414L11.586 9H0V7h11.586z'/%3E%3C/svg%3E"), "#", "%23");
+    zoom: 0.9;
+  }
+
+  &.red-arrow:after {
+    opacity: 1;
+    fill-color: $primary;
+    align-self: end;
+  }
+
   a:hover & {
     &:after {
       opacity: 1;
