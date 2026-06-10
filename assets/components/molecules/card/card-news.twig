@@ -6,7 +6,7 @@
     <figcaption class="bg-white">
       {{ media_type|default('Podcast') }}
       <svg class="icon" aria-hidden="true">
-        <use xlink:href="{{  media_icon|default('#mic') }}"></use>
+        <use xlink:href="{{ media_icon|default('#mic') }}"></use>
       </svg>
       {{ media_duration|default('15:25') -}}
     </figcaption>
