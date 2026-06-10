@@ -6,21 +6,23 @@
   <a class="logo" href="#">
     <img src="svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
   </a>
-  <ul aria-hidden="true" class="nav-header d-none d-xl-flex">
-    {% for head in header %}
-      <li id="menu-item-{{ loop.index }}" {% if ( loop.index == 2 ) and ( showCurrentMenuItem|default(true) ) %} class="current-menu-item"{% endif %}>
-        {% if language == 'fr' %}
-        <a class="nav-item" href="{{ head.url_fr }}">{{ head.name_fr }}</a>
-        {% endif %}
-        {% if language == 'en' %}
-        <a class="nav-item" href="{{ head.url_en }}">{{ head.name_en }}</a>
-        {% endif %}
-        {% if language == 'de' %}
-          <a class="nav-item" href="{{ head.url_de }}">{{ head.name_de }}</a>
-        {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
+  <nav class="navigation" role="navigation" aria-label="Menu principal">
+    <ul class="nav-header d-none d-xl-flex">
+      {% for head in header %}
+        <li id="menu-item-{{ loop.index }}" {% if ( loop.index == 2 ) and ( showCurrentMenuItem|default(true) ) %} class="current-menu-item"{% endif %}>
+          {% if language == 'fr' %}
+          <a class="nav-item" href="{{ head.url_fr }}">{{ head.name_fr }}</a>
+          {% endif %}
+          {% if language == 'en' %}
+          <a class="nav-item" href="{{ head.url_en }}">{{ head.name_en }}</a>
+          {% endif %}
+          {% if language == 'de' %}
+            <a class="nav-item" href="{{ head.url_de }}">{{ head.name_de }}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
   {% include '@molecules/search/search.twig' %}
   {% include '@molecules/search/search-mobile.twig' %}
   {%  if nav_user %}

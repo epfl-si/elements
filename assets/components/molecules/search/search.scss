@@ -5,6 +5,7 @@
 
   .dropdown-toggle {
     padding: $spacer;
+
     &:after {
       display: none;
     }
@@ -20,6 +21,19 @@
   input[type="text"] {
     width: 12rem;
     box-shadow: none !important;
+  }
+}
+
+.search button.dropdown-toggle,
+button.search-mobile-toggle {
+  background: transparent;
+  border: 0;
+  transition:
+    text-decoration-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+
+  &:hover {
+    color: $red;
   }
 }
 

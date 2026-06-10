@@ -1,7 +1,7 @@
 {% if language is not defined %}{% set language = 'fr' %}{% endif %}
 
 <form action="#" class="d-xl-none">
-  <a id="search-mobile-toggle" class="search-mobile-toggle searchform-controller" href="#">
+  <button id="search-mobile-toggle" class="search-mobile-toggle searchform-controller">
     {% include '@atoms/icon/icon.twig' with { icon: 'icon-search' } %}
     {% if language == 'fr' %}
     <span class="toggle-label sr-only">Afficher / masquer le formulaire de recherche</span>
@@ -9,7 +9,7 @@
     {% if language == 'en' %}
     <span class="toggle-label sr-only">Show / hide the search form</span>
     {% endif %}
-  </a>
+  </button>
   <div class="input-group search-mobile" role="search">
     <div class="input-group-prepend">
       <span class="input-group-text">

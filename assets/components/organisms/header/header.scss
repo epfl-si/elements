@@ -133,6 +133,16 @@
     .icon { font-size: 0.9em; }
   }
 
+  nav.navigation {
+    flex: 0 0 auto;
+    margin: 0 0 0 (3.7 * $spacer);
+
+    .nav-header {
+      flex: none;
+      margin: 0;
+    }
+  }
+
   @include media-breakpoint-down (lg) {
     height: $header-height;
     max-height: $header-height;
