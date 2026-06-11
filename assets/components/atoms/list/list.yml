@@ -12,6 +12,8 @@ variants:
   - name: ranked
     title: Ranked list
     wrapper: bg-gray-100
-
+  - name: ranked-border
+    title: Ranked list with borders
+    notes: Add the `border` class on the list elements, if you want to render them on a white background
 notes: |
   The classic way to display a group of elements, with or without hierarchy (see the variants lower on this page). Use lists in content areas.

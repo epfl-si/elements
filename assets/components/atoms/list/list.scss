@@ -162,8 +162,12 @@ nav:not(.table-of-contents):not(.nav-main) {
     margin-top: 1px;
     break-inside: avoid;
 
+    &.border {
+      margin-top: -1px;
+    }
+
     &:before {
-      top: 0.75rem;
+      top: 0.5rem;
       right: auto;
       left: 0.5rem;
       width: 3.5rem;
@@ -179,5 +183,4 @@ nav:not(.table-of-contents):not(.nav-main) {
       min-height: 2.75rem;
     }
   }
-
 }
