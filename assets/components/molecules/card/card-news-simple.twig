@@ -1,0 +1,8 @@
+{% extends 'card-news.twig' %}
+
+{% block content %}
+<h3 class="h5 card-title mb-1">{{ title|default("L'illusion de neutralité occulte les biais de l'IA générative") }}</h3>
+<time datetime="2018-03-26" class="small mb-0"><span class="sr-only">Publié: </span>{{ pubdate|default('Il y a 2 jours') }}</time>
+{% endblock %}
+
+{% block news_media %}{% endblock %}
