@@ -214,3 +214,41 @@
     box-shadow: 0 0 1rem rgba(0,0,0,0.16);
   }
 }
+
+.list-group-news-teaser {
+
+  .list-group-teaser-excerpt {
+    font-size: 1rem;
+  }
+
+  .list-group-teaser-content {
+    & > time {
+      font-weight: $font-weight-bold;
+      color: $gray-500;
+    }
+
+    &:first-child > h3 {
+      font-size: $font-size-base;
+    }
+  }
+
+  :hover {
+
+    .list-group-teaser-excerpt {
+      color: $body-color;
+    }
+
+    h3 {
+      color: $primary;
+    }
+  }
+
+  & + .list-group-teaser-more {
+    background: transparent;
+    border: none !important;
+
+    &:hover {
+      border: none !important;
+    }
+  }
+}

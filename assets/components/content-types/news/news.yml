@@ -8,6 +8,10 @@ variants:
     title: Horizontal Listing with gray background
     notes: Don't forget to wrap your card slider with a wrapper that will hide the overflow (`.overflow-hidden` helper class will achieve just that).
     wrapper: bg-gray-100 py-4 my-4
+  - name: horizontal-listing-gray-news-cards
+    title: Horizontal Listing with news cards
+    notes: Don't forget to wrap your card slider with a wrapper that will hide the overflow (`.overflow-hidden` helper class will achieve just that).
+    wrapper: bg-gray-100 py-4
   - name: highlighted
     title: Highlighted
   - name: highlighted-carousel
