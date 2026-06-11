@@ -4,9 +4,13 @@
   display: flex;
   margin-right: $spacer * 3;
 
-  &.show {
+  &.dropdown.show {
     .dropdown-toggle {
       border: 1px solid gray('500');
+
+      &:after {
+        transform: rotate(0);
+      }
     }
   }
 
