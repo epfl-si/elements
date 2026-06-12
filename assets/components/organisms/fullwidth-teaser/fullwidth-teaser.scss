@@ -346,8 +346,8 @@
   &.fullwidth-teaser-right {
     .fullwidth-teaser-text {
       @include media-breakpoint-up(xl) {
-        left: auto;
         right: $spacer * 3;
+        left: auto;
       }
     }
   }
