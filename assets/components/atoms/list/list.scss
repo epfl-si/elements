@@ -141,3 +141,46 @@ nav:not(.table-of-contents):not(.nav-main) {
     }
   }
 }
+
+.list-ranked {
+  columns: 2;
+  column-fill: balance;
+  column-gap: 1.5rem;
+
+  padding-left: 0;
+
+  @include media-breakpoint-down (lg) {
+    columns: 1;
+  }
+
+  li {
+    padding: 0.75rem 1.35rem 0.75rem 4.5rem;
+    background: $white;
+    line-height: 1.2;
+    font-weight: $font-weight-bold;
+    min-height: 4rem;
+    margin-top: 1px;
+    break-inside: avoid;
+
+    &.border {
+      margin-top: -1px;
+    }
+
+    &:before {
+      top: 0.5rem;
+      right: auto;
+      left: 0.5rem;
+      width: 3.5rem;
+      font-size: 3rem;
+      line-height: 3rem;
+      text-align: center;
+      font-weight: $font-weight-light;
+    }
+
+    a {
+      text-decoration: none;
+      display: block;
+      min-height: 2.75rem;
+    }
+  }
+}
