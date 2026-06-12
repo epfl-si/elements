@@ -320,3 +320,43 @@
     }
   }
 }
+
+.fullwidth-teaser.simplified-teaser {
+  .fullwidth-teaser-title {
+    max-width: 29rem;
+
+    h3 {
+      line-height: 1.2;
+    }
+  }
+
+  .fullwidth-teaser-text {
+    @include media-breakpoint-up(xl) {
+      justify-content: flex-end;
+      left: $spacer * 3;
+      padding-bottom: $spacer * 3;
+    }
+
+    time {
+      font-weight: $font-weight-bold;
+      color: $gray-500;
+    }
+  }
+
+  &.fullwidth-teaser-right {
+    .fullwidth-teaser-text {
+      @include media-breakpoint-up(xl) {
+        left: auto;
+        right: $spacer * 3;
+      }
+    }
+  }
+
+  picture {
+    height: auto !important;
+  }
+
+  .fullwidth-teaser-header {
+    flex-direction: column;
+  }
+}

@@ -75,6 +75,10 @@ small {
 del,
 s { color: $gray-600; }
 
+.color-red {
+  color: $red !important;
+}
+
 blockquote,
 .blockquote {
   font-size: 1.5rem;

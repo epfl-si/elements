@@ -1,0 +1,37 @@
+<div class="fullwidth-teaser simplified-teaser {%  block position_class %}fullwidth-teaser-left{% endblock %}">
+
+  {% if has_image_legend|default(false) %}
+  <figure class="cover">
+    {% include '@atoms/picture/picture-fullwidth-teaser.twig' %}
+    <figcaption>
+        {% include '@atoms/popover/popover.twig' %}
+    </figcaption>
+  </figure>
+  {% else %}
+  {% include '@atoms/picture/picture-fullwidth-teaser.twig' %}
+  {% endif %}
+
+  <div class="fullwidth-teaser-text">
+
+    <div class="fullwidth-teaser-header">
+      <div class="fullwidth-teaser-title">
+        {% block title_tag %}{% endblock %}
+        <h3 class="mb-3">
+          {% if not title %}{% set title %}Une mini-vessie humaine révèle la cause des infections récurrentes{% endset %}{% endif %}
+          {{title}}
+        </h3>
+        <p class="mb-2">Des scientifiques de l’EPFL, de l’Université de Heidelberg et de Roche ont mis au point une mini-vessie humaine afin de montrer...</p>
+        <time datetime="2018-03-26" class="small"><span class="sr-only">Publié: </span>{{ pubdate|default("Aujourd'hui") }}</time>
+      </div>
+      <a href="#" aria-label="Link to read more of that page" class="btn btn-primary triangle-outer-top-left d-none d-xl-block">
+        Lire la suite
+        <span class="sr-only">sur Tech Transfer.</span>
+        {% include '@atoms/icon/icon.twig' with {icon: 'icon-chevron-right'} %}
+      </a>
+    </div>
+
+    <div class="fullwidth-teaser-footer mt-3 mt-xl-0">
+      <a href="#" aria-label="Link to read more of that page" class="btn btn-primary btn-block d-xl-none">En savoir plus</a>
+    </div>
+  </div>
+</div>
