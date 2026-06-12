@@ -81,6 +81,7 @@
 
     a:not(.active),
     button:not(.active) {
+      width: 5.8rem;
       background: white;
       border: 1px solid gray('500');
 
