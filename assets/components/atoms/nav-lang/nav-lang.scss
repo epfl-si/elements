@@ -4,9 +4,13 @@
   display: flex;
   margin-right: $spacer * 3;
 
-  &.show {
+  &.dropdown.show {
     .dropdown-toggle {
       border: 1px solid gray('500');
+
+      &:after {
+        transform: rotate(0);
+      }
     }
   }
 
@@ -77,6 +81,7 @@
 
     a:not(.active),
     button:not(.active) {
+      width: 5.8rem;
       background: white;
       border: 1px solid gray('500');
 
