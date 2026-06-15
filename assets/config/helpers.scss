@@ -195,6 +195,21 @@
   transition: background 0.15s;
 }
 
+.triangle-outer-top-left:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -0.196875rem;
+  left: -1.3rem;
+  border-left: 1rem solid transparent;
+  border-top: 1rem solid $red;
+  border-right: 1rem solid transparent;
+  width: 0;
+  height: 0;
+  transform: rotate(-135deg);
+  transition: background 0.15s;
+}
+
 // Gray background helpers.
 @each $key, $value in $grays {
   @include bg-variant(".bg-gray-#{$key}", $value);
