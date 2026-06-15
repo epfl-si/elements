@@ -1,10 +1,10 @@
-<div class="fullwidth-teaser simplified-teaser {%  block position_class %}fullwidth-teaser-left{% endblock %}">
+<div class="fullwidth-teaser simplified-teaser {% block position_class %}fullwidth-teaser-left{% endblock %}">
 
   {% if has_image_legend|default(false) %}
   <figure class="cover">
     {% include '@atoms/picture/picture-fullwidth-teaser.twig' %}
     <figcaption>
-        {% include '@atoms/popover/popover.twig' %}
+    {% include '@atoms/popover/popover.twig' %}
     </figcaption>
   </figure>
   {% else %}
