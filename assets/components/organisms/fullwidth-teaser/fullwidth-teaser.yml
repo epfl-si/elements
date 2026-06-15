@@ -11,3 +11,8 @@ variants:
     title: Horizontal
   - name: left
     title: Left aligned
+  - name: simplified
+    title: Simplified news teaser
+  - name: simplified-right
+    title: Simplified news teaser
+    notes: Replace `fullwidth-teaser-left` with `fullwidth-teaser-right` to position the text block on the right-hand side.
