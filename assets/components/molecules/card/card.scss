@@ -283,11 +283,16 @@ a.card {
   .card-body {
     font-size: 1rem;
 
+    .h3 + p {
+      font-size: 1.125rem;
+    }
+
     & > time {
       font-weight: $font-weight-bold;
       color: $gray-500;
     }
   }
+
 }
 
 .news-card.horizontal-news-card {

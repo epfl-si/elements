@@ -1,0 +1,122 @@
+{% set isSpecial = true %}
+{% set isNews = true %}
+
+{% extends "@templates/base/base-news.twig" %}
+
+{% block grid %}{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      {% include '@molecules/card/card-news.twig' with {
+        "image_uri": "news-card-2.jpg",
+        "title_class": "h3 mb-2",
+        "body_class": "mb-2",
+        "title": "Des signaux extraterrestres indétectés ont-ils déjà atteint la Terre?",
+        "body": "Depuis des décennies, les scientifiques scrutent le ciel à la recherche de signes de technologie provenant d’autres planètes. Une étude de l'EPFL pose une question...",
+        "media_type": "Galerie",
+        "media_icon": "#image",
+        "media_duration": "10"
+      } %}
+    </div>
+    <div class="col-md-4">
+      {% include '@molecules/card/card-news-simple.twig' with {
+        "extra_class": "mb-md-4",
+        "title": "Quand la chaleur circule comme de l'eau",
+        "pubdate": "Hier"
+
+      } %}
+      {% include '@molecules/card/card-news-simple.twig' with {
+        'image_uri': "news-card-3.jpg",
+        "title": "L'IA permet de dresser un «&nbsp;Who's Who&nbsp;» des ours bruns en Alaska",
+        "pubdate": "05.06.2026"
+      } %}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="d-flex align-items-baseline">
+        <h3>Intelligence artificielle</h3>
+        <a class="ml-3 text-arrow gap-2 red-arrow" href="#">Tout voir</a>
+      </div>
+      <div class="card-deck spaced-cards">
+        {% include '@molecules/card/card-news-simple.twig' with { 'image_uri': "news-card-2.jpg", "title": "Une IA repousse la limite temporelle des vidéos génératives" } %}
+        {% include '@molecules/card/card-news-simple.twig' with { "title": "Mesurer le temps au niveau quantique", "pubdate": "Il y a une semaine" } %}
+        {% include '@molecules/card/card-news-simple.twig' with { 'image_uri': "news-card-3.jpg", "media_type": "Vidéo", "media_icon": "#play-circle", "media_duration": "1:30", "title": "L'IA permet de dresser un «&nbsp;Who's Who&nbsp;» des ours bruns en Alaska", "body": "Des scientifiques de l’EPFL et de l’Alaska Pacific University ont développé une IA capable d’identifier des ours sauvages un par un...", "pubdate": "05.06.2026" } %}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mt-5">
+  {% include '@organisms/fullwidth-teaser/fullwidth-teaser-simplified.twig' %}
+</div>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="d-flex align-items-baseline">
+        <h3>Santé</h3>
+        <a class="ml-3 text-arrow gap-2 red-arrow" href="#">Tout voir</a>
+      </div>
+      {% include '@molecules/list-group/list-group-news.twig' with { "title": false, "bottomlink": false, "tag": true } %}
+    </div>
+  </div>
+</div>
+<div class="bg-gray-100">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-12">
+        {% include '@atoms/list/list-ranked.twig' %}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-12">
+      {% include '@atoms/figure/figure-news.twig' %}
+    </div>
+  </div>
+</div>
+<div class="bg-gray-100">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-12">
+        {% include '@organisms/newsletter-sign-up/newsletter-sign-up-link.twig' with { "add_wrapper": false } %}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="d-flex align-items-baseline">
+        <h3>Durabilité</h3>
+        <a class="ml-3 text-arrow gap-2 red-arrow" href="#">Tout voir</a>
+      </div>
+      <div class="card-deck spaced-cards">
+        {% include '@molecules/card/card-news-simple.twig' with { 'image_uri': "news-card-2.jpg", "title": "Une IA repousse la limite temporelle des vidéos génératives" } %}
+        {% include '@molecules/card/card-news-simple.twig' with { "title": "Mesurer le temps au niveau quantique", "pubdate": "Il y a une semaine" } %}
+        {% include '@molecules/card/card-news-simple.twig' with { 'image_uri': "news-card-3.jpg", "media_type": "Vidéo", "media_icon": "#play-circle", "media_duration": "1:30", "title": "L'IA permet de dresser un «&nbsp;Who's Who&nbsp;» des ours bruns en Alaska", "body": "Des scientifiques de l’EPFL et de l’Alaska Pacific University ont développé une IA capable d’identifier des ours sauvages un par un...", "pubdate": "05.06.2026" } %}
+        {% include '@molecules/card/card-news-simple.twig' with { 'image_uri': "news-card-3.jpg", "media_type": "Vidéo", "media_icon": "#play-circle", "media_duration": "1:30", "title": "L'IA permet de dresser un «&nbsp;Who's Who&nbsp;» des ours bruns en Alaska", "body": "Des scientifiques de l’EPFL et de l’Alaska Pacific University ont développé une IA capable d’identifier des ours sauvages un par un...", "pubdate": "05.06.2026" } %}
+      </div>
+    </div>
+    <div class="col-lg-4 mt-4 mt-lg-0">
+      {% include '@molecules/list-group/list-group-news-briefs.twig' with { "news_count": 7 } %}
+    </div>
+  </div>
+</div>
+<div class="container pb-5">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="d-flex align-items-baseline">
+        <h3>Innovation</h3>
+        <a class="ml-3 text-arrow gap-2 red-arrow" href="#">Tout voir</a>
+      </div>
+      <div class="overflow-hidden">
+        {% include '@content-types/news/news-horizontal-listing-gray-news-cards.twig' %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

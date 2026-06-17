@@ -13,6 +13,15 @@
         Naviguer dans les zones difficiles d’accès du corps humain tout en conservant une précision extrême : c’est le
         défi que relève...
       </div>
+      {% if tag|default(false) %}
+      <span class="tag tag-sm mt-1 border-light">
+        Vidéo
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="{{ media_icon|default('#play-circle') }}"></use>
+        </svg>
+        1:30
+      </span>
+      {% endif %}
       <time datetime="2018-03-26" class="small mb-0"><span class="sr-only">Publié: </span>Aujourd'hui</time>
     </div>
   </a>

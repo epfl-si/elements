@@ -6,6 +6,10 @@
   margin-left: $spacer * -0.5;
   margin-right: $spacer * -0.5;
 
+  &.spaced-cards {
+    gap: $spacer;
+  }
+
   @include media-breakpoint-up(sm) {
     display: flex;
     flex-wrap: wrap;

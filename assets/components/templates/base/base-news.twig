@@ -1,0 +1,71 @@
+<div class="site">
+{% include '@molecules/access-nav/access-nav.twig' %}
+
+{% block fullintro %}{% endblock %}
+
+{% block header %}
+  {% include '@organisms/header/header-light-news.twig' with {
+    site_title: 'Actualités'
+  } %}
+{% endblock %}
+
+
+
+<div class="main-container">
+  {% block breadcrumb %}
+  <div class="breadcrumb-container">
+    <nav aria-label="breadcrumb" class="breadcrumb-wrapper border-0">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a class="bread-link bread-home" href="#">
+            {% include '@atoms/icon/icon.twig' with { icon: 'icon-home' } %}
+          </a>
+        </li>
+        <li class="breadcrumb-item"><a class="bread-link" href="#">Actualités</a></li>
+      </ol>
+    </nav>
+  </div>
+  {% endblock %}
+  <div class="nav-toggle-layout{% if not isSpecial %} nav-aside-layout{% endif %}">
+    {% block nav %}
+      {% include '@organisms/nav-mobile/nav-mobile.twig' %}
+    {% endblock %}
+
+    <div class="w-100">
+      {% block main %}
+        <main id="main" role="main" class="content {% block grid %}container-grid{% endblock %}">
+          {% block content %}{% endblock %}
+        </main>
+      {% endblock %}
+
+    </div>
+  </div>
+
+  {% block footer_container %}
+  {% block footer_tags %}
+  <div class="bg-gray-200 ">
+    <div class="container py-4">
+      <h6 class="mb-1">Les actualités par faculté</h6>
+      <div>
+        <a href="#" class="tag tag-primary tag-sm mt-2 mr-1">Environnement naturel, architectural et construit</a>
+        <a href="#" class="tag tag-primary tag-sm mt-2 mr-1">Sciences de base</a>
+        <a href="#" class="tag tag-primary tag-sm mt-2 mr-1">Sciences de la vie</a>
+        <a href="#" class="tag tag-primary tag-sm mt-2 mr-1">Sciences et techniques de l’ingénieur</a>
+        <a href="#" class="tag tag-primary tag-sm mt-2 mr-1">Informatique et communications</a>
+        <a href="#" class="tag tag-primary tag-sm mt-2 mr-1">Collège du management de la technologie</a>
+      </div>
+
+    </div>
+  </div>
+  {% endblock %}
+  <div class="bg-gray-100 pt-5">
+    <div class="container">
+      {% block footer %}
+        {% include '@organisms/footer/footer-light.twig' %}
+      {% endblock %}
+    </div>
+  </div>
+  {% endblock %}
+  </div>
+</div>
+</div>
