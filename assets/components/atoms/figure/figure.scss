@@ -11,3 +11,13 @@ figcaption {
   font-size: $font-size-xs;
   color: $text-muted;
 }
+
+.news-figure {
+  figcaption {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: $font-weight-bold;
+    color: $gray-500;
+  }
+}
