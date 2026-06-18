@@ -154,13 +154,8 @@ nav:not(.table-of-contents):not(.nav-main) {
   }
 
   li {
-    padding: 0.75rem 1.35rem 0.75rem 4.5rem;
-    background: $white;
-    line-height: 1.2;
-    font-weight: $font-weight-bold;
-    min-height: 4rem;
-    margin-top: 1px;
     break-inside: avoid;
+    padding: 0;
 
     &.border {
       margin-top: -1px;
@@ -175,12 +170,18 @@ nav:not(.table-of-contents):not(.nav-main) {
       line-height: 3rem;
       text-align: center;
       font-weight: $font-weight-light;
+      pointer-events: none;
     }
 
     a {
+      padding: 0.75rem 1.35rem 0.75rem 4.5rem;
+      background: $white;
+      line-height: 1.2;
+      font-weight: $font-weight-bold;
+      min-height: 4rem;
+      margin-top: 1px;
       text-decoration: none;
       display: block;
-      min-height: 2.75rem;
     }
   }
 }
