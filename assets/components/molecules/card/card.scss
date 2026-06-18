@@ -266,9 +266,14 @@ a.card {
     position: relative;
 
     figcaption {
+      display: flex;
+      gap: 0.2rem;
+      align-items: flex-start;
+
       position: absolute;
       bottom: 0;
       left: 0;
+
       padding: 0.125rem $card-spacer-x;
       font-size: $font-size-sm;
       font-weight: $font-weight-bold;

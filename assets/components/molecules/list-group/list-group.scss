@@ -229,7 +229,12 @@
     }
 
     &:first-child > h3 {
-      font-size: $font-size-base;
+      font-size: ($font-size-base * 1.125);
+    }
+
+    & > .tag-sm {
+      font-weight: $font-weight-bold;
+      color: $gray-600;
     }
   }
 
