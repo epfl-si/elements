@@ -9,10 +9,10 @@
       <img src="svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
     </a>
     <p class="site-title">
-      <a href="#">{{site_title}}</a>
+      <a href="#">{{ site_title }}</a>
     </p>
     <ul class="nav-header d-none d-xl-flex">
-      <li><a href="#">Intelligence artificielle</a></li>
+      <li{% if current_menu_item == 'ia' %} class="current-menu-item"{% endif %} ><a href="#">Intelligence artificielle</a></li>
       <li><a href="#">Durabilité</a></li>
       <li><a href="#">Santé</a></li>
       <li><a href="#">Économie</a></li>

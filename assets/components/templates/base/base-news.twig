@@ -5,11 +5,10 @@
 
 {% block header %}
   {% include '@organisms/header/header-light-news.twig' with {
-    site_title: 'Actualités'
+    site_title: 'Actualités',
+    current_menu_item: 'ia'
   } %}
 {% endblock %}
-
-
 
 <div class="main-container">
   {% block breadcrumb %}
