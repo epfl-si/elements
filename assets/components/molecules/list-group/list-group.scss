@@ -230,6 +230,7 @@
 
     &:first-child > h3 {
       font-size: ($font-size-base * 1.125);
+      line-height: 1.2 !important;
     }
 
     & > .tag-sm {
