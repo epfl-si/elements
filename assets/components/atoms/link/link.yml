@@ -18,6 +18,10 @@ variants:
   - name: bg-variants
     title: Background variants
     notes:
+  - name: external
+    title: External website
+    notes: |
+      Add `rel="nofollow"` and `target="_blank"` attributes to ensure links open in a new tab or window.
   - name: icon
     title: Icon
     notes: |
