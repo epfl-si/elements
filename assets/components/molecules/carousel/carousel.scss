@@ -116,6 +116,10 @@
 .carousel-news {
   .carousel-inner {
     padding-bottom: 2.625rem;
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: 0.5rem;
+    }
   }
 
   .carousel-control {
@@ -132,7 +136,7 @@
     }
   }
 
-  .carousel-indicators:before  {
+  .carousel-indicators:before {
     background: transparent;
   }
 
