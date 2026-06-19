@@ -9,10 +9,12 @@
     </div>
     <div class="list-group-teaser-content">
       <h3 class="h5 mb-1">Un endoscope à rigidité variable pour atteindre les zones difficiles</h3>
+      {% if body|default(true) %}
       <div class="list-group-teaser-excerpt">
         Naviguer dans les zones difficiles d’accès du corps humain tout en conservant une précision extrême : c’est le
         défi que relève...
       </div>
+      {% endif %}
       {% if tag|default(false) %}
       <span class="tag tag-sm mt-1 border-light">
         Vidéo

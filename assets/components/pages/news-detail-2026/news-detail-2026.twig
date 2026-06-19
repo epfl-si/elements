@@ -1,0 +1,96 @@
+{% set isSpecial = true %}
+{% set isNews = true %}
+
+{% extends "@templates/base/base-news.twig" %}
+
+{% block grid %}{% endblock %}
+
+{% block content %}
+<div class="container">
+  <article class="row" itemscope itemtype="https://schema.org/NewsArticle">
+    <div class="col-md-12 pl-0 pr-0">
+      {% include '@atoms/picture/picture-cover.twig' with {"cover_path": "./images/styleguide/teaser/news-teaser-"} %}
+    </div>
+
+    <section class="offset-md-1 col-md-10 p-3 bg-white mt-n4 mt-md-n5 ml-3 mr-3 ml-md-auto mr-md-auto">
+      <h1 class="mb-4" itemprop="name">Des signaux extraterrestres indétectés ont-ils déjà atteint la Terre?</h1>
+      <p class="h4 font-weight-bold" itemprop="abstract">Depuis des décennies, les scientifiques scrutent le ciel à la recherche de signes de technologie provenant d’autres planètes. Une étude de l'EPFL pose une question pertinente : si de tels signaux sont parvenus jusqu’à nous sans que nous nous en rendions compte, que pouvons-nous réellement espérer repérer aujourd'hui ?</p>
+      <time class="font-weight-bold text-muted opacity-70" datetime="2018-03-26" itemprop="datePublished">Publié le 16 février 2026 à 09:19, modifié le 17 février à 14:05</time>
+    </section>
+
+    <section class="col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mt-4" itemprop="articleBody">
+      <p>Depuis la première expérience SETI en 1960, les astronomes ont scruté la Voie lactée à la recherche d’indices de l’existence de civilisations extraterrestres avancées. Ces recherches ont porté sur les ondes radio, les flashs optiques et les signatures thermiques infrarouges.</p>
+      <p>Jusqu'à présent, ils n'ont rien trouvé de crédible. Ce silence s'explique souvent par le fait que nous n'avons exploré qu'une infime partie du paysage cosmique. Mais que se passerait-il si des signaux avaient bien atteint la Terre sans que nous les ayons  détectés ?</p>
+      <p>Une technosignature est tout signal mesurable ou trace physique indiquant la présence d'une technologie avancée au-delà de la Terre, par exemple des transmissions radio artificielles, des flashs laser ou un excès de chaleur provenant de projets d'ingénierie à grande échelle.</p>
+      <p>Pour qu'une technosignature soit détectée, deux conditions doivent être réunies. Premièrement, le signal doit atteindre physiquement la Terre. Deuxièmement, nos instruments doivent être suffisamment sensibles pour le détecter, orientés dans la bonne direction et capables de le distinguer des signaux naturels. Cela signifie qu'un signal peut satisfaire à la première condition, mais pas à la seconde. Il peut être trop faible, trop bref, envoyé à une longueur d'onde inadéquate ou noyé dans le bruit de fond.</p>
+
+      <h5>L'étude est publiée dans The Astronomical Journal.</h5>
+      <p>Claudio Grimaldi a modélisé les technosignatures comme des émissions provenant d'espèces technologiques lointaines ou de leurs artefacts quelque part dans la Voie lactée. Ces émissions se propagent à la vitesse de la lumière et, dans ce modèle, peuvent avoir des durées très variables, allant de quelques jours à des milliers d'années.</p>
+      <p>La Terre est « contactée » si un tel signal traverse notre emplacement dans l'espace. La détection n'est possible que si la source se trouve dans une plage de distance qui permette au signal d’être encore suffisamment puissant pour entrer dans le champ de sensibilité de nos télescopes.</p>
+      <p>Le scientifique a utilisé une approche statistique bayésienne, qui met à jour les estimations à mesure que de nouvelles informations sont prises en compte, pour relier trois éléments :</p>
+
+      <ol>
+        <li>le nombre de contacts passés avec la Terre</li>
+        <li>la durée de vie typique des technosignatures</li>
+        <li>la distance que les instruments actuels ou futurs peuvent explorer.</li>
+      </ol>
+
+      <p>Il a considéré à la fois les signaux omnidirectionnels, tels que la chaleur résiduelle provenant de grandes structures, et les signaux hautement focalisés, tels que les balises ou les flashs laser. L'analyse traite ces cas sur un pied d'égalité.</p>
+
+      <h6>Découvrez également</h6>
+      {% include '@molecules/list-group/list-group-news.twig' with { "title": false, "bottomlink": false, "tag": false, "body": false } %}
+
+      <h5 class="mt-5">L'étude est publiée dans The Astronomical Journal.</h5>
+      <p>Claudio Grimaldi a modélisé les technosignatures comme des émissions provenant d'espèces technologiques lointaines ou de leurs artefacts quelque part dans la Voie lactée. Ces émissions se propagent à la vitesse de la lumière et, dans ce modèle, peuvent avoir des durées très variables, allant de quelques jours à des milliers d'années.</p>
+      <p>La Terre est « contactée » si un tel signal traverse notre emplacement dans l'espace. La détection n'est possible que si la source se trouve dans une plage de distance qui permette au signal d’être encore suffisamment puissant pour entrer dans le champ de sensibilité de nos télescopes.</p>
+      <p>Le scientifique a utilisé une approche statistique bayésienne, qui met à jour les estimations à mesure que de nouvelles informations sont prises en compte, pour relier trois éléments :</p>
+
+      {% include '@molecules/collapse-group/collapse-group.twig' with { title: null } %}
+
+      <footer class="my-4 d-md-flex justify-content-between border-0">
+        <div>
+          <p class="m-0 small text-muted">
+            <strong>Auteur: </strong>
+            <small itemprop="author publisher" itemscope="" itemtype="https://schema.org/Person">
+              <a href="#" class="opacity-80"><span itemprop="name">Nik Papageorgiou</span></a>
+            </small>
+          </p>
+          <p class="small text-muted mb-0 mt-1">
+            <strong>Source: </strong>
+            <a href="/search/mediacom/fr" class="opacity-80">EPFL</a>
+          </p>
+        </div>
+
+        <ul class="social-icon-list list-inline mt-4 mt-md-0">
+          <li>
+            {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on Facebook', icon: 'icon-facebook', round: round, discrete: true, negative: negative, url: 'https://www.facebook.com/epflcampus' } %}
+          </li>
+          <li>
+            {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on X', icon: 'icon-x', round: round, discrete: true, negative: negative, url: 'https://x.com/epfl_en' } %}
+          </li>
+          <li>
+            {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on Instagram', icon: 'icon-instagram', round: round, discrete: true, negative: negative, url: 'http://instagram.com/epflcampus' } %}
+          </li>
+          <li>
+            {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on LinkedIn', icon: 'icon-linkedin', round: round, discrete: true, negative: negative, url: 'https://www.linkedin.com/school/epfl/' } %}
+          </li>
+        </ul>
+      </footer>
+    </section>
+  </article>
+
+  <div class="row">
+    <div class="col-md-12 my-5">
+      <h3 class="mb-2">Actualités en lien</h3>
+      <div class="card-deck spaced-cards">
+        {% include '@molecules/card/card-news-simple.twig' with { 'image_uri': "news-card-2.jpg", "title": "Une IA repousse la limite temporelle des vidéos génératives" } %}
+        {% include '@molecules/card/card-news-simple.twig' with { "title": "Mesurer le temps au niveau quantique", "pubdate": "Hier" } %}
+        {% include '@molecules/card/card-news-simple.twig' with { 'image_uri': "news-card-3.jpg", "media_type": "Vidéo", "media_icon": "#play-circle", "media_duration": "1:30", "title": "L'IA permet de dresser un «&nbsp;Who's Who&nbsp;» des ours bruns en Alaska", "body": "Des scientifiques de l’EPFL et de l’Alaska Pacific University ont développé une IA capable d’identifier des ours sauvages un par un...", "pubdate": "05.06.2026" } %}
+      </div>
+      <div class="align-items-center d-flex justify-content-center mt-4">
+        <a href="#" class="btn btn-secondary">Toutes les actualités</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
