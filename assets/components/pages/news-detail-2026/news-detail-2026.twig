@@ -9,7 +9,7 @@
 <div class="container">
   <article class="row" itemscope itemtype="https://schema.org/NewsArticle">
     <div class="col-md-12 pl-0 pr-0">
-      {% include '@molecules/cover/cover.twig' with {"cover_path": "./images/styleguide/teaser/news-teaser-"} %}
+      {% include '@molecules/cover/cover.twig' with {cover_path: "./images/styleguide/teaser/news-teaser-"} %}
     </div>
 
     <section class="offset-md-1 col-md-10 p-3 bg-white mt-n4 mt-md-n5 mx-3 mx-md-auto">
@@ -38,7 +38,7 @@
       <p>Il a considéré à la fois les signaux omnidirectionnels, tels que la chaleur résiduelle provenant de grandes structures, et les signaux hautement focalisés, tels que les balises ou les flashs laser. L'analyse traite ces cas sur un pied d'égalité.</p>
 
       <h6>Découvrez également</h6>
-      {% include '@molecules/list-group/list-group-news.twig' with { "title": false, "bottomlink": false, "tag": false, "body": false } %}
+      {% include '@molecules/list-group/list-group-news.twig' with { title: false, bottomlink: false, tag: false, body: false, title_class: "text-lg" } %}
 
       <h5 class="mt-5">L'étude est publiée dans The Astronomical Journal.</h5>
       <p>Claudio Grimaldi a modélisé les technosignatures comme des émissions provenant d'espèces technologiques lointaines ou de leurs artefacts quelque part dans la Voie lactée. Ces émissions se propagent à la vitesse de la lumière et, dans ce modèle, peuvent avoir des durées très variables, allant de quelques jours à des milliers d'années.</p>
@@ -134,9 +134,9 @@
     <div class="col-md-12 my-5">
       <h3 class="mb-2">Actualités en lien</h3>
       <div class="card-deck spaced-cards">
-        {% include '@molecules/card/card-news-simple.twig' with { 'image_uri': "news-card-2.jpg", "title": "Une IA repousse la limite temporelle des vidéos génératives" } %}
-        {% include '@molecules/card/card-news-simple.twig' with { "title": "Mesurer le temps au niveau quantique", "pubdate": "Hier" } %}
-        {% include '@molecules/card/card-news-simple.twig' with { 'image_uri': "news-card-3.jpg", "media_type": "Vidéo", "media_icon": "#play-circle", "media_duration": "1:30", "title": "L'IA permet de dresser un «&nbsp;Who's Who&nbsp;» des ours bruns en Alaska", "body": "Des scientifiques de l’EPFL et de l’Alaska Pacific University ont développé une IA capable d’identifier des ours sauvages un par un...", "pubdate": "05.06.2026" } %}
+        {% include '@molecules/card/card-news-simple.twig' with { image_uri: "news-card-2.jpg", title: "Une IA repousse la limite temporelle des vidéos génératives" } %}
+        {% include '@molecules/card/card-news-simple.twig' with { title: "Mesurer le temps au niveau quantique", pubdate: "Hier" } %}
+        {% include '@molecules/card/card-news-simple.twig' with { image_uri: "news-card-3.jpg", title: "L'IA permet de dresser un «&nbsp;Who's Who&nbsp;» des ours bruns en Alaska",  pubdate: "05.06.2026" } %}
       </div>
       <div class="align-items-center d-flex justify-content-center mt-4">
         <a href="#" class="btn btn-secondary">Toutes les actualités</a>

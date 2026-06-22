@@ -8,7 +8,7 @@
       {% include '@atoms/picture/picture-one-third.twig' %}
     </div>
     <div class="list-group-teaser-content">
-      <h3 class="h5 mb-1">Un endoscope à rigidité variable pour atteindre les zones difficiles</h3>
+      <h3 class="{{ title_class|default('h5') }} mb-1">Un endoscope à rigidité variable pour atteindre les zones difficiles</h3>
       {% if body|default(true) %}
       <div class="list-group-teaser-excerpt">
         Naviguer dans les zones difficiles d’accès du corps humain tout en conservant une précision extrême : c’est le
