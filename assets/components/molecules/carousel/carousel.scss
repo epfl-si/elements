@@ -118,7 +118,7 @@
     padding-bottom: 2.625rem;
 
     @include media-breakpoint-down(sm) {
-      padding-bottom: 0.5rem;
+      padding-bottom: 2.1rem;
     }
   }
 
@@ -150,11 +150,11 @@
     margin-top: 0.5rem;
     margin-bottom: 0;
     font-size: 1rem;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-normal;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: $gray-500;
+    color: $gray-600;
   }
 
   .carousel-navigation {
