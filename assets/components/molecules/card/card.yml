@@ -8,6 +8,10 @@ variants:
     title: Inside Links
   - name: news
     title: News card
+  - name: news-horizontal
+    title: Horizontal news card
+    wrapper: col-md-12
+    notes: A variation of the news card, but with a horizontal layout on larger screens.
 notes: |
   The card component is the component to use for all the card-looking elements. Classes can extend it to adapt its look and feel based on the needs.
 
