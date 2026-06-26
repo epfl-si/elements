@@ -289,3 +289,29 @@ a.card {
     }
   }
 }
+
+.news-card.horizontal-news-card {
+  background-color: transparent;
+
+  @include media-breakpoint-up(xl) {
+    flex-direction: row;
+
+    .card-img-top {
+      width: 66%;
+      margin-right: $card-spacer-x;
+      margin-bottom: 0;
+
+      * {
+        width: 100%;
+      }
+    }
+
+    .card-body {
+      max-width: 30rem;
+    }
+  }
+
+  h3 {
+    line-height: 1.2;
+  }
+}
