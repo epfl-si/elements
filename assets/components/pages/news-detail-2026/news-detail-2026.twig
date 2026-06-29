@@ -38,7 +38,12 @@
       <p>Il a considéré à la fois les signaux omnidirectionnels, tels que la chaleur résiduelle provenant de grandes structures, et les signaux hautement focalisés, tels que les balises ou les flashs laser. L'analyse traite ces cas sur un pied d'égalité.</p>
 
       <h6>Découvrez également</h6>
-      {% include '@molecules/list-group/list-group-news.twig' with { title: false, bottomlink: false, tag: false, body: false } %}
+      {% include '@molecules/list-group/list-group-news.twig' with {
+        title: false,
+        bottomlink: false,
+        tag: false,
+        body: false
+      } %}
 
       <h5 class="mt-5">L'étude est publiée dans The Astronomical Journal.</h5>
       <p>Claudio Grimaldi a modélisé les technosignatures comme des émissions provenant d'espèces technologiques lointaines ou de leurs artefacts quelque part dans la Voie lactée. Ces émissions se propagent à la vitesse de la lumière et, dans ce modèle, peuvent avoir des durées très variables, allant de quelques jours à des milliers d'années.</p>
@@ -79,7 +84,6 @@
       </blockquote>
 
       <p>La Terre est « contactée » si un tel signal traverse notre emplacement dans l'espace. La détection n'est possible que si la source se trouve dans une plage de distance qui permette au signal d’être encore suffisamment puissant pour entrer dans le champ de sensibilité de nos télescopes.</p>
-
     </section>
 
     <section class="col-md-12 embed-responsive embed-responsive-21by9" itemprop="articleBody">
@@ -96,18 +100,20 @@
         <a href="#" class="tag tag-primary mt-2 mr-1">Laboratoire de biophysique statistique (LBS)</a>
       </div>
 
-      {% include '@molecules/collapse-group/collapse-group.twig' with { title: null } %}
+      {% include '@molecules/collapse-group/collapse-group.twig' with {
+        title: null
+      } %}
 
       <footer class="my-4 d-md-flex justify-content-between border-0">
         <div>
           <p class="m-0 small text-muted">
-            <strong>Auteur: </strong>
+            <strong>Auteur:</strong>
             <small itemprop="author publisher" itemscope="" itemtype="https://schema.org/Person">
               <a href="#" class="opacity-80"><span itemprop="name">Nik Papageorgiou</span></a>
             </small>
           </p>
           <p class="small text-muted mb-0 mt-1">
-            <strong>Source: </strong>
+            <strong>Source:</strong>
             <a href="/search/mediacom/fr" class="opacity-80">EPFL</a>
           </p>
         </div>
