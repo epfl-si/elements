@@ -1,4 +1,4 @@
-<figure class="news-figure">
+<figure class="news-figure{% if extra_class %} {{ extra_class }}{% endif %}">
   {% include '@atoms/picture/picture-one-third.twig' with {
     img_path: "./images/styleguide/teaser/news-teaser-3-"
   } %}

@@ -1,1 +1,7 @@
 @charset 'utf-8';
+
+blockquote {
+  .blockquote-footer.text-base {
+    font-size: $legacy-font-size-base;
+  }
+}
