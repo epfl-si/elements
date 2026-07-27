@@ -1,2 +1,6 @@
 title: Newsletter sign-up
 name: newsletter-sign-up
+variants:
+  - name: link
+    title: Newsletter link
+    notes: Use a button linking to a newsletter sign-up form.

@@ -1,0 +1,17 @@
+<a href="#" class="card card-sm news-card horizontal-news-card link-trapeze-horizontal">
+  {% block image -%}
+  <picture class="card-img-top">
+    <img src="./images/styleguide/{{ image_uri|default('news-card-4.jpg') }}" class="img-fluid" title="Une mini-vessie humaine révèle la cause des infections récurrentes" alt="Illustration de différentes peuples et cultures" />
+  </picture>
+  {% endblock -%}
+  {% block card_body %}
+  <div class="card-body pt-4">
+    {% block content %}
+    <h6 class="text-small font-weight-bold text-primary mb-1">Santé</h6>
+    <h3 class="card-title mb-2">{{ title|default("Une mini-vessie humaine révèle la cause des infections récurrentes") }}</h3>
+    <p class="pb-2">{{ body|default("Des scientifiques de l’EPFL, de l’Université de Heidelberg et de Roche ont mis au point une mini-vessie  humaine afin de montrer...") }}</p>
+    <time datetime="2018-03-26" class="small mb-0"><span class="sr-only">Publié: </span>{{ pubdate|default('Il y a 2 jours') }}</time>
+    {% endblock %}
+  </div>
+  {% endblock -%}
+</a>

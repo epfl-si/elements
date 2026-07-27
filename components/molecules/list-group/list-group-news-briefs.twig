@@ -1,0 +1,13 @@
+{% if title|default(true) %}
+<h3>Les brèves</h3>
+{% endif %}
+<div class="list-group">
+  {% for i in 1..news_count|default(3) %}
+  <a href="#" class="list-group-teaser list-group-news-teaser list-group-item list-group-teaser-container link-trapeze-vertical">
+    <div class="list-group-teaser-content">
+      <h3 class="h5 mb-1">Physicien et arboriculteur, il étudie le destin des gouttes de pluie</h3>
+      <time datetime="2026-02-16" class="small mb-0"><span class="sr-only">Publié: </span>16.02.2026</time>
+    </div>
+  </a>
+  {% endfor %}
+</div>

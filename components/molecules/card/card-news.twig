@@ -1,0 +1,25 @@
+<a href="#" class="card card-sm news-card link-trapeze-horizontal{% if extra_class %} {{ extra_class }}{% endif %}">
+  {% block image -%}
+  <figure class="card-img-top mb-1">
+    <img src="./images/styleguide/{{ image_uri|default('news-card.jpg') }}" class="img-fluid" title="L'illusion de neutralité occulte les biais de l'IA générative" alt="Illustration de différentes peuples et cultures" />
+    {% block news_media %}
+    <figcaption class="bg-white">
+      {{ media_type|default('Podcast') }}
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="{{ media_icon|default('#mic') }}"></use>
+      </svg>
+      {{ media_duration|default('15:25') -}}
+    </figcaption>
+    {% endblock %}
+  </figure>
+  {% endblock -%}
+  {% block card_body %}
+  <div class="card-body">
+    {% block content %}
+    <h3 class="{{ title_class|default('h5 mb-1') }} card-title">{{ title|default("L'illusion de neutralité occulte les biais de l'IA générative") }}</h3>
+    <p class="{{ body_class|default('mb-1') }}">{{ body|default("Une équipe de l’EPFL a montré théoriquement que, dans des matériaux très ordonnés...") }}</p>
+    <time datetime="2018-03-26" class="small mb-0"><span class="sr-only">Publié: </span>{{ pubdate|default('Il y a 2 jours') }}</time>
+    {% endblock %}
+  </div>
+  {% endblock -%}
+</a>

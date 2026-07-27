@@ -1,5 +1,8 @@
 name: carousel
 title: Carousel
+variants:
+  - name: news
+    title: News carousel
 notes: |
   Basic carousel using Bootstrap's [Carousel](https://getbootstrap.com/docs/4.6/components/carousel/) functionality.
 
