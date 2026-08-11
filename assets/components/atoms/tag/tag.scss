@@ -243,4 +243,22 @@ button.tag {
       }
     }
   }
+
+  &.loading .selectize-input {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: $input-padding-x;
+      width: 1.1rem;
+      height: 1.1rem;
+      margin-top: -0.55rem;
+      border: 3px solid gray('200');
+      border-right-color: gray('600');
+      border-radius: 100%;
+      animation: rotation 1s linear infinite;
+    }
+  }
 }
