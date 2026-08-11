@@ -19,9 +19,7 @@
     </div>
     <div class="col-lg-9">
       <div class="card-deck">
-        {% for 1 in 1..2 %}
-          {% include '@content-types/blog-post/blog-post.twig' %}
-        {% endfor %}
+        {% include '@content-types/blog-post/blog-post.twig' %}
       </div>
       <div class="mt-3">
         {% include '@molecules/pagination/pagination.twig' %}

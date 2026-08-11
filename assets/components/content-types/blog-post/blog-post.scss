@@ -13,9 +13,11 @@
     }
   }
 
-  .post-info-date:not(:last-child):after { content: ' \2013'; }
+  .post-info-date:not(:last-child):after {
+  content: ' \2013';
+  margin: 0 0.25em 0 0.15em; }
 }
 
 .list-group-teaser-content {
-  .post-info > span { color: $text-muted; } 
+  .post-info > span { color: $text-muted; }
 }
