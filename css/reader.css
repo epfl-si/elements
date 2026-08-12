@@ -570,7 +570,11 @@ body {
 
 /*  Dropdown and multi select needs `overflow: visible` to allow it to
     escape its container. */
+.tlbx-item-preview.tlbx-element-contact,
 .tlbx-item-preview.tlbx-element-dropdown,
+.tlbx-item-preview.tlbx-element-nav-lang,
+.tlbx-item-preview.tlbx-element-nav-user,
+.tlbx-item-preview.tlbx-element-tag-input,
 .tlbx-item-preview.tlbx-element-select-multiple,
 .tlbx-item-preview.tlbx-element-breadcrumb-tagged,
 .tlbx-item-preview.tlbx-element-breadcrumb-dropdown,

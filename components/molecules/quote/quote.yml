@@ -3,4 +3,4 @@ name: quote
 wrapper: container
 notes: |
   The goal of that component is to display a blockquote with its author avatar next to it.
-  For information, `.blockquote` elements are already styled ([See typography documentation](/#/doc/design--typography.html))
+  For information, `.blockquote` elements are already styled ([See typography documentation](#/doc/design--typography.html))

@@ -1,0 +1,20 @@
+<div class="list-group">
+  {% for i in 1..7 %}
+    <a href="#" class="list-group-item list-group-teaser link-trapeze-vertical">
+      <div class="list-group-teaser-container">
+        <div class="list-group-teaser-thumbnail">
+          {% include '@atoms/picture/picture.twig' with {'variant':'news-thumb'} %}
+        </div>
+        <div class="list-group-teaser-content" itemscope itemtype="http://schema.org/Article">
+          <h3 class="h5 mb-2" itemprop="name">Physics: new e-books for the AIAA Education Series</h3>
+          <div class="post-info mb-2">
+            <span class="post-info-date" itemprop="datePublished" content="2017-09-11T12:00"><span class="sr-only">Published:</span>11.09.17</span>
+            <span itemprop="about">Engineering</span><span itemprop="about">Space</span>
+          </div>
+          <p itemprop="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si enim ad populum me vocas, eum. Quid enim me prohiberet
+              Epicureum esse, si probarem, quae ille diceret?</p>
+        </div>
+      </div>
+    </a>
+  {% endfor %}
+</div>
