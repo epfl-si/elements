@@ -1,6 +1,6 @@
 {
   "name": "epfl-elements",
-  "version": "5.8.0",
+  "version": "5.9.0",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -197,7 +197,7 @@
     "js-beautify": "^1.15.1",
     "mini-css-extract-plugin": "^2.1.0",
     "node-polyfill-webpack-plugin": "^4.0.0",
-    "postcss": "^8.5.10",
+    "postcss": "^8.5.23",
     "postcss-loader": "^8.1.1",
     "postcss-preset-env": "^9.3.0",
     "prop-types": "^15.7.2",
