@@ -17,11 +17,7 @@
       {% endif %}
       {% if tag|default(false) %}
       <span class="tag tag-sm mt-1 border-light">
-        Vidéo
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="{{ media_icon|default('#play-circle') }}"></use>
-        </svg>
-        1:30
+        {% include '@atoms/news-format/news-format.twig' with { media_type: "Video", media_icon: "#play-circle", media_value: "1:30"} %}
       </span>
       {% endif %}
       <time datetime="2018-03-26" class="small mb-0"><span class="sr-only">Publié: </span>Aujourd'hui</time>

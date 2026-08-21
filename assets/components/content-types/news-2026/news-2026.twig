@@ -1,0 +1,19 @@
+{% if title is not defined %}{% set title = 'Intelligence artificielle' %}{% endif %}
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="d-flex align-items-baseline">
+      {% if title %}
+        <h3 class="mb-2">{{title}}</h3>
+      {% endif %}
+      {% if more_link|default(true) %}
+        <a class="ml-3 text-arrow gap-2 red-arrow" href="#">Tout voir</a>
+      {% endif %}
+    </div>
+    <div class="card-deck spaced-cards">
+      {% include '@molecules/card/card-news-simple.twig' with { image_uri: "news-card-2.jpg", title: "Une IA repousse la limite temporelle des vidéos génératives" } %}
+      {% include '@molecules/card/card-news-simple.twig' with { title: "Mesurer le temps au niveau quantique", pubdate: "Il y a une semaine" } %}
+      {% include '@molecules/card/card-news-simple.twig' with { image_uri: "news-card-3.jpg", media_type: "Vidéo", media_icon: "#play-circle", media_duration: "1:30", title: "L'IA permet de dresser un «&nbsp;Who's Who&nbsp;» des ours bruns en Alaska", "body": "Des scientifiques de l’EPFL et de l’Alaska Pacific University ont développé une IA capable d’identifier des ours sauvages un par un...", pubdate: "05.06.2026" } %}
+    </div>
+  </div>
+</div>

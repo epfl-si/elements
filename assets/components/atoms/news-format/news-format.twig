@@ -1,0 +1,7 @@
+{{ media_type|default('Podcast') }}
+<svg class="icon" aria-hidden="true">
+  <use xlink:href="{{ media_icon|default('#mic') }}"></use>
+</svg>
+{% if media_value %}
+  {{ media_value|default('15:25') -}}
+{% endif %}

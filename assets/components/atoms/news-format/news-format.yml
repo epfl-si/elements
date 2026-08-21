@@ -1,0 +1,16 @@
+title: News Format
+name: news-format
+variants:
+  - name: list
+    title: List of formats
+notes: |
+
+  The following formats are supported:
+  * `podcast`
+  * `video`
+  * `gallery`
+  * `infographic`
+  * `portrait`
+  * `longread`
+
+  Formats `news`and `short` display no icon.

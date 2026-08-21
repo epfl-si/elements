@@ -1,0 +1,12 @@
+title: News 2026
+name: news-2026
+variants:
+  - name: featured
+    title: Three news with the first one highlighted
+  - name: horizontal-listing-gray-news-cards
+    title: Horizontal Listing with news cards
+    notes: Don't forget to wrap your card slider with a wrapper that will hide the overflow (`.overflow-hidden` helper class will achieve just that).
+    wrapper: bg-gray-100 py-4
+notes: |
+
+  ### Latest three
