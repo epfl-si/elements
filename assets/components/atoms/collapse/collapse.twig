@@ -1,14 +1,16 @@
+{% set collapse_title = collapse_title ?: 'On the Origin of Species' %}
+{% set collapse_id = collapse_id ?: 'collapse-1' %}
 <button
   class="collapse-title collapse-title-desktop collapsed"
   type="button"
   data-toggle="collapse"
-  data-target="#collapse-1"
+  data-target="#{{ collapse_id }}"
   aria-expanded="false"
-  aria-controls="collapse-1"
+  aria-controls="{{ collapse_id }}"
 >
-  On the Origin of Species
+  {{ collapse_title }}
 </button>
 
-<div class="collapse collapse-item collapse-item-desktop" id="collapse-1">
+<div class="collapse collapse-item collapse-item-desktop" id="{{ collapse_id }}">
   <p>Book by Charles Darwin, 1859 — On the Origin of Species, published on 24 November 1859, is a work of scientific literature by Charles Darwin which is considered to be the foundation of evolutionary biology.</p>
 </div>
