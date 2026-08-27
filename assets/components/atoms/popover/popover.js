@@ -1,7 +1,7 @@
 /* globals $ */
 
 export default () => {
-  $(function () {
+  $(() => {
     $('[data-toggle="popover"]').popover({
       placement: 'top',
       html: true,
@@ -10,4 +10,3 @@ export default () => {
     });
   });
 };
-
