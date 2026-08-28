@@ -11,18 +11,7 @@
 
 <div class="main-container">
   {% block breadcrumb %}
-  <div class="breadcrumb-container">
-    <nav aria-label="breadcrumb" class="breadcrumb-wrapper border-0">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a class="bread-link bread-home" href="#">
-            {% include '@atoms/icon/icon.twig' with { icon: 'icon-home' } %}
-          </a>
-        </li>
-        <li class="breadcrumb-item"><a class="bread-link" href="#">Actualités</a></li>
-      </ol>
-    </nav>
-  </div>
+  
   {% endblock %}
   <div class="nav-toggle-layout{% if not isSpecial %} nav-aside-layout{% endif %}">
     {% block nav %}
