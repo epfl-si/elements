@@ -10,10 +10,10 @@
     </div>
     <h3><a  href="#">{{ person.prenom }} {{ person.nom }}</a></h3>
     <dl class="definition-list definition-list-grid my-0">
-      <dt>Fonction</dt>
-      <dd>{{ person.functions|join(', ') }}
+      <dt>Role</dt>
+      <dd>{{ person.roles|join(', ') }}
       </dd>
-      <dt>Bureau</dt>
+      <dt>Office</dt>
       <dd><a href="#">{{ person.rooms.0 }}</a></dd>
     </dl>
       <div class="w-100 mt-2 mt-md-auto">

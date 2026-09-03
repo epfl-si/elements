@@ -133,7 +133,7 @@
     "epfl-science-laboratory-chemistry-2",
     "epfl-science-laboratory-chemistry",
     "epfl-science-laboratory-research",
-    "epfl-science-laboratory-researcher",
+    "epfl-science-laboratory-Senior Scientist",
     "epfl-science-light-bulb-1",
     "epfl-science-light-bulb",
     "epfl-science-mathematics-cube-1",
@@ -525,8 +525,8 @@
       "email": "ada.lovelace@epfl.ch",
       "photo_url": "./images/styleguide/contact/contact-1.jpg",
       "people_url": "https://people.epfl.ch/ada.lovelace",
-      "functions": [
-        "Researcher"
+      "roles": [
+        "Senior Scientist"
       ],
       "research_fields": [
         "Computer Science",
@@ -546,8 +546,8 @@
       "email": "gustave.eiffel@epfl.ch",
       "photo_url": "./images/styleguide/contact/contact-2.jpg",
       "people_url": "https://people.epfl.ch/gustave.eiffel",
-      "functions": [
-        "Researcher"
+      "roles": [
+        "Senior Scientist"
       ],
       "research_fields": [
         "Civil Engineering",
@@ -567,8 +567,10 @@
       "email": "marie.curie@epfl.ch",
       "photo_url": "./images/styleguide/contact/contact-3.jpg",
       "people_url": "https://people.epfl.ch/marie.curie",
-      "functions": [
-        "Researcher"
+      "roles": [
+        "Senior Scientist",
+        "Full Professor",
+        "Member"
       ],
       "research_fields": [
         "Physics",
@@ -588,8 +590,8 @@
       "email": "albert.einstein@epfl.ch",
       "photo_url": "./images/styleguide/contact/contact-4.jpg",
       "people_url": "https://people.epfl.ch/albert.einstein",
-      "functions": [
-        "Researcher"
+      "roles": [
+        "Senior Scientist"
       ],
       "research_fields": [
         "Theoretical Physics",
@@ -609,8 +611,8 @@
       "email": "hedy.lamarr@epfl.ch",
       "photo_url": "./images/styleguide/contact/contact-5.jpg",
       "people_url": "https://people.epfl.ch/hedy.lamarr",
-      "functions": [
-        "Researcher"
+      "roles": [
+        "Senior Scientist"
       ],
       "research_fields": [
         "Communication Systems",
@@ -630,8 +632,8 @@
       "email": "leonhard.euler@epfl.ch",
       "photo_url": "./images/styleguide/contact/contact-6.jpg",
       "people_url": "https://people.epfl.ch/leonhard.euler",
-      "functions": [
-        "Researcher"
+      "roles": [
+        "Senior Scientist"
       ],
       "research_fields": [
         "Mathematics",
@@ -651,8 +653,8 @@
       "email": "rachel.carson@epfl.ch",
       "photo_url": "./images/styleguide/contact/contact-7.jpg",
       "people_url": "https://people.epfl.ch/rachel.carson",
-      "functions": [
-        "Researcher"
+      "roles": [
+        "Senior Scientist"
       ],
       "research_fields": [
         "Environmental Science",
