@@ -2,7 +2,9 @@
 {% for person in people %}
   <div class="contact-list-row" itemscope itemtype="http://schema.org/Person">
     <div class="contact-list-avatar" itemprop="image">
-      {% include '@atoms/picture/picture-avatar.twig' %}
+      <picture>
+        <img class="img-fluid rounded-circle" src="{{ person.photo_url }}" alt="{{ person.prenom }} {{ person.nom }}">
+      </picture>
     </div>
     <a href="#" class="contact-list-item" itemprop="name">{{ person.prenom }} {{ person.nom }}</a>
     <p class="contact-list-item m-0 text-muted" itemprop="jobTitle">{{ person.functions|join(', ') }}</p>

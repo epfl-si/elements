@@ -523,7 +523,7 @@
       "nom": "Lovelace",
       "prenom": "Ada",
       "email": "ada.lovelace@epfl.ch",
-      "photo_url": "https://randomuser.me/api/portraits/women/2.jpg",
+      "photo_url": "./images/styleguide/contact/contact-1.jpg",
       "people_url": "https://people.epfl.ch/ada.lovelace",
       "functions": [
         "Researcher"
@@ -544,7 +544,7 @@
       "nom": "Eiffel",
       "prenom": "Gustave",
       "email": "gustave.eiffel@epfl.ch",
-      "photo_url": "https://randomuser.me/api/portraits/men/8.jpg",
+      "photo_url": "./images/styleguide/contact/contact-2.jpg",
       "people_url": "https://people.epfl.ch/gustave.eiffel",
       "functions": [
         "Researcher"
@@ -565,7 +565,7 @@
       "nom": "Curie",
       "prenom": "Marie",
       "email": "marie.curie@epfl.ch",
-      "photo_url": "https://randomuser.me/api/portraits/women/7.jpg",
+      "photo_url": "./images/styleguide/contact/contact-3.jpg",
       "people_url": "https://people.epfl.ch/marie.curie",
       "functions": [
         "Researcher"
@@ -583,31 +583,31 @@
       ]
     },
     {
-      "nom": "Rohrer",
-      "prenom": "Heinrich",
-      "email": "heinrich.rohrer@epfl.ch",
-      "photo_url": "",
-      "people_url": "https://people.epfl.ch/heinrich.rohrer",
+      "nom": "Einstein",
+      "prenom": "Albert",
+      "email": "albert.einstein@epfl.ch",
+      "photo_url": "./images/styleguide/contact/contact-4.jpg",
+      "people_url": "https://people.epfl.ch/albert.einstein",
       "functions": [
         "Researcher"
       ],
       "research_fields": [
-        "Microtechnology",
-        "Nanotechnology",
-        "Surface Physics"
+        "Theoretical Physics",
+        "Relativity",
+        "Quantum Mechanics"
       ],
       "phones": [
         "31234"
       ],
       "rooms": [
-        "MX 1234"
+        "PH 1234"
       ]
     },
     {
       "nom": "Lamarr",
       "prenom": "Hedy",
       "email": "hedy.lamarr@epfl.ch",
-      "photo_url": "https://randomuser.me/api/portraits/women/14.jpg",
+      "photo_url": "./images/styleguide/contact/contact-5.jpg",
       "people_url": "https://people.epfl.ch/hedy.lamarr",
       "functions": [
         "Researcher"
@@ -628,7 +628,7 @@
       "nom": "Euler",
       "prenom": "Leonhard",
       "email": "leonhard.euler@epfl.ch",
-      "photo_url": "https://randomuser.me/api/portraits/men/3.jpg",
+      "photo_url": "./images/styleguide/contact/contact-6.jpg",
       "people_url": "https://people.epfl.ch/leonhard.euler",
       "functions": [
         "Researcher"
@@ -649,7 +649,7 @@
       "nom": "Carson",
       "prenom": "Rachel",
       "email": "rachel.carson@epfl.ch",
-      "photo_url": "https://randomuser.me/api/portraits/women/4.jpg",
+      "photo_url": "./images/styleguide/contact/contact-7.jpg",
       "people_url": "https://people.epfl.ch/rachel.carson",
       "functions": [
         "Researcher"

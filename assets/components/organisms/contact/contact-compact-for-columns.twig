@@ -5,7 +5,7 @@
     {% if person.photo_url %}
       <img class="img-fluid rounded-circle mb-2 person-card-avatar" src="{{ person.photo_url }}" alt="{{ person.prenom }} {{ person.nom }}">
       {% else %}
-      <img class="img-fluid rounded-circle mb-2 person-card-avatar" src="./images/defaults/person-avatar-default-small.png" alt="{{ person.prenom }} {{ person.nom }}">
+      <img class="img-fluid rounded-circle mb-2 person-card-avatar" src="{{ person.photo_url }} alt="{{ person.prenom }} {{ person.nom }}">
     {% endif %}
     </div>
     <h3><a  href="#">{{ person.prenom }} {{ person.nom }}</a></h3>
