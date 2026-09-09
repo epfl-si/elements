@@ -27,7 +27,11 @@ export default function Sidebar({ location }) {
           Toolbox <span>Design System</span>
         </h1>
       )}
-      <h3 className="tlbx-sidebar-version">Version {packageJSON.version}</h3>
+      <h3 className="tlbx-sidebar-version">
+        <a href={`https://github.com/epfl-si/elements/releases/tag/${packageJSON.version}`} target="_blank" rel="noreferrer">
+          Version {packageJSON.version}
+        </a>
+      </h3>
 
       <ul className="tlbx-sidebar-item-list">
         <li>
@@ -56,4 +60,3 @@ export default function Sidebar({ location }) {
 Sidebar.propTypes = {
   location: PropTypes.object.isRequired,
 }
-
