@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EPFL Parking — Confirmation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f6f7;
+      color: #222;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 24px auto;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .header {
+      background: #cc0000;
+      color: #fff;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.4px;
+    }
+
+    .content {
+      padding: 22px 24px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: #cc0000;
+    }
+
+    p {
+      margin: 12px 0;
+      line-height: 1.45;
+    }
+
+    .divider {
+      height: 1px;
+      background: #e6e6e6;
+      margin: 18px 0;
+    }
+
+    table {
+      width: 100%;
+      border-spacing: 5px;
+      margin-top: 8px;
+    }
+
+    table td {
+      background: #f5f5f5;
+      padding: 10px;
+      text-align: left;
+      border-radius: 4px;
+    }
+
+    table th {
+      background: #e8e8e8;
+      padding: 10px;
+      text-align: left;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    .footer {
+      background: #fafafa;
+      padding: 16px 24px;
+      font-size: 13px;
+      color: #666;
+    }
+
+    a.link {
+      color: #cc0000;
+      text-decoration: none;
+    }
+
+    @media (max-width: 420px) {
+      .header { padding: 14px; }
+      .content { padding: 16px; }
+      .container { margin: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" role="article">
+    <div class="header" role="banner">
+      <div class="brand">EPFL Parking</div>
+    </div>
+
+    <div class="content" role="main">
+      <!-- FRANÇAIS -->
+      <h1>Confirmation d'autorisation</h1>
+
+      <p>
+        Bonjour,<br><br>
+        Nous vous confirmons par ce message l’attribution de l’autorisation
+        de parking suivante à votre nom.
+      </p>
+
+      <p>
+        Si cette autorisation n’est pas limitée dans le temps, vous recevrez
+        un autre email dès qu’une date de fin aura été définie.
+      </p>
+
+      <p>Meilleures salutations,<br>Le service parking de l’EPFL</p>
+
+      <div class="divider"></div>
+
+      <h1>Détails de la transaction</h1>
+
+      <table>
+        <tr><th>Montant total payé</th><td>02,50 CHF</td></tr>
+        <tr><th>Moyen de paiement</th><td>CAMIPRO</td></tr>
+        <tr><th>Numéro de transaction</th><td>1234567</td></tr>
+        <tr><th>Date de transaction</th><td>01.09.2026 13:37</td></tr>
+        <tr><th>Véhicule(s) actif(s) actuel(s)</th><td>OUTATIME</td></tr>
+      </table>
+
+      <div style="height:16px;"></div>
+
+      <h1>Autorisations</h1>
+
+      <table>
+        <tr>
+          <th>Début</th>
+          <th>Fin</th>
+          <th>Type</th>
+        </tr>
+        <tr>
+          <td>09.09.2026 08:00</td>
+          <td>09.09.2026 18:00</td>
+          <td>Verte</td>
+        </tr>
+      </table>
+
+      <p style="margin-top:16px;">
+        Numéro TVA : <strong>CHE-116.075.613</strong>
+      </p>
+      <p><strong>Merci pour votre achat.</strong></p>
+
+      <div class="divider"></div>
+
+      <!-- ENGLISH -->
+      <h1>Authorization Confirmation</h1>
+
+      <p>
+        Hello,<br><br>
+        We hereby confirm that the following parking authorization has been
+        assigned to your name.
+      </p>
+
+      <p>
+        If this authorization does not yet have a defined end date, you will
+        receive another email as soon as the end date is set.
+      </p>
+
+      <p>Best regards,<br>The EPFL Parking Service</p>
+
+      <div class="divider"></div>
+
+      <!-- Signature identical -->
+      <div>
+        <strong>Le service parking EPFL / EPFL Parking Service</strong><br><br>
+
+        <strong>Site internet / Website :</strong>
+        <a class="link" href="http://parking.epfl.ch" target="_blank">
+          parking.epfl.ch
+        </a><br>
+
+        <strong>Questions parking :</strong>
+        <a class="link" href="mailto:parking@epfl.ch">parking@epfl.ch</a><br>
+
+        <strong>Questions techniques (Campus / MyCamipro) :</strong>
+        <a class="link" href="mailto:1234@epfl.ch">1234@epfl.ch</a><br><br>
+
+        <strong>Guichet des parkings :</strong> Lun–Ven, 07:30–12:00<br>
+        <strong>Desk location :</strong>
+        <a class="link"
+           href="https://plan.epfl.ch/?room=%3DBS%20082"
+           target="_blank">BS 082</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>
+        <strong>Important :</strong> cet e-mail est généré automatiquement —
+        merci de ne pas y répondre.
+      </div>
+      <div style="font-size:12px; color:#777;">
+        © EPFL Parking —
+        <a class="link" href="http://parking.epfl.ch" target="_blank">
+          parking.epfl.ch
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
