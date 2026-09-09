@@ -151,7 +151,7 @@ module.exports = (env, argv) => {
         buildDir
       ),
       new StylelintPlugin({ extensions: 'scss' }),
-      new AssetComponentsPlugin(['atoms', 'molecules', 'organisms', 'content-types', 'pages']),
+      new AssetComponentsPlugin(['atoms', 'molecules', 'organisms', 'content-types', 'pages', 'applications']),
       new MergeIntoSingleFilePlugin({
         files: {
           // TODO: the file names are not accurate in development mode.
