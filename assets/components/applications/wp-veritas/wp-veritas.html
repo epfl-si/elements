@@ -26,6 +26,133 @@
 
   <link rel="stylesheet" href="https://web2018.epfl.ch/8.7.0/css/elements.min.css" />
   <script src="https://web2018.epfl.ch/8.7.0/js/elements.min.js"></script>
+
+  <style>
+    /* ------------------------------------------------------------------
+       Application shell
+
+       The page itself never scrolls: the header and the side column stay
+       put, and only the table scrolls. Everything below is one flex chain
+       from <body> down to .table-scroll, each level passing the remaining
+       height to the next one. min-height: 0 is what allows a flex item to
+       shrink below the size of its content, without it the table would
+       push the layout past the bottom of the window.
+       ------------------------------------------------------------------ */
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* The header has a fixed height: keep flexbox from shrinking it. */
+    body > .header,
+    body > hr {
+      flex: 0 0 auto;
+    }
+
+    .app-main {
+      display: flex;
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    /* Side column: fixed, scrolls on its own if the menu gets long. */
+    .app-aside {
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: column;
+      overflow-y: auto;
+      border-right: 1px solid #d5d5d5;
+    }
+
+    .app-aside .nav-aside {
+      padding-bottom: 1rem;
+    }
+
+    /* margin-top: auto pins the footer to the bottom of the column. */
+    .app-aside-footer {
+      margin-top: auto;
+      padding: 0 1.5rem 1rem;
+    }
+
+    .app-aside-footer .footer-legal {
+      /* Elements turns .footer-legal into a row from md up, which is too
+         wide for a side column: keep the two lines stacked. */
+      flex-direction: column;
+      padding-top: 0.75rem;
+      text-align: center;
+    }
+
+    .app-aside-footer p {
+      margin-bottom: 0;
+      font-size: 0.875rem;
+      color: #707070;
+    }
+
+    /* Content column: fills the width, hands its height to the table. */
+    .app-content {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    /* ------------------------------------------------------------------
+       Scrolling table with a fixed header
+
+       overflow cannot be set on <tbody>: table row groups are not scroll
+       containers. The wrapper scrolls instead, and the header cells are
+       kept in place with position: sticky.
+       ------------------------------------------------------------------ */
+    .table-scroll {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow-y: auto;
+    }
+
+    .table-scroll .table thead th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      /* Sticky cells are transparent by default: rows would show through. */
+      background-color: #fff;
+      /* With border-collapse, the border belongs to the table grid and
+         scrolls away. This inset shadow replaces it ($gray-200). */
+      border-bottom: 0;
+      box-shadow: inset 0 -3px 0 #d5d5d5;
+    }
+
+    /* Below xl the side column would leave too little room for the table:
+       fall back to the normal flow and let the whole page scroll. */
+    @media (max-width: 1199.98px) {
+      html,
+      body {
+        height: auto;
+      }
+
+      .app-main,
+      .app-content {
+        display: block;
+        overflow: visible;
+      }
+
+      .app-aside {
+        overflow: visible;
+        border-right: 0;
+      }
+
+      .table-scroll {
+        overflow: visible;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -93,61 +220,72 @@
   <hr class="darker" />
 
   <!-- Main -->
-  <main style="display: flex">
+  <main class="app-main">
     <!-- SideBar -->
-    <nav id="nav-aside" class="nav-aside" role="navigation" aria-describedby="nav-aside-title">
-      <h2 class="h5 sr-only-xl" id="nav-aside-title">Dans la même section</h2>
-      <ul class="nav-menu" style="width: max-content">
-        <li>
-          <a href="#"><svg class="icon" aria-hidden="true">
-              <use xlink:href="#home"></use>
-            </svg>&nbsp;Tout les sites</a>
-        </li>
-        <li>
-          <a href="#"><svg class="icon" aria-hidden="true">
-              <use xlink:href="#plus-circle"></use>
-            </svg>&nbsp;Créer un nouveau site</a>
-        </li>
-        <li>
-          <a href="#"><svg class="icon" aria-hidden="true">
-              <use xlink:href="#alert-octagon"></use>
-            </svg>&nbsp;Informations du site</a>
-        </li>
-        <li>
-          <a href="#"><svg class="icon" aria-hidden="true">
-              <use xlink:href="#tag"></use>
-            </svg>&nbsp;Gérer les tags</a>
-        </li>
-        <li>
-          <a href="#"><svg class="icon" aria-hidden="true">
-              <use xlink:href="#aperture"></use>
-            </svg>&nbsp;Gérer les thèmes</a>
-        </li>
-        <li>
-          <a href="#"><svg class="icon" aria-hidden="true">
-              <use xlink:href="#target"></use>
-            </svg>&nbsp;Documentation API</a>
-        </li>
-        <li>
-          <a href="#"><svg class="icon" aria-hidden="true">
-              <use xlink:href="#users"></use>
-            </svg>&nbsp;Utilisateurs</a>
-        </li>
-        <li>
-          <a href="#"><svg class="icon" aria-hidden="true">
-              <use xlink:href="#link"></use>
-            </svg>&nbsp;Redirections</a>
-        </li>
-        <li>
-          <a href="#"><svg class="icon" aria-hidden="true">
-              <use xlink:href="#plus-circle"></use>
-            </svg>&nbsp;Journaux d'actions</a>
-        </li>
-        <li><a href="#"></a></li>
-      </ul>
-    </nav>
+    <div class="app-aside">
+      <nav id="nav-aside" class="nav-aside" role="navigation" aria-describedby="nav-aside-title">
+        <h2 class="h5 sr-only-xl" id="nav-aside-title">Dans la même section</h2>
+        <ul class="nav-menu" style="width: max-content">
+          <li>
+            <a href="#"><svg class="icon" aria-hidden="true">
+                <use xlink:href="#home"></use>
+              </svg>&nbsp;Tout les sites</a>
+          </li>
+          <li>
+            <a href="#"><svg class="icon" aria-hidden="true">
+                <use xlink:href="#plus-circle"></use>
+              </svg>&nbsp;Créer un nouveau site</a>
+          </li>
+          <li>
+            <a href="#"><svg class="icon" aria-hidden="true">
+                <use xlink:href="#alert-octagon"></use>
+              </svg>&nbsp;Informations du site</a>
+          </li>
+          <li>
+            <a href="#"><svg class="icon" aria-hidden="true">
+                <use xlink:href="#tag"></use>
+              </svg>&nbsp;Gérer les tags</a>
+          </li>
+          <li>
+            <a href="#"><svg class="icon" aria-hidden="true">
+                <use xlink:href="#aperture"></use>
+              </svg>&nbsp;Gérer les thèmes</a>
+          </li>
+          <li>
+            <a href="#"><svg class="icon" aria-hidden="true">
+                <use xlink:href="#target"></use>
+              </svg>&nbsp;Documentation API</a>
+          </li>
+          <li>
+            <a href="#"><svg class="icon" aria-hidden="true">
+                <use xlink:href="#users"></use>
+              </svg>&nbsp;Utilisateurs</a>
+          </li>
+          <li>
+            <a href="#"><svg class="icon" aria-hidden="true">
+                <use xlink:href="#link"></use>
+              </svg>&nbsp;Redirections</a>
+          </li>
+          <li>
+            <a href="#"><svg class="icon" aria-hidden="true">
+                <use xlink:href="#plus-circle"></use>
+              </svg>&nbsp;Journaux d'actions</a>
+          </li>
+          <li><a href="#"></a></li>
+        </ul>
+      </nav>
 
-    <div class="container-fluid">
+      <footer class="app-aside-footer footer-light" role="contentinfo">
+        <div class="footer-legal">
+          <p>
+            <a href="https://go.epfl.ch/fsd">⚘ ISAS-FSD</a>
+            <a href="https://github.com/epfl-si/wp-veritas/releases">Version 1.24.0</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <div class="container-fluid app-content">
       <h3 style="font-weight: bold">
         Sources de vérités pour les sites Wordpress
       </h3>
@@ -178,980 +316,982 @@
       </div>
 
       <!-- Table-->
-      <table class="table table-sortable" data-tablesaw-sortable>
-        <thead>
-          <tr>
-            <th data-tablesaw-sortable-col>URL</th>
-            <th data-tablesaw-sortable-col>INFRASTRUCTURES</th>
-            <th data-tablesaw-sortable-col data-tablesaw-sortable-numeric>ÂGE</th>
-            <th>ACTION</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <a class="label">https://www.dark-laboratory.org/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>3h</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>1h</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/about</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>2h</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/education</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>4h</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/research</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>5h</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/innovation</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>7h</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/campus</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>9h</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/schools</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>11h</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lasa/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>13h</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lts2/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>14h</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lcav/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>16h</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lions/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#external-link"></use>
-              </svg>&nbsp;extern</td>
-            <td>18h</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lmis/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>20h</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lpqm/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>22h</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lbni/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#external-link"></use>
-              </svg>&nbsp;extern</td>
-            <td>1j</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lmts/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>1j</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lnco/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>2j</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lsms/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>2j</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lmaf/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#external-link"></use>
-              </svg>&nbsp;extern</td>
-            <td>3j</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lsi/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>3j</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lamd/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>4j</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lbm/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>4j</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lsbi/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#external-link"></use>
-              </svg>&nbsp;extern</td>
-            <td>5j</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lce/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>5j</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/ltp/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>6j</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lpi/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>7j</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lsu/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#external-link"></use>
-              </svg>&nbsp;extern</td>
-            <td>8j</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lgm/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>9j</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lmam/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>10j</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lspm/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#cloud"></use>
-              </svg>&nbsp;Kubernetes</td>
-            <td>12j</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.epfl.ch/labs/lmgn/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#external-link"></use>
-              </svg>&nbsp;extern</td>
-            <td>15j</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="label">https://www.light-laboratory.org/</a>
-            </td>
-            <td><svg class="icon" aria-hidden="true">
-                <use xlink:href="#external-link"></use>
-              </svg>&nbsp;extern</td>
-            <td>12h</td>
-            <td>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#info"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#pen-tool"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-              <button class="btn btn-primary btn-sm">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#delete"></use>
-                </svg>&nbsp;
-              </button>
-            </td>
-          </tr>
-        </tbody>
+      <div class="table-scroll">
+        <table class="table table-sortable" data-tablesaw-sortable>
+          <thead>
+            <tr>
+              <th data-tablesaw-sortable-col>URL</th>
+              <th data-tablesaw-sortable-col>INFRASTRUCTURES</th>
+              <th data-tablesaw-sortable-col data-tablesaw-sortable-numeric>ÂGE</th>
+              <th>ACTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <a class="label">https://www.dark-laboratory.org/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>3h</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>1h</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/about</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>2h</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/education</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>4h</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/research</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>5h</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/innovation</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>7h</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/campus</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>9h</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/schools</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>11h</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lasa/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>13h</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lts2/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>14h</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lcav/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>16h</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lions/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#external-link"></use>
+                </svg>&nbsp;extern</td>
+              <td>18h</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lmis/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>20h</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lpqm/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>22h</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lbni/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#external-link"></use>
+                </svg>&nbsp;extern</td>
+              <td>1j</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lmts/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>1j</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lnco/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>2j</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lsms/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>2j</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lmaf/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#external-link"></use>
+                </svg>&nbsp;extern</td>
+              <td>3j</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lsi/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>3j</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lamd/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>4j</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lbm/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>4j</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lsbi/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#external-link"></use>
+                </svg>&nbsp;extern</td>
+              <td>5j</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lce/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>5j</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/ltp/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>6j</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lpi/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>7j</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lsu/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#external-link"></use>
+                </svg>&nbsp;extern</td>
+              <td>8j</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lgm/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>9j</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lmam/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>10j</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lspm/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#cloud"></use>
+                </svg>&nbsp;Kubernetes</td>
+              <td>12j</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.epfl.ch/labs/lmgn/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#external-link"></use>
+                </svg>&nbsp;extern</td>
+              <td>15j</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a class="label">https://www.light-laboratory.org/</a>
+              </td>
+              <td><svg class="icon" aria-hidden="true">
+                  <use xlink:href="#external-link"></use>
+                </svg>&nbsp;extern</td>
+              <td>12h</td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#info"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#pen-tool"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+                <button class="btn btn-primary btn-sm">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#delete"></use>
+                  </svg>&nbsp;
+                </button>
+              </td>
+            </tr>
+          </tbody>
 
-        <!-- END TABLE -->
-      </table>
+          <!-- END TABLE -->
+        </table>
+      </div>
     </div>
   </main>
 
