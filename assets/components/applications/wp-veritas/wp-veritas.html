@@ -129,6 +129,24 @@
       box-shadow: inset 0 -3px 0 #d5d5d5;
     }
 
+    /* Button improvements
+    */
+    #add-btn {
+      color:#fff;
+      background-color:red;
+      border:none;
+      transition:background-color .2s;
+      display:none
+    }
+    #add-btn:hover {
+      color:#fff;
+      background-color:#c00
+    }
+    .btn.btn-sm.btn-actions {
+      border-radius:5px;
+      line-height:1
+    }
+
     /* Below xl the side column would leave too little room for the table:
        fall back to the normal flow and let the whole page scroll. */
     @media (max-width: 1199.98px) {
@@ -336,24 +354,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>3h</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -366,24 +394,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>1h</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -396,24 +434,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>2h</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -426,24 +474,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>4h</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -456,24 +514,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>5h</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -486,24 +554,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>7h</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -516,24 +594,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>9h</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -546,24 +634,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>11h</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -576,24 +674,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>13h</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -606,24 +714,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>14h</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -636,24 +754,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>16h</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -666,24 +794,34 @@
                 </svg>&nbsp;extern</td>
               <td>18h</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -696,24 +834,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>20h</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -726,24 +874,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>22h</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -756,24 +914,34 @@
                 </svg>&nbsp;extern</td>
               <td>1j</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -786,24 +954,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>1j</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -816,24 +994,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>2j</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -846,24 +1034,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>2j</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -876,24 +1074,34 @@
                 </svg>&nbsp;extern</td>
               <td>3j</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -906,24 +1114,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>3j</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -936,24 +1154,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>4j</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -966,24 +1194,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>4j</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -996,24 +1234,34 @@
                 </svg>&nbsp;extern</td>
               <td>5j</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -1026,24 +1274,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>5j</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -1056,24 +1314,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>6j</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -1086,24 +1354,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>7j</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -1116,24 +1394,34 @@
                 </svg>&nbsp;extern</td>
               <td>8j</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -1146,24 +1434,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>9j</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -1176,24 +1474,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>10j</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -1206,24 +1514,34 @@
                 </svg>&nbsp;Kubernetes</td>
               <td>12j</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -1236,24 +1554,34 @@
                 </svg>&nbsp;extern</td>
               <td>15j</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
@@ -1266,24 +1594,34 @@
                 </svg>&nbsp;extern</td>
               <td>12h</td>
               <td>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Info">
+                  <svg class="icon feather" aria-hidden="true">
                     <use xlink:href="#info"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#pen-tool"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-secondary btn-sm"><svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
-                </button>
-                <button class="btn btn-primary btn-sm">
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#delete"></use>
-                  </svg>&nbsp;
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Edit">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#edit-2"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-warning p-1" title="Box">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#box"></use>
+                  </svg>
+                </a>
+
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                </a>
+
+                <button type="button" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Delete">
+                  <svg class="icon feather" aria-hidden="true">
+                    <use xlink:href="#trash-2"></use>
+                  </svg>
                 </button>
               </td>
             </tr>
