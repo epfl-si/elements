@@ -133,7 +133,7 @@
     "epfl-science-laboratory-chemistry-2",
     "epfl-science-laboratory-chemistry",
     "epfl-science-laboratory-research",
-    "epfl-science-laboratory-researcher",
+    "epfl-science-laboratory-Senior Scientist",
     "epfl-science-light-bulb-1",
     "epfl-science-light-bulb",
     "epfl-science-mathematics-cube-1",
@@ -518,131 +518,154 @@
       "A kid with ice cream was like \"Ooh pony\". The kid tried to ride it but dropped his ice cream on the pony's head. The cone stayed and when the pony had a baby, the baby was an unicorn."
     ]
   ],
-  "people": [
+"people": [
     {
-      "nom": "Traill",
-      "prenom": "Heidy",
-      "email": "heidy.traill@epfl.ch",
-      "photo_url": "https://randomuser.me/api/portraits/women/2.jpg",
-      "people_url": "https://people.epfl.ch/heidy.traill",
-      "functions": [
-        "Professor"
+      "nom": "Lovelace",
+      "prenom": "Ada",
+      "email": "ada.lovelace@epfl.ch",
+      "photo_url": "./images/styleguide/contact/contact-1.jpg",
+      "people_url": "https://people.epfl.ch/ada.lovelace",
+      "roles": [
+        "Senior Scientist"
       ],
       "research_fields": [
-        "Inorganic Chemistry",
-        "Organic Chemistry",
-        "Renewable Energy"
+        "Computer Science",
+        "Mathematics",
+        "Programming Languages"
       ],
       "phones": [
-        "57218",
-        "81448"
+        "31234"
       ],
       "rooms": [
-        "BM 4129"
+        "INN 1234"
       ]
     },
     {
-      "nom": "Felicitas Lane",
-      "prenom": "Dolores",
-      "email": "dolores.felicitas.lane@epfl.ch",
-      "photo_url": "https://randomuser.me/api/portraits/women/8.jpg",
-      "people_url": "https://people.epfl.ch/dolores.felicitas.lane",
-      "functions": [
-        "Information systems director",
-        "Doctoral Assistant",
-        "Project Assistant",
-        "Scientist",
-        "Professor",
-        "Full time Professor",
-        "Educational technologist",
-        "Guest"
+      "nom": "Eiffel",
+      "prenom": "Gustave",
+      "email": "gustave.eiffel@epfl.ch",
+      "photo_url": "./images/styleguide/contact/contact-2.jpg",
+      "people_url": "https://people.epfl.ch/gustave.eiffel",
+      "roles": [
+        "Senior Scientist"
+      ],
+      "research_fields": [
+        "Civil Engineering",
+        "Architecture",
+        "Structural Mechanics"
       ],
       "phones": [
-        "34567"
+        "31234"
       ],
       "rooms": [
-        "AM 275"
+        "GC 1234"
       ]
     },
     {
-      "nom": "Buratto",
-      "prenom": "Philip",
-      "email": "philip.buratto@epfl.ch",
-      "photo_url": "https://randomuser.me/api/portraits/men/7.jpg",
-      "people_url": "https://people.epfl.ch/philip.buratto",
-      "functions": [
-        "Staff"
+      "nom": "Curie",
+      "prenom": "Marie",
+      "email": "marie.curie@epfl.ch",
+      "photo_url": "./images/styleguide/contact/contact-3.jpg",
+      "people_url": "https://people.epfl.ch/marie.curie",
+      "roles": [
+        "Senior Scientist",
+        "Full Professor",
+        "Member"
+      ],
+      "research_fields": [
+        "Physics",
+        "Chemistry",
+        "Materials Science"
       ],
       "phones": [
-        "34567"
+        "31234"
       ],
       "rooms": [
-        "BM 4129"
+        "MED 1234"
       ]
     },
     {
-      "nom": "Reeves O'Neill Edwards",
-      "prenom": "Shawna",
-      "email": "shawna.reeves.oneill.edwards@epfl.ch",
-      "photo_url": "",
-      "people_url": "https://people.epfl.ch/shawna.reeves.oneill.edwards",
-      "functions": [
-        "Guest"
+      "nom": "Einstein",
+      "prenom": "Albert",
+      "email": "albert.einstein@epfl.ch",
+      "photo_url": "./images/styleguide/contact/contact-4.jpg",
+      "people_url": "https://people.epfl.ch/albert.einstein",
+      "roles": [
+        "Senior Scientist"
+      ],
+      "research_fields": [
+        "Theoretical Physics",
+        "Relativity",
+        "Quantum Mechanics"
       ],
       "phones": [
-        "34868"
+        "31234"
       ],
       "rooms": [
-        "BM 4129"
+        "PH 1234"
       ]
     },
     {
-      "nom": "Camus",
-      "prenom": "Vail",
-      "email": "vail.camus@epfl.ch",
-      "photo_url": "https://randomuser.me/api/portraits/women/14.jpg",
-      "people_url": "https://people.epfl.ch/vail.camus",
-      "functions": [
-        "Scientist"
+      "nom": "Lamarr",
+      "prenom": "Hedy",
+      "email": "hedy.lamarr@epfl.ch",
+      "photo_url": "./images/styleguide/contact/contact-5.jpg",
+      "people_url": "https://people.epfl.ch/hedy.lamarr",
+      "roles": [
+        "Senior Scientist"
+      ],
+      "research_fields": [
+        "Communication Systems",
+        "Electrical Engineering",
+        "Wireless Communications"
       ],
       "phones": [
-        "31171"
+        "31234"
       ],
       "rooms": [
-        "EM 3129"
+        "EL 1234"
       ]
     },
     {
-      "nom": "Charbonneau",
-      "prenom": "Amorette",
-      "email": "amorette.charbonneau@epfl.ch",
-      "photo_url": "https://randomuser.me/api/portraits/women/3.jpg",
-      "people_url": "https://people.epfl.ch/amorette.charbonneau",
-      "functions": [
-        "Staff"
+      "nom": "Euler",
+      "prenom": "Leonhard",
+      "email": "leonhard.euler@epfl.ch",
+      "photo_url": "./images/styleguide/contact/contact-6.jpg",
+      "people_url": "https://people.epfl.ch/leonhard.euler",
+      "roles": [
+        "Senior Scientist"
+      ],
+      "research_fields": [
+        "Mathematics",
+        "Applied Mathematics",
+        "Fluid Dynamics"
       ],
       "phones": [
-        "31471"
+        "31234"
       ],
       "rooms": [
-        "CM 3129"
+        "MA 1234"
       ]
     },
     {
-      "nom": "Bradley",
-      "prenom": "Marcellus",
-      "email": "marcellus.bradley@epfl.ch",
-      "photo_url": "https://randomuser.me/api/portraits/men/4.jpg",
-      "people_url": "https://people.epfl.ch/marcellus.bradley",
-      "functions": [
-        "Doctoral Assistant",
-        "Project Assistant"
+      "nom": "Carson",
+      "prenom": "Rachel",
+      "email": "rachel.carson@epfl.ch",
+      "photo_url": "./images/styleguide/contact/contact-7.jpg",
+      "people_url": "https://people.epfl.ch/rachel.carson",
+      "roles": [
+        "Senior Scientist"
+      ],
+      "research_fields": [
+        "Environmental Science",
+        "Marine Biology",
+        "Toxicology"
       ],
       "phones": [
-        "11471"
+        "31234"
       ],
       "rooms": [
-        "GM 3129"
+        "SV 1234"
       ]
     }
   ],
