@@ -1,0 +1,38 @@
+{% set isSpecial = true %}
+{% set isNews = true %}
+
+{% extends "@templates/base/base-news.twig" %}
+
+{% block header %}
+  {% include '@organisms/header/header-light.twig' with {
+    site_title: "Actualités"
+  } %}
+{% endblock %}
+
+{% block grid %}{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+  {% include '@organisms/search-and-filter/search-and-filter-news.twig' %}
+</div>
+
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-12">
+      {% include '@molecules/list-group/list-group-news.twig' with { title: false, bottomlink: false, tag: true } %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer_container %}
+  <div class="bg-gray-100 pt-5">
+    <div class="container">
+      {% block footer %}
+        {% include '@organisms/footer/footer-light.twig' %}
+      {% endblock %}
+    </div>
+  </div>
+{% endblock %}

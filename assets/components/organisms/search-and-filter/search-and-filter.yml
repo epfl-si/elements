@@ -1,0 +1,7 @@
+title: Search & Filter
+name: search-and-filter
+variants:
+  - name: events
+    title: Search & Filters Memento
+  - name: news
+    title: Search & Filters News

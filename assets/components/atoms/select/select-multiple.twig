@@ -1,5 +1,5 @@
 <div class="form-group">
-  <label>Pick a restaurant</label>
+  <label>{% if label %} {{~ label}} {% else %}Pick a restaurant{% endif %}</label>
   <select class="select-multiple" multiple="multiple" data-placeholder="Restaurant list" data-filter="true">
     <option value="1">Chuck Testa's tavern</option>
     <option value="2">The Sage Cattabriga-Alosa hideout</option>

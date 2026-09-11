@@ -1,0 +1,70 @@
+<div class="search-filters mt-4">
+
+  <form action="" method="get">
+
+    {% include '@molecules/form-group/form-group-search.twig' %}
+
+    <div class="form-group form-group-select">
+      <label>Format</label>
+      <select class="select-multiple" multiple="multiple" data-placeholder="Format">
+        <option value="brief">Brief</option>
+        <option value="gallery">Gallery</option>
+        <option value="infographics">Infographics</option>
+        <option value="longread">Longread</option>
+        <option value="news">News</option>
+        <option value="podcast">Podcast</option>
+        <option value="portrait">Portrait</option>
+        <option value="video">Video</option>
+      </select>
+    </div>
+
+    <div class="form-group form-group-select">
+      <label >Topics</label>
+      <select class="select-multiple" multiple="multiple" data-placeholder="Topics">
+        <option value="ai">AI</option>
+        <option value="awards">Awards</option>
+        <option value="basic-sciences">Basic Sciences</option>
+        <option value="computer-science">Computer Science</option>
+        <option value="construction">Construction</option>
+        <option value="cybersecurity">Cybersecurity</option>
+        <option value="economy-finance">Economy/Finance</option>
+        <option value="education">Education</option>
+        <option value="energy">Energy</option>
+        <option value="engineering">Engineering</option>
+        <option value="epfl-institution">EPFL Institution</option>
+        <option value="health">Health</option>
+        <option value="innovation">Innovation</option>
+        <option value="research">Research</option>
+        <option value="society-culture">Society/Culture</option>
+        <option value="sustainability">Sustainability</option>
+      </select>
+    </div>
+
+    <div class="form-group form-group-select">
+      <label>Units</label>
+      <select class="select-multiple" multiple="multiple" data-placeholder="Units">
+        <option value="">CDM</option>
+        <option value="">ENAC</option>
+        <option value="">IC</option>
+        <option value="">SB</option>
+        <option value="">STI</option>
+        <option value="">SV</option>
+        <option value="">Biorobotics Laboratory</option>
+        <option value="">Concrete Behaviour and Structural Design Laboratory</option>
+
+      </select>
+    </div>
+
+  </form>
+</div>
+
+<div class="event-filter-tags mt-2">
+  {% include "@molecules/filters/filters-search.twig" with {
+    items: [
+      { label: 'Video' },
+      { label: 'STI' },
+      { label: 'Bioengineering' },
+      { label: 'NeuroX' }
+    ]
+  } %}
+</div>

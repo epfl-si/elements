@@ -100,6 +100,7 @@
 @import 'organisms/nav-mobile/nav-mobile';
 @import 'organisms/newsletter-sign-up/newsletter-sign-up';
 @import 'organisms/restauration/restauration';
+@import 'organisms/search-and-filter/search-and-filter';
 @import 'organisms/social-feed-group/social-feed-group';
 
 // content-types:
@@ -128,6 +129,5 @@
 // pages:
 @import 'pages/blog-single/blog-single';
 @import 'pages/error-404/error-404';
-@import 'pages/event-list/event-list';
 @import 'pages/people-detail/people-detail';
 @import 'pages/study-plan-course/study-plan-course';

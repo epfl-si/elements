@@ -1,0 +1,13 @@
+{% set items = items|default(["Legolas", "Jar Jar Binks"]) %}
+
+<div class="tag-group">
+  <label for="">Search filters</label>
+  <div>
+    <button class="btn tag tag-plain">Reset all</button>
+    {% for item in items %}
+      <button class="btn tag tag-primary">
+        {{ item.label|default(item) }}<span class="remove" title="Remove">×</span>
+      </button>
+    {% endfor %}
+  </div>
+</div>

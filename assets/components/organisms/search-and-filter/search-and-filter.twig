@@ -1,0 +1,28 @@
+<div class="search-filters mt-4">
+  <form action="" method="get">
+    {% include '@molecules/form-group/form-group-search.twig' %}
+    {% include '@atoms/select/select.twig' with { label: 'Pic a character', selection: 'Good choice' } %}
+    {% include '@atoms/select/select.twig' with { 
+      label: 'Pic a vehicle', 
+      selection: 'Select one',
+      items: [
+        { label: 'Bike' },
+        { label: 'Bus' },
+        { label: 'X-Wing' },
+        { label: 'Batmobile' }
+      ]
+    } %}
+    {% include '@atoms/select/select-multiple.twig' %}
+    {% include '@atoms/select/select-date.twig' with { label: 'Select a date' } %}
+  </form>
+
+  <div class="event-filter-tags mt-2">
+    {% include "@molecules/filters/filters-search.twig" with {
+      items: [
+        { label: 'Legolas' },
+        { label: 'Jar-Jar Binks' },
+        { label: 'The fourth choice' }
+      ]
+    } %}
+  </div>
+</div>
