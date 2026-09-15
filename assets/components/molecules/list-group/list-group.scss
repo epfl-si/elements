@@ -216,6 +216,7 @@
 }
 
 .list-group-news-teaser {
+  border-color: $gray-100 !important;
 
   .list-group-teaser-excerpt {
     font-size: 1rem;
@@ -228,7 +229,13 @@
     }
 
     &:first-child > h3 {
-      font-size: $font-size-base;
+      font-size: ($font-size-base * 1.125);
+      line-height: 1.2 !important;
+    }
+
+    & > .tag-sm {
+      font-weight: $font-weight-bold;
+      color: $gray-600;
     }
   }
 

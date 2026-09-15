@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 const DocDir = ({ dir, fullpath }) => {
   const titlelize = string => {
-    const title = string.split('.')[0].replace('-', ' ');
+    const title = string.split('.')[0].replaceAll('-', ' ');
     return title.charAt(0).toUpperCase() + title.slice(1);
   };
 

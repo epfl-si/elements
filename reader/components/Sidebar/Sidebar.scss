@@ -12,6 +12,20 @@
   @media only screen and (max-width: 767px) {
     margin-bottom: 3rem;
   }
+
+  .tlbx-sidebar-version {
+    margin: 0.5rem 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 200;
+
+    a {
+      &:hover {
+        color: #a8404a; // $link-hover-color?
+      }
+    }
+
+  }
 }
 
 .tlbx-sidebar-title {
@@ -22,11 +36,4 @@
   span {
     font-weight: 200;
   }
-}
-
-.tlbx-sidebar-version {
-  margin: 0.5rem 1rem;
-  margin-bottom: 1.5rem;
-  font-size: 0.8rem;
-  font-weight: 200;
 }

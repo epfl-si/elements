@@ -1,4 +1,6 @@
+{% if add_wrapper|default(true) %}
 <div class="py-5">
+{% endif %}
   <div class="container">
     <div class="row">
       <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 border border-light p-4">
@@ -8,4 +10,6 @@
       </div>
     </div>
   </div>
+{% if add_wrapper|default(true) %}
 </div>
+{% endif %}
