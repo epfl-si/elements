@@ -109,7 +109,10 @@
           <p class="m-0 small text-muted">
             <strong>Auteur:</strong>
             <small itemprop="author publisher" itemscope="" itemtype="https://schema.org/Person">
-              <a href="#" class="opacity-80"><span itemprop="name">Nik Papageorgiou</span></a>
+              <a href="#" class="opacity-80 text-nowrap"><span itemprop="name">Nik Papageorgiou</span></a>,
+              <a href="#" class="opacity-80 text-nowrap"><span itemprop="name">Nik Papageorgiou</span></a>,
+              <a href="#" class="opacity-80 text-nowrap"><span itemprop="name">Nik Papageorgiou</span></a>,
+              <a href="#" class="opacity-80 text-nowrap"><span itemprop="name">Nik Papageorgiou</span></a>
             </small>
           </p>
           <p class="small text-muted mb-0 mt-1">
@@ -118,7 +121,7 @@
           </p>
         </div>
 
-        <ul class="social-icon-list list-inline mt-4 mt-md-0">
+        <ul class="social-icon-list list-inline mt-4 mt-md-0 flex-nowrap">
           <li>
             {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on Facebook', icon: 'icon-facebook', round: round, discrete: true, negative: negative, url: 'https://www.facebook.com/epflcampus' } %}
           </li>
