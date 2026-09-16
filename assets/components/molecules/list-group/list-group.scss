@@ -72,6 +72,10 @@
     @include media-breakpoint-down(md) {
       border-bottom: none;
     }
+
+    &.small-list-group-teaser-thumbnail {
+      flex: 0 0 8rem;
+    }
   }
 
   .list-group-teaser-content {
@@ -140,6 +144,10 @@
           width: calc( 100px + 2rem );
         }
       }
+    }
+
+    &.border-none {
+      border: none;
     }
   }
 

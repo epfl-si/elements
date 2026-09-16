@@ -100,6 +100,48 @@
         <a href="#" class="tag tag-primary mt-2 mr-1">Laboratoire de biophysique statistique (LBS)</a>
       </div>
 
+      {% include '@molecules/links-group/links-group.twig' with {
+        group_title: 'Liens',
+        extra_class: 'mb-4'
+      } %}
+
+
+      <button
+        class="collapse-title collapse-title-desktop collapsed"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapse-media"
+        aria-expanded="false"
+        aria-controls="collapse-media"
+      >
+        Médias et téléchargements
+      </button>
+      <div class="collapse collapse-item collapse-item-desktop list-group" id="collapse-media">
+        {% for _ in 1..3 %}
+        <div class="list-group-teaser list-group-item list-group-teaser-container border-none mb-3">
+          <div class="list-group-teaser-thumbnail small-list-group-teaser-thumbnail p-0">
+            <a href="#" class="link-trapeze-horizontal">
+              {% include '@atoms/picture/picture-news-thumb.twig' %}
+            </a>
+          </div>
+          <div class="list-group-teaser-content px-0 pb-0 pl-lg-3 pt-lg-0">
+            <a class="mb-0" href="#">
+              Le bateau à propulsion acoustique du Laboratoire MICROBS.
+              {% include '@atoms/icon/icon.twig' with {icon: 'download', icon_classes: 'ml-1 red mt-n1'} %}
+            </a>
+            <p class="text-muted opacity-80">
+              2026 EPFL/MICROBS - CC-BY-SA 4.0
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+        <div class="list-group-teaser list-group-item border-none mb-3">
+          <a class="mb-0" href="#">
+            Tout télécharger {% include '@atoms/icon/icon.twig' with {icon: 'download', icon_classes: 'ml-1 red mt-n1'} %}
+          </a>
+        </div>
+      </div>
+
       {% include '@molecules/collapse-group/collapse-group.twig' with {
         title: null
       } %}
