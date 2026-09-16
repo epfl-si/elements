@@ -124,15 +124,17 @@
               {% include '@atoms/picture/picture-news-thumb.twig' %}
             </a>
           </div>
-          <div class="list-group-teaser-content px-0 pb-0 pl-lg-3 pt-lg-0">
+          <div class="list-group-teaser-content px-0 pb-0 pl-lg-3 pt-lg-0" itemprop="associatedMedia" itemscope itemtype="https://schema.org/MediaObject">
             <a class="mb-0" href="#">
-              Le bateau à propulsion acoustique du Laboratoire MICROBS.{%
+              <span itemprop="name">Le bateau à propulsion acoustique du Laboratoire MICROBS.</span>{%
                 include '@atoms/icon/icon.twig' with {icon: 'download', icon_classes: 'ml-1 red mt-n1'}
               %}
             </a>
             <p class="text-muted opacity-80">
               2026 EPFL/MICROBS - CC-BY-SA 4.0
             </p>
+            <meta itemprop="contentUrl" content="#" />
+            <meta itemprop="encodingFormat" content="image/png" />
           </div>
         </div>
         {% endfor %}
@@ -149,20 +151,48 @@
         title: null
       } %}
 
+      <button
+        class="collapse-title collapse-title-desktop collapsed"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapse-contact"
+        aria-expanded="false"
+        aria-controls="collapse-contact"
+      >
+        Contact et renseignements
+      </button>
+      <div class="collapse collapse-item collapse-item-desktop" id="collapse-contact">
+        {% for _ in 1..2 %}
+        <div class="d-flex justify-content-between align-items-center mb-3 text-base" >
+          <div itemprop="contributor" itemscope itemtype="https://schema.org/Person">
+            Prof. <a href="#"><span itemprop="name">Selman Sakar</span></a>,
+            <span itemprop="jobTitle">Associate Professor</span>,<br/>
+            <span itemprop="memberOf" itemscope itemtype="https://schema.org/Organization">
+              <span itemprop="name">Institute of Mechanical Engineering</span>
+            </span>
+          </div>
+          <div class="text-right">
+            <a href="tel:+41216931095">+41 21 6931095</a><br/>
+            <a href="mailto:selman.sakar@epfl.ch">selman.sakar@epfl.ch</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
       <footer class="my-4 d-md-flex justify-content-between border-0 align-items-start">
         <div>
           <p class="m-0 small text-muted">
             <strong>Auteurs:</strong>
-            <small itemprop="author publisher" itemscope="" itemtype="https://schema.org/Person">
-              <a href="#" class="opacity-80 text-nowrap"><span itemprop="name">Nik Papageorgiou</span></a>,
-              <a href="#" class="opacity-80 text-nowrap"><span itemprop="name">Hector Garcia Morales</span></a>,
-              <a href="#" class="opacity-80 text-nowrap"><span itemprop="name">Julie Schüpbach</span></a>,
-              <a href="#" class="opacity-80 text-nowrap"><span itemprop="name">Celia Luterbacher</span></a>
+            <small>
+              <a href="#" class="opacity-80 text-nowrap" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Nik Papageorgiou</span></a>,
+              <a href="#" class="opacity-80 text-nowrap" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Hector Garcia Morales</span></a>,
+              <a href="#" class="opacity-80 text-nowrap" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Julie Schüpbach</span></a>,
+              <a href="#" class="opacity-80 text-nowrap" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Celia Luterbacher</span></a>
             </small>
           </p>
-          <p class="small text-muted mb-0 mt-1">
+          <p class="small text-muted mb-0 mt-1" itemprop="sourceOrganization" itemscope itemtype="https://schema.org/Organization">
             <strong>Source:</strong>
-            <a href="/search/mediacom/fr" class="opacity-80">EPFL</a>
+            <a itemprop="url" href="/search/mediacom/fr" class="opacity-80"><span itemprop="name">EPFL</span></a>
           </p>
         </div>
 
@@ -180,6 +210,14 @@
             {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on LinkedIn', icon: 'icon-linkedin', round: round, discrete: true, negative: negative, url: 'https://www.linkedin.com/school/epfl/' } %}
           </li>
         </ul>
+      </footer>
+
+      <footer class="my-4 text-sm text-muted border-0 opacity-80">
+        Ce contenu est distribué sous les termes de la licence Creative Commons CC BY-SA 4.0.
+        Vous pouvez reprendre librement les textes, vidéos et images y figurant à condition
+        de créditer l’auteur de l’œuvre, et de ne pas restreindre son utilisation. Pour les
+        illustrations ne contenant pas la mention CC BY-SA, l’autorisation de l’auteur est
+        nécessaire.
       </footer>
     </section>
   </article>
