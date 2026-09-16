@@ -4,56 +4,59 @@
 
     {% include '@molecules/form-group/form-group-search.twig' %}
 
-    <div class="form-group form-group-select">
-      <label>Format</label>
-      <select class="select-multiple" multiple="multiple" data-placeholder="Format">
-        <option value="brief">Brief</option>
-        <option value="gallery">Gallery</option>
-        <option value="infographics">Infographics</option>
-        <option value="longread">Longread</option>
-        <option value="news">News</option>
-        <option value="podcast">Podcast</option>
-        <option value="portrait">Portrait</option>
-        <option value="video">Video</option>
-      </select>
-    </div>
+    {% include '@atoms/select/select-multiple.twig' with { 
+      label: 'Format',
+      filter: FALSE,
+      placeholder: 'Format',
+      items_multiple: [
+        { label: 'Brief', value: 'brief' },
+        { label: 'Gallery', value: 'gallery' },
+        { label: 'Infographics', value: 'infographics' },
+        { label: 'Longread', value: 'longread' },
+        { label: 'News', value: 'news' },
+        { label: 'Podcast', value: 'podcast' },
+        { label: 'Portrait', value: 'portrait' },
+        { label: 'Video', value: 'video' }
+      ]
+    } %}
 
-    <div class="form-group form-group-select">
-      <label >Topics</label>
-      <select class="select-multiple" multiple="multiple" data-placeholder="Topics">
-        <option value="ai">AI</option>
-        <option value="awards">Awards</option>
-        <option value="basic-sciences">Basic Sciences</option>
-        <option value="computer-science">Computer Science</option>
-        <option value="construction">Construction</option>
-        <option value="cybersecurity">Cybersecurity</option>
-        <option value="economy-finance">Economy/Finance</option>
-        <option value="education">Education</option>
-        <option value="energy">Energy</option>
-        <option value="engineering">Engineering</option>
-        <option value="epfl-institution">EPFL Institution</option>
-        <option value="health">Health</option>
-        <option value="innovation">Innovation</option>
-        <option value="research">Research</option>
-        <option value="society-culture">Society/Culture</option>
-        <option value="sustainability">Sustainability</option>
-      </select>
-    </div>
+    {% include '@atoms/select/select-multiple.twig' with { 
+      label: 'Topics',
+      placeholder: 'Topics',
+      items_multiple: [
+        { label: 'AI', value: 'ai' },
+        { label: 'Awards', value: 'awards' },
+        { label: 'Basic Sciences', value: 'basic-sciences' },
+        { label: 'Computer Science', value: 'computer-science' },
+        { label: 'Construction', value: 'construction' },
+        { label: 'Cybersecurity', value: 'cybersecurity' },
+        { label: 'Economy/Finance', value: 'economy-finance' },
+        { label: 'Education', value: 'education' },
+        { label: 'Energy', value: 'energy' },
+        { label: 'Engineering', value: 'engineering' },
+        { label: 'EPFL Institution', value: 'epfl-institution' },
+        { label: 'Health', value: 'health' },
+        { label: 'Innovation', value: 'innovation' },
+        { label: 'Research', value: 'research' },
+        { label: 'Society/Culture', value: 'society-culture' },
+        { label: 'Sustainability', value: 'sustainability' }
+      ]
+    } %}
 
-    <div class="form-group form-group-select">
-      <label>Units</label>
-      <select class="select-multiple" multiple="multiple" data-placeholder="Units">
-        <option value="">CDM</option>
-        <option value="">ENAC</option>
-        <option value="">IC</option>
-        <option value="">SB</option>
-        <option value="">STI</option>
-        <option value="">SV</option>
-        <option value="">Biorobotics Laboratory</option>
-        <option value="">Concrete Behaviour and Structural Design Laboratory</option>
-
-      </select>
-    </div>
+    {% include '@atoms/select/select-multiple.twig' with { 
+      label: 'Units',
+      placeholder: 'Units',
+      items_multiple: [
+        { label: 'CDM', value: '' },
+        { label: 'ENAC', value: '' },
+        { label: 'IC', value: '' },
+        { label: 'SB', value: '' },
+        { label: 'STI', value: '' },
+        { label: 'SV', value: '' },
+        { label: 'Biorobotics Laboratory', value: '' },
+        { label: 'Concrete Behaviour and Structural Design Laboratory', value: '' }
+      ]
+    } %}
 
   </form>
 </div>

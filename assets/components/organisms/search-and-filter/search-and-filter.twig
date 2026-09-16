@@ -2,14 +2,21 @@
   <form action="" method="get">
     {% include '@molecules/form-group/form-group-search.twig' %}
     {% include '@atoms/select/select.twig' with { label: 'Pic a character', selection: 'Good choice' } %}
-    {% include '@atoms/select/select.twig' with { 
-      label: 'Pic a vehicle', 
-      selection: 'Select one',
-      items: [
-        { label: 'Bike' },
-        { label: 'Bus' },
-        { label: 'X-Wing' },
-        { label: 'Batmobile' }
+    {% include '@atoms/select/select-multiple.twig' with { 
+      label: 'Pick a restaurant',
+      filter: FALSE,
+      items_multiple: [
+        { label: 'Chuck Testa\'s tavern', value: 1 },
+        { label: 'The Sage Cattabriga-Alosa hideout', value: 2 },
+        { label: 'Nikola Tesla Drive-in', value: 3 },
+        { label: 'A Love for Pizza 🍕', value: 4 },
+        { type: 'divider' },
+        { label: 'The Hydron Collider', value: 5 },
+        { label: 'There\'s no place like 127.0.0.1', value: 6 },
+        { type: 'optgroup', label: 'EPFL', options: [
+          { label: 'Holy Cow', value: 10 },
+          { label: 'Satellite', value: 11 }
+        ]}
       ]
     } %}
     {% include '@atoms/select/select-multiple.twig' %}

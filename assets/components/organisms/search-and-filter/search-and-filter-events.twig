@@ -4,54 +4,67 @@
 
     {% include '@molecules/form-group/form-group-search.twig' %}
 
-    <div class="form-group form-group-select form-group-categories">
-      <label class="sr-only">Catégories</label>
-      <select class="select-multiple" multiple="multiple" data-placeholder="Catégories">
-        <option value="activites-scientifiques-jeunes">Activités scientifiques pour les jeunes</option>
-        <option value="appel-proposition">Appel à proposition</option>
-        <option value="autres">Autres types d’événement</option>
-        <option value="conferences-seminaires">Conférences - Séminaires</option>
-        <option value="congres">Congrès</option>
-        <option value="echeance">Echéance</option>
-        <option value="evenements-festifs-culturels">Événements festifs et culturels</option>
-        <option value="evenements-scientifiques-grand-public">Évènements scientifiques grand public</option>
-        <option value="expositions">Expositions</option>
-        <option value="formations-internes">Formations internes</option>
-        <option value="lecons-inaugurales">Leçons inaugurales - Leçons d'honneur</option>
-        <option value="soutenances-de-theses">Soutenances de thèses</option>
-      </select>
-    </div>
+    {% include '@atoms/select/select-multiple.twig' with { 
+      categories: TRUE,
+      label: 'Catégories',
+      filter: FALSE,
+      sronly: TRUE,
+      placeholder: 'Catégories',
+      items_multiple: [
+        { label: 'Activités scientifiques pour les jeunes', value: 'activites-scientifiques-jeunes' },
+        { label: 'Appel à proposition', value: 'appel-proposition' },
+        { label: 'Autres types d’événement', value: 'autres' },
+        { label: 'Conférences - Séminaires', value: 'conferences-seminaires' },
+        { label: 'Congrès', value: 'congres' },
+        { label: 'Echéance', value: 'echeance' },
+        { label: 'Événements festifs et culturels', value: 'evenements-festifs-culturels' },
+        { label: 'Évènements scientifiques grand public', value: 'evenements-scientifiques-grand-public' },
+        { label: 'Expositions', value: 'expositions' },
+        { label: 'Formations internes', value: 'formations-internes' },
+        { label: 'Leçons inaugurales - Leçons d’honneur', value: 'lecons-inaugurales' },
+        { label: 'Soutenances de thèses', value: 'soutenances-de-theses' }
+      ]
+    } %}
 
-    <div class="form-group form-group-select">
-      <label class="sr-only">Périodes</label>
-      <select class="select-multiple" multiple="multiple" data-placeholder="Périodes">
-        <option value="">Un jour</option>
-        <option value="">Deux jours</option>
-        <option value="">Une semaine</option>
-        <option value="">Deux semaines</option>
-        <option value="">Un mois</option>
-        <option value="">Six mois</option>
-        <option value="">Une année</option>
-      </select>
-    </div>
+    {% include '@atoms/select/select-multiple.twig' with { 
+      label: 'Périodes',
+      sronly: TRUE,
+      filter: FALSE,
+      placeholder: 'Périodes',
+      items_multiple: [
+        { label: 'Un jour', value: '1' },
+        { label: 'Deux jours', value: '2' },
+        { label: 'Une semaine', value: '7' },
+        { label: 'Deux semaines', value: '14' },
+        { label: 'Un mois', value: '31' },
+        { label: 'Six mois', value: '180' },
+        { label: 'Une année', value: '365' }
+      ]
+    } %}
 
-    <div class="form-group form-group-select">
-      <label class="sr-only">Accès</label>
-      <select class="select-multiple" multiple="multiple" data-placeholder="Accès">
-        <option value="">Entrée libre</option>
-        <option value="">Sur inscription</option>
-        <option value="">Sur invitation</option>
-      </select>
-    </div>
+    {% include '@atoms/select/select-multiple.twig' with { 
+      label: 'Accès',
+      sronly: TRUE,
+      filter: FALSE,
+      placeholder: 'Accès',
+      items_multiple: [
+        { label: 'Entrée libre', value: '' },
+        { label: 'Sur inscription', value: '' },
+        { label: 'Sur invitation', value: '' }
+      ]
+    } %}
 
-    <div class="form-group form-group-select">
-      <label class="sr-only">Public cible</label>
-      <select class="select-multiple" multiple="multiple" data-placeholder="Public cible">
-        <option value="">Tout public</option>
-        <option value="">Public averti</option>
-        <option value="">Expert</option>
-      </select>
-    </div>
+    {% include '@atoms/select/select-multiple.twig' with { 
+      label: 'Public cible',
+      sronly: TRUE,
+      filter: FALSE,
+      placeholder: 'Public cible',
+      items_multiple: [
+        { label: 'Tout public', value: '' },
+        { label: 'Public averti', value: '' },
+        { label: 'Expert', value: '' }
+      ]
+    } %}
 
 {% include '@atoms/select/select-date.twig' %}
 

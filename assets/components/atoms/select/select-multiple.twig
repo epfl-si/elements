@@ -1,18 +1,32 @@
-<div class="form-group">
-  <label>{% if label %} {{~ label}} {% else %}Pick a restaurant{% endif %}</label>
-  <select class="select-multiple" multiple="multiple" data-placeholder="Restaurant list" data-filter="true">
-    <option value="1">Chuck Testa's tavern</option>
-    <option value="2">The Sage Cattabriga-Alosa hideout</option>
-    <option value="3">Nikola Tesla Drive-in</option>
-    <option value="4">A Love for Pizza 🍕</option>
-    <option data-divider="true"></option>
-    <option value="5">The Hydron Collider</option>
-    <option value="6">There's no place like 127.0.0.1</option>
-    <option value="7">The Shake Shack Space bar</option>
-    <optgroup label="EPFL">
-      <option value="8">Holy Cow</option>
-      <option value="9">Panares Gourmet</option>
-      <option value="10">Satellite</option>
-    </optgroup>
+{% set default_items_multiple = [
+  { label: 'Bike', value: 1 },
+  { label: 'Bus', value: 2 },
+  { type: 'divider' },
+  { type: 'optgroup', label: 'Spacecrafts', options: [
+    { label: 'Millenium Falcon', value: 10 },
+    { label: 'USS Enterprise', value: 11 }
+  ]},
+  { type: 'divider' },
+  { label: 'Batmobile', value: 4 }
+] %}
+
+{% set items_multiple = items_multiple is defined ? items_multiple : default_items_multiple %}
+
+<div class="form-group{% if categories %} form-group-categories{% endif %}">
+  <label {% if sronly %}class="sr-only"{% endif %}>{% if label %}{{~ label}}{% else %}Pic a vehicle{% endif %}</label>
+  <select class="select-multiple" multiple="multiple" data-placeholder="{{ placeholder|default('List') }}" data-filter="{{ filter|default(true) }}">
+    {% for item_multiple in items_multiple %}
+      {% if item_multiple.type == 'divider' %}
+        <option data-divider="true"></option>
+      {% elseif item_multiple.type == 'optgroup' %}
+        <optgroup label="{{ item_multiple.label }}">
+          {% for option in item_multiple.options %}
+            <option value="{{ option.value }}">{{ option.label }}</option>
+          {% endfor %}
+        </optgroup>
+      {% else %}
+        <option value="{{ item_multiple.value|default(loop.index) }}">{{ item_multiple.label }}</option>
+      {% endif %}
+    {% endfor %}
   </select>
 </div>
