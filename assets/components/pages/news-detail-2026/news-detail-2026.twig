@@ -100,9 +100,9 @@
         <a href="#" class="tag tag-primary mt-2 mr-1">Laboratoire de biophysique statistique (LBS)</a>
       </div>
 
-      {% include '@molecules/collapse-group/collapse-group.twig' with {
-        title: null
-      } %}
+      {% include '@atoms/collapse/collapse.twig' with { collapse_title: 'Financement', collapse_id: 'collapse-1' } %}
+      {% include '@atoms/collapse/collapse.twig' with { collapse_title: 'Références', collapse_id: 'collapse-2' } %}
+
 
       <footer class="my-4 d-md-flex justify-content-between border-0">
         <div>
@@ -111,10 +111,6 @@
             <small itemprop="author publisher" itemscope="" itemtype="https://schema.org/Person">
               <a href="#" class="opacity-80"><span itemprop="name">Nik Papageorgiou</span></a>
             </small>
-          </p>
-          <p class="small text-muted mb-0 mt-1">
-            <strong>Source:</strong>
-            <a href="/search/mediacom/fr" class="opacity-80">EPFL</a>
           </p>
         </div>
 

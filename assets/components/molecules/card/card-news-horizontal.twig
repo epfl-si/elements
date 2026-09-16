@@ -7,7 +7,6 @@
   {% block card_body %}
   <div class="card-body pt-4">
     {% block content %}
-    <h6 class="text-small font-weight-bold text-primary mb-1">Santé</h6>
     <h3 class="card-title mb-2">{{ title|default("Une mini-vessie humaine révèle la cause des infections récurrentes") }}</h3>
     <p class="pb-2">{{ body|default("Des scientifiques de l’EPFL, de l’Université de Heidelberg et de Roche ont mis au point une mini-vessie  humaine afin de montrer...") }}</p>
     <time datetime="2018-03-26" class="small mb-0"><span class="sr-only">Publié: </span>{{ pubdate|default('Il y a 2 jours') }}</time>
