@@ -138,7 +138,9 @@
         {% endfor %}
         <div class="list-group-teaser list-group-item border-none mb-3">
           <a class="mb-0" href="#">
-            Tout télécharger {% include '@atoms/icon/icon.twig' with {icon: 'download', icon_classes: 'ml-1 red mt-n1'} %}
+            Tout télécharger{%
+              include '@atoms/icon/icon.twig' with {icon: 'download', icon_classes: 'ml-1 red mt-n1'}
+            %}
           </a>
         </div>
       </div>
