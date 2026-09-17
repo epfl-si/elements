@@ -163,8 +163,8 @@
       </button>
       <div class="collapse collapse-item collapse-item-desktop" id="collapse-contact">
         {% for _ in 1..2 %}
-        <div class="d-md-flex justify-content-between align-items-center mb-3 text-base" >
-          <div itemprop="contributor" itemscope itemtype="https://schema.org/Person">
+        <div class="d-md-flex justify-content-between align-items-center mb-3 text-base" itemprop="contributor" itemscope itemtype="https://schema.org/Person">
+          <div>
             Prof. <a href="#"><span itemprop="name">Selman Sakar</span></a>,
             <span itemprop="jobTitle">Associate Professor</span>,<br/>
             <span itemprop="memberOf" itemscope itemtype="https://schema.org/Organization">
@@ -172,8 +172,8 @@
             </span>
           </div>
           <div class="text-md-right">
-            <a href="tel:+41216931095">+41 21 6931095</a><br/>
-            <a href="mailto:selman.sakar@epfl.ch">selman.sakar@epfl.ch</a>
+            <a href="tel:+41216931095"><span itemprop="telephone">+41 21 6931095</span></a><br/>
+            <a href="mailto:selman.sakar@epfl.ch"><span itemprop="email">selman.sakar@epfl.ch</span></a>
           </div>
         </div>
         {% endfor %}
