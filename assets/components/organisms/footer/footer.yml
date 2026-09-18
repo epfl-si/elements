@@ -4,6 +4,8 @@ wrapper: container
 variants:
   - name: de
     notes: deutsch
+  - name: it
+    notes: italiano
   - name: en
     notes: english
   - name: light
@@ -11,6 +13,8 @@ variants:
     notes: french
   - name: light-de
     notes: deutsch
+  - name: light-it
+    notes: italiano
   - name: light-en
     notes: english
   - name: dark
