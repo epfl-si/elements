@@ -1,0 +1,73 @@
+<div class="search-filters mt-4">
+
+  <form action="" method="get">
+
+    {% include '@molecules/form-group/form-group-search.twig' %}
+
+    {% include '@atoms/select/select-multiple.twig' with { 
+      label: 'Topic',
+      placeholder: 'Topic',
+      items_multiple: [
+        { label: 'AI', value: 'ai' },
+        { label: 'Awards', value: 'awards' },
+        { label: 'Basic Sciences', value: 'basic-sciences' },
+        { label: 'Computer Science', value: 'computer-science' },
+        { label: 'Construction', value: 'construction' },
+        { label: 'Cybersecurity', value: 'cybersecurity' },
+        { label: 'Economy/Finance', value: 'economy-finance' },
+        { label: 'Education', value: 'education' },
+        { label: 'Energy', value: 'energy' },
+        { label: 'Engineering', value: 'engineering' },
+        { label: 'EPFL Institution', value: 'epfl-institution' },
+        { label: 'Health', value: 'health' },
+        { label: 'Innovation', value: 'innovation' },
+        { label: 'Research', value: 'research' },
+        { label: 'Society/Culture', value: 'society-culture' },
+        { label: 'Sustainability', value: 'sustainability' }
+      ]
+    } %}
+
+    {% include '@atoms/select/select-multiple.twig' with { 
+      label: 'Unit',
+      placeholder: 'Unit',
+      items_multiple: [
+        { label: 'CDM', value: '' },
+        { label: 'ENAC', value: '' },
+        { label: 'IC', value: '' },
+        { label: 'SB', value: '' },
+        { label: 'STI', value: '' },
+        { label: 'SV', value: '' },
+        { label: 'Biorobotics Laboratory', value: '' },
+        { label: 'Concrete Behaviour and Structural Design Laboratory', value: '' }
+      ]
+    } %}
+
+    {% include '@atoms/select/select-multiple.twig' with { 
+      label: 'Format',
+      filter: FALSE,
+      placeholder: 'Format',
+      items_multiple: [
+        { label: 'Brief', value: 'brief' },
+        { label: 'Gallery', value: 'gallery' },
+        { label: 'Infographics', value: 'infographics' },
+        { label: 'Longread', value: 'longread' },
+        { label: 'News', value: 'news' },
+        { label: 'Podcast', value: 'podcast' },
+        { label: 'Portrait', value: 'portrait' },
+        { label: 'Video', value: 'video' }
+      ]
+    } %}
+
+  </form>
+</div>
+
+<div class="event-filter-tags mt-2">
+  {% include "@molecules/filters/filters-search.twig" with {
+    items: [
+      { label: 'Video' },
+      { label: 'STI' },
+      { label: 'Bioengineering' },
+      { label: 'NeuroX' }
+    ]
+  } %}
+</div>
