@@ -5,24 +5,8 @@
     {% include '@molecules/form-group/form-group-search.twig' %}
 
     {% include '@atoms/select/select-multiple.twig' with { 
-      label: 'Format',
-      filter: FALSE,
-      placeholder: 'Format',
-      items_multiple: [
-        { label: 'Brief', value: 'brief' },
-        { label: 'Gallery', value: 'gallery' },
-        { label: 'Infographics', value: 'infographics' },
-        { label: 'Longread', value: 'longread' },
-        { label: 'News', value: 'news' },
-        { label: 'Podcast', value: 'podcast' },
-        { label: 'Portrait', value: 'portrait' },
-        { label: 'Video', value: 'video' }
-      ]
-    } %}
-
-    {% include '@atoms/select/select-multiple.twig' with { 
-      label: 'Topics',
-      placeholder: 'Topics',
+      label: 'Topic',
+      placeholder: 'Topic',
       items_multiple: [
         { label: 'AI', value: 'ai' },
         { label: 'Awards', value: 'awards' },
@@ -44,8 +28,8 @@
     } %}
 
     {% include '@atoms/select/select-multiple.twig' with { 
-      label: 'Units',
-      placeholder: 'Units',
+      label: 'Unit',
+      placeholder: 'Unit',
       items_multiple: [
         { label: 'CDM', value: '' },
         { label: 'ENAC', value: '' },
@@ -55,6 +39,22 @@
         { label: 'SV', value: '' },
         { label: 'Biorobotics Laboratory', value: '' },
         { label: 'Concrete Behaviour and Structural Design Laboratory', value: '' }
+      ]
+    } %}
+
+    {% include '@atoms/select/select-multiple.twig' with { 
+      label: 'Format',
+      filter: FALSE,
+      placeholder: 'Format',
+      items_multiple: [
+        { label: 'Brief', value: 'brief' },
+        { label: 'Gallery', value: 'gallery' },
+        { label: 'Infographics', value: 'infographics' },
+        { label: 'Longread', value: 'longread' },
+        { label: 'News', value: 'news' },
+        { label: 'Podcast', value: 'podcast' },
+        { label: 'Portrait', value: 'portrait' },
+        { label: 'Video', value: 'video' }
       ]
     } %}
 
