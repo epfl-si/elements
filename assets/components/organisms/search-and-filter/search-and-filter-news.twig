@@ -6,7 +6,7 @@
 
     {% include '@atoms/select/select-multiple.twig' with { 
       label: 'Topic',
-      placeholder: 'Topic',
+      placeholder: 'Select topics',
       items_multiple: [
         { label: 'AI', value: 'ai' },
         { label: 'Awards', value: 'awards' },
@@ -28,8 +28,8 @@
     } %}
 
     {% include '@atoms/select/select-multiple.twig' with { 
-      label: 'Unit',
-      placeholder: 'Unit',
+      label: 'Entity',
+      placeholder: 'Select entities',
       items_multiple: [
         { label: 'CDM', value: '' },
         { label: 'ENAC', value: '' },
@@ -45,7 +45,7 @@
     {% include '@atoms/select/select-multiple.twig' with { 
       label: 'Format',
       filter: FALSE,
-      placeholder: 'Format',
+      placeholder: 'Select formats',
       items_multiple: [
         { label: 'Brief', value: 'brief' },
         { label: 'Gallery', value: 'gallery' },
