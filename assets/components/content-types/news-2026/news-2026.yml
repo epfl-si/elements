@@ -1,6 +1,11 @@
 title: News 2026
 name: news-2026
 variants:
+  - name: listing
+    title: List of news
+    wrapper: bg-gray-100
+    notes: |
+      List group variant to display a list of news item teasers
   - name: featured
     title: Three news with the first one highlighted
   - name: horizontal-listing-gray-news-cards
