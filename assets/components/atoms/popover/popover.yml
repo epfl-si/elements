@@ -1,5 +1,9 @@
 name: popover
 title: Popover
+variants:
+  - name: text
+    title: Popover for text
+    notes: Add the `.btn-circle-text` class to create a popover that can be inserted into text.
 notes: |
   If you use the `.btn-circle` class on the popover toggle, the popover text should be also added in a `.sr-only` paragraph.
 
