@@ -10,9 +10,6 @@
 {% endblock %}
 
 <div class="main-container">
-  {% block breadcrumb %}
-  
-  {% endblock %}
   <div class="nav-toggle-layout{% if not isSpecial %} nav-aside-layout{% endif %}">
     {% block nav %}
       {% include '@organisms/nav-mobile/nav-mobile.twig' %}
