@@ -71,10 +71,12 @@ $popover-border-bottom-color: $black;
   }
 }
 
-.btn-circle-text {
-  width: 1em;
-  height: 1em;
-  font-size: 0.75em;
-  line-height: 0.75em;
-  vertical-align: super;
+@include media-breakpoint-up(sm) {
+    .btn-circle-text {
+    width: 1em;
+    height: 1em;
+    font-size: 0.75em;
+    line-height: 0.75em;
+    vertical-align: super;
+  }
 }
