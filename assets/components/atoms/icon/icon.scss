@@ -19,6 +19,10 @@ $icon-size-base: 1em;
 
   .icon-right & { margin-left: 0.4em; }
   .icon-left & { margin-right: 0.4em; }
+
+  &.red {
+    color: $red;
+  }
 }
 
 .icon-rotate-90 {
