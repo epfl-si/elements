@@ -72,7 +72,7 @@ $popover-border-bottom-color: $black;
 }
 
 @include media-breakpoint-up(sm) {
-    .btn-circle-text {
+  .btn-circle-text {
     width: 1em;
     height: 1em;
     font-size: 0.75em;
