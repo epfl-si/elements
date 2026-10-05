@@ -6,7 +6,7 @@ export default () => {
     render: {
       item: (data, escape) => `<div class="tag tag-primary">${escape(data.text)}</div>`,
     },
-    create: input => ({
+    create: (input) => ({
       value: input,
       text: input,
     }),
