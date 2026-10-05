@@ -1,0 +1,85 @@
+<div class="search-filters mt-4">
+
+  <form action="" method="get">
+
+    {% include '@molecules/form-group/form-group-search.twig' %}
+
+    {% include '@atoms/select/select-multiple.twig' with { 
+      categories: TRUE,
+      label: 'Catégories',
+      filter: FALSE,
+      sronly: TRUE,
+      placeholder: 'Catégories',
+      items_multiple: [
+        { label: 'Activités scientifiques pour les jeunes', value: 'activites-scientifiques-jeunes' },
+        { label: 'Appel à proposition', value: 'appel-proposition' },
+        { label: 'Autres types d’événement', value: 'autres' },
+        { label: 'Conférences - Séminaires', value: 'conferences-seminaires' },
+        { label: 'Congrès', value: 'congres' },
+        { label: 'Echéance', value: 'echeance' },
+        { label: 'Événements festifs et culturels', value: 'evenements-festifs-culturels' },
+        { label: 'Évènements scientifiques grand public', value: 'evenements-scientifiques-grand-public' },
+        { label: 'Expositions', value: 'expositions' },
+        { label: 'Formations internes', value: 'formations-internes' },
+        { label: 'Leçons inaugurales - Leçons d’honneur', value: 'lecons-inaugurales' },
+        { label: 'Soutenances de thèses', value: 'soutenances-de-theses' }
+      ]
+    } %}
+
+    {% include '@atoms/select/select-multiple.twig' with { 
+      label: 'Périodes',
+      sronly: TRUE,
+      filter: FALSE,
+      placeholder: 'Périodes',
+      items_multiple: [
+        { label: 'Un jour', value: '1' },
+        { label: 'Deux jours', value: '2' },
+        { label: 'Une semaine', value: '7' },
+        { label: 'Deux semaines', value: '14' },
+        { label: 'Un mois', value: '31' },
+        { label: 'Six mois', value: '180' },
+        { label: 'Une année', value: '365' }
+      ]
+    } %}
+
+    {% include '@atoms/select/select-multiple.twig' with { 
+      label: 'Accès',
+      sronly: TRUE,
+      filter: FALSE,
+      placeholder: 'Accès',
+      items_multiple: [
+        { label: 'Entrée libre', value: '' },
+        { label: 'Sur inscription', value: '' },
+        { label: 'Sur invitation', value: '' }
+      ]
+    } %}
+
+    {% include '@atoms/select/select-multiple.twig' with { 
+      label: 'Public cible',
+      sronly: TRUE,
+      filter: FALSE,
+      placeholder: 'Public cible',
+      items_multiple: [
+        { label: 'Tout public', value: '' },
+        { label: 'Public averti', value: '' },
+        { label: 'Expert', value: '' }
+      ]
+    } %}
+
+{% include '@atoms/select/select-date.twig' %}
+
+  </form>
+</div>
+
+<div class="event-filter-tags mt-2">
+  {% include "@molecules/filters/filters-search.twig" with {
+    label: 'Search filters',
+    items: [
+      { label: 'Evènements culturels et festifs' },
+      { label: 'Expositions' },
+      { label: 'Entrée libre' },
+      { label: 'Tout public' },
+      { label: 'Français' }
+    ]
+  } %}
+</div>

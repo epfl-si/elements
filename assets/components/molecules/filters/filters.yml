@@ -6,3 +6,6 @@ variants:
   - name: blog
     title: Blog content filters
     notes: |
+  - name: search
+    title: Search filters
+    notes: |
