@@ -1,0 +1,17 @@
+{% if language is not defined %}{% set language = 'fr' %}{% endif %}
+
+<button id="back-to-top" class="btn btn-primary btn-back-to-top">
+  {% if language == 'fr' %}
+    <span class="sr-only">Retour en haut de page</span>
+  {% endif %}
+  {% if language == 'en' %}
+    <span class="sr-only">Back to top</span>
+  {% endif %}
+  {% if language == 'de' %}
+    <span class="sr-only">Zurück nach oben</span>
+  {% endif %}
+  {% if language == 'it' %}
+    <span class="sr-only">Torna all'inizio della pagina</span>
+  {% endif %}
+  {% include '@atoms/icon/icon.twig' with {icon: 'icon-chevron-top'} %}
+</button>
