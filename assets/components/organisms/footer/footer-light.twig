@@ -12,6 +12,8 @@
         <ul class="list-inline list-unstyled">
           {% if language == 'de' %}
             <li class="list-inline-item">Kontakt</li>
+          {% elseif language == 'it' %}
+            <li class="list-inline-item">Contatti</li>
           {% else %}
             <li class="list-inline-item">Contact</li>
           {% endif %}
@@ -27,6 +29,9 @@
         {% endif %}
         {% if language == 'de' %}
           <p class="footer-title footer-title-no-underline">Der EPFL in sozialen Netzwerken folgen</p>
+        {% endif %}
+        {% if language == 'it' %}
+          <p class="footer-title footer-title-no-underline">Segui l'EPFL sui social media</p>
         {% endif %}
           {% include '@atoms/social-icon/social-icon-link-group.twig' with { negative: true }  %}
         </div>
