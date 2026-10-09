@@ -32,11 +32,11 @@
        Application shell
 
        The page itself never scrolls: the header and the side column stay
-       put, and only the table scrolls. Everything below is one flex chain
-       from <body> down to .table-scroll, each level passing the remaining
-       height to the next one. min-height: 0 is what allows a flex item to
-       shrink below the size of its content, without it the table would
-       push the layout past the bottom of the window.
+       put, and only the content column scrolls. <body> and .app-main form
+       a flex chain that hands the remaining height to the two columns.
+       min-height: 0 is what allows a flex item to shrink below the size
+       of its content, without it the content would push the layout past
+       the bottom of the window.
        ------------------------------------------------------------------ */
     html,
     body {
@@ -94,32 +94,33 @@
       color: #707070;
     }
 
-    /* Content column: fills the width, hands its height to the table. */
+    /* Content column: fills the width and scrolls on its own. */
     .app-content {
-      display: flex;
       flex: 1 1 auto;
-      flex-direction: column;
       min-width: 0;
-      min-height: 0;
-      overflow: hidden;
-    }
-
-    /* ------------------------------------------------------------------
-       Scrolling table with a fixed header
-
-       overflow cannot be set on <tbody>: table row groups are not scroll
-       containers. The wrapper scrolls instead, and the header cells are
-       kept in place with position: sticky.
-       ------------------------------------------------------------------ */
-    .table-scroll {
-      flex: 1 1 auto;
       min-height: 0;
       overflow-y: auto;
     }
 
-    .table-scroll .table thead th {
+    /* ------------------------------------------------------------------
+       Fixed filters and table header
+
+       The filters stick to the top of the scrolling content column, and
+       the table header cells stick right below them. Their offset,
+       --filters-height, is kept up to date by the script at the bottom
+       of the page.
+       ------------------------------------------------------------------ */
+    .app-filters {
       position: sticky;
       top: 0;
+      z-index: 3;
+      /* Same reason as the header cells below: hide the scrolling rows. */
+      background-color: #fff;
+    }
+
+    .table-scroll .table thead th {
+      position: sticky;
+      top: var(--filters-height, 0);
       z-index: 2;
       /* Sticky cells are transparent by default: rows would show through. */
       background-color: #fff;
@@ -155,9 +156,12 @@
         height: auto;
       }
 
-      .app-main,
-      .app-content {
+      .app-main {
         display: block;
+        overflow: visible;
+      }
+
+      .app-content {
         overflow: visible;
       }
 
@@ -166,8 +170,12 @@
         border-right: 0;
       }
 
-      .table-scroll {
-        overflow: visible;
+      .app-filters {
+        position: static;
+      }
+
+      .table-scroll .table thead th {
+        top: 0;
       }
     }
   </style>
@@ -329,7 +337,7 @@
       </div>
 
       <!--filters-->
-      <div class="row">
+      <div class="row app-filters">
         <div class="col-md-7">
           <div class="form-group">
             <!-- <label for="awesome-input">Input's label</label> -->
@@ -1658,6 +1666,13 @@
   <script>
     svgPath = "https://web2018.epfl.ch/8.7.0/icons/icons.svg";
     featherSvgPath = "https://web2018.epfl.ch/8.7.0/icons/feather-sprite.svg";
+
+    // Offset of the sticky table header: the height of the sticky filters.
+    const filters = document.querySelector(".app-filters");
+    new ResizeObserver(() => {
+      document.documentElement.style.setProperty(
+        "--filters-height", filters.offsetHeight + "px");
+    }).observe(filters);
   </script>
 </body>
 
