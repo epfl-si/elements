@@ -1,0 +1,162 @@
+<!doctype html>
+<html dir="ltr" lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-apple-disable-message-reformatting" />
+  <title>Réservation de visite guidée EPFL</title>
+
+  <link rel="preload" as="image" href="https://epfl-si.github.io/elements/svg/epfl-logo.svg" />
+
+  <style>
+    @font-face {
+      font-family: 'Arial';
+      font-style: normal;
+      font-weight: 400;
+      mso-font-alt: 'Helvetica';
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: rgb(241,245,249);
+      font-family: 'Arial', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      color: rgb(0,0,0);
+    }
+
+    .wrapper {
+      padding: 24px 0;
+      width: 100%;
+    }
+
+    .container {
+      max-width: 42.5rem;
+      margin: 0 auto;
+      background-color: rgb(255,255,255);
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .header {
+      padding: 1rem 2rem 1.5rem 2rem;
+    }
+
+    .header img {
+      display: inline-block;
+      outline: none;
+      border: none;
+      text-decoration: none;
+      margin-left: 8px;
+      height: 32px;
+      width: 110px;
+    }
+
+    .content {
+      max-width: 37.5em;
+      margin: 0 auto 1rem auto;
+      padding: 0 0.75rem;
+    }
+
+    h1 {
+      font-size: 1.25rem;
+      line-height: 1.4;
+      font-weight: 700;
+      margin: 1rem 0;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin: 16px 0;
+    }
+
+    .intro {
+      margin-bottom: 2rem;
+    }
+
+    .signature {
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    .divider {
+      width: 100%;
+      border: none;
+      border-top: 1px solid rgb(209,213,220);
+      margin: 1rem 0;
+    }
+
+    .data-grid {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0;
+    }
+
+    .data-grid td {
+      width: 33.3333%;
+      padding: 4px 0;
+    }
+
+    .data-grid td:nth-child(1) { text-align: left; }
+    .data-grid td:nth-child(2) { text-align: center; }
+    .data-grid td:nth-child(3) { text-align: right; }
+
+    .footer {
+      max-width: 37.5em;
+      margin: 0 auto;
+      background-color: rgb(249,250,251);
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+
+    .footer p {
+      font-size: 0.75rem;
+      line-height: 1rem;
+      color: rgb(159,159,169);
+      margin: 16px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container" role="article">
+      <div class="header">
+        <img alt="EPFL" src="https://epfl-si.github.io/elements/svg/epfl-logo.svg" />
+      </div>
+
+      <div class="content">
+        <h1>Réservation de visite guidée</h1>
+        <p class="intro">
+          Bonjour Antoine Fabre, <br />
+          Nous avons bien reçu votre demande de réservation pour :
+        </p>
+        <table class="data-grid" role="presentation">
+          <tr>
+            <td>Visite</td>
+            <td>Nombre de personnes</td>
+            <td>Date</td>
+          </tr>
+        </table>
+        <hr class="divider" />
+        <table class="data-grid" role="presentation">
+          <tr>
+            <td>Campus EPFL (Standard)</td>
+            <td>10</td>
+            <td>Mon Oct 12 2026</td>
+          </tr>
+        </table>
+        <hr class="divider" />
+        <p>Nous traiterons votre demande dans les plus brefs délais.</p>
+        <p class="signature">L'équipe des visites guidées</p>
+      </div>
+      <div class="footer">
+        <p>
+          Mediacom - École polytechnique fédérale de Lausanne<br />
+          EPFL P-MEDIACOM, CM 2 360, Station 10, CH-1015 Lausanne
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
