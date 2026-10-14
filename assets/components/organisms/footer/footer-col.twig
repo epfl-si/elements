@@ -12,6 +12,9 @@
       {% if language == 'de' %}
         <strong>{{col.heading_de}}</strong>
       {% endif %}
+      {% if language == 'it' %}
+        <strong>{{col.heading_it}}</strong>
+      {% endif %}
     </button>
     <div class="collapse collapse-item" id="collapse-footer-{{loop.index ?: 1}}">
       <ul class="footer-links">
@@ -25,6 +28,9 @@
             {% endif %}
             {% if language == 'de' %}
               <a href="{{item.url_de}}"{{ item.target_blank_de ? ' target="_blank"' }}{{ item.rel_noopener_de ? ' rel="noopener"' }}>{{item.name_de}}</a>
+            {% endif %}
+            {% if language == 'it' %}
+              <a href="{{item.url_it}}"{{ item.target_blank_it ? ' target="_blank"' }}{{ item.rel_noopener_it ? ' rel="noopener"' }}>{{item.name_it}}</a>
             {% endif %}
           </li>
         {% endfor %}
