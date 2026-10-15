@@ -1,270 +1,104 @@
 @charset 'utf-8';
+$card-margin: 0.5rem;
 
 .card-deck {
-  display: block;
-  position: relative;
-  margin-left: $spacer * -0.5;
-  margin-right: $spacer * -0.5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacer;
+  box-sizing: border-box;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  justify-content: center;
+
+  > .card {
+    flex: 0 1 calc((100% - 2 * #{$spacer} - 6 * #{$card-margin}) / 3);
+    margin: $card-margin;
+    min-width: 30%;
+    max-width: 100%;
+    box-sizing: border-box;
+    z-index: 1;
+  }
 
   &.spaced-cards {
-    gap: $spacer;
-  }
-
-  @include media-breakpoint-up(sm) {
-    display: flex;
-    flex-wrap: wrap;
-
-    > .card {
-
-      // only one card is present
-      &:first-child:last-child {
-        flex: 0 0 60%;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      // two or more cards are present
-      &:nth-last-child(n + 2),
-      &:nth-last-child(n + 2) ~ * {
-        flex: 1 1 47%;
-        margin: $spacer * 0.5;
-      }
+    .card {
+      flex: 1 1 calc((100% - 2 * #{$spacer} - 6 * #{$card-margin}) / 2);
     }
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-down(md) {
     > .card {
-      z-index: $zindex-1;
-      margin: $spacer * 0.5;
+      flex: 1 1 calc((100% - 2 * #{$spacer} - 6 * #{$card-margin}) / 2);
+    }
+  }
 
-      // only one card is present
-      &:first-child:last-child {
-        flex: 0 0 33%;
-      }
+  @include media-breakpoint-down(xs) {
+    > .card {
+      flex: 0 1 100%;
+      margin: 0;
+    }
+  }
 
-      // two cards are present
-      &:nth-last-child(n + 2) {
-        flex: 0 0 33%;
-        margin-left: auto;
-      }
+  &.card-deck-line {
 
-      &:nth-last-child(n + 2) ~ * {
-        flex: 0 0 33%;
-        margin-right: auto;
-      }
+    &:before {
+      content: ' ';
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      width: 30%;
+      z-index: $zindex-0;
+      border-bottom: 1px solid $gray-100;
 
-      // three or more cards are present
-      &:nth-last-child(n + 3),
-      &:nth-last-child(n + 3) ~ * {
-        flex: 1 1 30%;
-        margin: $spacer * 0.5;
+      .bg-gray-100 & {
+        border-bottom-color: $gray-300;
       }
     }
 
-    &.card-deck-line {
+    &:after {
+      content: ' ';
+      position: absolute;
+      top: 50%;
+      right: 5%;
+      width: 30%;
+      z-index: $zindex-0;
+      border-bottom: 1px solid $gray-100;
 
+      .bg-gray-100 & {
+        border-bottom-color: $gray-300;
+      }
+    }
+
+    > .card {
       &:before {
         content: ' ';
+        display: block;
         position: absolute;
-        top: 50%;
-        left: 5%;
-        width: 30%;
-        z-index: $zindex-0;
-        border-bottom: 1px solid $gray-100;
+        top: 0;
+        left: calc(#{$spacer * -1} - 1px);
+        width: $spacer;
+        height: 100%;
+        background: white;
 
         .bg-gray-100 & {
-          border-bottom-color: $gray-300;
+          background-color: $gray-100;
         }
       }
 
       &:after {
         content: ' ';
+        display: block;
         position: absolute;
-        top: 50%;
-        right: 5%;
-        width: 30%;
-        z-index: $zindex-0;
-        border-bottom: 1px solid $gray-100;
+        top: 0;
+        right: calc(#{$spacer * -1} - 1px);
+        width: $spacer;
+        height: 100%;
+        background: white;
 
         .bg-gray-100 & {
-          border-bottom-color: $gray-300;
-        }
-      }
-
-      /*
-      * for plain cards, we add pseudo elements, allowing the lines not to touch the cards
-      */
-      > div.card {
-        &:first-child:last-child {
-          position: relative;
-
-          &:before {
-            content: ' ';
-            display: block;
-            position: absolute;
-            top: 0;
-            left: calc(#{$spacer * -1} - 1px);
-            width: $spacer;
-            height: 100%;
-            background: white;
-
-            .bg-gray-100 & {
-              background-color: $gray-100;
-            }
-          }
-
-          &:after {
-            content: ' ';
-            display: block;
-            position: absolute;
-            top: 0;
-            right: calc(#{$spacer * -1} - 1px);
-            width: $spacer;
-            height: 100%;
-            background: white;
-
-            .bg-gray-100 & {
-              background-color: $gray-100;
-            }
-          }
-        }
-
-        // two cards are present
-        &:nth-last-child(n + 2) {
-          &:before {
-            content: ' ';
-            display: block;
-            position: absolute;
-            top: 0;
-            left: calc(#{$spacer * -1} - 1px);
-            width: $spacer;
-            height: 100%;
-            background: white;
-
-            .bg-gray-100 & {
-              background-color: $gray-100;
-            }
-          }
-        }
-
-        &:nth-last-child(n + 2) ~ * {
-          &:after {
-            content: ' ';
-            display: block;
-            position: absolute;
-            top: 0;
-            right: calc(#{$spacer * -1} - 1px);
-            width: $spacer;
-            height: 100%;
-            background: white;
-
-            .bg-gray-100 & {
-              background-color: $gray-100;
-            }
-          }
-        }
-
-        // three or more cards are present
-        &:nth-last-child(n + 3),
-        &:nth-last-child(n + 3) ~ * {
-
-          &:before,
-          &:after {
-            content: none;
-          }
-
-        }
-      }
-
-      /*
-      * Styles for card-links. this is tricky because we already use before and after pseudo elements
-      * on card-links. So to avoid the line touching the card, we add a border
-      */
-      > a.card {
-
-        // only one card is present
-        &:first-child:last-child {
-          flex: 0 0 calc(33% + #{$spacer * 1.5});
-          box-shadow: 1rem 0 0 0 white, -1rem 0 0 0 white;
-
-          .bg-gray-100 & {
-            box-shadow: 1rem 0 0 0 $gray-100, -1rem 0 0 0 $gray-100;
-          }
-        }
-
-        // two cards are present
-        &:nth-last-child(n + 2) {
-          flex: 0 0 calc(33% + #{$spacer * 1.5});
-          box-shadow: -1rem 0 0 0 white;
-
-          .bg-gray-100 & {
-            box-shadow: -1rem 0 0 0 $gray-100;
-          }
-        }
-
-        &:nth-last-child(n + 2) ~ * {
-          flex: 0 0 calc(33% + #{$spacer * 1.5});
-          box-shadow: 1rem 0 0 0 white;
-          .bg-gray-100 & {
-            box-shadow: 1rem 0 0 0 $gray-100;
-          }
-        }
-
-        // three or more cards are present
-        &:nth-last-child(n + 3),
-        &:nth-last-child(n + 3) ~ * {
-          flex: 1 1 30%;
-          border: none;
+          background-color: $gray-100;
         }
       }
     }
-  }
-
-  &.mini-cards {
-    justify-content: center;
-
-    @include media-breakpoint-down(xs) {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-
-      > .card {
-        margin: $spacer * 0.5;
-      }
-    }
-
-    .deck-title {
-      flex-basis: 100%;
-      margin-left: .5rem;
-      font-size: 1.625rem;
-    }
-
-    .card-body {
-      padding: 1rem;
-    }
-
-    .card-title {
-      margin: 0;
-      font-size: 1.125rem;
-    }
-
-    > .card {
-      flex-basis: calc( 50% - #{$spacer} );
-      flex-grow: 0;
-    }
-
-    @include media-breakpoint-up(sm) {
-      > .card {
-        flex-basis: calc( 33.3334% - #{$spacer} );
-      }
-    }
-
-    @include media-breakpoint-up(xl) {
-      > .card {
-        flex-basis: calc( 16.6667% - #{$spacer} );
-      }
-    }
-
   }
 
 }
