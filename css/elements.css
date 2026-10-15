@@ -10677,6 +10677,10 @@ a:hover .text-arrow:after {
   letter-spacing: 3px;
 }
 
+.text-nowrap {
+  white-space: nowrap;
+}
+
 .font-style-normal {
   font-style: normal !important;
 }
@@ -11949,6 +11953,9 @@ figcaption {
 .icon-left .icon {
   margin-right: 0.4em;
 }
+.icon.red {
+  color: #ff0000;
+}
 
 .icon-rotate-90 {
   transform: rotate(90deg);
@@ -12873,6 +12880,15 @@ picture .img-fluid {
   color: #e60000;
 }
 
+@media (min-width: 576px) {
+  .btn-circle-text {
+    width: 1em;
+    height: 1em;
+    font-size: 0.75em;
+    line-height: 0.75em;
+    vertical-align: super;
+  }
+}
 .custom-radio .custom-control-label:before {
   border: 1px solid #707070;
 }
@@ -15577,6 +15593,9 @@ ol.flickity-page-dots li:before {
   .list-group .list-group-teaser-thumbnail {
     border-bottom: none;
   }
+}
+.list-group .list-group-teaser-thumbnail.small-list-group-teaser-thumbnail {
+  flex: 0 0 8rem;
 }
 .list-group .list-group-teaser-content {
   flex: 0 1 100%;
