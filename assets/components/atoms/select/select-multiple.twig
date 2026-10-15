@@ -13,7 +13,7 @@
 {% set items_multiple = items_multiple is defined ? items_multiple : default_items_multiple %}
 
 <div class="form-group{% if categories %} form-group-categories{% endif %}">
-  <label {% if sronly %}class="sr-only"{% endif %}>{% if label %}{{~ label}}{% else %}Pic a vehicle{% endif %}</label>
+  <label {% if sronly %}class="sr-only"{% endif %}>{% if label %}{{~ label}}{% else %}Pick a vehicle{% endif %}</label>
   <select class="select-multiple" multiple="multiple" data-placeholder="{{ placeholder|default('List') }}" data-filter="{{ filter|default(true) }}">
     {% for item_multiple in items_multiple %}
       {% if item_multiple.type == 'divider' %}

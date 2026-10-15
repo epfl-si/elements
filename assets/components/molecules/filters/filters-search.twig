@@ -1,7 +1,7 @@
 {% set items = items|default(["Legolas", "Jar Jar Binks"]) %}
 
 <div class="tag-group">
-  {% if label %}<label for="">{{~ label}}</label>{% endif %}
+  {% if label %}<label>{{~ label}}</label>{% endif %}
   <div>
     <button class="btn tag tag-plain">Reset all</button>
     {% for item in items %}
