@@ -1,1 +1,9 @@
 @charset 'utf-8';
+
+.card {
+  .h4 {
+    @include media-breakpoint-down(xl) {
+      font-size: 1.152rem;
+    }
+  }
+}
