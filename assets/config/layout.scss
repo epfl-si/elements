@@ -42,7 +42,7 @@
   @include media-breakpoint-up(lg) {
     grid-template-columns:
       [full-start] 1fr
-      [content-start] #{col-width(lg, 8)}
+      [content-start] #{col-width(lg, 7.125)}
       [content-end] 1fr
       [full-end];
   }
