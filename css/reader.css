@@ -272,6 +272,15 @@
     margin-bottom: 3rem;
   }
 }
+.tlbx-sidebar .tlbx-sidebar-version {
+  margin: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 200;
+}
+.tlbx-sidebar .tlbx-sidebar-version a:hover {
+  color: #a8404a;
+}
 
 .tlbx-sidebar-title {
   margin: 0 1rem;
@@ -279,13 +288,6 @@
   margin-top: 0.5rem;
 }
 .tlbx-sidebar-title span {
-  font-weight: 200;
-}
-
-.tlbx-sidebar-version {
-  margin: 0.5rem 1rem;
-  margin-bottom: 1.5rem;
-  font-size: 0.8rem;
   font-weight: 200;
 }
 .tlbx-item-preview {

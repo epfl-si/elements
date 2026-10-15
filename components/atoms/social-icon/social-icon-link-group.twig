@@ -1,49 +1,64 @@
+{% if language is not defined %}{% set language = 'en' %}{% endif %}
 {% set round = round ? round : false %}
 {% set discrete = discrete ? discrete : false %}
 {% set negative = negative ? negative : false %}
 
+{% set social_labels = {
+  'facebook':  { 'fr': 'Suivez-nous sur Facebook',  'en': 'Follow us on Facebook',  'de': 'Folgen Sie uns auf Facebook',      'it': 'Seguici su Facebook' },
+  'instagram': { 'fr': 'Suivez-nous sur Instagram', 'en': 'Follow us on Instagram', 'de': 'Folgen Sie uns auf Instagram',     'it': 'Seguici su Instagram' },
+  'linkedin':  { 'fr': 'Suivez-nous sur LinkedIn',  'en': 'Follow us on LinkedIn',  'de': 'Folgen Sie uns auf LinkedIn',      'it': 'Seguici su LinkedIn' },
+  'mastodon':  { 'fr': 'Suivez-nous sur Mastodon',  'en': 'Follow us on Mastodon',  'de': 'Folgen Sie uns auf Mastodon',      'it': 'Seguici su Mastodon' },
+  'matrix':    { 'fr': 'Contactez-nous sur Matrix', 'en': 'Get in touch on Matrix', 'de': 'Kontaktieren Sie uns über Matrix', 'it': 'Contattaci su Matrix' },
+  'tiktok':    { 'fr': 'Suivez-nous sur TikTok',    'en': 'Follow us on TikTok',    'de': 'Folgen Sie uns auf TikTok',        'it': 'Seguici su TikTok' },
+  'x':         { 'fr': 'Suivez-nous sur X',         'en': 'Follow us on X',         'de': 'Folgen Sie uns auf X',             'it': 'Seguici su X' },
+  'bluesky':   { 'fr': 'Suivez-nous sur Bluesky',   'en': 'Follow us on Bluesky',   'de': 'Folgen Sie uns auf Bluesky',       'it': 'Seguici su Bluesky' },
+  'youtube':   { 'fr': 'Suivez-nous sur Youtube',   'en': 'Follow us on Youtube',   'de': 'Folgen Sie uns auf Youtube',       'it': 'Seguici su Youtube' },
+  'github':    { 'fr': 'Suivez-nous sur GitHub',    'en': 'Follow us on GitHub',    'de': 'Folgen Sie uns auf GitHub',        'it': 'Seguici su GitHub' },
+  'gitlab':    { 'fr': 'Suivez-nous sur GitLab',    'en': 'Follow us on GitLab',    'de': 'Folgen Sie uns auf GitLab',        'it': 'Seguici su GitLab' }
+} %}
+
 <ul class="social-icon-list list-inline">
   <li>
-    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on Facebook', icon: 'icon-facebook', round: round, discrete: discrete, negative: negative, url: 'https://www.facebook.com/epflcampus' } %}
+    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: social_labels.facebook[language], icon: 'icon-facebook', round: round, discrete: discrete, negative: negative, url: 'https://www.facebook.com/epflcampus' } %}
   </li>
   <li>
-    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on Instagram', icon: 'icon-instagram', round: round, discrete: discrete, negative: negative, url: 'http://instagram.com/epflcampus' } %}
+    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: social_labels.instagram[language], icon: 'icon-instagram', round: round, discrete: discrete, negative: negative, url: 'http://instagram.com/epflcampus' } %}
   </li>
   <li>
-    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on LinkedIn', icon: 'icon-linkedin', round: round, discrete: discrete, negative: negative, url: 'https://www.linkedin.com/school/epfl/' } %}
+    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: social_labels.linkedin[language], icon: 'icon-linkedin', round: round, discrete: discrete, negative: negative, url: 'https://www.linkedin.com/school/epfl/' } %}
   </li>
   <li>
-    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on Mastodon', icon: 'icon-mastodon', round: round, discrete: discrete, negative: negative, url: 'https://social.epfl.ch/@epfl/' } %}
+    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: social_labels.mastodon[language], icon: 'icon-mastodon', round: round, discrete: discrete, negative: negative, url: 'https://social.epfl.ch/@epfl/' } %}
   </li>
     {%  if social_matrix %}
   <li>
-    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Get in touch on Matrix', icon: 'icon-matrix', round: round, discrete: discrete, negative: negative, url: 'https://matrix.to/#/@username:epfl.ch' } %}
+    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: social_labels.matrix[language], icon: 'icon-matrix', round: round, discrete: discrete, negative: negative, url: 'https://matrix.to/#/@username:epfl.ch' } %}
   </li>
   {% endif %}
   {%  if social_tiktok %}
   <li>
-    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on TikTok', icon: 'icon-tiktok', round: round, discrete: discrete, negative: negative, url: 'https://www.tiktok.com/@epflstudents' } %}
+    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: social_labels.tiktok[language], icon: 'icon-tiktok', round: round, discrete: discrete, negative: negative, url: 'https://www.tiktok.com/@epflstudents' } %}
   </li>
   {% endif %}
   <li>
-    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on X', icon: 'icon-x', round: round, discrete: discrete, negative: negative, url: 'https://x.com/epfl_en' } %}
+    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: social_labels.x[language], icon: 'icon-x', round: round, discrete: discrete, negative: negative, url: 'https://x.com/epfl_en' } %}
   </li>
   {%  if social_bluesky %}
   <li>
-    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on Bluesky', icon: 'icon-bluesky', round: round, discrete: discrete, negative: negative, url: 'https://bsky.app' } %}
+    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: social_labels.bluesky[language], icon: 'icon-bluesky', round: round, discrete: discrete, negative: negative, url: 'https://bsky.app' } %}
   </li>
   {% endif %}
   <li>
-    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on Youtube', icon: 'icon-youtube', round: round, discrete: discrete, negative: negative, url: 'https://www.youtube.com/user/epflnews' } %}
+    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: social_labels.youtube[language], icon: 'icon-youtube', round: round, discrete: discrete, negative: negative, url: 'https://www.youtube.com/user/epflnews' } %}
   </li>
   {%  if social_github %}
   <li>
-    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on GitHub', icon: 'github', round: round, discrete: discrete, negative: negative, url: 'https://github.com/epfl-si' } %}
+    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: social_labels.github[language], icon: 'github', round: round, discrete: discrete, negative: negative, url: 'https://github.com/epfl-si' } %}
   </li>
   {% endif %}
   {%  if social_gitlab %}
   <li>
-    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: 'Follow us on GitLab', icon: 'gitlab', round: round, discrete: discrete, negative: negative, url: 'https://gitlab.epfl.ch' } %}
+    {% include '@atoms/social-icon/social-icon-single-link.twig' with { pretty_name: social_labels.gitlab[language], icon: 'gitlab', round: round, discrete: discrete, negative: negative, url: 'https://gitlab.epfl.ch' } %}
   </li>
   {% endif %}
 </ul>

@@ -45,3 +45,18 @@
     </div>
   </div>
 {% endif %}
+{% if language == 'it' %}
+  <div class="footer-legal">
+    <div class="footer-legal-links">
+      <a href="https://www.epfl.ch/about/overview/regulations-and-guidelines/disclaimer/">Accessibilità</a>
+      <a href="https://www.epfl.ch/about/overview/regulations-and-guidelines/disclaimer/">Note legali</a>
+      <a href="https://go.epfl.ch/privacy-policy/">Informativa sulla privacy</a>
+      {% if isNews %}
+        <a href="https://go.epfl.ch/guidelines">Carta</a>
+      {% endif %}
+    </div>
+    <div>
+      <p>&copy; 2025 EPFL, tutti i diritti riservati</p>
+    </div>
+  </div>
+{% endif %}

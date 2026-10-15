@@ -1,5 +1,5 @@
-<div class="links-group">
-  <h5 id="links-group-title">Plus d'informations sur la faculté</h5>
+<div class="links-group{% if extra_class %} {{ extra_class }}{% endif %}">
+  <h5 id="links-group-title">{{ group_title|default("Plus d'informations sur la faculté") }}</h5>
   <ul class="list-unstyled">
     <li><a class="link-pretty" href="#">Tous les laboratoires de la faculté</a></li>
     <li><a class="link-pretty" href="#">Liste des professeurs de la faculté</a></li>

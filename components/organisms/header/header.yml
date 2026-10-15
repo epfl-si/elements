@@ -3,6 +3,8 @@ name: header
 variants:
   - name: de
     notes: deutsch
+  - name: it
+    notes: italiano
   - name: en
     notes: english
   - name: light
