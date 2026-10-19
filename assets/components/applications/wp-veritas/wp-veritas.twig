@@ -46,6 +46,19 @@
   Styles
 -------- #}
     <style>
+      .wp-veritas .table-scroll {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow-y: auto;
+      }
+      .wp-veritas .table-scroll thead th {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background-color: #fff;
+        border-bottom: 0;
+        box-shadow: inset 0 -3px 0 #d5d5d5;
+      }
     </style>
 
 {# ---------------

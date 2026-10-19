@@ -44,6 +44,22 @@
     flex-direction: column;
     height: 100vh;
   }
+  .tlbx-item-preview .wp-veritas {
+    height: calc(100vh - 10rem);
+  }
+  .tlbx-single-full:has(.wp-veritas) {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    min-height: 0;
+  }
+  .tlbx-single-full .tlbx-item-preview:has(.wp-veritas) {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+  .tlbx-single-full .wp-veritas {
+    height: 100%;
+  }
   .wp-veritas .app-main {
     display: flex;
     flex: 1 1 auto;
@@ -62,6 +78,14 @@
     font-size: 0.875rem;
     text-align: center;
     color: #707070;
+  }
+  .wp-veritas .app-content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    overflow-y: auto;
   }
 </style>
 
@@ -108,7 +132,7 @@
 {# ---------------
   Main Page Content
  ---------------- #}
-    <div class="container-fluid flex-grow-1 pt-4">
+    <div class="container-fluid app-content pt-4">
      {% block outlet %}{% endblock %}
     </div>
   </main>
