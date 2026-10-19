@@ -1,0 +1,116 @@
+{#
+  WP-Veritas is the internal web application used to manage EPFL's fleet of
+  around 850 WordPress websites: it holds the inventory of sites, their URLs,
+  owners, categories and themes, and drives their provisioning.
+
+  Production: https://wp-veritas.epfl.ch/
+  Sources:    https://github.com/epfl-si/wp-veritas
+#}
+
+{# ---------------------------------------
+ Data
+ --------------------------------------- #}
+
+{% set app = {
+  title: 'WP-Veritas',
+  version: '1.24.0',
+  language: 'fr'
+} %}
+
+{% set menu = [
+  { id: 'all-sites', label: 'Tous les sites',          icon: 'home', active: true },
+  { id: 'create-site', label: 'Créer un nouveau site', icon: 'plus-circle' },
+  { id: 'search-site', label: 'Rechercher un site',    icon: 'search' },
+  { id: 'manage-tags', label: 'Gérer les tags',        icon: 'tag' },
+  { id: 'manage-themes', label: 'Gérer les thèmes',    icon: 'aperture' },
+  { id: 'api-docs', label: 'Documentation API',        icon: 'target' },
+  { id: 'users', label: 'Utilisateurs',                icon: 'users' },
+  { id: 'redirects', label: 'Redirections',            icon: 'link' },
+  { id: 'logs', label: "Journaux d'actions",           icon: 'list' }
+] %}
+
+{% set nav_active = null %}
+{% for item in menu %}
+  {% if item.id == current %}{% set nav_active = loop.index0 %}{% endif %}
+{% endfor %}
+
+{# -------
+  Styles
+ -------- #}
+
+<style>
+  .wp-veritas {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  .wp-veritas .app-main {
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+  .wp-veritas .app-aside {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    overflow-y: auto;
+    border-right: 1px solid #d5d5d5;
+  }
+  .wp-veritas .app-aside-footer {
+    margin-top: auto;
+    padding: 0 1.5rem 1rem;
+    font-size: 0.875rem;
+    text-align: center;
+    color: #707070;
+  }
+</style>
+
+<div class="wp-veritas">
+{# ---------------
+  Header
+ ---------------- #}
+
+  {% block header %}
+    {% include '@organisms/header/header-light.twig' with {
+        site_title: 'WP-Veritas',
+        nav_user: true
+      }
+    %}
+  {% endblock %}
+  <hr class="darker">
+
+{# ---------------
+  App Navigation
+ ---------------- #}
+
+  <main class="app-main">
+    {% block nav %}
+      <div class="app-aside">
+        {% set nav_items = [] %}
+        {% for item in menu %}
+          {% set label %}
+            {% include '@atoms/icon/icon.twig' with { icon: item.icon, icon_classes: 'feather' } %}&nbsp;{{ item.label }}
+          {% endset %}
+          {% set nav_items = nav_items|merge([{ label: label }]) %}
+        {% endfor %}
+
+        {% include '@organisms/nav-aside/nav-aside.twig' with {
+          nav_aside_items: nav_items,
+          nav_aside_active: nav_active
+        } %}
+        <footer class="app-aside-footer">
+          <a href="https://go.epfl.ch/fsd">ISAS-FSD</a><br>
+          <a href="https://github.com/epfl-si/wp-veritas/releases">Version {{ app.version }}</a>
+        </footer>
+      </div>
+    {% endblock %}
+
+{# ---------------
+  Main Page Content
+ ---------------- #}
+    <div class="container-fluid flex-grow-1 pt-4">
+     {% block outlet %}{% endblock %}
+    </div>
+  </main>
+
+</div>

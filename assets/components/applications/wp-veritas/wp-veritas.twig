@@ -7,4 +7,236 @@
   Sources:    https://github.com/epfl-si/wp-veritas
 #}
 
-<h1>WP-Veritas</h1>
+{# ---------------------------------------
+ Data
+ --------------------------------------- #}
+
+{% set infrastructures = {
+  Kubernetes: { label: 'Kubernetes', icon: 'cloud' },
+  External:   { label: 'Externe',    icon: 'external-link' },
+  LAMP:       { label: 'LAMP',       icon: 'box' },
+  Temporary:  { label: 'Temporaire', icon: 'clock' },
+  Archived:   { label: 'Archivé',    icon: 'archive' }
+} %}
+
+{% set sites = [
+  { url: 'https://www.epfl.ch',                     infrastructure: 'Kubernetes', age: 'Il y a 3 ans' },
+  { url: 'https://www.epfl.ch/about',               infrastructure: 'Kubernetes', age: 'Il y a 3 ans' },
+  { url: 'https://www.epfl.ch/education',           infrastructure: 'Kubernetes', age: 'Il y a 2 ans' },
+  { url: 'https://www.epfl.ch/research',            infrastructure: 'Kubernetes', age: 'Il y a 2 ans' },
+  { url: 'https://www.epfl.ch/labs/new-lab',        infrastructure: 'Kubernetes', age: 'Il y a 1 minute', status: 'creating' },
+  { url: 'https://www.epfl.ch/labs/old-lab',        infrastructure: 'Kubernetes', age: 'Il y a 5 ans',    status: 'deleting' },
+  { url: 'https://www.epfl.ch/campus/associations', infrastructure: 'Kubernetes', age: 'Il y a 8 mois',   status: 'unmanaged' },
+  { url: 'https://actu.epfl.ch',                    infrastructure: 'External',   age: 'Il y a 4 ans' },
+  { url: 'https://memento.epfl.ch',                 infrastructure: 'External',   age: 'Il y a 4 ans' },
+  { url: 'https://legacy.epfl.ch',                  infrastructure: 'LAMP',       age: 'Il y a 6 ans' },
+  { url: 'https://test-migration.epfl.ch',          infrastructure: 'Temporary',  age: 'Il y a 2 jours' },
+  { url: 'https://www.epfl.ch/schools/old-school',  infrastructure: 'Archived',   age: 'Il y a 7 ans' }
+] %}
+
+{% set listStatuses = {
+  creating:  { label: 'Création…',    loader: true },
+  deleting:  { label: 'Suppression…', loader: true },
+  unmanaged: { label: 'Non géré',     icon: 'alert-triangle' }
+} %}
+
+{% embed 'wp-veritas-layout.twig' with { current: 'all-sites'}%}
+  {% block outlet %}
+{# -------
+  Styles
+-------- #}
+    <style>
+    </style>
+
+{# ---------------
+  Content
+---------------- #}
+    <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+      <h1 class="h3 mb-0">Source de vérité pour les sites WordPress</h1>
+      <div>
+        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#moreToolsModal">
+        {% include '@atoms/icon/icon.twig' with { icon: 'more-horizontal', icon_classes: 'feather' } %}
+          Plus d'outils
+        </button>
+        <button type="button" class="btn btn-primary ml-2">
+        {% include '@atoms/icon/icon.twig' with { icon: 'plus', icon_classes: 'feather' } %}
+          Ajouter un site
+        </button>
+      </div>
+    </div>
+    <form class="form-row" role="search">
+      <div class="col-md form-group form-group-search">
+        <label for="filter-url" class="sr-only">Rechercher une URL</label>
+        <p class="search-container icon-right">
+          <input type="search" id="filter-url" class="form-control" placeholder="Rechercher des sites web…">
+          {% include '@atoms/icon/icon.twig' with { icon: 'icon-search' } %}
+        </p>
+      </div>
+      <div class="col-md-3 form-group">
+        <label for="filter-infrastructure" class="sr-only">Infrastructure</label>
+        <select id="filter-infrastructure" class="custom-select">
+          <option value="">Toutes les infrastructures</option>
+          {% for name, infrastructure in infrastructures %}
+            <option value="{{ name }}">{{ infrastructure.label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="col-md-2 form-group">
+        <label for="filter-theme" class="sr-only">Thème</label>
+        <select id="filter-theme" class="custom-select">
+          <option value="">Tous les thèmes</option>
+          <option value="wp-theme-2018">WP Theme 2018</option>
+          <option value="wp-theme-light">WP Theme Light</option>
+        </select>
+      </div>
+    </form>
+    <div class="table-scroll">
+      <table class="table table-sortable" data-tablesaw-sortable>
+        <thead>
+          <tr>
+            <th scope="col" data-tablesaw-sortable-col data-tablesaw-sortable-default-col>URL</th>
+            <th scope="col" data-tablesaw-sortable-col>Infrastructure</th>
+            <th scope="col" data-tablesaw-sortable-col>Âge</th>
+            <th scope="col" data-tablesaw-sortable-col>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for site in sites %}
+            {% set infrastructure = infrastructures[site.infrastructure] %}
+            {% set status = site.status ? listStatuses[site.status] : null %}
+            <tr>
+              <td>
+                <a href="{{ site.url }}">{{ site.url }}</a>
+                {% if status %}
+                  <span class="site-status tag tag-sm tag-light">
+                    {% if status.loader == true %}
+                      {% include '@atoms/loader/loader.twig' %}
+                    {% else %}
+                      {% include '@atoms/icon/icon.twig' with { icon: status.icon, icon_classes: 'feather' } %}
+                    {% endif %}
+                    {{ status.label }}
+                  </span>
+                {% endif %}
+              </td>
+              <td>
+                {% include '@atoms/icon/icon.twig' with { icon: infrastructure.icon, icon_classes: 'feather' } %}
+                &nbsp;{{ infrastructure.label|upper }}
+              </td>
+              <td>{{ site.age }}</td>
+              <td>
+                <a href="#" class="btn btn-sm btn-actions btn-outline-info p-1" title="Informations">
+                  {% include '@atoms/icon/icon.twig' with { icon: 'info', icon_classes: 'feather' } %}
+                  <span class="sr-only">Informations</span>
+                </a>
+                <a href="#" class="btn btn-sm btn-actions btn-outline-success p-1" title="Modifier">
+                  {% include '@atoms/icon/icon.twig' with { icon: 'edit-2', icon_classes: 'feather' } %}
+                  <span class="sr-only">Modifier</span>
+                </a>
+                <a href="#" class="btn btn-sm btn-actions btn-outline-dark p-1" title="Tags">
+                  {% include '@atoms/icon/icon.twig' with { icon: 'tag', icon_classes: 'feather' } %}
+                  <span class="sr-only">Tags</span>
+                </a>
+                <a href="#" class="btn btn-sm btn-actions btn-outline-danger p-1" title="Supprimer">
+                  {% include '@atoms/icon/icon.twig' with { icon: 'trash-2', icon_classes: 'feather' } %}
+                  <span class="sr-only">Supprimer</span>
+                </a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+{# ------------
+  Modal
+-------------- #}
+    {% set tools = [
+      { id: 'advancedFilters', icon: 'filter', title: 'Filtres avancés', description: 'Filtrer les sites selon plusieurs critères' },
+      { id: 'export', icon: 'download', title: 'Exporter les données', description: 'Télécharger les données des sites dans différents formats' },
+      { id: 'statistics', icon: 'bar-chart-2', title: 'Statistiques des sites', description: 'Voir les analyses détaillées et les insights' }
+    ] %}
+
+    <div class="modal fade" id="moreToolsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="moreToolsModalLongTitle">Outils disponibles</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <div class="list-group list-group-flush">
+              {% for tool in tools %}
+                <a href="#" data-toggle="modal" data-target="#{{ tool.id }}" data-dismiss="modal" class="list-group-item list-group-item-action d-flex align-items-center">
+                    {% include '@atoms/icon/icon.twig' with { icon: tool.icon, icon_classes: 'feather' } %}
+                    <span class="ml-3 mr-auto">
+                      <strong class="d-block">{{ tool.title }}</strong>
+                      <small>{{ tool.description }}</small>
+                    </span>
+                    {% include '@atoms/icon/icon.twig' with { icon: 'chevron-right', icon_classes: 'feather' } %}
+                </a>
+              {% endfor %}
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id='{{ tools[0].id }}' tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="moreToolsModalLongTitle">{{ tools[0].title }}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            {% include '@molecules/filters/filters.twig' %}
+            {% include '@molecules/datepicker/datepicker.twig' %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id='{{ tools[1].id }}' tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="moreToolsModalLongTitle">{{ tools[1].title }}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="d-block">Exporter 12 sites filtrés au format CSV</p>
+            <button type="button" class="btn btn-primary btn-block">
+            {% include '@atoms/icon/icon.twig' with { icon: 'download', icon_classes: 'feather' } %}
+              Exporter en CSV
+            </button>
+            <small>Les fichiers seront exportés en encodage UTF-8</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id='{{ tools[2].id }}' tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="moreToolsModalLongTitle">{{ tools[2].title }}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            {% include '@organisms/key-number-group/key-number-group.twig' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+{% endembed %}
