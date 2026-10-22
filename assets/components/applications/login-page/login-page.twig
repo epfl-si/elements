@@ -1,0 +1,81 @@
+{#
+  Login page of the epfl website.
+
+  Production example: https://co2-calculator.epfl.ch/en/login
+
+  Variables:
+    login_title: name of the application shown under the logo
+                 (default: 'Application')
+
+  Usage:
+    {% include '../login-page/login-page.twig' with {
+      login_title: 'WP-Veritas'
+    } %}
+#}
+
+{% set login_title = login_title %}
+
+{# -------
+  Styles
+ -------- #}
+<style>
+  .login-page {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .tlbx-item-preview .login-page {
+    min-height: calc(100vh - 10rem);
+  }
+  .tlbx-single-full .login-page {
+    min-height: calc(100vh - 50px);
+  }
+  .login-page::before,
+  .login-page::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+  .login-page::before {
+    z-index: -2;
+    background: url("/images/backgrounds/login-pattern.svg") center / auto repeat;
+  }
+  .login-page::after {
+    z-index: -1;
+    background-color: rgba(255, 255, 255, .75);
+  }
+  .login-page .login-card {
+    flex: 0 0 20rem;
+    max-width: 20rem;
+  }
+  .login-page .login-card .card-body {
+    padding: 2.5rem 2rem;
+  }
+  .login-page .login-logo {
+    display: block;
+    width: 8rem;
+    margin: 0 auto 1rem;
+  }
+  .login-page .login-title {
+    margin-bottom: 2rem;
+  }
+</style>
+
+{# ---------------
+  Content
+ ---------------- #}
+
+<main class="login-page" id="login-page">
+  <div class="card login-card shadow">
+    <div class="card-body text-center">
+      <img src="svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="login-logo">
+      {% if login_title %}
+        <h1 class="h3 login-title">{{ login_title }}</h1>
+      {% endif %}
+      <button type="button" class="btn btn-primary btn-block">Login</button>
+    </div>
+  </div>
+</main>
