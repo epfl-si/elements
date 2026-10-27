@@ -54,6 +54,7 @@ function SingleStyleguideItem ({ element, variant, navigation }) {
   const beautify = (str) => html_beautify(str, {
     indent_size: 2,
     space_in_empty_paren: true,
+    max_preserve_newlines: 1,
   })
 
   const [copied, setCopied] = useState(false)
