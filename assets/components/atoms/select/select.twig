@@ -5,7 +5,7 @@
   <select id="select-input" class="custom-select">
     <option selected>{% if selection %} {{~ selection}} {% else %}Choose wisely{% endif %}</option>
     {% for item in items %}
-      <option value={{ loop.index }}>{{ item.label|default(item) }}</option>
+      <option value="{{ loop.index }}">{{ item.label|default(item) }}</option>
     {% endfor %}
   </select>
 </div>
