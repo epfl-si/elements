@@ -21,6 +21,8 @@
 @import 'atoms/button/button';
 @import 'atoms/checkbox/checkbox';
 @import 'atoms/collapse/collapse';
+@import 'atoms/datepicker/datepicker';
+@import 'atoms/datepicker/datepicker-fancy';
 @import 'atoms/definition-list/definition-list';
 @import 'atoms/drawer/drawer';
 @import 'atoms/dropdown/dropdown';
@@ -58,8 +60,6 @@
 @import 'molecules/carousel/carousel';
 @import 'molecules/collapse-group/collapse-group';
 @import 'molecules/cover/cover';
-@import 'molecules/datepicker/datepicker';
-@import 'molecules/datepicker/datepicker-fancy';
 @import 'molecules/filters/filters';
 @import 'molecules/footnotes/footnotes';
 @import 'molecules/form-group/form-group';
@@ -100,6 +100,7 @@
 @import 'organisms/nav-mobile/nav-mobile';
 @import 'organisms/newsletter-sign-up/newsletter-sign-up';
 @import 'organisms/restauration/restauration';
+@import 'organisms/search-and-filter/search-and-filter';
 @import 'organisms/social-feed-group/social-feed-group';
 
 // content-types:
@@ -128,6 +129,5 @@
 // pages:
 @import 'pages/blog-single/blog-single';
 @import 'pages/error-404/error-404';
-@import 'pages/event-list/event-list';
 @import 'pages/people-detail/people-detail';
 @import 'pages/study-plan-course/study-plan-course';

@@ -2,8 +2,8 @@
 
 import upload from './atoms/upload/upload';
 import breadcrumb from './molecules/breadcrumb/breadcrumb';
-import datepicker from './molecules/datepicker/datepicker';
-import datepickerEvent from './molecules/datepicker/datepicker-fancy';
+import datepicker from './atoms/datepicker/datepicker';
+import datepickerEvent from './atoms/datepicker/datepicker-fancy';
 import popover from './atoms/popover/popover';
 import gallery from './molecules/gallery/gallery';
 import social from './molecules/social/social';
