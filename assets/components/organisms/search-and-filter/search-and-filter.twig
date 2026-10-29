@@ -2,7 +2,7 @@
   <form action="" method="get">
     {% include '@molecules/form-group/form-group-search.twig' %}
     {% include '@atoms/select/select.twig' with { label: 'Pick a character', selection: 'Good choice' } %}
-    {% include '@atoms/select/select-multiple.twig' with { 
+    {% include '@atoms/select/select-multiple.twig' with {
       label: 'Pick a restaurant',
       filter: FALSE,
       items_multiple: [
