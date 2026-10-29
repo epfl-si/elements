@@ -101,4 +101,47 @@ $card-margin: 0.5rem;
     }
   }
 
+  &.mini-cards {
+
+    gap: 0;
+
+    .deck-title {
+      flex-basis: 100%;
+      margin-left: .5rem;
+      font-size: 1.625rem;
+    }
+
+    .card-body {
+      padding: 1rem;
+    }
+
+    .card-title {
+      margin: 0;
+      font-size: 1.125rem;
+    }
+
+    > .card {
+      flex: 0 1 calc((100% - 2 * #{$spacer} - 12 * #{$card-margin}) / 6);
+      margin: $card-margin;
+      min-width: 15%;
+      max-width: 100%;
+      box-sizing: border-box;
+      z-index: 1;
+      flex-grow: 0;
+    }
+
+    @include media-breakpoint-up(sm) {
+      > .card {
+        flex-basis: calc( 33.3334% - #{$spacer} );
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      > .card {
+        flex-basis: calc( 16.6667% - #{$spacer} );
+      }
+    }
+
+  }
+
 }
